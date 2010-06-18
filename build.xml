@@ -13,7 +13,7 @@
             <include name="jboss-jsr77.jar"/>
             <include name="jbossmq.jar"/>
             <include name="log4j.jar"/>
-            <include name="bsh-1.3.0.jar"/>
+            <include name="bsh.jar"/>
             <include name="hibernate3.jar"/>
         </fileset>
         <fileset dir="${jboss_top}">
