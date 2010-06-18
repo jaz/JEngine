@@ -1,0 +1,1136 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.7</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400042.htm">
+<LINK REL="Previous" HREF="ch400040.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E241"></A>
+<H3><U>4.8.7</U><U></U><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>RXE - pharmacy/treatment encoded order segment</B><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The RXE segment details the pharmacy or treatment  application&#146;s encoding of the order.  It also contains several pharmacy-specific order status fields, such as <I>RXE-16-number of refills remaining</I>, <I>RXE-17-number </I><I>of refills/doses dispensed, RXE-18-date/time of most recent refill/dose</I>, and <I>RXE-19-total daily dose.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">Note that <I>ORC-7-quantity/timing</I> has a different meaning from <I>RXE-1-quantity/timing</I> and <I>RXG-3-quantity/timing</I>.  The pharmacy or treatment department has the &quot;authority&quot; (and/or necessity) to schedule dispense/give events.  Hence, the pharmacy or treatment department has the responsibility to encode this scheduling information in <I>RXE-1-quantity/timing</I> and <I>RXG-3-quantity/timing.  </I><I>ORC-7-quantity/timing</I> does not change: it always specifies the requested give/dispense schedule of the original order.</FONT>
+<P ALIGN=indent><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A>Figure 4-16.  RXE attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=62 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=226 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">TQ</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00221</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Quantity/Timing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">100</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0292</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00317</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00318</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Amount - Minimum</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00319</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Amount - Maximum</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00320</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00321</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Dosage Form</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00298</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider's Administration Instructions</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00299</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Deliver-to Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0167</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00322</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00323</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dispense Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00324</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dispense Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00304</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Number of Refills</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00305</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ordering Provider's DEA Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00306</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pharmacist/Treatment Supplier's Verifier ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00325</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Prescription Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00326</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Number of Refills Remaining</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00327</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Number of Refills/Doses Dispensed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00328</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">D/T of Most Recent Refill or Dose Dispensed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CQ</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00329</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Total Daily Dose</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00307</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Needs Human Review</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00330</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pharmacy/Treatment Supplier's Special Dispensing Instructions</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00331</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Per (Time Unit)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00332</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Rate Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00333</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Rate Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01126</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Strength</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01127</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Strength Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01128</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Indication</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01220</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dispense Package Size</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01221</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dispense Package Size Unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0321</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01222</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dispense Method</TD></TR></FONT></TABLE></CENTER><P>4.8.7.0   RXE field definitions
+<H4><B>4.8.7.1</B><B> </B>Quantity/timing  (TQ)   00221<A NAME="I16"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;quantity (CQ)&gt; ^ &lt;interval (CM)&gt; ^ &lt;duration&gt; ^ &lt;start date/time (TS)&gt; ^ &lt;end date/time (TS)&gt; ^ &lt;priority (ID)&gt; ^ &lt;condition (ST)&gt; ^ &lt;text (TX)&gt; ^ &lt;conjunction (ID)&gt; ^ &lt;order sequencing&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  See Section <A HREF="ch400041.htm#I7">4.8.7</A>, &quot;<A HREF="ch400041.htm#I9">RXE - pharmacy/treatment encoded order segment</A>,&quot; for necessary modification for this field&#146;s definition to cover interorder dependencies needed by pharmacy/treatment orders.  This field is used by the pharmacy or non-pharmacy treatment supplier to express the fully coded version of the drug or treatment timing.  It may differ from <I>ORC-7-quantity/timing</I>, which contains the requested quantity/timing of the original order.</FONT>
+<H4>4.8.7.2 Give code  (CE)   00317<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the medical substance ordered to be given to the patient, as encoded by the pharmacy or treatment supplier;  it is equivalent to <I>OBR-4-universal service ID</I> in function.  In the RXE segment, this give code must be fully encoded.  The dispense fields, which define the units and amount of what is to be issued to the patient (see <I>RXE-10-dispense amount</I> and <I>RXE-11-dispense units</I> below) do not necessarily correlate with the instructions of what amount is to be &quot;given&quot; or administered with each dose, and may or may not be specified with the order.  For example, the &quot;give&quot; part of the order may convey the field-representation of <I>give 250 mg of ampicillin</I>, while the request to dispense part of the order may convey <I>issue 30 tablets of generic equivalent for this outpatient prescription</I>.  Refer to <I>HL7 Table 0292 - Vaccines </I><I>administered</I> for valid values.</FONT>
+<H4>4.8.7.3 Give amount - minimum  (NM)   00318<A NAME="I18"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the ordered amount as encoded by the pharmacy or treatment supplier.  In a variable dose order, this is the minimum ordered amount.  In a nonvarying dose order, this is the exact amount of the order.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=533 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> This field is not a duplication of the first component of the quantity/timing field, since in non-pharmacy/treatment orders, that component can be used to specify multiples of an ordered amount. </FONT>
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">  Another way to say this is that, for pharmacy/treatment orders, the quantity component of the quantity/timing field refers to what is to be given out at each service interval; thus, in terms of the RX order, that first component always defaults to 1.  Hence, in the actual execution of the order, the value of 1 in the first component of the quantity/timing field always refers to one administration of the amount specified in this field (the requested Give Amount field).</TD></TR></FONT></TABLE><H4>4.8.7.4 Give amount - maximum  (NM)   00319<A NAME="I19"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  In a variable dose order, this is the maximum ordered amount.  In a nonvarying dose, this field is not used.</FONT>
+<H4>4.8.7.5 Give units  (CE)   00320<A NAME="I20"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^&lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the units for the give amount as encoded by the pharmacy or treatment (e.g., respiratory therapy) application.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=533 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> These units can be a &quot;compound quantity&quot;; i.e., the units may contain the word &quot;per.&quot;  For example, micrograms per KG (micg/kg) is an acceptable value, which means that the units are micrograms per KG (of body weight).</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">A table of standard units that contains compound units is needed.  Until such a table is agreed on, a user-defined table is needed for each site.</FONT>
+<H4>4.8.7.6 Give dosage form  (CE)   00321<A NAME="I21"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^&lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The dosage form indicates the manner in which the medication is aggregated for dispensing, e.g., tablets, capsules, suppositories.  In some cases, this information is implied by the give code <I>in RXE-2</I><I>-give </I><I>code</I>.  Use the <I>RXE-6-give dosage form</I> when the give code does not specify the dosage form.</FONT>
+<H4>4.8.7.7 Provider's administration instructions  (CE)   00298<A NAME="I22"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^&lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the ordering provider&#146;s instructions to the patient or the provider administering the drug or treatment.  If coded, a user defined table must be used;  if free text (describing a custom IV, mixture, or salve, for example, place the text in the second component, e.g., |^this is a free text administration instruction|.</FONT>
+<H4>4.8.7.8 Deliver-to location  (CM)   00299<A NAME="I23"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (ST)&gt; &amp; &lt;room (IS)&gt;&amp; &lt;bed (IS)&gt; &amp; &lt;facility (HD)&gt; &amp; &lt;location status (ID)&gt; &amp; &lt;patient location type (IS)&gt; &amp; &lt;building (IS)&gt; &amp; &lt;floor (IS)&gt;<B> ^</B> &lt;street address (ST)&gt; &amp; &lt;other designation (ST)&gt; &amp; &lt;city  (ST)&gt; &amp; &lt;state or province (ST)&gt; &amp; &lt;zip or postal code (ST)&gt; &amp; &lt;country (ID)&gt; &amp; &lt;address type (ID)&gt; &amp; &lt;other geographic designation (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The first component contains the inpatient or outpatient location to which the pharmacy or treatment supplier is to deliver the drug or treatment  (if applicable).  The default (null) value is the current census location for the patient.  Site specific table.  This component has the same form as <I>PV1-3-assigned </I><I>patient location</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second component can be used to specify an address.  This could be used to fill mail orders to a patient or provider, or to account for home health care.</FONT>
+<H4>4.8.7.9 Substitution status  (ID)   00322<A NAME="I24"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Refer to <I>HL7</I> <I>table 0167 - Substitution status</I> for valid values.  If a substitution has been made, and a record of the original requested give code (<I>RXO-1</I><I>-requested give code</I>) is needed, the optional RXO segment can be included in the RDE message.</FONT>
+<P ALIGN=indent><A NAME="I25"></A><A NAME="I26"></A>Table 0167 - Substitution status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">No substitute was dispensed.  This is equivalent to the default (null) value.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">G</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">A generic substitution was dispensed.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">A therapeutic substitution was dispensed.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">0</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">No product selection indicated</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution not allowed by prescriber</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution allowed - patient requested product dispensed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution allowed - pharmacist selected product dispensed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution allowed - generic drug not in stock</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution allowed - brand drug dispensed as a generic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution not allowed - brand drug mandated by law</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substitution allowed - generic drug not available in marketplace</TD></TR></FONT></TABLE><H4>4.8.7.10 Dispense amount  (NM)   00323<A NAME="I27"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the amount dispensed as encoded by the pharmacy or treatment supplier.  </FONT>
+<H4>4.8.7.11 Dispense units  (CE)   00324<A NAME="I28"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^&lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the units for the dispense amount as encoded by the pharmacy or treatment supplier.  This must be in simple units that reflect the actual quantity of the substance dispensed.  It does not include compound units.</FONT>
+<H4>4.8.7.12 Number of refills  (NM)   00304<A NAME="I29"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the total original number of refills.  Outpatient only.</FONT>
+<H4>4.8.7.13 Ordering provider's DEA number  (XCN)   00305<A NAME="I30"></A></H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:   This field is defined as conditional because it is required when the substance requested is a controlled substance (e.g., a narcotic).</FONT>
+<H4>4.8.7.14 Pharmacist/treatment supplier's verifier ID  (XCN)   00306<A NAME="I31"></A></H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the provider ID of Pharmacist/treatment supplier&#146;s verifier.  Use if required by the pharmacy or treatment application or site on orders (or some subgroup of orders). </FONT>
+<H4>4.8.7.15 Prescription number  (ST)   00325<A NAME="I32"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the prescription number as assigned by the pharmacy or treatment application.  Equivalent in uniqueness to the pharmacy/treatment filler order number.  At some sites, this may be the pharmacy or treatment system (internal) sequential form.  At other sites, this may be an external form.  This is a required field in RXE when used in pharmacy/treatment messages, but it is not required when used in product experience messages (see Chapter 7).</FONT>
+<H4>4.8.7.16 Number of refills remaining  (NM)   00326<A NAME="I33"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is for outpatient only.</FONT>
+<H4>4.8.7.17 Number of refills/doses dispensed  (NM)   00327<A NAME="I34"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is for outpatient only.</FONT>
+<H4>4.8.7.18 D/T of most recent refill or dose dispensed  (TS)   00328<A NAME="I35"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  For the date/time of the most recent refill or dose dispensed, use time stamp format.</FONT>
+<H4>4.8.7.19 Total daily dose  (CQ)   00329<A NAME="I36"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;quantity (NM)&gt; ^ &lt;units (CE)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the total daily dose for this particular pharmaceutical as expressed in terms of actual dispense units.</FONT>
+<H4>4.8.7.20 Needs human review  (ID)   00307<A NAME="I37"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field uses <I>HL7</I> <I>table 0136 - Yes/no indicator</I>.  The values have the following meaning for this field:</FONT>
+<P ALIGN=indent><A NAME="I38"></A><A NAME="I39"></A>Table 0136 - Yes/no indicator</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Yes - Indicates that a warning is present.  The application receiving the encoded order needs to warn the person administering the drug or treatment to pay attention to the text in <I>RXE-22-pharmacy/treatment </I><I>special dispensing instructions</I>.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">No - Indicates no warning is present.  This is the equivalent default (null) value.</TD></TR></FONT></TABLE><H4>4.8.7.21 Pharmacy/treatment special dispensing instructions  (CE)   00330<A NAME="I40"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the pharmacy or treatment supplier&#146;s provider-generated special instructions to the provider dispensing/administering the order. </FONT>
+<H4>4.8.7.22 Give per (time unit) as encoded by the pharmacy/treatment supplier  (ST)   00331<A NAME="I41"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the time unit to use to calculate the rate at which the pharmaceutical is to be administered. </FONT>
+<P>
+<FONT FACE="Times New Roman">Format:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&lt;integer&gt; seconds</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&lt;integer&gt; minutes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">H&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&lt;integer&gt; hours</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&lt;integer&gt; days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">W&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&lt;integer&gt; weeks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">L&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&lt;integer&gt; months</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">T&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">at the interval and amount stated until a total of &lt;integer&gt; &quot;DOSAGE&quot; is accumulated.  Units would be assumed to be the same as in the QUANTITY field.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">INDEF</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">do indefinitely - also the default</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">This is the same as the format specified for the DURATION component of the quantity/timing field, excluding the &quot;X&quot; specification. </FONT>
+<P>
+<FONT FACE="Times New Roman">This field is defined as conditional because it is required when the ordered substance is to be adminstered continuously at a prescribed rate  (e.g., certain IVs).  For example, if the &quot;give amount/units&quot; were 300 ml and the &quot;give per&quot; time unit were H1 (equivalent to one hour), the rate is 300ml/hr.</FONT>
+<H4>4.8.7.23 Give rate amount  (ST)   00332<A NAME="I42"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the  rate at which the substance  should be administered.  </FONT>
+<H4>4.8.7.24 Give rate units  (CE)   00333</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;<A NAME="I43"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the units for Give Rate Amount.  May be composite.  The ratio of the Give Rate Amount and Give Rate Units fields define the actual rate of administration.  Thus, if Give Rate Amount = 100 and Give Rate Units = ml/hr, the requested rate of administration is 100 ml/hr. (See ISO+ <I>Figure 7-13</I> in Chapter 7 for possible compound units codes.)</FONT>
+<H4>4.8.7.25 Give strength  (NM)   01126<A NAME="I44"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Use when <I>RXE-2-</I><I>give code</I> does not specify the strength.  This is the numeric part of the strength, used in combination with <I>RXE-26-give strength unit</I>.</FONT>
+<H4>4.8.7.26 <A NAME="I45"></A>Give strength unit  (CE)   01127<A NAME="I46"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Use when <I>RXE-2-give code</I> does not specify the strength.  This is the unit of the strength, used in combination with <I>RXE-25-give strength</I>.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> These units can be a &quot;compound quantity&quot;; i.e., the units may express a quantity per unit of time.  For example, micrograms per hour (ug/h) is an acceptable value.  These compound units are contained in the ISO+ table. See Chapter 7 for full definition of ISO+ units.</TD></TR></FONT></TABLE><H4>4.8.7.27 <A NAME="I47"></A>Give indication  (CE)   01128<A NAME="I48"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant.</FONT>
+<H4>4.8.7.28 <A NAME="I49"></A><A NAME="I50"></A><A NAME="I51"></A><A NAME="I52"></A><A NAME="I53"></A>Dispense package size  (NM)   01220</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the size of package to be dispensed. Units are transmitted in <I>RXE-29</I><I>-dispense </I><I>package size unit</I><I>.</I></FONT>
+<H4><I>4.8.7.29</I><I> </I>Dispense package size unit  (CE)   01221</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the units in which <I>RXE-28-dispense package size</I> is denominated.</FONT>
+<H4>4.8.7.30 Dispense method  (ID)   01222</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the method by which treatment is dispensed.  Refer to <I>HL7 table 0321</I> - <I>Dispense method</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0321 - Dispense method</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TR</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Traditional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">UD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unit Dose</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Floor Stock</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Automatic Dispensing</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch400040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

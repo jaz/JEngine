@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>7.10.1 PEX - product experience message (events P07,P08)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700042.htm">
+<LINK REL="Previous" HREF="ch700040.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E313"></A>
+<H3><B>7.10.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>PEX - product experience message</B><B> (events P07,P08)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The primary application of this message is to transfer information related to an adverse event occurring while a patient was exposed to a product.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>PEX </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Product Experience Message</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Patient Identification    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PV2]]    Additional Patient Visit      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ PES    Product Experience Sender      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> { PEO    Product Experience Observation    7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { PCR    Potential Causal Relationship     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ RXE    Pharmacy/Treatment Encoded Order    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{RXR}]   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{RXA    Pharmacy/Treatment Administration    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [RXR]   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{PRB}]   Detail problem segment      12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{OBX}]   Observation/Result Segment     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{NTE}]   Notes and comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [NK1    Associated parties segment     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [RXE    Pharmacy/Treatment Encoded Order    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{RXR}]   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{RXA    Pharmacy/Treatment Administration    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [RXR]    Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{PRB}]    Detail Problem Segment      12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{OBX}]   Observation/Results Segment     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{CSR    Clinical study registration     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{CSP}]    Clinical study phase segment     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}}}</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The PID segment provides the patient identification information including institutional identification numbers, date of birth and in the case of patients who die, information about their death.  Patients are frequently identified only by their initials which can be represented in the PID segment, e.g. the initials JMO would appear as J^M^O in the name field of the PID segment.  The EVN segment identifies the type of transaction that is being sent -- primarily it specifies who the sender is and implies which information is expected to be included in the message.  A message sent from a healthcare provider, for example, might contain minimal information while a message from a pharmaceutical manufacturer might contain nearly complete information.</FONT>
+<P>
+<FONT FACE="Times New Roman">The PES or Product Experience Sender segment provides information about the message sender and its knowledge of the event.  The heart of the product experience message is the product experience observation  (PEO) segment and the PCR segments clustered under it.  The PEO segment identifies a clinical event and the PCR segments identify products which are potentially causally related to the event.  There may be more than one product which is potentially related to the event so multiple PCR segments can be included.  RXE and RXR segments can be repeated and provide information about the products the patient was exposed to at the time of the event (typically excluding those used to treat the event).  Details about the administration of the products identified in the PCR segments should be described with RXE and RXR segments. Repeated  PRB segments provide information about diagnoses which represent comorbid conditions.. The repeated OBX segments are used to send patient observations such as height, weight, last menstrual period, and laboratory results.  Analytical commentary can be included in the NTE segment. This commentary will typically be the sender&#146;s analysis of the event and the potentially causally related products.  Finally, the CSR and CSP segments can optionally be included if the event occurred during a formal clinical trial in order to describe the trial.</FONT>
+<P>
+<FONT FACE="Times New Roman">When a product experience relates to an exposure which occurred indirectly (transmammary or transplacentally for example), the individual experiencing the adverse effect &#151; the fetus or child &#151; would be described in the PID segment and the individual via which they are exposed in the NK1 segment.  The first set of  RXE segments would typically indicate the drugs which to which the fetus or child was exposed.  Additional codes for the route are defined in this Appendix to allow the suspected routes of exposure to be represented.  The second set of RXE/RXR segment - those clustered under the NK1 segment - would represent the route by which the mother or father were exposed to the drug. Early spontaneous abortion would normally be treated as an adverse effect on the mother rather than on the fetus, and the PID would refer to the mother.  The second set of PRB/OBX segments reflects the problems/observations associated with the individual via which they were exposed.</FONT>
+<P>
+<FONT FACE="Times New Roman">Each message contains information about a single case including one patient (PID), at least one sender (PES), one or more events (PEO) and one or more suspected products (PCR and RXE/RXA) for a minimal message. The structure of the message allows actual administration information to be sent in the RXA if known; if administration information is unavailable, or the adverse reaction cannot be related to a single administration event, the RXE segment can be used to send prescription level information. Additional information may be included based on availability and regulatory requirements.</FONT>
+<P>
+<FONT FACE="Times New Roman">The MSH segment specifies the character set (<I>MSH-18</I>) and the language (<I>MSH-19</I>) used in the PEX message.</FONT>
+<P>
+<FONT FACE="Times New Roman">The PEX message is designed to accommodate required reporting of adverse product events to the responsible regulatory agencies.  In the United States, the paper version of this report is Medwatch.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

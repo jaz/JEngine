@@ -1,0 +1,1550 @@
+<HTML>
+<HEAD>
+<TITLE>6.4.6 IN1 - insurance segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600017.htm">
+<LINK REL="Previous" HREF="ch600015.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600015.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600017.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E273"></A>
+<H3><B>6.4.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>IN1</B><A NAME="I9"></A><A NAME="I10"></A><B> </B><B>-</B><B> insurance</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The IN1 segment contains insurance policy coverage information necessary to produce properly pro-rated and patient and insurance bills. </FONT>
+<P>Figure 6-6.  IN1 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=40 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=61 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=238 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R </FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00426</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - IN1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0072</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00368</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insurance Plan ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">59</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00428</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insurance Company ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">130</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00429</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insurance Company Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00430</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insurance Company Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00431</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insurance Co. Contact Person</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00432</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insurance Co Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00433</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Group Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">130</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00434</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Group Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00435</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Group Emp ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">130</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00436</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Group Emp Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00437</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Plan Effective Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00438</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Plan Expiration Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">55</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00439</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Authorization Information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0086</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00440</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Plan Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00441</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Name Of Insured</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0063</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00442</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Relationship To Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00443</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Date Of Birth</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00444</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0135</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00445</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Assignment Of Benefits</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0173</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00446</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coordination Of Benefits</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00447</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coord Of Ben. Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00448</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Notice Of Admission Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00449</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Notice Of Admission Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00450</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report Of Eligibility Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00451</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report Of Eligibility Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0093</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00452</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Release Information Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00453</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-Admit Cert (PAC)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00454</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Verification Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00455</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Verification By</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">31</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0098</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00456</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Type Of Agreement Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0022</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00457</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Billing Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">33</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00458</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Lifetime Reserve Days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">34</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00459</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Delay Before L.R. Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">35</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0042</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00460</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Company Plan Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">36</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00461</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Policy Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">37</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP </FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00462</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Policy Deductible</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">38</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP </FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00463</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Policy Limit - Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">39</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00464</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Policy Limit - Days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00465</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Room Rate - Semi-Private</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">41</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00466</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Room Rate - Private</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">42</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0066</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00467</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Employment Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">43</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0001</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00468</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Sex</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">44</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00469</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s Employer Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">45</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00470</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Verification Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">46</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0072</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00471</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Prior Insurance Plan ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">47</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0309</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01227</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coverage Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0310</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00753</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Handicap </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">49</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01230</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insured&#146;s ID Number</TD></TR></FONT></TABLE><P>6.4.6.0 IN1 field definitions
+<H4>6.4.6.1 Set ID - IN1  (SI)   00426</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: <I>IN1-1-set ID</I> contains the  number that identifies this transaction .  For the first occurrence the sequence number shall be 1, for the second occurrence it shall be 2, etc.</FONT>
+<H4>6.4.6.2 Insurance plan ID  (CE)   00427</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a unique identifier for the insurance plan.  Refer to <I>user-defined table 0072 - </I><I>Insurance plan ID</I>.  To eliminate a plan, the plan could be sent with null values in each subsequent element.  If the respective systems can support it, a null value can be sent in the plan field. </FONT>
+<H4>6.4.6.3 Insurance company ID  (CX)   00428</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a unique identifier the insurance company. </FONT>
+<H4>6.4.6.4 Insurance company name  (XON)   00429</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the insurance company.  Multiple names for the same insurance company may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.5 Insurance company address  (XAD)   00430</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address of the insurance company.  Multiple addresses for the same insurance company may be sent in this field.  The mailing address is assumed to be in the first repetition.  When the mailing address is not sent, a repeat delimiter must be sent first for the first repetition.</FONT>
+<H4>6.4.6.6 Insurance co contact person  (XPN)   00431</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; <B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the person who should be contacted at the insurance company.  Multiple names for the same contact person may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.7 Insurance co phone number  (XTN)   00432</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the phone number of the insurance company.  Multiple phone numbers for the same insurance company may be sent in this field.  The primary phone number is assumed to be in the first repetition.  When the primary phone number is not sent, a repeat delimiter must be sent first for the first repetition. The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.8 Group number  (ST)   00433</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the group number of the insured&#146;s insurance.</FONT>
+<H4>6.4.6.9 Group name  (XON)   00434</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the group name of the insured&#146;s insurance. The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.10 Insured&#146;s group emp. ID  (CX)   00435</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field holds the group employer ID for the insured&#146;s insurance. </FONT>
+<H4>6.4.6.11 Insured's group emp name  (XON)   00436</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the employer that provides the employee&#146;s insurance.  Multiple names for the same employer may be sent in this sequence.  The legal name must be sent first.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition. The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.12 Plan effective date  (DT)   00437</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the insurance goes into effect. </FONT>
+<H4>6.4.6.13 Plan expiration date  (DT)   00438</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the last date of service that the insurance will cover or be responsible for. </FONT>
+<H4>6.4.6.14 Authorization information  (CM)   00439</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;authorization number (ST)&gt; ^ &lt;date (DT)&gt; ^ &lt;source (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.</FONT>
+<H4>6.4.6.15 Plan type  (IS)   00440</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the coding structure that identifies the various plan types, for example, Medicare, Medicaid, Blue Cross, HMO, etc.  Refer to <I>user-defined</I> <I>table 0086 - Plan ID </I>for suggested values.</FONT>
+<H4>6.4.6.16 Name of insured  (XPN)   00441</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;<B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the insured person.   The insured is the person who has an agreement with the insurance company to provide healthcare services to persons covered by the insurance policy.  Multiple names for the same insured person may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition. The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.17 Insured&#146;s relationship to patient  (IS)   00442</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the insured&#146;s relationship to the patient.  Refer to <I>user-defined</I> <I>table 0063 - </I><I>Relationship</I> for suggested values.</FONT>
+<H4>6.4.6.18 Insured's date of birth  (TS)   00443</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date of birth of the insured.</FONT>
+<H4>6.4.6.19 Insured's address  (XAD)   00444</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address of the insured person.  The insured is the person who has an agreement with the insurance company to provide healthcare services to persons covered by an insurance policy.  Multiple addresses for the same insured person may be in this field.  The mailing address must be sent in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.</FONT>
+<H4>6.4.6.20 Assignment of benefits  (IS)   00445</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the insured agreed to assign the insurance benefits to the healthcare provider.  If so, the insurance will pay the provider directly.  Refer to <I>user-defined table 0135 - Assignment </I><I>of benefits</I> for suggested values.</FONT>
+<P>User-defined Table 0135 - Assignment of benefits
+
+<TABLE >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Y</FONT>
+<P>
+<FONT FACE="Times New Roman">N</FONT>
+<P>
+<FONT FACE="Times New Roman">M</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Yes</FONT>
+<P>
+<FONT FACE="Times New Roman">No</FONT>
+<P>
+<FONT FACE="Times New Roman">Modified assignment</TD></TR></FONT></TABLE><H4>6.4.6.21 Coordination of benefits  (IS)   00446</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether this insurance works in conjunction with other insurance plans, or if it provides independent coverage and payment of benefits regardless of other insurance that might be available to the patient.  Refer to <I>user-defined table 0173 - Coordination of benefits</I> for suggested values.  </FONT>
+<P>User-defined Table 0173 - Coordination of benefits
+
+<TABLE >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=264 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CO</FONT>
+</TD><TD WIDTH=264 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Coordination</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">IN</FONT>
+</TD><TD WIDTH=264 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Independent</TD></TR></FONT></TABLE><H4>6.4.6.22 Coord of ben priority  (ST)   00447</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  If the insurance works in conjunction with other insurance plans,  this field contains priority sequence.  Values are: 1, 2, 3, etc. </FONT>
+<H4>6.4.6.23 Notice of admission flag  (ID)   00448</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the insurance company requires a written notice of admission from the healthcare provider.  Refer to <I>HL7 table 0136 - Yes/no indicator</I> for valid values.</FONT>
+<H4>6.4.6.24 Notice of admission date  (DT)   00449</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  If a notice is required, this field indicates the date that it was sent.</FONT>
+<H4>6.4.6.25 Report of eligibility flag  (ID)   00450</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether this insurance carrier sends a report that indicates that the patient is eligible for benefits and whether it identifies those benefits.  Refer to <I>HL7 table 0136 - Yes/no indicator</I> for valid values.</FONT>
+<H4>6.4.6.26 Report of eligibility date  (DT)   00451</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether a report of eligibility (ROE) was received, and also indicates the date that it was received. </FONT>
+<H4>6.4.6.27 Release information code  (IS)   00452</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the healthcare provider can release information about the patient, and what information can be released.  Refer to <I>user-defined table 0093 - Release information code </I>for suggested values.</FONT>
+<P>User-defined Table 0093 - Release information
+
+<TABLE >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Y</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Yes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">N</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">No</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=172 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">or user-defined codes</TD></TR></FONT></TABLE><H4>6.4.6.28 Pre-admit cert. (PAC)  (ST)   00453</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the pre-admission certification code.  If the admission must be certified before the admission, this is the code associated with the admission. </FONT>
+<H4>6.4.6.29 Verification date/time  (TS)   00454</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time that the healthcare provider verified that the patient has the indicated benefits. </FONT>
+<H4>6.4.6.30 Verification by  (XCN)   00455</H4>
+<P>
+<FONT FACE="Courier New">Components:   &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Refers to the person who verified the benefits.  Multiple names for the same insured person may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.6.31 Type of agreement code  (IS)   00456</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to further identify an insurance plan.  Refer to <I>user-defined table 0098 - Type of </I><I>agreement </I>for suggested values. Refer to <I>user-defined table 0098 - Type of agreement</I> for suggested values.</FONT>
+<P>User-defined Table 0098 - Type of agreement
+
+<TABLE >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Value</B></FONT>
+</TD><TD WIDTH=144 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=144 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Standard</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">U</FONT>
+</TD><TD WIDTH=144 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Unified</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M</FONT>
+</TD><TD WIDTH=144 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Maternity</TD></TR></FONT></TABLE><H4>6.4.6.32 Billing status  (IS)   00457</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the particular insurance has been billed and, if so, the type of bill.  Refer to <I>user-defined table 0022 - Billing status</I> for suggested values.</FONT>
+<H4>6.4.6.33 Lifetime reserve days  (NM)   00458</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of days left for a certain service to be provided or covered under an insurance policy.</FONT>
+<H4>6.4.6.34 Delay before L.R. day    (NM)   00459</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the delay before lifetime reserve days.</FONT>
+<H4>6.4.6.35 Company plan code  (IS)   00460</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains optional information to further define the data in <I>IN1-3-insurance company ID</I>.   Refer to <I>user-defined table 0042 - Company plan code</I>.  This table contains codes used to identify an insurance plan uniquely. </FONT>
+<H4>6.4.6.36 Policy number  (ST)   00461</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the individual policy number of the insured to uniquely identify this patient&#146;s plan.  For special types of insurance numbers, there are also special fields in the IN2 segment for Medicaid, Medicare, Champus (i.e., <I>IN2-8-Medicaid case number</I>, <I>IN2-6-Medicare health ins card number</I>, <I>IN2-10-Champus ID number</I>).  But we recommend that this field (<I>IN1-36-policy number</I>) be filled even when the patient&#146;s insurance number is also passed in one of these other fields. </FONT>
+<H4>6.4.6.37 Policy deductible  (CP)   00462</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount specified by the insurance plan that is the responsibility of the guarantor. </FONT>
+<H4>6.4.6.38 Policy limit - amount  (CP)   00463</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This field has been retained for backward compatibility only.  Use IN2-policy type/amount </I><I>instead of this field.</I>  This field contains the maximum amount that the insurance policy will pay.  In some cases, the limit may be for a single encounter. </FONT>
+<H4>6.4.6.39 Policy limit - days  (NM)   00464</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the maximum number of days that the insurance policy will cover. </FONT>
+<H4>6.4.6.40 Room rate - semi-private  (CP)   00465</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This </I><I>field</I><I> </I><I>has been</I><I> retained for backward compatibility only.</I><I> </I> Use <I>IN2-28-room coverage </I><I>type/amount</I> instead of this field. When used for backward compatibility, <I>IN2-40-room rate--semi-primate</I> contains the average room rate that the policy covers.</FONT>
+<H4>6.4.6.41 Room rate - private  (CP)   00466</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This </I><I>field</I><I> </I><I>has been</I><I> retained for backward compatibility only.</I>  Use <I>IN2-28-room coverage </I><I>type/amount</I> instead of this field.  When used for backward compatibility <I>IN2-29-room rate--private</I> contains the maximum private room rate that the policy covers.</FONT>
+<H4>6.4.6.42 Insured&#146;s employment status  (CE)   00467</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Refer to <I>user-defined table 0066 - Employment status</I> for suggested values. </FONT>
+<H4>6.4.6.43 Insured&#146;s sex  (IS)   00468</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the gender of the insured.  Refer to <I>user-defined table 0001 - Sex</I> for valid values.</FONT>
+<H4>6.4.6.44 Insured's employer&#146;s address  (XAD)   00469</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address of the insured employee&#146;s employer.  Multiple addresses for the same employer may be sent in this field.  The mailing address must be sent first.  When the mailing address is not sent, a repeat delimiter must be sent first for the first repetition.</FONT>
+<H4>6.4.6.45 Verification status  (ST)   00470</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the status of this patient&#146;s relationship with this insurance carrier.  </FONT>
+<H4>6.4.6.46 Prior insurance plan ID  (IS)   00471</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field uniquely identifies the prior insurance plan when the plan ID changes.  Refer to <I>user-defined</I> <I>table 0072 - Insurance plan ID</I> for suggested values.</FONT>
+<H4>6.4.6.47 Coverage type (IS)   01227</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the coding structure that identifies the type of insurance coverage, or what type of services are covered for the purposes of a billing system.  For example, a physician billing system will  only want to receive insurance information for plans which cover physician/professional charges.  Refer to <I>user-defined table 0309 - Coverage type</I> for suggested values.</FONT>
+<P>User-defined Table 0309 - Coverage type
+
+<CENTER><TABLE >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Value</B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">H</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Hospital/Institutional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Physician/Professional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Both Hospital and Physician</TD></TR></FONT></TABLE></CENTER><H4>6.4.6.48 Handicap code   (IS)   00753</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code to describe the insured&#146;s disability.  Refer to <I>user-defined table 0310 - </I><I>Handicap</I> for suggested values.</FONT>
+<H4>6.4.6.49 Insured&#146;s ID number (CX)   01230</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This data element contains a healthcare institution&#146;s identifiers for the insured.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600015.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600017.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

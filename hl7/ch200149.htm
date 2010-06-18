@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>2.25.2 Error return</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200150.htm">
+<LINK REL="Previous" HREF="ch200148.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200148.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200150.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E133"></A>
+<H3><B>2.25.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>Error return</B><A NAME="I15"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The AR code in MSA indicates that the application rejected the message for functional reasons.  The optional ERR segment includes here that the 16th field of the PID segment with the SET ID value of 1 had an error which was defined by the locally-established code X3L.  The optional text message UNKNOWN COUNTY CODE in the link is designed to help programmers and support personnel while reviewing message logs.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LAB|767543|ADT|767543|199003141304-0500||ACK^|XX3657|P|2.1&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AR|ZZ9380|UNKNOWN COUNTY CODE&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ERR|PID^1^16^X3L&lt;CR&gt;</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200148.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200150.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

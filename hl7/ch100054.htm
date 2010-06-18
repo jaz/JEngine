@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>10.4.1 Original mode queries - display oriented</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100055.htm">
+<LINK REL="Previous" HREF="ch100053.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100053.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100055.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E460"></A>
+<H3><B>10.4.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>Original mode queries - display oriented</B><A NAME="I4"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Original mode display-oriented queries are defined in Chapter 2, Sections 2.17, &quot;Original Mode Queries,&quot; and 2.18, &quot;Original Mode Deferred Access.&quot;  Querying applications use the QRY message to initiate a query.  Specifying a trigger event of Q01 (query sent  for immediate response) in the query transaction yields a request for an immediate response, whereas the use of trigger event Q02 (query send for deferred response) requests a deferred response.  In the immediate mode, the responding application initiates a message using the DSR message type.  In the deferred response mode, the responding application first acknowledges the query with a general acknowledgment, and then later fulfills the query request with a DSR message, using trigger event Q03 (deferred response to a query).  Refer to Chapter 2, Section 2.16, &quot;Query Trigger Events and Message Definitions,&quot; for a full discussion of query messages, types, definitions, triggers, and variants.</FONT>
+<P>
+<FONT FACE="Times New Roman">As indicated in Item (a) under Section
+2.16.1 in Chapter 2, the allowable values for the filters in the QRD
+and QRF segments are determined among the coordinating applications
+during implementation.  In general, applications responding to query
+transactions should define the valid filter codes for the queries they
+are able to support.  Applications initiating query transactions
+should coordinate with these values at the time of implementation.
+Section <A HREF="ch100056.htm#I4">10.4.3</A>, below, suggests a representative set of values that might be used in querying applications for schedule information.</FONT>
+<P>
+<FONT FACE="Times New Roman">Likewise, information contained in the DSP segment(s) is formatted according to the standards and requirements laid out at the time of implementation.  Data contained in these lines of displayable information should be understood to have lost their semantic value, and should be treated only as text.</FONT>
+<P>
+<FONT FACE="Times New Roman">If both the querying and responding applications support the QAK segment introduced in Version 2.3, then the Enhanced Display Response message (message type EDR) may be used to respond to the QRY message.  </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100053.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100055.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,854 @@
+<HTML>
+<HEAD>
+<TITLE>2.8 DATA TYPES</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200021.htm">
+<LINK REL="Previous" HREF="ch200019.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E17"></A>
+<P>
+<FONT SIZE="+2"><B>2.8</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><A NAME="I21"></A><A NAME="I22"></A><A NAME="I23"></A><A NAME="I24"></A><A NAME="I25"></A><A NAME="I26"></A><A NAME="I27"></A><B>DATA TYPES</B></FONT>
+<P>
+<FONT FACE="Times New Roman">The data types in this section are listed in alphabetical order.<A NAME="I28"></A></FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  For data types which contain multiple components or subcomponents, the examples given in this section do not specify the optionality of the component or subcomponents.  This must be specified in the field definitions that follow  the formal segment attribute tables to a maximum length of 64K.  </TD></TR></FONT></TABLE><P>Except for the TS data type and the maximum or minimum lengths for several other data types (CE, PN, TX, FT), the field length of HL7 attributes are specified in the segment attribute tables, and any specific length of the components or subcomponents of those attributes must be specified in the field definitions that follow the formal segment attribute tables.  In general, HL7 does not specify the lengths of components and/or subcomponents.
+<P>The data type examples in this Standard are given using the standard HL7 encoding rules, with the delimiter values from figure 2-1 of Section <A HREF="ch200019.htm#I14">2.7</A> &quot;<A HREF="ch200019.htm#I22">MESSAGE DELIMITERS</A>.&quot;  Although only one set of encoding rules is defined as a standard in HL7 Version 2.3, other encoding rules are possible (but since they are non-standard, they may only be used by a site-specific agreement).
+<P>In certain data type definitions, square brackets,  &quot;[&quot; and &quot;]&quot;,  are used to specify optional parts of a data type (or of a  data type component or subcomponent).
+<P ALIGN=indent>Figure 2-2.  HL7 data types</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Data Type Category/ Data type</FONT>
+</TD><TD WIDTH=108 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Data Type Name</FONT>
+</TD><TD WIDTH=107 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">HL7 Section Reference</FONT>
+</TD><TD WIDTH=240 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Notes/Format</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Alphanumeric</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">String</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200058.htm#I4">2.8.38</A> </FONT>
+</TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Text data</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200063.htm#I4">2.8.43</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Formatted text</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200037.htm#I4">2.8.17</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Numerical</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>CQ
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite quantity with units</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200029.htm#I4">2.8.9</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;quantity (NM)&gt; ^ &lt;units (CE)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MO</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Money</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200043.htm#I7">2.8.23</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;quantity (NM)&gt; ^ &lt;denomination (ID)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>NM
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Numeric</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200045.htm#I4">2.8.25</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>SI
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sequence ID</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200056.htm#I4">2.8.36</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Structured numeric</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200057.htm#I4">2.8.37</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;comparator&gt; ^ &lt;num1 (NM)&gt; ^ &lt;separator/suffix&gt; ^ &lt;num2 (NM)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Identifier</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded values for HL7 tables</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200039.htm#I4">2.8.19</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded value for user-defined tables</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200040.htm#I4">2.8.20</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HD</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Hierarchic designator</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200038.htm#I4">2.8.18</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;namespace ID (IS)&gt; ^ &lt;universal ID  (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT SIZE="-1">Used only as part of EI and other data types.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entity identifier</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200035.htm#I2">2.8.15</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;entity identifier (ST)&gt; ^  &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RP</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reference pointer</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200054.htm#I4">2.8.34</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;pointer (ST) &gt; ^ &lt; application ID (HD)&gt; ^ &lt;type of data (ID)&gt; <I>^  &lt;subtype (ID)&gt;</I></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Person location</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200046.htm#I4">2.8.26</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;point of care  (IS )&gt; ^ &lt;room (IS )&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt; location status  (IS )&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS )&gt; ^ &lt;floor (IS )&gt; ^ &lt;location description (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PT</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Processing type</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200049.htm#I2">2.8.29</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;processing ID (ID)&gt; ^ &lt;processing mode (ID)&gt; </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Date/Time</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200033.htm#I4">2.8.13</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">YYYY[MM[DD]]</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TM</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200059.htm#I4">2.8.39</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">HH[MM[SS[.S[S[S[S]]]]]][+/-ZZZZ]</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time stamp</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200062.htm#I4">2.8.42</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">YYYY[MM[DD[HHMM[SS[.S[S[S[S]]]]]]]][+/-ZZZZ] ^ &lt;degree of precision&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Code Values</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded element</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200023.htm#I4">2.8.3</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CF</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded element with formatted values </FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200024.htm#I4">2.8.4</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;identifier (ID)&gt; ^ &lt;formatted text (FT)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ID)&gt; ^ &lt;alternate formatted text (FT)&gt; ^ &lt;name of alternate coding system (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CK</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite ID with check digit</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200025.htm#I4">2.8.5</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;ID number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority  (HD)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite ID number and name</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200027.htm#I4">2.8.7</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended composite ID with check digit</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200030.htm#I4">2.8.10</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority (HD)  )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt; assigning facility (HD)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended composite ID number and name</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200066.htm#I4">2.8.46</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">In Version 2.3, use instead of the CN data type.  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code (ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Generic</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200026.htm#I4">2.8.6</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">No new CM&#146;s are allowed after HL7 Version 2.2. Hence there are no new CM&#146;s in Version 2.3.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Demographics</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AD</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Address</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200021.htm#I4">2.8.1</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;street address (ST)&gt; ^ &lt; other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code (ST)&gt; ^ &lt;country (ID)&gt; ^ &lt;address type (ID)&gt; ^ &lt;other geographic designation (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Person name</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200048.htm#I4">2.8.28</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Telephone number</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200060.htm#I4">2.8.40</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">[NN] [(999)]999-9999[X99999][B99999][C any text]</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended address</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200065.htm#I4">2.8.45</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">In Version 2.3, replaces the AD data type.  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code (ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended person name</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200068.htm#I4">2.8.48</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">In Version 2.3, replaces the PN data type.  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended composite name and ID number for organizations</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200067.htm#I4">2.8.47</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;organization name (ST)&gt;^ &lt;organization name type code (IS)&gt; ^ &lt;ID number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority  (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt; </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended telecommunications number</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200069.htm#I4">2.8.49</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">In Version 2.3, replaces the TN data type.  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Specialty/Chapter Specific</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=top >
+<P>
+<FONT SIZE="-1">Waveform </FONT>
+</TD><TD WIDTH=108 VALIGN=top ><BR></TD>
+<TD WIDTH=107 VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CD</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Channel definition</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200022.htm#I4">2.8.2</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">For waveform data only, see Chapter 7, Section 7.15.3.  &lt;channel identifier (*)&gt; ^ &lt;channel number (NM)&gt; &amp; &lt;channel name (ST)&gt;&gt; ^ &lt;electrode names (*) &gt; ^ &lt;channel sensitivity/units (*) &gt; ^ &lt;calibration parameters (*)&gt; ^ &lt;sampling frequency (NM)&gt; ^ &lt;minimum/maximum data values (*)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MA</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Multiplexed array</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200042.htm#I4">2.8.22</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">For waveform data only, see Chapter 7, Section 7.15.2.  &lt;sample 1 from channel 1 (NM)&gt; ^  &lt;sample 1 from channel 2 (NM)&gt; ^ &lt;sample 1 from channel 3 (NM)&gt; ...~&lt;sample 2 from channel 1 (NM)&gt; ^  &lt;sample 2 from channel 2 (NM)&gt; ^ &lt;sample 2 from channel 3 (NM)&gt; ...~</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Numeric array</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200044.htm#I4">2.8.24</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">For waveform data only, see Chapter 7, Section 7.15.1.  &lt;value1 (NM)&gt; ^  &lt;value2 (NM)&gt; ^  &lt;value3 (NM)&gt; ^  &lt;value4 (NM)&gt; ^ ...</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ED</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Encapsulated data</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200034.htm#I3">2.8.14</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Supports ASCII MIME-encoding of binary data.  &lt;source application (HD) &gt; ^ &lt;main type of data (ID)&gt; ^ &lt;data subtype (ID)&gt; ^ &lt;encoding (ID)&gt; ^ &lt;data (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top >
+<P>
+<FONT SIZE="-1">Price data</FONT>
+</TD><TD WIDTH=108 VALIGN=top ><BR></TD>
+<TD WIDTH=107 VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite price</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200028.htm#I4">2.8.8</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">In Version 2.3, replaces the MO data type.  &lt;price (MO)&gt; ^  &lt;price type (ID)&gt; ^  &lt;from value (NM)&gt; ^  &lt;to value (NM)&gt; ^  &lt;range units (CE)&gt; ^  &lt;range type (ID)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top >
+<P>
+<FONT SIZE="-1">ADT/Finance</FONT>
+</TD><TD WIDTH=108 VALIGN=top ><BR></TD>
+<TD WIDTH=107 VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FC</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Financial class</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200036.htm#I2">2.8.16</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;financial class (ID)&gt; ^ &lt;effective date (TS)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Extended Queries </FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">QSC</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query selection criteria</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200051.htm#I2">2.8.31</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;name of field (ST)&gt; ^ &lt;relational operator (ID)&gt; ^ &lt;value (ST)&gt; ^ &lt;relational conjunction (ID)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">QIP</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query input parameter list:</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200050.htm#I2">2.8.30</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;field name (ST) &gt; ^ &lt;value1 (ST) &amp; value2 (ST) &amp; value3 (ST) ...&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RCD</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Row column definition:</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200052.htm#I2">2.8.32</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;HL7 item number (ST)&gt; ^ &lt;HL7 data type (ST)&gt; ^ &lt;maximum column width (NM)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top ><BR></TD>
+<TD WIDTH=108 VALIGN=top ><BR></TD>
+<TD WIDTH=107 VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Master Files</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DLN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Driver's license number</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200031.htm#I2">2.8.11</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;license number (ST)&gt; ^ &lt;issuing state, province, country (IS)&gt; ^ &lt;expiration date (DT)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">JCC </FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job code/class</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200041.htm#I2">2.8.21</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;job code (IS)&gt; ^ &lt;job class (IS)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">VH</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Visiting hours</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200064.htm#I2">2.8.44</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;start day range (ID)&gt; ^ &lt;end day range (ID)&gt; ^ &lt;start hour range (TM)&gt; ^ &lt;end hour range (TM)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Medical Records/Information Management</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PPN</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Performing person time stamp:</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200047.htm#I2">2.8.27</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt; ^ &lt; date/time action performed (TS)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">Time Series:</FONT>
+</TD><TD WIDTH=108 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=107 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DR</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/time range<A NAME="I29"></A></FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200032.htm#I2">2.8.12</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scheduling Chapter Only:</FONT>
+<P>
+<FONT SIZE="-1">&lt;range start date/time (TS)&gt; ^ &lt;range end date/time (TS)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RI</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Repeat interval<A NAME="I30"></A></FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200053.htm#I2">2.8.33</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scheduling Chapter Only:</FONT>
+<P>
+<FONT SIZE="-1">&lt;repeat pattern (IS)&gt; ^ &lt;explicit time interval (ST)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SCV </FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scheduling class value pair<A NAME="I31"></A></FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200055.htm#I3">2.8.35</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scheduling Chapter Only:</FONT>
+<P>
+<FONT SIZE="-1">&lt;parameter class (IS)&gt; ^ &lt;parameter value (IS)&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TQ</FONT>
+</TD><TD WIDTH=108 VALIGN=top >
+<P>
+<FONT SIZE="-1">Timing/quantity</FONT>
+</TD><TD WIDTH=107 VALIGN=top >
+<P>
+<FONT SIZE="-1"><A HREF="ch200061.htm#I4">2.8.41</A></FONT>
+<BR></TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">For timing/quantity specifications for orders, see Chapter 4, Section 4.4.  &lt;quantity (CQ)&gt; ^ &lt;interval (*)&gt; ^ &lt;duration (*)&gt; ^ &lt;start date/time (TS)&gt; ^ &lt;end date/time (TS)&gt; ^ &lt;priority (ID)&gt; ^ &lt;condition (ST)&gt; ^ &lt;text (TX)&gt; ^ &lt;conjunction (ID)&gt; ^ &lt;order sequencing (*)&gt;</TD></TR></FONT></TABLE><P>*  for subcomponents of these elements please refer to the definition in the text.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

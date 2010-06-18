@@ -1,0 +1,186 @@
+<HTML>
+<HEAD>
+<TITLE>7.4.4 Example of narrative report messages</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700017.htm">
+<LINK REL="Previous" HREF="ch700015.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700015.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700017.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E294"></A>
+<H3>7.4.4 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><B>Example of narrative report messages</B></H3>
+<P>
+<FONT FACE="Times New Roman">This example of the body of reports shows the following observation from what are usually free text reports.  The text within these examples that begins with **-- and ends with --** are explanatory comments, not a formal part of the message.  The following outline shows the segments that are included in this example message.</FONT>
+<P>
+<FONT FACE="Times New Roman">a) patient identifying record (PID)</FONT>
+<P>
+<FONT FACE="Times New Roman">b) EKG order record (OBR)</FONT>
+<P>
+<FONT FACE="Times New Roman">c) EKG coded result record (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">d) EKG result records (OBX):</FONT>
+<P>
+<FONT FACE="Times New Roman">1) ventricular rate</FONT>
+<P>
+<FONT FACE="Times New Roman">2) atrial rate</FONT>
+<P>
+<FONT FACE="Times New Roman">3) QRS width</FONT>
+<P>
+<FONT FACE="Times New Roman">4) PR interval</FONT>
+<P>
+<FONT FACE="Times New Roman">e) order record for chest x-ray (OBR)</FONT>
+<P>
+<FONT FACE="Times New Roman">f) two diagnostic impressions for CXR (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">g) description record for CXR (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">h) a recommendation record for CXR (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">i) an order record for surgical pathology (OBR)</FONT>
+<P>
+<FONT FACE="Times New Roman">j) a gross description record for pathology showing use of anatomy fields (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">k) a microscopic description record for pathology (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">l) vital signs request (OBR)</FONT>
+<P>
+<FONT FACE="Times New Roman">m) six vital signs (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">n) part of the physical history (OBR &amp; OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">o) end record</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Order record for EKG--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|1|P8753^OE|EK5230^EKG|93000^EKG|R|198703281530|198703290800|||401</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>0^INTERN^JOE^^^^MD^L|N &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Two interpretation records for EKG--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--[In this case, the result observation ID assumes the observation code in the order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>record.]--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|&amp;IMP|1|^Sinus bradycardia|||A|||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|CE|&amp;IMP|2|^Occasional PVCs|||A|||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Four numeric results for EKG--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--[The AS4 code is an extension of the CPT4 code (93000) for EKG plus extension .1,</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>.2, etc., as detailed in the Implementation Guide.]--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|ST|8897-1^QRS COMPLEX:NRAT:PT:CARDIAC VENTRICLES:QN:EKG^LN| </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   |80|/min|60-100||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|ST|8894-8^P WAVE:NRAT:PT:CARDIAC ATRIA:QN:^LN||80|/min</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   |60-100||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|ST|8633-0^QRS DURATION:TIM:PT:HEART:QN:EKG^LN||.08|msec</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   |.06-.10||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|ST|8625-6^P-R INTERVAL:TIM:OT:HEART:QN:EKG^LN||.22|msec</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   |.18-.22||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Order record for CXR--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|2|P8754^OE|XR1501^XR|71020^Chest Xray AP &amp; Lateral|R|198703281530|198703290800|||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   401-0^INTERN^JOE^^^^MD^L|N &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Two CXR diagnostic impressions--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|71020&amp;IMP^Radiologist's</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>Impression|1|.61^RUL^ACR~.212^Bronchopneumonia^ACR|||A|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|CE|71020&amp;IMP|2|51.71^Congestive heart failure^ACR|||A|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--CXR Description with continuation records--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|TX|71020&amp;GDT||Infiltrate probably representing bronchopneumonia in the right</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>lower lobe.  Also pulmonary venous congestion cardiomegaly and cephalization, indicating early congestive heart failure.&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Recommendations about CXR report to follow up one month with a repeat CXR--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|CE|71020&amp;REC||71020^Followup CXR 1 month^AS4||||||F&lt;CR&gt; </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Order record for pathology report--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|3|P8755^OE|SP89-739^SP|88304^Surgical Path</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>Report|R|198703281530|198703290800|||401-0^INTERN^JOE^^^^MD^L|N&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|&amp;ANT|1|Y0480-912001^orbital region^SNM||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Gross description record (with overflow) for pathology--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|TX|&amp;GDT^GrossSpecimenDescription|1|The specimen is received in four containers.  The first is labeled with the patient's name and consists of three fragments of reddish-brown tissue each of which measures 2 mm in greatest dimension.  They are wrapped in tissue paper and submitted in toto in a single cassette| &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Microscopic description record for pathology--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|TX|&amp;MDT^MicroscopicDescription|1|A|Sections of the first specimen received for frozen section diagnosis reveal thick walled, ramifying vessels lined by a single layer of flattened endothelial cells.  The thick smooth muscle walls exhibit no malignant cytologic features nor do the endothelial lining cells.  Within the same specimen are also found fragments of fibrous connective tissue, bone, and nerve which are histologically unremarkable||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Vital signs--**</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|4|P8756^OE|N2345^NR|3000.02^VITAL SIGNS|R|198703281530|198703290800|||401-0^INTERN^JOE^^^^MD^L|N&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|ST|8462-4^INTRAVASCULAR DIASTOLIC:PRES:^LN||90|mm(hg)|60-90||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|ST|8479-8^INTRAVASCULAR SYSTOLIC:PRES:^LN||120|mm(hg)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   |100-160||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|ST|8478-0^INTRAVASCULAR MEAN:PRES:^LN||100|mm(hg)|80-120|N|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|ST|8867-4^HEART BEAT:NRAT:^LN||74|/min|60-100|N|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|ST|8357-6^BLOOD PRESSURE METHOD:^LN||MANUAL BY CUFF||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|ST|8886-4^HEART RATE METHOD:^LN||MANUAL BY PALP||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>**--Part of the patient's history--** </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|5|P8568^OE|HX2230^CLN||2000^HISTORY|R|198703281530|198703290800|401</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>0^INTERN^JOE^^^^MD^L|N&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|8661-1^CHIEF COMPLAINT:^LN|| ... &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|ST|8674-4^HISTORY SOURCE:^LN||PATIENT||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|TX|8684-3^PRESENT ILLNESS:^LN||SUDDEN ONSET OF CHEST PAIN. 2 DAYS,</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   PTA ASSOCIATED WITH NAUSEA, VOMITING &amp; SOB.  NO RELIEF WITH ANTACIDS </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   OR NTG. NO OTHER SX. NOT PREVIOUSLY ILL.||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> .</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> .</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>and so on.</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700015.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700017.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

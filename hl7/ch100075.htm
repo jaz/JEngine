@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>10.8.1 Logical relationship of resource and service segments</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch11.htm">
+<LINK REL="Previous" HREF="ch100074.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100074.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch11.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E477"></A>
+<H3><B>10.8.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Logical relationship of resource and service segments</B><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">An implementor of a ballot draft specification of this chapter realized the need to logically AND and OR multiple resources for a single appointment.  For example, they wished to specify the following condition:</FONT>
+<P>
+<FONT FACE="Times New Roman">((Resource-1 and Resource-2) or (Resource-3 and (Resource-4 or Resource-5)))</FONT>
+<P>
+<FONT FACE="Times New Roman">The current message structure for any kind of transaction does not address the need for any of the service or resource detail segments (AIS, AIG, AIL, or AIP).</FONT>
+<P>
+<FONT FACE="Times New Roman">They have proposed an extension to the Standard that would allow Lisp-like logical syntax within messages such as the Schedule Request message.  This syntax makes use of a BEGIN and an END segment to logically group segments, and an AND and an OR segment to logically connect segments.  To achieve a request as in the example above, the implementation of these logical grouping and connecting segments would read as follows:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>BEGIN|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>BEGIN|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AIG|Resource-1...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AIG|Resource-2...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AND|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>END|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>BEGIN|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AIG|Resource-3...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>BEGIN|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AIG|Resource-4...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AIG|Resource-5...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OR|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>END|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AND|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>END|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OR|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>END|&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">This would translate to:</FONT>
+<P>
+<FONT FACE="Times New Roman">((Resource-1 Resource-2 AND)  (Resource-3 (Resource-4 Resource-5 OR) AND) OR)</FONT>
+<P>
+<FONT FACE="Times New Roman">This is the RPN or Lisp-like logical notation for the example in the first paragraph.  This syntax could encompass and support groupings of several different resource and service types.</FONT>
+<P>
+<FONT FACE="Times New Roman">This proposal was presented to the Control/Query Technical Committee.  Their initial response was that this proposal is outside of the scope of Control/Query for the current Standard 2.3 ballot and response cycle.  If necessary, this proposal will be resubmitted to the Control/Query Technical Committee by the implementing organization for future versions of the Standard.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100074.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch11.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

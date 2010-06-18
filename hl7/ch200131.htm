@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.8 DSC - Continuation pointer segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200132.htm">
+<LINK REL="Previous" HREF="ch200130.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200130.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200132.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E116"></A>
+<H3><B>2.24.8</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>DSC - Continuation pointer segment</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The DSC segment is used in the continuation protocol. </FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Figure 2-15.  DSC attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=2 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=238 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">180</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00014</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Continuation Pointer</TD></TR></FONT></TABLE></CENTER><P>2.24.8.0   DSC field definition
+<H4>2.24.8.1 Continuation pointer (ST)   00014</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the continuation pointer.  See the description of Continuation Fields in Section <A HREF="ch200097.htm#I17">2.15.4</A>, &quot;<A HREF="ch200097.htm#I20">Interactive continuation or cancellation of response messages: original mode (display and record oriented) and enhanced mode (display, tabular, and event replay)</A>.&quot;  In an initial query, this field is not present.  If the responder returns a value of null or not present, then there is no more data to fulfill any future continuation requests.  For use with continuations of unsolicited messages, see Sections <A HREF="ch200091.htm#I16">2.14.2</A>, &quot;<A HREF="ch200091.htm#I18">UDM/ACK - unsolicited display update message (event Q05)</A>,&quot; and <A HREF="ch200120.htm#I18">2.23.2</A> &quot;Continuation messages and segments.&quot;  Note that continuation protocols work with both display and record-oriented messages.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200130.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200132.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

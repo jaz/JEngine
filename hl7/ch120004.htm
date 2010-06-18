@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<TITLE>12.1.3 Trigger events</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch120005.htm">
+<LINK REL="Previous" HREF="ch120003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch120003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E511"></A>
+<H3><B>12.1.3</B><B> </B><B>Trigger events</B></H3>
+<P>
+<FONT FACE="Times New Roman">The trigger events originate goal, problem and pathway messages.  Each trigger event is documented below, along with the appropriate form of the message exchange.  These are message level event triggers, which are augumented by the action code fields contained in the pathway, problem and goal segments described below.  Action codes are required fields in patient care message segments (see Chapter 2 for further information regarding implementation issues).  Implementors need to apply the appropriate logic as part of their message construction (for example, logic would state that an &quot;add&quot; trigger event should not include segments with a &quot;delete&quot; action code).</FONT>
+<P>
+<FONT FACE="Times New Roman">In order to accommodate these high level events, the following patient care events are included <I>in HL7 table </I><I>0003 - Event type</I>.  The added events are instantiated in <I>MSH-9-message type</I> and are used by the pathway, problem, and goal messages.  <I>MSH-9-message type</I> contains the message type and trigger event for the message.</FONT>
+<P>
+<FONT FACE="Times New Roman">Patient Care Trigger Events:</FONT>
+<P ALIGN=indent><A NAME="I2"></A><A NAME="I3"></A>Table 0003 - Event type (patient care events only)</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=477 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC1</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPR - PC/ Problem Add</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC2</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPR - PC/ Problem Update</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC3</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPR - PC/ Problem Delete </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC4</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">QRY - PC/ Problem Query</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC5</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PRR - PC/ Problem Response</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC6</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PGL - PC/ Goal Add</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC7</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PGL - PC/ Goal Update</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC8</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PGL - PC/ Goal Delete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC9</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">QRY - PC/ Goal Query</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCA</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPV - PC/ Goal Response</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCB</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPP - PC/ Pathway (Problem-Oriented) Add</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCC</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPP - PC/ Pathway (Problem-Oriented) Update</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCD</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPP - PC/ Pathway (Problem-Oriented) Delete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCE</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">QRY - PC/ Pathway (Problem-Oriented) Query</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCF</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PTR - PC/ Pathway (Problem-Oriented) Query Response</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCG</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPG - PC/ Pathway (Goal-Oriented) Add</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCH</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPG - PC/ Pathway (Goal-Oriented) Update </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCJ</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPG - PC/ Pathway (Goal-Oriented) Delete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCK</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">QRY - PC/ Pathway (Goal-Oriented) Query</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=98 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCL</FONT>
+</TD><TD WIDTH=477 VALIGN=top >
+<P>
+<FONT SIZE="-1">PPT - PC/ Pathway (Goal-Oriented) Query Response</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch120003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

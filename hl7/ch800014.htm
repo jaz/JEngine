@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>8.5.3 Enhanced mode application-level acknowledgment to the MFN </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800015.htm">
+<LINK REL="Previous" HREF="ch800013.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E346"></A>
+<H3><B>8.5.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>Enhanced mode application-level acknowledgment to the MFN message</B></H3>
+<H4>8.5.3.1 Initial message with accept acknowledgment</H4>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|HL7REG|UH|HL7LAB|CH|19910918060544||MFN^M01|MSGID002|P|2.2||AL|AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|0006^RELIGION^HL7|UPD|||AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MAD|199109051000|199110010000|U^Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ZL7|U^Buddhist^HL7|3^^Sortkey</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MAD|199109051015|199110010000|Z^Zen Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ZL7|Z^Zen Buddhist^HL7|12^^Sortkey</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|HL7LAB|CH|HL7ADT|UH|19910918060545||MSA|MSGID99002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|CA|MSGID002</FONT></PRE>
+<H4>8.5.3.2 Enhanced mode application acknowledgment message</H4>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|HL7LAB|CH|HL7ADT|UH|19911001080504||MFK|MSGID99502|P|2.2||AL|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSGID002</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|0006^RELIGION^HL7|UPD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MAD|199109051000|19910918010040|S|U^Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MAD|199109051015|19910918010040|S|Z^Zen Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|HL7ADT|UH|HL7LAB|CH|19911001080507||ACK|MSGID444|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|CA|MSGID5002</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

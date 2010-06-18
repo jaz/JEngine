@@ -1,0 +1,274 @@
+<HTML>
+<HEAD>
+<TITLE>3.3.6 AL1 - patient allergy information segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300061.htm">
+<LINK REL="Previous" HREF="ch300059.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300059.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300061.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E193"></A>
+<H3><B>3.3.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>AL1 - patient allergy information segment</B><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The AL1 segment contains patient allergy information of various types.  Most of this information will be derived from user-defined tables.  Each AL1 segment describes a single patient allergy.</FONT>
+<P>Figure 3-6.  AL1 attributes<A NAME="I10"></A>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=234 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00203</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - AL1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0127</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00204</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Allergy Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00205</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Allergy Code/Mnemonic/Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0128</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00206</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Allergy Severity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00207</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Allergy Reaction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00208</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Identification Date</TD></TR></FONT></TABLE></CENTER><P>3.3.6.0   AL1 field definitions<A NAME="I11"></A>
+<H4>3.3.6.1 Set ID - AL1<A NAME="I12"></A>  (SI)   00203</H4>
+<P>
+<FONT FACE="Times New Roman"><I>AL1-1-set ID-allergy</I> contains the number that identifies this transaction.  For the first occurrence of the segment, the sequence number shall be 1, for the second occurrence it shall be 2, etc.</FONT>
+<H4>3.3.6.2 Allergy type<A NAME="I13"></A>  (IS)   00204</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates a general allergy category (drug, food, pollen, etc.).  Refer <I>to user-defined </I><I>table 0127 - Allergy type</I> for suggested values.</FONT>
+<P>User-defined Table 0127 - Allergy type<A NAME="I14"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P><B>Value</B>
+</TD><TD WIDTH=384 VALIGN=top >
+<P><B>Description</B></TD>
+</TR>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DA</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Drug Allergy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FA</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Food Allergy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MA</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Miscellaneous Allergy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MC</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Miscellaneous Contraindication</TD></TR></FONT></TABLE><H4>3.3.6.3 Allergy code/mnemonic/description<A NAME="I15"></A>  (CE)   00205</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field uniquely identifies a particular allergy.  This element may conform to some external, standard coding system (that must be identified), or it may conform to local, largely textual or mnemonic descriptions.</FONT>
+<H4>3.3.6.4 Allergy severity<A NAME="I16"></A>  (IS)   00206</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the general severity of the allergy (severe, moderate, mild, etc.).  Refer to <I>user-defined table 0128 - Allergy severity</I> for suggested values.</FONT>
+<P>User-defined Table 0128 - Allergy severity<A NAME="I17"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SV</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Severe</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MO</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Moderate</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MI</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Mild</TD></TR></FONT></TABLE><H4>3.3.6.5 Allergy reaction<A NAME="I18"></A>  (ST)   00207</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a short, textual description of the specific allergy reaction (convulsions, sneeze, rash, etc.).</FONT>
+<H4>3.3.6.6 Identification date<A NAME="I19"></A>  (DT)   00208</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the allergy was identified.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300059.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300061.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

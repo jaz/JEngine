@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.18 ADT/ACK - merge patient information (event A18)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300021.htm">
+<LINK REL="Previous" HREF="ch300019.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E154"></A>
+<H3><B>3.2.18</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - merge patient information</B><A NAME="I9"></A><B> (event A18)</B></H3>
+<P>
+<FONT FACE="Times New Roman"><I>Event A18 is being retained for backward compatibility. </I> The A18 is used to merge current and previous patient identification numbers: <I> </I><I>PID-3-</I><I>patient ID </I><I>(</I><I> internal</I><I> ID)</I><I>, </I><I>PID-2-</I><I>patient ID </I><I>(</I><I>external</I><I> ID)</I><I>, </I><I>PID-4-</I><I>alternate patient ID - PID</I>, and <I>PID-18-</I><I>patient account number</I>.  This procedure is required, for example, when a previous patient  is registered under a new patient identification number because of an error, or because there was insufficient time to determine the actual patient identification number.  The merge event occurs when a decision is made to combine the information under either the new or the old identifier(s).  We recommend that events A34 (merge patient information-patient ID only), A35 (merge patient information-account number only), A36 (merge patient information-patient ID and account number), A39 (merge person - external ID), A40 (merge patient - internal ID), A41 (merge account - patient account number), and A42 (merge visit - visit number) be utilized in place of the A18 event whenever possible<I>.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">The PID segment contains the surviving patient ID information.  The MRG segment contains the non-surviving information.</FONT>
+<P>
+<FONT FACE="Times New Roman">This merge event is non-specific in that, as a result of the merge, several patient identifiers may or may not have changed.  For sites requiring (or desiring) greater specificity with regard to this type of message,  new events (A34, A35, A36, A39, A40, A41and A42) are now available as alternatives  See Section <A HREF="ch300076.htm#I8">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to implementing patient merge events.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ MRG ]    Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error Information        2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

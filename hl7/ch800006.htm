@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>8.3.3 MFQ/MFR - master files query</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800007.htm">
+<LINK REL="Previous" HREF="ch800005.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E340"></A>
+<H3><B>8.3.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>MFQ/MFR - master files query</B><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The MFQ transaction allows a system to query for a particular record or group records (defined by the primary key) in a particular master file.</FONT>
+<P>
+<FONT FACE="Times New Roman">The Master files query is defined as follows: </FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFQ</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Query for Master File Record</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRF]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>MFR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master Files Response</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Acknowledgment        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRF]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Name        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {MFE    Master File Entry        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [Z..] }   One or more HL7 and/or      (varies)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     Z-segments carrying the data for the entry </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     identified in the MFE segment.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation         2</FONT></PRE>
+<H4>8.3.3.1 MFQ use notes</H4>
+<P>
+<FONT FACE="Times New Roman">The value &quot;MFQ&quot; of the <I>QRD-what subject filter</I> of the QRD segment identifies a master files query.  The <I>QRD-what department data code</I> of the QRD segment identifies the name of the master file in question.  The <I>QRD-what data code value qual</I> of the QRD segment identifies the primary key (or keys, or range of keys) defining the master file MFE segments (and associated master file records, denoted by &quot;Z&quot;) to be returned with the response.  The QRF segment may be used to define time ranges, particular MFN record-level event codes etc. Unless otherwise specified, the response returns only active current record(s).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

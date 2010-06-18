@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.3 CE - coded element  </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200024.htm">
+<LINK REL="Previous" HREF="ch200022.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200022.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200024.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E24"></A>
+<H3><B>2.8.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CE - coded element</B><B>  </B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|F-11380^CREATENINE^I9^2148-5^CREATENINE^LN|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">This data type transmits codes and the text associated with the code.  To allow all six components of a CE data type to be valued, the maximum length of this data type must be at  least 60 (see Section <A HREF="ch200012.htm#I2">2.6.2</A>, &quot;<A HREF="ch200012.htm#I2">Maximum length</A>&quot;)<I>. </I></FONT>
+<H4><B><I>2.8.3.1</I></B><B><I> </I></B>Identifier (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Sequence of characters (the code) that uniquely identifies the item being referenced by the &lt;text&gt;.  Different coding schemes will have different elements here.</FONT>
+<H4>2.8.3.2 Text (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Name or description of the item in question.  E.g., myocardial infarction or X-ray impression.  Its data type is string (ST).</FONT>
+<H4>2.8.3.3 Name of coding system (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Each coding system is assigned a unique identifier.  This component will serve to identify the coding scheme being used in the identifier component.  The combination of the identifier and name of coding system components will be a unique code for a data item  Each system has a unique identifier. ASTM E1238-94,Diagnostic, procedure, observation, drug ID, and health outcomes coding systems are identified in the tables in Section 7.1.4, &quot;Coding schemes&quot;.  Others may be added as needed.  When an HL7 table is used for a CE data type, the <I>name of coding system</I> component is defined as <I>HL7nnnn</I> where <I>nnnn</I> is the HL7 table number.</FONT>
+<H4>2.8.3.4 Alternate components </H4>
+<P>
+<FONT FACE="Times New Roman">These three components are defined analogously to the above for the alternate or local coding system.  If the Alternate Text component is absent, and the Alternate Identifier is present, the Alternate Text will be taken to be the same as the Text component.  If the Alternate Coding System component is absent, it will be taken to mean the locally defined system. </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The presence of two sets of equivalent codes in this data type is semantically different from a repetition of a CE-type field.  With repetition, several distinct codes (with distinct meanings) may be transmitted.</TD></TR></FONT></TABLE>
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  For HL7-defined tables which have not been adopted from some existing standard, the third component, &quot;name of coding system&quot; is constructed by appending the table number to the string &quot;HL7&quot;.  Thus, the field RXR-2-site, is a CE data type which refers to HL7 table number 0163. Its &quot;name of coding system&quot; component is &quot;HL70163&quot;.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Figures 7-2 and 7-3 list many diagnostic, procedure, observation, drug, and health outcomes coding systems.  Guidelines for their use are presented in Chapter 7, Section 7.1, &quot;Introduction and Overview.&quot;</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200022.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200024.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

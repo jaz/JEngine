@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>2.7 MESSAGE DELIMITERS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200020.htm">
+<LINK REL="Previous" HREF="ch200018.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200018.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200020.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E16"></A>
+<P>
+<FONT SIZE="+2"><B>2.7</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><A NAME="I21"></A><A NAME="I22"></A><A NAME="I23"></A><A NAME="I24"></A><B>M</B><B>ESSAGE DELIMITERS</B><A NAME="I25"></A><A NAME="I26"></A></FONT>
+<P>In constructing a message certain special characters are used.  They are the segment terminator, the field separator, the component separator, subcomponent separator, repetition separator, and escape character.  The segment terminator is always a carriage return (in ASCII, a hex 0D).  The other delimiters are defined in the MSH segment, with the field delimiter in the 4th character position, and the other delimiters occurring as in the field called Encoding Characters, which is the first field after the segment ID.  The delimiter values used in the MSH segment are the delimiter values used throughout the entire message.  In the absence of other considerations, HL7 recommends the suggested values found in  <I>Figure 2-1 delimiter values</I>.
+<P>At any given site, the subset of the possible delimiters may be limited by negotiations between applications.  This implies that the receiving applications will use the agreed upon delimiters, as they appear in the Message Header segment (MSH), to parse the message. 
+<P ALIGN=indent><A NAME="I27"></A><A NAME="I28"></A>Figure 2-1.  Delimiter values</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Delimiter</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Suggested Value</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Encoding Character Position</FONT>
+</TD><TD WIDTH=228 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Usage</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 VALIGN=top >
+<P>
+<FONT SIZE="-1">Segment Terminator</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;cr&gt; </FONT>
+<P>
+<FONT SIZE="-1">hex 0D</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">-</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT SIZE="-1">Terminates a segment record. This value cannot be changed by implementors.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 VALIGN=top >
+<P>
+<FONT SIZE="-1">Field Separator</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">|</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">-</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT SIZE="-1">Separates two adjacent data fields within a segment.  It also separates the segment ID from the first data field in each segment.  </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 VALIGN=top >
+<P>
+<FONT SIZE="-1">Component Separator</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">^</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT SIZE="-1">Separates adjacent components of data fields where allowed.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 VALIGN=top >
+<P>
+<FONT SIZE="-1">Subcomponent Separator</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">&amp;</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT SIZE="-1">Separates adjacent subcomponents of data fields where allowed.  If there are no subcomponents, this character may be omitted.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 VALIGN=top >
+<P>
+<FONT SIZE="-1">Repetition Separator</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">~</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT SIZE="-1">Separates multiple occurrences of a field where allowed.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 VALIGN=top >
+<P>
+<FONT SIZE="-1">Escape Character</FONT>
+</TD><TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">\</FONT>
+</TD><TD WIDTH=101 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=228 VALIGN=top >
+<P>
+<FONT SIZE="-1">Escape character for use with any field represented by an ST, TX or  FT data type, or for use with the data (fourth) component of the ED data type   If no escape characters are used in a message, this character may be omitted. However, it must be present if subcomponents are used in the message.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200018.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200020.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

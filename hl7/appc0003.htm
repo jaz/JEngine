@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>C.1.2 NMD - Network management data message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="appc0004.htm">
+<LINK REL="Previous" HREF="appc0002.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="appc0002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E532"></A>
+<H3><B>C.1.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>NMD - Network management data message</B><A NAME="I5"></A><A NAME="I6"></A></H3>
+<P>
+<FONT FACE="Times New Roman">One system creates an unsolicited update (UU) Network Management Data message (NMD) to transmit network management information to another system.  In this case, the initiating system sends an NMD message as an unsolicited update (UU) containing network management information to a receiving system, which responds with a generic acknowledgement message (ACK).</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, a system going down for backups (or starting up again after backups) might issue such a message to one or more applications.  A system switching to another CPU or file-server may also need to use this transaction to notify other systems.</FONT>
+<PRE>
+<FONT FACE="Courier New">               Chapter/</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>NMD</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Network Management Data</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Appendix</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [NCK    System Clock        C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [NST   Statistics         C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [NSC    Network Status Change       C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">               Chapter/</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Generic Acknowledgement</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Appendix</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<P ALIGN=LEFT>
+<A HREF="appc0002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

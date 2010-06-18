@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>2.25.5 Master file update examples: with original and enhanced a</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200153.htm">
+<LINK REL="Previous" HREF="ch200151.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200151.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200153.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E136"></A>
+<H3><B>2.25.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>Master file update examples: with original and enhanced acknowledgment </B><B>protocol</B><A NAME="I15"></A></H3>
+<P>
+<FONT FACE="Times New Roman">This example shows the lab system using the Master Files specification to send two update test dictionary entries to an ICU system.  The OM1 (observation dictionary) segment, currently under development by HL7 and ASTM, carries the dictionary information.  Several varieties of acknowledgment are shown.  The choice of acknowledgment mode is site-specific.</FONT>
+<H4>2.25.5.1 <A NAME="I16"></A>Original mode example:</H4>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LABxxx|ClinLAB|ICU||19910918060544||MFN^M03|MSGID002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|LABxxx^Lab Test Dictionary^L|UPD|||AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MUP|199109051000|199110010000|12345^WBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OM1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MUP|199109051015|199110010000|6789^RBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OM1|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Original mode acknowledgment of the HL7 message according to MFI Response Level Code of AL.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LABxxx|ClinLAB|19910918060545||MFK|MSGID99002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSGID002</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|LABxxx^Lab Test Dictionary^L|UPD|||MFAA</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199110010000|199110010040|S|12345^WBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199110010000|199110010041|S|6789^RBC^L</FONT></PRE>
+<H4>2.25.5.2 Enhanced mode example</H4>
+<H5>2.25.5.2.1 Initial message with accept acknowledgment</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LABxxx|ClinLAB|ICU||19910918060544||MFN^M03|MSGID002|P|2.2|||AL|AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|LABxxx^Lab Test Dictionary^L|UPD|||AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MUP|199109051000|199110010000|12345^WBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OM1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MUP|199109051015|199110010000|6789^RBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OM1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LABxxx|ClinLAB|19910918060545||MSA|MSGID99002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|CA|MSGID002</FONT></PRE>
+<H5>2.25.5.2.2 Application acknowledgment message</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LABxxx|ClinLAB|19911001080504||MFK|MSGID5002|P|2.2|||AL|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSGID002</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|LABxxx^Lab Test Dictionary^L|UPD|||MFAA</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199109051000|199110010040|S|12345^WBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199109051015|199110010041|S|6789^RBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LABxxx|ClinLAB|ICU||19911001080507||ACK|MSGID444|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|CA|MSGID5002</FONT></PRE>
+<H4>2.25.5.3 Delayed application acknowledgment</H4>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  If the MFN message in Section <A HREF="ch200152.htm#I16">2.25.5.1</A>, &quot;<A HREF="ch200152.htm#I16">Original mode example</A>,&quot; had not required an application acknowledgment at the message level (i.e., the application acknowledgment code of the MSH segment = NE), the (Master Files Chapter defined) MFD message could be used to provide a delayed application level acknowledgment not tied to the original MFN message.  </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The following example includes an acknowledgment for an MFE segment not in the original message.  This additional MFE was sent via another MFN message.</FONT>
+<H5>2.25.5.3.1 Initial message with accept acknowledgment</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LABxxx|ClinLAB|ICU||19910918060544||MFN^M03|MSGID002|P|2.2|||AL|NE</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|LABxxx^Lab Test Dictionary^L|UPD|||AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MUP|199109051000|199110010000|12345^WBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OM1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MUP|199109051015|199110010000|6789^RBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OM1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LABxxx|ClinLAB|19910918060545||MSA|MSGID99002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|CA|MSGID002</FONT></PRE>
+<H5>2.25.5.3.2 Delayed application acknowledgment</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LABxxx|ClinLAB|19911001080504||MFD|MSGID65002|P|2.2|||AL|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|LABxxx^Lab Test Dictionary^L|UPD|||MFAA</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199109051000|199110010040|S|12345^WBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199109051015|199110010041|S|6789^RBC^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MUP|199109051025|199110010041|S|4339^HGB^L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LABxxx|ClinLAB|ICU||19911001080507||ACK|MSGID444|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|CA|MSGID65002</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200151.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200153.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>11.2.5 RQC/RCI - request for patient clinical information (event</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110011.htm">
+<LINK REL="Previous" HREF="ch110009.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110009.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110011.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E485"></A>
+<H3><B>11.2.5</B><B> </B><A NAME="I2"></A><B>RQC/RCI - request for patient clinical information</B><A NAME="I3"></A><B> (event I05)</B></H3>
+<P>
+<FONT FACE="Times New Roman">This event is used to request clinical information for a specific patient.  Generally, this transaction occurs between one provider and another (typically a laboratory or radiology, etc.).  However, it may also be very useful for a payor-to-provider request for clinical observation information to be used in considering a request for treatment authorization.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RQC</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Request Clinical Information</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  QRD    Query Definition        5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [QRF]    Query Filter         5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{GT1}]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RCI</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Return Clinical Information</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSA      Message Acknowledgment      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  QRD    Query Definition        5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [QRF]    Query Filter         5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DG1}]    Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DRG}]    DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{AL1}]    Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    OBR    Observation Request       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">OBX          Results          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110009.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110011.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

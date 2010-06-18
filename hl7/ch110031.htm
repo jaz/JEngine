@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>11.6.1 RQI message using an I01 event with an immediate response</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110032.htm">
+<LINK REL="Previous" HREF="ch110030.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110030.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110032.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E502"></A>
+<H3><B>11.6.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>RQI message using an I01 event with an immediate response</B><A NAME="I7"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I8"></A>When a patient arrives for an appointment, the office staff will frequently need to verify the patient&#146;s insurance information.  In the following RQI message example, Dr. Blake is sending an insurance information request to the Washington State Insurance Company for her patient, Cary Joe Brown.  The response from the payor is shown in a more complete IN1 segment.  However, it should be noted that in addition to the IN1 segment, this return information could have been placed in the NTE segment to serve as display data.  This strategy would serve a broader community of diverse application systems that might have different levels of ability to process the record-formatted data.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|BLAKEMD|EWHIN|MSC|EWHIN|19940107155043||RQI^I01|BLAKEM7888|P|2.3|||NE|AL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RP|BLAKE^BEVERLY^^^DR^MD|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021| ^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RT|WSIC||^^^MSC&amp;EWHIN^^^^^WASHINGTON STATE INSURANCE COMPANY&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||402941703^9^M10||BROWN^CARY^JOE||19600309||||||||||||402941703&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>IN1|1|PPO|WA02|WSIC (WA State Code)|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|MSC|EWHIN|BLAKEMD|EWHIN|19940107155212||RPI^I01|MSC2112|P|2.3|||ER|ER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|BLAKEM7888|ELIGIBILITY INFORMATION FOUND&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RP|BLAKE^BEVERLY^^^DR^MD|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021| ^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RT|WSIC||^^^MSC&amp;EWHIN^^^^^WASHINGTON STATE INSURANCE COMPANY&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||402941703^9^M10||BROWN^CARY^JOE||19600301||||||||||||402941703,CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>IN1|1|PPO|WA02|WSIC (WA State Code)|11223 FOURTH STREET^^MEAD^WA^99021^USA|ANN MILLER|509)333-1234|987654321||||19901101||||BROWN^CARY^JOE|1|19600309|N. 12345 SOME STREET^^MEAD^WA^99021^USA|||||||||||||||||402941703||||||01|M&lt;CR&gt;</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110030.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110032.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

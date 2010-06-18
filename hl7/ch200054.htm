@@ -1,0 +1,299 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.34 RP - reference pointer</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200055.htm">
+<LINK REL="Previous" HREF="ch200053.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200053.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200055.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E55"></A>
+<H3><B>2.8.34</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>RP - reference pointer</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;pointer (ST) &gt; ^ &lt; application ID (HD)&gt; ^ &lt;type of data (ID)&gt; <I>^ </I><I>&lt;subtype (ID)&gt;</I></FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of application ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">This data type transmits information about data stored on another system.  It contains a reference pointer that uniquely identifies the data on the other system, the identity of the other system, and the type of data.</FONT>
+<H4>2.8.34.1 Pointer (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">A unique key assigned by the system that stores the data.  The key, which is an ST data type, is used to identify and access the data.</FONT>
+<H4>2.8.34.2 <A NAME="I6"></A>Application ID (HD)</H4>
+<P>
+<FONT FACE="Courier New">Subcomponents: &lt;namespace ID (IS)&gt; &amp; &lt; universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">A unique designator of the system that stores the data.  It is an HD data type (See Section <A HREF="ch200038.htm#I4">2.8.18</A>, &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>&quot;).  It is equivalent to the application ID of the placer or filler order number (see Chapter 4).  Application ID&#146;s must be unique across a given HL7 implementation.</FONT>
+<H4>2.8.34.3 <A NAME="I7"></A>Main type of data (ID)</H4>
+<H5>2.8.34.3.1 </H5>
+<P>
+<FONT FACE="Times New Roman">An ID data type that declares the general type of data.  Refer to <I>HL7 table 0191- Main type of referenced</I> <I>data</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I8"></A><A NAME="I9"></A>Table 0191 - Main type of  referenced data</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scanned image (HL7 v 2.2 only)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NS</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Non-scanned image (HL7 v 2.2 only)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scanned document (HL7 v 2.2 only)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Machine readable text document (HL7 v 2.2 only)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Formatted text (HL7 v 2.2 only)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Image</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Image data  (HL7 v 2.3)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Audio</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Audio data  (HL7 v 2.3)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Application</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other application data, typically uninterpreted binary data  (HL7 v 2.3)</TD></TR></FONT></TABLE><H4>2.8.34.4 Subtype (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">An ID data type declaring the format for the data of subcomponent &lt;main type&gt;.  Refer to <I>HL7 table 0291</I> - <I>Subtype of referenced data</I> for valid values.</FONT>
+<P>Table 0291 - Subtype of referenced data
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TIFF</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">TIFF image data</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PICT</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">PICT format image data </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DICOM</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Digital Imaging and Communications in Medicine</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FAX</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Facsimile data</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">JOT</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Electronic ink data (Jot 1.0 standard)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">BASIC</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISDN PCM audio data</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Octet-stream</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Uninterpreted binary data</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PostScript</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">PostScript program</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">JPEG</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Joint Photographic Experts Group </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GIF</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Graphics Interchange Format<I> </I></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HTML</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Hypertext Markup Language</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RTF</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Rich Text Format</TD></TR></FONT></TABLE><H4>2.8.34.5 Main type-subtype combinations</H4>
+<P>
+<FONT FACE="Times New Roman">Possible subtypes are specific to main types (though in principle the same subtype could be used for more than one main type), and so are defined under their main types.</FONT>
+<P>
+<FONT FACE="Times New Roman">Additional subtypes may be added to this Standard.  In addition, private, non-standard subtypes may be defined by agreement between cooperating parties.  All private, non-standard subtypes should begin with the letter Z to distinguish them from the standard subtypes.</FONT>
+<H5>2.8.34.5.1 Image subtypes</H5>
+<P>
+<FONT FACE="Courier New">TIFF = TIFF image data</FONT>
+<P>
+<FONT FACE="Times New Roman">TIFF (Tagged Image File Format) is one of the common formats for scanned images.  Its first version was developed in 1986 by Aldus Corporation as a standard for encoding scanned images.  The official version of the TIFF standard is now maintained by Adobe  Corporation.  TIFF format is specified in the document &quot;TIFF, Revision 6.0.&quot;Adobe Systems Incorporated, 1585 Charleston Road, P.O. Box 7900, Mountain View, CA  94039-7900</FONT>
+<P>
+<FONT FACE="Times New Roman">415-961-4400</FONT>
+<P>
+<FONT FACE="Times New Roman">The subtype &quot;TIFF&quot; implies recognition of that trademark and all the rights it entails. </FONT>
+<P>
+<FONT FACE="Courier New">PICT = PICT format image data</FONT>
+<P>
+<FONT FACE="Times New Roman">PICT is one of the common formats for scanned images.  PICT is a graphics format developed by Apple Computer, Inc., Cupertino, California.  PICT format is officially defined in the book set &quot;Inside Macintosh,&quot;published by Addison-Wesley Publishing Company, Reading, Massachusetts.</FONT>
+<P>
+<FONT FACE="Courier New">DICOM = the Digital Imaging and Communications in Medicine (DICOM) standard</FONT>
+<P>
+<FONT FACE="Times New Roman">DICOM is the format developed jointly by the American College of Radiology (ACR) and the National Electrical Manufacturers Association (NEMA) as the standard for interchange of radiological images and ancillary data.  It is standardized as NEMA PS3, and is available from:</FONT>
+<P>
+<FONT FACE="Times New Roman">NEMA</FONT>
+<P>
+<FONT FACE="Times New Roman">2101 L Street NW</FONT>
+<P>
+<FONT FACE="Times New Roman">Washington, DC 20037</FONT>
+<P>
+<FONT FACE="Times New Roman">DICOM specifies a complete communications standard, including a generic messaging service for two-way exchange of imaging-related information between applications, as well as transfer of the actual images. In HL7, the use of DICOM data is limited to images only.</FONT>
+<P>
+<FONT FACE="Times New Roman">Images in this subtype shall be encoded according to the Generic DICOM File Format defined in DICOM Part 10, Media Storage and File Format (NEMA PS3.10).  This shall be in accordance with the Image Information Object Definitions of DICOM Part 3 (NEMA PS3.3), Data Structure and Semantics of DICOM Part 5 (NEMA PS3.5), and the Data Dictionary of DICOM Part 6 (NEMA PS3.6). </FONT>
+<P>
+<FONT FACE="Times New Roman">The Generic DICOM File Format consists of two parts: a DICOM File Meta Information Header, immediately followed by a DICOM Data Set.  The DICOM Data Set contains the image or images  specified according to DICOM Part 10.  The DICOM File Meta Information Header contains, among other information, a Transfer Syntax UID (Unique Identifier) which completely specifies the encoding of the Data Set according to DICOM Part 5.  This encoding defines big endian vs. little endian byte ordering, as well as image compression via the JPEG (Joint Photographics Experts Group) standard (ISO/IS 10918-1 and 10918-2).  The transfer syntax of the File Meta Information Header itself is little endian byte ordered, as required by DICOM Part 10.</FONT>
+<P>
+<FONT FACE="Courier New">FAX = facsimile data</FONT>
+<P>
+<FONT FACE="Times New Roman">Facsimile data as specified by CCITT standards F1.60, F1.80, F1.82, and F1.84.</FONT>
+<P>
+<FONT FACE="Courier New">Jot = electronic ink data, as specified by the Jot 1.0 standard</FONT>
+<P>
+<FONT FACE="Times New Roman">The JOT standard, proposed jointly by Slate Corporation, Microsoft, Apple, Lotus, GO, and General Magic, allows handwritten notes, sketches, signatures and other free-form written data to be transmitted.  It is the standard by which portable pen computers or workstations equipped with stylus-input tablets can represent and exchange information.  </FONT>
+<P>
+<FONT FACE="Times New Roman">It represents electronic ink as a series of stylus strokes, and therefore contains necessary information for potential automatic handwriting recognition, which would be lost if converted to other image representations.  It may, however, be readily converted to another image representation for purposes of printing or display.</FONT>
+<P>
+<FONT FACE="Times New Roman">The JOT 1.0 standard is available from:</FONT>
+<P>
+<FONT FACE="Times New Roman">Software Publishers Association</FONT>
+<P>
+<FONT FACE="Times New Roman">1730 M Street Northwest, Suite 700</FONT>
+<P>
+<FONT FACE="Times New Roman">Washington, DC 20036-4510</FONT>
+<P>
+<FONT FACE="Times New Roman">202-452-1600</FONT>
+<H6><I>2.8.34.5.1.1</I><I> </I><I>Audio subtypes</I></H6>
+<P>
+<FONT FACE="Courier New">basic = ISDN PCM audio data</FONT>
+<P>
+<FONT FACE="Times New Roman">Telephone quality audio data, encoded as 8-bit ISDN mu-law Pulse Code Modulation sampled at 8 kHz, according to CCITT Fascicle III.4, Recommendation G.711.  This subtype may be used for voice mail messages as well as voice dictation.</FONT>
+<H6><I>2.8.34.5.1.2</I><I> </I><I>Application subtypes</I></H6>
+<P>
+<FONT FACE="Courier New">octet-stream = uninterpreted binary data</FONT>
+<P>
+<FONT FACE="Times New Roman">This subtype is for binary data which has none of the other standard formats as given by Section <A HREF="ch200054.htm#I7">2.8.34.3</A>, &quot;<A HREF="ch200054.htm#I7">Main type of data ID</A>&quot;  Its interpretation by the system utilizing the data must be mutually agreed upon by sending and receiving parties.</FONT>
+<P>
+<FONT FACE="Courier New">PostScript = PostScript program</FONT>
+<P>
+<FONT FACE="Times New Roman">A PostScript language program typically representing a formatted document for printing on a PostScript printer, or for display on a computer screen via a PostScript interpreter. </FONT>
+<P>
+<FONT FACE="Times New Roman">PostScript consists of the original specification, PostScript level 1, described in &quot;PostScript Language Reference Manual,&quot; Addison-Wesley, 1985, and a more advanced variant, PostScript level 2, described in &quot;PostScript Language Reference Manual,&quot; Addison-Wesley, Second Edition, 1990.  PostScript is a registered trademark of Adobe Systems, Inc.  Use of the subtype &quot;PostScript&quot; implies recognition of that trademark and all the rights it entails.</FONT>
+<P>
+<FONT FACE="Times New Roman">Other types may be added as needed.</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|1234A321634BC^EFC^SD|</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200053.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200055.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

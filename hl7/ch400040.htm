@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.6 RDE/RRE - pharmacy/treatment encoded order message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400041.htm">
+<LINK REL="Previous" HREF="ch400039.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400039.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400041.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E240"></A>
+<H3>4.8.6 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>RDE/RRE - pharmacy/treatment encoded order</B><B> message</B><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">This message communicates the pharmacy or treatment application&#146;s encoding of the pharmacy/treatment order (ORM message with RXO segment, see above).  It may be sent as an unsolicited message to report on either a single order or multiple pharmacy/treatment orders for a patient.</FONT>
+<P>
+<FONT FACE="Times New Roman">As a site-specific variant, the original order segments (RXO, RXRs, associated RXCs, and any NTEs) may be sent optionally (for comparison).</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RDE</U><U> </U><U> </U><U> </U><U>Pharmacy/Treatment Encoded Order Message</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]    Notes and Comments (for Header)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PID     Patient Identification     3 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   <U>[PD1]</U><U> </U><U> </U><U> </U><U> </U><U>Additional Patient Identification</U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>      [{NTE}]</U><U> </U><U> </U><U>Notes and Comments (for Patient ID)</U><U> </U><U> </U><U> </U><U>2</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [PV1</U><U> </U><U> </U><U> </U><U> </U><U>Patient Visit</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [PV2]]</U><U> </U><U> </U><U> </U><U>Patient Visit Additional Information</U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [{IN1</U><U> </U><U> </U><U> </U><U>Insurance</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U> </U><U>  [IN2]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U>
+<BR><U>    </U><U> </U><U>  [IN3]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [GT1]   Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{AL1}]   Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ORC     Common Order          4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> RXO     Pharmacy/Treatment Prescription Order   4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for RXO)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXC}    Pharmacy/Treatment Component (for RXO)   4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes and Comments (for RXC)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]    </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> RXE      Pharmacy/Treatment Encoded Order   4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}    Pharmacy/Treatment Route     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{RXC}]    Pharmacy/Treatment Component (for RXE)  4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [OBX]    Results          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]    Notes and Comments (for OBX)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><SUB> {</SUB>[CTI]}     Clinical Trial Identification    7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=533 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The RXCs which follow the RXO may not be fully encoded, but those that follow the RXE must be fully encoded.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">(acknowledged by)</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RRE</U><U> </U><U>Pharmacy/Treatment Encoded Order Acknowledgment Message</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]  Notes and Comments (for PID)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     RXE    Pharmacy/Treatment Encoded Order    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{RXC}]   Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]  </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400039.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400041.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

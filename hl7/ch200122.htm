@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<TITLE>2.23.4 Modes for updating via repeating segments</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200123.htm">
+<LINK REL="Previous" HREF="ch200121.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200121.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200123.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E108"></A>
+<H3><B>2.23.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>Modes for updating via repeating segments</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">When groups of  repeating segments appear within a message it is not obvious from the basic HL7 abstract message syntax how best to apply the new group of repeating segments on the receiving system. HL7 suggests two methods: the &quot;snapshot&quot; mode and the &quot;action code/unique identifier&quot; mode.</FONT>
+<P>
+<FONT FACE="Times New Roman">Background:</FONT>
+<P>
+<FONT FACE="Times New Roman">The segments which repeat in HL7 messages ADT/Finance messages ( AL1, DG1, PR1, GT1, IN1, IN2, IN3, NK1 , NTE) present a problem if the requirement is to update only part of the information previously sent.  Prior to this (2.3) version of the Standard, all such repeating segments had to be sent again in the update, because there was no way to indicate which ones changed and which ones didn&#146;t.  For example, if two DG1 segments were sent originally (containing a primary and secondary diagnosis), and then if a tertiary diagnoses needed to be sent, the sending system had to send all diagnoses which were currently valid, that is, three DG1 segments (containing primary, secondary and tertiary diagnosis).  This way of doing things is referred to as the &quot;snapshot&quot; mode.  In this mode, everything (all repeating segments) must be sent with every subsequent message in the series of messages. </FONT>
+<P>
+<FONT FACE="Times New Roman">In the Order Entry, Observation Reporting and Master Files chapters, action codes (e.g., order control codes and result status codes) and unique identifiers (e.g., placer and filler numbers) are currently specified as part of the ORC, OBR, OBX and MFE segments.  So, except for the NTE segments, this problem exists mainly  for the ADT and Finance chapter segments.  </FONT>
+<P>
+<FONT FACE="Times New Roman">For systems implementing Version 2.3 or higher, if a particular repeating segment can be updated by either of these two modes, the parties concerned will determine by agreement on a site-specific basis whether an interface will use the &quot;snapshot&quot; mode or the &quot;action code/unique identifier&quot; mode.</FONT>
+<H4>2.23.4.1 Snapshot mode update definition </H4>
+<P>
+<FONT FACE="Times New Roman">In the &quot;snapshot&quot; mode, the group of repeating segments from the incoming message replaces the prior group of repeating segments on the receiving system.  This is equivalent to a deletion of the prior group followed by the addition of the new group.  The snapshot mode is the usual mode in Version 2.2 and 2.1 implementations of HL7, but it is also available for Version 2.3 and future versions.  To specify &quot;delete all of the segments in this repeating group&quot; in the snapshot mode, send a single segment with &quot;delete data&quot; indicated  for all fields. </FONT>
+<P>
+<FONT FACE="Times New Roman">For example, if the following DG1 segment is in an ADT update message (for an inpatient stay):</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DG1|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;|&quot;&quot;&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">and the snapshot mode is being used, this indicates that all previously transmitted diagnoses for this inpatient stay should be deleted.</FONT>
+<H4>2.23.4.2 Action code/unique identifier mode update definition</H4>
+<P>
+<FONT FACE="Times New Roman">In the &quot;action code/unique identifier&quot; mode, each member of a repeating group of segments must have a unique identifier (equivalent to the filler number in observational reports messages).  The choice of delete/update/insert is determined by the action code (equivalent to the result status in observational reports messages).  Refer to <I>HL7 table 0206 - Segment action code</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Table 0206 - Segment action code</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Add/Insert</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Delete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">U</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Update</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The <I>unique identifier</I> is defined in a general manner as follows: it uniquely identifies one of multiple repetitions of the primary entity defined by the repeating segment in a way that does not change over time. It is not dependent on any particular message identifier level (MSH) fields; it functions across messages, not just within a message.  The <I>unique identifier</I> will be chosen on a segment-specific basis, depending on the primary entity referenced by the segment.  For some cases, such as a diagnosis code, it may be a CE data type.  For others, such as a person identifier, it may be a CX data type.  For others it may be an EI (entity identifier) data type.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> This mode is available for use only for new segments for Version 2.3 and for new segments in future versions</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200121.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200123.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

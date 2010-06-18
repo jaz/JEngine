@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>7.5 CLINICAL TRIALS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700021.htm">
+<LINK REL="Previous" HREF="ch700019.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E68"></A>
+<P>
+<FONT SIZE="+2"><B>7.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><B>CLINICAL TRIALS</B><A NAME="I16"></A></FONT>
+<P>Academic medical institutions, academic research coordinating centers, and industry-based research organizations often have computer systems that support registration, compliance and safety monitoring, and outcomes analysis for clinical trials.  Patients on these trials may receive their treatment and evaluation at one research facility or at many different medical facilities.  Clinical trials systems could message other applications that a patient is registered on a clinical trial.  Several functional examples follow:  (1)  Some of the data required to monitor or analyze outcomes on the trial are generated in other medical computer systems, such as pharmacy, laboratory, or clinical applications.  These applications may tag patients on clinical trials so that data may be sent back to the clinical trials system.  (2)  Order entry systems could also use patient registration information:  They could display standard order sets for the protocol or particular treatment/evaluation phases of a complex protocol.  They could pass the clinical trials status on to service provider applications to initiate a results report to the clinical trials system.  [This step will require modification of the order message to include clinical trials status data -- a separate proposal.]  It could also be passed to billing applications that may use specialized procedures for research-related costs.  (3)  Nursing and pharmacy systems can use information on patients&#146; clinical trials status for care plans or dispensing authorization (auxiliary to the physician&#146;s prescription), respectively.  There could be many other uses of this message since a patient&#146;s involvement on a clinical trial affects all concurrent medical care.
+<P>To meet monitoring and analysis requirements, patient registration, treatment, diagnostic, and study summary data are reported to study sponsors like pharmaceutical or medical device companies, regulatory agencies, and data management centers for collaborative studies.  Automated procedures must be used to transfer these voluminous data among the participant computer systems in a cost-efficient and timely manner.  The following additions to HL7 aim to specify standard messaging transactions to automate such reporting as well as to enable communication of clinical trials registration data to relevant medical applications as described above.
+<P>The objectives of the clinical trials messages and segments are to identify that patients are registered on clinical trials, have entered a study-specific phase of treatment or evaluation, or to indicate the study protocol&#146;s data schedule.  Messages include OBR (Section 4.5.1, &quot;&quot;OBR - observation request segment&quot;), OBX (Section <A HREF="ch700011.htm#I9">7.3.2</A>, &quot;<A HREF="ch700011.htm#I11">OBX   observation/result segment</A>&quot;), RXA (Section 4.8.14, &quot;RXA - pharmacy /treatment administration segment&quot;), and RXR (Section 4.8.3, &quot;&quot;RXR - pharmacy/treatment order segment&quot;) segments to report observations or drug administration that are relevant to the study.  In addition to study-related clinical data, OBX segments may contain the results of study variables according to master code tables such as the Health Outcomes Variables (HL7 Implementation Guide).  There are also master segments to describe the clinical trial, its treatment phases, and its scheduled date-time points for message recipients.  These are analogous to the Test/Observation Master Segments (Chapter 8), with the trials, phases, or scheduled time points treated as the OMx treats observation identifiers.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

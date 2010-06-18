@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>4.12.3 VXR - vaccination record response (event V03)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400058.htm">
+<LINK REL="Previous" HREF="ch400056.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400056.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400058.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E253"></A>
+<H3><B>4.12.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>VXR - vaccination record response (event V03)</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Definition:  When the patient has been uniquely identified (there is only one &quot;match&quot; to the query), the response to the query (with a V03 event) will follow this format.  Within the definitions for QRD and QRF, certain components are defined according to position in the field, as detailed in Section <A HREF="ch400053.htm#I2">4.11</A>, &quot;<A HREF="ch400053.htm#I2">QUERIES FOR iMMUNIZATION RECORDS (QRF SEGMENTS)</A>.&quot;  The three-letter code in the leftmost column indicates the segment that is included; the column on the right specifies the chapter in which that segment is fully defined.  </FONT>
+<PRE>
+<FONT FACE="Courier New"><U>VXR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Vaccination Response</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRF]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PD1]    Additional Patient Identification    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PV2]]   Patient Visit Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{IN1    Insurance Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [IN2]    Additional Insurance Information    6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [IN3]    Additional Insurance Information    6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ORC]    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RXA    Pharmacy Administration      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [RXR]    Pharmacy Route        4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   {[  OBX   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{NTE}]  Notes (Regarding Immunization)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ]}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400056.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400058.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

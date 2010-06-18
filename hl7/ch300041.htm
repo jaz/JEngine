@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.39 ADT/ACK - merge person - external ID (event A39)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300042.htm">
+<LINK REL="Previous" HREF="ch300040.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E175"></A>
+<H3><B>3.2.39</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><B>ADT/ACK - merge person - external ID (event A39)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A merge has been done at the external identifier level.  That is, two <I>PID-2-patient ID (external ID) </I>identifiers have been merged into one.</FONT>
+<P>
+<FONT FACE="Times New Roman">An A39 event is used to signal a merge of records, for a person that was incorrectly filed under two different external IDs<I>.</I>  The &quot;incorrect source external ID&quot; identified in the MRG <I>segment (MRG-4-prior patient </I><I>ID-external</I>) is to be merged with the required &quot;correct target external ID&quot; identified in the PID segment (<I>PID-2-patient ID (external ID)</I>).  The &quot;incorrect source external ID&quot; would then logically never be referenced in future transactions.  It is noted that some systems may still physically keep this &quot;incorrect identifier&quot; for audit trail purposes or other reasons associated with database index implementation requirements.</FONT>
+<P>
+<FONT FACE="Times New Roman">Since this event is a merge at the <I>PID-2-patient ID (external ID)</I> identifier level, <I>PID-3-patient ID (internal </I><I>ID)</I> and <I>MRG-1-prior patient ID - internal ID </I>are not required.</FONT>
+<P>
+<FONT FACE="Times New Roman">The external IDs involved in identifying the persons may or may not be patients, who may or may not have accounts, which may or may not have visits.  An A39, merge person information  An A39 (merge person - external ID) event is intended for merging person records without merging other subordinate identifiers.  Any other subordinate identifiers that were previously associated with the &quot;incorrect source external ID&quot; are now associated with the &quot;correct target external ID&quot;.  Specification of these other subordinate identifiers is not required to be provided.</FONT>
+<P>
+<FONT FACE="Times New Roman">This event and the message syntax do, however, allow for the specification of &quot;new subordinate identifiers&quot; (in addition to the <I>PID-2-patient ID (external ID)</I> identifier).  For those environments that may require changes to these other subordinate identifiers because of this, merge person event A39, an A39 (merge person - external ID), it is required that the old and new identifiers be a &quot;tightly coupled&quot; pair.</FONT>
+<P>
+<FONT FACE="Times New Roman">See section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of merge messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">All data associated with the &quot;correct target external ID&quot; are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  PID    Patient Identification       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ PD1 ]   Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   MRG     Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ PV1]   Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

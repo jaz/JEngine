@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>4.14.2 VXX - response to vaccination query with multiple PID mat</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400065.htm">
+<LINK REL="Previous" HREF="ch400063.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400063.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400065.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E258"></A>
+<H3><B>4.14.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>VXX - response to vaccination query with multiple PID matches</B><A NAME="I8"></A></H3>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|199505221605|R|I|950522GA40|||1000^RD|JONES^RICHARD|VXI|SIIS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|AZVACREC||||~~~~~JONES^MARY&lt;CR&gt; </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|1||123456789^^^AZ||JONES^RICHARD^ROBERT||19910607|M^MALE^HL70001&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1||JONES^MARY^SUE|M^MOTHER^HL70063||||||||||||||||||||||||||||||265909900^^^^SS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|2||987654321^^^AZ||JONES^JOHN^RICHARD||19900607|M^MALE^HL70001&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1|1|JONES^MARY|M^MOTHER^HL70063||||||||||||||||||||||||||||||898666725^^^^SS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1|2|JONES^MATHEW^LEE|F^FATHER^HL70063||||||||||||||||||||||||||||||822546618^^^^SS     &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|3||231453675^^^AZ||JONES^RICHARD^CURTIS||19901225|M^MALE^HL70001&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1|1|JONES^MARY^ANN|M^MOTHER^HL70063||||||||||||||||||||||||||||||288763102&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|4||908786564^^^AZ||JONES^RICHARD^ALAN||19870205|M^MALE^HL70001&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1|1|JONES^MARY^SUE|M^MOTHER^HL70063||||||||||||||||||||||||||||||190966725^^^^SS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1|2|JONES^CHRISTOPHER|F^FATHER^HL70063||||||||||||||||||||||||||||||786118768^^^^SS  &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The example shows the response when multiple PIDs match a query.  In the QRD, the sender is querying Arizona Vaccine Records for information on Richard Jones; the only further identifying information supplied in the QRF is that the mother&#146;s name is Mary Jones. For each record which matches this information, a PID is returned along with its associated NK1.  The system initiating the query may then re-send a more precise query.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400063.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400065.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<TITLE>4.11 QUERIES FOR IMMUNIZATION RECORDS (QRF SEGMENTS)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400054.htm">
+<LINK REL="Previous" HREF="ch400052.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400052.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400054.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E52"></A>
+<P>
+<FONT SIZE="+2"><B>4.11</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>QUERIES FOR IMMUNIZATION RECORDS (QRF SEGMENTS)</B><A NAME="I4"></A></FONT>
+<P>The VXQ, VXX, and VXR messages defined below incorporate the QRF segment defined at 2.10.5<I>. QRF-5-other </I><I>query subject filter</I> is a locally defined filter for use between two systems which mutually agree on a definition.  For transferring vaccination administration data, <I>QRF-5</I> should be structured as shown in <I>Figure 4-20</I> to transmit up to ten separate search &quot;keys&quot;.  These search keys are only used to identify one patient&#146;s immunization record. The message provides for a wide variety of &quot;identifying&quot; keys including mother&#146;s and/or father&#146;s name and other identifiers; in some cases such information will be needed to identify a specific patient in the immunization database. 
+<P>The format of each of the possible &quot;search keys&quot;  is given below, and listed in a more structured form in<I> Figure 4-20</I>. These keys are transmitted as strings separated by repeat delimiters. The position of the components within  <I>QRF-5-other QRY subject filter</I> is significant.  The requester sends values for all the components that are known.
+<P>
+<FONT FACE="Courier New">Components:  &lt;patient social security number&gt;~&lt;patient birth date&gt;~&lt;patient birth state&gt;~&lt;patient birth registration number&gt;~&lt;patient medicaid number&gt;~&lt;mother's name last^first^middle&gt;~&lt;mother's maiden name&gt;~&lt;mother's Social Security number&gt;~father's name last^first^middle&gt;~&lt;father's Social Security number&gt;.  </FONT>
+<P>Figure 4-20.  QRF-5 usage in vaccination messages
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pos</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Component</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">Data Type</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Description/Examples</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Social Security Number~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">In U.S.,use SSN, without hyphens between 3rd and 4th digits and 5th and 6th digits, e.g., 123456789.  In other countries, universal patient ID such as National Health Service number may be used.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Birth Date~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">July 4, 1976 = 19760704</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Birth State~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">In U.S., use 2-letter postal code, e.g., IN, NY, CA.  In other countries, locally applicable postal table may be used.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Birth Registration Number~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">State birth certificate number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Medicaid Number~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">When relevant</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother's Name Last^First^Middle~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">PN</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;family name&gt;^&lt;given name&gt;^&lt;middle name or initial&gt;^&lt;suffix&gt;^ &lt;prefix&gt;^&lt;degree&gt;.  E.g., Smith^Mary^Elizabeth</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother's Maiden Name~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Family name of mother before marriage. E.g., Jones</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother's Social Security Number~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">In U.S.,use SSN, without hyphens between 3rd and 4th digits and 5th and 6th digits, e.g., 123456789.  In other countries, universal patient ID such as National Health Service number may be used.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Father's Name Last^First^Middle~</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">PN</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;family name&gt;^&lt;given name&gt;^&lt;middle name or initial&gt;^ &lt;suffix&gt;^ &lt;prefix&gt;^&lt;degree&gt;.  E.g.,Smith^Thomas^A^Jr</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=180 VALIGN=top >
+<P>
+<FONT SIZE="-1">Father's Social Security Number  </FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">In U.S.,use SSN, without hyphens between 3rd and 4th digits and 5th and 6th digits, e.g., 123456789.  In other countries, universal patient ID such as National Health Service number may be used.</TD></TR></FONT></TABLE><P>For instance, if the requestor knew only the patient&#146;s Social Security number and birthdate, this <I>QRF-5</I> would be sent:
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|908723461~19941005|</FONT></PRE>
+<P>If, in addition, the patient&#146;s birth state and mother&#146;s current and maiden name were known, this <I>QRF-5</I> would be sent:
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|908723461~19941005~IN~~~HUTCHINS^KATHY^ANN~HARKNESS|</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400052.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400054.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

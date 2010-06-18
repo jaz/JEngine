@@ -1,0 +1,847 @@
+<HTML>
+<HEAD>
+<TITLE>10.5.1 ARQ - appointment request segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100060.htm">
+<LINK REL="Previous" HREF="ch100058.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100058.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100060.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E464"></A>
+<H3><B>10.5.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ARQ - appointment request segment</B><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The ARQ segment defines a request for the booking of an appointment.  It is used in transactions sent from an application acting in the role of a placer.</FONT>
+<P>Figure 10-3.  ARQ attributes<A NAME="I10"></A>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">R/O/C</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=239 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">75</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00860</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Appointment ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">75</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00861</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Appointment ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00862</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occurrence Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">75</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00863</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Group Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00864</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Schedule ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00865</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Request Event Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0276</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00866</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Appointment Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0277</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00867</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Appointment Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00868</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Appointment Duration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00869</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Appointment Duration Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">53</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">DR</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00870</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Requested Start Date/Time Range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00871</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">100</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">RI</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00872</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Repeating Interval</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00873</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Repeating Interval Duration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00874</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Contact Person</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00875</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Contact Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00876</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Contact Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00877</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Contact Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00878</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entered By Person</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00879</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entered By Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00880</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entered By Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">75</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00881</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parent Placer Appointment ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">75</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00882</FONT>
+</TD><TD WIDTH=239 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parent Filler Appointment ID</TD></TR></FONT></TABLE><P>10.5.1.0   ARQ field definitions<A NAME="I11"></A>
+<H4>10.5.1.1 <A NAME="I12"></A>Placer appointment ID<A NAME="I13"></A>  (EI)   00860</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains placer application&#146;s permanent identifier for the appointment request (and the scheduled appointment itself, when confirmed as booked by the filler application).  This is a composite field.  Refer to Chapter 2, Section 2.8.15, &quot;EI - entity identifier,&quot; for a description of the EI data type and its components and subcomponents.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string that identifies an individual appointment request, or booked appointment.  It is assigned by the placer application, and it identifies an appointment request, and the subsequent scheduled appointment, uniquely among all such requests and/or booked appointments from a particular requesting application.  If the placer appointment ID identifies a parent of a repeating schedule request, then the individual scheduled child appointments can be uniquely identified either by a new placer appointment ID or the parent&#146;s placer appointment ID plus an occurrence number, specified in <I>ARQ-3-occurrence number.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the assigning authority identifying information.  Section 2.8.15, &quot;EI - entity identifier,&quot; in Chapter 2 describes the structure and content of these components with respect to the EI data type.</FONT>
+<H4>10.5.1.2 <A NAME="I14"></A>Filler appointment ID<A NAME="I15"></A>  (EI)   00861</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (ST)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the filler application&#146;s permanent identifier for the appointment request (and the scheduled appointment itself, when confirmed as a booked slot by the filler application).  This is a composite field. Refer to Chapter 2, Section 2.8.15, &quot;EI - entity identifier,&quot; for a description of the EI data type and its components and subcomponents.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string that identifies an individual appointment request, or booked appointment.  It is assigned by the filler application, and it identifies a appointment request, and the subsequent scheduled appointment, uniquely among all such requests and/or booked appointments from a particular processing application.  If the filler appointment ID identifies a parent of a repeating schedule request, then the individual scheduled child appointments can be uniquely identified either by a new filler appointment ID or the parent&#146;s filler appointment ID plus an occurrence number, specified in <I>ARQ-3-occurrence number.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the assigning authority identifying information.  Section 2.8.15, &quot;EI - entity identifier,&quot; in Chapter 2 describes the structure and content of these components with respect to the EI data type.</FONT>
+<P>
+<FONT FACE="Times New Roman">This is a conditionally required field.  On initial request messages and other messages where a filler has not yet assigned a filler appointment ID, this field should not contain a value.  In all other subsequent messages, where a filler application has assigned a filler appointment ID and communicated it to other applications, this field is required.</FONT>
+<H4>10.5.1.3 Occurrence number<A NAME="I16"></A>  (NM)   00862</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used in conjunction with the placer appointment ID and/or the filler appointment ID to uniquely identify an individual occurrence (a child) of a parent repeating schedule appointment.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required.  If the transaction using this segment is meant to apply only to one occurrence of a repeating appointment, and an occurrence number is required to uniquely identify the child appointment (that is, the child does not have a separate and unique placer appointment ID or filler appointment ID), then this field is required.</FONT>
+<H4>10.5.1.4 Placer group number<A NAME="I17"></A>  (EI)   00863</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;entity Identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field allows a placer application to group sets of appointment requests together, and subsequently to identify the group.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string that identifies a group of appointment requests.  It is assigned by the placer application, and it identifies an appointment group uniquely among all such groups of requests from a particular requesting application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the assigning authority identifying information.  Section 2.8.15, &quot;EI - entity identifier,&quot; in Chapter 2 describes the structure and content of these components with respect to the EI data type.</FONT>
+<H4>10.5.1.5 Schedule ID<A NAME="I18"></A>  (CE)   00864</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an identifier code for the schedule in which this appointment should be (or is) booked.  This field is provided for situations in which filler applications maintain multiple schedules, and in which a particular resource or set of resources is controlled by more than one of those schedules.</FONT>
+<P>
+<FONT FACE="Times New Roman">If a new appointment must be booked, it may be necessary to provide a schedule ID to uniquely identify the intended slot(s) being requested in the transaction.  After the request has been assigned to one or more slots, however, the filler application should assign a unique filler appointment ID (see Sections <A HREF="ch100059.htm#I12">10.5.1.1</A>, &quot;<A HREF="ch100059.htm#I12">Placer appointment ID  XE "Placer appointment ID"    (EI)   00860</A>,&quot; and <A HREF="ch100059.htm#I14">10.5.1.2</A>, &quot;<A HREF="ch100059.htm#I14">Filler appointment ID  XE "Filler appointment ID"    (EI)   00861</A> ).  This filler appointment ID, as its definition indicates, should uniquely identify the appointment among all such requests and appointments within the filler application.  This means that, once assigned, the filler appointment ID should uniquely identify the appointment (either as a request or as a booked appointment) without a need to provide the schedule ID too.  As a cautionary note regarding implementation, if the filler appointment ID would not otherwise be unique, it may be necessary to include the schedule ID as part of the filler appointment ID.  This can be done either by prefixing the appointment ID with the schedule ID, or by appending the schedule ID to the appointment ID.</FONT>
+<H4>10.5.1.6 Request event reason<A NAME="I19"></A>  (CE)   00865</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the identifier code for the reason that the request event is being triggered.  This field may contain a code describing the cancel reason, the delete reason, the discontinue reason, the add reason, or any other code describing the reason that a specific event is occurring.</FONT>
+<H4>10.5.1.7 Appointment reason<A NAME="I20"></A>  (CE)   00866</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the identifier code for the reason that the appointment is to take place.  This field may contain a Universal Service Identifier describing the observation/test/battery/procedure or other activity that is to be performed during the requested appointment, similar to the Universal Service Identifier defined for the OBR segment in Chapter 4 on Order Entry.  It may also contain a site-specific code describing a pre-defined set of reasons that an appointment may be set to occur.  This code can be based on local and/or universal codes.  The use of universal codes is recommended.  Refer to <I>user-defined </I><I>table 0276 - Appointment reason codes</I>, below, for suggested codes.</FONT>
+<P ALIGN=indent>User-defined Table 0276 - Appointment reason codes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=204 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=379 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=204 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ROUTINE</FONT>
+</TD><TD WIDTH=379 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Routine appointment - default if not valued</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=204 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">WALKIN</FONT>
+</TD><TD WIDTH=379 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A previously unscheduled walk-in visit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=204 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CHECKUP</FONT>
+</TD><TD WIDTH=379 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A routine check-up, such as an annual physical</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=204 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FOLLOWUP</FONT>
+</TD><TD WIDTH=379 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A follow up visit from a previous appointment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=204 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EMERGENCY</FONT>
+</TD><TD WIDTH=379 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency appointment</TD></TR></FONT></TABLE><H4>10.5.1.8 Appointment type<A NAME="I21"></A>  (CE)   00867</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an identifier code for the type of appointment being requested.  Refer to <I>user-defined table 0277 - Appointment type codes</I> for suggested codes.</FONT>
+<P ALIGN=indent>User-defined Table 0277 - Appointment type codes</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=391 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">NORMAL</FONT>
+</TD><TD WIDTH=391 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Routine schedule request type - default if not valued</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TENTATIVE</FONT>
+</TD><TD WIDTH=391 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A request for a tentative (e.g., &quot;penciled in&quot;) appointment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">COMPLETE</FONT>
+</TD><TD WIDTH=391 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A request to add a completed appointment, used to maintain records of completed appointments that did not appear in the schedule (e.g., STAT, walk-in, etc.)</TD></TR></FONT></TABLE><H4>10.5.1.9 Appointment duration<A NAME="I22"></A>  (NM)   00868</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount of time being requested for the appointment.  In cases of requests for repeating appointments, this field describes the duration of one instance of the appointment.  If this field is unvalued, then the institution&#146;s standard duration for the type of appointment requested will be assumed.</FONT>
+<P>
+<FONT FACE="Times New Roman">The appointment duration field must contain a positive, non-zero number.  A negative number or zero (0) is nonsensical in the context of a duration.</FONT>
+<H4>10.5.1.10 Appointment duration units<A NAME="I23"></A>  (CE)   00869</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code describing the units of time used in expressing the Appointment Duration field.  This field should be valued according to the recommendations in Chapters 2 and 7.  If this component is not valued, the ISO base unit of seconds (code s) will be assumed.  Refer to Chapter 7, <I>Figures 7-10 </I>through <I>7-13</I>, for a list of ISO and ANSI+ unit codes.</FONT>
+<H4>10.5.1.11 Requested start date/time range<A NAME="I24"></A>  (DR)   00870</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;range start date/time (TS)&gt; ^ &lt;range end date/time (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time that the appointment is requested to begin, in the form of a date/time range.  The first component contains the earliest date and time that the appointment may be scheduled to begin.  The second component contains the latest date and time that the appointment may be scheduled to begin.</FONT>
+<P>
+<FONT FACE="Times New Roman">The TS (time stamp) data type allows for two components:  the time stamp, and a degree of precision.  If used, the degree of precision should be separated from the time stamp by a subcomponent delimiter.</FONT>
+<P>
+<FONT FACE="Times New Roman">If only the range start date/time has been provided, then the range end date/time is assumed to be infinity.  Using this scenario is equivalent to requesting the next available slot on/after a particular date and time.  If only the range end date/time has been provided, then the range start date/time is assumed to be immediate.  Using this scenario is equivalent to requesting the appointment start some time between the current date and time, and the specified range end date/time.  Requesting an appointment when the range start and range end date/time are the same is equivalent to requesting a specific slot on a schedule.  If this field is unvalued, then the filler application will assume that the next available slot should be scheduled, using the institution&#146;s processing rules for scheduling appointments.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field may repeat.  Repetitions of this field are used to construct a list of acceptable ranges.  Repetitions of this field are connected with a logical OR to construct this list.  This procedure allows applications to provide multiple preferences for the scheduling of appointments.  Applications should take steps to ensure that nonsensical ranges are not indicated in this field (for example, redundant ranges).</FONT>
+<P>
+<FONT FACE="Times New Roman">Examples:</FONT>
+<P>
+<FONT FACE="Times New Roman">Schedule the appointment to begin at some time between 8:00AM on Tuesday, May 17th, 1994 and 12:00PM on Friday, May 20th, 1994 local time:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|199405170800^199405201200|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Schedule the appointment in the next available slot on/after 6:00AM on Monday, April 25th, 1994 local time:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|199405250600^|...</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>: The field value ...|199405250600|... is equivalent to making the above request, according to the HL7 rules for processing fields.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Schedule the appointment in the next available slot on/<U>before</U> 6:00AM on Monday, April 25th, 1994 local time:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|^199405250600|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Schedule the appointment in the next available slot:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...||...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Schedule the appointment to begin on any weekday during the two weeks beginning Monday, April 4th 1994.  In this example, the degree of precision (sub)component of the time stamp is used to indicate that the date/time ranges refer to the institution&#146;s standard operating day:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|199404040000&amp;D^199404080000&amp;D~199404110000&amp;D^199404150000&amp;D|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Schedule the appointment in the next available slot that does not occur during the May, 1994 HL7 Working Group Meeting:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|^199405161600~199405230800^|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Schedule the appointment to begin on/before 4:00PM on Thursday, December 23rd, 1993, or any weekday between Monday, December 27th and Thursday, December 30th, or on/after 8:00AM on Monday, January 3rd, 1994:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|^199312231600~199312270000&amp;D^199312300000&amp;D~199401030800^|...</FONT></PRE>
+<H4>10.5.1.12 Priority<A NAME="I25"></A>  (ST)   00871</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the urgency of the request.  The definition of this field is equivalent to the definition of the priority component of the Quantity/Timing data type given in the Order Entry chapter (Chapter 4), Section 4.4.6, &quot;Priority component.&quot;</FONT>
+<H4>10.5.1.13 Repeating interval<A NAME="I26"></A>  (RI)   00872</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;repeat pattern (IS)&gt; ^ &lt;explicit time interval (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the interval between repeating appointments.  The default setting indicates that the appointment should occur once, if the component is not valued.  The definition of this field is equivalent to the definition of the interval component of the Quantity/Timing data type given in the Order Entry chapter (Chapter 4), Section 4.4.2, &quot;Interval component.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">If an explicit time interval is specified for the repeat pattern, then it specifies the actual time(s) at which the appointment should be scheduled.  The <I>ARQ-11-requested start date/time range</I> ought to indicate the first repetition that should occur.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>: The subcomponent delimiter defined for the Interval component of the Quantity/Timing field definition has been replaced by a component delimiter for this field.</TD></TR></FONT></TABLE><H4>10.5.1.14 Repeating interval duration<A NAME="I27"></A>  (ST)   00873</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates how long the appointment repetitions should continue, once they have begun.  The default setting indicates that  the appointment should occur once.  If the Interval Duration is defined as indefinitely repeating, the repetition of this appointment can only be stopped by using a discontinue event.  The definition of this field is equivalent to the definition of the Interval component of the Quantity/Timing field given in the Order Entry chapter (Chapter 4), Section 4.4.3, &quot;Duration component,&quot; with the exception of the default value.</FONT>
+<H4>10.5.1.15 Placer contact person<A NAME="I28"></A>  (XCN)   00874</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type (ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the person responsible for requesting the scheduling of a requested appointment.  This person could be the same person responsible for executing the actual appointment, or it could be the provider requesting that an appointment be made on behalf of the patient, with another provider.  </FONT>
+<H4>10.5.1.16 Placer contact phone number<A NAME="I29"></A>  (XTN)   00875</H4>
+<P>
+<FONT FACE="Courier New">Components:  [NNN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the phone number used to contact the placer contact person.</FONT>
+<H4>10.5.1.17 Placer contact address<A NAME="I30"></A>  (XAD)   00876</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt;address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address used to contact the placer contact person. </FONT>
+<H4>10.5.1.18 Placer contact location<A NAME="I31"></A>  (PL)   00877</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt; location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code that identifies the location of the placer contact person. </FONT>
+<H4>10.5.1.19 Entered by person<A NAME="I32"></A>  (XCN)   00878</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type (ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the person responsible for entering the request for the scheduling of an appointment.  It is included to provide an audit trail of persons responsible for the request.  This person may be someone other than the placer contact person, who is responsible for entering orders and requests. </FONT>
+<H4>10.5.1.20 Entered by phone number<A NAME="I33"></A>  (XTN)   00879</H4>
+<P>
+<FONT FACE="Courier New">Components:  [NNN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the phone number used to contact the <I>ARQ-19-entered by person</I>.</FONT>
+<H4>10.5.1.21 Entered by location<A NAME="I34"></A>  (PL)   00880</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code that identifies the location of the entered by person.  </FONT>
+<H4>10.5.1.22 Parent placer appointment ID<A NAME="I35"></A>  (EI)   00881</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field relates a child to its parent, when a parent-child relationship exists.  It contains the placer application&#146;s permanent identifier for the parent of the appointment request.  This is a composite field.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string that identifies the parent appointment request.  It is assigned by the placer application, and identifies an appointment request uniquely among all such requests from a particular requesting application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the assigning authority identifying information.  Section 2.8.15, &quot;EI - entity identifier in Chapter 2 describes the structure and content of these components with respect to the EI data type.</FONT>
+<H4>10.5.1.23 Parent filler appointment ID<A NAME="I36"></A>  (EI)   00882</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (ID)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field relates a child to its parent, when a parent-child relationship exists.  It contains the filler application&#146;s permanent identifier for the parent of the appointment request.  This is a composite field.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string that identifies the parent appointment request.  It is assigned by the filler application, and identifies an appointment request uniquely among all such requests on a particular processing application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the assigning authority identifying information.  Section 2.8.15, &quot;EI - entity identifier,&quot; in Chapter 2 describes the structure and content of these components with respect to the EI data type.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100058.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100060.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

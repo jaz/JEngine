@@ -1,0 +1,347 @@
+<HTML>
+<HEAD>
+<TITLE>8.10.2 CM0 - clinical study master segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800046.htm">
+<LINK REL="Previous" HREF="ch800044.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E372"></A>
+<H3><B>8.10.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CM0 - clinical study master segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The Clinical Study Master (CM0) segment contains the information about the study itself.  The sending application study number for each patient is sent in the CSR segment.  The optional CM0 enables information about the study at the sending application that may be useful to the receiving systems.  All of the fields in the segment describe the study status at the sending facility unless otherwise agreed upon.</FONT>
+<P ALIGN=indent>Figure 8-20.  CM0 attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=66 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=215 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 4</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01010</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - CM0</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01011</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sponsor Study ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/3</FONT>
+</TD><TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01012</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Alternate Study ID's</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 300</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01013</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Title of Study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01014</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Chairman of Study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01015</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Last IRB Approval Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01016</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Total Accrual to Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01017</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Last Accrual Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01018</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact for Study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01019</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact's Tel. Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 100</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top ><BR></TD>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">01020</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact's Address</TD></TR></FONT></TABLE></CENTER><P>8.10.2.0  CM0 field definitions
+<H4>8.10.2.1 Set ID - CM0 (SI)   01010</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a number that uniquely identifies this transaction for the purpose of adding, changing, or deleting the transaction.  For those messages that permit segments to repeat, the  Set ID field is used to identify the repetitions.</FONT>
+<H4>8.10.2.2 Sponsor study ID  (CE)   01011</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the study number established by the study sponsor.  Please see discussion in Section 7.7.1.1, &quot;Sponsor study ID.&quot;</FONT>
+<H4>8.10.2.3 Alternate study ID  (CE)   01012</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the local or collaborators&#146; cross-referenced study numbers.</FONT>
+<H4>8.10.2.4 Title of study  (ST)   01013</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the sending institution&#146;s title for the clinical trial.  It gives recipients further identification of the study.</FONT>
+<H4>8.10.2.5 Chairman  (XCN)   01014</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type (ID)&gt; ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID) ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the sending institution&#146;s chairman.  It further identifies the study.  The chairman&#146;s name may be needed for communication purposes.</FONT>
+<H4>8.10.2.6 Last IRB approval date  (DT)   01015</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an institution&#146;s Internal Review Board approval dates which are required annually to continue participation in a clinical trial.</FONT>
+<H4>8.10.2.7 Total accrual to date  (NM)   01016</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is a quality control field to enable checks that patient data have been transmitted on all registered patients.</FONT>
+<H4>8.10.2.8 Last accrual date  (DT)   01017</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the status information on the patient registration activity for quality control and operations purposes.</FONT>
+<H4>8.10.2.9 Contact for study  (XCN)   01018</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type (ID)&gt; ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID) ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the individual who should be contacted for inquiries about data transmitted for this study.</FONT>
+<H4>8.10.2.10 Contact&#146;s telephone  (XTN)   01019</H4>
+<P>
+<FONT FACE="Courier New">Components: [NNN] [(999)]999-9999 [X9999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;county code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any test (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the phone number of the study contact identified in <I>CM0-9-contact for study</I></FONT>
+<H4><I>8.10.2.11</I><I> </I>Contact's address  (XAD)   01020</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code (ST)&gt; ^ &lt;country (ID)&gt; ^ &lt;address type (ID)&gt; ^ &lt;other geographic designation (ST)&gt; ^ &lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address of the study contact identified in <I>CM0-9contact for study</I>.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

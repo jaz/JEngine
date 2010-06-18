@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.11 RGV/RRG - pharmacy/treatment give message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400046.htm">
+<LINK REL="Previous" HREF="ch400044.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E245"></A>
+<H3><B>4.8.11</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>RGV/RRG - pharmacy/treatment give message</B><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The RDS message&#146;s RXD segment carries the dispense data for a given issuance of medication:  thus it may describe a single dose, an half-day dose, a daily dose, a refill of a prescription, etc.  It does not contain the given instructions or scheduling information.  When this &quot;give&quot; (i.e., administration) information needs to be transmitted from the pharmacy or treatment application to another application, it is done with the RGV message.</FONT>
+<P>
+<FONT FACE="Times New Roman">The RGV message uses the RXG segment to record drug or treatment administration instructions.  It may carry information about a single scheduled administration on a drug or treatment, or it may carry information about multiple administrations.  If the pharmacy or treatment application (or some other application) needs to create a nonambiguous MAR report where each administration is matched to a particular give date/time instruction, it may use the RGV message as described in the following way:</FONT>
+<P>
+<FONT FACE="Times New Roman">For each scheduled administration of the medication, the pharmacy/treatment issues either a single RGV message or a single RGV message with multiple RXG segments, one for each scheduled administration.  The actual administrations (transmitted by one or more RAS messages) are matched against the scheduled ones by recording in each RXA segment the Give Sub-ID of the corresponding RXG segment.  If more than one administration needs to be matched (as in the case of recording a change or rate of an IV solution) the administering application issues additional RXA segment(s) (corresponding to the same RXG segment).  If no matching is needed, the Give Sub-ID of the RXA segments has the value zero (0).</FONT>
+<P>
+<FONT FACE="Times New Roman">The ORC must have the filler order number and the order control code RE.  The RXE and associated RXCs may be present if the receiving application needs any of their data.  The RXG carries the scheduled administration data for either a single &quot;give instruction&quot; (single dose) of medication or for multiple &quot;give instructions.&quot;  The RXG is not a complete record of an order.  Use the RXO and RXE segments if a complete order is needed.  It is a record from the pharmacy or treatment application to the Nursing application (or other) with drug/treatment administration instructions.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RGV</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Pharmacy/Treatment Give</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for PID)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{AL1}]   Allergy          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [PV2]   Patient Visit Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  RXO    Pharmacy /Treatment Order      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {NTE}   Notes and Comments (for RXO)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {RXC}   Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          [{NTE}]  Notes and Comments (for RXC)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ] </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  RXE    Pharmacy/Treatment Encoded Order     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{RXC}]   Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ] </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  RXG    Pharmacy/Treatment Give      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{RXC}]   Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [OBX]   Observation/Results       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for OBX)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>(acknowledged by)
+<PRE>
+<FONT FACE="Courier New"><U>RRG</U><U> </U><U> </U><U>Pharmacy/Treatment Give Acknowledgment Message</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]   Notes and Comments (for PID)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     RXG    Pharmacy/Treatment Give      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}   Pharmacy<SUB>/</SUB>Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{RXC}]   Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]  </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,4312 @@
+<HTML>
+<HEAD>
+<TITLE>7.3.2 OBX - observation/result segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700012.htm">
+<LINK REL="Previous" HREF="ch700010.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E290"></A>
+<H3><B>7.3.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><B>OBX </B><B>-</B><B> observation/result segment</B><A NAME="I12"></A><A NAME="I13"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The OBX segment is used to transmit a single observation or observation fragment.  It represents the smallest indivisible unit of a report.  Its structure is summarized in <I>Figure 7-5.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">Its principal mission is to carry information about observations in report messages.  But the OBX can also be part of an observation order (see Section 4.2, &quot;Order Message Definitions&quot;).  In this case, the OBX carries clinical information needed by the filler to interpret the observation the filler makes.  For example, an OBX is needed to report the inspired oxygen on an order for a blood oxygen to a blood gas lab, or to report the menstrual phase information which should be included on an order for a pap smear to a cytology lab.  Appendix 7A includes codes for identifying many of pieces of information needed by observation producing services to properly interpret a test result.  OBX is also found in other HL7 messages that need to include patient clinical information.</FONT>
+<P>Figure 7-5.  OBX attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=42 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=60 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=70 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=196 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00569</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - OBX</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0125</FONT>
+</TD><TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00570</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Value Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">590</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00571</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00572</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Sub-ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">65536 [    <SUP> </SUP>The length of the observation value field is variable, depending upon value type.  See OBX-2-value type .</FONT>] <SUP> </SUP>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">*</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y [      May repeat for multipart, single answer results with appropriate data types, e.g., CE, TX, and FT data types.</FONT>] 
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00573</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Value</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00574</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00575</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">References Range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0078</FONT>
+</TD><TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00576</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Abnormal Flags</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00577</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Probability</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0080</FONT>
+</TD><TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00578</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nature of Abnormal Test</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0085</FONT>
+</TD><TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00579</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observ Result Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00580</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date Last Obs Normal Values</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00581</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">User Defined Access Checks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00582</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time of the Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00583</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Producer's ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00584</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Responsible Observer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=70 VALIGN=top >
+<P>
+<FONT SIZE="-1">00936</FONT>
+</TD><TD WIDTH=196 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Method</TD></TR></FONT></TABLE></CENTER><P>7.3.2.0   OBX field definitions
+<H4>7.3.2.1 Set ID - observation simple  (SI)   00569</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the sequence number.  For compatibility with ASTM. </FONT>
+<H4>7.3.2.2 Value type  (ID)   00570</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the format of the observation value in OBX.  It must be valued if <I>OBX-11-Observation result status</I> is not valued with an &#145;X&quot;.  If the value is CE then the result must be a coded entry.  When the value type is TX or FT then the results are bulk text.  The valid values for the value type of an observation are listed in <I>HL7 table 0125 - Value type</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">The observation value must be represented according to the format for the data type defined in Chapter 2, Section 2.8, &quot;Data Types.&quot;  For example, a PN consists of 6 components, separated by component delimiters. </FONT>
+<P>
+<FONT FACE="Times New Roman">Although NM is a valid type, observations which are usually reported as numbers will sometimes have the string (ST) data type because non-numeric characters are often reported as part of the result, e.g., &gt;300 to indicate the result was off-scale for the instrument.  In the example, &quot;&gt;300&quot;, &quot;&gt;&quot; is a symbol and the digits are considered a numeric value.  However, this usage of the ST type should be discouraged since the SN (structured numeric) data type now accommodates such reporting and, in addition, permits the receiving system to interpret the magnitude.</FONT>
+<P>
+<FONT FACE="Times New Roman">All HL7 data types are valid, and are included in Table 0125 except CM, CQ, SI, and ID.  For a CM definition to have meaning, the specifics about the CM must be included in the field definition.  <I>OBX-5-observation value</I> is a general field definition that is influenced by the data type OBX-3, so CMs are undefined in this context.   CQ is invalid because units for <I>OBX-5-observation value</I> are always specified explicitly in an OBX segment with OBX-6 units.  SI is invalid because it only applied to HL7 message segments, and ID because it requires a constant field definition.</FONT>
+<P>
+<FONT FACE="Times New Roman">The RP value (reference pointer) must be used if the actual observation value is not sent in OBX but exists somewhere else.  For example, if the observation consists of an image (document or medical), the image itself cannot be sent in OBX.  The sending system may in that case opt to send a reference pointer.  The receiving system can use this reference pointer whenever it needs access to the actual image through other interface standards, e.g., DICOM, or through appropriate data base servers.</FONT>
+<P>Table 0125 - Value type
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=316 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AD</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded Entry</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CF</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded Element With Formatted Values</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CK</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite ID With Check Digit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite ID And Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Composite Price</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended Composite ID With Check Digit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ED</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Encapsulated Data</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Formatted Text (Display)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MO</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Money</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Numeric</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Person Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RP</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reference Pointer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Structured Numeric</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">String Data.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TM</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Telephone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time Stamp (Date &amp; Time)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Text Data (Display)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended Composite Name And Number For Persons</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended Composite Name And Number For Organizations</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended Person Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=58 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=316 VALIGN=top >
+<P>
+<FONT SIZE="-1">Extended Telecommunications Number</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">The full definition of these data types is given in Chapter 2, Section 2.8, &quot;Data Types.&quot;  The structured numeric (SN) data type, new to version 2.3, provides for reporting ranges (e.g., 3-5 or 10-20), titres (e.g., 1:10), and out-of-range indicators (e.g., &gt;50) in a structured and computer interpretable way. </FONT>
+<P>
+<FONT FACE="Times New Roman">We allow the FT data type in the OBX segment but its use is discouraged.  Formatted text usually implies a meaningful structure e.g., a list of three independent diagnoses reported on different lines.  But ideally, the structure in three independent diagnostic statements would be reported as three separate OBX segments.</FONT>
+<P>
+<FONT FACE="Times New Roman">TX should not be used except to send large amounts of text.  In the TX data type, the repeat delimiter can only be used to identify paragraph breaks.  Use ST to send short, and possibly encodable, text strings.</FONT>
+<H4>7.3.2.3 Observation identifier  (CE)   00571</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a unique identifier for the observation. The format is that of the Coded Element (CE). Example: 93000.3^P-R interval^A34. </FONT>
+<P>
+<FONT FACE="Times New Roman">In most systems the identifier will point to a master observation table that will provide other attributes of the observation that may be used by the receiving system to process the observations it receives.  A set of message segments for transmitting such master observation tables is described in Chapter 8.  The relation of an observation ID to a master observation table is analogous to the relationship between a charge code (in a billing record) and the charge master.</FONT>
+<P>
+<FONT FACE="Times New Roman">When local codes are used as the first identifier in this field we strongly encourage sending a universal identifier as well to permit receivers to equivalence results from different providers of the same service (e.g., a hospital lab and commercial lab that provides serum potassium to a nursing home).  One possible universal identifier is LOINC codes for laboratory and clinical measurements (see <I>Figure 7-3</I> and the HL7 www listserver); see Section <A HREF="ch700053.htm#I7">7.15</A>, &quot;<A HREF="ch700053.htm#I9">WAVEFORM RESULT DATA TYPES</A>,&quot; and Appendix X2 of ASTM E1467 for neurophysiology tests.</FONT>
+<H4>7.3.2.4 Observation sub-ID  (ST)   00572</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to distinguish between multiple OBX segments with the same observation ID organized under one OBR.  For example, a chest xray report might include three separate diagnostic impressions.  The standard requires three OBX segments, one for each impression.  By putting a 1 in the Sub-ID of the first of these OBX segments, 2 in the second, and 3 in the third, we can uniquely identify each OBX segment for editing or replacement.</FONT>
+<P>
+<FONT FACE="Times New Roman">The sub-identifier is also used to group related components in reports such as surgical pathology.  It is traditional for surgical pathology reports to include all the tissues taken from one surgical procedure in one report.  Consider, for example, a single surgical pathology report that describes the examination of gallbladder and appendix tissue.  This report would be transmitted roughly as shown in <I>Figure 7-6</I>.</FONT>
+<P>Figure 7-6.  Example of sub-identifier usage 
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|1|||88304&amp;SURG PATH REPORT...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|88304&amp;ANT|1|T57000^GALLBLADDER^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|TX|88304&amp;GDT|1|THIS IS A NORMAL GALLBLADDER...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|TX|88304&amp;MDT|1|MICROSCOPIC EXAM SHOWS HISTOLOGICALLY </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> NORMAL GALLBLADDER TISSUE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|CE|88304&amp;IMP|1|M-00100^NML^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|CE|88304&amp;ANT|2|T66000^APPENDIX^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|TX|88304&amp;GDT|2|THIS IS A RED, INFLAMED, SWOLLEN, BOGGY APPENDIX...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|TX|88304&amp;MDT|2|INFILTRATION WITH MANY PMN's - INDICATING INFLAMATORY CHANGE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|CE|88304&amp;IMP|2|M-40000^INFLAMMATION NOS^SNM...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The example in <I>Figure 7-6</I> has two segments for each component of the report, one for each of the two tissues.  Thus, there are two 88304&amp;ANT segments; there are two 88304&amp;GDT segments, and there are two 88304&amp;MDT segments.  Segments that apply to the gallbladder all have the sub-identifier 1.  Segments that apply to the appendix all have sub-identifier 2.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The observation sub ID has other grouping uses.  It can be used to organize the reporting of some kinds of fluid intakes and outputs.  For example, when intake occurs through multiple intravenous lines; a number of separate observations (OBX segments), the intake volume, the type of intake (Blood, D5W, Plasma, etc.), the site of the IV line, etc. may be needed for each intravenous line, each requiring a separate OBX segment.  If more than one IV line is running, we can logically link all of the OBX segments that pertain to the first IV line by assigning them an observation sub ID of 1.  We can do the same with the second IV line by assigning them a sub ID 2 and so on.  The same would apply to the outputs of surgical drains when there are multiple such drains.</FONT>
+<P>
+<FONT FACE="Times New Roman">The use of the sub ID to distinguish repeating OBXs for the same observation ID is really a special case of using the sub ID to group, as can be seen if we picture the OBX segments in <I>Figure 7-6</I> as part of a table where the rows correspond to a particular species of observation and the cells correspond to the sub ID numbers that would be associated with each corresponding OBX.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=2 >
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P>
+<FONT SIZE="-1">Distinct Observations</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">88304&amp;ANT</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">88304&amp;GDT</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">80304&amp;MDT</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">80304&amp;IMP</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sub ID 1st Group</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sub ID 2nd Group</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=116 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The use of Sub IDs to group results is equivalent to defining a table, and the use of sub IDs to distinguish repeats is just a special case, represented by one column in this table.</FONT>
+<P>
+<FONT FACE="Times New Roman">However, this approach introduces ambiguities if we have a set of repeating observations within a group, e.g., if the appendix observations include two impressions as in the 8th and 9th OBXs shown in <I>Figure 7-7.</I>  This really represents the existence of a row nested within a single cell of the table given above.</FONT>
+<P ALIGN=indent>Figure 7-7.  Example of sub-identifier usage</P>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|880304&amp;ANT|1|T57000^GALLBLADDER^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|TX|880304&amp;GDT|1|THIS IS A NORMAL GALL BLADDER...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|TX|880304&amp;MDT|1|MICROSCOPIC EXAMINATION SHOWS HISTOLOGICALLY </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> NORMAL GALLBLADDER TISSUE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|CE|880304&amp;IMP|1|M-00100^NML^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|CE|880304&amp;ANT|2|T57000^APPENDIX^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|TX|880304&amp;GDT|2|THIS IS A RED, INFLAMED APPENDIX...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|TX|880304&amp;MDT|2|INFLAMMATION WITH MANY PUS CELLS-ACUTE INFLAMMATION...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|CE|880304&amp;IMP|2|M-40000^INFLAMMATION NOS^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|9|CE|880304&amp;IMP|2|M-30280^FECALITH^SNM...</FONT></PRE>
+<P>The text under OBX-5 provides guidance about dealing with two OBXs with the same observation ID and observation sub IDs.  They are sent and replaced as a unit.  However, some systems will take this to mean that the set of OBXs are to be combined into one composite observation in the receiving system.  We suggest the use of a dot and a string (similar to the Dewey Decimal system) when users wish to distinguish each of the repeats within one type, or results within a cell for editing and correction purposes.  Using this system, <I>Figure 7-7</I> would become <I>7-8</I>.  If there are cases where such nesting occurs at even deeper levels, this approach could be extended.
+<P ALIGN=indent>Figure 7-8.  Example of sub-identifier usage</P>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|880304&amp;ANT|1|T57000^GALLBLADDER^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|TX|880304&amp;GDT|1|THIS IS A NORMAL GALL BLADDER...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|TX|880304&amp;MDT|1|MICROSCOPIC EXAMINATION SHOWS HISTOLOGICALLY </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> NORMAL GALLBLADDER TISSUE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|CE|880304&amp;IMP|1|M-00100^NML^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|CE|880304&amp;ANT|2|T57000^APPENDIX^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|TX|880304&amp;GDT|2|THIS IS A RED, INFLAMED APPENDIX...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|TX|880304&amp;MDT|2|INFLAMMATION WITH MANY PUS CELLS-ACUTE INFLAMMATION...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|CE|880304&amp;IMP|2.1|M-40000^INFLAMMATION NOS^SNM...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|9|CE|880304&amp;IMP|2.2|M-30280^FECALITH^SNM...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Use a null or 1 when there is no need for multiples.</FONT>
+<P>
+<FONT FACE="Times New Roman">If the observation includes a number of OBXs with the same value for the observation ID OBX-3, then one must use different values for the sub-ID.  This is in fact the case of the repeats depicted in Figure 7-8, but without any need to group sets of OBXs.  Three such OBXs could be distinguished by using sub-Ids 1,2,e; alternatively, sub-Ids 1.1, 1.2, 1.3 could be used, as shown in Figure 7-8.  Figure 7-9 shows and example of an electrocardiograph chest radiograph report with three diagnostic impressions, using 1,2,3 in the sub-ID field to distinguish the three separate results.</FONT>
+<P>
+<FONT FACE="Times New Roman">Figure 7-9  Example of  Sub-ID used to distinguish three independent results with the same observation ID</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|8601-7^EKG IMPRESSION ^LN|1|^atrial fibrillation|. . .</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|CE|8601-7^EKG IMPRESSION ^LN|2|^OLD SEPTAL MYOCARDIAL INFARCT| . . .</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|CE|8601-7^EKG IMPRESSION ^LN|3|^poor R wave progression|. . .</FONT></PRE>
+<H4>7.3.2.5 Observation value  (*)   00573</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the value observed by the observation producer.  <I>OBX-2-value type</I> contains the data type for this field according to which observation value is formatted.  It is not a required field because some systems will report only the normalcy/abnormalcy (<I>OBX-8</I>), especially in product experience reporting.</FONT>
+<P>
+<FONT FACE="Times New Roman">Representation </FONT>
+<P>
+<FONT FACE="Times New Roman">This field contains the value of <I>OBX-3-observation identifier</I> of the same segment.  Depending upon the observation, the data type may be a number (e.g., a respiratory rate), a coded answer (e.g., a pathology impression recorded as SNOMED), or a date-time (the date-time that a unit of blood is sent to the ward).  An observation value is always represented as the data type specified in <I>OBX-2-value type</I> of the same segment.  Whether numeric or short text, the answer shall be recorded in ASCII text.</FONT>
+<P>
+<FONT FACE="Times New Roman">Reporting logically independent observations</FONT>
+<P>
+<FONT FACE="Times New Roman">The main sections of dictated reports, such as radiologic studies or history and physicals, are reported as separate OBX segments.  In addition, each logically independent observation should be reported in a separate OBX segment, i.e. one OBX segment should not contain the result of more than one logically independent observation.  This requirement is included to assure that the contents of <I>OBX-6-units</I>, <I>OBX-8-abnormal flags</I>, and <I>OBX-9-probability</I> can be interpreted unambiguously.  The electrolytes and vital signs batteries, for example, would each be reported as four separate OBX segments.  Two diagnostic impressions, e.g., congestive heart failure and pneumonia, would also be reported as two separate OBX segments whether reported as part of a discharge summary or chest xray report.  Similarly, two bacterial organisms isolated in a single bacterial culture would be reported as two separate OBX segments.  </FONT>
+<P>
+<FONT FACE="Times New Roman">Though two independent diagnostic statements cannot be reported in one OBX segment, multiple categorical responses are allowed (usually as CE data types separated by repeat delimiters), so long as they are fragments (modifiers) that together construct one diagnostic statement.  Right upper lobe (recorded as one code) and pneumonia (recorded as another code), for example, could be both reported in one OBX segment.  Such multiple &quot;values&quot; would be separated by repeat delimiters.</FONT>
+<P>
+<FONT FACE="Times New Roman">Multiple OBX segments with the same observation ID and Sub ID</FONT>
+<P>
+<FONT FACE="Times New Roman">In some systems, a single observation may include fragments of more than one data type.  The most common example is a numeric result followed by coded comments (CE).  In this case, the logical observation can be sent in more than one OBX segment.  For example, one segment of numeric or string data type for the numeric result and another segment of CE data type for coded comments.  If the producer was reporting multiple coded comments they would all be sent in one OBX segment separated by repeat delimiters because they all modified a single logical observation.  Multiple OBX segments with the same observation ID and sub ID should always be sent in sequence with the most significant OBX segment (the one that has the normal flag/units and or reference range and status flag) first.  The value of <I>OBX-6 through </I><I>12</I> should be null in any following OBX segments with the same <I>  OBX-3-observation identifier</I> and <I>OBX-4-observation sub-ID</I>.  For the purpose of replacement or deletion, multiple OBX segments with the same observation ID and sub ID are treated as a unit.  If any are replaced or deleted, they all are replaced.</FONT>
+<P>
+<FONT FACE="Times New Roman">Coded values </FONT>
+<P>
+<FONT FACE="Times New Roman">When an OBX segment contains values of CE data types, the observations are stored as a combination of codes and/or text.  In Section <A HREF="ch700016.htm#I9">7.4.4</A>, &quot;<A HREF="ch700016.htm#I11">Example of narrative report messages</A>,&quot; examples of results that are represented as CE data types are shown in the first and second OBX segments of OBR 1 and the first and second OBX segments of OBR 2.  The observation may be an observation battery ID (for recommended studies), a diagnostic code or finding (for a diagnostic impression), or an anatomic site for a pathology report, or any of the other kinds of coded results.</FONT>
+<P>
+<FONT FACE="Times New Roman">It is not necessary to always encode the information stored within a coded observation.  For example, a chest xray impression could be transmitted as pure text even though it has a CE data type.  In this case, the test must be recorded as the second component of the result code, e.g., </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|71020&amp;IMP|1|^CONGESTIVE HEART FAILURE.</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">However, separate impressions, recommendations, etc., even if recorded as pure text, should be recorded in separate result segments.  That is, congestive heart failure and pneumonia should not be sent as:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|71020&amp;IMP|1|^CONGESTIVE HEART FAILURE AND PNEUMONIA|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">but as:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|71020&amp;IMP|1|^CONGESTIVE HEART FAILURE| </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|CE|71020&amp;IMP|2|^PNEUMONIA|.  </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Even better would be fully-coded results that include computer understandable codes (component 1) instead of, or in addition to, the text description (component 2).  One may include multiple values in a CE value and these can be mixtures of code and text, but only when they are needed to construct one diagnosis, impression, or concept.  When text follows codes as an independent value it would be taken as a modifier or addenda to the codes.  E.g.,</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CE|710120&amp;IMP^CXR|1|428.0^CONGESTIVE HEART FAILURE^I9C~^MASSIVE HEART</FONT></PRE>
+<P>The text in component 2 should be an accurate description of the code in component 1.  Likewise, if used, the text in component 5 should be an accurate description of the code in component 4.
+<H4>7.3.2.6 Units  (CE)   00574</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the units have a data type of CE.  The default coding system for the units codes consists of the ISO+ abbreviation for a single case unit (ISO 2955-83) plus extensions, that do not collide with ISO abbreviations (see introductory section to this chapter).  We designate this coding system as ISO+.  Both the ISO unit&#146;s abbreviations and the extensions are defined in Section <A HREF="ch700011.htm#I16">7.3.2.6.1.2</A>, &quot;<A HREF="ch700011.htm#I16">ISO and ANSI customary units abbreviations</A>,&quot;</A>and listed in <I>Figure 7-13</I>.  The ISO+ abbreviations <I>are</I> the codes for the default coding system.  Consequently, when ISO+ units are being used, only ISO+ abbreviations need be sent, and the contents of the units field will be backward compatible to HL7 Version. 2.1.  </FONT>
+<H5>7.3.2.6.1 <A NAME="I14"></A>Identifying reporting units <A NAME="I15"></A></H5>
+<H6><I>7.3.2.6.1.1</I><I> </I><I>Background</I></H6>
+<P>
+<FONT FACE="Times New Roman">When an observation&#146;s value is measured on a continuous scale, one must report the measurement units within the units field of the OBX segment.  Since in HL7 version 2.2 of the specification, all fields that report units are of data type CE.  The default coding system for the units codes consists of the ISO abbreviation for a single case unit (ISO 2955-83) plus extensions that do not collide with ISO abbreviations.  We designate this coding system as ISO+ (see <I>Figure 7-13</I>).  Both the ISO unit&#146;s abbreviations and the extensions are defined in Section <A HREF="ch700011.htm#I16">7.3.2.6.1.2</A>, &quot;<A HREF="ch700011.htm#I16">ISO and ANSI customary units abbreviations</A>.&quot;  The ISO+ abbreviations <I>are</I> the codes for the default coding system.  Consequently, when ISO+ units are being used, only ISO+ abbreviations need be sent, and the contents of the units field will be backward compatible to HL7 version 2.1 and ASTM 1238-88.</FONT>
+<P>
+<FONT FACE="Times New Roman">We strongly encourage observation producers to use ISO+ abbreviated units exclusively, but permit the use of other code systems, including US customary units (ANSI X3.50) and locally defined codes where necessary.  Local units are designated L or 99zzz where z is an alpha numeric character (see <I>figures 7-2</I> and <I>73</I>).  ANSI X3.50 -1986 provides an excellent description of these standards, as well as a table of single case abbreviations for US customary units such as foot or gallon.</FONT>
+<P>
+<FONT FACE="Times New Roman">We had originally intended to include the ANSI X3.50 - 1986 US customary units in the default ISO+ coding system.  However, there are overlaps between ISO&#146;s abbreviations and the abbreviations for US customary units.  For example, ft is the abbreviation for foot in US customary units and for femtotesla in ISO; pt is the abbreviation for pint in US customary and for picotesla in ISO.  (Be aware that the ANSI document also differs from the ISO document regarding the abbreviation of a few ISO units, as well.)   In order to avoid potential ambiguity, we have defined another coding system, designated ANS+.  It includes the US customary units (e.g., feet, pounds) and ISO abbreviations defined in ANSI X3.50-1986, as well as other non-metric units listed in <I>Figure 7-13</I> and the ISO combinations of these units.  Be aware that a few of the ANSI ISO unit abbreviations  differ from their abbreviations in ISO (see note at bottom of <I>Figure 7-13</I>).  </FONT>
+<P>
+<FONT FACE="Times New Roman">Because the ANS+ specification includes both ISO and US customary units, as well as miscellaneous non-metric units, some of the abbreviations are ambiguous.  Although there should be little confusion, in the context of a particular observation, this ambiguity is a good reason for avoiding ANS+ unit codes when possible.</FONT>
+<P>
+<FONT FACE="Times New Roman">When ANS+ units codes (abbreviations) are being transmitted, ANS+ must be included in the 3rd (6th) component of the field.  If the units of distance were transmitted as meters (ISO+) it would be transmitted as m because ISO+ is the default coding system for units.  However, if transmitted in the US customary units of feet, the units would be transmitted as ft^^ANS+.  When required, the full text of the units can be sent as the second component in keeping with the CE data type conventions. </FONT>
+<P>
+<FONT FACE="Times New Roman">Both ISO and ANSI also provide a set of mixed case abbreviations, but these abbreviations cannot be translated to single case without loss of meaning, and should not be used in this specification whose content is required to be case insensitive.</FONT>
+<H6><I>7.3.2.6.1.2</I><I> </I><A NAME="I16"></A><I>ISO and ANSI customary units abbreviations</I><I> </I></H6>
+<P>
+<FONT FACE="Times New Roman">ISO builds its units from seven base dimensions measured as meters, kilograms, seconds, amperes, kelvins, moles and candelas (see <I>Figure 7-10</I>).  Other units can be derived from these by adding a prefix to change the scale and/or by creating an algebraic combination of two or more base or derived units.  However, some derived units have acquired their own abbreviations (see <I>Figure 7-10</I>).  Abbreviations for U.S. customary units are given in <I>Figure 7-11</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">The ISO rules, well explained in ANSI X3.50, provide a way to create units of different scales by adding multiplier prefixes.  These prefixes can be expressed as words or abbreviations.  In this standard we are only concerned with the abbreviations.</FONT>
+<P>Figure 7-10.  ISO single case units abbreviations
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=103 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Units</FONT>
+</TD><TD WIDTH=94 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Abbreviation</FONT>
+</TD><TD WIDTH=75 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Units</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Abbreviation</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Units</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Abbreviation</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=6 WIDTH=534 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Base units code/abbreviations</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">ampere</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">a</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">kelvin</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">k</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">meter</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">m</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">candela</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">cd</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">kilogram</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">mole</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">mol</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top ><BR></TD>
+<TD WIDTH=94 VALIGN=top ><BR></TD>
+<TD WIDTH=75 VALIGN=top ><BR></TD>
+<TD WIDTH=87 VALIGN=top ><BR></TD>
+<TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">second</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">s</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=6 WIDTH=534 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Derived units with specified name and abbreviation</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">coulomb</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">c</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">hour</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">hr</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">pascal</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">pal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">day</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">d</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">joule</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">j</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">volt</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">v</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">degree Celsius</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">cel</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">minute (ti)</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">min</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">watt</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">w</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">farad</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">f</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">newton</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">n</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">weber</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">wb</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">hertz</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">hz</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">ohm</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">ohm</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">year</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">ann</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=6 WIDTH=534 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Other units</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">atomic mass unit</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">u</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">grey</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">gy</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">minute of arc</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">mnt</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">bel</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">b</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">henry</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">h</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">radian</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">rad</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">decibel</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">db</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">liter</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">l</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">siemens</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">sie</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">degree</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">deg</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">lumen</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">lm</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">steradian</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">sr</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=103 VALIGN=top >
+<P>
+<FONT SIZE="-1">gram</FONT>
+</TD><TD WIDTH=94 VALIGN=top >
+<P>
+<FONT SIZE="-1">g</FONT>
+</TD><TD WIDTH=75 VALIGN=top >
+<P>
+<FONT SIZE="-1">lux</FONT>
+</TD><TD WIDTH=87 VALIGN=top >
+<P>
+<FONT SIZE="-1">lx</FONT>
+</TD><TD WIDTH=85 VALIGN=top >
+<P>
+<FONT SIZE="-1">tesla</FONT>
+</TD><TD WIDTH=88 VALIGN=top >
+<P>
+<FONT SIZE="-1">t</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=6 WIDTH=534 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">See ISA 2955-1983 for full set</FONT>
+</TD></TR></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">The ISO abbreviations for multiplier prefixes are given in <I>Figure 7-12</I>.  Prefixes ranging from 10<SUP>-24</SUP> (1/billion billionth) to 10<SUP>24</SUP> (a billion billion) are available.  The single case abbreviation for kilo (x1000) is k.  A unit consisting of 1000 seconds would be abbreviated as ks, 1000 grams as kg, 1000 meters as km, and so on.  Some prefixes share the abbreviation of a base unit.  Farad and femto, for example, (10<SUP>-18</SUP>) both have the abbreviation of f.  To avoid confusion, ISO forbids the use of solitary prefixes. It also deprecates the use of two prefixes in one complex unit. Thus, f always means farad, ff would mean 1 million billionth of a farad.  Compound prefixes are not allowed.</FONT>
+<P>
+<FONT FACE="Times New Roman">A unit can be raised to an exponential power.  Positive exponents are represented by a number immediately following a unit&#146;s abbreviation, i.e., a square meter would be denoted by m2.  Negative exponents are signified by a negative number following the base unit, e.g., 1/m<SUP>2</SUP> would be represented as m-2  Fractional exponents are expressed by a numeric fraction in parentheses: the square root of a meter would be expressed as m(1/2). The multiplication of units is signified by a period (.) between the units, e.g., meters X seconds would be denoted m.s.  Notice that spaces are not permitted.  Division is signified by a slash (/) between two units, e.g. meters per second would be denoted as m/s.  Algebraic combinations of ISO unit abbreviations constructed by dividing, multiplying, or exponentiating base ISO units, are also valid ISO abbreviations units.  Exponentiation has precedence over multiplication or division. For example, microvolts squared per hertz (a unit of spectral power) would be denoted uv2/hz and evaluated as uv <SUP>2</SUP>/hz<SUB>  </SUB>while microvolts per square root of hertz (a unit of spectral amplitude) would be denoted uv/hz(1/2) and evaluated as uv/hz<SUP>&#189;</SUP> . If more than one division operator is included in the expression the associations should be parenthesized to avoid any ambiguity, but the best approach is to convert a/(b/c) to a.c/b or a.c.b-1 to simplify the expression.</FONT>
+<P>Figure 7-11.  ANSI+ unit codes for some U.S. customary units
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=119 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Units</FONT>
+</TD><TD WIDTH=86 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Abbreviation</FONT>
+</TD><TD WIDTH=127 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Units</FONT>
+</TD><TD WIDTH=86 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Abbreviation</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Units</FONT>
+</TD><TD WIDTH=92 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Abbreviation</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=205 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LENGTH</FONT>
+</TD><TD COLSPAN=2 WIDTH=213 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">VOLUME</FONT>
+</TD><TD COLSPAN=2 WIDTH=165 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TIME</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">inch</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">in</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">cubic foot</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">cft</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">year</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">yr</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">foot</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">ft</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">cubic inch</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">cin</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">month</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">mo</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">mile (statute)</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">mi</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">cubic yard</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">cyd</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">week</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">wk</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">mautical mile</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">nmi</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">tablespoon</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">tbs</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">day</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">d</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">rod</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">rod</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">teaspoon</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">tsp</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">hour</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">hr</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">yard</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">yd</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">pint</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">pt</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">minute </FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">min</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top ><BR></TD>
+<TD WIDTH=86 VALIGN=top ><BR></TD>
+<TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">quart</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">qt</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">second</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">sec</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top ><BR></TD>
+<TD WIDTH=86 VALIGN=top ><BR></TD>
+<TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">gallon</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">gal</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=119 VALIGN=top ><BR></TD>
+<TD WIDTH=86 VALIGN=top ><BR></TD>
+<TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">ounce (fluid)</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">foz</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=205 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AREA</FONT>
+</TD><TD COLSPAN=2 WIDTH=213 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MASS</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">square foot</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">sqf</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">dram</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">dr</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">square inch</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">sin</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">grain</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">gr (avoir)</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">square yard</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">syd</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">ounce (weight)</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">oz</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=119 VALIGN=top ><BR></TD>
+<TD WIDTH=86 VALIGN=top ><BR></TD>
+<TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">pound</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">lb</FONT>
+</TD><TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=92 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD COLSPAN=6 WIDTH=583 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Other ANSI units, derived units, and miscellanous</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">**British thermal unit</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">btu</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">**degrees fahrenheit</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">degf</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">**millirad</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">mrad</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=119 VALIGN=top >
+<P>
+<FONT SIZE="-1">cubic feet/minute</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">cft/min</FONT>
+</TD><TD WIDTH=127 VALIGN=top >
+<P>
+<FONT SIZE="-1">**feet/minute</FONT>
+</TD><TD WIDTH=86 VALIGN=top >
+<P>
+<FONT SIZE="-1">ft/min</FONT>
+</TD><TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">**RAD</FONT>
+</TD><TD WIDTH=92 VALIGN=top >
+<P>
+<FONT SIZE="-1">rad</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=6 WIDTH=583 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">Note: the abbreviations for conventional U.S. units of time are the same as ISO, except for year.  ISO = ANN, AMSI = yr.  The metric units in X3.50 are the same as ISO, except for: pascal (&quot;pa&quot; in ANSI, &quot;pal&quot; in ISO); ANSI uses &quot;min&quot; for both time and arc while ISO uses &quot;mnt&quot; for minutes of arc; and in ISA seconds are abbreviated &quot;s&quot;, in ANSI, &quot;sec&quot;. </FONT>
+</TD></TR>
+<TR>
+<TD COLSPAN=6 WIDTH=583 VALIGN=top >
+<P>
+<FONT SIZE="-1">This list is not exhaustive.  Refer to ANSI X3.50-1986, Table 1, for other metric and standard U.S. units.</FONT>
+</TD></TR>
+<TR>
+<TD COLSPAN=6 WIDTH=583 VALIGN=top >
+<P>
+<FONT SIZE="-1">**Non-metric units not explicitly listed in ANSI</FONT>
+</TD></TR></TABLE></CENTER><P>Figure 7-12.  Single case ISO abbreviations for multiplier prefixes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=61 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>Prefix
+</TD><TD WIDTH=52 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 ><BR></TD>
+<TD WIDTH=52 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>Code
+</TD><TD WIDTH=61 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>Prefix
+</TD><TD WIDTH=61 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 ><BR></TD>
+<TD WIDTH=61 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>Code</TD>
+</TR>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">yotta*</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>24</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">ya</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">yocto</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-24</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">y</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">zetta*</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>21</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">za</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">zepto</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-21</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">z</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">exa</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>18</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">ex</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">atto</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-18</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">a</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">peta</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>15</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">pe</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">femto</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-15</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">f</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">tera</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>12</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">t</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">pico</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-12</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">p</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">giga</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>9</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">g</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">nano</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-9</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">n</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">mega</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>6</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">ma</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">micro</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-6</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">u</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">kilo</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>3</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">k</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">milli</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-3</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">m</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">hecto</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>2</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">h</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">centi</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-2</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">c</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">deca</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>1</SUP></FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">da</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">deci</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">10<SUP>-1</SUP></FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">d</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=6 WIDTH=350 VALIGN=top >
+<P>*These abbreviations are not defined in the ISO specification for single case abbreviations.
+</TD></TR></TABLE></CENTER><P>
+<FONT FACE="Times New Roman"><I>Figure 7-13</I> lists the abbreviations for common ISO derived units.  It also includes standard unit abbreviations for common units, e.g., Milliequivalents, and international units, mm(Hg), and for counting per which we denote by a division sign, a denominator, but no numerator, e.g., /c, that are not part of the above referenced ISO standards.  We have extended the units table to better accommodate drug routes and physiologic measures, and otherwise fill in gaps in Version 2.2.</FONT>
+<P>
+<FONT FACE="Times New Roman">We have generally followed the IUPAC 1995 Silver Book<SUP>2</SUP> in the definitions of units. However, IUPAC specifies standards for reporting or displaying units and employs 8-bit data sets to distinguish them. This standard is concerned with the <I>transmission </I>of patient information. Therefore, we have restricted ourselves to case insensitive alphabetic characters and a few special characters (e.g., &quot;.&quot;, &quot;/&quot;, &quot;( &quot;, &quot;) &quot;,&quot;*&quot;, and &quot;_&quot; ) to avoid any possible confusion in the transmission.  Therefore, we use ISO 2955-1983 (Information processing -- representation of SI and other units in systems with limited character sets) and ANSI X3.50-1986 (Representations for U.S. customary, SI, and other units to be used in systems with limited character sets) case insensitive units abbreviations where they are defined. This means that in some cases, IUPAC abbreviations have different abbreviations in ISO+ even when the IUPAC abbreviations use only standard alphabetic characters.  For example, Pascal is abbreviated Pa in IUPAC but PAL in ISO+ (following ISO 2955) because Pa in a case insensitive context also means Picoampere.  However, the requirements for transmission do not preclude usage of IUPAC standards for presentation on paper or video display reports to end users. </FONT>
+<P>
+<FONT FACE="Times New Roman">All unit abbreviations are case insensitive. One could write milliliters as ML, ml, or mL. In this table we have used lower case for all of the abbreviations except for the letter L which we represent in upper case so that readers will not confuse it with the numeral one (1). This is just a change in presentation, not a change in the standard.  Systems should continue to send the codes as upper or lower case as they always have.</FONT>
+<P>Figure 7-13.  Common ISO derived units and *ISO extensions
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=81 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1"><B>Code/Abbr.</B></FONT>
+</TD><TD WIDTH=211 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1"><B>Name</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/(arb_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*1 / arbitrary unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/iu</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*1 / international unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*1 / kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1 / liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">1/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*1 / milliliter </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10.L/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10 x liter / minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10.L /(min.m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10 x (liter / minute) / meter<SUP>2</SUP> = liter / (minute &#180; meter<SUP>2</SUP>)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*3/mm3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>3</SUP> / cubic millimeter (e.g., white blood cell count)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*3/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>3</SUP> / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*3/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>3</SUP> / milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*6/mm3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>6</SUP> / millimeter<SUP>3</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*6/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>6</SUP> / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*6/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>6</SUP> / milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*9/mm3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>9</SUP> / millimeter<SUP>3</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*9/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>9</SUP> / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*9/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>9</SUP> / milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*12/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*10<SUP>12</SUP> / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10*3(rbc)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*1000 red blood cells<SUP>&#134;</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">a/m</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ampere per meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(arb_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Arbitrary unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">bar</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Bar (pressure; 1 bar = 100 kilopascals)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Beats Per Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">bq</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Becquerel</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(bdsk_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Bodansky Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(bsa)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Body surface area</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(cal)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Calorie </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Catalytic Fraction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Cells / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">cm</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Centimeter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">cm_h20</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">* Centimeters of water =H<SUB>2</SUB>0 (pressure)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">cm_h20.s/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Centimeters H<SUB>2</SUB>0 / (liter / second) = (centimeters H<SUB>2</SUB>0 &#180; second) / liter (e.g., mean pulmonary resistance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">cm_h20/(s.m)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Centimeters H<SUB>2</SUB>0 / second) / meter = centimeters H<SUB>2</SUB>0 / (second &#180; meter) (e.g., pulmonary pressure time product)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(cfu)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Colony Forming Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">m3/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cubic meter per second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Day </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">db</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Decibels </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">dba</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Decibels a Scale</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">cel</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Degrees Celsius</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">deg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Degrees of Angle</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(drop)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Drop</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10.un.s/cm5</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Dyne &#180; Second / centimeter<SUP>5</SUP>  (1 dyne =  10 micronewton = 10 un) (e.g., systemic vascular resistance) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">10.un.s/(cm5.m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> ((Dyne &#180; second) / centimeter<SUP>5</SUP>) / meter<SUP>2</SUP>  = (Dyne &#180; second) / (centimeter<SUP>5</SUP> &#180; meter<SUP>2</SUP>)     (1 dyne  = 10 micronewton = 10 un) (e.g., systemic vascular resistance/body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ev</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Electron volts (1 electron volt = 160.217 zeptojoules)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">eq</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Equivalent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">f</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Farad (capacitance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">fg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Femtogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">fL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Femtoliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">fmol</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Femtomole</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Fibers / milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g </FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1"><SUB>g/d</SUB></FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/dL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram / Deciliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram / 8 Hour Shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram / Kilogram (e.g., mass dose of medication per body weight)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Gram / Kilogram) / Day = gram / (kilogram &#180; day) (e.g., mass dose of medication per body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Gram / Kilogram) / Hour = gram / (kilogram &#180; hour)<SUB> </SUB>(e.g., mass dose of medication per body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/(8.kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Gram / Kilogram) /8 Hour Shift = gram / (kilogram &#180; 8 hour shift)<SUB> </SUB>(e.g., mass dose of medication per body weight per 8 hour shift)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Gram / Kilogram) / Minute = gram / (kilogram &#180; minute<SUB>) </SUB>(e.g., mass dose of medication per body weight per minute)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/L </FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram / Meter<SUP>2</SUP> </FONT>
+<P>
+<FONT SIZE="-1">(e.g., mass does of medication per body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g.m/(hb)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Gram &#180; meter / heart beat </FONT>
+<P>
+<FONT SIZE="-1">(e.g., ventricular stroke work)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g.m/((hb).m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Gram &#180; meter/ heartbeat) / meter<SUP>2</SUP> = (gram &#180; meter) / (heartbeat &#180; meter<SUP>2</SUP>) </FONT>
+<P>
+<FONT SIZE="-1">(e.g., ventricular stroke work/body surface area,  ventricular stroke work index)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g(creat)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram creatinine</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g(hgb)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram hemoglobin</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g.m</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Gram meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g(tot_nit)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram total nitrogen</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g(tot_prot)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram total protein</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">g(wet_tis)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Gram wet weight tissue</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">gy</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Grey (absorbed radiation dose)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">hL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Hectaliter = 10<SUP>2</SUP> liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">h</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Henry</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">in</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Inches</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">in_hg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Inches of Mercury (=Hg)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*International Unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*International Unit / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*International Unit / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> International Unit / Kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu/L </FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*International Unit / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*International Unit / Milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">iu/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*International Unit / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">j/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Joule/liter </FONT>
+<P>
+<FONT SIZE="-1">(e.g., work of breathing)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kat</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Katal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kat/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Katal / Kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kat/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Katal / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">k/watt</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kelvin per watt</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(kcal)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilocalorie (1 kcal = 6.693 kilojoule)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(kcal)/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Kilocalorie / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(kcal)/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Kilocalorie / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(kcal)/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Kilocalorie / 8 Hours Shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg(body_wt)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">* kilogram body weight</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/m3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kilogram per cubic meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kh/h</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kilogram per hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilogram / liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kilogram per minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/mol</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilogram / mole</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilogram / second</TD></TR></FONT></TABLE></CENTER>
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/(s.m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Kilogram / second)/ meter<SUP>2</SUP> = kilogram / (second &#180; meter<SUP>2</SUP>)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg/ms</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kilogram per square meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kg.m/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kilogram meter per second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">kpa</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilopascal (1 mmHg = 0.1333 kilopascals)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ks</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Kilosecond</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(ka_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> King-Armstrong Unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(knk_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Kunkel Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Liter / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Liter / hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Liter / 8 hour shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Liter / kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Liter / minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/(min.m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Liter / minute) / meter<SUP>2</SUP> = liter / (minute &#180; meter<SUP>2</SUP>) </FONT>
+<P>
+<FONT SIZE="-1">(e.g., cardiac output/body surface area = cardiac index)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Liter / second </FONT>
+<P>
+<FONT SIZE="-1">(e.g., peak expiratory flow)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">L.s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Liter / second / second<SUP>2</SUP>  = liter &#180; second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">lm</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Lumen</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">lm/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Lumen / Meter<SUP>2</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(mclg_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*MacLagan Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mas</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Megasecond</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">m</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Meter<SUP>2</SUP> </FONT>
+<P>
+<FONT SIZE="-1">(e.g., body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">m/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Meter / Second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">m/s2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Meter / Second<SUP>2</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ueq</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Microequivalents</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/dL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Deciliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/g</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Gram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Microgram / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug(8hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / 8 Hour Shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Microgram / Kilogram) /Day = microgram / (kilogram &#180; day) (e.g., mass dose of medication per patient body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Microgram / Kilogram) / Hour = microgram / (kilogram &#180; hours) (e.g., mass dose of medication per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(8.hr.kg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Microgram / Kilogram) / 8 hour shift  = microgram / (kilogram &#180; 8 hour shift) </FONT>
+<P>
+<FONT SIZE="-1">(e.g., mass dose of medication  per patient body weight per 8 hour shift)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Microgram / Kilogram) / Minute  = microgram / (kilogram &#180; minute) </FONT>
+<P>
+<FONT SIZE="-1">(e.g., mass dose of medication per patient body weight per minute)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Meter<SUP>2</SUP> (e.g., mass dose of medication per patient body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ug/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microgram / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">uiu</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Micro international unit </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ukat</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Microkatel</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">um</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Micrometer (Micron)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">umol</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Micromole     </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">umol/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Micromole / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">umol/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Micromole / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">umol/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Micromole / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">us</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microsecond</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">uv</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Microvolt</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mbar</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millibar (1 millibar = 100 pascals)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mbar.s/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millibar / (liter / second) =(millibar &#180; second) / liter (e.g., expiratory resistance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliequivalent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliequivalent / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliequivalent / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliequivalent / 8 Hour Shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliequivalent / Kilogram (e.g., dose of medication in milliequivalents per patient body weight)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliequivalents / Kilogram) / Day = milliequivalents / (kilogram &#180; day) (e.g., dose of medication in milliequivalents per patient body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliequivalents / Kilogram) / Hour  = milliequivalents / (kilogram &#180; hour) (e.g., dose of medication in milliequivalents per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/(8.hr.kg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliequivalents / Kilogram) / 8 Hour Shift  = milliequivalents / (kilogram &#180; 8 hour shift) (e.g., dose of medication  in milliequivalents per patient body weight per 8 hour shift)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliequivalents / Kilogram) / Minute  = milliequivalents / (kilogram &#180; minute) (e.g., dose of medication  in milliequivalents per patient body weight per minute)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliequivalent / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top ><BR></TD>
+<TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliequivalent / Meter<SUP>2</SUP> (e.g., dose of medication in milliequivalents per patient body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">meq/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliequivalent / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/m3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Meter<SUP>3</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/dL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Deciliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / 8 Hour shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milligram / Kilogram) / Day = milligram / (kilogram &#180; day) (e.g., mass dose of medication per patient body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milligram / Kilogram) / Hour  = milligram/ (kilogram &#180; hour) (e.g., mass dose of medication per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(8.hr.kg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milligram / Kilogram) /8 Hour Shift = milligram / (kilogram &#180; 8 hour shift) (e.g., mass dose of medication per patient body weight per 8 hour shift)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milligram / Kilogram) / Minute  = milligram / (kilogram &#180; minute) (e.g., mass dose of medication per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Meter<SUP>2</SUP> (e.g., mass dose of medication per patient body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mg/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milligram / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/cm_h20</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Centimeters of Water (H<SUB>2</SUB>0) (e.g., dynamic lung compliance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliliter / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(hb)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Heart Beat (e.g., stroke volume)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/((hb).m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliliter / Heart Beat) / Meter<SUP>2</SUP> = Milliliter / (Heart Beat &#180; Meter<SUP>2</SUP>) (e.g., ventricular stroke volume index)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliliter / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliliter / 8 Hour Shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Kilogram  (e.g., volume dose of medication or treatment per patient body weight)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliliter / Kilogram) / Day  = milliliter / (kilogram &#180; day) (e.g., volume dose of medication or treatment per patient body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliliter / Kilogram) / Hour = milliliter / (kilogram &#180; hour) (e.g., volume dose of medication or treatment per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(8.hr.kg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliliter / Kilogram) / 8 Hour Shift = milliliter / (kilogram &#180; 8 hour shift) (e.g., volume dose of medication or treatment per body weight per 8 hour shift)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliliter / Kilogram) / Minute = milliliter / (kilogram &#180; minute) (e.g., volume dose of medication or treatment per patient body weight per minute)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Meter<SUP>2</SUP> (e.g., volume of medication or other treatment per patient body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/mbar</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Millibar (e.g., dynamic lung compliance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/(min.m2)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Milliliter / Minute) / Meter<SUP>2</SUP>  = milliliter / (minute &#180; meter<SUP>2</SUP>) (e.g., milliliters of prescribed infusion per body surface area; oxygen consumption index)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mL/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliliter / Second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mm</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimeter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mm(hg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Millimeter (HG) (1 mm Hg = 133.322 kilopascals)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mm/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimeter/ Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimole / Kilogram  (e.g., molar dose of medication per patient body weight)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Millimole / Kilogram) / Day = millimole / (kilogram &#180; day) (e.g., molar dose of medication per patient body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Millimole / Kilogram) / Hour = millimole / (kilogram &#180; hour) (e.g., molar dose of medication per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/(8.hr.kg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Millimole / Kilogram) / 8 Hour Shift = millimole / (kilogram &#180; 8 hour shift) (e.g., molar dose of medication  per patient body weight per 8 hour shift)</TD></TR></FONT></TABLE></CENTER>
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Millimole / Kilogram) / Minute = millimole / (kilogram &#180; minute) (e.g., molar dose of medication per patient body weight per minute)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimole / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimole / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/(8hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimole / 8 Hour Shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimole / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mmol/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millimole / Meter<SUP>2</SUP> (e.g., molar dose of medication per patient body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mosm/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliosmole / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ms</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Milliseconds</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mv</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Millivolts</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">miu/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Milliunit / Milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mol/m3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mole per cubic meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mol/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Mole / Kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mol/(kg.s)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Mole / Kilogram) / Second = mole / (kilogram &#180; second)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mol/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Mole / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">mol/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Mole / Second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/d</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram / Day</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/hr</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Nanogram / Hour</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/(8.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram / 8 Hour shift</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram / Kilogram (e.g., mass dose of medication  per patient body weight)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/(kg.d)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Nanogram / Kilogram) / Day = nanogram / (kilogram &#180; day) (e.g., mass dose of medication per patient body weight per day)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/(kg.hr)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Nanogram / Kilogram) / Hour = nanogram / (kilogram &#180; hour) (e.g., mass dose of medication per patient body weight per hour)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/(8.hr.kg)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Nanogram / Kilogram) / 8 Hour Shift = nanogram / (kilogram &#180; 8 hour shift) (e.g., mass dose of medication per patient body weight per 8 hour shift)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/(kg.min)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (Nanogram / Kilogram) / Minute = nanogram / (kilogram &#180; minute) (e.g., mass dose of medication  per patient body weight per minute)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/m2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram / Meter<SUP>2</SUP> (e.g., mass dose of medication per patient body surface area)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanogram / Milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/min</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Nanogram / Minute</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ng/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Nanogram / Second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">nkat</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Nanokatel</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">nm</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanometer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">nmol/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanomole / Second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ns</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Nanosecond</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">n</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Newton (force)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">n.s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Newton second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(od)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*O.D. (optical density)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ohm</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Ohm (electrical resistance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ohm.m</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ohm meter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">osmol</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Osmole</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">osmol/kg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Osmole per kilogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">osmol/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Osmole per liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/m3</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Particles / Meter<SUP>3</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Particles / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/(tot)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Particles / Total Count</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (ppb)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Parts Per Billion</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1"> (ppm)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Parts Per Million</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(ppth)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parts per thousand</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(ppt)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parts per trillion (10^12)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pal</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Pascal (pressure)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">/(hpf)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Per High Power Field</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(ph)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*pH</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pa</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picoampere</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pg</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pg/L</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picogram / Liter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pg/mL</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picogram / Milliliter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pkat</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Picokatel</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pm</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picometer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pmol</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Picomole</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">ps</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picosecond</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">pt</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Picotesla</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(pu)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">*P.U.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">%</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Percent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">dm2/s2</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Rem (roentgen equivalent man) = 10<SUP>-2</SUP> meter<SUP>2 </SUP>/ second<SUP>2</SUP> = decimeter<SUP>2</SUP> / second<SUP>2</SUP> Dose of ionizing radiation equivalent to 1 rad of x-ray or gamma ray) [From Dorland's Medical Dictionary]</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">sec</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Seconds of arc</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">sie</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Siemens (electrical conductance)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">sv</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Sievert</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">m2/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Square meter / second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">cm2/s</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1">Square centimeter / second</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">t</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Tesla (magnetic flux density)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">(td_u)</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Todd Unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">v</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Volt (electric potential difference)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Volume Fraction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=81 VALIGN=top >
+<P>
+<FONT SIZE="-1">wb</FONT>
+</TD><TD WIDTH=211 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Weber (magnetic flux)</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Starred items are not genuine ISO, but do not conflict.</FONT>
+<P>
+<FONT SIZE="-1">&#134;This approach to units is discouraged by IUPAC. We leave them solely for backwards compatibility</FONT>
+</TD></TR></TABLE></CENTER></TD><H6><I>7.3.2.6.1.3</I><I> </I><I>Local unit codes</I></H6>
+<P>
+<FONT FACE="Times New Roman">Local codes can be used for the units by indicating the code source of 99zzz in the third component (where 99zzz is an alpha-numeric string).  In the case of local codes, the text name of the codes or the description of the units should also be transmitted (in the second component), so that the receiving system can compare the results with results for the same measurement sent by another service (refer to Chapter 2, Section 2.8, &quot;Data Types&quot;).  An &quot;L&quot; should be stored in the third component to indicate that the code is locally defined.  More specialized local code designations, as specified in the CE data type definition, can also be employed.</FONT>
+<H4>7.3.2.7 References range  (ST)   00575 </H4>
+<P>
+<FONT FACE="Times New Roman">Components:  for numeric values in the format:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) lower limit-upper limit (when both lower and upper limits are defined, e.g., for potassium 3.5 - 4.5)</FONT>
+<P>
+<FONT FACE="Times New Roman">b) &gt; lower limit  (if no upper limit, e.g., &gt;10)</FONT>
+<P>
+<FONT FACE="Times New Roman">c) &lt; upper limit  (if no lower limit, e.g., &lt;15)</FONT>
+<P>
+<FONT FACE="Times New Roman">alphabetical values: the normal value may be reported in this location</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  When the observation quantifies the amount of a toxic substance, then the upper limit of the range identifies the toxic limit.  If the observation quantifies a drug, the lower limits identify the lower therapeutic bounds and the upper limits represent the upper therapeutic bounds above which toxic side effects are common.</FONT>
+<H4>7.3.2.8 Abnormal flags  (ID)   00576</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a table lookup indicating the normalcy status of the result.  We strongly recommend sending this value when applicable.  If the observation is an antimicrobial susceptibility,  the interpretation codes are: S=susceptible; R=resistant; I=intermediate; MS=moderately susceptible; VS=very susceptible. (See ASTM 1238 - review for more details).  Refer to <I>HL7</I> <I>table 0078 - Abnormal </I><I>flags</I> for valid entries. </FONT>
+<P>
+<FONT FACE="Times New Roman">When the laboratory can discern the normal status of a textual report, such as chest X-ray reports or microbiologic culture, these should be reported as N when normal and A when abnormal.  Multiple codes, e.g., abnormal and worse, would be separated by a repeat delimiter, e.g., A~W. </FONT>
+<P>Table 0078  Abnormal flags
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=322 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Below low normal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">H</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Above high normal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LL</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Below lower panic limits</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HH</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Above upper panic limits</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Below absolute low-off instrument scale</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">&gt;</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Above absolute high-off instrument scale</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Normal (applies to non-numeric results)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Abnormal (applies to non-numeric results)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AA</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Very abnormal (applies to non-numeric units, analogous to panic limits for numeric units)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">null</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">No range defined, or normal ranges don't apply</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">U</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Significant change up</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Significant change down</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Better--use when direction not relevant</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">W</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Worse--use when direction not relevant</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=380 VALIGN=top >
+<P>
+<FONT SIZE="-1">For microbiology susceptibilities only:</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Susceptible</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Resistant</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intermediate</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MS</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Moderately susceptible</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">VS</FONT>
+</TD><TD WIDTH=322 VALIGN=top >
+<P>
+<FONT SIZE="-1">Very susceptible</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">Results may also be reported in shorthand by reporting the normalcy status without specifying the exact numeric value of the result. Such shorthand is quite common in clinical notes, where physicians will simply say that the glucose result was normal.  Such shorthand reporting is also seen in drug experience reporting. In such cases, the result can be reported in the OBX by reporting the normalcy code in <I>OBX-8</I><I>-abnormal </I><I>flags</I> without specifying any value in <I>OBX-5</I><I>-observation value</I><I>.</I></FONT>
+<H4><I>7.3.2.9</I><I> </I>Probability  (NM)   00577</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number represented as an ASCII string that must be between 0 and 1, inclusive. </FONT>
+<H4>7.3.2.10 Nature of abnormal test  (ID)   00578</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the nature of the abnormal test.  Refer to <I>HL7 table 0080 - Nature of </I><I>abnormal testing</I> for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as A~S~R.</FONT>
+<P>Table 0080  Nature of abnormal testing 
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=65 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=190 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=65 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=190 VALIGN=top >
+<P>
+<FONT SIZE="-1">An age-based population</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=65 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=190 VALIGN=top >
+<P>
+<FONT SIZE="-1">None - generic normal range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=65 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=190 VALIGN=top >
+<P>
+<FONT SIZE="-1">A race-based population</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=65 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=190 VALIGN=top >
+<P>
+<FONT SIZE="-1">A sex-based population</TD></TR></FONT></TABLE></CENTER><H4>7.3.2.11 Observ result status  (ID)   00579</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the observation result status.  Refer to<I> HL7 table 0085 - Observation result </I><I>status</I> for valid values. This field reflects the current completion status of the results for one Observation Identifier.</FONT>
+<P>
+<FONT FACE="Times New Roman">It is a required field.  Previous version of HL7 stated this implicitly by defining a default value of &quot;F.&quot; Code F indicates that the result has been verified to be correct and final.  Code W indicates that the result has been verified to be wrong (incorrect); a replacement (corrected) result may be transmitted later.  Code C indicates that data contained in the <I>OBX-5-observation value</I> field are to replace previously transmitted (verified and) final result data with the same observation ID (including suffix, if applicable) and observation sub-ID usually because the previous results were wrong.  Code D indicates that data previously transmitted in a result segment with the same observation ID (including suffix) and observation sub-ID should be deleted.  When changing or deleting a result, multiple OBX segments with the same observation ID and observation sub-ID are replaced or deleted as a unit.  Normal progression of results through intermediate (e.g., &#145;gram positive cocci&#146;) to final (e.g., &#145;staphylococcus aureus&#146;) should not be transmitted as C (correction); they should be transmitted as P or S (depending upon the specific case) until they are final.</FONT>
+<P>Table 0085 - Observation result status codes interpretation
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=338 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Record coming over is a correction and thus replaces a final result</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Deletes the OBX record</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Final results;  Can only be changed with a corrected result.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Specimen in lab; results pending</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preliminary results</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Results entered -- not verified</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Partial results</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Results cannot be obtained for this observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">U</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Results status change to Final.  without retransmitting results already sent as &#145;preliminary.&#146;  E.g., radiology changes status from preliminary to final</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">W</FONT>
+</TD><TD WIDTH=338 VALIGN=top >
+<P>
+<FONT SIZE="-1">Post original as wrong, e.g., transmitted for wrong patient</TD></TR></FONT></TABLE></CENTER><H4>7.3.2.12 Effective date last obs normal value  (TS)   00580</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the changes in the observation methods that would make values obtained from the old method not comparable with those obtained from the new method.</FONT>
+<P>
+<FONT FACE="Times New Roman">Null if there are no normals or units.  If present, a change in this date compared to date-time recorded, the receiving system&#146;s test dictionary should trigger a manual review of the results to determine whether the new observation ID should be assigned a new ID in the local system to distinguish the new results from the old. </FONT>
+<H4>7.3.2.13 User defined access checks  (ST)   00581</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field permits the producer to record results-dependent codes for classifying the observation at the receiving system.  This field should be needed only rarely, because most classifications are fixed attributes of the observation ID and can be defined in the associated observation master file (see description in Chapter 8). </FONT>
+<P>
+<FONT FACE="Times New Roman">However, there are a few cases when such controls vary with the value of the observation in a complex way that the receiving system would not want to re-calculate.  An example is an antimicrobial susceptibility result.  Some systems prefer to display only the susceptibility results of inexpensive antimicrobials depending upon the organism, the source of the specimen and the patients allergy status.  The sending service wants to send all of the susceptibilities so that certain privileged users (e.g., Infectious Disease specialists) can review all of the results but nonprivileged users would see only the &quot;preferred&quot; antimicrobials to which the organism was susceptible.  We expect that other cases also occur.</FONT>
+<H4>7.3.2.14 Date-time of the observation  (TS)   00582</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is required in two circumstances.  The first is when the observations reported beneath one report header (OBR) have different dates.  This could occur in the case of queries, timed test sequences, or clearance studies where one measurement within a battery may have a different time than another measurement. </FONT>
+<P>
+<FONT FACE="Times New Roman">It is also needed in the case of OBX segments that are being sent by the placer to the filler, in which case the date of the observation being transmitted is likely to have no relation to the date of the requested observation.  In France, requesting services routinely send a set of the last observations along with the request for a new set of observations.  The date of these observations is important to the filler laboratories.</FONT>
+<P>
+<FONT FACE="Times New Roman">In all cases, the observation date-time is the physiologically relevant date-time or the closest approximation to that date-time.  In the case of tests performed on specimens, the relevant date-time is the specimen&#146;s collection date-time.  In the case of observations taken directly on the patient (e.g., X-ray images, history and physical), the observation date-time is the date-time that the observation was performed. </FONT>
+<H4>7.3.2.15 Producer's ID  (CE)   00583</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a unique identifier of the responsible producing service.  It should be reported explicitly when the test results are produced at outside laboratories, for example.  When this field is null, the receiving system assumes that the observations were produced by the sending organization.  This information supports CLIA regulations in the US.  The code for producer ID is recorded as a CE data type.  In the US, the Medicare number of the producing service is suggested as the identifier.</FONT>
+<H4>7.3.2.16 Responsible observer  (XCN)   00584</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type (ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  When required, this field contains the identifier of the individual directly responsible for the observation (i.e., the person who either performed or verified it).  In a nursing service, the observer is usually the professional who performed the observation (e.g., took the blood pressure).  In a laboratory, the observer is the technician who performed or verified the analysis.  The code for the observer is recorded as a CE data type.  If the code is sent as a local code, it should be unique and unambiguous when combined with <I>OBX-15-producer ID</I>.</FONT>
+<H4>7.3.2.17 Observation method  (CE)   00936</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">This optional field can be used to transmit the method or procedure by which an observation was obtained when the sending system wishes to distinguish among one measurement obtained by different methods and the distinction is not implicit in the test ID.  Chemistry laboratories do not usually distinguish between two different methods used to measure a given serum constituent (e.g., serum potassium) as part of the test name.  See the LOINC Users Manual [  LOINC Committee. Logical Observation Identifier Names and Codes. Indianapolis: Regenstrief Institute and LOINC Committee, 1995. c/o Kathy Hutchins, 1001 West 10th Street RG-5, Indianapolis, IN  46202.  317/630-7433.  Available via FTP/Gopher (dumccss.mc.duke.edu/standards/HL7/termcode/loinclab) and World Wide Web (<a href="http://dumccss.mc.duke.edu/standards/HL7/termcode/loinc.htm">http://dumccss.mc.duke.edu/standards/HL7/termcode/loinc.htm</a>).  The LOINC Code System is described in Forrey AW, McDonald CJ, DeMoor G, Huff SM, Leavelle D, Leland D, et.al. Logical Observation Identifier Names and Codes (LOINC) database: a public use set of codes and names for electronic reporting of clinical laboratory test results.  Clinical Chemistry 1996;42:81-90</FONT>]  for a more complete discussion of these distinctions.  If an observation producing service wanted to report the method used to obtain a particular observation, and the method was NOT embedded in the test name, they can use this field.
+<P>
+<FONT FACE="Times New Roman">The Centers for Disease Control and Prevention (CDC) Method Code (CDCM) (see Figure 7-3) is one candidate code system for reporting methods/instruments.  EUCLIDES method codes are another. User-defined tables are an alternative.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

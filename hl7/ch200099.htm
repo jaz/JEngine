@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>2.16 QUERY TRIGGER EVENTS AND MESSAGE DEFINITIONS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200100.htm">
+<LINK REL="Previous" HREF="ch200098.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200098.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200100.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E25"></A>
+<P>
+<FONT SIZE="+2"><B>2.16</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>QUERY TRIGGER EVENTS AND MESSAGE DEFINITIONS</B><A NAME="I15"></A><A NAME="I16"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">These are the trigger event types associated with queries:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) a need occurs for immediate access to data that may be available from another application, this may be an initial request for data or a continuation</FONT>
+<P>
+<FONT FACE="Times New Roman">b) a need occurs for deferred access to data that may be available from another application</FONT>
+<P>
+<FONT FACE="Times New Roman">Where an original-style query is involved, these trigger events are served by the query message (QRY). When display data is involved, these trigger events are served by the Query (QRY) and Display Response (DSR) and General Acknowledgment (ACK) messages.  When the query is for record-oriented data, the QRY message is used, but the response message is specific to a functional area.  Record-oriented queries are described in detail in the relevant application chapters.  Display-oriented response are described in detail in this chapter. </FONT>
+<P>
+<FONT FACE="Times New Roman">Although the query message of an event replay message is described in detail in this chapter, event replay response messages will be described in detail in the relevant application chapters. </FONT>
+<P>
+<FONT FACE="Times New Roman">Where an Embedded Query Language query is involved, these trigger events are served by the Embedded Query Language query (EQQ).</FONT>
+<P>
+<FONT FACE="Times New Roman">Where a virtual table query is involved, these trigger events are served by the Virtual Table Query (VQQ).</FONT>
+<P>
+<FONT FACE="Times New Roman">Where a stored procedure request is involved, these trigger events are served by the Stored Procedure request (SPQ) message.</FONT>
+<P>
+<FONT FACE="Times New Roman">For each of these query messages, one of the following response messages is used.</FONT>
+<P>
+<FONT FACE="Times New Roman">When display data is involved, these queries are responded to with the Display Response (DSR) message.</FONT>
+<P>
+<FONT FACE="Times New Roman">When tabular data is involved, these queries are responded to with the Tabular Data Response (TBR).</FONT>
+<P>
+<FONT FACE="Times New Roman">Where an event replay query is involved, these trigger events are served by the Event Replay Query (ERQ) and the Event Replay Response (RQQ) messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">Where an original QRY query message is used to request record-oriented data, the response message is specific to a functional area.  Application-segment-record-oriented queries are described in other chapters (3-8).</FONT>
+<P>
+<FONT FACE="Times New Roman">Display-oriented, tabular response messages, and event replay response messages are described here.</FONT>
+<P>
+<FONT FACE="Times New Roman">Each trigger event is listed below, with the applicable form of message exchange.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200098.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200100.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

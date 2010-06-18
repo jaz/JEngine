@@ -1,0 +1,193 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.49 XTN - extended telecommunication number</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200070.htm">
+<LINK REL="Previous" HREF="ch200068.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200068.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200070.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E70"></A>
+<H3><B>2.8.49</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>XTN - extended telecommunication number</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>(415)555-3210^ORN^FX^</FONT></PRE>
+<H4>2.8.49.1 [(999)] 999-9999 [X99999] [C any text]</H4>
+<P>
+<FONT FACE="Times New Roman">Defined as the TN data type ( see Section <A HREF="ch200060.htm#I4">2.8.40</A>, &quot;<A HREF="ch200060.htm#I4">TN - telephone number</A>&quot;), except that the length of the country access code has been increased to three.</FONT>
+<H4>2.8.49.2 Telecommunication<B> </B>use code (ID) </H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents a specific use of a telecommunication number.  Refer <I>to HL7 table 0201 - </I><I>Telecommunication use code</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I6"></A><A NAME="I7"></A>Table 0201 - Telecommunication<B> </B>use code</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PRN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Residence Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other Residence Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">WPN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Work Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">VHN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Vacation Home Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ASN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Answering Service Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">EMR</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Emergency Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NET</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Network (email) Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">BPN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Beeper Number</TD></TR></FONT></TABLE><H4>2.8.49.3 Telecommunication<B> </B>equipment type (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents the type of telecommunication equipment.  Refer <I>to HL7 table 0202 - </I><I>Telecommunication equipment type</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I8"></A><A NAME="I9"></A>Table 0202 - Telecommunication<B> </B>equipment type</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PH</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Telephone</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FX</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Fax</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Modem</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cellular Phone</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">BP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Beeper</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Internet</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Internet Address: Use Only If Telecommunication<B> </B>Use Code Is NET</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X.400</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">X.400 email address: Use Only If Telecommunication<B> </B>Use Code Is NET</TD></TR></FONT></TABLE><H4>2.8.49.4 Email address (ST)</H4>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Internationalization note:</B>  To make this data type interoperate with CEN&#146;s Telecommunication data attribute group,  we allow use of the second component for email addresses.  The presence of an email address is specified by the addition of the value <I>NET</I> to the Phone Use Code table, and the type of internet address is specified with the values <I>Internet</I> and <I>X.400</I> to the Phone Equipment Type table.  When used for an Internet address, the first component  of the XTN  data type will be null.  If the @-sign is being used as a subcomponent delimiter, the HL7 subcomponent escape sequence may be used when encoding an Internet address (see Section <A HREF="ch200071.htm#I4">2.9.1</A>., &quot;<A HREF="ch200071.htm#I4">Formatting codes</A>&quot;).</TD></TR></FONT></TABLE>
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> Components five through nine reiterate the basic function of the first component in a delimited form that allows the expression of both local and international telephone numbers.  In Version 2.3, the recommended form for the telephone number is to use the delimited form rather than the unstructured form supported by the first component (which is left in for backward compatibility only).</TD></TR></FONT></TABLE><H4>2.8.49.5 Country code (NM)</H4>
+<H4>2.8.49.6 Area/city code (NM)</H4>
+<H4>2.8.49.7 Phone number (NM)</H4>
+<H4>2.8.49.8 Extension (NM)</H4>
+<H4>2.8.49.9 Any text (ST)</H4>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200068.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200070.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

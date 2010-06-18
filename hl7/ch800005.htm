@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>8.3.2 MFD/ACK - master files delayed application acknowledgment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800006.htm">
+<LINK REL="Previous" HREF="ch800004.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E339"></A>
+<H3><B>8.3.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>MFD/ACK - master files delayed application acknowledgment</B><A NAME="I7"></A><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The MFD transaction is the delayed application acknowledgment.  It can be used to return  &quot;deferred&quot; application-level acknowledgment statuses at the MFE level, without reference to the original MFN message.  It is defined as follows: </FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFD</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Delayed Acknowledgment</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { [MFA] }   Master file ACK segment      8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Acknowledgment        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

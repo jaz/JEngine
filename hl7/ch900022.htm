@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>9.7.1 QRY/DOC - document query (event T12)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch10.htm">
+<LINK REL="Previous" HREF="ch900021.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch900021.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch10.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E428"></A>
+<H3><B>9.7.1</B><B> </B><B>QRY/DOC - document query (event T12)</B></H3>
+<PRE>
+<FONT FACE="Courier New">QRY     Document Query       Chapter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  QRF  ]   Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">DOC     Document Response       Chapter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [EVN]    Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PID    Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    TXA    Document Notification       9</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{OBX}]   Observation         7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer       2</FONT></PRE>
+<H4>9.7.1.1 Query usage notes</H4>
+<P>The QRD and QRF segments are defined in Chapter 2, Section 2.15.
+<P>The subject filters contained in the QRD and QRF segments describe the kind of information that is required to satisfy the request.  They are defined by local agreement between the inquiring system and the ancillary system.  See the Implementation Guide for detailed examples of the use of query filter fields.
+<P>The Set ID fields in the various segments (including PID) are used to count the number of segments of one kind transmitted at one level of the hierarchy.
+<P><I>QRD-12-query result level</I> determines the amount of data requested.  See Chapter 2, Section 2.18.4.
+<P ALIGN=LEFT>
+<A HREF="ch900021.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch10.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

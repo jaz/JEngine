@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>2.13.2 MCF -  delayed acknowledgment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200089.htm">
+<LINK REL="Previous" HREF="ch200087.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200087.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200089.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E84"></A>
+<H3><B>2.13.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><B>MCF -  delayed acknowledgment</B><A NAME="I16"></A><A NAME="I17"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><I>This message remains in the specification only for reasons of backward compatibility with HL7 v 2.1</I>It is used as part of the protocol which creates a generic form of an asynchronous application level acknowledgment, the MCF message.  See Section <A HREF="ch200084.htm#I28">2.12.1.2</A>, &quot;<A HREF="ch200084.htm#I28">Response</A>.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">The first MCF message, sent after the initial receipt has the following structure.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MCF</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Delayed Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second MCF message, sent after application processing, has this structure:</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MCF</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Delayed Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200087.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200089.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

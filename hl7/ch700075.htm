@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>7.20.4 Example 4: &quot;channel-block&quot; format, using  three</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700076.htm">
+<LINK REL="Previous" HREF="ch700074.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700074.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700076.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E337"></A>
+<H3><B>7.20.4</B><B> </B><A NAME="I2"></A><B>Example 4: &quot;channel-block&quot; format, using  three separate sets of TIM, CHN, </B><B>WAV and category OBX segments with a break in waveform data  used to pinpoint </B><B>waveform annotations for channels one and three:</B></H3>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|SVL||SVC||19900324101215||ORU^W01|19264|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|1|4567890|4567890||Doe^John^Q^Jr^Mr&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|1|5678^SVC|1234^SVL|5^three-channel waveform recording^L&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|CD|5&amp;CHN^^L|1|1^ONE^0.5&amp;mv^^200^-2048&amp;2047||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|TS|5&amp;TIM^^L|1|19900324081237.525||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|NA|5&amp;WAV^^L|1|0^1^2^3^4^5^6^7^8||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|CE|5&amp;ANO^^L|1|^Channel passing through maxima||||||F||19900324081237.565&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|NA|5&amp;WAV^^L|1|7^6^5^4^3^2^1^0^-1^-2^-3^-4^-5^-6^-7^-8||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|CD|5&amp;CHN^^L|2|2^TWO^0.5&amp;mv^^200^-2048&amp;2047||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|TS|5&amp;TIM^^L|2|19900324081237.525||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|NA|5&amp;WAV^^L|2|0^1^2^3^4^5^6^7^8^7^6^5^4^3^2^1^0^-1^-2^-3^-4^-5^-6^-7^-8||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|9|CD|5&amp;CHN^^L|3|3^THREE^0.5&amp;mv^^200^-2048&amp;2047||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|10|TS|5&amp;TIM^^L|3|19900324081237.525||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|11|NA|5&amp;WAV^^L|3|0^1^2^3^4^5^6^7^8^7^6^5^4^3^2^1^0||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|12|CE|5&amp;ANO^^L|3|^Channel passing through zero||||||F||19900324081237.605&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|13|NA|5&amp;WAV^^L|3|-1^-2^-3^-4^-5^-6^-7^-8||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700074.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700076.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

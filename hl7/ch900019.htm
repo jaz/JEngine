@@ -1,0 +1,447 @@
+<HTML>
+<HEAD>
+<TITLE>9.5.2 OBX - observation segment usage</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch900020.htm">
+<LINK REL="Previous" HREF="ch900018.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch900018.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900020.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E427"></A>
+<H3><B>9.5.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>OBX - observation segment usage</B></H3>
+<P>
+<FONT FACE="Times New Roman">The OBX segment is documented in its entirety in Chapter 7.  Its usage as it applies to Medical Records/Information Management is documented here for clarity.</FONT>
+<P ALIGN=indent>Figure 9-5.  OBX attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=62 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=292 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Element Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00569</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID- Document</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0125</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00570</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Value  Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> </FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00571</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00572</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Sub-Id</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">*</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">*</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">C/R</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00573</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Value</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00574</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00575</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reference Range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8 </FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/5</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0078</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00576</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Abnormal Flags</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00577</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Probability</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> </FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0080</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00578</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nature of Abnormal Test</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">R/NA</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00579</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Result Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00580</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date Last Obs Normal Values</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00581</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">User Defined Access Checks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00582</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time of Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> </FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00583</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Producer&#146;s ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00584</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Responsible Observer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> </FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00936</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Method</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">C = For fields OBX-12, OBX-13, and OBX-15, the field should be valued conditionally.  These fields should be valued only when the result (OBX-5-observation value) contains a single concept.  This is typically true when the result type is numeric, ID, or CE.  When multiple medical concepts are expressed, the values of these three fields are ambiguous.* =  256 K or site negotiated</FONT>
+<P>
+<FONT FACE="Times New Roman">Specialized usage:  Observation Identifier/Observation Sub-id have been used as optional fields that are not required in unstructured text where the nature of the document has been identified in <I>TXA-2-document type</I>, which is a required field, but is expressly allowed in the richer structured documentation.  An example includes cases where anatomic reports may have separate OBXs for gross examination, microscopic examination, clinical impression, and final diagnosis.  Another possible use includes imbedding non-textual observations within textual reports. </FONT>
+<P ALIGN=LEFT>
+<A HREF="ch900018.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900020.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

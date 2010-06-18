@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>10.3 FILLER APPLICATION MESSAGES AND TRIGGER EVENTS UNSOLICITED</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100039.htm">
+<LINK REL="Previous" HREF="ch100037.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100037.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100039.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E116"></A>
+<P>
+<FONT SIZE="+2"><B>10.3</B><B> </B><A NAME="I2"></A><B>FILLER APPLICATION MESSAGES AND TRIGGER EVENTS </B><B>UNSOLICITED</B></FONT>
+<P>Unsolicited transactions from filler applications are the messages and trigger events used between filler applications and auxiliary applications.  Transactions are initiated by the filler application, using the <B>SIU</B> message to notify auxiliary applications of modifications in a filler application&#146;s schedule(s).  The auxiliary application responds to these notifications, using the <B>ACK</B> message, either to acknowledge receipt of the transaction, or to signal that an interfacing error of some kind has occurred.
+<P>This set of trigger events is also used to notify applications fulfilling the placer application role of changes in the filler application&#146;s schedule(s), if the application is configured to accept these messages and trigger events as an auxiliary application would.  As the discussion of application roles has indicated above, any one application can have more than one application role.  If it is important that the application acting in the placer application role in your messaging environment be notified of unsolicited changes to a filler application&#146;s schedule(s), then it must also support the role of an auxiliary application.
+<P>When initiating a notification transaction, the filler application will generate and send an <B>SIU</B> message containing all of the information necessary to communicate the desired information to the auxiliary application.  All required segments and fields (both explicitly required and conditionally required) should be provided by the filler application, as defined in this chapter.  When the auxiliary application receives the transaction, it acknowledges with the appropriate accept acknowledgment using an <B>ACK</B> message (assuming that the enhanced acknowledgment mode is in use).  After processing the notification at the application level, the auxiliary application acknowledges the transaction with the appropriate application acknowledgment in an <B>ACK</B> message (assuming that an application acknowledgment was requested under the enhanced acknowledgment mode, or that the original acknowledgment mode is in use).  Applying the explanations of the various application acknowledgment codes (detailed in Chapter 2) in the context of this chapter, an application accept from the auxiliary application means that the notification was processed and accepted.  An application error from the auxiliary application means that the auxiliary application was unable to process the notification at the application level.  An application reject from the auxiliary application means that the request was not, and could not, be processed due to one or more reasons unrelated to its content (for example: it fails the basic application protocol validation, the system is down, or there was an internal error).
+<P>All of the trigger events associated with unsolicited transactions from filler applications use a common message definition, that follows:
+<PRE>
+<FONT FACE="Courier New"><U>SIU</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Schedule Information Unsolicited</U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I3"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">SCH     Schedule Activity Information     10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { NTE } ]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ PV1 ]   Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ PV2 ]   Patient Visit-Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { OBX } ]  Observation Segment       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { DG1 } ]  Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ RGS    Resource Group Segment      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIS   Appointment Information - Service    10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIG   Appointment Information - General Resource  10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIL   Appointment Information - Location Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIP   Appointment Information - Personnel Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I4"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error Information        2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The trigger events that use this message definition are listed below.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100037.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100039.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

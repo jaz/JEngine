@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>2.14.3 Continuation of unsolicited display update message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200093.htm">
+<LINK REL="Previous" HREF="ch200091.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200091.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200093.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E87"></A>
+<H3><B>2.14.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><B>Continuation of unsolicited display update message</B><A NAME="I17"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Like other types of HL7 messages, the UDM message can be continued by use of the DSC segment and <I>MSH-14-continuation pointer</I>.  Thus if a UDM needs to be continued as three separate UDM messages, the first message would contain:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH      (no continuation pointer)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>URD </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[URS]  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>{  DSP  }  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC      (with continuation pointer)</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second message would contain:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH      (continuation pointer (to first message))</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>{  DSP  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC      (with continuation pointer)</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The last message would then contain:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH      (continuation pointer (to second message))</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>{  DSP  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    (no DSC, since last)</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  This scheme works equally well with non-display messages, such as the Unsolicited Update ORU message (see Chapter 7).</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Since these are unsolicited messages, intervening messages (from other systems) may be sent to the receiving application while the sections of the particular message are being continued.  <I>MSH-14-continuation pointer</I> enables the receiving system to keep track of extraneous intervening messages.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200091.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200093.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

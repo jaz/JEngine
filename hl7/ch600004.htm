@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>6.3.1 BAR/ACK - add patient account (event P01)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600005.htm">
+<LINK REL="Previous" HREF="ch600003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E262"></A>
+<H3><B>6.3.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>BAR/ACK - add patient account</B><A NAME="I9"></A><B> (event P01</B><A NAME="I10"></A><B>)</B></H3>
+<P>
+<FONT FACE="Times New Roman">Data are sent from some application (usually a Registration or an ADT system) for example,  to the patient accounting or financial system to establish an account for a patient&#146;s billing/accounts receivable record.  Many of the segments associated with this event are optional.  This optionality allows those systems needing these fields to set up transactions that fulfill their requirements and yet satisfy the HL7 requirements.  </FONT>
+<P>
+<FONT FACE="Times New Roman">When an account&#146;s start and end dates span a period greater than any particular visit, the P01 <A NAME="I11"></A>(add account) event should be used to transmit the opening and closing of an account.  The A01 (admit/visit notification) event can notify systems of the creation of an account as well as notify them of a patient's arrival in the healthcare facility.  In order to create a new account without notifying systems of a patient's arrival, use the P01 trigger event.</FONT>
+<P>
+<FONT FACE="Times New Roman">From Standard Version 2.3 onward, the P01<A NAME="I12"></A> event should only be used to add a new account that did not exist before, not to update an existing account.  The new P05<A NAME="I13"></A> (update account) event should be used to update an existing account.  The new P06 (end account) event should be used to close an account.  With the P01 event, <I>EVN</I><I>-</I><I>2-</I><I>d</I><I>ate/time of event</I> should contain the account start date.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>BAR</U><A NAME="I14"></A><A NAME="I15"></A><U> </U><U> </U><U> </U><U> </U><U> </U><U>Add Billing Account</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Patient Additional Demographics    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ PV1 ]   Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ PV2 ]   Patient Visit - Additional Info    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{DB1}]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{ OBX }]   Observation/Result        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ AL1 }]   Allergy Information       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ DG1 }]   Patient Diagnosis        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  DRG  ]   Diagnosis Related Group      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{ PR1     Procedures         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{ ROL }]   Role           12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ GT1 }]   Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ NK1 }]   Next of Kin         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   { </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     IN1    Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ IN2 ]   Insurance - Additional Info.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ IN3 ]   Insurance - Add'l Info. - Cert.    6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ACC]    Accident Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [UB1]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [UB2]    Universal Bill 92 Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>The set ID field in the insurance, diagnosis, and procedure segments should be set the first time these segments are sent and can be used in subsequent transactions to update them.
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><A NAME="I16"></A><A NAME="I17"></A><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgement</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The error segment will indicate the fields that caused a transaction to be rejected.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.30 QIP - query input parameter list</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200051.htm">
+<LINK REL="Previous" HREF="ch200049.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200049.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200051.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E51"></A>
+<H3><B>2.8.30</B><B> </B><A NAME="I2"></A><B>QIP - query input parameter list</B></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;field name (ST) &gt; ^ &lt;value1 (ST) &amp; value2 (ST) &amp; value3 (ST) ...&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the list of parameter names and values to be passed to the stored procedure.  </FONT>
+<H4>2.8.30.1 Field name (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">This component contains the field name.</FONT>
+<P>
+<FONT FACE="Times New Roman">Field naming conventions:</FONT>
+<P>
+<FONT FACE="Times New Roman">Fields are designated by the &quot;@&quot; symbol concatenated with the HL7 item number for the field.  If the field is divided into components, the designation may be suffixed with &quot;.nn,&quot; to identify a particular component (a suffix of &quot;.3&quot; indicates the third component of the field); otherwise, the whole field is assumed.  If the field is further divided into subcomponents, the designation is suffixed with &quot;.nn.mm,&quot; which identifies the component and subcomponent requested by relative position.</FONT>
+<P>
+<FONT FACE="Times New Roman">Site-specific fields may be used, provided that they begin with the letter &quot;Z.&quot; In this case, site-specific item numbers must be defined that do not conflict with existing HL7 item numbers.</FONT>
+<P>
+<FONT FACE="Times New Roman">Values for this field are defined in the function-specific chapters of this specification.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> If the &quot;@&quot; is being used as one of the delimiter characters defined in <I>MSH-2-encoding characters</I>, it must be &quot;escaped .&quot; (See Section  <A HREF="ch200071.htm#I4">2.9.1</A>,&quot; <A HREF="ch200071.htm#I4">Formatting codes</A>&quot;.)</TD></TR></FONT></TABLE><H4>2.8.30.2 Value1 &amp; value2 &amp; value3 (ST)</H4>
+<P>This component contains the field value or values in the form &quot;value1&amp; value2 &amp; value3 &#133;&quot;
+<P>A single valued parameter contains only a single subcomponent in the second component:  thus no subcomponent delimiters are needed (e.g., &lt;field name&gt; ^ &lt;value&gt;).  A simple list of values (i.e., a one-dimensional array) may be passed instead of a single value by separating each value with the subcomponent delimiter: ,&quot;&lt;field name&gt; ^ &lt;value1 &amp; value2 &amp;&#133;&gt;&quot;
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200049.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200051.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

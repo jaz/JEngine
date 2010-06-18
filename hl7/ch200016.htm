@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>2.6.6 Table</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200017.htm">
+<LINK REL="Previous" HREF="ch200015.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200015.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200017.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E19"></A>
+<H3><B>2.6.6</B><B> </B><A NAME="I2"></A><B>Table</B></H3>
+<P>
+<FONT FACE="Times New Roman">HL7 defines a table of values for this field.  An entry in the table number column means that the table name and the element name are equivalent.</FONT>
+<P>
+<FONT FACE="Times New Roman">The manner in which HL7 defines the valid values for tables will vary.  Certain fields, like Patient Location, will have values that vary from institution-to-institution.  Such tables are designated user or site-defined.  Even though these tables are not defined in the Standard, they are given a user-defined table number to facilitate implementations.  The IS data type is often used to encode values for these tables.  Note that some of these tables (e.g., location) may reference common master files.</FONT>
+<P>
+<FONT FACE="Times New Roman">Others, like Event Type (<I>HL7 table 0003</I>), are a part of the HL7 Standard because they affect the interpretation of the messages that contain them.  They are limited to the values established by the HL7 Standard.  The ID data type is most often used to encode values for HL7 tables.  When an HL7 table exists it is strongly recommended that it be used.  The values are listed in Appendix A.  These HL7 tables also appear in the text in a standard box format (e.g., the<I> HL7 table 0003 - Event type</I>).  Additions may be included on a site-specific basis. </FONT>
+<P>
+<FONT FACE="Times New Roman">Still other tables contain values that are encoded by reference to other standards documents.  For example, the encoding for Lab procedures is defined by ASTM E1238-94.  The CE data type is used to encode values for these tables.</FONT>
+<P>
+<FONT FACE="Times New Roman">Finally, there are some user-defined tables that  contain values that might be standardized across institutions but for which no applicable official standard exists.  For these a set of suggested values may be listed in Appendix A.  These suggested values appear in the text in a standard non-box format (e.g<I>., HL7 table 0062 </I><I>- Event reason code</I> in Section 3.3.1.4, &quot;Event reason code&quot;).  It is expected that these values will be used where applicable within an institution and serve as a basis for extensions as required.  The appropriate functional committee within HL7 solicits suggestions for additional values from institutions that are applying the Standard.</FONT>
+<P>
+<FONT FACE="Times New Roman">Various HL7 data types (AD, CD, CE, CF, CK, CM, CN, CP, CQ, CX, DLN, ED, EI, FC, ID, IS, JCC, MO, HD, PL, PPN, PT, QSC, RI, RP, SCV, TQ, VH, XAD, XCN, XON, XPN, and XTN) are used to convey tabular values, or have a component containing tabular values).  In the segment attribute tables this information is in a column labeled TBL#.  The only exceptions are the CE and CF data types, which contain the table identifier as part of the data type definition.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200015.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200017.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

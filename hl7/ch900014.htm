@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>9.4.9 Document replacement notification (event T09)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch900015.htm">
+<LINK REL="Previous" HREF="ch900013.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch900013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E423"></A>
+<H3><B>9.4.9</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>Document replacement notification (event T09)</B></H3>
+
+<TABLE >
+<TR>
+<TD WIDTH=574 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>:    This trigger  event  is generally used when the original document availability status is &quot;Available.&quot;</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">This is a notification of replacement to a document without the accompanying content. </FONT>
+<P>
+<FONT FACE="Times New Roman">Scenario.   Errors discovered in a document are corrected.  The original document is replaced with the revised document.  The replacement document has its own new unique document ID that is linked to the original document via the parent ID.  The status of the original document is changed to &quot;Obsolete&quot; but the original document should be retained in the system for historical reference.  Document replacement notification is sent.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MDM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Document Replacement Notification </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">TXA     Document Notification       9</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error Information        2</FONT></PRE>
+<P ALIGN=LEFT>
+<A HREF="ch900013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

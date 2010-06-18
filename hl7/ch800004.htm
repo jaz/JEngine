@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>8.3.1 MFN/MFK - master files notification</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800005.htm">
+<LINK REL="Previous" HREF="ch800003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E338"></A>
+<H3><B>8.3.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>MFN/MFK - master files notification</B><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The MFN transaction is defined as follows:</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Notification</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {MFE    Master File Entry        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [Z..] }   One or more HL7 and/or      (varies) </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     Z-segments carrying the data </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      for the entry identified in the MFE segment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>MFK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Application Acknowledgment</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Acknowledgment        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { [MFA] }   Master file ACK segment      8</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The master file record identified by the MFE segment is contained in either Z-segments and/or HL7-defined segments immediately following the MFE segment, and is denoted by &quot;Z...&quot; in the MFN abstract message definition given above.  This record may be either a flat record contained in a single segment, or a complex record needing more than a single segment to carry its data and (usually hierarchical) structure.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The master file record &quot;[Z..]&quot; identified by the MFE segment is optional (indicated by square brackets) in the single case where the master file is a simple one which contains only a key and the text value of that key.  For this case only, both values may be carried in  M<I>FE-4-primary key value</I>. segment.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> If the file-level event code is &quot;REP&quot; (replace file), then each MFA segment must have a record-level event code of &quot;MAD&quot; (add record to master file).</TD></TR></FONT></TABLE>
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> The MFK message is used for an application acknowledgment in either the original or enhanced acknowledgment modes. </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The MFA segment carries acknowledgment information for the corresponding MFE segment (identified by  <I>MFA-5-primary key value</I>).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

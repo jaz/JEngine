@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.4 ADT/ACK - register a patient (event A04)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300007.htm">
+<LINK REL="Previous" HREF="ch300005.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E140"></A>
+<H3><B>3.2.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - register a patient</B><A NAME="I9"></A><B> (event A04)</B></H3>
+<P>
+<FONT FACE="Times New Roman">An A04 event signals that the patient has arrived or checked in as a one-time, or recurring outpatient, and is not assigned to a bed. One example might be its use to signal the beginning of a visit to the Emergency Room.  Note that some systems refer to these events as outpatient registrations or emergency admissions.  <I>PV1-44-admit date time</I> is used for the visit start date/time.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { NK1 } ]   Next of Kin / Associated Parties    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { AL1 } ]   Allergy Information       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  DRG  ]   DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ { PR1    Procedures         6
+<BR>  [{ROL}]  Role           12
+<BR> }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { GT1 } ]   Guarantor Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { IN1    Insurance Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN2 ]   Insurance Information - Addit. Info.   6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN3 ]    Insurance Information - Cert.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  } </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ACC ]    Accident Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB1 ]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB2 ]    Universal Bill 92 Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

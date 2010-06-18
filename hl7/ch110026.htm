@@ -1,0 +1,623 @@
+<HTML>
+<HEAD>
+<TITLE>11.5.1 RF1 - referral information segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110027.htm">
+<LINK REL="Previous" HREF="ch110025.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E498"></A>
+<H3><B>11.5.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>RF1 - referral information segment</B><A NAME="I7"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I8"></A>This segment represents information that may be useful when sending referrals from the referring provider to the referred-to provider.</FONT>
+<P>Figure 11-2.  RF1 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=44 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=51 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=51 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=254 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0283</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01137</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referral Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0280</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01138</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referral Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0281</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01139</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referral Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0282</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01140</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referral Disposition</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0284</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01141</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referral Category</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01142</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Originating Referral Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01143</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01144</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Expiration Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01145</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Process Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0336</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01228</FONT>
+</TD><TD WIDTH=254 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referral Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">01229</FONT>
+</TD><TD WIDTH=254 VALIGN=top ><BR></TD></TR></TABLE><P>11.5.1.0  RF1 - field definitions<A NAME="I9"></A>
+<H4>11.5.1.1 <A NAME="I10"></A>Referral status<A NAME="I11"></A>  (CE)   01137</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ID)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt;^&lt;alternate identifier (ID)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field  contains the status of the referral as defined by either the referred-to or the referred-by provider.  Refer to <I>user-defined table 0283 - Referral status </I>for suggested values. </FONT>
+<P ALIGN=indent>User-defined Table 0283 - Referral status</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Accepted</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pending</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Rejected</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">E</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Expired</TD></TR></FONT></TABLE><H4>11.5.1.2 <A NAME="I12"></A>Referral priority<A NAME="I13"></A>  (CE)   01138</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the urgency of the referral.  Refer to <I>user-defined table 0280 - Referral </I><I>priority</I> for suggested values<I>.</I></FONT>
+<P ALIGN=indent>User-defined Table 0280 - Referral priority</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">STAT</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ASAP</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Routine</TD></TR></FONT></TABLE><H4>11.5.1.3 <A NAME="I14"></A>Referral type<A NAME="I15"></A>  (CE)   01139</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the type of referral.  It is loosely associated with a clinical specialty or type of resource.  Refer to <I>user-defined table 0281 - Referral</I> <I>type</I> for suggested values. </FONT>
+<P ALIGN=indent>User-defined Table 0281 - Referral type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LAB</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Laboratory</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RAD</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Radiology</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MED</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medical</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SKN</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Skilled Nursing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PSY</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Psychiatric</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">HOM</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Home Care</TD></TR></FONT></TABLE><H4>11.5.1.4 <A NAME="I16"></A>Referral disposition<A NAME="I17"></A>  (CE)   01140</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the type of response or action that the referring provider would like from the referred-to provider.  Refer to <I>user-defined table 0282 - Referral disposition</I> for suggested values. </FONT>
+<P ALIGN=indent>User-defined Table 0282 - Referral disposition</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">WR</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Send Written Report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RP</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Return Patient After Evaluation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AM</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Assume Management</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SO</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Second Opinion</TD></TR></FONT></TABLE><H4>11.5.1.5 <A NAME="I18"></A>Referral category<A NAME="I19"></A>   (CE)   01141</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the location at which the referral will take place.  Refer to <I>user-defined table </I><I>0284 - Referral category</I> for suggested values. </FONT>
+<P ALIGN=indent>User-defined Table 0284 - Referral category</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">I</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Inpatient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Outpatient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ambulatory</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">E</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency</TD></TR></FONT></TABLE><H4>11.5.1.6 <A NAME="I20"></A>Originating referral identifier<A NAME="I21"></A>  (EI)   01142</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the originating application&#146;s permanent identifier for the referral.  This is a composite field.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string of up to 15 characters that identifies an individual referral.  It is assigned by the originating application, and it identifies a referral, and the subsequent referral transactions, uniquely among all such referrals from a particular processing application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second component contains the application identifier for the originating application.  The application identifier is a string of up to 15 characters that is uniquely associated with an application.  A given healthcare provider facility, or group of intercommunicating healthcare provider facilities, should establish a unique list of applications that may be potential originators and recipients, and then assign unique application identifiers to each of those applications.  This list of application identifiers becomes one of the healthcare provider facility&#146;s master dictionary lists.  Since applications fulfilling different application roles can send and receive referral messages, the assigning authority application identifier may not identify the application sending or receiving a particular message.  Data elements on the Message Header (MSH) segment are available to identify the actual sending and receiving applications.</FONT>
+<H4>11.5.1.7 <A NAME="I22"></A>Effective date<A NAME="I23"></A>  (TS)   01143</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the referral is effective.  </FONT>
+<H4>11.5.1.8 <A NAME="I24"></A>Expiration date<A NAME="I25"></A>  (TS)   01144</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the referral expires.</FONT>
+<H4>11.5.1.9 <A NAME="I26"></A>Process date<A NAME="I27"></A>  (TS)   01145</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the referral originated.  It is used in cases of retroactive approval. </FONT>
+<H4>11.5.1.10 Referral reason<A NAME="I28"></A>  (CE)   01228 </H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the reason for which the referral will take place.  Refer to <I>user-defined table </I><I>0336 - Referral reason</I> for suggested values. </FONT>
+<P ALIGN=indent>User-defined Table 0336 - Referral reason</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Second Opinion</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient Preference</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Provider Ordered</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">W</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Work Load</TD></TR></FONT></TABLE><H4>11.5.1.11 External referral identifier<A NAME="I29"></A>  (EI)   01229</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains an external application&#146;s permanent identifier for the referral.  That is, this referral identifier does not belong to the application which originated the referral and assigned the originating referral identifier.</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string of up to 15 characters that identifies an individual referral.  It is typically assigned by the referred-to provider application responding to a referral originating from a referring provider application, and it identifies a referral, and the subsequent referral transactions, uniquely among all such referrals for a particular referred-to provider processing application.  For example,  when a primary care provider (referring provider) sends a referral to a specialist (referred-to provider), the specialist&#146;s application system may accept the referral and assign it a new referral identifier which uniquely identifies that particular referral within the specialist&#146;s application system.  This new referral identifier would be placed in the external referral identifier field when the specialist responds to the primary care physician.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second component contains the application identifier for the originating application.  The application identifier is a string of up to 15 characters that is uniquely associated with an application.  A given healthcare provider facility, or group of intercommunicating healthcare provider facilities, should establish a unique list of applications that may be potential originators and recipients, and then assign unique application identifiers to each of those applications.  This list of application identifiers becomes one of the healthcare provider facility&#146;s master dictionary lists.  Since applications fulfilling different application roles can send and receive referral messages, the assigning authority application identifier may not identify the application sending or receiving a particular message.  Data elements on the Message Header (MSH) segment are available to identify the actual sending and receiving applications.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

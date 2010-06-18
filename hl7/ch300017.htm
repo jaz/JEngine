@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.15 ADT/ACK - pending transfer (event A15)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300018.htm">
+<LINK REL="Previous" HREF="ch300016.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E151"></A>
+<H3><B>3.2.15</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - pending transfer</B><A NAME="I9"></A><B> (event A15)</B></H3>
+<P>
+<FONT FACE="Times New Roman">An A15 event notifies other systems of a plan to transfer a patient to a new location when the patient has not yet left the old location.  It is used when advanced notification of a transfer is required in order to prepare for the patient&#146;s location change.  For example, this transaction could be sent so that orderlies will be on hand to move the patient or so that dietary services can route the next meal to the new location. </FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When other important fields change it is recommended that the A08 (update patient information) event be used instead.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>The DG1 segment remains in this message for backward compatibility only.</I></FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DRG ]    DRG Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

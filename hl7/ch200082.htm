@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>2.11.1 HL7 abstract message syntax example</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200083.htm">
+<LINK REL="Previous" HREF="ch200081.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200081.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200083.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E80"></A>
+<H3><B>2.11.1</B><B> </B><A NAME="I2"></A><B>HL7 abstract message syntax example</B></H3>
+<P>
+<FONT FACE="Times New Roman">The schematic form for this hypothetical exchange of messages is shown in Figure 2-5:</FONT>
+<P ALIGN=indent><A NAME="I3"></A><A NAME="I4"></A>Figure 2-5.  Hypothetical schematic message</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<PRE>
+<FONT FACE="Courier New">Trigger Event: WIDGET REPORT IS REQUESTED</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>WRQ            Widget Request           Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH            Message Header              2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">WID            Widget ID                   XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>WRP            Widget Report            Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH            Message Header              2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA            Message acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ WDN          Widget Description          XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  WPN          Widget Portion              XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { [WPD] }    Widget Portion Detail       XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</TD></TR></FONT></TABLE></PRE>
+<P>
+<FONT FACE="Times New Roman">The WID, WDN, WPN, and WPD segments would be defined by the widget committee in the widget chapter, as designated by the Arabic numeral XX in the right column.  The MSH and MSA segments, although included in the widget messages, are defined in another chapter.  They are incorporated by reference into the widget chapter by the chapter number XX.</FONT>
+<P>
+<FONT FACE="Times New Roman">On the other hand, the widget committee might decide that the WPN and WPD segments should appear in pairs, but the pairs are optional and can repeat.  Then the schematic for the WRP message would be as shown in Figure 2-6.</FONT>
+<P ALIGN=indent><A NAME="I5"></A><A NAME="I6"></A>Figure 2-6.  WPN and WPD segments in pairs</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<PRE>
+<FONT FACE="Courier New"><U>WRP            Widget Report               Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH            Message Header                 2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA            Message acknowledgment         XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ WDN          Widget Description             XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { WPN      Widget Portion                 XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      WPD      Widget Portion Detail          XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   } ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</TD></TR></FONT></TABLE></PRE>
+<P>
+<FONT FACE="Times New Roman">If the widget committee determined that at least one pair of WPN and WPD segments must follow a WDN, then the notation would be as shown in Figure 2-7.</FONT>
+<P ALIGN=indent><A NAME="I7"></A><A NAME="I8"></A>Figure 2-7.  At least one pair of WPN and WPD</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<PRE>
+<FONT FACE="Courier New"><U>WRP            Widget Report               Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH            Message Header                 2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA            Message acknowledgment         XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ WDN          Widget Description             XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {  WPN       Widget Portion                 XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     WPD       Widget Portion Detail          XX</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">} </TD></TR></FONT></TABLE></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200081.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200083.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

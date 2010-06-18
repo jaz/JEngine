@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+<TITLE>7.10.2 SUR - summary product experience report (event P09)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700043.htm">
+<LINK REL="Previous" HREF="ch700041.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700041.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700043.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E314"></A>
+<H3><B>7.10.2</B><B> </B><B>SUR - summary product experience report (event P09)</B></H3>
+<P>Sending summary reports related to products constitutes a P09 event.
+<PRE>
+<FONT FACE="Courier New"><U>SUR</U><U> </U><U> </U><U> </U><U> </U><U>Summary Product Experience Report</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  FAC   Facility          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   {PSH   Product Summary Header      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PDC   Product Detail Country      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PSH   Product Summary Header      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   {FAC   Facility          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PDC   Product Detail Country      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    NTE   Notes (for PCR)        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ED   Encapsultated Data       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>The Summary Product Experience Report message can be divided into two separate parts.  Part 1 consists of a Facility segment which identifies the reporting organization, a Product Summary Header segment which provides summary information about the products and manufacturers, and a Product Detail Country segment which provides country specific product identification and marketing information.  Part 2 consists of a repeating series of segments.  These segments could be used to represent data about each model of a medical device (Part 2 of FDA Form 3417, for example).  The Product Summary Header segment provides manufacturer&#146;s data, under which repeating sets of Facility segments (representing multiple manufacturing sites), a Product Detail Country segment (representing marketing and product identification data) and the Note segment (for other commentary) may follow.  Finally, the Encapsulated Data (ED) segment can be used to transmit images of documents, including any of the MIME (Multimedia Internet Mail Extension) support formats such as JPEG, GIF, and FAX.
+<P>Regulatory agencies require a variety of reports that are centered on the product, not on a single patient.  Some of these reports request information just about the product, and some request information about the product combined with a summary of the product experience reports on that product.  These are used by regulatory agencies to provide totals against which they can verify that they have received and processed all of the relevant reports, and to calculate denominators for computing event rates.  If manufacturers begin to transmit these reports electronically and regulatory agencies in turn electronically confirm the receipt of such reports, the need for some of these summary reports will decline.
+<P>The SUR message provides a mechanism for sending a variety of different summary reports.  In the United States, the Medical Device Reporting Annual Certification and the Medical Device Reporting Baseline Report are examples of such reports.  Below, we use these two medical device reports to illustrate how one would map the contents of this kind of report to the SUR message.
+<P>Manufacturers are required to submit a Baseline Report (FDA Form 3417 of October, 1995( when a device is first released.  The focus of this report is a single product.  The first part requests information about the manufacturer of the product (Questions 2a through 2g), e.g., the firm&#146;s name, street address, city, country, type of firm (e.g., manufacturer, distributor, both); the manufacturer&#146;s contact (Questions 3a through 3g). e.g., title, street address, city, state, phone number, and whether the firm is an organization of a foreign manufacturer.  Most of this information can be transmitted as fields within the FAC (Facility segment - the first  segment in the SUR message following the MSH).  Question 1 (which asks the type of baseline report - initial or annual update) and Question 7 (the date of the report) are reported in the PSH (Product Summary Header) segment that follows the FAC segment in the SUR message.  The second part of the Baseline Report form also includes information about the device name (Question 2), generic name (Question 3), device model number (Question 4), device catalogue number (Question 5), other device identifier (Question 6), product code (Question 7), and device family (Question 8), related device information (Question 9), the basis for marketing the device (Question 10), device life (Question 11), the date the device was first marketed (Question 12), the date the device ceased being marketed (Question 13), whether the device was the subject of a 522 study (Question 14), and the number of devices manufactured, distributed, and in current use (Question 15).  All of these questions with the exception of #9 are represented in the PDC segment.  Questions 16a and 16b are represented by nested PSH segments.
+<P>The Medical Device Reporting Annual Certification form consists of two parts.  Part 12 transmits information describing the firm submitting the report (Questions 2a through 2h) and the individual who completed the report (Questions 3a through 3g).  These questions are represented in the FAC segment.  Question 1 (period covered by the certification) corresponds to the PSH segment.  Part 2, Question 3, which details one or more individual devices, can be transmitted in the repeating FAC and PSH segments.  <I>Figure </I><I>7-19</I> summarizes the mapping between questions on these two FDA forms and the SUR message.
+<P ALIGN=indent>Figure 7-19.  Mapping of FDA medical device reports to SUR message</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=194 ALIGN=center  VALIGN=top >
+<P><B>Baseline Report</B>
+</TD><TD WIDTH=194 ALIGN=center  VALIGN=top >
+<P><B>Annual Certification</B>
+</TD><TD WIDTH=194 ALIGN=center  VALIGN=top >
+<P><B>SUR</B></TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>MSH</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top >
+<P>Part 1
+<BR>Questions 2a-2g, 3a-3g
+</TD><TD WIDTH=194 VALIGN=top >
+<P>Part 1
+<BR>Questions 2,3
+</TD><TD WIDTH=194 VALIGN=top >
+<P>{  FAC</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top >
+<P>Part 1 
+<BR>Questions 1, 7
+</TD><TD WIDTH=194 VALIGN=top >
+<P>Part 1
+<BR>Question 1
+</TD><TD WIDTH=194 VALIGN=top >
+<P>   {PSH</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>     PDC</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>   }</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top >
+<P>Part 2
+<BR>Questions 16a, 16b
+</TD><TD WIDTH=194 VALIGN=top >
+<P>Part 2
+<BR>Question 3
+</TD><TD WIDTH=194 VALIGN=top >
+<P>   PSH</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top >
+<P>Part 2
+<BR>Questions 1a, 1b
+</TD><TD WIDTH=194 VALIGN=top >
+<P>Part 2
+<BR>Question 3
+</TD><TD WIDTH=194 VALIGN=top >
+<P>  {  FAC</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top >
+<P>Part 2
+<BR>Questions 2-15
+</TD><TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>      PDC</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>      NTE</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>  }</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top >
+<P>Part 2
+<BR>Alternative transmission method - image file rather than text
+</TD><TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>  ED</TD>
+</TR>
+<TR>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top ><BR></TD>
+<TD WIDTH=194 VALIGN=top >
+<P>}</TD></TR></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch700041.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700043.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

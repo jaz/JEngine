@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.10 ADD - addendum segment </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200134.htm">
+<LINK REL="Previous" HREF="ch200132.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200132.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200134.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E118"></A>
+<H3><B>2.24.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>ADD </B><B>-</B><B> addendum segment</B><B> </B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The ADD segment is used to define the continuation of the prior segment in a continuation message.  See Section <A HREF="ch200120.htm#I19">2.23.2</A>, &quot;<A HREF="ch200120.htm#I22">Continuation messages and segments</A>,&quot; for details. </FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Figure 2-17.  ADD attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=2 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=238 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1-n</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">64k</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00066</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Addendum Continuation Pointer</TD></TR></FONT></TABLE></CENTER><P>2.24.10.0  ADD field definition
+<H4>2.24.10.1 Addendum continuation pointer (ST)   00066  </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to define the continuation of the prior segment in a continuation message.  See text for details.  When the ADD is sent after the segment being continued, it contains no fields.  It is only a marker that the previous segment is being continued in a subsequent message.  Thus fields 1-N are not present.  The sequence designation, 1-N, means the remainder of the fields in the segment being continued.  These remainder of the segment being continued fields are present only when the ADD is sent with a continuation message. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200132.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200134.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

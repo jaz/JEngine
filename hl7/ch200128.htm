@@ -1,0 +1,454 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.5 QRF - original style query filter segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200129.htm">
+<LINK REL="Previous" HREF="ch200127.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200127.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200129.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E113"></A>
+<H3><B>2.24.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>QRF - original style query filter segment</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The QRF segment is used with the QRD segment to further refine the content of an original style query.</FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Figure 2-12.  QRF attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Item #</FONT>
+</TD><TD WIDTH=238 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Element Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00037</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Where Subject Filter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00038</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">When Data Start Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00039</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">When Data End Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00040</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">What User Qualifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00041</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other QRY Subject Filter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0156</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00042</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Which Date/Time Qualifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0157</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00043</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Which Date/Time Status Qualifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0158</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00044</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time Selection Qualifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">TQ</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00694</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">When Quantity/Timing Qualifier</TD></TR></FONT></TABLE></CENTER><P>2.24.5.0   QRF field definitions
+<H4>2.24.5.1 Where subject filter  (ST)   00037</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the department, system, or subsystem to which the query pertains.  This field may repeat as in LAB~HEMO, etc.</FONT>
+<H4>2.24.5.2 When data start date/time  (TS)   00038</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the dates and times equal or after this value should be included. </FONT>
+<H4>2.24.5.3 When data end date/time  (TS)   00039</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the dates and times the same as or before this date should be included. </FONT>
+<H4>2.24.5.4 What user qualifier  (ST)   00040</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an identifier to further define characteristics of the data of interest. </FONT>
+<H4>2.24.5.5 Other QRY subject filter  (ST)   00041</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a filter defined locally for use between two systems.  This filter uses codes and field definitions which have specific meaning only to the applications and/or site involved.</FONT>
+<H4>2.24.5.6 Which date/time qualifier  (ID)   00042</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field specifies the type of date referred to in <I>QRF-2-when data start date/time</I> and <I>QRF-3-when data end date/time</I>.</FONT>
+<P ALIGN=indent><A NAME="I19"></A><A NAME="I20"></A>Table 0156 - Which date/time qualifier</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ANY</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Any date/time within a range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">COL</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Collection date/time, equivalent to film or sample collection date/time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order date/time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RCT</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Specimen receipt date/time, receipt of specimen in filling ancillary (Lab)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">REP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report date/time, report date/time at filing ancillary (i.e., Lab)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SCHED</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Schedule date/time</TD></TR></FONT></TABLE><H4>2.24.5.7 Which date/time status qualifier  (ID)   00043</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field specifies the status type of objects selected in date range defined by <I>QRF-2-when data </I><I>start date/time</I> and <I>QRF-3-when data end date/time</I>).</FONT>
+<P ALIGN=indent><A NAME="I21"></A><A NAME="I22"></A>Table 0157 - Which date/time status qualifier</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ANY</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Any status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CFN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Current final value, whether final or corrected</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">COR</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Corrected only (no final with corrections)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FIN</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Final only (no corrections)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PRE</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preliminary</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">REP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report completion date/time</TD></TR></FONT></TABLE><H4>2.24.5.8 Date/time selection qualifier  (ID)   00044</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field allows the specification of certain types of values within the date/time range.</FONT>
+<P ALIGN=indent><A NAME="I23"></A><A NAME="I24"></A>Table 0158 - Date/time selection qualifier</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1ST</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">First value within range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ALL</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">All values within the range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LST</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Last value within the range</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">REV</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">All values within the range returned in reverse chronological order (This is the default if not otherwise specified.)</TD></TR></FONT></TABLE><H4>2.24.5.9 When timing/quantity qualifier  (TQ)   00694</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;quantity (CQ)&gt; ^ &lt;interval (CM)&gt; ^ &lt;duration&gt; ^ &lt;start date/time (TS)&gt; ^ &lt;end date/time (TS)&gt; ^ &lt;priority (ID)&gt; ^ &lt;condition (ST)&gt; ^ &lt;text (TX)&gt; ^ &lt;conjunction (ID)&gt; ^ &lt;order sequencing&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field allows an interval definition to be used for specifying multiple responses to a query. With the addition of this filter, new query specifications should no longer use <I> QRF-2-when data start </I><I>date/time</I> and <I>QRF-3-when data end date/time</I> in future implementations.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200127.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200129.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>8.6.1 MFN/MFK - staff/practitioner master file message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800018.htm">
+<LINK REL="Previous" HREF="ch800016.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E348"></A>
+<H3><B>8.6.1</B><B> </B><A NAME="I2"></A><B>MFN/MFK - staff/practitioner master file message</B></H3>
+<P>
+<FONT FACE="Times New Roman">The staff (STF) and practitioner (PRA) segments can be used to transmit master files information between systems. The STF segment provides general information about personnel; the PRA segment provides detailed information for a staff member who is also a health practitioner. Other segments may be defined to follow the STF segment to provide additional detail information for a particular type of staff member: the PRA segment is the first such segment.  When the STF and PRA segments are used in an MFN message, the abstract definition is as follows:</FONT>
+<P><U>MFN</U><U> </U><U> </U><U> </U><U>Master File Notification for Staff/Practitioner</U><A NAME="I3"></A><U> </U><U> </U><U>Chapter</U>
+<P>MSH      Message Header       2
+<P>MFI      Master File Identification    8
+<P> {MFE     Master File Entry       8
+<P>  STF     Staff Identification      8
+<P>    [PRA]    Practitioner Detail      8
+<P> }
+<P><U>MFK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Acknowledgment</U><U> </U><U> </U><U> </U><U>Chapter</U>
+<P>MSH      Message Header       2
+<P>MSA      Acknowledgment       2
+<P>MFI      Master File Identification    8
+<P>  [{MFA}]    Master File ACK segment     8
+<P>When the STF and PRA segments are used in the MFR message, the part of the message represented by:
+<P>   {MFE
+<P>  [Z..]}
+<P>is replaced by:
+<P>   {MFE
+<P>    STF
+<P>   [PRA] 
+<P>   } 
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

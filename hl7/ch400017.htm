@@ -1,0 +1,192 @@
+<HTML>
+<HEAD>
+<TITLE>4.4.6 Priority component  (ST)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400018.htm">
+<LINK REL="Previous" HREF="ch400016.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E221"></A>
+<H3><B>4.4.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Priority component  (ST)</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field describes the urgency of the request.  The following values are suggested (the default for Priority is R):</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Stat.</FONT>
+</TD><TD WIDTH=349 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">With highest priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ASAP</FONT>
+</TD><TD WIDTH=349 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Fill after S orders</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Routine.</FONT>
+</TD><TD WIDTH=349 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Default</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Preop</FONT>
+</TD><TD WIDTH=349 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Callback</FONT>
+</TD><TD WIDTH=349 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">T</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Timing critical.</FONT>
+</TD><TD WIDTH=349 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A request implying that it is critical to come as close as possible to the requested time, e.g., for a trough antimicrobial level.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PRN</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">As Needed</FONT>
+</TD><TD WIDTH=349 VALIGN=top ><BR></TD></TR></TABLE><P>
+<FONT FACE="Times New Roman">If using the value &quot;T&quot; (timing critical), the degree of criticality can be specified thus:</FONT>
+<P>
+<FONT FACE="Times New Roman">Format:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TS&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">timing critical within &lt;integer&gt; seconds</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TM&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">timing critical within &lt;integer&gt; minutes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TH&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">timing critical within &lt;integer&gt; hours</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TD&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">timing critical within &lt;integer&gt; days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TW&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">timing critical within &lt;integer&gt; weeks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TL&lt;integer&gt;</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>=</B></FONT>
+</TD><TD WIDTH=369 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">timing critical within &lt;integer&gt; months</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">For the sequential orders specification, these values specify the time criticality with which the predecessor order must be followed by the given order.</FONT>
+<P>
+<FONT FACE="Times New Roman">The priority component may repeat; separate repeating values with the repeat delimiter separated by a space.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

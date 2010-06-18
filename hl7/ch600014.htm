@@ -1,0 +1,617 @@
+<HTML>
+<HEAD>
+<TITLE>6.4.4 PR1 - procedures segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600015.htm">
+<LINK REL="Previous" HREF="ch600013.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E271"></A>
+<H3><B>6.4.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>PR1</B><A NAME="I9"></A><A NAME="I10"></A><B> </B><B>-</B><B> procedures</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The PR1 segment contains information relative to various types of procedures that can be performed on a patient.  The PR1 segment can be used to send procedure information, for example: Surgical, Nuclear Medicine, X-ray with contrast, etc.   The PR1 segment is used to send multiple procedures, for example, for medical records encoding or for billing systems.  </FONT>
+<P>Figure 6-4.  PR1 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=236 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00391</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - PR1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">(B) R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0089</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00392</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Coding Method</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE </FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0088</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00393</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00394</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00395</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0230</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00396</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Functional Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00397</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Minutes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">120 </FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00398</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Anesthesiologist</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0019</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00399</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Anesthesia Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00400</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Anesthesia Minutes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">120 </FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00401</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Surgeon</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">230</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN </FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00402</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Practitioner </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0059</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00403</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Consent Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00404</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00772</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Associated Diagnosis Code</TD></TR></FONT></TABLE><P>6.4.4.0 PR1 field definitions
+<H4>6.4.4.1 Set ID - PR1  (SI)   00391</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number that identifies this transaction.  For the first occurrence of the segment the sequence number shall be 1, for the second occurrence it shall be 2, etc.</FONT>
+<H4>6.4.4.2 Procedure coding method  (IS)   00392</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This</I><I> field  has been retained for backward compatibility only</I>.  Use the components of <I>PR1-3-procedure code</I> instead of this field.</FONT>
+<P>
+<FONT FACE="Times New Roman">When used for backward compatibility, <I>PR1-2-procedure coding method</I> contains the methodology used to assign a code to the procedure (CPT4, for example).  If more than one coding method is needed for a single procedure, this field and the associated values in  <I>PR1-3-procedure code</I> and <I>PR1-4-procedure description</I> may repeat.  In this instance, the three fields (<I>PR1-2 through 4</I>) are directly associated with one another.  Refer to <I>user-defined table 0089 - Procedure coding method</I> for suggested values.</FONT>
+<H4>6.4.4.3 Procedure code  (CE)   00393</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Use this field instead of  <I>PR1</I><I>-</I><I>2-</I><I>p</I><I>rocedure coding method</I> and  <I>PR1</I><I>-</I><I>4-</I><I>p</I><I>rocedure description</I>.  Those two fields have been retained for backward compatibility only.   This field contains a unique identifier assigned to the procedure.  Refer to <I>u</I><I>ser-defined table 0088 - Procedure code</I> for suggested values.  This field is a CE data type for compatibility with clinical and ancillary systems.</FONT>
+<H4>6.4.4.4 Procedure description  (ST)   00394</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This</I><I> field  has been retained for backward compatibility only</I>.  Use the components of <I>PR1-3-procedure code</I> instead of this field.   The field contains a text description that describes the procedure. </FONT>
+<H4>6.4.4.5 Procedure date/time  (TS)   00395</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time that the procedure was performed. </FONT>
+<H4>6.4.4.6 Procedure functional type  (IS)   00396</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the optional code that further defines the type of procedure.  Refer to <I>user-defined table 0230 - Procedure functional type</I> for suggested values.</FONT>
+<P ALIGN=indent>User-defined Table 0230 - Procedure functional type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A </FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Anesthesia</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Procedure for treatment (therapeutic, including operations)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">I</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Invasive procedure not classified elsewhere (e.g., IV, catheter, etc.)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Diagnostic procedure</TD></TR></FONT></TABLE><H4>6.4.4.7 Procedure minutes  (NM)   00397</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the length of time in whole minutes that the procedure took to complete. </FONT>
+<H4>6.4.4.8 Anesthesiologist  (XCN)   00398</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  HL7 has introduced the ROL - Role segment to report a wide range of practitioner roles related to a single procedure.  This segment is described in Chapter 12.  When using trigger events introduced in HL7 Version 2.3, it is recommended that the ROL - Role segment be used to report all practitioner roles related to the procedure.</FONT>
+<P>
+<FONT FACE="Times New Roman">However, in order to maintain backward compatibility, the practitioner roles existing in HL7 Version 2.2 (<I>PR1-8-anesthesiologist, PR1-11-surgeon, and PR1-12-procedure practitioner</I>) should also be populated in the PR1 segment as per the HL7 2.2 specifications.  You may additionally report the practitioner information in the ROL - role segment (See Chapter 12, Section 12.3.3, &quot;ROL - role segment&quot;).</FONT>
+<P>
+<FONT FACE="Times New Roman">When this field is used for backward compatibility, the XCN data type applies.  It contains the anesthesiologist who administered the anesthesia.  Use values in  <I>user-defined</I> <I>table 0010 - Physician </I><I>ID</I> for first component.  Multiple names and identifiers for the same person should be sent in this field, not multiple anesthesiologists.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.4.9 Anesthesia code  (IS)   00399</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a unique identifier of the anesthesia used during the procedure.  Refer to<I> </I><I>user-defined table 0019 - Anesthesia code</I> for suggested values<I>.</I>  </FONT>
+<H4>6.4.4.10 Anesthesia minutes  (NM)   00400</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the length of time in minutes that the anesthesia was administered. </FONT>
+<H4>6.4.4.11 Surgeon  (XCN)   00401</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  HL7 has introduced the ROL - Role segment to report a wide range of practitioner roles related to a single procedure.  This segment is described in Chapter 12.  When using trigger events introduced in HL7 Version 2.3, it is recommended that the ROL - Role segment be used to report all practitioner roles related to the procedure.</FONT>
+<P>
+<FONT FACE="Times New Roman">However, in order to maintain backward compatibility, the practitioner roles existing in HL7 Version 2.2 (<I>PR1-8-anesthesiologist, PR1-11-surgeon, and PR1-12-procedure practitioner</I>) should also be populated in the PR1 segment as per the HL7 2.2 specifications.  You may additionally report the practitioner information in the ROL - role segment (See Chapter 12, Section 12.3.3, &quot;ROL - role segment&quot;)..</FONT>
+<P>
+<FONT FACE="Times New Roman">When this field is being used for backward compatibility, the XCN data type applies.  It contains the surgeon who performed the procedure.  Use the values in <I>user-defined</I> <I>table 0010 - Physician ID</I> for the first component.  Multiple names and identifiers for the same person should be sent in this field, not multiple surgeons.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.4.12 Procedure practitioner  (XCN)   00402</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  HL7 has introduced the ROL - Role segment to report a wide range of practitioner roles related to a single procedure.  This segment is described in Chapter 12.  When using trigger events introduced in HL7 Version 2.3, it is recommended that the ROL - Role segment be used to report all practitioner roles related to the procedure.</FONT>
+<P>
+<FONT FACE="Times New Roman">However, in order to maintain backward compatibility, the practitioner roles existing in HL7 Version 2.2 (<I>PR1-8-anesthesiologist, PR1-11-surgeon, and PR1-12-procedure practitioner</I>) should also be populated in the PR1 segment as per the HL7 2.2 specifications.  You may additionally report the practitioner information in the ROL - role segment (See Chapter 12, Section 12.3.3, &quot;ROL - role segment&quot;)..</FONT>
+<P>
+<FONT FACE="Times New Roman"> This field contains the different types of practitioners associated with this procedure.  The ID and name components follow the standard rules defined for a composite name (XCN) field.  The last component, identifier type code, indicates which type of procedure practitioner is shown.  When the identifier type component is unvalued, it is assumed that the practitioner identified is a resident.  Use values in <I>user-defined </I><I>table 0010 - P</I><I>h</I><I>ysician ID </I>for the first component.  Refer to <I>user-defined table 0133 - Procedure practitioner </I><I>identifier code type</I> for suggested values for the identifier type code component.  The components of this data type are described in Chapter 2.</FONT>
+<P ALIGN=indent>User-defined Table 0133 - Procedure practitioner identifier code type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AN</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Anesthesiologist</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PR</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Procedure MD (surgeon)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RD</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Radiologist</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RS</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Resident</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">NP</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Nurse Practitioner</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CM</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Certified Nurse Midwife</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SN</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Scrub Nurse</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PS</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Primary Surgeon</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AS</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Assistant Surgeon</TD></TR></FONT></TABLE><H4>6.4.4.13 Consent code  (CE)   00403</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the type of consent that was obtained for permission to treat the patient.  Refer to <I>user-defined table 0059 - Consent code</I> for suggested values.</FONT>
+<H4>6.4.4.14 Procedure priority  (NM)   00404</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a number that identifies the significance or priority of the procedure code.  </FONT>
+<P>
+<FONT FACE="Times New Roman">0    the admitting procedure</FONT>
+<P>
+<FONT FACE="Times New Roman">1    the primary procedure</FONT>
+<P>
+<FONT FACE="Times New Roman">2 and higher  for ranked secondary procedures</FONT>
+<H4>6.4.4.15 <A NAME="I11"></A><A NAME="I12"></A>Associated diagnosis code  (CE)   00772</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the diagnosis which is the primary reason this procedure was performed, e.g., Medicare wants to know for which diagnosis is this procedure to put on HCFA 1500 form.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

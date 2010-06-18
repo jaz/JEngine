@@ -1,0 +1,52 @@
+import org.jengine.tools.hl7.Field;
+import org.jengine.tools.hl7.Segment;
+
+String removeLeadingZeros(String str) {
+                 if (str == null) return null;
+                 char[] chars = str.toCharArray();
+                 int index = 0;
+                 for (; index &lt; str.length(); index++) {
+                         if (chars[index] != '0')
+                                 break;
+                 }
+                 return (index == 0) ? str : str.substring(index);
+}
+
+Segment pidSegment;
+Segment orcSegment;
+Segment obrSegment;
+
+pidSegment = message.getSegment("PID");
+orcSegment = message.getSegment("ORC");
+obrSegment = message.getSegment("OBR");
+
+if (pidSegment != null) {
+  Field mrField = pidSegment.getField(3);
+  String mrFieldStr = mrField.toString();
+  mrFieldStr = removeLeadingZeros(mrFieldStr);  
+  log.debug("mrField : " + mrFieldStr);
+  if (mrFIeldStr!=null) {
+    Field f = new Field(mrFieldStr);
+    pidSegment.setField(3,f);
+  }
+}
+if (orcSegment != null) {
+  Field assessionField = orcSegment.getField(2);
+  String aFieldStr = assessionField.toString();
+  aFieldStr = removeLeadingZeros(aFieldStr);  
+  log.debug("ORC accessionField : " + aFieldStr);
+  if (aFieldStr!=null) {
+    assessionField.set(1,1,aFieldStr);
+  }
+}
+if (obrSegment != null) {
+  Field assessionField = obrSegment.getField(2);
+  String aFieldStr = assessionField.toString();
+  aFieldStr = removeLeadingZeros(aFieldStr);  
+  log.debug("OBR accessionField : " + aFieldStr);
+  if (aFieldStr!=null) {
+    assessionField.set(1,1,aFieldStr);
+  }
+}
+
+

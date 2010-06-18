@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>2.15.4 Interactive continuation or cancellation of response mess</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200098.htm">
+<LINK REL="Previous" HREF="ch200096.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200096.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200098.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E91"></A>
+<H3><B>2.15.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><B>Interactive continuation or cancellation of response messages: original mode </B><B>(display and record oriented) and enhanced mode (display, tabular, and event </B><B>replay)</B><B> </B><A NAME="I21"></A></H3>
+<P>
+<FONT FACE="Times New Roman">One use of queries is to retrieve data from one application for presentation to users of another.  This approach might be used for users of a patient care system retrieving data from lab or other ancillaries.  It also might permit users of a pharmacy system to retrieve a patient&#146;s lab results from the lab system or non-pharmacy order data from the patient care system.  Almost any other application system could be the source of data or the system initiating the query for its users.</FONT>
+<P>
+<FONT FACE="Times New Roman">Of particular interest is the case where the enquiring user formulates the query on-line at the terminal of one system and waits while that system sends the query to another.  He gets the response and displays it at their terminal.  When the user is formulating such a query she may only have limited understanding of what data is available for a given patient.  Sometimes the user&#146;s preference would be to make a simple query such as give me recent data in reverse chronological sequence rather than give me data for yesterday, since there may be some data available for today, or there may be data from two days ago that is of interest.  The user will look at the data returned and simply quit looking at it after he or she has found the part that is of interest.  (The time frames or the sort sequence may differ, or the user may wish to impose some selectivity on the response, but the general principle remains the same.  The user would prefer to make a vague statement of the interest, have the data presented in order of decreasing likelihood of interest, and quit when he or she has seen enough.)</FONT>
+<P>
+<FONT FACE="Times New Roman">While beneficial to the user, this way of requesting data could be very burdensome when the resulting query takes place over an inter-application interface.  If the responding system were to retrieve, format, and send all the data the user might like to see, the processing load would be extremely high and the response time unacceptable.</FONT>
+<P>
+<FONT FACE="Times New Roman">The continuation query provides a way to permit the users to formulate queries loosely while limiting the processing burden on the responding system.  The initial query specifies the general constraints of the query and an amount of data to be returned.  (For example, the query might be for lab results for patient #12379 and 44 lines would be requested.)  The responding system retrieves and formats the specified amount of data and returns it with a special key field, <I>DSC-1-continuation pointer</I>.  The initiating system presents the requested data to the user and retains the continuation pointer field for use if another query is needed.  The internal structure of the value is not known to the initiating system.  </FONT>
+<P>
+<FONT FACE="Times New Roman">If, after viewing the data, the user requests more, the initiating system sends the query again in a format that is identical with the first, except that the <I>DSC-1-continuation pointer</I> value is included and the requested amount of data may be changed.  The responding system uses the continuation pointer field as a key into its database to continue retrieval and formatting of the results.  If the user does not request more data, no further messages are exchanged.</FONT>
+<P>
+<FONT FACE="Times New Roman">The initiating system may also explicitly terminate the query by sending a &quot;cancel query&quot; message.  This message is formatted just like a continuation query, except that the event-type (MSH-2-encoding characters) is set equal to CNQ.  Although the effect to the initiating system is the same as if it had not sent any message (no further query data is received), receipt of this message by the responding system enables it to discard any unsent continuation data that might be queued.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200096.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200098.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

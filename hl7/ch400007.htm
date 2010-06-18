@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>4.2.3 OSQ - query response for order status </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400008.htm">
+<LINK REL="Previous" HREF="ch400006.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E213"></A>
+<H3><B>4.2.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>OSQ - query response for order status</B><B> </B></H3>
+<PRE>
+<FONT FACE="Courier New"><U>OSQ</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Query</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter </U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ QRF ]   Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]  Notes and Comments (for Patient ID)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [Order Detail Segment] OBR, etc.        4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Detail)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{CTI}]   Clinical Trial Identification     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [DSC]    Continuation Pointer       2</FONT></PRE>
+<H4>4.2.3.1 Query usage notes</H4>
+<P>
+<FONT FACE="Times New Roman">The QRD and QRF segments are defined in Chapter 2, Section 2.24, &quot;Message Control Segments.&quot; </FONT>
+<P>
+<FONT FACE="Times New Roman">The subject filters contained in the QRD and QRF segments describe the kind of information that is required to satisfy the request.  They are defined by local agreement between the inquiring system and the ancillary system.   See the Implementation Guide for detailed examples of the use of query filter fields.</FONT>
+<P>
+<FONT FACE="Times New Roman">The Set ID fields in the various segments (including PID) are used to count the number of segments of one kind transmitted at one level of the hierarchy. </FONT>
+<P>
+<FONT FACE="Times New Roman">The Query Result Level field of the QRD determines the amount of data requested.  See Chapter 2, Section 2.24.4, &quot;QRD - original style query definition segment.&quot;</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

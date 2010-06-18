@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>7.4.1 Query/response</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700014.htm">
+<LINK REL="Previous" HREF="ch700012.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E291"></A>
+<H3><B>7.4.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Query/response</B></H3>
+<P>
+<FONT FACE="Times New Roman">The following is a query of the EKG system for the data for a particular patient number 0123456-1 for reports that have been modified or created since 1/1/88.  The response ends with a continuation pointer.  A continuation query follows, in reply to which a continuation response is sent.</FONT>
+<P>
+<FONT FACE="Times New Roman">Query (QRY)</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|CBD||EKG||||QRY^R02|CDB22222|P&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198904180943|R|I|Q4412|||10|RD|0123456-1|RES&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|EKG||198801010000&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Response</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|EKG||CDB||||ORF^R04|X981672|P&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|CDB22222|P&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198904180943|R|I|Q4412|||10|RD|0123456-1|RES&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|EKG||198804010000&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|1|0123456-1||ROBERTSON^JOHN^H|||||||9821111&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|1|43215^OE|98765^EKG|93000^EKG REPORT|R|198801111000|198801111330|||RMT||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ... 1988011 11330|?|P030||||||198801120930||||||88-126666|A111|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ... VIRANYI ^ANDREW&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|ST|8897-1^QRS COMPLEX:^LN||91|/MIN|60-100||||F&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|ST|8894-8^P WAVE:^LN|||/MIN|60-100||||F&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|ST|8625-6^P-R INTERVAL:^LN||0|/MSEC|1.06-.10||||F&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|ST|8633-0^QRS DURATION:^LN||368|/MSEC|.18-.22||||F&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>               ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>               ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>               ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|CE|8601-7^EKG IMPRESSION:^LN|1|^ATRIAL FIBRILATION||||||F&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|9|CE|8601-7^EKG IMPRESSION:^LN|2|^ST DEPRESSION||||||F&lt;CR&gt;  OBX|109|FT||93000&amp;ADT^EKG COMMENT||\.in+4\\.ti-4\ 1. When compared with EKG of</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ... 31-oct-88 ventricular rate has increased by 30 bpm.\.sp\\.ti-4\ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ... 2. Criteria for Lateral infarct are no longer present.|||||F&lt;cr&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|2|43217^OE|98767^EKG|93000^EKG REPORT||198810311004|198810311004||||?|||198810311004|?|P030||||||198810311744||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ... 88-126689|A122|BREAL|WILLIAM&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>               ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>               ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>               ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|1896X22;0123456-1&lt;CR&gt;   </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Continuation query</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|CDB||EKG||||QRY^R02|CDB22289|P&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198904180943|R|I|Q4412|||10|RD|0123456-1|RES&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|EKG||1988040100000&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|1896X22;0123456-1&lt;CR&gt;   </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Continuation response   </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|EKG||CDB||||ORF^R04|X981672|P&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|CDB22289|P&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198904180943|R|I|Q4412|||10|RD|0123456-1RES&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|EKG||198804010000&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID||0123456-1||ROBERTSON^JOHN^H|||||||9821111&lt;CR&gt;   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR| ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>     ...   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>     ...   </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

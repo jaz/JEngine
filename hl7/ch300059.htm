@@ -1,0 +1,1087 @@
+<HTML>
+<HEAD>
+<TITLE>3.3.5 NK1 - next of kin / associated parties segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300060.htm">
+<LINK REL="Previous" HREF="ch300058.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300058.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300060.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E192"></A>
+<H3><B>3.3.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>NK1 </B><B>-</B><B> next of kin / associated parties segment</B><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The NK1 segment contains information about the patient&#146;s other related parties.  Any associated parties may be identified.  Utilizing <I>NK1-1-set ID</I>, multiple NK1 segments can be sent to patient accounts.</FONT>
+<P>Figure 3-5.  NK1 attributes<A NAME="I10"></A>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=226 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00190</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - NK1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00191</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0063</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00192</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Relationship</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00193</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00194</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00195</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Business Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0131</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00196</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Role</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00197</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Start Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00198</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">End Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00199</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Next of Kin / Associated Parties Job Title</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00200</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Next of Kin / Associated Parties Job Code/Class</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00201</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Next of Kin / Associated Parties Employee Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00202</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Organization Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0002</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00119</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Marital Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0001</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00111</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sex</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00110</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time of Birth</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0223</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00755</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Living Dependency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0009</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00145</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ambulatory Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0171</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00129</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Citizenship</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0296</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00118</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Language</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0220</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00742</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Living Arrangement</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0215</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00743</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Publicity Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00744</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Protection Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0231</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00745</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Student Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0006</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00120</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Religion</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00746</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother&#146;s Maiden Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0212</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00739</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nationality</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0189</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00125</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ethnic Group</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0222</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00747</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00748</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Person&#146;s Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">31</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00749</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Person&#146;s Telephone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00750</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Person&#146;s Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">33</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00751</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Next of Kin/Associated Party&#146;s Identifiers</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">34</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0311</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00752</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">35</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0005</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00113</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Race</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">36</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0295</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00753</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Handicap</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">37</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00754</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Person Social Security Number</TD></TR></FONT></TABLE></CENTER><P>3.3.5.0   NK1 field definitions<A NAME="I11"></A>
+<H4>3.3.5.1 Set ID - next of kin / associated parties<A NAME="I12"></A>  (SI)   00190</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: <I>NK1-1-set ID-next of kin/associated parties</I> contains the number that identifies this transaction.  For the first occurrence of the segment, the sequence number shall be 1, for the second occurrence it shall be 2, etc.</FONT>
+<H4>3.3.5.2 Name<A NAME="I13"></A>  (XPN)   00191</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the next of kin or associated party.  Multiple names for the same person are allowed, but the legal name must be sent in the first sequence.  If the legal name is not sent, then the repeat delimiter must be sent in the first sequence.  Refer to Chapter 2 for the name type code table.</FONT>
+<H4>3.3.5.3 Relationship<A NAME="I14"></A>  (CE)   00192</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the actual personal relationship that the next of kin / associated parties has to the patient.  Refer to <I>user-defined table 0063 - Relationship </I>for suggested values.  Examples might include: brother, sister, mother, father, friend, spouse, emergency contact, employer, etc.</FONT>
+<H4>3.3.5.4 Address<A NAME="I15"></A>  (XAD)   00193</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address of the next of kin/associated party.  Multiple addresses are allowed for the same person.  The mailing address must be sent in the first sequence.  If the mailing address is not sent, then the repeat delimiter must be sent in the first sequence.</FONT>
+<H4>3.3.5.5 Phone number<A NAME="I16"></A>  (XTN)   00194</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the telephone number of the next of kin/associated party.  Multiple phone numbers are allowed for the same person.  The primary telephone number must be sent in the first sequence.  If the primary telephone number is not sent, then the repeat delimiter must be sent in the first sequence.  Refer to Chapter 2 for suggested telecommunication use and equipment type codes.</FONT>
+<H4>3.3.5.6 Business phone number<A NAME="I17"></A>  (XTN)   00195</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the business telephone number of the next of kin/associated party.  Multiple phone numbers are allowed for the same person.  The primary business telephone number must be sent in the first sequence.  If the primary business telephone number is not sent, then the repeat delimiter must be sent in the first sequence.  Refer to Chapter 2 for suggested telecommunication use and equipment type codes.</FONT>
+<H4>3.3.5.7 Contact role<A NAME="I18"></A>  (CE)   00196</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the specific relationship role (next of kin, employer, emergency contact, etc.).  Refer to <I>user-defined table 0131 - Contact role </I>for suggested values.  This field specifies the role that the next of kin / associated parties plays with regard to the patient.  Examples might include an employer, emergency contact, next of kin, insurance company, state agency, federal agency, etc.</FONT>
+<H4>3.3.5.8 Start date<A NAME="I19"></A>  (DT)   00197</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the start of the contact role.</FONT>
+<H4>3.3.5.9 End date<A NAME="I20"></A>  (DT)   00198</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the end of the contact role.</FONT>
+<H4>3.3.5.10 Next of kin / associated parties job title<A NAME="I21"></A>  (ST)   00199</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the title of the next of kin / associated parties at their place of employment.  However, if the contact role is the patient&#146;s employer, this field contains the title of the patient at their place of employment.</FONT>
+<H4>3.3.5.11 Next of kin / associated parties job code/<A NAME="I22"></A>class  (CM)   00200</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;job code (IS)&gt; ^ &lt;employee classification (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the employer&#146;s job code and the employee classification used for the next of kin / associated parties at their place of employment. However, if the contact role is the patient&#146;s employer, this field contains the job code/class of the patient at their place of employment.  Refer to <I>user-defined </I><I>tables 0327 - job code</I> and <I>0328 - employee classification</I> for suggested values.</FONT>
+<H4>3.3.5.12 Next of kin / associated parties employee number  (CX)   00201<A NAME="I23"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: <I>For backward compatibility, the ST data type can be sent, however HL7 recommends that the CX </I><I>data type be used for new implementations.  </I>This field contains the number that the employer assigns to the employee that is acting as Next of kin / associated parties. However, if the contact role is the patient&#146;s employer, this field contains the employee number of the patient at their place of employment.</FONT>
+<H4>3.3.5.13 Organization name<A NAME="I24"></A>  (XON)   00202</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the organization that serves as an next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.  Multiple names for the same organization may be sent.  If multiple names are sent, the legal name must be sent in the first sequence.  If the legal name is not sent, then a repeat delimiter must be sent in the first sequence.</FONT>
+<H4>3.3.5.14 Marital status<A NAME="I25"></A>  (IS)   00119</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the next of kin/associated party&#146;s marital status.  Refer to <I>user-defined table </I><I>0002 - Marital status </I>for suggested values.</FONT>
+<H4>3.3.5.15 Sex code<A NAME="I26"></A>  (IS)   00111</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the next of kin/associated party&#146;s sex.  Refer to <I>user-defined</I> <I>table 0001 - Sex</I> for suggested values. </FONT>
+<H4>3.3.5.16 Date/time of birth<A NAME="I27"></A>  (TS)   00110</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the next of kin/associated party&#146;s birth date and time.</FONT>
+<H4>3.3.5.17 Living dependency<A NAME="I28"></A>  (IS)   00755</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the specific living conditions of the next of kin/associated party.  Refer to <I>user-defined table 0223-Living dependency code</I> for suggested values.</FONT>
+<H4>3.3.5.18 Ambulatory status<A NAME="I29"></A>  (IS)   00145</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the transient rate of mobility for the next of kin/associated party.  Refer to <I>user-defined table 0009 - Ambulatory status </I>for suggested values.</FONT>
+<H4>3.3.5.19 Citizenship<A NAME="I30"></A>  (IS)   00129</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the code to identify the next of kin/associated party&#146;s citizenship.  HL7 recommends using ISO 3166 as the suggested values in <I>user-defined table 0171 - Country code</I>.</FONT>
+<H4>3.3.5.20 Primary language<A NAME="I31"></A>  (CE)   00118</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the next of kin/associated party&#146;s primary speaking language.  HL7 recommends using ISO 639 as the suggested values in <I>user-defined table 0296 - Language</I>.</FONT>
+<H4>3.3.5.21 Living arrangement<A NAME="I32"></A>  (IS)   00742</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the situation that the associated party lives in at his/her residential address.  Refer to<I> user-defined table 0220 - Living arrangement </I>for suggested values<I>.</I>  Examples of living arrangements might include Alone, Family, Institution, etc.</FONT>
+<H4>3.3.5.22 Publicity indicator<A NAME="I33"></A>  (IS)   00743</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates what level of publicity is allowed (e.g., No Publicity, Family Only) for the next of kin/associated party.  Refer to <I>user-defined table 0215 - Publicity code </I> for suggested values.</FONT>
+<H4>3.3.5.23 Protection indicator<A NAME="I34"></A>  (ID)   00744</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies that next of kin/associated party&#146;s protection that determines, in turn, whether access to information about this person should be kept from users who do not have adequate authority.  Refer to Chapter 2, <I>HL7 table 0136 - Yes/no indicator</I> for valid values.</FONT>
+<H4>3.3.5.24 Student indicator<A NAME="I35"></A>  (IS)   00745</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies whether the next of kin/associated party is currently a student or not, and whether the next of kin/associated party is a full or a part-time student.  This field does not indicate the degree (high school, college) of the student or the field of study.  <I>Refer to user-defined table 0231 - Student </I><I>status</I> for suggested values. ERISA has a published list of ethnic classifications that may be used by local agreement at a site.</FONT>
+<H4>3.3.5.25 Religion<A NAME="I36"></A>  (IS)   00120</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the type of religion practiced by the next of kin/associated party.  Refer to <I>user-defined table 0006 - Religion</I> for suggested values.</FONT>
+<H4>3.3.5.26 Mother&#146;s maiden name<A NAME="I37"></A>  (XPN)   00746</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; <B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the maiden name of the next of kin/associated party&#146;s mother.</FONT>
+<H4>3.3.5.27 Nationality<A NAME="I38"></A>  (CE)   00739</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the nation or national group to which the next of kin/associated party belongs.  This information may be different than the person&#146;s citizenship in countries in which multiple nationalities are recognized (e.g., Spain: Basque, Catalan, etc.).</FONT>
+<H4>3.3.5.28 Ethnic group<A NAME="I39"></A>  (IS)   00125</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the next of kin/associated party&#146;s ethnic group.  Refer to <I>user-defined table </I><I>0189 - Ethnic group</I> for suggested values.</FONT>
+<H4>3.3.5.29 Contact reason<A NAME="I40"></A>  (CE)   00747</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies how the contact should be used (e.g., contact my employer if patient is unable to work).</FONT>
+<H4>3.3.5.30 Contact person&#146;s name<A NAME="I41"></A>  (XPN)   00748</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the names of the people to contact, depending on the value of the relationship defined in <I>NK1-3-relationship</I>.  This field is typically needed when the NK1 is an organization.  The legal name should be sent first in the sequence.  Refer to <I>HL7</I><I> table 0200 - Name type </I>for valid values.</FONT>
+<H4>3.3.5.31 Contact person&#146;s telephone number<A NAME="I42"></A>  (XTN)   00749</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the telephone numbers of the contact person depending on the value of the relationship defined in <I>NK1-3-relationship</I>.  This field is typically needed when the NK1 is an organization.  The primary telephone number must be sent in the first sequence.  If the primary telephone number is not sent, then a repeat delimiter must be sent in the first sequence.  Refer to <I>HL7 tables 0201 </I><I>-</I><I>Telecommunication use code and 0202</I><I> -</I><I> Telecommunication equipment type</I> for valid values.</FONT>
+<H4><I>3.3.5.32</I><I> </I>Contact person address<A NAME="I43"></A>  (XAD)   00750</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>Definition:  This field contains the addresses of the contact person depending on the value of the relationship defined in <I>NK1-3-relationship</I>.  This field is typically used when the NK1 is an organization.  When multiple addresses are sent, the mailing address must be sent first in the sequence.
+<H4>3.3.5.33 Next of kin/associated party identifiers<A NAME="I44"></A>  (CX)   00751</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the identifiers for the next of kin/associated party, for example, Social Security Number, drivers license, etc.  </FONT>
+<H4>3.3.5.34 Job status<A NAME="I45"></A>  (IS)   00752</H4>
+<P>Definition:  This field identifies the next of kin/associated party&#146;s job status (full time, part time, permanent, etc.).  Refer to <I>user-defined table 0311 - Job status</I> for suggested values.
+<H4>3.3.5.35 Race<A NAME="I46"></A>  (IS)   00113</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the race of the next of kin/associated party.  ERISA has published a list of ethnic classifications that may be used by local agreement at a site.  Refer to<I> user-defined table 0005 - </I><I>Race </I>for suggested values.</FONT>
+<H4>3.3.5.36 Handicap<A NAME="I47"></A>  (IS)   00753</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This filed contains the code that describes an Associated Party&#146;s disability.  Refer to <I>user-defined </I><I>table 0295 - Handicap</I> for suggested values.</FONT>
+<H4>3.3.5.37 Contact person social security number<A NAME="I48"></A>  (ST)   00754</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the contact person&#146;s social security number.  This number may also be an RR retirement number.  It is the number for the person identified in <I>NK1-2-name</I>.  For the Social Security number of the associated party, see <I>NK1-33-next of kin/associated party&#146;s identifiers.</I></FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300058.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300060.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

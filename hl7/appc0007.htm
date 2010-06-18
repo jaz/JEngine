@@ -1,0 +1,303 @@
+<HTML>
+<HEAD>
+<TITLE>C.2.3 NSC - status change segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="appc0008.htm">
+<LINK REL="Previous" HREF="appc0006.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="appc0006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E535"></A>
+<H3><B>C.2.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>NSC </B><B>-</B><B> status change segment</B><A NAME="I5"></A><A NAME="I6"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The NSC segment can be used to request the start-up, shut-down, and/or migration (to a different cpu or file-server/file-system) of a particular application. It can also be used in an unsolicited update from one system to another to announce the start-up, shut-down, or migration of an application. </FONT>
+<P>Figure C-3.  NSC attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=40 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">R/O</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=244 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0333</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01188 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Network Change Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01189 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Current CPU</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01190 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Current Fileserver</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01191 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Current Application</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01192 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Current Facility</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01193 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">New CPU</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01194 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">New Fileserver</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01195 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">New Application</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01196 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">New Facility</TD></TR></FONT></TABLE></CENTER><P>C.2.3.0 NSC field definitions
+<H4>C.2.3.1 Network change type  (IS)   01188 </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the type of change being requested (if NMR query) or announced (if NMD unsolicited update).  Refer to user-defined table 0333 - Network change type for suggested values.  Implies that &quot;new&quot; version starts up with no loss or duplication of data as old one is shutting down (if possible).</FONT>
+<P>User-defined Table 0333 - Network change type
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SU</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Start up</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Shut down</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Migrates to different CPU</TD></TR></FONT></TABLE><H4>C.2.3.2 Current CPU  (ST)   01189</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name for the current CPU. </FONT>
+<H4>C.2.3.3 Current fileserver  (ST)   01190</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name for the current fileserver or file system used by this application. </FONT>
+<H4>C.2.3.4 Current application  (ST)   01191 </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name available to identify the &quot;current&quot; application process used for interfacing with lower level protocols.  To be used in conjunction with the sending/receiving system and facility values in the MSH. </FONT>
+<H4>C.2.3.5 Current facility  (ST)   01192 </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name for the current facility used by this application. To be used in conjunction with the values for the sending/receiving system and facility values in the MSH. </FONT>
+<H4>C.2.3.6 New CPU  (ST)   01193 </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name for the new CPU. </FONT>
+<H4>C.2.3.7 New fileserver  (ST)   01194 </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name for the new fileserver or file system used by this application. </FONT>
+<H4>C.2.3.8 New application  (ST)   01195</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name available to identify &quot;new&quot; application processes used for interfacing with lower level protocols.  To be used in conjunction with the sending/receiving system and facility values in the MSH. </FONT>
+<H4>C.2.3.9 New facility  (ST)   01196</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a site-specific name for the new facility used by this application. To be used in conjunction with the values for the sending/receiving system and facility values in the MSH. </FONT>
+<H4>C.2.3.10 NSC use notes</H4>
+<P>
+<FONT FACE="Times New Roman">Fields 2-9.  These are not applicable (&quot;n/a&quot;) when the type of change being requested or reported is start-up or shut-down.  If the change is of type &quot;M&quot;, at least one of fields 2-5 must be different from its corresponding field in range 6-9.</FONT>
+<P>
+<FONT FACE="Times New Roman">Fields 4-5, 8-9.  See definitions for the MSH, message header segment, in Chapter 2, (Control Section), for fields 3-4, for system and facility.  &quot;Application&quot; is available for interfacing with lower level protocols.  &quot;Facility&quot; is entirely site-defined.</FONT>
+<P>
+<FONT FACE="Times New Roman">Fields 2-3, 6-7. Entirely site-defined.</FONT>
+<P ALIGN=LEFT>
+<A HREF="appc0006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

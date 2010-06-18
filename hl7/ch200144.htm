@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.21 ERQ - event replay query segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200145.htm">
+<LINK REL="Previous" HREF="ch200143.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200143.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200145.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E129"></A>
+<H3><B>2.24.21</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>ERQ - event replay query segment</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The ERQ segment is used to issue queries where the desired response is formatted as an event replay response message.  This enables the querying application to request detailed event data from an application that supports this feature, such that it may no longer be necessary for it to capture and store all event information at the time of the original trigger event.</FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Figure 2-28.  ERQ attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=61 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=34 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=237 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=34 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00696</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query Tag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=34 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00706</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">256</FONT>
+</TD><TD WIDTH=34 VALIGN=top >
+<P>
+<FONT SIZE="-1">QIP</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00705</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Input Parameter List</TD></TR></FONT></TABLE><P>2.24.21.0   ERQ field definitions
+<H4>2.24.21.1 Query tag  (ST)  00696</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may be valued by the initiating system to identify the query, and may be used to match response messages to the originating query.  If it is valued, the responding system is required to echo it back as the first field in the query acknowledgment segment (QAK).  This field differs from <I>MSA-2-message </I><I>control ID</I> in that its value remains constant for each message (i.e., all continuation messages) associated with the query, whereas <I>MSA-2- message control ID</I> may vary with each continuation message, since it is associated with each individual message, not the query as a whole.</FONT>
+<H4>2.24.21.2 Event identifier  (CE)   00706</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ID)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt;^&lt;alternate identifier (ID)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the HL7 event identifier corresponding to the original trigger event.  Its contents dictate the format of the response message.  Hence, a value of &quot;A04&quot; in this field indicates a request for the data associated with the &quot;register a patient&quot; trigger event.  The ERP response message returns the contents of the &quot;register a patient&quot; message defined in Chapter 3. If more than one match is found, the ERP returns repeating groups of the segments defined by the &quot;A04&quot; message.</FONT>
+<H4>2.24.21.3 Input parameter list  (QIP)   00705</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;field name (ST)&gt; ^ &lt;value1 (ST) &amp; value2 (ST) &amp; value3 (ST...&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the list of parameter names and values to be passed to the responding system, in the form &quot;&lt;field name&gt; ^ &lt;value1 &amp; value2 &amp; value3 ...&gt;.&quot;  A single valued parameter contains only a single subcomponent in the second component: thus no subcomponent delimiters are needed (e.g., &lt;field name&gt; ^ &lt;value&gt;).  A simple list of values (i.e., a one-dimensional array) may be passed instead of a single value by separating each value with the subcomponent delimiter: &quot;&lt;field name&gt; ^ &lt;value1&amp;value2 &amp;...&gt;&quot;  Refer to Section <A HREF="ch200139.htm#I14">2.24.16.4</A>, &quot;<A HREF="ch200139.htm#I14">EQL query statement  (ST)   00710</A> for field naming conventions.</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, , a value of &quot;@00122^123-45-6789&quot; could be combined with the A04 event identifier to request patient registration data for the patient with the social security number 123-45-6789.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200143.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200145.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

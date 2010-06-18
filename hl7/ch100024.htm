@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>10.1.5 Glossary</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100025.htm">
+<LINK REL="Previous" HREF="ch100023.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E433"></A>
+<H3><B>10.1.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>Glossary</B></H3>
+<H4>10.1.5.1 Appointment<A NAME="I9"></A></H4>
+<P>
+<FONT FACE="Times New Roman">An appointment represents a booked slot or group of slots on a schedule, relating to one or more services or resources.  Two examples might include a patient visit scheduled at a clinic, and a reservation for a piece of equipment.</FONT>
+<H4>10.1.5.2 Auxiliary application<A NAME="I10"></A></H4>
+<P>
+<FONT FACE="Times New Roman">An auxiliary application neither exerts control over, nor requests changes to a schedule.  It is only concerned with gathering information about a particular schedule.  It can be considered an &quot;interested third-party,&quot; in that it is interested in any changes to a particular schedule, but has no interest in changing it or controlling it in any way.  It may gather information passively or actively.  An auxiliary application passively collects information by receiving unsolicited updates from a filler application.</FONT>
+<H4>10.1.5.3 Block<A NAME="I11"></A></H4>
+<P>
+<FONT FACE="Times New Roman">An indication that a slot or a set of slots is unavailable for reasons other than booking an appointment.</FONT>
+<H4>10.1.5.4 Book<A NAME="I12"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The act of reserving a slot or set of slots on a schedule for a service or resource.</FONT>
+<H4>10.1.5.5 Child<B> </B>appointment<A NAME="I13"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A child appointment is an appointment subordinate to another appointment (called a parent appointment).  For example, a single instance of an appointment in a group of recurring appointments is a child to the group.  Child appointments can themselves be parent appointments.  For example, if a battery of appointments is scheduled, then the atomic units of the battery are children to the battery request.  If the battery is scheduled as a repeating appointment, then each instance of the battery of appointments (parent to each of the atomic units) is a child to the original repeating request.</FONT>
+<H4>10.1.5.6 Filler<B> </B>application<A NAME="I14"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The filler application role in the scheduling model is very similar to the filler application concept presented in Chapter 4, Order Entry.  A filler application, in the scheduling model, is one that &quot;owns&quot; one or more schedules for one or more services or resources.  It fulfills requests to book slots for the services or resources over which it exerts control.  It also notifies other applications of activity related to appointments, such as new bookings, modifications, cancellations, etc.</FONT>
+<H4>10.1.5.7 Parent<B> </B>appointment<A NAME="I15"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A parent appointment is an appointment that consists of one or more subordinate appointments (called child appointments).  A parent appointment is used to relate or group multiple appointments together in various ways.  Examples of kinds of parent scheduled activities include, but are not limited to, the following.</FONT>
+<P>&#149; Recurring (repeating) appointments.  For example, a physical therapy appointment may be scheduled every Tuesday at 4:00 PM for three months.
+<P>&#149; Batteries of appointments.  For example, an activity consisting of an appointment with Radiology, an appointment with a specialist, and an appointment with a primary care physician might be scheduled.
+<P>&#149; Complex appointments.  For example, recurring batteries of appointments, or batteries of battery appointments.
+<P>
+<FONT FACE="Times New Roman">Parent appointments can themselves be children to other appointments.</FONT>
+<H4>10.1.5.8 Placer<B> </B>application<A NAME="I16"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The role of the placer application in the scheduling model is also very similar to its counterpart in the Order Entry chapter.  A placer application must request the booking, modification, cancellation, etc., of an appointment for a service or resource because it cannot exert any control over that service or resource on the schedule.  In requesting that these appointments be booked or modified in some way, the placer application is asking the filler application to exert its control over the schedule on the placer application&#146;s behalf.</FONT>
+<H4>10.1.5.9 Querying<B> </B>application<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A querying application neither exerts control over, nor requests changes to a schedule.  Rather than accepting unsolicited information about schedules, as does an auxiliary application, the querying application actively solicits this information using a query mechanism.  It will be driven by a person wanting information about schedules, and may be part of an application filling the placer application role as defined in this chapter.  The information that the querying application receives is valid only at the exact time that the query results are generated by the filler application.  Changes made to the schedule after the query results have been returned are not communicated to the querying application until it issues another query transaction.</FONT>
+<H4>10.1.5.10 Resource<A NAME="I18"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A resource is any person, place or thing that must be reserved prior to its use.</FONT>
+<H4>10.1.5.11 Schedule<A NAME="I19"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A schedule is the sum of all of the slots related to a service or resource.</FONT>
+<H4>10.1.5.12 Service<A NAME="I20"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A service is any activity that must be scheduled prior to its performance.</FONT>
+<H4>10.1.5.13 Slot<A NAME="I21"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A slot is one unit on a schedule.  A slot represents the smallest unit of time or quantity that a service or resource may be booked.  Depending on the nature of the service or resource, there may be more than one defined slot at a given instant of time.  For example, if a service is an open group therapy session with twelve available seats, then there are twelve slots for the given block of time.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

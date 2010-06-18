@@ -1,0 +1,260 @@
+<HTML>
+<HEAD>
+<TITLE>4.4.10 Order sequencing component (CM)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400022.htm">
+<LINK REL="Previous" HREF="ch400020.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E225"></A>
+<H3><B>4.4.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Order sequencing component (CM)</B><A NAME="I10"></A></H3>
+<P>Definition:  There are many situations, such as the creation of an order for a group of intravenous (IV) solutions, where the sequence of the individual intravenous solutions (each an  service in itself) needs to be specified, e.g., hyperalimentation with multi-vitamins in every third bottle.
+<P>
+<FONT FACE="Times New Roman">There are other situations, where part of the order's instructions contains a results condition of some type, such as &quot;PRN pain.&quot;  There is currently a free text &quot;condition&quot; component of <I>ORC-4-quantity/timing</I> which allows any condition to be specified.  However, to support a fully encoded version of order sequencing, or results condition, we have defined in the following paragraphs a 10th component of <I>ORC-4-quantity/timing</I>. </FONT>
+<P>
+<FONT FACE="Times New Roman">The sequencing conditions supported by this 10th component are based on the completion of a  predecessor service.</FONT>
+<P>
+<FONT FACE="Times New Roman">Components beyond the 10th are reserved for future use in specifying multiple conditions to be evaluated before the execution of the order.  Any such future specifications will be upwardly compatible from the current quantity/timing definitions. </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=557 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  If the 10th component is present, the 7th component (condition) will be considered as a text &quot;note&quot; to be displayed on the order.  That is, no attempt will be made to interpret it as part of the machine-readable sequencing specification. </TD></TR></FONT></TABLE><H4>4.4.10.1 Subcomponents of sequences</H4>
+<P>
+<FONT FACE="Times New Roman">To define a sequence condition, the 10th component of the quantity/timing field component is divided into the subcomponents described in<I> Figure 4-7</I>. </FONT>
+<P ALIGN=indent><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A>Figure 4-7.  Subcomponents of order sequences</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Subcomponent</FONT>
+</TD><TD WIDTH=132 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Contains</FONT>
+</TD><TD WIDTH=392 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Notes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sequence/Results Flag</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">S for sequence conditions; C for cyclical; R is reserved for possible future use. The C will be used for indicating a repeating cycle of orders; for example, individual intravenous solutions used in a cyclical sequence (a.k.a. &quot;Alternating IVs&quot;).  This value would be compatible with linking separate orders or with having all cyclical order components in a single order.  Likewise, the value would be compatible with either Parent-Child messages or a single order message to communicate the orders&#146; sequencing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2, 3 </FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Order Number,</FONT>
+<P>
+<FONT SIZE="-1">first two components</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">Required/Optional:  Contains the first two components of the placer order number:  <I>entity identifier</I> (ST) and <I>namespace ID</I> (IS) (respectively).  Uses two subcomponents since the place order number is an EI data type.  We have not defined sub-subcomponents in HL7.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4, 5</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Order Number,</FONT>
+<P>
+<FONT SIZE="-1">first two components</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">Required/Optional: Contains the first two components of the filler order number:  <I>entity identifier</I> (ST) and <I>namespace ID</I> (IS) (respectively).  Uses two subcomponents since the place order number is an EI data type.  We have not defined sub-subcomponents in HL7.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sequence Condition Value</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">The acceptable condition values have the form commonly used in project planning methodologies:</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=132 VALIGN=top ><BR></TD>
+<TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">&lt;one of &quot;SS&quot;, &quot;EE&quot;, &quot;SE&quot;, or &quot;ES&quot;&gt; +/- &lt;time&gt;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=132 VALIGN=top ><BR></TD>
+<TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">The first letter stands for start (S) or end (E) of predecessor order, where the predecessor is defined by the placer or filler order number in subcomponents 1,2 or subcomponents 3,4.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=132 VALIGN=top ><BR></TD>
+<TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">The second letter stands for the start (S) or end (E) of the successor order, where the successor order is the order containing this quantity/timing specification.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=132 VALIGN=top ><BR></TD>
+<TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">The time specifies the interval between the predecessor and successor starts or ends (see following examples).</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=132 VALIGN=top ><BR></TD>
+<TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">Where &lt;time&gt; is defined as: </FONT>
+<P>
+<FONT SIZE="-1">  S&lt;integer&gt;       do for &lt;integer&gt; seconds</FONT>
+<P>
+<FONT SIZE="-1">  M&lt;integer&gt;       do for &lt;integer&gt; minutes</FONT>
+<P>
+<FONT SIZE="-1">  H&lt;integer&gt;       do for &lt;integer&gt; hours</FONT>
+<P>
+<FONT SIZE="-1">  D&lt;integer&gt;       do for &lt;integer&gt; days</FONT>
+<P>
+<FONT SIZE="-1">  W&lt;integer&gt;       do for &lt;integer&gt; weeks</FONT>
+<P>
+<FONT SIZE="-1">  L&lt;integer&gt;       do for &lt;integer&gt; months</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Maximum Number of Repeats</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">The maximum number of repeats to be used only on cyclic groups.  The total number of repeats is constrained by the end date/time of the last repeat or the end date/time of the parent, whichever is first.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8, 9</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Place Order Number,</FONT>
+<P>
+<FONT SIZE="-1">last two components</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">Required/Optional:  Contains the last two components of the placer order number:  <I>universal ID</I> (ST) and <I>universal ID type</I> (ID) (respectively).  Uses two subcomponentsn since the place order number is an EI data type.  We have not defined sub-subcomponents in HL7.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=99 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10, 11</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Order Number,</FONT>
+<P>
+<FONT SIZE="-1">last two components</FONT>
+</TD><TD WIDTH=392 VALIGN=top >
+<P>
+<FONT SIZE="-1">Required/Optional: Contains the last two components of the filler order number:  <I>universal ID</I> (ST) and <I>universal ID type</I> (ID) (respectively).  Uses two subcomponentsn since the place order number is an EI data type.  We have not defined sub-subcomponents in HL7.</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">Use notes:</FONT>
+<P>
+<FONT FACE="Times New Roman">Suppose the following:</FONT>
+<P>
+<FONT FACE="Times New Roman">The predecessor order is defined by the OE1000&amp;OrdEnt as the placer order number, in subcomponents 2 and 3 of component 10 of <I>ORC-4-quantity/timing</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">The successor order, this order, has the placer order number OE1001^OrdEnt in the ORC segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">The following sequence condition values have the following meanings:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=94 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ES + 10M</FONT>
+</TD><TD WIDTH=488 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">The finish time of OE1000&amp;OrdEnt (predecessor) plus 10 minutes defines the start time of the successor, OE1001^OrdEnt (this order); i.e., start this order 10 minutes after the completion of its predecessor.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=94 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SS - 10M</FONT>
+</TD><TD WIDTH=488 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">The start time of the predecessor minus 10 minutes defines the start time of this order; i.e., start this order 10 minutes before its predecessor.</TD></TR></FONT></TABLE><H4>4.4.10.2 <A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A>Cyclic placer order groups</H4>
+<P>
+<FONT FACE="Times New Roman">For the special case where there is a cycle of orders that must be repeated, the first order to be executed will have a &quot;sequence condition value&quot; whose first character  must be an asterisk (*). The last order to be executed may have a &quot;sequence condition value&quot; whose first character must be a pound sign (#).</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=94 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">*FS+10M</FONT>
+</TD><TD WIDTH=488 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">translates to: execute this order the first time without evaluating the condition specified in the 10th component; but repeat only its execution when the specified external order's start or finish date/time has met this condition.  This specification generates a repetition of the order for each iteration of the cycle.</TD></TR></FONT></TABLE>
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=533 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> This requires that the ordering application be able to specify the placer order number of the last order in the cycle in the first order's quantity/timing specification.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">To implement a cyclic group of four IV orders, using the parent/child paradigm, the parent specifies a custom group of IVs, and the following occurs:</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-4-quantity/timing</I> of the second child order specifies that it follows the first child order.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-4-quantity/timing</I> of the third child order specifies that it follows the second child order.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-4-quantity/timing</I> of the fourth child order specifies that it follows the third order. </FONT>
+<P>
+<FONT FACE="Times New Roman">To repeat the group of four child orders in a cyclic manner, the following occurs:</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-4-quantity/timing</I> of the first child order specifies that it is to be executed once without any dependence on the completion of other orders.</FONT>
+<P>
+<FONT FACE="Times New Roman">Its second execution follows the completion of the fourth order.  See example in Section <A HREF="ch400050.htm#I10">4.8.16.2</A>, &quot;<A HREF="ch400050.htm#I10">Custom IV example</A>.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">This scheme allows the following to be tracked:</FONT>
+<P>
+<FONT FACE="Times New Roman">The status of the whole group of orders to be reported back at the level of the parent order.</FONT>
+<P>
+<FONT FACE="Times New Roman">The status for each individual IV order by following the status of the corresponding child order. </FONT>
+<P>
+<FONT FACE="Times New Roman">Separate Orders example:</FONT>
+<P>
+<FONT FACE="Times New Roman">The same group of orders can be sent as a group of four orders (without a common parent), linked only by the data in their quantity/timing fields.  In this case, there is no convenient HL7 method of transmitting the order status of the group as a whole without transmitting the status of each of the four separate orders.</FONT>
+<H4>4.4.10.3 <A NAME="I17"></A>Inheritance of order status</H4>
+<P>
+<FONT FACE="Times New Roman">Cancellation/discontinuation/hold order control events: </FONT>
+<P>
+<FONT FACE="Times New Roman">This logic implies the normal execution of the referenced predecessor order.  Thus a cancel (or discontinuation or hold) of a predecessor order implies the cancellation (or discontinuation or hold) of all subsequent orders in the chain. </FONT>
+<P>
+<FONT FACE="Times New Roman">If the referenced order has been canceled (or discontinued or held), the current order inherits that same status.  </FONT>
+<P>
+<FONT FACE="Times New Roman">In the case of hold, the removal of the hold of the predecessor implies a removal of the hold for the given order (which can then be executed according to the specification in the 10th component).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

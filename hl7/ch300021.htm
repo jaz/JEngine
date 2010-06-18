@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.19 QRY/ADR - patient query (event A19)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300022.htm">
+<LINK REL="Previous" HREF="ch300020.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E155"></A>
+<H3><B>3.2.19</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>QRY/ADR - patient query</B><A NAME="I9"></A><B> (event A19)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The following trigger event is served by QRY (a query from another system) and ADR (a response from an ADT system.)</FONT>
+<P>
+<FONT FACE="Times New Roman">Another application determines a need for ADT data about a patient and sends a query to the ADT system.  The Who Filter in the QRD can identify the patient or account number upon which the query is defined and can contain a format code of &quot;R&quot; (record-oriented).  If the query is based on the Patient ID and there are data associated with multiple accounts, the problem of which account data should be returned becomes an implementation issue.  The ADT event-type segment, if included in the response, describes the last event for which the ADT system initiated an unsolicited update.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>QRY</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Patient Query</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QRF ]     Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ADR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Response</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA      Message Acknowledgment       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD      Query Definition         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ QRF ]   Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ EVN ]    Event Type          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PD1]   Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ {NK1} ]  Next of Kin / Associated Parties    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1      Patient Visit         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ PV2 ]   Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { DB1 } ]  Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ {OBX} ]   Observation/Result      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ {AL1} ]  Allergy Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ {DG1} ]  Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [DRG]   DRG Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ {PR1  Procedures         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{ROL}] Role           12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ {GT1} ]  Guarantor Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      { </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       IN1   Insurance Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [ IN2 ]  Insurance Information - Addit. Info.   6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [ IN3 ]    Insurance Information - Cert.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      } </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ ACC ]    Accident Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ UB1 ]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ UB2 ]   Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer        2</FONT></PRE>
+<H4>3.2.19.1 A19 usage notes<A NAME="I10"></A></H4>
+<P>
+<FONT FACE="Times New Roman">In addition to single-patient responses, the ADT record-oriented query/response needs to support responses containing multiple patients for the following query types (by subject filter): return census for a nursing unit (ANU), return patients matching a name search (APN), and return patients for a given physician (APP).</FONT>
+<P>
+<FONT FACE="Times New Roman">For multiple patient responses, additional values for <I>QRD-3-R/U who subject definition</I> may be used, such as:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">IP</FONT>
+</TD><TD WIDTH=174 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Inpatient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OP</FONT>
+</TD><TD WIDTH=174 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Outpatient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DC</FONT>
+</TD><TD WIDTH=174 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Discharged</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">For the ANU subject filter, the ADT systems response must have some method for conveying the fact that some beds are empty (as well as for returning the data for all patients in the occupied beds).  This method will function as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) Bed Full</FONT>
+<P>
+<FONT FACE="Times New Roman">Regular { [EVN], PID, PV1 } segment group for each patient with <I>PV1-40-bed status</I> value of &quot;O&quot; occupied.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) Bed Empty</FONT>
+<P>
+<FONT FACE="Times New Roman">In this case, all fields in the corresponding EVN, PID, and PV1 segments are null except for the following fields in the PV1 segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">* <I>PV1-3-assigned patient location</I> contains the new bed location information</FONT>
+<P>
+<FONT FACE="Times New Roman">* <I>PV1-40-bed status</I> contains one of the following values: U (unoccupied), H (housekeeping), or C (closed).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

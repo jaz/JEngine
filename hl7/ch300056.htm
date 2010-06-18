@@ -1,0 +1,985 @@
+<HTML>
+<HEAD>
+<TITLE>3.3.2 PID - patient identification segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300057.htm">
+<LINK REL="Previous" HREF="ch300055.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E189"></A>
+<H3><B>3.3.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>PID - patient identification segment</B><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The PID segment is used by all applications as the primary means of communicating patient identification information.  This segment contains permanent patient identifying and demographic information that, for the most part, is not likely to change frequently. </FONT>
+<P ALIGN=indent>Figure 3-2.  PID attributes<A NAME="I10"></A></P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=56 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=227 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00104</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - Patient ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00105</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient ID (External ID)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00106</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient ID (Internal ID)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00107</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Alternate Patient ID - PID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00108</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00109</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother&#146;s Maiden Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00110</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time of Birth</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0001</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00111</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sex</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00112</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Alias</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0005</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00113</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Race</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00114</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00115</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">County Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00116</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Phone Number - Home</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00117</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Phone Number - Business</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0296</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00118</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Language</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0002</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00119</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Marital Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0006</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00120</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Religion</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00121</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Account Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00122</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">SSN Number - Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00123</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Driver's License Number - Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00124</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother's Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0189</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00125</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ethnic Group</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00126</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Birth Place</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00127</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Multiple Birth Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00128</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Birth Order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0171</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00129</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Citizenship</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0172</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00130</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Veterans Military Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00739</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nationality </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00740</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Death Date and Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00741</FONT>
+</TD><TD WIDTH=227 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Death Indicator</TD></TR></FONT></TABLE></CENTER><P>3.3.2.0   PID field definitions<A NAME="I11"></A>
+<H4>3.3.2.1 Set ID - patient ID<A NAME="I12"></A>  (SI)   00104</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  For those messages that permit segments to repeat, the Set ID field is used to identify the repetitions.  For example, the swap and query transactions allow for multiple PID segments that would have Set ID values of 1, 2, then 3, etc. </FONT>
+<H4>3.3.2.2 Patient ID (external ID<A NAME="I13"></A>)  (CX)   00105</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  When the patient is from another institution, outside office, etc., the identifier used by that institution can be shown in this field.  This may be a number that multiple disparate corporations or facilities share.  Refer to <I>HL7 table 0061 - Check digit scheme</I> in Chapter 2. </FONT>
+<H4>3.3.2.3 Patient ID (internal ID)<A NAME="I14"></A>  (CX)   00106</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the primary identifier, or other identifiers used by the facility to identify a patient uniquely  (e.g., medical record number, billing number, birth registry, etc.).  Refer to  <I>HL7</I> <I>table </I><I>0061</I><I> </I><I>-</I><I> </I><I>Check digit scheme </I>for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">When merging patient IDs (A34 and A36 events), the Patient ID contained in the PID segment cannot repeat.</FONT>
+<H4>3.3.2.4 Alternate patient ID - PID<A NAME="I15"></A>  (CX)   00107</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the third number that may be required to identify a patient.  This field may be used to convey multiple patient IDs when more than one exist for a patient. Possible contents might include a visit number, a visit date, or a Social Security Number.</FONT>
+<H4>3.3.2.5 Patient name<A NAME="I16"></A>  (XPN)   00108</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; <B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the legal name of the patient.  All other names for the patient should be sent in <I>PID-9-patient alias</I>.  Therefore, the name type code in this field should be &quot;L - Legal.&quot; Refer to <I>HL7 </I><I>table </I><I>0200 </I><I>N</I><I>ame type code</I> for valid values.</FONT>
+<H4>3.3.2.6 Mother's maiden name<A NAME="I17"></A>  (XPN)   00109</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the family name under which the mother was born (i.e., before marriage). It is used to distinguish between patients with the same last name. </FONT>
+<H4>3.3.2.7 Date/Time of birth<A NAME="I18"></A>  (TS)   00110</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s date and time of birth. </FONT>
+<H4>3.3.2.8 Sex<A NAME="I19"></A>  (IS)   00111</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s sex.  Refer to <I>user-defined</I> <I>table 0001 - Sex</I> for suggested values. </FONT>
+<P>User-defined Table 0001 - Sex<A NAME="I20"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=246 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">F</FONT>
+</TD><TD WIDTH=246 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Female</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M</FONT>
+</TD><TD WIDTH=246 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Male</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=246 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Other</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">U</FONT>
+</TD><TD WIDTH=246 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Unknown</TD></TR></FONT></TABLE><H4>3.3.2.9 Patient alias<A NAME="I21"></A>  (XPN)   00112</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name(s) by which the patient has been known at some time.  Refer to <I>HL7 table 0200 - Name type </I>for valid values. </FONT>
+<H4>3.3.2.10 Race<A NAME="I22"></A>  (IS)   00113</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field refers to the patient&#146;s race.  Refer to <I>user-defined table 0005 - Race</I> for suggested values.</FONT>
+<H4>3.3.2.11 Patient address<A NAME="I23"></A>  (XAD)   00114</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^<B> &lt;</B>other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the mailing address of the patient.  Address type codes are user defined.  Multiple addresses for the same person may be sent in the following sequence:  The mailing address must be sent first in the sequence; if the mailing address is not sent, then a repeat delimiter must be sent in the first sequence.</FONT>
+<H4>3.3.2.12 County code<A NAME="I24"></A>  (IS)   00115</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This field has been retained for backward compatibility.</I>  This field contains the patient&#146;s county code.  The county can now be supported in the county/parish code component of the XAD data type (<I>PID-11-patient address</I>).  Refer to<I> user-defined table 0289 - County/parish</I> for suggested values.</FONT>
+<H4>3.3.2.13 Phone number - home<A NAME="I25"></A>  (XTN)   00116</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s personal phone numbers.  All personal phone numbers for the patient are sent in this sequence.  The first sequence is considered the primary number.  If the primary number is not sent, then a repeat delimiter is sent in the first sequence.  Refer to <I>HL7 tables 0201 - </I><I>Telecommunication use code and 0202 - Telecommunication equipment type</I> for valid values.</FONT>
+<H4>3.3.2.14 Phone number - business<A NAME="I26"></A>  (XTN)   00117</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s business telephone numbers.  All business numbers for the patient are sent in this sequence.  The first sequence is considered the patient&#146;s primary business phone number.  If the primary business phone number is not sent, then a repeat delimiter must be sent in the first sequence.  Refer to <I>HL7 tables 0201 - Telecommunication use code and 0202 - Telecommunication equipment type</I> for valid values.</FONT>
+<H4>3.3.2.15 Primary language<A NAME="I27"></A>  (CE)   00118</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s primary language.  HL7 recommends using ISO table 639 as the suggested values in  <I>user-defined table 0296 - Language.</I></FONT>
+<H4>3.3.2.16 Marital status<A NAME="I28"></A>  (IS)   00119</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s marital status.  Refer to <I>user-defined table 0002 - Marital status </I>for suggested values.</FONT>
+<P>User-defined Table 0002 - Marital status<A NAME="I29"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Separated</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Divorced</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Married</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Single</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">W</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Widowed</TD></TR></FONT></TABLE><H4>3.3.2.17 Religion<A NAME="I30"></A>  (IS)   00120</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s religion.  Refer to <I>user-defined table 0006 - Religion</I> for suggested values. </FONT>
+<H4>3.3.2.18 Patient account number<A NAME="I31"></A>  (CX)   00121</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient&#146;s account.  Refer to <I>HL7</I> <I>table 0061 - Check </I><I>digit scheme</I> in Chapter 2.</FONT>
+<H4>3.3.2.19 SSN number - patient<A NAME="I32"></A>  (ST)   00122</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s social security number.  This number may also be an RR retirement number. </FONT>
+<H4>3.3.2.20 Driver's license number - patient<A NAME="I33"></A>  (DLN)   00123</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;license number (ST)&gt; ^ &lt;issuing state, province, country (IS)&gt; ^ &lt;expiration date (DT)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s drivers license number.  Some sites may use this number as a unique identifier of the patient.  The default of the second component is the state in which the patient&#146;s license is registered. </FONT>
+<H4>3.3.2.21 Mother's identifier<A NAME="I34"></A>  (CX)   00124</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used, for example, as a link field for newborns.  Typically a patient ID or account number may be used.  This field can contain multiple identifiers for the same mother.  Refer to <I>HL7 table </I><I>0061 - Check digit scheme</I> as defined in Chapter 2.</FONT>
+<H4>3.3.2.22 Ethnic group<A NAME="I35"></A>  (IS)   00125</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field further defines the patient&#146;s ancestry.  Refer to <I>user-defined</I> <I>table 0189 - Ethnic group</I> for suggested values.  ERISA has a published list of ethnic classifications that may be used by local agreement at a site.</FONT>
+<H4>3.3.2.23 Birth place<A NAME="I36"></A>  (ST)   00126</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the location of the patient&#146;s birth.</FONT>
+<H4>3.3.2.24 Multiple birth indicator<A NAME="I37"></A>  (ID)   00127</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the patient was part of a multiple birth.  Refer to <I>HL7</I> <I>table 0136 - </I><I>Yes/No indicator</I> as described in Chapter 2.</FONT>
+<H4>3.3.2.25 Birth order<A NAME="I38"></A>  (NM)   00128</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  When a patient was part of a multiple birth, a value (number) indicating the patient&#146;s birth order is entered in this field.</FONT>
+<H4>3.3.2.26 Citizenship<A NAME="I39"></A>  (IS)   00129</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s country of citizenship.  HL7 recommends using ISO table 3166 as the suggested values in <I>user-defined table 0171 - Citizenship</I>.</FONT>
+<H4>3.3.2.27 Veterans military status<A NAME="I40"></A>  (CE)   00130</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the military status assigned to a veteran.  Refer to <I>user-defined table 0172 - </I><I>Veterans military status</I> for suggested values.</FONT>
+<H4>3.3.2.28 Nationality<A NAME="I41"></A>  (CE)   00739</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the nation or national group to which the patient belongs.  This information may be different than the person&#146;s citizenship in countries in which multiple nationalities are recognized (e.g., Spain: Basque, Catalan, etc.).</FONT>
+<H4>3.3.2.29 Patient death date and time<A NAME="I42"></A>  (TS)   00740</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time at which the patient death occurred.</FONT>
+<H4>3.3.2.30 Patient death indicator<A NAME="I43"></A>  (ID)   00741</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether or not the patient is deceased.  Refer to Chapter 2, <I>HL7 table 0136 - </I><I>Yes/no indicator</I> for valid values.</FONT>
+<H4>3.3.2.31 Usage notes:  PID patient identification<A NAME="I44"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The assigning facility ID, the fourth component of the patient identifiers, is a string of up to six characters that is uniquely associated with the facility that originally assigned the number.  A given institution, or group of intercommunicating institutions, should establish a list of facilities that may be potential assigners of patient identification (and other important identification) numbers.  The list will be one of the institution&#146;s master dictionary lists.  Since third parties (other than the assigners of patient identification numbers) may send or receive HL7 messages containing patient identification numbers, the assigning facility ID in the patient identification numbers may not be the same as the sending and receiving systems identified in the MSH.  The assigning facility ID must be unique across applications at a given site.  This field is required in HL7 implementations that have more than a single ADT/REG application assigning such numbers.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

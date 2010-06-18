@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.30 ADT/ACK - merge person information (event A30)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300033.htm">
+<LINK REL="Previous" HREF="ch300031.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300031.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300033.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E166"></A>
+<H3><B>3.2.30</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - merge person information</B><A NAME="I9"></A><B> (event A30)</B></H3>
+<P>
+<FONT FACE="Times New Roman">An A30 event can be used to merge person information on an MPI.  The A34, A35, A36, A40, A41 and A42 events should be used to merge patient information for a current episode.  The &quot;incorrect MRN&quot; identified on the MRG segment (<I>MRG-1-prior patient ID-internal</I>) is to be merged with the &quot;correct MRN&quot; identified on the PID segment <I>(PID-3&#151;patient ID (internal ID)</I>).  The &quot;incorrect MRN&quot; then no longer exists.  All PID data associated with the &quot;correct MRN&quot; are treated as updated information.</FONT>
+<P>
+<FONT FACE="Times New Roman">The MRNs involved may or may not have active or inactive cases associated with them.  Any episode of care that was previously associated with the &quot;incorrect MRN&quot; is now associated with the &quot;correct MRN.&quot;  A list of these cases is not provided. </FONT>
+<P>
+<FONT FACE="Times New Roman">The fields, included when this message is sent, should be  the fields pertinent to communicate this event.  When other important fields change it is recommended that the A08 (update patient information) event be used instead.</FONT>
+<P>
+<FONT FACE="Times New Roman">An A30, merge person information, is intended for merging person records without merging patient identifiers.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID      Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG     Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300031.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300033.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

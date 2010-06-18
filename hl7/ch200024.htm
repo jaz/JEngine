@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.4 CF - coded element with formatted values</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200025.htm">
+<LINK REL="Previous" HREF="ch200023.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E25"></A>
+<H3><B>2.8.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CF - coded element with formatted values</B></H3>
+<P>
+<FONT FACE="Times New Roman">This data type transmits codes and the formatted text associated with the code.  This data type can be used to transmit for the first time the formatted text for the canned text portion of a report, for example, a standard radiologic description for a normal chest X-ray.  The receiving system can store this information and in subsequent messages only the identifier need be sent.  Another potential use of this data type is transmitting master file records that contain formatted text.  This data type has six components as follows:</FONT>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ID)&gt; ^ &lt;formatted text (FT)&gt; ^ &lt;name of coding system (ST)&gt;^&lt;alternate identifier (ID)&gt; ^ &lt;alternate formatted text (FT)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">The components, primary and alternate are defined exactly as in the CE data type with the exception of the second and fifth components which are of the formatted text data type.  Example: </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CF|71020^CXR^CPMC||79989^</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>\H\Description:\N\\.sp\\ti+4\Heart is not enlarged.  There is no evidence of</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>pneumonia, effusion, pneumothorax or any masses.\.sp+3\\H\Impression:</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>\N\\.sp\\.ti+4\Negative chest.^CPMC</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

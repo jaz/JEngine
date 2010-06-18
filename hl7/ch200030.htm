@@ -1,0 +1,254 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.10 CX - extended composite ID with check digit</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200031.htm">
+<LINK REL="Previous" HREF="ch200029.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200029.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200031.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E31"></A>
+<H3><B>2.8.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CX - extended composite ID with check digit</B></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority (HD)  )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt; assigning facility (HD)</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|1234567^4^M11^ADT01^MR^University Hospital|</FONT></PRE>
+<H4>2.8.10.1 ID (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Defined as in the CK data type (see Section <A HREF="ch200025.htm#I4">2.8.5</A>, &quot;<A HREF="ch200025.htm#I4">CK - composite ID with check digit</A>&quot;) except that an ST data type is allowed instead of an NM data type.</FONT>
+<H4>2.8.10.2 Check digit (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Defined as in the CK data type (see Section <A HREF="ch200025.htm#I4">2.8.5</A>, &quot;<A HREF="ch200025.htm#I4">CK - composite ID with check digit</A>&quot; except that an ST data type is allowed instead of an NM data type.  The check digit in this data type is <U>not</U> an add-on produced by the message processor.  It is the check digit that is part of the identifying number used in the sending application.  If the sending application does not include a self-generated check digit in the identifying number, this component should be valued null.</FONT>
+<H4>2.8.10.3 Code identifying the check digit scheme employed (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">Defined as in the CK data type (see Section <A HREF="ch200025.htm#I4">2.8.5</A>, &quot;<A HREF="ch200025.htm#I4">CK - composite ID with check digit</A>&quot;.  Refer to<I> HL7 table 0061- Check digit scheme</I> for valid values.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The check digit and code identifying check digit scheme are null if ID is alphanumeric.</TD></TR></FONT></TABLE><H4>2.8.10.4 Assigning authority (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">The assigning authority is a unique name of the system that creates the data.  It is an HD data type.  It is equivalent to the application ID of the placer or filler order number (see Chapter 4).  Assigning authorities are unique across a given HL7 implementation.</FONT>
+<H4>2.8.10.5 Identifier type code (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">A code corresponds to the type of identifier.  In some cases, this code may be used as a qualifier to the &quot;Assigning authority&quot; component.  Refer to<I> user-defined table 0203 - Identifier type</I> for suggested values.</FONT>
+<P ALIGN=indent><A NAME="I6"></A><A NAME="I7"></A>User-defined table 0203 - Identifier type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=216 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AM</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">American Express</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Account Number </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">BR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Birth Registry Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>DI
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Diner&#146;s Club Card</TD>
+</TR>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DL</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Driver&#146;s License Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Doctor Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DS</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Discover Card</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EI</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Employee Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Employer Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">GI</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Guarantor Internal Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">GN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Guarantor External  Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MS</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MasterCard</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MA</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medicaid Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MC </FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medicare Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medical Record Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PI</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient Internal Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Person Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PT</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient External Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Railroad Retirement Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SS</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Social Security Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">UPIN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medicare/HCFA&#146;s Universal Physician Identification Numbers</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">VS</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">VISA</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">VN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Visit Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">XX</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Organization Identifier</TD></TR></FONT></TABLE><H4>2.8.10.6 Assigning facility (HD)</H4>
+<P>
+<FONT FACE="Courier New">Subcomponents: &lt;namespace ID (IS)&gt; &amp; &lt; universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  the place or location identifier where the identifier was first assigned to the patient.  This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200029.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200031.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

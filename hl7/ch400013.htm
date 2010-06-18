@@ -1,0 +1,223 @@
+<HTML>
+<HEAD>
+<TITLE>4.4.2 Interval component  (CM)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400014.htm">
+<LINK REL="Previous" HREF="ch400012.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E217"></A>
+<H3><B>4.4.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Interval component  (CM)</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Courier New">Subcomponents:  &lt;repeat pattern (IS)&gt; ^ &lt;explicit time interval (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field determines the interval between repeated services.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The default is one time only, the first subcomponent is the repeat pattern, and the second subcomponent is the explicit time at which pattern is to be executed.</FONT>
+<H4>4.4.2.1 Repeat pattern</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  The repeating frequency with which the treatment is to be administered.  It is similar to the frequency and SIG code tables used in order entry systems.  The following is preferred syntax for repeat patterns:</FONT>
+<P>
+<FONT FACE="Times New Roman">User-defined table 4001 - Repeat pattern</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;S</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every &lt;integer&gt; seconds</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;M</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every &lt;integer&gt; minutes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;H</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every &lt;integer&gt; hours</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;D</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every &lt;integer&gt; days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;W</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every &lt;integer&gt; weeks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;L</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every &lt;integer&gt; months (Lunar cycle)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q&lt;integer&gt;J&lt;day#&gt;</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">repeats on a particular day of the week, from the French <I>jour</I> (day).  If &lt;integer&gt; is missing, the repeat rate is assumed to be 1.  Day numbers are counted from 1=Monday to 7=Sunday.  So Q2J2 means every second Tuesday; Q1J6 means every Saturday.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">BID</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">twice a day at institution-specified times (e.g., 9AM-4PM)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TID</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">three times a day at institution-specified times (e.g., 9AM-4PM-9PM)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QID</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">four times a day at institution-specified times (e.g., 9AM-11AM-4PM-9PM)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">xID</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">&quot;X&quot; times per day at institution-specified times, where X is a numeral 5 or greater.  E.g., 5ID=five times per day; 8ID=8 times per day</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=576 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  None of the above three specifications are equivalent to their Q&lt;integer&gt;H counterpart.  QID is not Q6H.  The former is unequally spaced; the latter is equally spaced.</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QAM</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">in the morning at institution-specified time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QSHIFT</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">during each of three eight-hour shifts at institution-specified times</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QOD</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every other day (same as Q2D)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QHS</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">every day before the hour of sleep</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QPM</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">in the evening at institution-specified time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service is provided continuously between start time and stop time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">U &lt;spec&gt;</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">for future use, where &lt;spec&gt; is an interval specification as defined by the UNIX cron specification.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PRN</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">given as needed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PRNxxx</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">where xxx is some frequency code (e.g., PRNQ6H); given as needed over the frequency period.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=216 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Once</FONT>
+</TD><TD WIDTH=360 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">one time only.  This is also the default when this component is null.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The first subcomponent may repeat, with repeat values separated by a space.  The repeats are interpreted as connected by logical ANDs.  E.g.,</FONT>
+<P>
+<FONT FACE="Times New Roman">Twice per day, every other day:  BID QOD</FONT>
+<P>
+<FONT FACE="Times New Roman">Three times per day, Monday Wednesday and Friday:  TID QJ135 </FONT>
+<P>
+<FONT FACE="Times New Roman">Because of this syntax, repeat values should never contain blanks.  If a free text frequency, such as &quot;Twice a day, every other day&quot; is to be sent, use the text component (component 8).</FONT>
+<H4>4.4.2.2 Explicit time interval subcomponent</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field explicitly lists the actual times referenced by the code in the first subcomponent, in the following format: HHMM,HHMM,HHMM,.&#133;  This second subcomponent will be used to clarify the first subcomponent in cases where the actual administration times vary within an institution.  If the time of the order spans more than a single day, this new subcomponent is only practical if the same times of administration occur for each day of the order.  If the actual start time of the order (as given by the fourth subcomponent of the quantity/timing field) is after the first explicit time, the first administration is taken to be the first explicit time after the start time.  In the case where the patient moves to a location having a different set of explicit times, the existing order may be updated with a new quantity/timing field showing the changed explicit times.</FONT>
+<P>
+<FONT FACE="Times New Roman">Ex: 2nd component of quantity/timing field:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...^QID&amp;0230,0830,1430,2030^...</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,369 @@
+<HTML>
+<HEAD>
+<TITLE>8.4.1 MFI - master file identification segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800009.htm">
+<LINK REL="Previous" HREF="ch800007.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E341"></A>
+<H3><B>8.4.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>MFI - master file identification segment</B><A NAME="I7"></A><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The fields in the MFI segment are defined in <I>Figure 8-1.  MFI attributes</I>.</FONT>
+<P>Figure 8-1.  MFI attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=238 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0175</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00658</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Master File Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">180</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">HD</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00659</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Master File Application Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0178</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00660</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">File-Level Event Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00661</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entered Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00662</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0179</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00663</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Response Level Code</TD></TR></FONT></TABLE></CENTER><P>8.4.1.0 MFI field definitions
+<H4>8.4.1.1 <A NAME="I9"></A>Master file identifier  (CE)   00658</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is a CE data type that identifies a standard HL7 master file.  This table may be extended by local agreement during implementation to cover site-specific master files (z-master files).  Refer to <I>HL7 table 0175 - Master file identifier code</I> for valid values.</FONT>
+<P>Table 0175 - Master file identifier code
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=402 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CDM</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge description master file </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CMA</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Clinical study with phases and scheduled master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CMB</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Clinical study without phases but with scheduled master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LOC</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Location master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OMA</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Numerical observation master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OMB</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Categorical observation master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OMC</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation batteries master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OMD</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Calculated observations master file</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PRA</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Practitioner master file </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">STF</FONT>
+</TD><TD WIDTH=402 VALIGN=top >
+<P>
+<FONT SIZE="-1">Staff master file </TD></TR></FONT></TABLE><H4>8.4.1.2 Master files application identifier  (HD)   00659</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;namespace ID (IS) ^ &lt;universal ID (ST) ^ &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an optional code of up to 180 characters which (if applicable) uniquely identifies the application responsible for maintaining this file at a particular site.  A group of intercommunicating applications may use more than a single instance of a master file of certain type (e.g., charge master or physician master).  The particular instance of the file is identified by this field.</FONT>
+<H4><B><I>8.4.1.3</I></B><B><I> </I></B>File-level event code  (ID)   00660</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field defines the file-level event code.  Refer to<I> HL7 table 0178 - File level event code</I> for valid values.</FONT>
+<P>Table 0178 - File level event code
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">REP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Replace current version of this master file with the version contained in this message</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">UPD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Change file records as defined in the record-level event codes for each record that follows</TD></TR></FONT></TABLE><H4>8.4.1.4 Entered date/time  (TS)   00661</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the time stamp for file-level event on originating system.</FONT>
+<H4>8.4.1.5  Effective date/time  (TS)   00662</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional field contains the effective date/time, which can be included for file-level action specified.  It is the date/time the originating system expects that the event is to have been completed on the receiving system.  If this field is not present, the action date/time should default to the current date/time (when the message is received).</FONT>
+<H4>8.4.1.6 Response level code  (ID)   00663</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  These codes specify the application response level defined for a given Master File Message at the MFE segment level as defined in <I>HL7 table 0179 - Response level</I>.  Required for MFN-Master File Notification message.  Specifies additional detail (beyond <I>MSH-15-accept acknowledgment type</I> and <I>MSH-16-application acknowledgment type</I>) for application-level acknowledgment paradigms for Master Files transactions.  <I>MSH-15-accept acknowledgment</I> and<I> MSH-16-application acknowledgment type</I> operate as defined in Chapter 2.</FONT>
+<P>Table 0179 - Response level
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NE</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Never.  No application-level response needed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ER</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Error/Reject conditions only.  Only MFA segments denoting errors must be returned via the application-level acknowledgment for this message</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AL</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Always.  All MFA segments (whether denoting errors or not) must be returned via the application-level acknowledgment message</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SU</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Success.  Only MFA segments denoting success must be returned via the application-level acknowledgment for this message</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch800007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

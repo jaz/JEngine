@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>11.2.7 PIN/ACK - unsolicited insurance information (event I07)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110013.htm">
+<LINK REL="Previous" HREF="ch110011.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110011.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110013.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E487"></A>
+<H3><B>11.2.7</B><B> </B><A NAME="I2"></A><B>PIN/ACK - unsolicited insurance information</B><A NAME="I3"></A><B> (event I07)</B></H3>
+<P>
+<FONT FACE="Times New Roman">This trigger event is used by an entity or organization to transmit to a healthcare provider the insurance  information on a specific patient.  Typically, the healthcare provider will be a primary care provider.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>PIN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Patient Insurance Information</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[[{GT1}]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     IN1    Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN2]   Insurance, Additional info      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN3]   Insurance, Certification      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSA      Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ ERR ]   Error Information        2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110011.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110013.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

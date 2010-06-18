@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.47 XON - extended composite name and identification number f</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200068.htm">
+<LINK REL="Previous" HREF="ch200066.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200066.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200068.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E68"></A>
+<H3><B>2.8.47</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>XON - extended composite name and identification number for organizations</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt;^ &lt;organization name type code (IS)&gt; ^&lt;ID Number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority  (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt; </FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|HL7 Health Center^L^6^M11^HCFA|</FONT></PRE>
+<H4>2.8.47.1 Organization name (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The name of the specified organization.</FONT>
+<H4>2.8.47.2 Organization name type code (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents the type of name i.e., legal name, display name.  Refer to <I>user-defined table 0204 - </I><I>Organizational name type</I> for suggested values.</FONT>
+<P ALIGN=indent><A NAME="I6"></A><A NAME="I7"></A>User-defined table 0204 - Organizational name type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A </FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Alias Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">L</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Legal Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Display Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SL</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Stock Exchange Listing Name</TD></TR></FONT></TABLE><H4>2.8.47.3 ID number (NM)</H4>
+<H4>2.8.47.4 Check digit (NM)</H4>
+<P>
+<FONT FACE="Times New Roman">The check digit in this data type is <U>not</U> an add-on produced by the message processor.  It is the check digit that is art of the identifying number used in the sending application.  If the sending application does not include a self-generated check digit in the identifying number, this  component should be valued null.</FONT>
+<H4>2.8.47.5 Code identifying the check digit scheme employed (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">The check digit scheme codes are defined in <I>HL7 table 0061 - Check digit scheme</I>.</FONT>
+<H4>2.8.47.6 Assigning authority (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">The assigning authority is a unique name of the system that creates the data.  It is an HD data type.  It is equivalent to the application ID of the placer or filler order number (see Chapter 4).  Assigning authorities are unique across a given HL7 implementation.</FONT>
+<H4>2.8.47.7 Identifier type code (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">A code corresponding to the type of identifier.  In some cases, this code may be used as a qualifier to the &quot;Assigning authority&quot; component.  Refer to <I>user-defined table 0203 - Identifier type</I> for suggested values.</FONT>
+<H4>2.8.47.8 Assigning facility ID (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">The assigning authority is a unique name of the system that creates the data.  It is an HD data type.  It is equivalent to the application ID of the placer or filler order number (see Chapter 4).  Assigning authorities are unique across a given HL7 implementation.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200066.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200068.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

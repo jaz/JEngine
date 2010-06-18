@@ -1,0 +1,316 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.17 VTQ - virtual table query request segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200141.htm">
+<LINK REL="Previous" HREF="ch200139.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200139.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200141.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E125"></A>
+<H3><B>2.24.17</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>VTQ - virtual table query request segment</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The VTQ segment is used to define queries that are responded to with the Tabular Data Message (TBR).  The VTQ query message is an alternate method to the EQQ query message that some systems may find easier to implement, due to its use of HL7 delimiters that separate components of the selection definition, and its limited selection criteria.  Queries involving complex selection criteria (nested operators, etc.) may need to be formatted as an EQL segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">As with the other query methods, the functional chapters define specific queries supported as VTQ messages.  Refer to these functional chapters for the lists of HL7-defined virtual tables, selection lists and criteria.</FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Figure 2-24.  VTQ attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=61 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=40 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=41 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=41 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=234 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00696</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query Tag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">0106</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00697</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query/Response Format Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00698</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">VT Query Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00699</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Virtual Table Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">256</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">QSC
+<BR> </FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00700</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Selection Criteria</TD></TR></FONT></TABLE><P>2.24.17.0   VTQ field definitions
+<H4>2.24.17.1 Query tag  (ST)   00696</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may be valued by the initiating system to identify the query, and may be used to match response messages to the originating query.  If it is valued, the responding system is required to echo it back as the first field in the query acknowledgment segment (QAK).  This field differs from <I>MSA-2-message </I><I>control ID</I> in that its value remains constant for each message (i.e., all continuation messages) associated with the query, whereas <I>MSA-2-message control ID</I> may vary with each continuation message, since it is associated with each individual message, not the query as a whole.</FONT>
+<H4>2.24.17.2 Query/response format code (ID)   00697</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field refers to <I>HL7</I> <I>table 0106 - Query/response format code</I> for valid values. </FONT>
+<H4>2.24.17.3 VT query name  (CE)   00698</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the virtual table query.  These names are assigned by the function-specific chapters of this specification.  Site-specific VT query names begin with the letter &quot;Z.&quot;</FONT>
+<H4>2.24.17.4 Virtual table name  (CE)   00699</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the virtual table being referenced.  This table name may refer to an HL7-defined segment, an HL7 virtual table (refer to the functional chapters), or a site-specific &quot;Z table.&quot;</FONT>
+<H4>2.24.17.5 Selection criteria  (QSC)   00700</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;name of field (ST)&gt; ^ &lt;relational operator (ID)&gt; ^ &lt;value (ST)&gt; ^ &lt;relational conjunction (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Each repetition of this field defines a column in the RDT segment:  the first repetition defines the first column of the RDT segment; the second repetition defines the second column of the RDT segments, etc.  </FONT>
+<P>
+<FONT FACE="Times New Roman">This field indicates the conditions that qualify the rows to be returned in the query response.  (This field conveys the same information as the &quot;WHERE&quot; clause in the corresponding SQL expression of the query, but is formatted differently.)  It is comprised of the following components:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; The name of the field that is participating as a qualifier (usually the &quot;key&quot;).  Refer to Section <A HREF="ch200139.htm#I14">2.24.16.4</A>, &quot;<A HREF="ch200139.htm#I3">EQL - embedded query language segment</A>,&quot; for field naming conventions.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; A relational operator, refer to <I>HL7 table 0209 - Relational operator</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I19"></A><A NAME="I20"></A>Table 0209 - Relational operator</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Relational operator</FONT>
+</TD><TD WIDTH=162 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">EQ</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NE</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Not Equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LT</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Less than</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GT</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Greater than</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LE</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Less than or equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GE</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Greater than or equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CT</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contains</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GN</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Generic</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">&#149; The value to which the field will be compared.</FONT>
+<P>
+<FONT FACE="Times New Roman">If more than one comparison is to be made to select qualifying rows, a conjunction (defined by <I>HL7 table </I><I>0210 - Relational conjunction</I>) relating this repetition of the field to the next:</FONT>
+<P ALIGN=indent><A NAME="I21"></A><A NAME="I22"></A>Table 0210 - Relational conjunction</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Relational conjunction</FONT>
+</TD><TD WIDTH=156 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Note</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AND</FONT>
+</TD><TD WIDTH=156 VALIGN=top >
+<P>
+<FONT SIZE="-1">Default</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OR</FONT>
+</TD><TD WIDTH=156 VALIGN=top ><BR></TD></TR></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">Hence, the segment</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>VTQ|TAG001|T|VT_QUERY_NAME|PID|@00108.1^EQ^EVANS^AND~@00108.2^EQ^CAROLYN &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">causes a response to be generated from the virtual table defined by the PID segment. All rows containing the name field subcomponents defined in the selection criteria field (last name =  &quot;Evans,&quot; first name = &quot;Carolyn&quot;) will be selected for the response.  The columns returned from each selected row  will be defined by the RDF segment (see Section <A HREF="ch200141.htm#I14">2.24.18</A>, &quot;<A HREF="ch200141.htm#I16">RDF - table row definition segment</A>&quot;).</FONT>
+<P>
+<FONT FACE="Times New Roman">Notes:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; As previously stated, the VTQ segment does not, and is not intended to provide as robust selection function as native EQQ query.  It is offered as a simpler alternative.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; When applied to strings, the relational operators LT, GT, LE, and GE imply an alphabetic comparison.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; A &quot;generic&quot; comparison selects a record for inclusion in the response if the beginning of the designated field matches the select string.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Where a repeating field is specified as an operand, a match on any instance of that field qualifies the row for inclusion in the response message.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; AND takes precedence over OR.  More sophisticated precedence rules require that the query be expressed as an SQL message, or a stored procedure for the query may be written and referenced with the SPR segment.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200139.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200141.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>7.2.2 QRY/ORF - query for results of observation (events R02, R0</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700009.htm">
+<LINK REL="Previous" HREF="ch700007.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E288"></A>
+<H3><B>7.2.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>QRY/ORF - query for results of observation</B><B> (events R02, R04)</B><B>  </B><A NAME="I10"></A></H3>
+<PRE>
+<FONT FACE="Courier New"><U>QRY</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Query</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter </U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRF     Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ORF</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Observational Report</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ QRF ]   Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    { [ PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [{NTE}] ]  Notes and Comments       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ ORC ]  Order common</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         OBR   Observation request       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         {[NTE]}  Notes and comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          [OBX]  Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">            {[NTE]} Notes and comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         }   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        {[CTI]}  Clinical Trial Identifier      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     } }  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer       2</FONT></PRE>
+<H4>7.2.2.1 Query usage notes</H4>
+<P>
+<FONT FACE="Times New Roman">Display-oriented results reporting is described in Chapter 2, Section 2.15.6.1.  The QRD and QRF segments are defined in Chapter 2, Section 2.24, &quot;Messages Control Segments.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">The subject filters contained in the QRD and QRF segments are defined by local agreement between the inquiring system and the ancillary system. </FONT>
+<P>
+<FONT FACE="Times New Roman">The Set ID fields in the various segments (including PID) are used to count the number of segments of one kind transmitted at one level of the hierarchy. </FONT>
+<P>
+<FONT FACE="Times New Roman">The Query Result Level field of the QRD determines the amount of data requested.  See Chapter 2, Section 2.24.4, &quot;QRD - original style query definition segment.&quot;</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

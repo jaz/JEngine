@@ -1,0 +1,649 @@
+<HTML>
+<HEAD>
+<TITLE>6.4.10 UB1 - UB82 data segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600021.htm">
+<LINK REL="Previous" HREF="ch600019.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E277"></A>
+<H3><B>6.4.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>UB1</B><A NAME="I7"></A><A NAME="I8"></A><B> </B><B>-</B><B> UB82 data</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The UB1 segment contains the data necessary to complete UB82 bills.  Only UB82 fields that do not exist in other HL7 defined segments appear in this segment.  Patient Name and Date of Birth are required for UB82 billing; however, they are included in the PID segment and therefore do not appear here. </FONT>
+<P>Figure 6-10.  UB1 attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=56 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=255 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00530</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - UB1 </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00531</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Blood Deductible  (43)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00532</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Blood Furnished-Pints Of (40) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00533</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Blood Replaced-Pints (41) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00534</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Blood Not Replaced-Pints(42) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00535</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Co-Insurance Days (25) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/5</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0043</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00536</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Condition Code (35-39)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00537</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Covered Days - (23) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00538</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Non Covered Days - (24) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/8</FONT>
+</TD><TD WIDTH=47 VALIGN=top >
+<P>
+<FONT SIZE="-1">0153</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00539</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Value Amount &amp; Code (46-49)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00540</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Number Of Grace Days (90) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00541</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Spec Program Indicator (44) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00542</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">PSRO/UR Approval Indicator (87) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00543</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">PSRO/UR Approved Stay-Fm (88) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00544</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">PSRO/UR Approved Stay-To (89) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/5</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00545</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occurrence (28-32) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00546</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occurrence Span (33) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00547</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occur Span Start Date(33) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00548</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occur Span End Date (33) </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00549</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB-82 Locator 2 </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00550</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB-82 Locator 9 </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00551</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB-82 Locator 27 </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00552</FONT>
+</TD><TD WIDTH=255 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB-82 Locator 45 </TD></TR></FONT></TABLE></CENTER><P>6.4.10.0  UB1 field definitions
+<H4>6.4.10.1 Set ID - UB1  (SI)   00530</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number that identifies this transaction.  For the first occurrence of the segment the sequence number shall be 1, for the second occurrence it shall be 2, etc.</FONT>
+<H4>6.4.10.2 Blood deductible  (NM)   00531</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This </I><I>field</I><I> </I><I>has been</I><I> retained for backward compatibility only.</I>  Use <I>IN2-21-blood deductible</I> instead of this field, as the blood deductible can be associated with the specific insurance plan via that segment.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.3 Blood furnished-pints of (40)  (NM)   00532</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount of blood furnished to the patient for this visit.  The (40) indicates the corresponding UB82 field number. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.4 Blood replaced-pints (41)  (NM)   00533</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB82 Field 41. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.5 Blood not replaced- pints (42)  (NM)   00534</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the blood not replaced, as measured in pints.  UB82 Field 42. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.6 Co-insurance days (25)  (NM)   00535</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB82 Field 25. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.7 Condition code  (IS)   00536</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  The code in this field repeats five times.  UB82 Fields (35), (36), (37), (38), and (39).   Refer to <I>user-defined</I> <I>table 0043 - Condition code</I> for suggested values. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.8 Covered days - (23)  (NM)   00537</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB82 Field 23. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.9 Non-covered days - (24)  (NM)   00538</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB82 Field 24. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.10 Value amount and code  (CM)   00539</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;value code (IS)&gt; ^ &lt;value amount (NM)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The pair in this field can repeat up to eight times (46A, 47A, 48A, 49A, 46B, 47B, 48B, and 49B).  Refer to <I>user-defined</I> <I>table 0153 - Value code </I>for suggested values. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.11 Number of grace days (90)  (NM)   00540</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB82 Field 90. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.12 Spec program indicator (44)  (CE)   00541</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the special program indicator.  UB82 Field 44.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.13 PSRO/UR approval indicator (87)  (CE)   00542</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the PSRO/UR approval indicator.  UB82 field 87. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.14 PSRO/UR approved stay-fm (88)  (DT)   00543</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the PSRO/UR approved stay date (from).  UB82 Field 88. This field is defined by HCFA or other regulatory agencies. </FONT>
+<H4>6.4.10.15 PSRO/UR approved stay-to (89)  (DT)   00544</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the PSRO/UR approved stay date (to).  UB82 Field 89. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.16 Occurrence (28-32)  (CM)   00545</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;occurrence code (IS)&gt; ^ &lt;occurrence date (DT)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The set of values in this field can repeat up to five times.  UB82 Fields 28-32. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.17 Occurrence span (33)  (CE)   00546</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  UB82 Field 33. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.18 Occur span start date (33)  (DT)   00547</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the occurrence span start date.  UB82 Field 33. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.19 Occur. span end date (33)   (DT)   00548</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the occurrence span end date.  UB82 Field 33. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.10.20 UB-82 locator 2  (ST)   00549</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Defined by UB-82 HCFA specification.</FONT>
+<H4>6.4.10.21 UB-82 locator 9  (ST)   00550</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Defined by UB-82 HCFA specification.</FONT>
+<H4>6.4.10.22 UB-82 locator 27  (ST)   00551</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Defined by UB-82 HCFA specification.</FONT>
+<H4>6.4.10.23 UB-82 locator 45  (ST)   00552</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Defined by UB-82 HCFA specification.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

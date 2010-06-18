@@ -1,0 +1,286 @@
+<HTML>
+<HEAD>
+<TITLE>2.25.4 Query examples</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200152.htm">
+<LINK REL="Previous" HREF="ch200150.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200150.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200152.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E135"></A>
+<H3><B>2.25.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>Query examples</B><A NAME="I15"></A></H3>
+<H4>2.25.4.1 Original mode query with display-oriented response<A NAME="I16"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Query for all lab results on patient #12233.  The query is made at 11:00 a.m., 9/11/87.  The Query anticipates an immediate display-oriented response.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LAB01|||QRY^Q01|MSG00001|P|2.1&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198709111012|D|I|4387|||20^LI|12233|RES|ALL&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The response to the above query might look like the following:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LAB01||ICU|||DSR|ZXT23461|P|2.1&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSG00001P&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198709111012|D|I|4387|||20^LI|12233|RES|ALL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||RESULTS FOR PATIENT#12233   SMITH, JOHN H. 09/11/87&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||SPECIMEN#H85 COLLECTED 09/11/87 /07/0/0&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||ELECTROLYTES&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| SODIUM   140 [135-148] MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| POTASSIUM  4.0 [3.5-5.0] MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| CHLORIDE   89 [95-111]  MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| CO2    20 [20-30]  MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||||LB&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||CBC&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| HEMOGLOBIN   [13.5-18.0]&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| HEMATOCRIT  45 [40-54]  %&lt;CR&gt; </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| RED CELL COUNT 5.0 [4.6-6.2]  M/MM3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| MCHC    32 [32-36]  G/DL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| MCH    28 [26-32]  PG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| MCV    85 [81-101]  FL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| WHITE CELL CNT 7.5 [5.0-10.0] K/MM3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||||LB&lt;CR&gt; </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||SPECIMEN#B24   COLLECTED 9/10/87&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|12333H85;12&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">A continuation query would echo back the contents of <I>DSC-1-continuation pointer</I> as follows:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ICU||LAB01|||QRY^Q01|MSG00003|P|2.1&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198709111012|D|I|4387|||20^LI|12233|RES|ALL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|12333H85;12&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The following response shows that there is no further data by leaving <I>DSC-1-continuation pointer</I> not present.  This could be done by sending the DSC segment with no data, but the example does the same thing by totally omitting the DSC segment.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LAB01||ICU|||DSR|ZXT23469|P|2.1&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSG00003|&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|198709111012|D|I|4387|||20^LI|12233|RES|ALL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||RESULTS FOR PATIENT#12233   SMITH, JOHN H. 09/11/87&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||SPECIMEN#H85 COLLECTED 09/10/87 /07/0/0&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP|||ELECTROLYTES&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| SODIUM  136 [135-148] MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| POTASSIUM 4.2 [3.5-5.0] MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| CHLORIDE  91 [95-111]  MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||| CO2   25 [20-30]  MEQ/L STAT&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSP||||LB&lt;CR&gt;</FONT></PRE>
+<H4>2.25.4.2 Enhanced mode query examples<A NAME="I17"></A></H4>
+
+<TABLE >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> For illustration purposes, these examples assume that the following are defined in the ADT chapter:</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">&#149; The VQQ (using SQL) and EQQ selection criteria</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; The virtual table named PID</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; The stored procedure named PID_QRY_01</FONT>
+<H5>2.25.4.2.1 Embedded query language (using SQL), virtual table and stored procedure queries with tabular response </H5>
+<P>
+<FONT FACE="Times New Roman">The following example illustrates a query for the last and first names, address, social security number and date of birth of patients whose last name is &quot;Evans.&quot;  The fields comprising the query and response are identified by their HL7 item numbers.  Where a field is composed of components, the particular component is identified with a &quot;.n&quot; suffix (e.g., the patient last name is the first component of the patient name field (HL7 item #00108), and therefore is identified as &quot;@00108.1.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">The following examples illustrate this query expressed as an SQL select statement, as a virtual table query and as a stored procedure call</FONT>
+<H5>2.25.4.2.2 Embedded query language query </H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||EQQ|MSG00001|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>EQL|TAG001|T|SQL_PID_QRY_01|SELECT @00108.1,@00108.2,@00114.1,@00114.2,</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3,@00114.4,@00114.5,@00122,@00110 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> FROM PID WHERE @00108.1=&#145;EVANS&#146;&lt;CR&gt;</FONT></PRE>
+<H5>2.25.4.2.3 Virtual table query</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||VQQ|MSG00001|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>VTQ| TAG001|T | VTQ_PID_QRY_01|PID|@00108.1^EQ^EVANS &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDF|9|@00108.1^ST^20~@00108.2^ST^20~@00114.1^ST^30~@00114.2^ST^30~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3^ST^20~@00114.4^ST^2~@00114.5^ST^5~@00122^ST^11~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00110^TS^8&lt;CR&gt;</FONT></PRE>
+<H5>2.25.4.2.4 Stored procedure request</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3><A NAME="I18"></A>MSH|^~\|CLINIC||CENTRAL-REG|||SPQ|MSG00001|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>SPR|TAG0001|T|SPR_PID_QRY_01|@00108.1^EVANS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDF|9|@00108.1^ST^20~@00108.2^ST^20~@00114.1^ST^30~@00114.2^ST^30~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3^ST^20~@00114.4^ST^2~@00114.5^ST^5~@00122^ST^11~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00110^TS^8&lt;CR&gt;</FONT></PRE>
+<H5>2.25.4.2.5 The response to the above queries might look like the following:</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CENTRAL-REG||CLINIC|||TBR|MSG99001|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSG00001&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QAK|TAG0001|OK&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDF|9|@00108.1^ST^20~@00108.2^ST^20~@00114.1^ST^30~@00114.2^ST^30~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3^ST^20~@00114.4^ST^2~@00114.5^ST^5~@00122^ST^11~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00110^TS^8&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDT|Evans|Aaron|105 Maple St.||Lancaster|PA|19786|156-96-2542|19520809&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDT|Evans|Bart|166 Norwood Ln.||Hershey|PA|19987|765-58-4615|19701217&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDT|Evans|Beth|15 Elmwood Ct.|Apt. 15|Gap|PA|19724|58-96-7619|19401119&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDT|Evans|Carolyn|903 Diane Circle||Phoenixville|PA|19460|156-96-2542|19620324&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|00005&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">A continuation query would echo back the contents of <I>DSC-1- continuation pointer</I>t.</FONT>
+<H5>2.25.4.2.6 Embedded query language continuation </H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||EQQ|MSG00002|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>EQL|TAG001|T|SQL_PID_QRY_01|SELECT @00108.1,@00108.2,@00114.1,@00114.2,</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3,@00114.4,@00114.5,@00122,@00110 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> FROM PID WHERE @00108.1=&#145;EVANS&#146;&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|00005&lt;cr&gt;</FONT></PRE>
+<H5>2.25.4.2.7 Virtual table query continuation</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||VQQ|MSG00002|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>VTQ| TAG001|T | VTQ_PID_QRY_01|PID|@00108.1^EQ^EVANS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDF|9|@00108.1^ST^20~@00108.2^ST^20~@00114.1^ST^30~@00114.2^ST^30~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3^ST^20~@00114.4^ST^2~@00114.5^ST^5~@00122^ST^11~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00110^TS^8&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|00005&lt;cr&gt;</FONT></PRE>
+<H5>2.25.4.2.8 Stored procedure request query continuation</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||SPQ|MSG00002|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>SPR|TAG0001|T|SPR_PID_QRY_01|@00108.1^EVANS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDF|9|@00108.1^ST^20~@00108.2^ST^20~@00114.1^ST^30~@00114.2^ST^30~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3^ST^20~@00114.4^ST^2~@00114.5^ST^5~@00122^ST^11~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00110^TS^8&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC|00005&lt;cr&gt;</FONT></PRE>
+<H5>2.25.4.2.9 <A NAME="I19"></A>This response shows that there is no further data by leaving the continuation pointer not present.  This could be done by sending the DSC segment ID with no data, but the example does the same thing by totally omitting the DSC segment</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CENTRAL-REG||CLINIC|||TBR|MSG00003|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSG00002&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QAK|TAG0001|OK&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDF|9|@00108.1^ST^20~@00108.2^ST^20~@00114.1^ST^30~@00114.2^ST^30~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00114.3^ST^20~@00114.4^ST^2~@00114.5^ST^5~@00122^ST^11~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> @00110^TS^8&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDT|Evans|William|609 N. 3rd St.||Manheim|PA|19898|169-03-9872|19290726&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RDT|Evans|Zachary|111 North Ln.||Lancaster|PA|19987|539-43-8725|19340926&lt;cr&gt;</FONT></PRE>
+<H5>2.25.4.2.10 Suppose that from the table of &quot;Evans,&quot; Carolyn Evans is selected and the querying application now needs detailed ADT information about her.  It can issue another query for this information using the event replay query (EQQ).</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||RQQ|MSG00004|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ERQ|TAG0002|A04|@00122^156-96-2542&lt;CR&gt;</FONT></PRE>
+<H5>2.25.4.2.11 The response is returned as an Event Replay Response, which is the HL7 ADT patient registration message corresponding to event code A04, prefixed by the MSH, MSA and ERQ segments:</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CLINIC||CENTRAL-REG|||ERP|MSG00005|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSG00004&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ERQ|TAG0002|A04|@00122^156-96-2542&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QAK|TAG0002|OK&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>EVN|A04|199405151259||&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||2-68708-5|253763|EVANS^CAROLYN||19620324|F|||903</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> Diane Circle^^PHOENIXVILLE^PA^19460|(610)555-1212|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> (610)555-1212||S|C||156-96-2542||&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1||EVANS^RICHARD|SPOUSE|903Diane Circle^^PHOENIXVILLE^</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> PA^19460|(610)555-1212|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PV1||E|EMERG||||0148^ADDISON^JAMES&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>..etc</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Error responses to the above queries might look like the following:</FONT>
+<H5>2.25.4.2.12 Embedded query language (EQL) , virtual table, and stored procedure error response</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CENTRAL-REG||CLINIC|||TBR|MSG99001|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AE|MSG00001||||^REQUESTED TABLE &quot;PID&quot; IS UNKNOWN&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QAK|TAG0001|AE&lt;CR&gt;</FONT></PRE>
+<H5>2.25.4.2.13 Event replay error response</H5>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\|CENTRAL-REG||CLINIC|||ERP|MSG00005|P|2.3&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AE|MSG00004||||^REQUESTED EVENT TYPE &quot;A04&quot; NOT SUPPORTED ON THIS SYSTEM&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QAK|TAG0002|AE&lt;CR&gt;</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200150.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200152.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,2960 @@
+<HTML>
+<HEAD>
+<TITLE>8.7.3 OM1 - general segment (fields that apply to most observati</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800025.htm">
+<LINK REL="Previous" HREF="ch800023.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E354"></A>
+<H3><B>8.7.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>OM1 - general segment (fields that apply to most observations)</B><B> </B><A NAME="I7"></A><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The OM1 segment contains the attributes that apply to the definition of most observations.  This segment also contains the field attributes that specify what additional segments might also be defined for this observation.</FONT>
+<P>Figure 8-7.  OM1 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=58 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=51 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=258 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 4</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00586</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sequence Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00587</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Producer's Test/Observation ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0125</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00588</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Permitted Data Types</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00589</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Specimen Required</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00590</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Producer ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00591</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00592</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other Test/Observation IDs for the Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00593</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other Names</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 30</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00594</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preferred Report Name for the Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00595</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preferred Short Name or Mnemonic for Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00596</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preferred Long Name for the Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00597</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Orderability</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00598</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Identity of Instrument Used to Perform this Study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00599</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Coded Representation of Method</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00600</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Portable</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00601</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation Producing Department/Section</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00602</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Telephone Number of Section</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0174</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00603</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nature of Test/Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00604</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report Subheader</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00605</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report Display Order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00606</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time Stamp for any change in Def Attri for Obs</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00607</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective Date/Time of Change</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00608</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Typical Turn-Around Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00609</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Processing Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0168</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00610</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Processing Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 5</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0169</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00611</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reporting Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00612</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Outside Site(s) Where Observation may be Performed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1000</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00613</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Address of Outside Site(s)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 400</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00614</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Phone Number of Outside Site</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0177</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00615</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Confidentiality Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">31 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00616</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observations Required to Interpret the Obs</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">32 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 64K</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00617</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Interpretation of Observations</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">33 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 64K</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00618</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contraindications to Observations</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">34 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00619</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reflex Tests/Observations</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">35 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 80</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00620</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Rules that Trigger Reflex Testing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">36 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 64K</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00621</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Fixed Canned Message</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">37 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00622</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Preparation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">38 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00623</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Medication</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">39 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00624</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Factors that may Effect the Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">40 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00625</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Test/Observation Performance Schedule</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">41 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 64K</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00626</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Description of Test Methods</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">42 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0254</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00937</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Kind of Quantity Observed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">43 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0255</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00938</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Point Versus Interval</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">44 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00939</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Challenge Information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">45 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0258</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00940</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Relationship Modifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">46 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00941</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Target Anatomic Site Of Test</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">47 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0259</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00942</FONT>
+</TD><TD WIDTH=258 VALIGN=top >
+<P>
+<FONT SIZE="-1">Modality Of Imaging Measurement</TD></TR></FONT></TABLE><P>8.7.3.0 OM1 field definitions
+<H4><B>8.7.3.1</B><B> </B>Sequence number  (NM)   00586</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the first OM1 segment in a message and is described as 1, the second as 2, and so on.</FONT>
+<H4>8.7.3.2 Producer's test/observation ID  (CE)   00587</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the producer&#146;s usual or preferred identification of the test or observation.   Only three components should be included: &lt;ID code&gt;^&lt;service text name/description&gt;^&lt;source list of code&gt;.  All components should be non-null.  The source list may be any of those included in ASTM Tables 3 and 5, or a local code.</FONT>
+<H4>8.7.3.3 Permitted data types  (ID)   00588</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the allowed data type(s) for this observation.  The codes are the same as those listed for OBX (a given observation may, under different circumstances, take on different data types). Indeed, under limited circumstances, an observation can consist of one or more fragments of different data types. When an observation may have more than one data type, e.g., coded (CE) and numeric (NM) the allowable data types should be separated by repeat delimiters.  Refer to <I>HL7 table 0125 - </I><I>Value type</I> for valid values.</FONT>
+<H4>8.7.3.4 Specimen required  (ID)   00589</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a flag indicating whether or not at least one specimen is required for the test/observation.  Refer to <I>HL7 table 0136 - Yes/no indicator</I> as defined in Chapter 2.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y  one or more specimens are required to obtain this observation</FONT>
+<P>
+<FONT FACE="Times New Roman">N  a specimen is not required</FONT>
+<P>
+<FONT FACE="Times New Roman">When a specimen is required, segment OM4 will usually be included (one per specimen is required).</FONT>
+<H4>8.7.3.5 Producer ID  (CE)   00590</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field uniquely identifies the service producing the observation described in this segment.  Three components should be included:  an identifying code, the name of the producer, and the identity of the coding system (e.g., 323-5678^Acme Special Lab^MC).  The identity of the coding system will usually be MC (Medicare provider number or HIBCC site codes) in the United States.  Each country may want to specify its preferred coding system and define a coding system ID to identify it.</FONT>
+<P>
+<FONT FACE="Times New Roman">Remember that the magnitude of a treatment or the setting on a machine, such as a ventilator, can be regarded as an observation.  Thus, pharmacy, respiratory care, and nursing may be producers of such observations.</FONT>
+<H4>8.7.3.6 Observation description  (TX)   00591</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a text description of this observation.</FONT>
+<H4>8.7.3.7 Other test/observation IDs for the observation  (CE)   00592</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains all alias codes/identifiers for this observation.  If more than one alias code needs to be specified, multiple three-component, CE-format entries (&lt;code 1&gt;^&lt;name 1&gt;^&lt;code system 1&gt;) may be given, separated by repeat delimiters.  An observation may have as many names/codes as are applicable (e.g., ICD9, ACR-NEMA, SNOMED, and READ).  We encourage the inclusion of as many different codes as may apply to assist cross-system mapping of terminology.  All components of each triplet should be non-null (that is, names and coding system IDs within the CE data type are required in addition to codes).  The source list may be any of those included in ASTM Tables 3 and 5.</FONT>
+<P>
+<FONT FACE="Times New Roman">Because the size (dose) of a treatment can also be an observation, codes that identify treatments (e.g., NDC, ICCS) may also be included in this field.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=551 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  In this field, the names within the CE data type are required.</TD></TR></FONT></TABLE><H4>8.7.3.8 Other names (recognized by the producer for the observation)  (ST)   00593</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains any test aliases or synonyms for the name in the context of the ordering service.  These are alternative names, not associated with a particular coding system, by which the battery, test, or observation (e.g., measurement, test, diagnostic study, treatment) is known to users of the system.  Multiple names in this list are separated by repeat delimiters.</FONT>
+<H4>8.7.3.9 Preferred report name for the observation  (ST)   00594</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the preferred name for reporting the observation or battery.  The name can contain up to 30 characters (including blanks).  It is the preferred name for columnar reports that require a maximum name size.</FONT>
+<H4>8.7.3.10 Preferred short name or mnemonic for the observation  (ST)   00595</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name that can be used in space-limited reports (e.g., specimen labels) to identify the observation for the convenience of human readers.  The name can contain up to eight characters.</FONT>
+<H4>8.7.3.11 Preferred long name for the observation  (ST)   00596</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the fully specified name for the observation or battery.  It may include the full (unabbreviated) multiple-word names and contain up to 200 characters. It should be as scientifically precise as possible.</FONT>
+<H4>8.7.3.12 Orderability  (ID)   00597</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether or not a test/observation is an orderable code.   Refer to <I>HL7 table </I><I>0136 - Yes/no indicator</I> for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y  the test/observation is an orderable code</FONT>
+<P>
+<FONT FACE="Times New Roman">N  the test/observation is not orderable</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, blood differential count is usually an orderable &quot;test,&quot; MCV, contained within the differential count, is usually not independently orderable.</FONT>
+<H4>8.7.3.13 Identity of Instrument used to perform this study  (CE)   00598</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: When applicable, this field contains the instrument or device that is used to generate this observation or battery.  Examples are the automated instrument in the laboratory, the imaging device and model number in radiology, and the automatic blood pressure machine on the ward.  The instrument is specified as a coded entry in anticipation that these identifiers could be specified as codes.  Initially, we expect that most of the information about devices will be transmitted as text in the second component of the CE identifier.  If more than one kind of instrument is used, all of them can be listed, separated by repeat delimiters.</FONT>
+<H4>8.7.3.14 Coded representation of method  (CE)   00599</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the method(s) used to produce the observation and should be recorded in a computer-understandable (coded) form here.  This field should report the same method(s) reported in narrative in the following field.  More than one method may be listed, but only if they produce results that are clinically indistinguishable.  Multiple methods must be separated by repeat delimiters.</FONT>
+<H4>8.7.3.15 Portable  (ID)   00600</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether or not a portable device may be used for the test/observation.  Refer to <I>HL7 table 0136 - Yes/no indicator</I> for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y  the observation can be obtained with a portable device brought to the patient</FONT>
+<P>
+<FONT FACE="Times New Roman">N  the patient or specimen must be transported to the device</FONT>
+<H4>8.7.3.16 Observation producing department/section  (CE)   00601</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field permits the sorting of observation orders and values by the providing service&#146;s department/section.  It provides &quot;source oriented&quot; reporting when required.  The codes for this field should be taken from ASTM Table 15 (Diagnostic Service Codes).  Free text may be used instead of these codes, but in that case, they should be recorded as the second &quot;component&quot; of the field to distinguish them from the standard codes.  Multiple codes in this field are separated by repeat delimiters.</FONT>
+<H4>8.7.3.17 Telephone number of section  (XTN)   00602</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the telephone number for calling responsible parties in this section to ask results or advice about the use of this test.</FONT>
+<H4>8.7.3.18 Nature of test/observation  (IS)   00603</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the definition entry identifies a test battery, an entire functional procedure or study, a single test value (observation), multiple test batteries or functional procedures as an orderable unit (profile), or a single test value (observation) calculated from other independent observations.  Refer to <I>user-defined table 0174 - Nature of test/observation</I> for suggested values.</FONT>
+<P>User-defined Table 0174 - Nature of test/observation
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P><B><U>Value</U></B>
+</TD><TD WIDTH=384 VALIGN=top >
+<P><B><U>Description</U></B></TD>
+</TR>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Profile or battery consisting of many independent atomic observations (e.g., SMA12, electrolytes), usually done at one instrument on one specimen</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">F</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Functional procedure that may consist of one or more interrelated measures (e.g., glucose tolerance test, creatine clearance), usually done at different times and/or on different specimens</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Atomic test/observation (test code or treatment code)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Superset--a set of batteries or procedures ordered under a single code unit but processed as separate batteries (e.g., routines = CBC, UA, electrolytes)</FONT>
+<P>
+<FONT FACE="Times New Roman">This set indicates that the code being described is used to order multiple test/observation batteries.  For example, a client who routinely orders a CBC, a differential, and a thyroxine as an outpatient profile might use a single, special code to order all three test batteries, instead of having to submit three separate order codes.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Single observation calculated via a rule or formula from other independent observations (e.g., Alveolar--arterial ratio, cardiac output)</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Codes P, F, and S identify sets (batteries) and should be associated with an OM5 segment that defines the list of elements.  The definitions for the contained elements would have to be sent in other independent OMx segments, one for each contained element.  In the ASTM context, most text reports--such as discharge summaries, admission H&amp;Ps, and chest x-ray reports--are considered as sets, in which each section of the report (e.g., description, impression, and recommendation of an x-ray report) is considered a separate observation.</FONT>
+<P>
+<FONT FACE="Times New Roman">Code A identifies a single direct observation and would usually be associated with an OM2 and/or OM3 segments.</FONT>
+<P>
+<FONT FACE="Times New Roman">Code C identifies a derived quantity and would usually be associated with an OM6 segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">All of these codes can be associated with one or more OM4 (specimen) segments.</FONT>
+<H4>8.7.3.19 Report subheader  (CE)   00604</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an optional string that defines the preferred header under which this observation should be listed on a standard display.  For example, if the test is hemoglobin, this string might be &quot;Complete blood count.&quot;  It is represented as a coded data type so that a battery can be a header.  Only the description part of the string may be included in case the subheader does not have an associated code.  When a series of observations is displayed according to the sort order given below, the subheader that groups those observations is presented whenever the subheader changes.</FONT>
+<H4>8.7.3.20 Report display order  (ST)   00605</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an optional string that defines the sort order in which this observation is presented in a standard report or display that contains the many observations.</FONT>
+<H4>8.7.3.21 Date/time stamp for any change in definition for the observation  (TS)   00606</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time that the last of any field change was made and in the host&#146;s record corresponding to the OM1 segment.</FONT>
+<H4>8.7.3.22 Effective date/time of change in test procedure that make results non-comparable  (TS)  00607</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time of the last change in the test procedure that would make previous results incompatible with new results, e.g., the last time that normal reference range or units changed for a numeric test/observation.</FONT>
+<P>
+<FONT FACE="Times New Roman">We strongly suggest that observation producers never use the same observation ID when the measurement procedures change in such a way that results produced under the new procedure are clinically different from those produced with the old procedure. Rather, the producer should try to adjust the new procedure so that its values are clinically indistinguishable from the old. Failing that, one should create a new observation ID for the observation produced under the new procedure.</FONT>
+<P>
+<FONT FACE="Times New Roman">In the rare circumstances when a procedure change occurs and neither of the above two options is viable, this field shall be used to transmit the effective date-time of the new procedure. The receiving system shall assume that any values that come across under this observation ID are under the new procedure after this date and take appropriate steps to distinguish the old from the new observations.</FONT>
+<P>
+<FONT FACE="Times New Roman">This number is included to provide a means of communicating with the observation producing service when they have questions about particular observations or results.</FONT>
+<H4>8.7.3.23 Typical turn-around time from receipt of specimen/subject to result produced  (NM)   00608</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the typical processing time for single test/observation.  This field indicates the time from the delivery of a specimen or transport of a patient to a diagnostic service and the completion of the study.  It includes the usual waiting time.  The units are measured in minutes. </FONT>
+<H4>8.7.3.24 Processing time  (NM)   00609</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the usual length of time (in minutes) between the start of a test process and its completion.</FONT>
+<H4>8.7.3.25 Processing priority  (ID)   00610</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains one or more available priorities for performing the observation or test.  This is the priority that can be placed in <I>OBR-28-quantity/timing</I>.  For tests that require a specimen, this field may contain two components in the format &lt;specimen priority&gt;^&lt;processing priority&gt;.  The first component in this case indicates the priority with which the specimen will be collected and is the priority that is specified in an OBR segment when ordering the observation.  The second component indicates the corresponding priority with which the producer service will process the specimen, produce the observation, and return results, when this differs from collection priority.  Refer to <I>HL7 table 0168 - Processing priority</I> for valid values.</FONT>
+<P>Table 0168 - Processing priority
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=370 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">Stat (do immediately)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">As soon as possible (a priority lower than stat)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">Routine</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preoperative (to be done prior to surgery)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">Timing critical (do as near as possible to requested time)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">Measure continuously (e.g., arterial line blood pressure)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=370 VALIGN=top >
+<P>
+<FONT SIZE="-1">Do at bedside or portable (may be used with other codes)</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">The priority for obtaining the specimen is included in OM4.  Multiple priorities may be given, separated by repeat delimiters.  For example, S~A~R~P~T indicates that the test may be ordered using codes S, A, R, P, or T.</FONT>
+<H4>8.7.3.26 Reporting priority  (ID)   00611</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the available priorities reporting the test results when the user is asked to specify the reporting priority independent of the processing priority.  Refer <I>to HL7 table 0169 - Reporting </I><I>priority</I> for valid values.</FONT>
+<P>Table 0169 - Reporting priority
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=372 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=372 VALIGN=top >
+<P>
+<FONT SIZE="-1">Call back results</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=372 VALIGN=top >
+<P>
+<FONT SIZE="-1">Rush reporting</TD></TR></FONT></TABLE><H4>8.7.3.27 Outside site(s) where observation may be performed  (CE)   00612</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the  identification(s) of the outside service(s) that produce the observation.  The format of this CE field uses the producer ID (as defined in <I>OM1-6-producer ID) </I>and the name of the service separated by component delimiters.  An example is 39221^ACME lab^MC.  If multiple services are used, they should be separated by repeat delimiter(s).</FONT>
+<H4>8.7.3.28 Address of outside site(s)  (XAD)   00613</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;street address (ST)&gt;  ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt;  ^ &lt;state or province (ST)&gt;  ^ &lt;zip or postal code (ST)&gt; ^ &lt;country (ID)&gt; ^ &lt;address type&gt; (ID)&gt; ^ &lt;other geographic designation (ST)&gt; ^ &lt;country/parish code (IS)&gt; ^ &lt;census tract (S)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the address of the outside services listed in <I>OM1-28-outside site(s)</I> where observation may be performed.  If multiple services are recorded in that field, their addresses should be separated by repeat delimiters, and the addresses should appear in the same order in which the services appear in the preceding field.</FONT>
+<H4>8.7.3.29 Phone number of outside site  (XTN)   00614 </H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;county code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM) ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt; </FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the telephone number of the outside site.</FONT>
+<H4>8.7.3.30 Confidentiality code  (IS)   00615</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the degree to which special confidentiality protection should be applied to the observation.  For example, a tighter control may be applied to an HIV test than to a CBC.  Refer to <I>user-defined table 0177 - Confidentiality code</I> for suggested values.</FONT>
+<P>User-defined Table 0177 - Confidentiality code
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">V</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Very restricted</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Restricted</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">U</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Usual control</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EMP</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Employee</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">UWM</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Unwed mother</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">VIP</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Very important person or celebrity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PSY</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Psychiatric patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AID</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AIDS patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">HIV</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">HIV(+) patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ETH</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Alcohol/drug treatment patient</TD></TR></FONT></TABLE><H4>8.7.3.31 Observations required to interpret this observation  (CE)   00616</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the list of variables that the diagnostic service needs to interpret the results of an ordered study.  The observations specified here should be sent to the diagnostic service as OBX segments along with the order (OBR) segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">Example for cervical pap smear:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>2000.32^date last menstrual period^AS4~2000.33^menstrual state^AS4</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Example for arterial blood gas:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>94700^inspired 02^AS4</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">These examples use AS4 codes in code/text format to identify the variables.  Separate multiple items by repeat delimiters.</FONT>
+<H4>8.7.3.32 Interpretation of observations  (TX)   00617</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the clinical information about interpreting test results.  Examples are the conditions (drugs) that may cause false abnormals, and the information about the sensitivity and specificity of the test for diagnoses.</FONT>
+<H4>8.7.3.33 Contraindications to observations  (CE)   00618</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the diagnosis or problem for which the test is a contraindication or of possible danger (e.g., pacemaker, pregnancy, diabetes).  For example, if the test identified in OM1 was an intravenous pyelogram, this field would include warnings about the use of contrast media in diabetes. The contraindication diagnoses should be separated by repeat delimiters.</FONT>
+<P>
+<FONT FACE="Times New Roman">Most contraindication rules will be transmitted as free text.  In such cases, the contents serves only as information for human reading.  However, an alternative for machine readable contraindication rules also exists. The rule may be defined formally in the Arden Syntax (ASTM 1460-1992) which has syntax for defining algebraic and transcendental equations, as well as temporal and logical selection criteria based on patient information stored in the computer record. Reflex rules that are written in Arden Syntax should begin and end with a double semi-colon (;;), the Arden slot delimiter.</FONT>
+<H4>8.7.3.34 Reflex tests/observations  (CE)   00619</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the test names as type CE (i.e., &lt;code&gt;^&lt;text name&gt;^&lt;coding system&gt;) that may be ordered automatically by the diagnostic service, depending on the results obtained from the ordered battery.  A screening CBC might trigger a reticulocyte count if the Hgb is less than 12.  Multiple reflex tests are separated by repeat delimiters.</FONT>
+<H4>8.7.3.35 Rules that trigger reflex testing  (TX)   00620</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the rules that trigger the reflex tests listed above.  If multiple reflex tests are listed in <I>OM1-34-reflex tests/observations</I> separated by repeat delimiters, a set of corresponding rules will be included in this section.  The first rule will apply to the first test, the second to the second test, and so on. </FONT>
+<P>
+<FONT FACE="Times New Roman">Most reflex rules will usually be transmitted as free text.  In such cases, the contents serve only as information for human reading.  However, an alternative for machine readable rules also exists. The rule may be defined formally in the Arden Syntax (ASTM 1460-1992) which has syntax for defining algebraic and transcendental equations, as well as temporal and logical selection criteria based on patient information stored in the computer record.  Reflex rules that are written in Arden Syntax should begin and end with a double semi-colon (;;), the Arden slot delimiter.</FONT>
+<H4>8.7.3.36 Fixed canned message  (CE)   00621</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the codes and a fixed text message that is always associated with an abbreviation.  The field may include multiple messages separated by repeat delimiters.</FONT>
+<P>
+<FONT FACE="Times New Roman">Most rules about patient testing will be transmitted as free text.  In such cases, the contents serves only as information for human reading.  However, an alternative for machine readable rules also exists. The rule may be defined formally in the Arden Syntax (ASTM 1460-1992) which has syntax for defining algebraic and transcendental equations, as well as temporal and logical selection criteria based on patient information stored in the computer record.  Rules about patient preparation are written in Arden Syntax should begin and end with a double semi-colon (;;), the Arden slot delimiter.</FONT>
+<H4>8.7.3.37 Patient preparation  (TX)   00622</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the tests or observations that require special patient preparation, diet, or medications.  For GI contrast studies, this field would contain the pretest diet, e.g., low residue for two days, NPO before study, and the preferred purgatives.  Each separate med, diet, or preparation should be delimited by a repeat delimiter.  Separate each requirement by a repeat delimiter.  Example for a sigmoidectomy: clear liquid diet full day before procedure~take 8 oz mag citrate 6pm day before procedure~take 2 ducat tabs (5m) at 4pm day before procedure~NPO past midnight.</FONT>
+<H4>8.7.3.38 Procedure medication  (CE)   00623</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the treatments that may be needed as part of the procedure.  Examples are radioactive iodine for a thyroid screen, and methacholine for a methacholine spirometry challenge.  This field should be identified as a CE data type.</FONT>
+<H4>8.7.3.39 Factors that may effect the observation  (TX)   00624</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the text description of the foods, diagnoses, drugs, or other conditions that may influence the interpretation of the observation. Information about the direction of the effect, and any recommendation about altering the diet, conditions, or drug before initiating the test observation.</FONT>
+<P>
+<FONT FACE="Times New Roman">Most rules about factors that effect the test interpretation will be transmitted as free text.  In such cases, the contents serves only as information for human reading.  However, an alternative for machine readable rules also exists.  The rule may be defined formally in the Arden Syntax (ASTM 1460-1992) which has syntax for defining algebraic and transcendental equations, as well as temporal and logical selection criteria based on patient information stored in the computer record. Rules about patient preparation are written in Arden Syntax and should begin and end with a double semi-colon (;;), the Arden slot delimiter.</FONT>
+<H4>8.7.3.40 Test/observation performance schedule  (ST)   00625</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the diagnostic studies/tests that are performed only at certain times during the course of a work day or work week.  This field indicates the maximum interval between successive test performances (the test may actually be performed more frequently). The format given in Chapter 4, Section 4.4.2.1, &quot;Repeat Pattern,&quot; should be used.  If necessary, multiple codes may be given, separated by repeat delimiters.  The use of multiple codes indicates that the test is performed at multiple concurrent intervals.  For example, Q6H indicates that the test is performed at least once every 6 hours around the clock.   QJ1 indicates that the test is performed at least every week on Mondays.  QAM~QPM indicates that the test is performed at least once every morning and every evening. QJ1~QJ3~QJ5 indicates that the test is performed at least every week on Mondays, Wednesdays, and Fridays.  C indicates that the test is performed continuously, 7 days per week.</FONT>
+<H4>8.7.3.41 Description of test methods (may include bibliographic citations)  (TX)   00626</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the text description of the methods used to perform the text and generate the observations.  Bibliographic citations may be included.</FONT>
+<H4>8.7.3.42 Kind of quantity observed  (CE)   00937</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definitions:  This optional attribute describes the underlying kind of property represented by this observation.  This attribute distinguishes concentrations from total amounts, molar concentrations from mass concentrations, partial pressures from colors, and so forth.  These are discussed more fully in the LOINC Users&#146; Manual.<SUP>1</SUP>  They are derived from the approach described in 1995 edition of the IUPAC Silver Book. [ International Union of Pure and Applied Chemistry/International Federation of Clinical Chemistry.  The Silver Book: Compendium of terminology and nomenclature of properties in clinical laboratory sciences. Oxford: Blackwell Scientific Publishers, 1995.</FONT>]  These distinctions are used in IUPAC and LOINC standard codes.  Defined categories are listed in <I>HL7 table 0254 - Kind of quantity</I>.
+<P>
+<FONT FACE="Times New Roman">The distinctions of true quantities in this table are based primarily on dimensional analyses. The table contains a number of &quot;families,&quot; those related to simple counts (number, number concentration, etc.), to mass (mass, mass concentration, etc.), to enzyme activity (catalytic content, catalytic concentration, etc.), and molar or equivalents (substance content, substance concentration).  </FONT>
+<P>
+<FONT FACE="Times New Roman">By this classification, a glucose (in the US) would be classed as a mass concentration. A sodium would be classed as a substance concentration. Within the family, a total amount should be described as the unadorned variant; e.g., the property of measure for a patient&#146;s weight would be mass, not mass content.  Most chemical measures produce concentrations, as exemplified by sodium and glucose. However, a 24-hour urine protein is not a mass concentration, but a mass rate (mass per unit time).  The content variants (e.g., mass content, substance content) are used to reflect an amount per mass (usually) of tissue.</FONT>
+<P>
+<FONT FACE="Times New Roman">This attribute would be valued in a master file only if the service sending the master file classified observations by their principle of measurement.</FONT>
+<P>
+<FONT FACE="Times New Roman">Table 0254 - Kind of quantity</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=281 VALIGN=top >
+<P>
+<FONT SIZE="-1">Enzymatic Activity</FONT>
+</TD><TD COLSPAN=2 WIDTH=342 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other Properties</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CACT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Catalytic Activity</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ABS</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Absorbance</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Catalytic Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ACT</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Activity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CCRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Catalytic Concentration Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">APER</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Appearance</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CCNT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Catalytic Content</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ARB</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Arbitrary</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CFR</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Catalytic Fraction</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">AREA</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Area</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CRAT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Catalytic Rate</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ASPECT</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Aspect</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">CRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Catalytic Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">CLAS</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Class</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=281 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Entitic</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">CNST</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Constant</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">ENT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Entitic</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">COEF</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Coefficient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">ENTSUB</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Entitic Substance of Amount</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">COLOR</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Color</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">ENTCAT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Entitic Catalytic Activity</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">CONS</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Consistency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">ENTNUM</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Entitic Number</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">DEN</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Density</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">ENTVOL</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Entitic Volume</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">DEV</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Device</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=281 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Mass</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">DIFF</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Difference</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MASS</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ELAS</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Elasticity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ELPOT</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Electrical Potential (Voltage)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MCRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass Concentration Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ELRAT</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Electrical current (amperage)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MCNT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Mass Content</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ELRES</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Electrical Resistance</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MFR</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass Fraction</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">ENGR</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Energy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MINC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass Increment</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">EQL</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Equilibrium</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MRAT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass Rate</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">FORCE</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Mechanical force</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">MRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Mass Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">FREQ</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Frequency</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=281 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Counts</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">IMP</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Impression/ interpretation of study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">NUM</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Number</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">KINV</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Kinematic Viscosity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">NCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Number Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Length</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">NCNT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Number Content</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">LINC</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Length Increment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">NFR</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Number Fraction</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">LIQ</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Liquifaction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">NRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Number Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">MGFLUX</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Magnetic flux</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=281 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Substance Amount (Moles/Millequivalents)</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">MORPH</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Morphology</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SUB</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Amount</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">MOTIL</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Motility</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">OD</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Optical density</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SCRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Concentration Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">OSMOL</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Osmolality</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SCNT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Content</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">PRID</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Presence/Identity/Existence</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SCNTR</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Content Rate</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">PRES</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Pressure (Partial)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SFR</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Fraction</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">PWR</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Power (wattage)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SCNCIN</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Concentration Increment</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">RANGE</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Ranges</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SRAT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Rate</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">RATIO</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Ratios</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">SRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Substance Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">RDEN</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Relative Density</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=281 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Volumes</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">REL</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Relative</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">VOL</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Volume</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">SATFR</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Saturation Fraction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">VCNT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Volume Content</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">SHAPE</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Shape</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">VFR</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Volume Fraction</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">SMELL</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Smell</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">VRAT</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Volume Rate</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">SUSC</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Susceptibility</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">VRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Volume Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">TASTE</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Taste</TD>
+</TR></FONT>
+<TR>
+<TD COLSPAN=2 WIDTH=281 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Miscellaneous Unit Measures</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">TEMP</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Temperature</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">ACNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1"> Concentration, Arbitrary Substance</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">TEMPDF</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Temperature Difference</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">RLMCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Relative Mass Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">TEMPIN</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Temperature Increment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">RLSCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Relative Substance Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">TITR</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Dilution Factor (Titer)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">THRMCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Threshold Mass Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">TYPE</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">THRSCNC</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Threshold Substance Concentration</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">VEL</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Velocity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top ><BR></TD>
+<TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">VELRT</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Velocity Ratio</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">TIME</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Time (e.g. seconds)</FONT>
+</TD><TD WIDTH=90 VALIGN=top >
+<P>
+<FONT SIZE="-1">VISC</FONT>
+</TD><TD WIDTH=252 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Viscosity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">TMDF</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Time Difference</FONT>
+</TD><TD WIDTH=90 VALIGN=top ><BR></TD>
+<TD WIDTH=252 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">TMSTP</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Time Stamp -- Date and Time</FONT>
+</TD><TD WIDTH=90 VALIGN=top ><BR></TD>
+<TD WIDTH=252 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">TRTO</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Time Ratio</FONT>
+</TD><TD WIDTH=90 VALIGN=top ><BR></TD>
+<TD WIDTH=252 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">RCRLTM</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Reciprocal Relative Time</FONT>
+</TD><TD WIDTH=90 VALIGN=top ><BR></TD>
+<TD WIDTH=252 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=84 VALIGN=top >
+<P>
+<FONT SIZE="-1">RLTM</FONT>
+</TD><TD WIDTH=197 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Relative Time</FONT>
+</TD><TD WIDTH=90 VALIGN=top ><BR></TD>
+<TD WIDTH=252 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD COLSPAN=4 WIDTH=624 VALIGN=top >
+<P>
+<FONT SIZE="-1">*Starred items are adopted from the IUPAC Silver Book,<SUP>2</SUP> non-starred items are extensions.</FONT>
+</TD></TR></TABLE><H4>8.7.3.43 Point versus interval  (CE)   00938</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional attribute allows master files to classify observations as measuring the patient&#146;s state at a point in time (e.g., spot urines, random urines, serum potassium), or averaged over a interval of time (e.g., concentration, total amount, or clearance over a 24-hour collection).  Interval measures most often apply to urine and stool specimens (e.g., 24-hour urines, 3-day stool fats).  They also apply to clinical measurements such as urine outputs, which are reported as shift totals and 24-hour totals, and event counts on physiologic monitors such as the number of PVCs on a 24-hour Holter monitor.  </FONT>
+<P>
+<FONT FACE="Times New Roman">This field would only be valued in a transaction if the service sending this master file message classified its observation by point versus time interval. This field is not used to record the time collection interval for a particular sample. It is used to specify a characteristic of an observation which has a defined normal range and to distinguish observations of the same kind but observed over varying periods of time.  A spot urine sodium would have PT stored in this field. A 24-hour urine sodium and a 24-hour Holter monitor would have 24H stored here. This attribute would only be valued if the filling service classified its observations by timing.  Refer to <I>user-defined table 0255 - Duration categories</I> for suggested values.</FONT>
+<P>
+<FONT FACE="Times New Roman">User-defined Table 0255 - Duration categories</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PT</FONT>
+</TD><TD COLSPAN=5 WIDTH=365 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">To identify measures at a point in time.  This is a synonym for &quot;spot&quot; or &quot;random&quot; as applied to urine measurements.</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">* (star)</FONT>
+</TD><TD COLSPAN=5 WIDTH=365 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Life of the &quot;unit.&quot;  Used for blood products.</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">30M</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">30 minutes</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">7H</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">7 hours</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">6D</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">6 days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">1H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">1 hour</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">8H</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">8 hours</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">1W</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">1 week</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2 hours</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">12H</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">12 hours</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2W</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2 weeks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2.5H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2&#189; hours</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">24H</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">24 hours</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3W</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3 weeks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3 hours</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2D</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2 days</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">4W</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">4 weeks</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">4H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">4 hours</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3D</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3 days</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">1L</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">1 months (30 days)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">5H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">5 hours</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">4D</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">4 days</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2L</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">2 months</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">6H</FONT>
+</TD><TD WIDTH=81 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">6 hours</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">5D</FONT>
+</TD><TD WIDTH=65 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">5 days</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3L</FONT>
+</TD><TD WIDTH=123 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">3 months</TD></TR></FONT></TABLE><H4>8.7.3.44 Challenge information  (TX)   00939</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional attribute provides information for classifying observations by the challenge component of the test, if a challenge does speciate the observation.  For example, distinguishing tests that have a challenge component in database. There co-ascribes the physiologic or drug challenge that is intrinsic to the measurement. To identify, for example, tests that include a glucose challenge.  </FONT>
+<P>
+<FONT FACE="Times New Roman">To construct this text string, use the following template.  (Note:  This field is not constructed of formally defined components; it is a free text field.  Component delimiters are not used and it is not necessary to supply placeholders if some &quot;components&quot; are not used.)</FONT>
+<P>
+<FONT FACE="Times New Roman">The time delay follows the syntax: n&lt;S|M|H|D|W&gt; where  n is a number (possibly a decimal);   S denotes seconds;  M denotes minutes;  H denotes hours;  D denotes days; and W denotes weeks.  The time delay can be preceded by a &#145;greater than&#146; (&gt;) sign, e.g. &gt;4H.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>HL7 table 0256 - Time delay post challenge</I> lists possible values for time delay.</FONT>
+<P>
+<FONT FACE="Times New Roman">Examples</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRE 100 GM GLUCOSE PO</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRE 100 GM GLUCOSE PO</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>30M POST 100 GM GLUCOSE PO</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>2H POST 100 GM GLUCOSE PO</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>TROUGH</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">For drug peak and trough measures the nature of the substance challenged is the same as the analyte name, and need not be included. </FONT>
+<P>
+<FONT FACE="Times New Roman">We denote the route of the challenge via abbreviations for medication routes (see Chapter 4, Section 4.8.3.1, &quot;Route,&quot; <I>HL7 table 0162 - Route of administration</I>).  An oral route of administration would be denoted by &quot;PO,&quot; an intravenous route by &quot;IV.&quot; </FONT>
+<P>
+<FONT FACE="Times New Roman">Details of the drug dose, time the dose was given, route of administration, etc., would be noted in separate OBX, and would have corresponding master observation definitions stored in the observation master file map to different records stored in the master file segments contained in the drug level message.</FONT>
+<P>
+<FONT FACE="Times New Roman">Table 0256 - Time delay post challenge</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>
+<FONT SIZE="-1">BS   Baseline (time just before the challenge)</FONT>
+<P>
+<FONT SIZE="-1">PEAK  The time post drug dose at which the highest drug level is reached (differs by drug)</FONT>
+<P>
+<FONT SIZE="-1">TROUGH  The time post drug dose at which the lowest drug level is reached (varies with drug)</FONT>
+<P>
+<FONT SIZE="-1">RANDOM  Time from the challenge, or dose not specified. (random)</FONT>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>
+<FONT SIZE="-1">n minutes/hours/days/weeks/months/etc. after challenge begun:</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">1M   1 minute post challenge</FONT>
+<P>
+<FONT SIZE="-1">2M   2 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">3M   3 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">4M   4 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">5M   5 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">6M   6 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">7M   7 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">8M   8 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">9M   9 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">10M   10 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">15M   15 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">20M   20 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">25M   25 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">20M   30 minutes post challenge</FONT>
+<P>
+<FONT SIZE="-1">1H   1 hour post challenge</FONT>
+<P>
+<FONT SIZE="-1">2H   2 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">2.5H   2 1/2 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">3H   3 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">4H   4 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">5H   5 hours post challenge</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">6H    6 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">7H   7 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">8H    8 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">8H SHIFT  8 hours aligned on nursing shifts</FONT>
+<P>
+<FONT SIZE="-1">12H    12 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">24H    24 hours post challenge</FONT>
+<P>
+<FONT SIZE="-1">2D    2 days</FONT>
+<P>
+<FONT SIZE="-1">3D    3 days</FONT>
+<P>
+<FONT SIZE="-1">4D    4 days</FONT>
+<P>
+<FONT SIZE="-1">5D    5 days</FONT>
+<P>
+<FONT SIZE="-1">6D    6 days</FONT>
+<P>
+<FONT SIZE="-1">7D    7 days</FONT>
+<P>
+<FONT SIZE="-1">1W    1 week</FONT>
+<P>
+<FONT SIZE="-1">10D   10 days </FONT>
+<P>
+<FONT SIZE="-1">2W    2 weeks</FONT>
+<P>
+<FONT SIZE="-1">3W    3 weeks</FONT>
+<P>
+<FONT SIZE="-1">4W    4 weeks</FONT>
+<P>
+<FONT SIZE="-1">1L    1 month (30 days) post challenge</FONT>
+<P>
+<FONT SIZE="-1">2L    2 months (60 days) post challenge</FONT>
+<P>
+<FONT SIZE="-1">3L    3 months (90 days) post challenge</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The nature of a physiologic (non-drug) challenge may also be specified, using the terms in<I> HL7 table 0257 - </I><I>Nature of challenge.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">Table 0257 - Nature of challenge</FONT>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=134 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1"><B>Value</B></FONT>
+</TD><TD WIDTH=385 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=134 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CFST</FONT>
+</TD><TD WIDTH=385 VALIGN=top >
+<P>
+<FONT SIZE="-1">Fasting (no calorie intake) for the period specified in the time component of the term, e.g., 1H POST CFST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=134 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">EXCZ</FONT>
+</TD><TD WIDTH=385 VALIGN=top >
+<P>
+<FONT SIZE="-1">Exercise undertaken as challenge (can be quantified)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=134 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FFST</FONT>
+</TD><TD WIDTH=385 VALIGN=top >
+<P>
+<FONT SIZE="-1">No fluid intake for the period specified in the time component of the term</TD></TR></FONT></TABLE></CENTER><H4>8.7.3.45 Relation modifier (CE)   00940</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional attribute provides a mechanism for classifying observations according to the subject, in relation to the patient whose results might be stored with as &quot;patient&quot; data. It is standard practice, for example, to report values for controls, donors, and blood product units as well as the patient&#146;s own values, and store them in the patient&#146;s record. (This may not be the best way to model such information, but it is the way it is usually reported.) This should be valued when two values (e.g., one for patient and one for a blood product unit) could otherwise be confused.</FONT>
+<P>
+<FONT FACE="Times New Roman">The default value is &quot;Patient,&quot; and if not specified, this value is assumed.  The persons sub-component can refer to <I>HL7 table 0258 - Relationship modifier</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0258 - Relationship modifier</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=109 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1"><B>Value</B></FONT>
+</TD><TD WIDTH=230 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=109 VALIGN=top >
+<P>
+<FONT SIZE="-1">CONTROL</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">Control</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=109 VALIGN=top >
+<P>
+<FONT SIZE="-1">PATIENT</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=109 VALIGN=top >
+<P>
+<FONT SIZE="-1">DONOR</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">Donor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=109 VALIGN=top >
+<P>
+<FONT SIZE="-1">BPU</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">Blood product unit</TD></TR></FONT></TABLE></CENTER><H4>8.7.3.46 Target anatomic site of test  (CE)   00941</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional attribute formally indicates the site of the observation (to make it easy for a system to find all tests related to one anatomic site). It can be used to classify the observation by target site of the examination.  For example, &quot;heart&quot; might be recorded as the target of the electrocardiogram, cardiac echo, and thallium exercise test.  This attribute would be applicable to most imaging and electro-physiologic examinations. The SNOMED topology axis is an example of a coding system for anatomic sites.  User-defined tables may also apply here.</FONT>
+<H4>8.7.3.47 Modality of imaging measurement  (CE)   00942</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional attribute describes the modality used to classify the observations, e.g., radiograph, ultrasound, CT scan, NMR, etc..  This attribute is especially important for imaging studies.  Refer to <I>user-defined table 0259 - Modality</I> for<I> </I>suggested values; it is adopted from DICOM C.7.3.1.1.1 Modality.  If these are used, the code source ID would be DCM.</FONT>
+<P>User-defined Table 0259 - Modality
+
+<TABLE >
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Value</B></FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Description</B></FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Value</B></FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AS</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Angioscopy</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FS</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Fundoscopy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">BS</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Biomagnetic Imaging </FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LP</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Laparoscopy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CD</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Color Flow Doppler</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LS</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Laser Surface Scan</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CP</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Colposcopy</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MA</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Magnetic Resonance Angiography</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CR</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Computed Radiography</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MS</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Magnetic Resonance Spectroscopy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CS</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Cystoscopy</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">NM</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Nuclear Medicine (radioisotope study)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CT</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Computed Tomography</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OT</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Other</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DD</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Duplex Doppler</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PT</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Positron Emission Tomography (PET)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DG</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Diapanography</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RF</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Radio Fluoroscopy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DM</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Digital Microscopy</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ST</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Single Photon Emission Computed Tomography (SPECT)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EC</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Echocardiography</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TG</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Thermography</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ES</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Endoscopy</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">US</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ultrasound</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FA</FONT>
+</TD><TD WIDTH=218 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Fluorescein Angiography</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">XA</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">X-Ray Angiography</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch800023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

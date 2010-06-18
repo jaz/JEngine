@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>2.11 CHAPTER FORMATS FOR DEFINING HL7 MESSAGES</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200082.htm">
+<LINK REL="Previous" HREF="ch200080.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200080.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200082.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E20"></A>
+<P>
+<FONT SIZE="+2"><B>2.11</B><B> </B><B>CHAPTER FORMATS FOR DEFINING HL7 MESSAGES</B><A NAME="I2"></A></FONT>
+<P>Subsequent chapters of this document describe messages that are exchanged among applications in functionally specific situations.  Each chapter is organized as follows:
+<P>
+<FONT FACE="Times New Roman">a) purpose.  This is an overview describing the purpose of the chapter, general information and concepts.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) trigger events and messages.  There is a list of the trigger events.  For each trigger event the messages that are exchanged when the trigger even occurs are defined using the HL7 abstract message syntax as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">Each message is defined in special notation that lists the segment IDs in the order they would appear in the message.  Braces, { . . . }, indicate one or more repetitions of the enclosed group of segments.  (Of course, the group may contain only a single segment.)  Brackets, [  . . . ], show that the enclosed group of segments is optional.  If a group of segments is optional and may repeat it should be enclosed in brackets and braces, { [ . . . ] }. </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=536 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> [{...}] and {[...]} are equivalent.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Whenever braces or brackets enclose more than one segment ID a special stylistic convention is used to help the reader understand the hierarchy of repetition.  For example, the first segment ID appears on the same line as the brace, two columns to the right.  The subsequent segment IDs appear under the first.  The closing brace appears on a line of its own in the same column as the opening brace.  This convention is an optional convenience to the user.  If there is conflict between its use and the braces that appear in a message schematic, the braces define the actual grouping of segments that is permitted.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) message segments.  The segments defined in a chapter are then listed in a functional order designed to maximize conceptual clarity.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) examples.  Complete messages are included.</FONT>
+<P>
+<FONT FACE="Times New Roman">e) implementation considerations.  Special supplementary information is presented here.  This includes issues that must be addressed in planning an implementation. </FONT>
+<P>
+<FONT FACE="Times New Roman">f) outstanding issues.  Issues still under consideration or requiring consideration are listed here.</FONT>
+<P>Consider the hypothetical triggering event <B>a widget report is requested</B>.  It might be served by the Widget Request (WRQ) and Widget Report (WRP) messages.  These would be defined in the Widget chapter (say Chapter XX).  The Widget Request message might consist of the following segments: Message Header (MSH), Widget ID (WID).  The Widget Report message might consist of the following segments: Message Header (MSH),  Message acknowledgment (MSA), one or more Widget Description (WDN) Segments each of which is followed by a single Widget Portion segment (WPN) followed by zero or more Widget Portion Detail (WPD) segments.  
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200080.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200082.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

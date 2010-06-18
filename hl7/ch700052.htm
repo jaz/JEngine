@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>7.14 WAVEFORM SUMMARY</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700053.htm">
+<LINK REL="Previous" HREF="ch700051.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700051.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700053.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E77"></A>
+<P>
+<FONT SIZE="+2"><B>7.14</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><B>WAVEFORM SUMMARY</B></FONT>
+<P>HL7 support for waveform data is intended to provide access to waveform data in a variety of situations. Needs include remote access to waveform data, research, and input to clinical decision making, as well as obtaining snippets of waveform data to complete waveform data sets. In some cases, predominantly in research oriented environments, a physician may want to manually interpret, scale the raw data, and/or apply alternative algorithms to the raw data values. In these environments, the review of waveform data includes the processing of the raw data. The HL7 waveform data capabilities allow for these applications, including data collection information such as skew between channels, in-band with the waveform.
+<P>Waveform observations, like other results, can be transmitted in solicited mode (in response to a query) or in unsolicited mode - see Section <A HREF="ch700006.htm#I10">7.2</A>, &quot;<A HREF="ch700006.htm#I12">MESSAGE DEFINITIONS</A> ,&quot; for discussion.  In either mode of transmission the timing information, channel definition, annotations, and digital time series data in the waveform recording are treated as individual &quot;observations&quot; within a result &quot;battery.&quot;  For a given &quot;battery,&quot; each of the result fragments is transmitted in a separate OBX segment, where the Observation ID suffix for the OBX is used to identify the result fragment.  To reduce ambiguity, an explicit framework for defining the structure of waveform result messages is provided.  The elements of that framework include the following:
+<P>&#149; Waveform specific data types which enable transmission of channel definition and waveform data
+<P>&#149; Waveform specific Observation ID suffixes (<I>OBX-3-observation identifier</I>) which uniquely identify the category of waveform result in a given OBX segment
+<P>&#149; Fixed rules for combining OBX segments of each category in the waveform response messages
+<P>&#149; Explicit definition of which OBX fields may be populated for each category of waveform result
+<P>&#149; Unique trigger events which identify result messages which contain batteries of waveform result OBX segments
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700051.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700053.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

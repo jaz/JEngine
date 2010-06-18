@@ -1,0 +1,314 @@
+<HTML>
+<HEAD>
+<TITLE>10.5.8 APR - appointment preferences segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100067.htm">
+<LINK REL="Previous" HREF="ch100065.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100065.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100067.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E471"></A>
+<H3><B>10.5.8</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>APR - appointment preferences segment</B><A NAME="I4"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The APR segment contains parameters and preference specifications used for requesting appointments in the SRM message.  It allows placer applications to provide coded parameters and preference indicators to the filler application, to help determine when a requested appointment should be scheduled.  An APR segment can be provided in conjunction with either the ARQ segment or any of the service and resource segments (AIG, AIS, AIP, and AIL).  If an APR segment appears in conjunction with an ARQ segment, its parameters and preference indicators pertain to the schedule request as a whole.  If the APR segment appears with any of the service and resource segments, then its parameters and preferences apply only to the immediately preceding service or resource.</FONT>
+<P>Figure 10-10.  APR attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=38 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">R/O/C</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=242 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">SVC</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0294</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00908</FONT>
+</TD><TD WIDTH=242 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time Selection Criteria</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">SVC</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00909</FONT>
+</TD><TD WIDTH=242 VALIGN=top >
+<P>
+<FONT SIZE="-1">Resource Selection Criteria</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">SVC</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00910</FONT>
+</TD><TD WIDTH=242 VALIGN=top >
+<P>
+<FONT SIZE="-1">Location Selection Criteria</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=53 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00911</FONT>
+</TD><TD WIDTH=242 VALIGN=top >
+<P>
+<FONT SIZE="-1">Slot Spacing Criteria</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">SVC</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00912</FONT>
+</TD><TD WIDTH=242 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Override Criteria</TD></TR></FONT></TABLE><P>10.5.8.0   APR field definitions
+<H4>10.5.8.1 <A NAME="I5"></A>Time selection criteria<A NAME="I6"></A>  (SVC)   00908</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;parameter class (IS)&gt; ^ &lt;parameter value (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to communicate parameters and preferences to the filler application regarding the selection of an appropriate time slot for an appointment.  The first component of this field is a code identifying the parameter or preference being passed to the filler application.  The second component is the actual data value for that parameter.</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, if a filler application allows preference parameters to be passed to specify a preferred start time, a preferred end time, and preferred days of the week for the appointment, it may define the following parameter class codes and valid data sets.</FONT>
+<P>User-defined Table 0294 - Time selection criteria parameter class codes
+
+<TABLE >
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Parameter Class</U></B></FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description:  Valid Values</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PREFSTART</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">The preferred start time for the appointment request, service or resource.   Any legal time specification in the format HHMM, using 24-hour clock notation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PREFEND</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">The preferred end time for the appointment request, service or resource.  Any legal time specification in the format HHMM, using 24-hour clock notation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MON</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Monday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TUE</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Tuesday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">WED</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Wednesday is or is not preferred for the day on which the appointment will occur. OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">THU</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Thursday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FRI</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Friday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SAT</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Saturday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SUN</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Sunday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Given this set of parameter class codes and valid value sets, a placer may indicate a preferred start time of 8:00 AM on Monday, Wednesday or Friday by specifying the following in <I>APR-1-time selection criteria</I>:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...|PREFSTART^0800~MON^OK~WED^OK~FRI^OK~TUE^NO~THU^NO~SAT^NO~SUN^NO|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The valid set of preferences should be determined by the placer and filler applications during implementation of the interface.</FONT>
+<H4>10.5.8.2 Resource selection criteria<A NAME="I7"></A>  (SVC)   00909</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;parameter class (IS)&gt; ^ &lt;parameter value (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to communicate parameters and preferences to the filler application regarding the selection of an appropriate resource for an appointment.  The first component of this field is a code identifying the parameter or preference being passed to the filler application.  The second component is the actual data value for that parameter.</FONT>
+<P>
+<FONT FACE="Times New Roman">Refer to Section <A HREF="ch100066.htm#I5">10.5.8.1</A>, &quot;<A HREF="ch100066.htm#I5">Time selection criteria  XE "Time selection criteria"    (SVC)   00908</A>,&quot; for an example illustrating how this mechanism works within an interface.</FONT>
+<P>
+<FONT FACE="Times New Roman">The valid set of preferences should be determined by the placer and filler applications during implementation of the interface.  Refer to <I>user-defined table 0294 - Time selection criteria parameter class codes</I> for suggested examples.</FONT>
+<H4>10.5.8.3 Location selection criteria<A NAME="I8"></A>  (SVC)   00910</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;parameter class (IS)&gt; ^ &lt;parameter value (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to communicate parameters and preferences to the filler application regarding the selection of an appropriate location for the appointment.  The first component of this field is a code identifying the parameter or preference being passed to the filler application.  The second component is the actual data value for that parameter.</FONT>
+<P>
+<FONT FACE="Times New Roman">Refer to Section <A HREF="ch100066.htm#I5">10.5.8.1</A>, &quot;<A HREF="ch100066.htm#I5">Time selection criteria  XE "Time selection criteria"    (SVC)   00908</A>,&quot; for an example of how this mechanism works within an interface.</FONT>
+<P>
+<FONT FACE="Times New Roman">The valid set of preferences should be determined by the placer and filler applications during implementation of the interface.  Refer to <I>user-defined table 0294 - Time selection criteria parameter class codes</I> for suggested examples.</FONT>
+<H4>10.5.8.4 Appointment slot spacing criteria<A NAME="I9"></A>  (NM)   00911</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used in queries returning lists of possible appointment slots, or other lists of slots.  If the filler application allows it, the querying application may indicate the spacing of the slots returned to the querying application, in relation to the requested start date/time in the ARQ segment.  The value in this field should be a positive integer, representing the number of minutes between slot starting times that is returned in the query.</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, if there is a request that an appointment with a duration of 1.5 hours be scheduled some time between 9:00 AM and 11:30 AM, and the Appointment Slot Spacing Criteria field contains a value of 1.5, then the list of slots returned should read as follows:</FONT>
+<P>9:00 - 10:30
+<BR>9:15 - 10:45
+<BR>9:30 - 11:00
+<BR>9:45 - 11:15
+<BR>10:00 - 11:30
+<H4>10.5.8.5 Filler override criteria<A NAME="I10"></A>  (SVC)   00912</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;parameter class (IS)&gt; ^ &lt;parameter value (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to communicate override parameters to the filler application.  These override parameters allow placer applications to override specific features of filler applications such as conflict checking.  It is assumed that the placer and filler applications will pass enough information to determine whether the requestor is allowed to override such features.  This chapter does not provide any security or permission information.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The first component of this field is a code identifying the parameter being passed to the filler application.  The second component is the actual data value for that parameter.</FONT>
+<P>
+<FONT FACE="Times New Roman">Refer to Section <A HREF="ch100066.htm#I5">10.5.8.1</A>, &quot;<A HREF="ch100066.htm#I5">Time selection criteria  XE "Time selection criteria"    (SVC)   00908</A>,&quot; for an example illustrating how this mechanism works within an interface.</FONT>
+<P>
+<FONT FACE="Times New Roman">The valid set of parameters should be determined by the placer and filler applications during implementation of the interface.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100065.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100067.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

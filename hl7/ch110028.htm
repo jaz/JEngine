@@ -1,0 +1,353 @@
+<HTML>
+<HEAD>
+<TITLE>11.5.3 PRD - provider data segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110029.htm">
+<LINK REL="Previous" HREF="ch110027.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110027.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110029.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E500"></A>
+<H3><B>11.5.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>PRD - provider data segment</B><A NAME="I7"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I8"></A>This segment will be employed as part of a patient referral message and its related transactions.  The PRD segment contains data specifically focused on a referral, and it is inter-enterprise in nature.  The justification for this new segment comes from the fact that we are dealing with referrals that are external to the facilities that received them.  Therefore, using a segment such as the current PV1 would be inadequate for all the return information that may be required by the receiving facility or application.  In addition, the PV1 does not always provide information sufficient to enable the external facility to make a complete identification of the referring entity.  The information contained in the PRD segment will include the referring provider, the referred-to provider, the referred-to location or service, and the referring provider clinic address. </FONT>
+<P ALIGN=indent>Figure 11-4.  PRD attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=45 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=56 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=244 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0286</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01155</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Role</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 106</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01156</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  60</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01157</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  60</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01158</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  100</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01159</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider Communication Information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">0185</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01161</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preferred Method of Contact</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 100</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01162</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider Identifiers</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01163</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective Start Date of Role</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9 </FONT>
+</TD><TD WIDTH=45 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=42 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">01164</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective End Date of Role</TD></TR></FONT></TABLE><P>11.5.3.0  PRD field definitions<A NAME="I9"></A>
+<H4><B>11.5.3.1</B><B> </B><A NAME="I10"></A>Role<A NAME="I11"></A>  (CE)   01155</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the contact role that defines the relationship of the person described in this segment to the patient being referred.  When a referral that is inter-enterprise in nature, there are several important relationships that must be identified.  For example, the proper identification of both the referring and the referred-to provider is critical for proper processing of a referral.  In addition, some enterprises may want information regarding a consulting provider or the identity of the person who actually prepared the referral.  This contact role may also expand to represent affiliated persons to whom information regarding this referral must be forwarded or copied.  Refer to <I>user-defined table 0286 - Provider role</I> for suggested values. </FONT>
+<P ALIGN=indent>User-defined Table 0286 - Provider role</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RP</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Referring Provider</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PP</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Primary Care Provider</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CP</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Consulting Provider</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RT</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Referred to Provider</TD></TR></FONT></TABLE><H4>11.5.3.2 <A NAME="I12"></A>Provider name<A NAME="I13"></A>  (XPN)   01156</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the provider identified in this segment.  Generally, this field will describe a physician associated with the referral.  However, it is not limited to physicians.  This field may contain the name of any valid healthcare provider associated with this referral.  If this Provider Name is a physician&#146;s name, you may refer to <I>PRD-1-provider identifiers</I> (Section <A HREF="ch110028.htm#I23">11.5.3.7</A>) for the physician identifier. </FONT>
+<H4>11.5.3.3 <A NAME="I14"></A>Provider address<A NAME="I15"></A>  (XAD)   01157</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the mailing address of the provider identified in this segment.  One of the key components to completing the &quot;circle of care&quot; and provider/institution bonding is the issuance of follow-up correspondence to the referring provider.</FONT>
+<H4>11.5.3.4 <A NAME="I16"></A>Provider location<A NAME="I17"></A>  (PL)   01158</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS) &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the location of the provider as needed when a provider that may be external to a given enterprise must be referenced.  For example, if this provider represented the referred-to physician, the Provider Location should identify the clinic of the physician or provider to whom this referral has been sent.  The identification of the provider&#146;s location is specified by an application and facility identifier carried in the facility field.  The application ID and facility ID would be used in the same manner as their corresponding fields in the MSH segment (<I>MSH-3-sending application, MSH-5-receiving application</I> <I>MSH-4-sending facility, MSH-6-receiving facility</I>).  That is, the facility field  will contain an application identifier and facility identifier which describes the location of this provider.  However, it should be noted that they may describe a different location because the provider location being referenced in this field <I>may </I><I>not be</I> the location from which the message originated, which is being described by the MSH.</FONT>
+<H4>11.5.3.5 <A NAME="I18"></A>Provider communication information<A NAME="I19"></A>  (XTN)   01159</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains information, such as the phone number or electronic mail address, used to communicate with the provider or organization.</FONT>
+<H4>11.5.3.6 <A NAME="I20"></A>Preferred method of contact<A NAME="I21"></A>  (CE)   01161</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the preferred method to use when communicating with the provider.  Refer to <I>user-defined table 0185 - Preferred method of contact</I> for suggested values. </FONT>
+<H4>11.5.3.7 <A NAME="I22"></A><A NAME="I23"></A>Provider identifiers<A NAME="I24"></A>  (CM)   01162</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;type of ID number (IS)&gt; ^ &lt;other qualifying info (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This repeating field contains the provider&#146;s unique identifiers such as UPIN, Medicare and Medicaid numbers.  Refer to <I>PRA-6-practitioner ID numbers</I>  in Chapter 8 ( Section 8.6.3.6, &quot;Practitioner ID numbers&quot;) for suggested values.</FONT>
+<H4>11.5.3.8 <A NAME="I25"></A>Effective start date of role<A NAME="I26"></A>  (TS)   01163</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the role of the provider effectively began.  For example, this date may represent the date on which a physician was assigned as a patient&#146;s primary care provider.</FONT>
+<H4>11.5.3.9 <A NAME="I27"></A>Effective end date of role<A NAME="I28"></A>  (TS)   01164</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the role of the provider effectively ended.  For example, this date may represent the date that a physician was removed as a patient&#146;s primary care provider.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> The &quot;Effective Start Date of Role&quot; and &quot;Effective End Date of Role&quot; should <I>not</I> be used as trigger events.  For example, they should not be used to trigger a change in role.  These two dates are for informational purposes only.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch110027.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110029.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

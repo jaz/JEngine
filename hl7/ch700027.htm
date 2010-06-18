@@ -1,0 +1,502 @@
+<HTML>
+<HEAD>
+<TITLE>7.7.1 CSR - clinical study registration segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700028.htm">
+<LINK REL="Previous" HREF="ch700026.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700026.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700028.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E302"></A>
+<H3><B>7.7.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>CSR - clinical study registration segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The CSR segment will contain fundamental administrative and regulatory information required to document a patient&#146;s enrollment on a clinical trial.  This segment is all that is required if one needs to message another system that an enrollment has taken place, i.e., from clinical trials to pharmacy, accounting, or order entry systems.  The CSR segment may also be used to identify that OBR, OBX, RXA, and RXR segments that follow represent data applicable to the identified study.</FONT>
+<P>Figure 7-14.  CSR attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=219 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01035</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sponsor Study ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01036</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Alternate Study ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01037</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Institution Registering the Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01038</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sponsor Patient ID  </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01039</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Alternate Patient ID - CSR</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01040</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time Of Patient Study Registration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01041</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Person Performing Study Registration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01042</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Study Authorizing Provider </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01043</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/time Patient Study Consent Signed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01044</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Study Eligibility Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/3</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01045</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Study Randomization Date/time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/3</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01046</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Randomized Study Arm</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/3</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01047</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Stratum for Study Randomization</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01048</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Evaluability Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01049</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/time Ended Study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01050</FONT>
+</TD><TD WIDTH=219 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reason Ended Study</TD></TR></FONT></TABLE></CENTER><P>7.7.1.0   CSR field definitions
+<H4>7.7.1.1 Sponsor study ID  (EI)   01035</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID). </FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The field contains the universal identifier for the clinical trial.  Since many clinical trials are collaborative and multi-centered, and since one goal of these standards is to promote automated data exchange among sites, the primary identifier should come from the sponsor.  The coding system component may reference the sponsor.  Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>T93-0807^^NCI (where NCI refers to the National Cancer Institute).</FONT></PRE>
+<H4>7.7.1.2 Alternate study ID  (EI)   01036</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an alternate identifier may be used as agreed upon by messaging parties.  For example, the sending application may code its internal study number here.</FONT>
+<H4>7.7.1.3 Institution registering the patient  (CE)   01037</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field distinguishes the institution where registration occurred.  The legal approval to give patients access to a trial lies with the Internal Review Board for the institution. Universal healthcare provider facility codes should be used when they exist.  Currently coding systems must be devised by users.</FONT>
+<H4>7.7.1.4 Sponsor patient ID  (CX)   01038</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt; assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponets of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; * &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; * &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the main patient identification for the study.  The sponsor patient ID allows automation of records on patients treated at various institutions.  The sponsor patient ID should be unique for each patient participating on the study identified in <I>CSR-1-sponsor study ID</I>.</FONT>
+<H4>7.7.1.5 Alternate patient ID - CSR (CX)   01039</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority (HD)  )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt; assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponets of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; * &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; * &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may be the sending application&#146;s patient identification.  Coding conventions may be used as agreed upon by users.</FONT>
+<H4>7.7.1.6 Date/time patient of patient study registration  (TS)   01040</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date of the patient registration is mandatory.  The time component is optional.  The time stamp for a registration may be useful.  For example, patients may be randomized at the pharmacy according to the order in which they were registered.</FONT>
+<H4>7.7.1.7 Person performing study registration  (XCN)   01041</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type (ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the healthcare facility employee who actually phoned, submitted a form, or interactively registered the patient on the clinical trial.  This is generally done under authorization from the attending physician or a principal or collaborating investigator.</FONT>
+<H4>7.7.1.8 Study authorizing provider  (XCN)   01042</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type (ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the healthcare provider, generally the attending physician, who is accountable that the patient is eligible for the trial and has signed an informed consent.  National standard healthcare provider codes should be used when they exist.  This field is required for the patient registration trigger event (C01).</FONT>
+<H4>7.7.1.9 Date patient study consent signed  (TS)   01043</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the consent form signing date is collected to provide a checkpoint that the consent form was obtained.  Since many trials involve unapproved drugs and other treatment modalities, the consent form is highly important to document and store.  This field is required for the patient registration trigger event (C01).  The time component is optional.</FONT>
+<H4>7.7.1.10 Patient study eligibility status  (CE)   01044</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the patient was an appropriate candidate for the trial.  It is important for quality control and data analysis.  The code set will vary among clinical trials.  An example answer set is:  <I>Yes, No, By Approval, Not Assessed, Unknow</I><I>n</I>.  This field is required for the patient registration trigger event (C01).</FONT>
+<H4>7.7.1.11 Study randomization date/time  (TS)   01045</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date the patient was randomized.  The time component is optional.  Up to three randomizations are supported.  Sequential randomizations are listed in chronologic order.</FONT>
+<H4>7.7.1.12 Randomized study arm  (CE)   01046</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains codes that must be developed by users.  The blind treatment assignment may be communicated as a dummy text:  ^blind or if a coded treatment assignment must also be communicated: 1^blind^local_code.  If more than one randomization occurs, the second and third repetitions will correspond to the second and third repetitions of <I>CSR-11-study randomization date/time</I>, if they exist.</FONT>
+<H4>7.7.1.13 Stratum for study randomization  (CE)   01047</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Many studies have stratified randomization schemas.  The strata codes must be developed for each clinical trial.  This field is important for statistical analysis of the study results. The second and third repetitions will correspond to the second and third repetitions of <I>CSR-11-study randomization date/time</I> and <I>CSR-12-randomized study arm</I>, if they exist.</FONT>
+<H4>7.7.1.14 Patient evaluability status  (CE)   01048</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field categorizes the inclusion of this patient&#146;s data for various analyses.  The patient&#146;s data may be evaluable for analysis of adverse events but not for outcomes.  Or it may be evaluable for some outcomes and not others.  The coding systems will vary among trials.  This field is required for the off-study trigger event (C04).</FONT>
+<H4>7.7.1.15 Date/time ended study  (TS)   01049</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date the patient completes or is otherwise removed from the study.  This field is required for the off-study event (C04).  The time component is optional.</FONT>
+<H4>7.7.1.16 Reason ended study  (CE)   01050</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This information is important for quality control and data analysis.  The coding systems will vary among trials.  An example answer set is:  Adverse Events, Completed Trial, Death, Drug Resistance, Intercurrent Illness, Lost to Follow up, No Response to Therapy, Noncompliance, Progression of Disease, Protocol Violation, Refused Further Therapy.  This field is required for the off-study trigger event (C04).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700026.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700028.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

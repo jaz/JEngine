@@ -1,0 +1,1159 @@
+<HTML>
+<HEAD>
+<TITLE>3.5.2 Merging patient/person information</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300077.htm">
+<LINK REL="Previous" HREF="ch300075.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300075.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300077.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E207"></A>
+<H3><B>3.5.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><B>Merging patient/person information</B></H3>
+<H4>3.5.2.1 Definitions:  Merge, move, and change identifier events</H4>
+<P>
+<FONT FACE="Times New Roman">The term &quot;identifier&quot; is used throughout this section.  An identifier is associated with a set (or sets) of data.  For example, an internal identifier (<I>PID-3-patient ID </I> [internal <I>ID</I>]) may be a medical record number which has associated with it account numbers (<I>PID-18-patient account number</I>.)  Account number (<I>PID-18-patient </I><I>account number</I>) is a type of identifier which may have associated with it visit numbers <I>PV1-19 - visit </I><I>number</I>.)</FONT>
+<P>
+<FONT FACE="Times New Roman">This section addresses the events that occur usually for the purposes of correcting errors in person, patient, account, or visit identifiers.  The types of errors that occur typically fall into three categories:</FONT>
+<P><B>1)</B> <B>Duplicate identifier created</B>
+<P>The registrar fails to identify an existing person, patient, account, or visit and creates a new, &quot;duplicate&quot; record instead of using the existing record.  A &quot;merge&quot; operation is used to fix this type of error.
+<P><B>2)</B> <B>Incorrect identifier selected</B>
+<P>The registrar mistakenly selects the wrong person, patient, or account and creates or attaches a patient, account, or visit underneath the incorrect person, patient, or account.  A &quot;move&quot; operation is used to fix this type of error.
+<P><B>3)</B> <B>Incorrect identifier assigned</B>
+<P>The registrar accidentally types in the wrong new identifier for a person, patient, account, or visit.  This type of mistake usually occurs when identifiers are manually assigned (not system generated).  A &quot;change identifier&quot; operation is used to fix this type of error.
+<H5>3.5.2.1.1 Hierarchy of  Identifiers</H5>
+<P>
+<FONT FACE="Times New Roman">These events assume a hierarchy of identifiers exists between person, patient, account, and visit.  The hierarchy is as follows:</FONT>
+<A NAME="E96E1"></A>
+<P> Level 4 - Person (identified by <I>PID-</I>2-e<I>xternal ID</I>)
+<A NAME="E96E2"></A>
+<P>  Level 3 - Patient (identified by <I>PID-3-internal ID</I>)
+<A NAME="E96E3"></A>
+<P>   Level 2 - Account (identified by <I>PID-18-patient account number</I>)
+<A NAME="E96E4"></A>
+<P>    Level 1 - Visit (identified by <I>PV1-19-visit number</I>)
+<P>
+<FONT FACE="Times New Roman">The visit-level identifier <I>PV1-19-visit number</I> is the lowest level identifier and is considered <I>subordinate</I> to the account level identifier PID-18-p<I>atient account number.</I>  </FONT>
+<P>
+<FONT FACE="Times New Roman">This means that visit identifiers are defined within the context of an account identifier, and implies that visit identifiers are unique within account identifiers.  Similarly, account identifiers are subordinate to, and unique within, patient identifiers; patient identifiers are subordinate to, and unique within, person identifiers.</FONT>
+<P>
+<FONT FACE="Times New Roman">Conversely, the person-level identifier <I>PID-2-</I>e<I>xternal ID </I>is the highest level identifier and is considered <I>superior </I>to the patient-level identifiers, which are superior to the account-level identifier, which is superior to any visit-level identifiers.</FONT>
+<P>
+<FONT FACE="Times New Roman">Note that these events will also apply to environments in which one or more of these levels do not occur.  For example, some environments may not have a person (or MPI) level, or they may not have a visit level.  The hierarchy concept is depicted graphically below.  For example, Bob Kelly might be assigned an MPI number at the ABC hospital network (depicted by the circle).  He may have different medical records at two hospitals within the network (depicted by the squares).  Associated with each of these medical records are two accounts (depicted by the triangles).  Note that the environment illustrated does not support the &quot;visit&quot; level, although in other implementations it might.</FONT>
+<P>
+<IMG SRC="images/ch300003.gif" WIDTH = 463 HEIGHT = 348 ALT="Undisplayed Graphic">
+<H5>3.5.2.1.2 Merge</H5>
+<P>
+<FONT FACE="Times New Roman">A merge event signals that two distinct records have been combined together into a single record with a single set of identifiers and data surviving at the level of  the merge.  All records at a level subordinate to the merged identifier are combined under the surviving record.  For example, an A39 (merge person - external ID) event would be sent to signal that two person records (identified by <I>MRG-4-prior patient ID </I><I>external</I> and by <I>PID-2-patient ID [external ID]</I>) have been merged into a single record.  All of the internal identifiers, accounts, and visits under the person record are not merged together - they are instead combined under the same person record.  The following figure graphically depicts the merge event:</FONT>
+<P>
+<IMG SRC="images/ch300004.gif" WIDTH = 576 HEIGHT = 382 ALT="Undisplayed Graphic">
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=576 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  It is not the intent of the merge definition to define the application or implementation specifics of how various systems or environments define, use or handle non-surviving information.  &quot;Non-surviving&quot; in this document implies that a data set was existing in a fashion that was incorrect.  Merging it into a new data set in itself implies that where there were two datasets, there is now only one.  The means by which any system or environment conveys this new data set and the absence of the previous data set to the user is application specific.  It is noted that some systems may still physically keep these &quot;incorrect&quot; datasets for audit trail or other purposes.</TD></TR></FONT></TABLE><H5><B>3.5.2.1.3</B><B> </B>Move</H5>
+<P>
+<FONT FACE="Times New Roman">A &quot;move&quot; involves transferring one or more datasets (identified by a subordinate identifier) <I>from </I>one superior identifier at the next hierarchical level <I>to</I> another superior identifier at the next hierarchical level, while all identifiers involved retain their original value.  An exception to retaining the original identifier value may occur if any of the subordinate source identifiers already exist under the target superior identifier.  In this case the identifier value may have to be renumbered in order to be uniquely identified under the target superior identifier.  (Refer to Section <A HREF="ch300076.htm#I20">3.5.2.2.15</A>, &quot;<A HREF="ch300076.htm#I20">A45 - move visit information - visit number (repeating segment)</A>,&quot; for an illustration of this.)</FONT>
+<P>
+<FONT FACE="Times New Roman">A move event signals that a patient, account, or visit has been moved from one person, patient, or account to another.  All records at a subordinate level are also moved.  For example, an A43 (move patient information - internal ID) event would be sent to signal that a medical records administrator has moved a medical record attached to an incorrect person to a correct person.  The following figure graphically depicts the move event:</FONT>
+<P>
+<IMG SRC="images/ch300005.gif" WIDTH = 576 HEIGHT = 393 ALT="Undisplayed Graphic">
+
+<TABLE >
+<TR>
+<TD WIDTH=576 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">Note:        The move event implies that all data related to the incorrect source ID and its subordinate IDs (specified in the MRG segment) will be moved to the correct target ID (specified in the PID or PV1 segment).  Specifying each subordinate ID in repeating PID/MRG/PV1 sets is optional but not recommended.</TD></TR></FONT></TABLE><H5>3.5.2.1.4 Change identifier</H5>
+<P>
+<FONT FACE="Times New Roman">A change identifier event signals that a single person, patient, account, or visit identifier has been changed.  It does not reflect a merge or a move, it is simply a change of an identifier.  For example, a &quot;Change Identifier&quot; event would be sent to signal that the registrar has changed an incorrectly assigned person identifier to a correct person identifier.  The following picture graphically depicts this event:</FONT>
+<P>
+<IMG SRC="images/ch300006.gif" WIDTH = 576 HEIGHT = 398 ALT="Undisplayed Graphic">
+<H5>3.5.2.1.5 Source and target identifiers</H5>
+<P>
+<FONT FACE="Times New Roman">Merge, move, and change events reference target and source identifiers.  The incorrect source identifier is specified in the MRG segment.  The correct target identifier is identified in the PID or PV1 segment.  For example, when you are changing a patient account number the source would <I>be MRG-3-prior patient </I><I>account number</I>.  The target is <I>PID-18-patient account number</I>.</FONT>
+<H5>3.5.2.1.6 Tightly coupled identifiers</H5>
+<P>
+<FONT FACE="Times New Roman"><I>PID-3-patient ID (internal ID)</I> and<I> PID-4-alternate patient ID-PID</I> can be repeating in the PID segment.  When these identifiers are the target in a merge, move, or change event, the associated source identifiers in the MRG must be &quot;tightly&quot; coupled.  This means there must be a one to one match between the repeating<I> </I><I>PID-3-patient ID (internal ID) </I>and the repeating <I>MRG-1-prior patient ID-internal numbers</I>, or between the repeating <I>PID-4-alternate patient ID</I> and the repeating <I>MRG-2-prior alternate patient ID</I> numbers.  For example, if <I>MRG-1-prior patient ID-internal numbers</I> reports |MR2^^^XYZ^MR~200^^^XYZ^PI|, a corresponding MR and PI number should be reported in <I>PID-3-patient ID (internal ID)</I>, e.g., |MR1^^^XYZ^MR~100^^^XYZ^PI|.  See the use case for A40 (merge patient information - internal ID) for an illustration.</FONT>
+<P>
+<FONT FACE="Times New Roman">Another aspect of tightly coupled identifiers deals with the pairings of identifiers between the MRG segment and their associated identifier in the PID or PV1 segment as defined below:</FONT>
+<P>
+<FONT FACE="Times New Roman">The pairings that define &quot;tightly coupled&quot; are as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">Person:    <I>PID-2-patient ID (external ID)</I>   with <I>MRG-4-prior patient ID (external ID)</I></FONT>
+<P>
+<FONT FACE="Times New Roman"> Patient:    <I>PID-3-patient ID (internal ID)</I>   with <I>MRG-1-prior patient ID (internal </I><I>ID)</I></FONT>
+<P>
+<FONT FACE="Times New Roman">      by &lt;identifier type code&gt; field component!</FONT>
+<P>
+<FONT FACE="Times New Roman">            <I>PID-4-alternate patient ID</I>       with <I>MRG-2-prior alternate patient ID</I></FONT>
+<P>
+<FONT FACE="Times New Roman">   Account: <I>PID-18-patient account number</I>  with <I>MRG-3-prior patient account number</I></FONT>
+<P>
+<FONT FACE="Times New Roman">  Visit: <I>PV1-19-visit number</I>     with <I>MRG-5-prior visit number</I></FONT>
+<P>
+<FONT FACE="Times New Roman">        <I>PV1-50-alternate visit ID</I>    with <I>MRG-6-prior alternate visit ID</I></FONT>
+<H5>3.5.2.1.7 <A NAME="I14"></A>Global merge and move message construct versus repeating segment message constructs</H5>
+<P>
+<FONT FACE="Times New Roman">A flexible message construct is provided for merge trigger events.  The message construct allows for a repeating set of PID, optional PD1, MRG, and optional PV1 segments as illustrated below:</FONT>
+<PRE>
+<FONT FACE="Courier New">MSH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  PID</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [PD1]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     MRG</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [PV1]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Trigger events support the concept of a global move or merge, where all the subordinate identifiers are moved or merged.  For example, the Use Case for A41 (merge account - patient account number) (Section <A HREF="ch300076.htm#I16">3.5.2.2.9</A>, &quot;<A HREF="ch300076.htm#I16">A41 - merge account - patient account number (global)</A>&quot;) illustrates a merge on the patient account number (PID-18).  All subordinate identifiers (<I>PV1-19-visit </I><I>number</I>) are moved to the target <I>PID-18-patient account number</I> identifier, even though they are not specified in the message.</FONT>
+<P>
+<FONT FACE="Times New Roman">A repeating segment message construct supports reporting of the subordinate identifiers using the repeating segments.  This is illustrated in the use case for A40 (merge patient-internal ID) (Section <A HREF="ch300076.htm#I15">3.5.2.2.8</A>, &quot;<A HREF="ch300076.htm#I15">A40 - merge patient - internal ID (repeating segment)</A>&quot;), A41 (merge account - patient account number) (Section <A HREF="ch300076.htm#I17">3.5.2.2.10</A>, &quot;<A HREF="ch300076.htm#I17">A41 - merge account - patient account number (repeating segment)</A>&quot;), and A45 (move visit information-visit number) (Sections <A HREF="ch300076.htm#I18">3.5.2.2.13</A>, &quot;<A HREF="ch300076.htm#I18">A44 - move account information - patient account number</A>,&quot; and <A HREF="ch300076.htm#I20">3.5.2.2.15</A>, &quot;<A HREF="ch300076.htm#I20">A45 - move visit information - visit number (repeating segment)</A>&quot;).  Specifying each subordinate ID in repeating segments is optional but not recommended.  This construct can be used when renumbering of identifiers is necessary as illustrated in Sections <A HREF="ch300076.htm#I15">3.5.2.2.8</A>, &quot;<A HREF="ch300076.htm#I15">A40 - merge patient - internal ID (repeating segment)</A>,&quot; <A HREF="ch300076.htm#I17">3.5.2.2.10</A>, &quot;<A HREF="ch300076.htm#I17">A41 - merge account - patient account number (repeating segment)</A>,&quot; and <A HREF="ch300076.htm#I20">3.5.2.2.15</A>, &quot;<A HREF="ch300076.htm#I20">A45 - move visit information - visit number (repeating segment)</A>,&quot; or to explicitly identify individual subordinate identifiers as illustrated in Section <A HREF="ch300076.htm#I19">3.5.2.2.14</A>, &quot;<A HREF="ch300076.htm#I19">A45 - move visit information - visit number (repeating segment)</A>.&quot;</FONT>
+<H5>3.5.2.1.8 Identifier renumbering</H5>
+<P>
+<FONT FACE="Times New Roman">When renumbering of identifiers occurs, the repeating segment construct may be required in order to report identifier number changes.  When renumbering occurs, the incorrect source Identifier is specified in the MRG segment and the correct target identifier is reported in the PID or PV1 segment.  Refer to the Use Case for A41 (merge account-patient account number) for an illustration.</FONT>
+<H5><B>3.5.2.1.9</B><B> </B>Superior identifier reporting</H5>
+<P>
+<FONT FACE="Times New Roman">When merging or moving subordinate numbers, the higher level, &quot;superior&quot; identifiers should be included in the message.  For example, when merging an account where the target is <I>PID-18-patient account number</I> and the source is <I>MRG-3-prior patient account number</I>, the higher level patient <I>identifiers (PID-3 -patient </I><I>ID- internal ID</I> and<I> MRG-1-prior patient ID-internal</I>) and person identifiers (<I>PID-2-patient ID - external ID</I> and<I> MRG-4-prior patient ID-external</I>) should also be reported in the message. </FONT>
+<H4><B>3.5.2.2</B><B> </B>Trigger events</H4>
+<P>
+<FONT FACE="Times New Roman">The intent of trigger events A18 (merge patient information), A30 (merge person information), A34 (merge patient information-patient ID only), A35 (merge patient information-account number only), A36 (merge patient information-patient ID and account number), A39 (merge person-external ID), A40 (merge person-internal ID),  A41 (merge account-patient account number), A42 (merge visit-visit number), A43 (move patient information-internal ID), A44 (move account information-patient account number), A45 (move visit information-visit number), A46 (change external ID), A47 (change internal ID), A48 (change alternate patient ID), A49 (change patient account number), A50 (change visit number), and A51 (change alternate visit ID) is to reconcile distinct sets of existing person/patient data records that have been entered under different identification numbers, either deliberately or because of errors.  Ideally, following any of these trigger events, all of the person/patient data should be accessible under whatever surviving identifiers were specified in the messages.  Because of substantial differences in database architectures and system-dependent data processing requirements or limitations, the exact meaning and implementation of these events must be negotiated between systems.</FONT>
+<H5>3.5.2.2.1 A18 - Merge patient information</H5>
+<P>
+<FONT FACE="Times New Roman">This event is retained for backward compatibility.  This event is non-specific and heavily dependent on implementation negotiations. .  Sites requiring (or desiring) greater specificity can use the following events: A39 (merge person-external ID), A40 (merge person-internal ID), A41 (merge account-patient account number), A42 (merge visit-visit number), A43 (move patient information-internal ID), A44 (move account information-patient account number), A45 (move visit information-visit number), A46 (change external ID), A47 (change internal ID), A48 (change alternate patient ID), A49 (change patient account number), A50 (change visit number), and A51 (change alternate visit ID).</FONT>
+<H5>3.5.2.2.2 A30 - Merge person information</H5>
+<P>
+<FONT FACE="Times New Roman">This event is retained for backward compatibility.  This event is non-specific and heavily dependent on implementation negotiations.  Sites requiring (or desiring) greater specificity can use the following events: A39 (merge person-external ID), A40 (merge person-internal ID), A41 (merge account-patient account number), A42 (merge visit-visit number), A43 (move patient information-internal ID), A44 (move account information-patient account number), A45 (move visit information-visit number), A46 (change external ID), A47 (change internal ID), A48 (change alternate patient ID), A49 (change patient account number), A50 (change visit number), and A51 (change alternate visit ID).</FONT>
+<H5>3.5.2.2.3 A34 - Merge patient information - patient ID only</H5>
+<P>
+<FONT FACE="Times New Roman">This event is retained for backward compatibility.  This event is non-specific and heavily dependent on implementation negotiations. .  Sites requiring (or desiring) greater specificity can use the following events: A39 (merge person-external ID), A40 (merge person-internal ID), A41 (merge account-patient account number), A42 (merge visit-visit number), A43 (move patient information-internal ID), A44 (move account information-patient account number), A45 (move visit information-visit number), A46 (change external ID), A47 (change internal ID), A48 (change alternate patient ID), A49 (change patient account number), A50 (change visit number), and A51 (change alternate visit ID).</FONT>
+<H5>3.5.2.2.4 A35 - Merge patient information - account number only</H5>
+<P>
+<FONT FACE="Times New Roman">This event is retained for backward compatibility.  This event is non-specific and heavily dependent on implementation negotiations. .  Sites requiring (or desiring) greater specificity can use the following events: A39 (merge person-external ID), A40 (merge person-internal ID), A41 (merge account-patient account number), A42 (merge visit-visit number), A43 (move patient information-internal ID), A44 (move account information-patient account number), A45 (move visit information-visit number), A46 (change external ID), A47 (change internal ID), A48 (change alternate patient ID), A49 (change patient account number), A50 (change visit number), and A51 (change alternate visit ID).</FONT>
+<H5>3.5.2.2.5 A36 - Merge patient information - patient ID &amp; account number</H5>
+<P>
+<FONT FACE="Times New Roman">This event is retained for backward compatibility.  This event is non-specific and heavily dependent on implementation negotiations. .  Sites requiring (or desiring) greater specificity can use the following events: A39 (merge person-external ID), A40 (merge person-internal ID), A41 (merge account-patient account number), A42 (merge visit-visit number), A43 (move patient information-internal ID), A44 (move account information-patient account number), A45 (move visit information-visit number), A46 (change external ID), A47 (change internal ID), A48 (change alternate patient ID), A49 (change patient account number), A50 (change visit number), and A51 (change alternate visit ID).</FONT>
+<H5>3.5.2.2.6 A39 - merge person - external ID</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=636 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A39 - Merge person -external ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=636 VALIGN=top >
+<P>Use Case - Enrollment information from ABC HMO is loaded to a repository system each month.  Jane Smith is entered in January and assigned Enterprise Number 1 (E1).  Jane marries in February and is erroneously entered as a new person under her married name, Jane Jones (E2).  She has visited two healthcare facilities in the enterprise system (facility A and facility B)  and has medical records (MR1 and MR2) and accounts (Accounts A and Accounts B) in both facilities.  The repository database administrator detects the duplication and initiates a merge.     
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=636 VALIGN=top >
+<P>Target: <I>PID-2-patient ID-(external ID)</I>.  This event is a merge on <I>PID-2-patient ID-(external ID</I>), since it represents the number used by disparate corporations or facilities to uniquely identify the person.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=636 VALIGN=top >
+<P>Source: <I>MRG-4-prior patient ID-external</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=636 VALIGN=top >
+<P>Example transaction: 
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REPOSITORY|ENT|RSP1P8|MCM|199601051530|SEC|ADT^A39|0000003|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A39|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID||E1|||JONES^JANE|....&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG||||E2&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=301 VALIGN=top >
+<P>Before Merge
+</TD><TD WIDTH=334 VALIGN=top >
+<P>After Merge</TD>
+</TR>
+<TR>
+<TD WIDTH=301 VALIGN=top >
+<P>E1                    E2            
+<P> MR1                 MR2
+<P>  Accounts A       Accounts B
+</TD><TD WIDTH=334 VALIGN=top >
+<P>E1
+<P> MR1
+<P>  Accounts A 
+<P> MR2
+<P>  Accounts B</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=636 VALIGN=top >
+<P>Implementation Considerations: This type of merge is generally initiated by the enterprise system.  Depending on the implementation arrangement with other disparate systems they may accept the merge, or, if they &quot;own&quot; their own medical record assignment they may use the information to initiate their own Medical Record Merge event, A40 (Merge Patient), back to the enterprise.  
+<P><I>PID-3-patient ID (internal ID)</I> and <I>MRG-1-prior patient ID (internal ID)</I> are not valued since this event is really a merge at the <I>PID-2-patient ID (external ID)</I> level.  All identifiers below the <I>PID-2-patient ID </I><I>(external ID</I>) are combined under the surviving External ID number.
+<P>Since there could be a discrepancy in the demographic information between the two records, reconciliation may be required.  Surviving and non-surviving demographic information is application and implementation specific.  An A31 (update person information)event should be sent and/or negotiated as necessary to provide for implementation and application specific needs.
+</TD></TR></TABLE><H5>3.5.2.2.7 A40 - merge patient - internal ID</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=630 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A40 - Merge patient - internal ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Use Case - During the admission process, the registrar does not find a record for patient Allison Smith in the ADT system and creates a new record with patient internal ID MR2.  Allison Smith has actually been to the healthcare facility several times in the past under her maiden name, Allison Evans with patient internal ID MR1.  The problem persists for a while.  During that time, several more accounts are assigned to Allison under her newly created patient ID MR2.  Finally, the problem is discovered and Medical Records merges her two charts together leaving patient internal ID MR1.  All the accounts (ACCT1, ACCT2) that were assigned to MR2 are combined under MR1 as a result.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Target: <I>PID-3-patient ID (internal ID)</I>  (Note: <I>PID-18-patient account number</I> is not valued; all accounts associated with MR2 are combined under MR1.  To merge <I>PID-18-patient account number</I> data only, use Event A41 (merge account - patient account number).  To move<I> PID-18-patient account number</I> data use event A44 (move account information - patient account number).
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Source: <I>MRG-1-prior patient id (internal ID) </I>(Note: <I>MRG-3-prior patient account number</I> is not valued; all accounts associated with MR2 are combined under MR1.)
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A40|00000003|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A40|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||EVANS^ALLISON|....&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^XYZ&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>Before Merge
+</TD><TD WIDTH=309 VALIGN=top >
+<P>After Merge</TD>
+</TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>MR1      MR2
+<P> ACCT1          ACCT1
+<P> ACCT2          ACCT2
+</TD><TD WIDTH=309 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P> ACCT2
+<P> ACCT1
+<P> ACCT2</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Implementation Considerations: This scenario exists when two medical records are established for the same person.
+<P>Since there could be a discrepancy in the demographic information between the two records, reconciliation may be required.  In the example above, the implementation allowed the older demographic information (in the PID) to survive.  The demographics implied by the IDs in the MRG segment, did not survive.  Surviving and non-surviving demographic information is application and implementation specific.  An A08 (update patient information) event should be sent and/or negotiated as necessary to provide for implementation and application specific needs.
+</TD></TR></TABLE><H5>3.5.2.2.8 <A NAME="I15"></A>A40 - merge patient - internal ID (repeating segment)</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=630 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A40 - Merge patient - internal ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Use Case - During the admission process, the registrar does not find a record for patient Allison Smith in the ADT system and creates a new record with patient internal ID MR2.  Allison Smith has actually been to the healthcare facility several times in the past under her maiden name, Allison Evans with patient internal ID MR1.  The problem persists for a while.  During that time, several more accounts are assigned to Allison under her newly created patient ID MR2.  Finally, the problem is discovered and Medical Records merges her two charts together leaving patient internal ID MR1.  All the accounts (ACCT1, ACCT2) that were assigned to MR2 are combined under MR1 as a result.  Since the account numbers are not unique, they are also renumbered.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Target: <I>PID-3-patient ID (internal ID)</I> and <I>PID-18-patient account number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Source: <I>MRG-1-prior patient ID (internal ID)</I> and <I>MRG-3-prior patient account number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A40|00000003|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A40|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||EVANS^ALLISON|||||||||||||ACCT3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^XYZ||A1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||EVANS^ALLISON|||||||||||||ACCT4&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^XYZ||A2&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>Before Merge
+</TD><TD WIDTH=309 VALIGN=top >
+<P>After Merge</TD>
+</TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>MR1      MR2
+<P> ACCT1          ACCT1*
+<P> ACCT2          ACCT2*
+</TD><TD WIDTH=309 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P> ACCT2
+<P> ACCT3*
+<P> ACCT4*
+<P>*accounts renumbered</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Implementation Considerations: This scenario exists when two medical records are established for the same person.
+<P>If the account numbers are not unique (as implied by the After Merge example above) and renumbering of the accounts is required, you must use repeating segments as illustrated in the Example Transaction.  Refer to Section <A HREF="ch300076.htm#I14">3.5.2.1.7</A>, &quot;<A HREF="ch300076.htm#I14">Global merge and move message construct versus repeating segment message constructs</A>,&quot; for additional information regarding message construct.
+<P>Since there could be a discrepancy in the demographic information between the two records, reconciliation may be required.  In the example above, the implementation allowed the older demographic information (in the PID) to survive.  The demographics implied by the IDs in the MRG segment, did not survive.  Surviving and non-surviving demographic information is application and implementation specific.  An A08 (update patient information)event should be sent and/or negotiated as necessary to provide for implementation and application specific needs.
+</TD></TR></TABLE><H5>3.5.2.2.9 <A NAME="I16"></A>A41 - merge account - patient account number (global)</H5>
+<P>
+<FONT FACE="Times New Roman">This event illustrates the concept of a global merge as defined in Section <A HREF="ch300076.htm#I14">3.5.2.1.7</A>, &quot;<A HREF="ch300076.htm#I14">Global merge and move message construct versus repeating segment message constructs</A>.&quot;</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=629 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A41 - Merge account information - patient account number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Use Case - Mary Jones (patient internal ID MR1) is a recurring outpatient at the Physical Therapy clinic at hospital XYZ with account number ACCT1.  She has visited the clinic several times.  When she arrives for therapy, a new registrar does not realize she already has an account and opens a new one with account number ACCT2.  When the mistake is discovered, the two accounts are merged together,  combining all visits under account ACCT1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Target: <I>PID-18-patient account number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Source: <I>MRG-3-prior patient account number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A41|00000005|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A41|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||JONES^MARY||19501010|M|||123 NORTH STREET^^NY^NY^10021||(212)111-3333|||S||ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT2&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>Before Merge
+</TD><TD WIDTH=309 VALIGN=top >
+<P>After Merge</TD>
+</TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   96124
+<P>   96126
+<P> ACCT2
+<P>   96128
+<P>   96130
+</TD><TD WIDTH=309 VALIGN=top >
+<P>MR1 
+<P> ACCT1
+<P>   96124
+<P>   96126
+<P>   96128
+<P>   96130</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Implementation Considerations: Implementation Considerations: This scenario exists when two accounts are established for the same patient.
+<P>The PV1 segment is not valued since this event is really a merge at the <I>PID-18-patient account number</I> level.  All identifiers below the <I>PID-18-patient account number</I> are combined under the surviving Patient Account Number.
+<P>Since there could be a discrepancy in the demographic information between the two records, reconciliation may be required.  Surviving and non-surviving demographic information is application and implementation specific.  An A08 (update patient information) event should be sent and/or negotiated as necessary to provide for implementation and application specific needs.
+</TD></TR></TABLE><H5>3.5.2.2.10 <A NAME="I17"></A>A41 - merge account - patient account number (repeating segment<B>)</B></H5>
+<P>
+<FONT FACE="Times New Roman">This event illustrates the concept of a repeating segment merge as defined in 3.5.2.1.7.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=629 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A41 - Merge account - patient account number 
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Use Case - Mary Jones (patient internal ID MR1) is a recurring outpatient at the Physical Therapy clinic at hospital XYZ with account number ACCT1.  She has visited the clinic several times.  When she arrives for therapy, a new registrar does not realize she already has an account and opens a new one with account number ACCT2.  When the mistake is discovered, the two accounts are merged together, combining all visits under account ACCT1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Target: <I>PID-18-patient account number</I> and <I>PV1-19-SSN number-patient</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Source: <I>MRG-3-prior patient account number</I> and <I>MRG-5-prior visit number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A41|00000005|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A41|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||JONES^MARY||19501010|F|||123 NORTH STREET^^NY^NY^10021||(212)111-3333|||S||A1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT2||VISIT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1|1|I|||||||||||||||||V3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||JONES^MARY||19501010|F|||123 NORTH STREET^^NY^NY^10021||(212)111-3333|||S||ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT2||VISIT2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1|1|I|||||||||||||||||V4&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>Before Merge
+</TD><TD WIDTH=309 VALIGN=top >
+<P>After Merge</TD>
+</TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1
+<P>   VISIT2
+<P> ACCT2
+<P>  VISIT1*
+<P>  VISIT2*
+<P>*Visits erroneously assigned
+</TD><TD WIDTH=309 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1
+<P>   VISIT2 
+<P>   VISIT3**
+<P>   VISIT4**
+<P>**Visits  combined and renumbered as a result of merging the account</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Implementation Considerations: Implementation Considerations: This scenario exists when two accounts and associated visits are established for the same patient.
+<P>Repeating PID/MRG/PV1 segments report each Account Number and Visit Number effected.  This construct is required since the visits are renumbered in this example.
+<P>Since there could be a discrepancy in the demographic information between the two records, reconciliation may be required.  Surviving and non-surviving demographic information is application and implementation specific.  An A08 event should be sent and/or negotiated as necessary to provide for implementation and application specific needs.
+</TD></TR></TABLE><H5>3.5.2.2.11 A42 - Merge visit - visit number</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=629 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A42 - Merge visit - visit number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Use Case - A42 (merge visit -visit number) - Mary Jones (patient internal ID MR1) is a recurring outpatient at the Physical Therapy clinic at hospital XYZ with account number ACCT1.  She has visited the clinic several times.  When she arrives for therapy, two different registrars create a new visit numbers.  The mistake is not discovered immediately and clinical data is recorded under both visit numbers.  When the mistake is discovered, the two visits are merged together, leaving visit VISIT1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Target: <I>PV1-19-visit number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Source: <I>MRG-5-prior visit number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A42|00000005|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A42|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||JONES^MARY||19501010|F|||123 NORTH STREET^^NY^NY^10021||(212)111-3333|||S||ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1||V2&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1|1|I|||||||||||||||||VISIT1</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>Before Merge
+</TD><TD WIDTH=309 VALIGN=top >
+<P>After Merge</TD>
+</TR>
+<TR>
+<TD WIDTH=320 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1
+<P>   VISIT2
+</TD><TD WIDTH=309 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=629 VALIGN=top >
+<P>Implementation Considerations: This scenario exists when two visits are established in error for the same patient and episode of care.
+</TD></TR></TABLE><H5>3.5.2.2.12 A43 - move patient information - internal ID </H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=630 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A43 - Move patient information - internal ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Use Case -Enrollment information from ABC HMO is loaded to a repository system each month.  Jane Jones is entered in January and assigned Enterprise Number 1 (E1).  Jane has visited Hospital XYZ and is assigned medical record number MR1.  Jayne Jones (a different person) is also a member of AMC HMO loaded to the repository and assigned Enterprise Number E2. Jayne has visited Hospital XYZ and is assigned medical record number MR1.  Jayne visits Clinic DEF where she is assigned medical record number MR2 which is erroneously associated with Jane&#146;s Enterprise Number (E1)  When the error is discovered MR2 is moved from Enterprise Number E1 to E2.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Target:<I> PID-2-patient id (external ID)</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Source: <I>MRG-4-prior patient ID-external</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<PRE>
+<FONT FACE="Courier New">Example transaction:</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REPOSITORY|ENT|RSP1P8|MCM|199601051530|SEC|ADT^A43|0000009|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A43|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|1|E2|MR2^^^ABCHMO|||JONES^JAYNE|....&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^ABCHMO|||E1&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>Before Move
+</TD><TD WIDTH=319 VALIGN=top >
+<P>After Move</TD>
+</TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>E1                    E2            
+<P> MR1                 MR1
+<P> MR2
+</TD><TD WIDTH=319 VALIGN=top >
+<P>E1                    E2
+<P> MR1                 MR1
+<P>                          MR2</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=630 VALIGN=top >
+<P>Implementation Considerations:  <I>PID-3-patient ID (internal ID)</I> and <I>MRG-1-prior patient ID-internal</I> are the same value since the Internal ID does not change in this scenario.
+</TD></TR></TABLE><H5>3.5.2.2.13 <A NAME="I18"></A>A44 - move account information - patient account number</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A44 -Move account information - patient account number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Use Case - During the admission process, the admitting clerk uses the Medical Record Number of William A. Jones III (MR1) instead of William A. Jones, Jr. (MR2).  The ADT system assigns the new admission account number ACCT2.  When the mistake is discovered, account ACCT2 is moved to the correct Medical Record, MR2.  The account number is not changed.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Target: <I>PID-3-patient ID (internal ID)</I> and <I>PID-18-patient account number</I> (Note: <I>PID-18-patient account </I><I>number</I> and <I>MRG-3-prior patient account number</I> will be the same since the account number does not change in this scenario).
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Source: <I>MRG-1-prior patient ID-internal</I> and <I>MRG-3-prior patient account number</I>   (NOTE: <I>MRG-3-prior </I><I>patient account number</I> must be valued to indicate which account to move)
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A44|00000007|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A44|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR2^^^XYZ||JONES^WILLIAM^A^JR||19501010|M|||123 EAST STREET^^NY^NY^10021||(212)111-3333|||S||ACCT2&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT2&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Move
+</TD><TD WIDTH=303 VALIGN=top >
+<P>After Move</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1      MR2
+<P> ACCT1          ACCT1
+<P> ACCT2
+</TD><TD WIDTH=303 VALIGN=top >
+<P>MR1     MR2
+<P> ACCT1        ACCT1 
+<P>                     ACCT2</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Implementation Considerations: This scenario exists when two medical records legitimately exist for two different people and an account is incorrectly associated with the wrong medical record number.
+</TD></TR></TABLE><H5>3.5.2.2.14 <A NAME="I19"></A>A45 - move visit information - visit number (repeating segment)</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A45 - Move visit information - visit number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Use Case -Mary Jones (patient internal ID MR1) is a recurring outpatient at the Physical Therapy and Speech Therapy clinics at hospital XYZ.  She is assigned a different account for each clinic; her account number for Physical Therapy is ACCT1 and her account number for Speech Therapy is X1.  However, on two different occasions, the Speech Therapy registrar accidentally assigned her visits (96102 and 96104) to the Physical Therapy account.  The problem is later discovered and the corresponding visits are moved to the correct account.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Target: <I>PID-18-patient account number</I> and <I>PV1-19-visit number</I>.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Source: <I>MRG-3-prior patient account number</I> and <I>MRG-5-prior visit number</I>.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A45|00000005|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A45|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||JONES^MARY||19501010|M|||123 NORTH STREET^^NY^NY^10021||(212)111-3333|||S||X1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1||96102&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1||O|PT||||||||||||||||96102&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1||96104&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1||O|PT||||||||||||||||96104&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Move
+</TD><TD WIDTH=303 VALIGN=top >
+<P>After Move</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   96100
+<P>   96102*
+<P>   96104*
+<P> X1
+<P>    96101
+<P>    96103
+<P>    96105
+<P>*Visits erroneously assigned
+</TD><TD WIDTH=303 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>    96100
+<P> X1
+<P>    96101
+<P>    96102
+<P>    96103
+<P>    96104
+<P>    96105</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>In the above transaction/implementation, the application that generated the message assigns unique visit numbers.
+<P>Implementation Considerations:  In this scenario the repeating MRG/PV1 construct is used to indicate which visits are moved, as illustrated in the Example Transaction<I>.  MRG-5-prior visit number</I> and <I>PV1-19-visit </I><I>number</I> are the same values because the visit numbers do not change.  Refer to Section <A HREF="ch300076.htm#I14">3.5.2.1.7</A>, &quot;<A HREF="ch300076.htm#I14">Global merge and move message construct versus repeating segment message constructs</A>,&quot; for additional information regarding message construct.
+</TD></TR></TABLE><H5>3.5.2.2.15 <A NAME="I20"></A>A45 - move visit information - visit number (repeating segment)</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A45 - Move visit information - visit number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Use Case -Mary Jones (patient internal ID MR1) is a recurring outpatient at the Physical Therapy and Speech Therapy clinics at hospital XYZ.  She is assigned a different account for each clinic; her account number for Physical Therapy is ACCT1 and her account number for Speech Therapy is X1.  However, on two different occasions, the Speech Therapy registrar accidentally assigned her visits (VISIT2 and VISIT3) to the Physical Therapy account.  The problem is later discovered and the corresponding visits are moved to the correct account.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Target: <I>PID-18-patient account number</I> and <I>PV1-19-visit number.</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Source: <I>MRG-3-prior patient account number</I> and <I>MRG-5-prior visit number</I>.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A45|00000005|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A45|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||JONES^MARY||19501010|M|||123 NORTH STREET^^NY^NY^10021||(212)111-3333|||S||X1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1||VISIT2&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1||O|PT||||||||||||||||V4&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1||VISIT3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1||O|PT||||||||||||||||VISIT5&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Move
+</TD><TD WIDTH=303 VALIGN=top >
+<P>After Move</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1
+<P>   VISIT2*
+<P>   VISIT3*
+<P> X1
+<P>    VISIT1
+<P>    VISIT2
+<P>    VISIT3
+<P>*Visits erroneously assigned
+</TD><TD WIDTH=303 VALIGN=top >
+<P>MR1
+<P> A1
+<P>    V1
+<P> X1
+<P>    VISIT1
+<P>    VISIT2
+<P>    VISIT3
+<P>    VISIT4**
+<P>    VISIT5**
+<P>**visits moved and renumbered</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>In the above transaction/implementation, the application that generated the message allows non-unique visit numbers. 
+<P>Implementation Considerations:  If Visit Numbers are not unique (as implied by the After Move example above) and renumbering of the visits is required, you must use a repeating MRG/PV1 construct as illustrated in the Example Transaction.  Refer to 3.5.2.1.7 for additional information regarding message construct.
+</TD></TR></TABLE><H5>3.5.2.2.16 A46 - change external ID</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=621 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A46 -  Change external ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Use Case - The enterprise system allows manual assignment of the enterprise number.  During the manual add of a person to the enterprise, an erroneous enterprise number is entered (E3) for Sally Jones.  Since the correct enterprise number (E2) has not yet been assigned, no merge takes place.  The Patient External ID is simply changed. 
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Target: <I>PID-2-patient ID (external ID)</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Source: <I>MRG-4-prior patient ID-external</I>.  This event is a change of<I> PID-2-patient ID (external ID)</I>, external ID since it represents the number used by disparate corporations or facilities to uniquely identify the person.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REPOSITORY|ENT|RSP1P8|MCM|199601051530|SEC|ADT^A46|000008|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A46|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID||E2|||JONES^SALLY|....&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG||||E3&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=310 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>E3            
+<P> MR1
+<P>   ACCT1
+</TD><TD WIDTH=310 VALIGN=top >
+<P>E2
+<P> MR1
+<P>   ACCT1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Implementation Considerations: This type of change is generally initiated by the enterprise system.
+</TD></TR></TABLE><H5>3.5.2.2.17 A47 - change internal ID</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=621 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A47 - Change internal ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Use Case - The Medical Records Department of XYZ hospital uses a system of manual medical record number assignment.  During the admission process, the registrar accidentally assigned the wrong Medical Record Number (MR2 instead of MR1) to John Meyers.  Since the correct Medical Record has not yet been assigned to any patient, no merge takes place.  The Patient Internal ID is simply changed.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Target:<I> PID-3-patient ID (internal ID)</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Source: <I>MRG-1-prior patient ID-internal</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A47|00000002|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A47|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||MEYERS^JOHN||19501010|M|||987 SOUTH STREET^^NY^NY^10021||(212)111-3333|||S||ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^XYZ||ACCT1&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=310 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>MR2
+<P>  ACCT1
+</TD><TD WIDTH=310 VALIGN=top >
+<P>MR1
+<P>  ACCT1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Implementation Considerations: None.
+</TD></TR></TABLE><H5>3.5.2.2.18 A48 - change alternate patient ID</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=621 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A48 - Change alternate patient ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Use Case - The Admitting Department of XYZ hospital uses a system of manual Alternate ID Number assignment.  During the admission process, the registrar accidentally assigned the wrong Alternate ID Number (AL2 instead of AL1) to John Meyers.  Since the correct Alternate ID Number has not yet been assigned to any patient, the Alternate ID is simply changed.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Target:<I> PID-4-alternate patient ID-PID</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Source: <I>MRG-2-prior alternate patient ID</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A48|00000002|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A48|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ|AL1|MEYERS^JOHN|....&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ|AL2&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=310 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=310 VALIGN=top >
+<P>MR1
+<P>  AL2
+</TD><TD WIDTH=310 VALIGN=top >
+<P>MR1
+<P>  AL1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=621 VALIGN=top >
+<P>Implementation Considerations: None.
+</TD></TR></TABLE><H5>3.5.2.2.19 A49 - change patient account number</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A49 - Change patient account number 
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Use Case - Patients are automatically assigned an account number by hospital XYZ&#146;s ADT system at admission.  However, when the ADT system is down, the admitting clerk manually assigns account numbers from a pool of downtime account numbers.  John Rodriguez (internal patient ID MR1) was manually assigned downtime account number ACCT1.  When the ADT system came back up, the admitting clerk accidentally entered the wrong account number, X1, into the system.  When the problem was later discovered, the account number was changed from X1 to ACCT1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Target: <I>PID-18-patient account number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Source: <I>MRG-3-prior patient account number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A49|00000006|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A49|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||RODRIGUEZ^JOHN||19501010|M|||123 SOUTH STREET^^NY^NY^10021||(212)111-2222|||S|CAT|ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||X1&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=303 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1
+<P> X1
+</TD><TD WIDTH=303 VALIGN=top >
+<P>MR1
+<P> A1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Implementation Considerations: None.
+</TD></TR></TABLE><H5>3.5.2.2.20 A50 - change visit number </H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A50 - Change visit number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Use Case - Patients are automatically assigned a visit number by hospital XYZ&#146;s ADT system at check-in.  However, when the ADT system is down, the admitting clerk manually assigns visit numbers from a pool of downtime numbers.  John Rodriguez (internal patient ID MR1) was manually assigned downtime visit number VISIT1.  When the ADT system came back up, the admitting clerk accidentally entered the wrong visit number, VISIT2, into the system.  When the problem was later discovered, the visit number was changed from VISIT2 to VISIT1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Target:  <I>PV1-19-visit number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Source: <I>MRG-5-prior visit number</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A50|00000006|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A50|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||RODRIGUEZ^JOHN||19501010|M|||123 SOUTH STREET^^NY^NY^10021||(212)111-2222|||S|CAT|A1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1||VISIT2&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1|1|O||3|||99^BROWN^JERRY|||ONC||||1||VIP|99^BROWN^JERRY|O/P|VISIT1...&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=303 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT2
+</TD><TD WIDTH=303 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Implementation Considerations: None.
+</TD></TR></TABLE><H5>3.5.2.2.21 A51 - change alternate visit ID</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=624 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A51 - Change alternate visit ID
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Use Case - Patients are automatically assigned an alternate visit number by hospital XYZ&#146;s ADT system at check-in.  However, when the ADT system is down, the admitting clerk manually assigns alternate visit numbers from a pool of downtime numbers.  John Rodriguez was manually assigned downtime alternate visit number AV1.  When the ADT system came back up, the admitting clerk accidentally entered the wrong alternate visit number, AV2, into the system.  When the problem was later discovered, the alternate visit number was changed from AV2 to AV1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Target: <I> PV1-50-alternate visit ID</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Source: <I>MRG-6-prior alternate visit ID</I>
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Example Transaction:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SECURITY|ADT^A51|00000006|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A51|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||RODRIGUEZ^JOHN||19501010|M|||123 SOUTH STREET^^NY^NY^10021||(212)111-2222|||S|CAT|ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1|||AV2&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1|1|O||3|||99^BROWN^JERRY|||ONC||||1||VIP|99^BROWN^JERRY|O/P|V1|SP|||||||||||||||||||A|||||19960902081010||||||AV1&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=303 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1
+<P>     AV2
+</TD><TD WIDTH=303 VALIGN=top >
+<P>MR1
+<P> ACCT1
+<P>   VISIT1
+<P>      AV1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=624 VALIGN=top >
+<P>Implementation Considerations: None.
+</TD></TR></TABLE><H5>3.5.2.2.22 Example using multiple messages</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=642 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A47 - Change internal ID and A49 - Change patient account number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Use Case - Patients are automatically assigned Medical Records Numbers and account numbers by hospital XYZ&#146;s ADT system at admission.  However, when the ADT system is down, the admitting clerk manually assigns account numbers and Medical Records numbers from a pool of downtime numbers.  John Rodriguez was manually assigned downtime Medical Record Number MR1 and downtime account number A1.  When the ADT system came back up, the admitting clerk accidentally enters the wrong Medical Record Number (MR2) and account number (X1) into the system.  The error occurred because she was reading from the paperwork for a different downtime admit not yet entered into the ADT system.  The problem is quickly discovered, and the medical record number and account number was fixed accordingly.  Since the other downtime admit had not yet been entered into the ADT system, no merge was required.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Target:  <I>PID-3-patient ID (internal ID)</I> (Message 1) and <I>PID-18-patient account number</I> (Message 2)
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Source: <I>MRG-1-prior patient ID-internal</I> (Message 1) and <I>MRG-3-prior patient account number</I> (Message 2)
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Example Transaction - Message 1:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A47|00000006|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A47|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||RODRIGUEZ^JOHN||19501010|M|||123 SOUTH STREET^^NY^NY^10021||(212)111-2222|||S|CAT|X1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^XYZ|&lt;cr&gt;</FONT></PRE>
+<P>Example Transaction - Message 2:
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A49|00000006|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A49|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR1^^^XYZ||RODRIGUEZ^JOHN||19501010|M|||123 SOUTH STREET^^NY^NY^10021||(212)111-2222|||S|CAT|ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||X1&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=321 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR2
+<P> X1
+</TD><TD WIDTH=321 VALIGN=top >
+<P>MR1
+<P>  ACCT1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Implementation Considerations:  Message 1 (A47) changes the Internal Number.  Message 2, A49 (change patient account number) changes the account number.
+</TD></TR></TABLE><H5>3.5.2.2.23 Example using multiple messages</H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD COLSPAN=2 WIDTH=642 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>A44 - Move account information - patient account number and A49 - Change patient account number
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Use Case - During the admitting process, the admitting clerk uses the Medical Record Number of William A. Jones, III (MR1) instead of William A. Jones, Jr. (MR2).  The ADT system assigns the new admission account number A1.  When the mistake is discovered, the account is moved to the correct Medical Record, MR2.  The ADT system generates a new account number as a result: number X1.
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Target: <I>PID-3-patient ID (internal ID)</I> (Message 1) and <I>PID-18-patient account number</I> (Message 2)
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Source: <I>MRG-1-prior patient ID-internal</I> (Message 1) and <I>MRG-3-prior patient account number</I> (Message 2)
+</TD></TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Example Transaction (Message 1):
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A44|00000007|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A44|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR2^^^XYZ||JONES^WILLIAM^A^JR||19501010|M|||123 EAST STREET^^NY^NY^10021||(212)111-3333|||S||ACCT1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR1^^^XYZ||ACCT1&lt;cr&gt;</FONT></PRE>
+<P>Example Transaction (Message 2):
+<PRE>
+<FONT FACE="Courier New">MSH|^~\&amp;|REGADT|MCM|RSP1P8|MCM|199601051530|SEC|ADT^A49|00000007|P|2.3&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN|A49|199601051530&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID|||MR2^^^XYZ||JONES^WILLIAM^A^JR||19501010|M|||123 EAST STREET^^NY^NY^10021||(212)111-3333|||S||X1&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG|MR2^^^XYZ||ACCT1&lt;cr&gt;</FONT></PRE>
+</TD></TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>Before Change
+</TD><TD WIDTH=321 VALIGN=top >
+<P>After Change</TD>
+</TR>
+<TR>
+<TD WIDTH=321 VALIGN=top >
+<P>MR1     MR2
+<P> ACCT1
+</TD><TD WIDTH=321 VALIGN=top >
+<P>MR1     MR2
+<P>              X1</TD>
+</TR>
+<TR>
+<TD COLSPAN=2 WIDTH=642 VALIGN=top >
+<P>Implementation Considerations:  Message 1, A44 (move account information-patient account number), moves the account from MR1 to MR2.  Message 2, A49 (change patient account number), changes the account number.
+</TD></TR></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch300075.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300077.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

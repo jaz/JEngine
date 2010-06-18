@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.28 ADT/ACK - add person information (event A28)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300031.htm">
+<LINK REL="Previous" HREF="ch300029.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300029.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300031.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E164"></A>
+<H3><B>3.2.28</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - add person information</B><A NAME="I9"></A><B> (event A28)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The purpose of this and the three following messages is to allow sites with multiple systems and respective master patient databases to communicate activity related to a person regardless of whether that person is currently a patient on each system.  Each system has an interest in the database activity of the others in order to maintain data integrity across an institution.  Though they are defined within the ADT message set, these messages differ in that they are not patient-specific.  To a certain registry, the person may be a person of interest, a potential future patient, or a potential guarantor.  For example, these events can be used to maintain an MPI (master patient index), a cancer registry, members of a managed care plan, an HIV database, etc.  </FONT>
+<P>
+<FONT FACE="Times New Roman">These events should not replace the use of the A01, A03, A04, A08, etc., events.  They are not intended to be used for notification of real-time ADT events.  Visit information may be included but is not required.  These events are primarily for demographic data, but optional historical non-demographic data may be sent as well.</FONT>
+<P>
+<FONT FACE="Times New Roman">The person whose data is being sent should be identified in the PID segment using the <I>PID-2-patient ID </I><I>(external)</I>, even when the person is not a patient and may be a potential guarantor.  An A28 establishes person identifiers, e.g., social security number, guarantor identifier, or other unique identifiers, and contains a person identifier in the<I> PID-2-patient ID (external</I>).  The person involved may or may not have active or inactive cases associated with them.  When field names and descriptions say &quot;patient,&quot; we must translate that to &quot;person&quot; for these transactions.  In this manner, &quot;person information&quot; about a guarantor can be sent independently of the guarantor&#146;s relation to any patient.</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, a site with separate inpatient, outpatient and medical records systems may require that each system maintain concurrent person information.  Prior to an admit, the new person is added to the master database of the inpatient system, resulting in the broadcast of a message.  The outpatient system receives the message and adds the person to its database with the possibility that the person may someday become a patient in its system.  The medical records system receives the message and adds the person to its database with the possibility that it will track inpatient, outpatient, or clinical data for that person.  The clinical repository database or MPI receives the message to keep all potential patients and guarantors in its database.</FONT>
+<P>
+<FONT FACE="Times New Roman">The A28 event can be used to send everything that is known about a person.  For example, it can be sent to an ICU unit (in addition to the A02 event) when a patient is transferred to the ICU unit in order to backload all demographic information for the patient into the ICU system.  An A28 or A31 can also be used for backloading MPI information for the person, or for backloading person and historical information.</FONT>
+<P>
+<FONT FACE="Times New Roman">In addition to adding a person to a database, the delete, update, and merge messages work in a similar manner to maintain concurrent person information.  It is left up to site-specific negotiations to decide how much data must be transmitted or re-transmitted when a person becomes a patient.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { NK1 } ]   Next of Kin / Associated Parties    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV1 ]    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { AL1 } ]   Allergy Information       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  DRG  ]   DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ { PR1    Procedures        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ROL}]  Role           12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { GT1 } ]   Guarantor Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { IN1    Insurance Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN2 ]   Insurance Information - Addit. Info.   6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN3 ]    Insurance Information - Cert.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  } </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ACC ]    Accident Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB1 ]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB2 ]    Universal Bill 92 Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300029.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300031.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

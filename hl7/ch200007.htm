@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>2.3 COMMUNICATIONS ENVIRONMENT</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200008.htm">
+<LINK REL="Previous" HREF="ch200006.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E12"></A>
+<P>
+<FONT SIZE="+2"><B>2.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>COMMUNICATIONS ENVIRONMENT</B></FONT>
+<P>The HL7 Standard defines the messages as they are exchanged among applications entities and the procedures used to exchange them.  As such, it conceptually operates at the seventh level of the ISO model for Open System Interconnection (OSI).  It is primarily concerned with the data content and interrelationship of messages and with communicating certain application level error conditions.
+<P>Since the OSI protocols are not universally implemented, the HL7 Working Group is interested in providing standards that will be useful in the interim.  It is also recognized that there is now, and will continue to be, interest in communicating health data among systems operating in communications environments that provide a high level of functionality, but use protocols other than ISO OSI.  The universe of environments of interest to HL7 includes, but is not restricted to:
+<P>a) ad hoc environments that do not provide even basic transport reliability.  Such environments consist of point-to-point RS-232 links, modems, and even LANs, if their connection to host computers is made via RS-232 communications links.  Until OSI high level standards become truly prevalent, many healthcare interfaces will be implemented over such links.  In such an environment, the HL7 Lower Level Protocols (LLP) may be used between systems to enhance the capabilities of the communications environment.  The HL7 Lower Level Protocols are defined in HL7 Implementation Guide, which is not an official part of the Standard.
+<P>b) environments that support a robust transport level, but do not meet the high level requirements.  This includes environments such as TCP/IP, DECNET, and SNA.
+<P>c) ISO and proprietary networks that implement up to presentation and other high level services.  IBM&#146;s SNA LU6.2 and  SUN Microsystems&#146;s NFS are examples of complete proprietary networks.
+<P>d) two or more applications running on the same physical and/or logical machine that are not tightly integrated.  In these environments, the messaging capabilities may be provided by inter-process communications services (e.g., Pipes in a UNIX System).
+<P>The HL7 Standard assumes the communications environment will provide the following capabilities:
+<P>a) error free transmission.  Applications can assume that they correctly received all of the transmitted bytes in the correct order that they were sent.  This implies that error checking is done at a lower level.  However, sending applications may not assume that the message was actually received without receiving an acknowledgment message.
+<P>b) character conversion. If the two machines exchanging data use different representations of the same character set, the communications environment will convert the data from one representation to the other.
+<P>c) message length.  HL7 sets no limits on the maximum size of HL7 messages.  The Standard assumes that the communications environment can transport messages of any length that might be necessary.  In practice, sites may agree to place some upper bound on the size of messages and may use the message continuation protocol, described later in this chapter, for messages that exceed the upper limit.
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  Just as HL7 makes no assumptions about the design or architecture of the application systems sending and receiving HL7 messages, it makes no assumptions about the communications environment beyond those listed above.  In particular, aside from the above assumptions, the communications environment, including its architecture, design and implementation, is outside the scope of HL7.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

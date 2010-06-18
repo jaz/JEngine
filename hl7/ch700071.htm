@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>7.20 EXAMPLE MESSAGES FOR GENERIC WAVEFORM DATA</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700072.htm">
+<LINK REL="Previous" HREF="ch700070.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700070.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700072.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E83"></A>
+<P>
+<FONT SIZE="+2"><B>7.20</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>EXAMPLE MESSAGES FOR GENERIC WAVEFORM DATA</B></FONT>
+<P>This section gives four example messages of type ORU (unsolicited) that each contain a three-channel waveform recording, with the same waveform in each channel.  These examples contain data for one patient.  In these example message transmissions, <B>&lt;CR&gt;</B> indicates an ASCII carriage return character (ASCII 13).
+<P>The following is a detailed explanation of each of the segments contained in the example messages:
+<P><B><I>Message Header (MSH) Segment</I></B> - This specifies the delimiters (<B>|^~\&amp;</B>), sending application (<B>SVL,</B> meaning Sunnyville Laboratory), receiving application (<B>SVC</B>, meaning Sunnyville Clinic), date and time of transmission (March 24, 1990 at 10:12:15), message type (<B>ORU</B>) and trigger event (<B>W01</B>), a message control ID that identifies this message uniquely among all messages transmitted by this sender (<B>19264</B>), processing ID (<B>P</B>, meaning production), and specification version ID (<B>2.3</B>).
+<P><B><I>Patient ID (PID) Segment</I></B> - This contains a sequence number (<B>1</B>), external and internal patient IDs (both <B>4567890</B>), and a patient name (<B>Mr. John Q Doe, Jr</B>).
+<P><B><I>Order (OBR) Segment</I></B> - This contains a sequence number (<B>1</B>), placer order number (<B>5678</B>) and placer ID (<B>SVC</B>, meaning Sunnyville Clinic), filler order number (<B>1234</B>) and filler ID (<B>SVL</B>, meaning Sunnyville Laboratory), and test/observation ID (<B>5</B>, using a local coding system that is known to the intended receiver, meaning a three-channel waveform recording).
+<P><B><I>CHN Category Result (OBX) Segments</I></B> - Using a value type of <B>CD</B> (channel definition), these define each of the three data channels by number and specify a label (waveform source) for each.  The channel sensitivity (<B>0.5 mV</B>), sampling frequency (<B>200</B>), and minimum and maximum data values (<B>-2048</B> to <B>2047</B>) are specified for each channel in examples 1 and 2 and 4. In example 3, these are specified only for channel 1, but apply by default to all subsequent channels.  No baseline or calibration parameters are specified, so defaults are used for all channels.
+<P><B><I>TIM Category Result (OBX) Segments</I></B> - Using the data type TS (time stamp), these define the start of the waveform data at a time 525 ms past 8:12:37 on March 24, 1990.
+<P><B><I>WAV Category Result (OBX) Segments</I></B> - The data may be transmitted in either &quot;channel-block&quot; (unmultiplexed) format using the NA data type, or in &quot;channel-multiplexed&quot; format using the MA data type.  The three examples demonstrate different ways of transmitting 3 waveform channels, with 25 samples from each waveform channel.  Note that in these examples, each waveform channel is identical.
+<A NAME="E96E6"></A>
+<P><B><I>ANO Category Result (OBX) Segments -</I></B> Annotation segments with a single channel definition contain a single annotation string.  Annotation segments with multiple channel definitions contain a separate annotation string for each defined channel - successive annotation strings are separated from each other by the repeat delimiter.  In the following examples, channel 1 has been annotated at a time 565 ms past 8:12:37 on March 24, 1990; channel 3 has been annotated at a time 605 ms past 8:12:37 on March 24, 1990.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700070.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700072.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

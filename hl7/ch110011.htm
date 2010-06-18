@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>11.2.6 RQC/RCL - request/receipt of clinical data listing (event</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110012.htm">
+<LINK REL="Previous" HREF="ch110010.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E486"></A>
+<H3><B>11.2.6</B><B> </B><A NAME="I2"></A><B>RQC/RCL - request/receipt of clinical data listing</B><A NAME="I3"></A><B> (event I06)</B></H3>
+<P>
+<FONT FACE="Times New Roman">This event code is sent from one healthcare provider to another  (typically a laboratory or radiology, etc.) to request a list of available clinical observation information.  When the provider is dealing with a community model in which remote requests make transmission of large amounts of data impractical, this event code will provide for interactive lists of transactions from which more specific selections can be made.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RQC</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Request Clinical Information</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  QRD    Query Definition        5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [QRF]    Query Filter         5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ GT1 ]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RCL</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Return Clinical List</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSA      Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  QRD    Query Definition        5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [QRF]    Query Filter         5</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DG1}]    Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DRG}]    DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{AL1}]    Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DSP}]    Display Data         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

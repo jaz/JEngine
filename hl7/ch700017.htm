@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<TITLE>7.4.5 Reporting cultures and susceptibilities</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700018.htm">
+<LINK REL="Previous" HREF="ch700016.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E295"></A>
+<H3><B>7.4.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Reporting cultures and susceptibilities</B></H3>
+<H4>7.4.5.1 Culture battery/report representation</H4>
+<P>
+<FONT FACE="Times New Roman">Organisms and other observations/tests are reported using multiple OBX segments.  The granularity expected for HL7 culture reports is one observation per organism.</FONT>
+<P>
+<FONT FACE="Times New Roman">All OBX segments which have the same observation ID and sub-ID are part of a single observation.</FONT>
+<P>
+<FONT FACE="Times New Roman">Each organism in a culture battery is assigned a unique <I>OBX-4-observation sub-ID </I>(and is therefore a separate observation).  The organism name is given in <I>OBX-5-observation value </I>(results).  It is recommended, but not required that the organism name may change over time, but the corresponding observation sub-ID never changes.  (The observation ID will be identical for all organisms reported.)</FONT>
+<P>
+<FONT FACE="Times New Roman">Recommended:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|organism^413^L|1|^E. Coli||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|organism^413^L|2|^S. Aureus||||||F &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Not recommended:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|organism1^413^L|1|^E. Coli||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|organism2^413^L|1|^S. Aureus||||||F &lt;CR&gt;</FONT></PRE>
+<H4>7.4.5.2 Susceptibility battery/report representation</H4>
+<P>
+<FONT FACE="Times New Roman">Each antimicrobial should be reported as a separate (OBX) observation where the Observation ID is a code for the antimicrobial.  (OBXs for non-antimicrobials observations and related information may be present in the same battery.)</FONT>
+<P>
+<FONT FACE="Times New Roman">MIC and disk diffusion (Kirby Bauer) susceptibility results can be combined in the same OBX segment.  An OBX can contain an MIC value (in <I>OBX-5-observation value</I> (results)) and <I>OBX-8-abnormal flag</I> that indicates whether the organism is sensitive, resistant, or intermediate (see <I>HL7 t</I><I>able 0078- Abnormal </I><I>flags</I> under<I> </I>abnormal flag fields).</FONT>
+<P>
+<FONT FACE="Times New Roman">Or, an OBX can contain a disk diffusion  result string (e.g., sensitive) in the Observation Results field and the disk diffusion interpretation in <I>OBX-8-abnormal flags</I> (e.g., S).</FONT>
+<P>
+<FONT FACE="Times New Roman">A susceptibility battery may only contain results corresponding to a single organism that has been previously reported in a culture battery.</FONT>
+<H4>7.4.5.3 Identification of the organism for a susceptibility battery</H4>
+<P>
+<FONT FACE="Times New Roman">The following is the preferred, but not required method of organizing data about antimicrobial susceptibility.</FONT>
+<P>
+<FONT FACE="Times New Roman">A susceptibility battery may only contain results corresponding to a single organism that has been previously reported in a culture battery.</FONT>
+<P>
+<FONT FACE="Times New Roman">A susceptibility battery is always a child order to a culture battery.  <I>OBR-29-parent number</I> (parent&#146;s filler order number) in the susceptibility OBR is equal to <I>OBR-3-filler order number</I> in the parent culture OBR and is used to link the two batteries logically.</FONT>
+<P>
+<FONT FACE="Times New Roman">The susceptibility battery also contains a linkage back to a particular organism in the culture battery.  <I>OBR-26-parent result</I> of the susceptibility OBR contains two components--<I>OBX-3-observation identifier</I> (code only) and <I>OBX-4-observation sub-ID</I> of the OBX in the culture battery which contains the organism name.</FONT>
+<P>
+<FONT FACE="Times New Roman">The identity of an organism/isolate is expected to be refined over time.  When an organism identification changes, the parent culture battery can be resent without resending the child susceptibility battery.</FONT>
+<P>
+<FONT FACE="Times New Roman">The case may occur where a susceptibility battery is reported on an organism which has not yet been identified.  In this case, it is required that a placeholder OBX for the organism name be reported in the corresponding culture battery so that <I>OBR-26-parent result</I> in the susceptibility OBR will point to a valid organism OBX in the culture battery.  Transmission of an organism OBX (in the culture battery) with the Sub-ID field valued must precede the susceptibility battery which uses the identical Sub-ID in <I>OBR-26-parent result</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">Discussion and examples:</FONT>
+<P>
+<FONT FACE="Times New Roman">Order micro results (blood culture)</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|LAB1||DESTINATION||19910127105114||ORU^R03|LAB1003929</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||900329493||PETRSN~DAVID|||927</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PV1||I|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A485388^OE|H29847^LAB1|BLOOD CULTURE|||</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Result for culture</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A485388^OE|H29847^LAB1|BLOOD CULTURE||...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|SDES^SOURCE||BLOOD-RAPID||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|EXAM^MICROSCOPIC||GRAM POSITIVE COCCI IN GROUPS||||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|ORGANISM^IDENTIFIER|1|ISOLATE 1||||||F &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Result for susceptibility</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A485388^OE|H29848^LAB1|BT1^SUSCEPTIBILITY BATTERY|||||MC|to field</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ... 26|ORGANISM^1|||A485388&amp;OE^H29847&amp;LAB1|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|ACAPEN^PENICILLIN||0.5|R|||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|ACHNAF^NAICILLIN||1|R|||||F &lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|ACHCCLI^CLINDAMYCIN||&lt;=0.1|S|||||F &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Result for Culture ID</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A485388^OE|H29847^LAB1|BLOOD CULTURE||...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|ORGANISM^IDENTIFIER|1|STAPH EPI||||||F &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">New result for culture ID</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A485388^OE|H29847^LAB1|BLOOD CULTURE||...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|ORGANISM^IDENTIFIER|1|STAPH EPI SERO TYPE 3||||||F &lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Assumptions</FONT>
+<P>
+<FONT FACE="Times New Roman">1. All OBXs in the parent order must employ the same coding scheme.</FONT>
+<P>
+<FONT FACE="Times New Roman">2. The Sub-ID of the parent OBXs (result) cannot change.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700016.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700018.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

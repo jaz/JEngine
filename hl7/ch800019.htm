@@ -1,0 +1,432 @@
+<HTML>
+<HEAD>
+<TITLE>8.6.3 PRA - practitioner detail segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800020.htm">
+<LINK REL="Previous" HREF="ch800018.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800018.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800020.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E350"></A>
+<H3><B>8.6.3</B><B> </B><A NAME="I2"></A><B>PRA - practitioner detail segment</B><A NAME="I3"></A><A NAME="I4"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The PRA segment adds detailed medical practitioner information to the personnel identified by the STF segment.  A PRA segment may optionally follow an STF segment.  A PRA segment must always have been preceded by a corresponding STF segment.  The PRA segment may also be used for staff who work in healthcare who are not practitioners, but need to be certified, e.g., &quot;medical records staff.&quot;</FONT>
+<P ALIGN=indent>Figure 8-6.  PRA attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=244 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00685</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Key Value - PRA</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00686</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Practitioner Group</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 3</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0186</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00687</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Practitioner Category</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0187</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00688</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider Billing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 100</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0337
+<BR></FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00689</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Specialty</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 100</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0338</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00690</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Practitioner ID Numbers</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00691</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Privileges</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01235</FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date Entered Practice</TD></TR></FONT></TABLE></CENTER><P>8.6.3.0   PRA field definitions
+<H4>8.6.3.1 Primary key value - PRA  (ST)   00685</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field must match <I>MFE-4-primary key value</I>, to identify which entry is being referenced.</FONT>
+<H4>8.6.3.2 Practitioner group  (CE)   00686</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name and/or code of a group of practitioner to which this practitioner belongs.</FONT>
+<H4>8.6.3.3 Practitioner category  (IS)   00687</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the category of practitioner.  Refer to <I>user-defined</I> <I>table 0186 - Practitioner </I><I>category</I> whose values may include codes for staff physician, courtesy physician, resident, physician assistant, physical therapist, psychiatrist, psychologist, pharmacist, registered nurse, licensed practical nurse, licensed vocational nurse, nurse practitioner, etc.</FONT>
+<H4>8.6.3.4 Provider billing  (ID)   00688</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates how provider services are billed.  Refer to<I> HL7 table 0187 - Provider billing</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0187 - Provider billing</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Provider does own billing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Institution bills for provider</TD></TR></FONT></TABLE><H4>8.6.3.5 Specialty  (CM)   00689</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;specialty name (ST)&gt; ^ &lt;governing board (ST)&gt; ^ &lt;eligible or certified (IS)&gt; ^ &lt;date of certification (DT)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This repeating field is made up of multiple components to record the practitioner&#146;s specialties.  The multiple components of each specialty are: (1) specialty name or abbreviation, identifies provider&#146;s specialty, (2) name of specialty governing board, (3) Certification Status, (4) certified date contains the  date of certification, if certified.</FONT>
+<P ALIGN=indent>Table - 0337 - Certification Status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=319 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">E</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT SIZE="-1">Eligible</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT SIZE="-1">Certified</TD></TR></FONT></TABLE><H4>8.6.3.6 Practitioner ID numbers  (CM)   00690</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;type of ID number (IS)&gt; ^ &lt;state/other qualifying info (ST)&gt; ^ &lt;expiration date&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This repeating field contains this practitioner&#146;s license numbers and other ID numbers.  This is a field made up of the following components: (1) the ID number, and (2) the type of number, and optionally (3) the state or province in which it is valid, if relevant, or other qualifying information.  It is recommended that state qualifications use the abbreviations from the postal service of the country.  The practitioner ID number type (component 2) is a user-defined table (table 0338). </FONT>
+<P>
+<FONT FACE="Times New Roman">User-defined Table 0338 - Practitioner ID number type</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Value</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">UPIN</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">University Physician Id. No.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SL</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">State License Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MCD</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medicaid Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">GL</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">General Ledger Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CY</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">County Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TAX</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Tax ID Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DEA</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Drug Enforcement Agency No.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MCR</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Medicare Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">L&amp;I</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Labor and Industries Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QA</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">QA Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TRL</FONT>
+</TD><TD WIDTH=319 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Training License Number</TD></TR></FONT></TABLE><H4>8.6.3.7 Privileges  (CM)   00691</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;privilege (CE)&gt; ^ &lt;privilege class (CE)&gt; ^ &lt;expiration date (DT)&gt; ^ &lt;activation date (DT)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents for privilege:  &lt; identifier (ID)&gt; &amp; &lt;text (ST)&gt; &amp; &lt;name of coding system (ST)&gt; &amp; &lt;alternate identifier (ID)&gt; &amp; &lt;text (ST)&gt; &amp; &lt;name of alternate coding system(ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents for privilege class:  &lt; identifier (ID)&gt; &amp; &lt;text (ST)&gt; &amp; &lt;name of coding system (ST)&gt; &amp; &lt;alternate identifier (ID)&gt; &amp; &lt;text (ST)&gt; &amp; &lt;name of alternate coding system(ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the institutional privileges which this provider may exercise.  Depends upon institutional needs.  For example, admit, transfer, discharge, place orders, verify orders, review results, etc. Can also be used for privileges other than patient services.  This is a repeating field, with each privilege made up of the following components: (1) privilege; (2) privilege class; (3) privilege expiration date, if any; and (4) privilege activation date, if any.  Note that the privilege and privilege class components are CE data types, and thus they are encoded with the subcomponent delimiter (&amp;) rather than the component delimiter (^).</FONT>
+<H4>8.6.3.8 Date entered practice  (DT)   01235</H4>
+<P>Definition:  This field contains the date the practitioner began practicing at the present institution (e.g., at hospital, at physician organization, at managed care network).
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800018.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800020.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

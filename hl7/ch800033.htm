@@ -1,0 +1,402 @@
+<HTML>
+<HEAD>
+<TITLE>8.8.3 LCH - location characteristic segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800034.htm">
+<LINK REL="Previous" HREF="ch800032.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800032.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800034.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E362"></A>
+<H3><B>8.8.3</B><B> </B><A NAME="I2"></A><B>LCH - location characteristic segment</B></H3>
+<P>The LCH segment is used to identify location characteristics which determine which patients will be assigned to the room or bed.  It contains the location characteristics of the room or bed identified in the preceding LOC segment. There should be one LCH segment for each attribute.
+<P>When the LCH segment appears immediately following the LOC segment, it communicates characteristics which are the same across multiple departments that may use the same room.  When the LCH segment appears immediately following the LDP segment, it communicates characteristics which differ for different departments that may use the same room.  For example, the following characteristics are more likely to vary by which department is using the room:  teaching, gender, staffed, set up, overflow, whereas the other characteristics are likely to remain the same.
+<P>Figure 8-14.  LCH attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>SEQ
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>LEN
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>DT
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>OPT
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>RP/#
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>TBL#
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ITEM#
+</TD><TD WIDTH=215 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ELEMENT NAME</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>1
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>PL
+</TD><TD WIDTH=47 VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>00943
+</TD><TD WIDTH=215 VALIGN=top >
+<P>Primary Key Value - LCH</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>2
+</TD><TD WIDTH=46 VALIGN=top >
+<P>1
+</TD><TD WIDTH=52 VALIGN=top >
+<P>ID
+</TD><TD WIDTH=47 VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>0206
+</TD><TD WIDTH=55 VALIGN=top >
+<P>00763
+</TD><TD WIDTH=215 VALIGN=top >
+<P>Segment Action Code</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>3
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>EI
+</TD><TD WIDTH=47 VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>00764
+</TD><TD WIDTH=215 VALIGN=top >
+<P>Segment Unique Key</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>4
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>CE
+</TD><TD WIDTH=47 VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>0324
+</TD><TD WIDTH=55 VALIGN=top >
+<P>01236
+</TD><TD WIDTH=215 VALIGN=top >
+<P>Location Characteristic ID</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>5
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>CE
+</TD><TD WIDTH=47 VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>01237
+</TD><TD WIDTH=215 VALIGN=top >
+<P>Location Characteristic Value</TD></TR></TABLE><P>8.8.3.0   LCH field definitions
+<H4>8.8.3.1 Primary key value - LCH (PL)   00943</H4>
+<P>Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;
+<P>Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field contains the institution&#146;s identification code for the location.  The identifying key value.   This field has the same components as the patient location fields in the PV1 segment (except that bed status is not included here).  At least the first component of this field is required.  The contents of this field must exactly match the content of its preceding MFE ( <I>MFE-4-primary key value</I>), its preceding LOC (<I>LOC-1-LOC primary key value</I>), and its preceding LDP (<I>LDP-1-LDP primary key value</I>).
+<H4>8.8.3.2 Segment action code (ID)   00763</H4>
+<P>Definition:  This field indicates whether this repetition of the segment is being added, changed or deleted.  This repetition of the repeating segment must be identified using <I>FT1-25-segment unique key</I>.  The action code adds a validation check to indicate, from the point of view of the sending system, whether this repetition of a segment is being added, changed or deleted.  This and the following field are used to implement the &quot;unique key&quot; mode of updating repeating segments.  (See Chapter 2, Section 2.23.4.2, &quot;Action code/unique identifier mode update definition.&quot;.)  Refer to <I>HL7 table 0206 - Segment action code</I> for valid values.
+<H4>8.8.3.3 Segment unique key (EI)   00764</H4>
+<P>Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID). 
+<P>Definition:  This field contains a  unique identifier for one of the multiple repetitions of this segment, to be used in conjunction with the preceding field.  Each of the repetitions of the segment will be uniquely identified by this unique key field for the purposes of updates.
+<H4>8.8.3.4 Location characteristic ID  (CE)   01236</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>Definition:  This field contains an identifier code to show WHICH characteristic is being communicated with this segment.  Refer to <I>user-defined table 0324 - Location characteristic ID </I> for suggested values.
+<P>
+<FONT FACE="Times New Roman">User-defined Table 0324 - Location characteristic ID</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SMK</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Smoking</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LIC</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Licensed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">IMP</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Implant: can be used for radiation implant patients</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SHA</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Shadow: a temporary holding location that does not physically exist</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">INF</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Infectious Disease: this location can be used for isolation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PRL</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Privacy Level: indicating the level of private versus non-private room</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LCR</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Level of Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OVR</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Overflow</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">STF</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Bed is Staffed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SET</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Bed is Set Up</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">GEN</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Gender of Patient(s)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TEA</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Teaching Location</TD></TR></FONT></TABLE><H4>8.8.3.5 Location characteristic value  (CE)   01237</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>Definition:  This field contains the value of the above field&#146;s characteristic.  The expected coded values for this field will depend upon the previous field.  For example, if the previous field is SMK, IMP, INF, the values would be &quot;Y&quot; or &quot;N&quot;.
+<P>When <I>LCH-4-location characteristic ID</I> contains &quot;SHA&quot;- Shadow, refer to <I>HL7 table 0136 - Yes/no </I><I>indicator </I>for valid values for <I>LRL-5-location relationship value</I> <I>.  </I> 
+<P>
+<FONT FACE="Times New Roman">Y not a real bed, but a temporary holding location that does not physically exist in the
+<BR> census</FONT>
+<P>
+<FONT FACE="Times New Roman">N this is a real bed</FONT>
+<P>When <I>LCH-4-location characteristic ID</I> contains &quot;PRL&quot;- Privacy level  (CE) , then <I>LRL-5-location </I><I>relationship value</I> indicates how the room is set up and intended to be used, disregarding different uses under special circumstances.  Refer to <I>user-defined table 0262 - Privacy level</I> for suggested values.
+<P>User-defined Table 0262 - Privacy level
+
+<TABLE >
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">F</FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Isolation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Private Room</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">J</FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Private Room - Medically Justified</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Q</FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Private Room - Due To Overflow</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Semi-Private Room</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">W</FONT>
+</TD><TD WIDTH=270 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ward</TD></TR></FONT></TABLE><P>When <I>LCH-4-location characteristic ID</I> contains &quot;LCR&quot;- Level of care, then <I>LRL-5-location relationship </I><I>value</I> contains the code which indicates what severity of the patient&#146;s medical condition which this location is designed to handle.  This indicates how the room is set up and intended to be used, disregarding different uses under special circumstances.  Refer to<I> user-defined table 0263 - Level of care.</I>
+<P>User-defined Table 0263 - Level of care 
+
+<TABLE >
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ambulatory</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">E</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">F</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Isolation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">N</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Intensive Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Critical Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Routine</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S</FONT>
+</TD><TD WIDTH=155 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Surgery</TD></TR></FONT></TABLE><P>When <I>LCH-4-location characteristic ID</I> contains &quot;IFD&quot;- Infectious disease, refer to <I>HL7 table 0136 - </I><I>Yes/no indicator </I>for valid values for <I>LRL-5-location relationship value.  </I> 
+<P>
+<FONT FACE="Times New Roman">Y patients with infectious diseases can be admitted to this location, that is, this location can
+<BR>  be used for isolation</FONT>
+<P>
+<FONT FACE="Times New Roman">N this location cannot be used for isolation</FONT>
+<P>When <I>LCH-4-location characteristic ID</I> contains &quot;SMO&quot;- Smoking, refer to <I>HL7 table 0136 - Yes/no </I><I>indicator </I>for valid values for <I>LRL-5-location relationship value.  </I> 
+<P>
+<FONT FACE="Times New Roman">Y this is a smoking location</FONT>
+<P>
+<FONT FACE="Times New Roman">N this is a non-smoking location</FONT>
+<P>When <I>LCH-4-location characteristic</I> ID contains &quot;IMP&quot;- Implant, refer to <I>HL7 table 0136 - Yes/no indicator </I>for valid values for <I>LRL-5-location relationship value.  </I> 
+<P>
+<FONT FACE="Times New Roman">Y this location can be used by radiation implant patients</FONT>
+<P>
+<FONT FACE="Times New Roman">N this location can not be used by radiation implant patients</FONT>
+<P>When <I>LCH-4-Location Characteristic ID</I> contains &quot;LIC&quot;- Licensed , refer to <I>HL7 table 0136 - Yes/no </I><I>indicator </I>for valid values for <I>LRL-5-Location relationship value.  </I> 
+<P>
+<FONT FACE="Times New Roman">Y this location is licensed</FONT>
+<P>
+<FONT FACE="Times New Roman">N this location is not licensed</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800032.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800034.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

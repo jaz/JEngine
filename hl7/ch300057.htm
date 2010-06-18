@@ -1,0 +1,1831 @@
+<HTML>
+<HEAD>
+<TITLE>3.3.3 PV1 - patient visit segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300058.htm">
+<LINK REL="Previous" HREF="ch300056.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300056.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300058.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E190"></A>
+<H3><B>3.3.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>PV1 </B><B>-</B><B> patient visit segment</B><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The PV1 segment is used by Registration/ADT applications to communicate information on a visit-specific basis.  This segment can be used to send multiple-visit statistic records to the same patient account or single-visit records to more than one account.  Individual sites must determine the use for this segment. </FONT>
+<P ALIGN=indent>Figure 3-3.  PV1 attributes<A NAME="I10"></A></P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=221 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00131</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - PV1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0004</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00132</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Class</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00133</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Assigned Patient Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0007</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00134</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Admission Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00135</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preadmit Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00136</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Prior Patient Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00137</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Attending Doctor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00138</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Referring Doctor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00139</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Consulting Doctor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0069</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00140</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Hospital Service</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00141</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Temporary Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0087</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00142</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preadmit Test Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0092</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00143</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Readmission Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0023</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00144</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Admit Source</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0009</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00145</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ambulatory Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0099</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00146</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">VIP Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00147</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Admitting Doctor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0018</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00148</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00149</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Visit Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">50</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0064</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00150</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Financial Class</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0032</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00151</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge Price Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0045</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00152</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Courtesy Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0046</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00153</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Credit Rating</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0044</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00154</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00155</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract Effective Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00156</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00157</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract Period</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0073</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00158</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Interest Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0110</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00159</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Transfer to Bad Debt Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00160</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Transfer to Bad Debt Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">31</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0021</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00161</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Bad Debt Agency Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00162</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Bad Debt Transfer Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">33</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00163</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Bad Debt Recovery Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">34</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0111</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00164</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Delete Account Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">35</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00165</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Delete Account Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">36</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0112</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00166</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Discharge Disposition</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">37</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0113</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00167</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Discharged to Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">38</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0114</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00168</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diet Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">39</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0115</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00169</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Servicing Facility</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0116</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00170</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Bed Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">41</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0117</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00171</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Account Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">42</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00172</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pending Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">43</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00173</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Prior Temporary Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">44</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00174</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Admit Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">45</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00175</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Discharge Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">46</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00176</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Current Patient Balance</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">47</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00177</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Total Charges</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00178</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Total Adjustments</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">49</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00179</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Total Payments</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">50</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0192</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">00180</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Alternate Visit ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">51</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0326</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">01226</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Visit Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">52</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0010</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">01224</FONT>
+</TD><TD WIDTH=221 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other Healthcare Provider</TD></TR></FONT></TABLE></CENTER><P>3.3.3.0   PV1 field definitions<A NAME="I11"></A>
+<H4>3.3.3.1 Set ID - PV1<A NAME="I12"></A>  (SI)   00131</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>PV1-1-set ID-patient visit</I> contains the number that identifies this transaction.  For the first occurrence of the segment, the sequence number shall be 1, for second occurrence it shall be 2, etc.</FONT>
+<H4>3.3.3.2 Patient class<A NAME="I13"></A>  (IS)   00132</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used by systems to categorize patients by site.  It does not have a consistent industry-wide definition.  It is subject to site-specific variations.  Refer to <I>user-defined table 0004 - </I><I>Patient class</I> for suggested values.</FONT>
+<P>User-defined Table 0004 - Patient class<A NAME="I14"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">E</FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">I</FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Inpatient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Outpatient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P</FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Preadmit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Recurring Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B</FONT>
+</TD><TD WIDTH=378 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Obstetrics</TD></TR></FONT></TABLE><H4>3.3.3.3 Assigned patient location<A NAME="I15"></A>  (PL)   00133</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient&#146;s initial assigned location or the location to which the patient is being moved.  The first component may be the nursing station for inpatient locations, or clinic, department, or home for locations other than inpatient.  For canceling a transaction or discharging a patient, the current location (after the cancellation event) should be in this field.  If a value exists in the fifth component (bed status), it supersedes the value in <I>PV1-40-bed status</I>.</FONT>
+<H4>3.3.3.4 Admission type<A NAME="I16"></A>  (IS)   00134</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the circumstances under which the patient was or will be admitted.   Refer to <I>user-defined Table 0007 - Admission type </I>for suggested values.</FONT>
+<P>User-defined Table 0007 - Admission type<A NAME="I17"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P><B><U>Value</U></B>
+</TD><TD WIDTH=384 VALIGN=top >
+<P><B><U>Description</U></B></TD>
+</TR>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Accident</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">E</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">L</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Labor and Delivery</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Routine</TD></TR></FONT></TABLE><H4>3.3.3.5 Preadmit number<A NAME="I18"></A>  (CX)   00135</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field uniquely identifies the patient&#146;s pre-admit account.  Some systems will continue to use the pre-admit number as the billing number after the patient has been admitted.<I>  For backward </I><I>compatibility, an ST data type can be sent</I>, however HL7 recommends use of the CX data type, like the account number, for new implementations.</FONT>
+<H4>3.3.3.6 Prior patient location<A NAME="I19"></A>  (PL)   00136</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.  If a value exists in the fifth component (bed status), it supersedes the value in <I>PV1</I><I>-40-bed status</I>.</FONT>
+<H4>3.3.3.7 Attending doctor<A NAME="I20"></A>  (XCN)   00137</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the attending physician information.  Multiple names and identifiers for the same physician may be sent.  The field sequences are not used to indicate multiple attending doctors.  The legal name must be sent in the first sequence.  If the legal name is not sent, then a repeat delimiter must be sent in the first sequence.  Depending on local agreements, either ID or the name may be absent in this field.  Refer to <I>user-defined table 0010 - Physician ID </I>for suggested values.</FONT>
+<H4>3.3.3.8 Referring doctor<A NAME="I21"></A>  (XCN)   00138</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the referring physician information.  Multiple names and identifiers for the same physician may be sent.  The field sequences are not used to indicate multiple referring doctors.  The legal name must be sent in the first sequence.  If the legal name is not sent, then a repeat delimiter must be sent in the first sequence.  Depending on local agreements, either the ID or the name may be absent from this field.  Refer to <I>user-defined table 0010 - Physician ID </I>for suggested values.</FONT>
+<H4>3.3.3.9 Consulting doctor<A NAME="I22"></A>  (XCN)   00139</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the consulting physician information. The field sequences are used to indicate multiple consulting doctors. Depending on local agreements, either the ID or the name may be absent from this field.  Refer to <I>user-defined table 0010 - Physician ID </I>for suggested values.</FONT>
+<H4>3.3.3.10 Hospital service<A NAME="I23"></A>  (IS)   00140</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the treatment or type of surgery that the patient is scheduled to receive.  It is a required field with trigger events A01, A02, A14, A15.  Refer to <I>user-defined table 0069 - Hospital service </I>for suggested values. </FONT>
+<H4>3.3.3.11 Temporary location<A NAME="I24"></A>  (PL)   00141</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a location other than the assigned location required for a temporary period of time (e.g., OR).  If a value exists in the fifth component (bed status), it supersedes the value <I>in PV1-40-bed </I><I>status.</I></FONT>
+<H4><I>3.3.3.12</I><I> </I>Preadmit test indicator<A NAME="I25"></A>  (IS)   00142</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the patient must have pre-admission testing done in order to be admitted.  Refer to <I>user-defined table 0087 - Pre-admit test indicator</I> for suggested values. </FONT>
+<H4>3.3.3.13 Re-admission indicator<A NAME="I26"></A>  (IS)   00143</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates that a patient is being re-admitted to the facility and gives the circumstances.  We suggest using &quot;R&quot; for readmission or else null.  Refer to <I>user-defined table 0092 - Re-admission </I><I>indicator </I>for suggested values<I>.</I> </FONT>
+<H4>3.3.3.14 Admit source<A NAME="I27"></A>  (IS)   00144</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates where the patient was admitted.  Refer to <I>user-defined table 0023 - Admit </I><I>source</I> for suggested values. </FONT>
+<H4>3.3.3.15 Ambulatory status<A NAME="I28"></A>  (IS)   00145</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates any permanent or transient handicapped conditions.  Refer to <I>user-defined </I><I>table 0009 - Ambulatory status </I>for suggested entries. </FONT>
+<P>User-defined Table 0009 - Ambulatory status<A NAME="I29"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A0</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">No functional limitations</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A1</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ambulates with assistive device</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A2</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Wheelchair/stretcher bound</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A3</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Comatose; non-responsive</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A4</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Disoriented</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A5</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Vision impaired</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A6</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Hearing impaired</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A7</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Speech impaired</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A8</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Non-English speaking</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A9</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Functional level unknown</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B1</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Oxygen Therapy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B2</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Special equipment (tubes, IVs, catheters)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B3</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Amputee</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B4</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Mastectomy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B5</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Paraplegic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B6</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pregnant</TD></TR></FONT></TABLE><H4>3.3.3.16 VIP indicator<A NAME="I30"></A>  (IS)   00146</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the type of VIP.  Refer to <I>user-defined table 0099 - VIP indicator.</I> </FONT>
+<H4>3.3.3.17 Admitting doctor<A NAME="I31"></A>  (XCN)   00147</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the admitting physician information . Multiple names and identifiers for the same physician may be sent.  The field sequences are not used to indicate multiple admitting doctors.  The legal name must be sent in the first sequence.  If the legal name is not sent, then a repeat delimiter must be sent in the first sequence.  By local agreement, the name or ID may be absent in this field.  Refer to <I>user-defined table 0010 - Physician ID </I>for suggested values.</FONT>
+<H4>3.3.3.18 Patient type<A NAME="I32"></A>  (IS)   00148</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains site-specific values that identify the patient type.  Refer to <I>user-defined table </I><I>0018 - Patient type </I>for suggested values. </FONT>
+<H4>3.3.3.19 Visit number<A NAME="I33"></A>  (CX)   00149</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: <I>For backward compatibility</I>, an NM data type may be sent, but HL7 recommends that new implementations use the CX data type<I>.</I>  This field contains the unique number assigned to each patient visit.</FONT>
+<H4>3.3.3.20 Financial class<A NAME="I34"></A>  (CM)   00150</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;financial class (IS)&gt; ^ &lt;effective date (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the primary financial class assigned to the patient for the purpose of identifying sources of reimbursement.  Repeats up to four times.  Refer to <I>user-defined table 0064 - Financial class</I> for suggested values.</FONT>
+<H4>3.3.3.21 Charge price indicator<A NAME="I35"></A>  (IS)   00151</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the code used to determine which price schedule is to be used for room and bed charges.  Refer to <I>user-defined table 0032 - Charge/price indicator</I> for suggested values. </FONT>
+<H4>3.3.3.22 Courtesy code<A NAME="I36"></A>  (IS)   00152</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the patient will be extended certain special courtesies.  Refer to <I>user-defined table 0045 - Courtesy code </I>for suggested values. </FONT>
+<H4>3.3.3.23 Credit rating<A NAME="I37"></A>  (IS)   00153</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the user-defined code to determine past credit experience.  Refer to <I>user-defined table 0046 - Credit rating</I> for suggested values. </FONT>
+<H4>3.3.3.24 Contract code<A NAME="I38"></A>  (IS)   00154</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the type of contract entered into by the facility and the guarantor for the purpose of settling outstanding account balances.  Refer to <I>user-defined table 0044 - Contract code </I>for suggested values. </FONT>
+<H4>3.3.3.25 Contract effective date<A NAME="I39"></A>  (DT)   00155</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the contract is to start or started.</FONT>
+<H4>3.3.3.26 Contract amount<A NAME="I40"></A>  (NM)   00156</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount to be paid by the guarantor each period according to the contract. </FONT>
+<H4>3.3.3.27 Contract period<A NAME="I41"></A>  (NM)   00157</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field specifies the duration of the contract for user-defined periods. </FONT>
+<H4>3.3.3.28 Interest code<A NAME="I42"></A>  (IS)   00158</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the amount of interest that will be charged the guarantor on any outstanding amounts.  Refer to <I>user-defined table 0073 - Interest rate code</I> for suggested values.</FONT>
+<H4>3.3.3.29 Transfer to bad debt code<A NAME="I43"></A>  (IS)   00159</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates that the account was transferred to bad debts and gives the reason.  Refer to <I>user-defined table 0110 - Transfer to bad debt code</I> for suggested values.</FONT>
+<H4>3.3.3.30 Transfer to bad debt date<A NAME="I44"></A>  (DT)   00160</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the account was transferred to a bad debt status. </FONT>
+<H4>3.3.3.31 Bad debt agency code<A NAME="I45"></A>  (IS)   00161</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: <I>This field can be used as an ST type for backward compatibility</I>.  This field uniquely identifies the bad debt agency to which the account was transferred.  This code is site defined.  One possible implementation would be to edit against a table such as <I>user-defined table 0021 - Bad debt agency code;</I> however, this is not required.</FONT>
+<H4>3.3.3.32 Bad debt transfer amount<A NAME="I46"></A>  (NM)   00162</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount that was transferred to a bad debt status. </FONT>
+<H4>3.3.3.33 Bad debt recovery amount<A NAME="I47"></A>  (NM)   00163</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount recovered from the guarantor on the account. </FONT>
+<H4>3.3.3.34 Delete account indicator<A NAME="I48"></A>  (IS)   00164</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates that the account was deleted from the file and gives the reason.  Refer to <I>user-defined table 0111 - Delete account code </I>for suggested values. </FONT>
+<H4>3.3.3.35 Delete account date<A NAME="I49"></A>  (DT)   00165</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the account was deleted from the file. </FONT>
+<H4>3.3.3.36 Discharge disposition<A NAME="I50"></A>  (IS)   00166</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the disposition of the patient at time of discharge (i.e., discharged to home, expired, etc.).  Refer to <I>user-defined table 0112 - Discharged disposition </I>for suggested values. </FONT>
+<H4>3.3.3.37 Discharged to location<A NAME="I51"></A>  (CM)   00167</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;discharge location (IS)&gt; ^ &lt;effective date (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates a facility to which the patient was discharged.  Refer to <I>user-defined table </I><I>0113 - Discharged to location </I>for suggested values<I>.</I> </FONT>
+<H4>3.3.3.38 Diet type<A NAME="I52"></A>  (IS)   00168</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates a special diet type for a patient.  Refer to <I>user-defined table 0114 - Diet type</I> for suggested values<I>.</I> </FONT>
+<H4>3.3.3.39 Servicing facility<A NAME="I53"></A>  (IS)   00169</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used in a multiple facility environment to indicate the facility with which this visit is associated.  Refer to <I>user-defined table 0115 - Servicing facility</I> for suggested values.</FONT>
+<P>
+<FONT FACE="Times New Roman">An optional fourth component, the facility ID, may be valued in each individual location field in PV1, instead of placing it here.</FONT>
+<H4>3.3.3.40 Bed status<A NAME="I54"></A>  (IS)   00170</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This field has been retained for backward compatibility only</I>.  This field contains the status of the bed.  Refer to <I>user-defined table 0116 - Bed status</I> for suggested values.</FONT>
+<P>User-defined Table 0116 - Bed status<A NAME="I55"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Closed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">H</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Housekeeping</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Occupied</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">U</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Unoccupied</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">K</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>Contaminated</TD>
+</TR>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">I</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Isolated</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">An optional fifth component, bed status, may be valued in each individual location field in PV1, instead of placing it here.</FONT>
+<H4>3.3.3.41 Account status<A NAME="I56"></A>  (IS)   00171</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the account status.  Refer <I>to user-defined table 0117 - Account status</I> for suggested values. </FONT>
+<H4>3.3.3.42 Pending location<A NAME="I57"></A>  (PL)   00172</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the point of care, room, bed, facility ID, and bed status to which the patient may be moved.  The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.  If a value exists in the fifth component (bed status), it supersedes the value in <I>PV1-40-bed status</I>.</FONT>
+<H4>3.3.3.43 Prior temporary location<A NAME="I58"></A>  (PL)   00173</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to reflect the patient&#146;s temporary location (such as the OR or XRAY) prior to a transfer from a temporary location to an actual location, or from a temporary location to another temporary location. The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.  If a value exists in the fifth component (bed status), it supersedes the value in <I>PV1-40-bed status</I>.</FONT>
+<H4>3.3.3.44 Admit date/time<A NAME="I59"></A>  (TS)   00174</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the admit date/time.  It is to be used if the event date/time is different than the admit date and time, i.e., a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient registration.</FONT>
+<H4>3.3.3.45 Discharge date/time<A NAME="I60"></A>  (TS)   00175</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the discharge date/time.  It is to be used if the event date/time is different than the admit date and time, that is, a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient discharge.</FONT>
+<H4>3.3.3.46 Current patient balance<A NAME="I61"></A>  (NM)   00176</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the visit balance due. </FONT>
+<H4>3.3.3.47 Total charges<A NAME="I62"></A>  (NM)   00177</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the total visit charges. </FONT>
+<H4>3.3.3.48 Total adjustments<A NAME="I63"></A>  (NM)   00178</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the total adjustments for visit. </FONT>
+<H4>3.3.3.49 Total payments<A NAME="I64"></A>  (NM)   00179</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the total payments for visit. </FONT>
+<H4>3.3.3.50 Alternate visit ID<A NAME="I65"></A>  (CX)   00180</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the alternative, temporary, or pending optional visit ID number to be used if needed.  It is the ID used by the facility to identify a patient uniquely at the time of an admit or visit.  Refer to <I>HL7 table 0061 - Check digit scheme,</I> as defined in Chapter 2, for valid values.  Refer to <I>user-defined</I> <I>table 0192 - Visit ID type</I> for suggested values.</FONT>
+<H4>3.3.3.51 Visit indicator  (IS)   01226</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field specifies the level on which data are being sent.  It is the indicator used to send data at two levels, visit and account.  HL7 recommends sending an &#145;A&#146; or no value when the data in the message are at the account level, or &#145;V&#146; to indicate that  the data sent in the message is at the visit level.  Refer to <I>user-defined table 0326 - visit indicator</I> for suggested values.</FONT>
+<P>User-defined Table 0326 - Visit Indicator
+
+<TABLE >
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A </FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Account Level (default)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">V</FONT>
+</TD><TD WIDTH=222 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Visit Level</TD></TR></FONT></TABLE><H4>3.3.3.52 Other healthcare provider<A NAME="I66"></A>  (XCN)   01224</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the other healthcare providers (e.g., Nurse care practitioner, midwife, physician assistant).  Multiple healthcare providers can be sent.  Depending on local agreements, either the ID or the name may be absent from this field.  Use values in <I>user-defined table 0010 - Physician ID </I>for first component.</FONT>
+<H4>3.3.3.53 PV1 usage notes<A NAME="I67"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The facility (servicing) ID, the optional fourth component of each patient location field, is a string of up to six characters that is uniquely associated with the facility containing the location.  A given institution, or group of intercommunicating institutions, should establish a list of facilities that may be potential assigners of patient locations.  The list will be one of the institution&#146;s master dictionary lists.  Since third parties other than the assigners of patient locations may send or receive HL7 messages containing patient locations, the facility ID in the patient location may not be the same as that implied by the sending and receiving systems identified in the MSH.  The facility ID must be unique across facilities at a given site.  This field is required for HL7 implementations that have more than a single facility with bed locations, since the same &lt;nurse unit&gt; ^ &lt;room&gt; ^ &lt;bed&gt; combination may exist at more than one facility.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300056.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300058.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

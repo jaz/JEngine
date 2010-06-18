@@ -1,0 +1,1494 @@
+<HTML>
+<HEAD>
+<TITLE>9.5.1 TXA - transcription document header segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch900019.htm">
+<LINK REL="Previous" HREF="ch900017.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch900017.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900019.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E426"></A>
+<H3><B>9.5.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>TXA - transcription document header segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The TXA segment contains information specific to a transcribed document but does not include the text of the document.  The message is created as a result of a Document Change Status.  This information is used to update other healthcare systems to identify reports that are available in the transcription system.  By maintaining the TXA message information in these systems, the information is available when constructing queries to the transcription system requesting the full document text.</FONT>
+<P ALIGN=indent>Figure 9-2.  TXA attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=62 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=292 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00914</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID- Document</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0270</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00915</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0191</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00916</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Content Presentation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00917</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Activity Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00918</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Activity Provider Code/Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00919</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Origination Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00920</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Transcription Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8 </FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00921</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Edit Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00922</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Originator Code/Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00923</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Assigned Document Authenticator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00924</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Transcriptionist Code/Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00925</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unique Document Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00926</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parent Document Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00216</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00217</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00927</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unique Document File Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0271</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00928</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Completion Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0272</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00929</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Confidentiality Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0273</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00930</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Availability Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=45 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top ><BR></TD>
+<TD WIDTH=292 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">0275</FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00932</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Storage Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1"> </FONT>
+</TD><TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00933</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Change Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00934</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Authentication Person, Time Stamp</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=39 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=39 VALIGN=top ><BR></TD>
+<TD WIDTH=62 VALIGN=top >
+<P>
+<FONT SIZE="-1">00935</FONT>
+</TD><TD WIDTH=292 VALIGN=top >
+<P>
+<FONT SIZE="-1">Distributed Copies (Code and Name of Recipients)</TD></TR></FONT></TABLE><P>9.5.2.0  TXA  field definitions
+<H4>9.5.1.1 Set ID  (SI)  00914</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a number that uniquely identifies this transaction for the purpose of adding, changing, or deleting the transaction.</FONT>
+<H4>9.5.1.2 Document type   (IS)   00915</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the type of document (as defined in the transcription system).  Refer to<I> user-defined table 0270 - Document type </I>for suggested values.  The organization  is free to add more entries.</FONT>
+<P ALIGN=indent>User-defined Table 0270 - Document type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AR</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Autopsyreport</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CD</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Cardiodiagnostics</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CN</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Consultation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DI</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Diagnostic imaging</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DS</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Discharge summary</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ED</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency department report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">HP</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">History and physical examination</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OP</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Operative report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PC</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Psychiatric consultation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PH</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Psychiatric history and physical examination</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PN</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Procedure note</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PR</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Progress note</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SP</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Surgical pathology</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TS</FONT>
+</TD><TD WIDTH=342 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Transfer summary</TD></TR></FONT></TABLE><H4>9.5.1.3 Document content presentation  (ID)   00916</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This is a conditional field which is required whenever the message contains content as presented in one or more OBX segments.  This field identifies the method by which this document was obtained or originated.  Refer to <I>HL7 table 0191 - Main type of referenced data</I>  for valid values.</FONT>
+<P ALIGN=indent>Table 0191 - Main type of referenced data</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scanned image</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NS</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Non-scanned image</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Scanned document</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Machine readable text document</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Formatted text</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IM</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Image data  (new  with HL7 v 2.3)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AU</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Audio data  (new with HL7 v 2.3)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other application data, typically uninterpreted binary data  (new with HL7 v 2.3)</TD></TR></FONT></TABLE><H4>9.5.1.4 Activity date/time (TS)   00917</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time identified in the document as the date a procedure or activity was performed.  This date can identify date of surgery, non-invasive procedure, consultation, examination, etc.</FONT>
+<H4>9.5.1.5 Primary activity provider code/name  (XCN)   00918</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the person identified in the document as being  responsible for performing the procedure or activity.  This field includes the code and name (if available) of the caregiver.  This field is conditional based upon the presence of a value in <I>TXA-4-activity date</I>.</FONT>
+<H4>9.5.1.6 Origination date/time  (TS)   00919</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time the document was created (i.e., dictated, recorded, etc.).</FONT>
+<H4>9.5.1.7 Transcription date/time  (TS)   00920</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time the input was actually transcribed.  This field is conditional based upon the presence of a value in <I>TXA-17-document status</I> of anything except &quot;dictated.&quot;</FONT>
+<H4>9.5.1.8 Edit date/time  (TS)   00921</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time the document was edited.</FONT>
+<H4>9.5.1.9 Originator code/name  (XCN)   00922</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the person who originated (i.e., dictated) the document.  The document originator may differ from the person responsible for authenticating the document.</FONT>
+<H4>9.5.1.10 Assigned document authenticator (XCN)   00923</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the person(s)  responsible for authenticating the document, who may differ from the originator.  Multiple persons may be responsible for authentication, especially in teaching facilities.  This field is allowed to repeat an undefined number of times.</FONT>
+<H4>9.5.1.11 Transcriptionist code/name  (XCN)   00924</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the person transcribing the document. This is a conditional value; it is required on all transcribed documents.</FONT>
+<H4>9.5.1.12 Unique document number  (EI)   00925</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;assigning authority (HD)&gt;</FONT>
+<P>Definition:  This field contains a unique document identification number assigned by the sending system. This document number is used to assist the receiving system in matching future updates to the document, as well as to identify the document in a query.  When the vendor does not provide a unique document ID number, some type of document identifier should be entered here, or the Unique Document File name should be utilized.  Please refer to Section 2.4.5.36 in Chapter 2.  Where the system does not customarily have a document filler number, this number could serve as that value, as well.
+<H4>9.5.1.13 Parent document number  (ST)   00926</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a document number that identifies the parent document to which this document belongs.  The parent document number can be used to assist the receiving system in matching future updates to this document..  This is a conditional field that is always required on T05, T06, T09, and T10 events.  </FONT>
+<H4>9.5.1.14 Placer order number  (EI)   00216</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;assigning authority (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the placer application&#146;s order number.</FONT>
+<P>
+<FONT FACE="Times New Roman">This is a composite field.  The first component is a string of up to 15 characters that identifies an individual order (e.g., OBR).  It is assigned by the placer (ordering application).  It identifies an order uniquely among all orders from a particular ordering application.  The second component contains the application ID of the placing application.  The application ID is a string of up to six (6) characters that will be uniquely associated with an application.  A given institution or group of intercommunicating institutions should establish a unique list of applications that may be potential placers and fillers and assign unique application IDs.  The two components are separated by a component delimiter.</FONT>
+<H4>9.5.1.15 Filler order number  (EI)   00217</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;assigning authority (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the order number associated with the filling application.  Where a transcription service or similar organization creates the document and uses an internally unique identifier, that number should be inserted in this field.  Its first component is a string of up to 15 characters that identifies an order detail segment (e.g., OBR).  This string must uniquely identify the order (as specified in the order detail segment) from other orders in a particular filling application (e.g., transcription service).  This uniqueness must persist over time.  Where a number is reused over time, a date can be affixed to the non-unique number to make it unique.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second component contains the filler application ID.  The filler application ID is a string of up to six characters that uniquely defines the application from other applications on the network.  The second component of the filler order number always identifies the actual filler of an order.</FONT>
+<H4>9.5.1.16   For further details, please see the definitions provided in Chapter 4.Unique document file name  (ST)   00927</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a unique name assigned to a document by the sending system.  The file name is used to assist the receiving system in matching future updates to the document.</FONT>
+<H4>9.5.1.17 Document completion status  (ID)   00928</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the current state of the document.  This is a required, table-driven field.  Refer to <I>HL7 table 0271 - Document completion status</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0271 - Document completion status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=276 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DI</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dictated</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DO</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Documented</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IP</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">In Progress</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IN</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Incomplete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PA</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AU</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Authenticated</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=276 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LA</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Legally authenticated</TD></TR></FONT></TABLE><P>Figure 9-3. Document completion status state transition table
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Transition (Action)</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Old State</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">New State</FONT>
+</TD><TD WIDTH=132 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Notes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T01 Original Notification</FONT>
+<P>
+<FONT SIZE="-1">T02 Original Notification and Content</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Dictated</FONT>
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T03 Status Change Notification</FONT>
+<P>
+<FONT SIZE="-1">T04 Status Change Notification and Content</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Dictated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Documented</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T05 Addendum Notification</FONT>
+<P>
+<FONT SIZE="-1">T06 Addendum Notification and Content</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Dictated</FONT>
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T07 Edit Notification</FONT>
+<P>
+<FONT SIZE="-1">T08 Edit Notification and Content</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Dictated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Documented</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T09 Replacement Notification</FONT>
+<P>
+<FONT SIZE="-1">T10 Replacement Notification and Content</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=104 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Dictated</FONT>
+<P>
+<FONT SIZE="-1">In Progress</FONT>
+<P>
+<FONT SIZE="-1">Incomplete</FONT>
+<P>
+<FONT SIZE="-1">Pre-authenticated</FONT>
+<P>
+<FONT SIZE="-1">Authenticated</FONT>
+<P>
+<FONT SIZE="-1">Legally authenticated</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD></TR></TABLE>
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=624 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>: NA means not applicable.</TD></TR></FONT></TABLE><H4>9.5.1.18 Document confidentiality status (ID)   00929</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This is an optional field which identifies the degree to which special confidentiality protection should be applied to this information.   The assignment of data elements to these categories is left to the discretion of the healthcare organization.   Refer to <I>HL7 table 0272 - </I><I>Document confidentiality status</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0272 - Document confidentiality status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=276 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">VR</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Very restricted</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RE</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Restricted</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">UC</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Usual control</TD></TR></FONT></TABLE><H4><B>9.5.1.19</B><B> </B>Document availability status (ID)   00930</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This is an optional field which identifies a document&#146;s availability for use in patient care.  If an organization&#146;s business rules allow a document to be used for patient care before it is authenticated,  the value of this field should be set to &quot;Available.&quot;  Once a document has been made available for patient care, its content cannot be changed.  Additional information must be provided via an addendum, which is separately authenticated and date/time stamped.  If the content of a document whose status is &quot;available&quot; must be revised, this is done by issuing a replacement, which is separately authenticated and date/time stamped.  Refer to <I>HL7 table 0273 - </I><I>Document availability status</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0273 - Document availability status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=276 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AV</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Available for patient care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DE</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Deleted</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OB</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Obsolete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">UN</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable for patient care</TD></TR></FONT></TABLE><P ALIGN=indent>Figure 9-4.  Document availability status state transition table</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Transition (Action)</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Old State</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">New State</FONT>
+</TD><TD WIDTH=132 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Notes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T01 Original Notification</FONT>
+<P>
+<FONT SIZE="-1">T02 Original Notification and Content</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+<P>
+<FONT SIZE="-1">Available</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T03 Status Change Notification</FONT>
+<P>
+<FONT SIZE="-1">T04 Status Change Notification and Content</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+<P>
+<FONT SIZE="-1">Available</FONT>
+<P>
+<FONT SIZE="-1">Obsolete</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Available</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Available</FONT>
+<P>
+<FONT SIZE="-1">Obsolete</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Obsolete</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T05 Addendum Notification</FONT>
+<P>
+<FONT SIZE="-1">T06 Addendum Notification and Content</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+<P>
+<FONT SIZE="-1">Available</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T07 Edit Notification</FONT>
+<P>
+<FONT SIZE="-1">T08 Edit Notification and Content</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+<P>
+<FONT SIZE="-1">Available</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T09 Replacement Notification</FONT>
+<P>
+<FONT SIZE="-1">T10 Replacement Notification and Content</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+<P>
+<FONT SIZE="-1">Available</FONT>
+</TD><TD WIDTH=132 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set parent document to &quot;obsolete&quot;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=156 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T11 Cancel</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Unavailable</FONT>
+</TD><TD WIDTH=90 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Delete</FONT>
+</TD><TD WIDTH=132 VALIGN=top ><BR></TD></TR></TABLE>
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=624 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>: NA means not applicable.</TD></TR></FONT></TABLE><H4>9.5.1.20 Document storage status (ID)   00932</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional field identifies the storage status of the document.  Refer to <I>HL7 table </I><I>0275 - Document storage status</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0275 - Document storage status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=276 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AC</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Active</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AA</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Active and archived</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AR</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Archived (not active)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=114 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PU</FONT>
+</TD><TD WIDTH=276 VALIGN=top >
+<P>
+<FONT SIZE="-1">Purged</TD></TR></FONT></TABLE><H4><B>9.5.1.21</B><B> </B> Document change reason  (ST)   00933</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This freetext field (limited to 30 characters) contains the reason for document status change.</FONT>
+<H4>9.5.1.22 Authentication person, time stamp (set)  (CM)   00934</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;authenticated by whom (XCN)&gt; ^ &lt;when authenticated (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This is a conditional field.  When the status of <I>TXA-document completion status</I> is equal to AU (authenticated) or LA (legally authenticated), both components are required.  This field contains a set of two components describing by whom and when authentication was performed.  Whenever the person component is valued, the second component, which is time stamp, must be valued as non-null.  If the time component of a set is valued as non-null, the person component becomes required. These subcomponents are normally delimited by an ampersand (&amp;).  See Chapter 2.  </FONT>
+<H5>9.5.1.22.1 Authentication person (component)  (XCN)</H5>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This component identifies the person who has authenticated the document (either manually or electronically).</FONT>
+<H5>9.5.1.22.2 Authentication time stamp (component)  (TS)   </H5>
+<P>
+<FONT FACE="Times New Roman">Definition:  This component contains the date and time the document was authenticated (either manually or electronically).</FONT>
+<H4>9.5.1.23 Distributed copies  (XCN)   00935</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the persons who received a copy of this document. </FONT>
+<P ALIGN=LEFT>
+<A HREF="ch900017.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900019.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

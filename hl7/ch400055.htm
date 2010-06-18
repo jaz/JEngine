@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>4.12.1 VXQ -query for vaccination record (event V01)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400056.htm">
+<LINK REL="Previous" HREF="ch400054.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400054.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400056.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E251"></A>
+<H3><B>4.12.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>VXQ -query for vaccination record (event V01)</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Definition:  When a state system does not already have the complete patient vaccination record, it will send a query (with a V01 event) for the definitive (last updated) record.  Within the definitions for QRD and QRF, certain components are defined according to position in the field, as detailed in Section <A HREF="ch400053.htm#I2">4.11</A>, &quot;<A HREF="ch400053.htm#I2">QUERIES FOR iMMUNIZATION RECORDS (QRF SEGMENTS)</A>.&quot;  The three-letter code in the leftmost column indicates the segment that is included; the column on the right specifies the chapter in which that segment is fully defined.</FONT>
+<P>The query will follow this format:  
+<PRE>
+<FONT FACE="Courier New"><U>VXQ</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Vaccination Query</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header Segment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition Segment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRF]    Query Filter Segment       2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400054.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400056.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

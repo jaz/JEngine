@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>2.21.2 Enhanced mode implementation considerations: definition o</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200117.htm">
+<LINK REL="Previous" HREF="ch200115.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200115.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200117.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E104"></A>
+<H3><B>2.21.2</B><B> </B><B>Enhanced mode implementation considerations: definition of tables and &quot;virtual </B><B>tables&quot;</B></H3>
+<P>
+<FONT FACE="Times New Roman">a)  The particular allowable values for the EQL, VTQ, SPR, and RDF segments are determined among cooperating applications during implementation.</FONT>
+<P>
+<FONT FACE="Times New Roman">b)  The formats chosen for the query messages are very general.  This might be read by prospective implementors to imply that the requirement for using the Standard is the ability to respond to a wide variety of inquiries.  This is not the intent.  The format here can be used with specific restrictions in any interface.</FONT>
+<P>
+<FONT FACE="Times New Roman">c)  The contents of the tables expressed as TBR response messages are defined by the functional chapters.  Where an existing HL7 segment contains the fields needed to form a row of a tabular response, the segment ID can be referenced.  For example, if a table of patients is needed, where each row represents a patient and each column a field from the PID segment, then the PID can be referenced as a table, also sometimes referred to as a &quot;virtual table.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">Where each row is comprised of fields from multiple HL7 segments, the functional chapters may define additional tables.  For example, a table may be defined to respond to insurance queries where each row represents a patient, and is comprised of columns derived from the PID segment and the insurance segments <I>(IN1-IN4).</I></FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200115.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200117.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>11.2.2 RQI/RPL - request/receipt of patient selection display li</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110008.htm">
+<LINK REL="Previous" HREF="ch110006.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E482"></A>
+<H3><B>11.2.2</B><B> </B><A NAME="I2"></A><B>RQI/RPL - request/receipt of patient selection display list</B><A NAME="I3"></A><B> (event I02)</B></H3>
+<P>
+<FONT FACE="Times New Roman">This trigger event occurs when the inquirer specifies a request for a name lookup listing.  Generally, this request is used by the responder when insufficient data is on hand for a positive match.  In this case, the requester may ask for a list of possible candidates from which to make a selection.  This event code is also used by the responder to signify that the return information contains a list of information rather than information specific to a single patient.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RQI</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Request Patient Information</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID     Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[[{GT1}]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     IN1    Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN2]   Insurance, Additional info     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN3]   Insurance, Certification      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RPL</U><U> </U><U> </U><U> </U><U> </U><U>Return Patient Display List</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSA      Message Acknowledgment      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DSP}]    Display Data         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

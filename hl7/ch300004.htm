@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.2 ADT/ACK - transfer a patient (event A02)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300005.htm">
+<LINK REL="Previous" HREF="ch300003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E138"></A>
+<H3><B>3.2.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - transfer a patient</B><A NAME="I9"></A><B> (event A02)</B></H3>
+<P>
+<FONT FACE="Times New Roman">An A02 event is issued as a result of the patient changing his or her assigned physical location. </FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When other important fields change it is recommended that the A08 (update patient information) event be used instead.  If the transfer function of your ADT system allows demographics to change at the same time as the transfer, we recommend (but do not require) sending two messages (an A02 followed by an A08).  This A02 event can be used with admitted and non-admitted patients.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The new patient location should appear in <I>PV1-3-assigned patient location</I> while the old patient location should appear in<I> PV1-6-</I><I>p</I><I>rior patient location</I>.  For example, an A02 event can be used to notify:  laboratory, radiology, pathology that the patient has changed location and test results should be redirected; pharmacy that drugs should be redirected for the patient; dietary that the meals should be delivered to a different location; the clinical repository that a transfer has taken place for the EMR.</FONT>
+<P>
+<FONT FACE="Times New Roman">If the patient is going to a temporary location (such as the O/R, XRAY, LIMBO, the  HALLWAY) it is recommended that the A09 (patient departing tracking) and A10 (patient arriving tracking) events be used instead of A02.  It is recommended that A02 be used only for a real change in the census bed in the ADT system.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

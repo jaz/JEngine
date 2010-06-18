@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.45 XAD - extended address</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200066.htm">
+<LINK REL="Previous" HREF="ch200064.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200064.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200066.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E66"></A>
+<H3><B>2.8.45</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>XAD - extended address</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|1234 Easy St.^Ste. 123^San Francisco^CA^95123^USA^B^^SF^|</FONT></PRE>
+<H4>2.8.45.1 Street address (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The street or mailing address of a person or institution.</FONT>
+<H4>2.8.45.2 Other designation (ST)</H4>
+<P>Second line of address.  In general, it qualifies address.  Examples:  Suite 555 or Fourth Floor.
+<H4>2.8.45.3 City (ST)</H4>
+<H4>2.8.45.4 State or province (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">State or province should be represented by the official postal service codes for that country.</FONT>
+<H4>2.8.45.5 Zip or postal code (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Zip or postal codes should be represented by the official codes for that country.  In the US, the zipcode takes the form 99999[-9999], while the Canadian postal code takes the form A9A-9A9.</FONT>
+<H4>2.8.45.6 Country (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">Defines the country of the address.  ISO 3166 provides a list of country codes that may be used.</FONT>
+<H4>2.8.45.7 Address type (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">Address type is optional and defined by <I>HL7 table 0190 - Address type</I>.</FONT>
+<H4>2.8.45.8 Other geographic designation (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Other geographic designation includes country, bioregion, SMSA, etc.</FONT>
+<H4>2.8.45.9 County/parish code (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents the county in which the specified address resides. Refer to <I>user-defined table 0289 - </I><I>County/parish</I>.  When this component is used to represent the county (or parish), component 8 &quot;other geographic designation&quot; should not duplicate it (i.e., the use of &quot;other geographic designation&quot; to represent the county is allowed only for the purpose of backward compatibility, and should be discouraged in this and future versions of HL7).</FONT>
+<P>
+<FONT FACE="Times New Roman">Allowable values:  codes defined by government.</FONT>
+<H4>2.8.45.10 Census tract (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents the census track in which the specified address resides. Refer to <I>user-defined table </I><I>0288 - Census tract</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">Allowable Values:  codes defined by government.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200064.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200066.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

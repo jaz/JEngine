@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.46 XCN - extended composite ID number and name for persons</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200067.htm">
+<LINK REL="Previous" HREF="ch200065.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200065.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200067.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E67"></A>
+<H3><B>2.8.46</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>XCN - extended composite ID number and name for persons</B></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|1234567^Smith^John^J^III^DR^PHD^ADT01^^L^4^M11^MR|</FONT></PRE>
+<H4>2.8.46.1 ID number (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Coded ID according to a user-defined table, defined by the 8<SUP>th</SUP> component.  If the first component is present, either the source table or the assigning authority must be valued.</FONT>
+<H4>2.8.46.2 Family name (ST)</H4>
+<H4>2.8.46.3 Given name (ST)</H4>
+<H4>2.8.46.4 Middle initial or name (ST)</H4>
+<H4>2.8.46.5 Suffix (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify a name suffix (e.g., Jr. or III).</FONT>
+<H4>2.8.46.6 Prefix (ST) </H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify a name prefix (e.g., Dr.).</FONT>
+<H4>2.8.46.7 Degree (ST) </H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify an educational degree (e.g., MD).</FONT>
+<H4>2.8.46.8 Source table (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to <I>user-defined table 0207 - CN ID source</I> for suggested values.  Used to delineate the first component.</FONT>
+<H4>2.8.46.9 Assigning authority (HD)</H4>
+<P>
+<FONT FACE="Times New Roman"> In this version an optional 9th component, the assigning authority (HD), has been added.  It is an HD data type (see Section <A HREF="ch200038.htm#I4">2.8.18</A>, &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>&quot;).</FONT>
+<H4>2.8.46.10 Name type code (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents the type of name.  Refer to <I>HL7 table 0200 - Name type</I> for valid values (see Section <A HREF="ch200068.htm#I4">2.8.48</A>, &quot;XPN - extended person name&quot;).</FONT>
+<H4>2.8.46.11 Identifier check digit (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The check digit in this data type is not an add-on produced by the message processor.  It is the check digit that is part of the identifying number used in the sending application.  If the sending application does not include a self-generated check digit in the identifying number, this component should be valued null.</FONT>
+<H4>2.8.46.12 Code identifying the check digit scheme employed (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">  Refer <I>to HL7 table 0060 - Check digit scheme</I> for valid values.</FONT>
+<H4>2.8.46.13 Identifier type code (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">A code corresponding to the type of identifier.  In some cases, this code may be used as a qualifier to the &quot;Assigning authority&quot; component.  Refer <I>to user-defined table 0203 - Identifier type</I> for suggested values.</FONT>
+<H4>2.8.46.14 Assigning facility (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">The place or location identifier where the identifier was first assigned to the patient.  This component is not an inherent part of the identifier but rather part of the history of the identifier:  as part of this data type, its existence is a convenience for certain intercommunicating systems.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200065.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200067.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

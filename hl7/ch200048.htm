@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.28 PN - person name</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200049.htm">
+<LINK REL="Previous" HREF="ch200047.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200047.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200049.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E49"></A>
+<H3><B>2.8.28</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>PN - person name</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|SMITH^JOHN^J^III^DR^PHD|</FONT></PRE>
+<P>This data type includes multiple free text components.  Each component is specified to be an HL7 ST data type.  <B><I>The maximum length of a PN field is 48 characters including component separators</I></B>.  The sending system may send upper- and lowercase or all uppercase. The receiving system may convert to all uppercase if required.
+<H4>2.8.28.1 Family name (ST)</H4>
+<H4>2.8.28.2 Given name (ST)</H4>
+<H4>2.8.28.3 Middle initial or name (ST)</H4>
+<H4>2.8.28.4 Suffix (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify a name suffix (e.g., Jr. or III).</FONT>
+<H4>2.8.28.5 Prefix (ST) </H4>
+<P>
+<FONT FACE="Times New Roman">Used specify a name prefix (e.g., Dr.).</FONT>
+<H4>2.8.28.6 Degree (ST) </H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify an educational degree (e.g., MD).</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<H5>2.8.28.6.1 <B>Internationalization note:</B>  In countries using ideographic or syllabic (phonetic) character sets, it is sometimes necessary to send the name in one or both of these formats, as well as an alphabetic format.  The switching between the different character sets can be accomplished using a character set such as JIS X 0202 - ISO 2022 which provides an escape sequence for switching among different character sets and among single-byte and multi-byte character representations.  When the name field is repeated, the different repetitions of the name may be represented by these different character sets. The details are as follows. (See also Section <A HREF="ch200072.htm#I2">2.9.2</A>, &quot;<A HREF="ch200072.htm#I2">Escape sequences supporting multiple character sets for PN and XPN data types</A>.&quot;</TD></TR></H5></TABLE><P>HL7 supports the following standards for Japanese characters:
+<P>JIS X 0201 for ISO-IR 13 (Japanese katakana)
+<P>  for ISO-IR 14 (Japanese romaji)
+<P>JIS X 0208 for ISO-IR 87 (Japanese Kanji, hirigana and katakana)
+<P>JIS X 0212  for ISO-IR 159 (supplementary Japanese Kanji) 
+<BR>
+<P>HL7 supports the following standards for European characters: 
+<P>ISO 8859 (1-9)  for ISO-IR 100, 101, 109, 110, 144,127, 126, 138 and 148.
+<P>Character sets are referenced in HL7 as ASCII, 8859/1..8859/2, JAS2020, and JIS X 0202.  DICOM uses codes laid out in ISO 2375, of the form 'ISO-IR xxx'.  HL7 supports this naming as well, to facilitate interoperability.
+<P>HL7 uses the Basic G0 Set of the International Reference Version of ISO 646:1990 (ISO IR-6) as the default character repertoire for character strings.  This is a single-byte character set, identical to ASCII. 
+<P>Each repetition of a PN or XPN field is assumed to begin with the default character set.  If another character set is to be used, the HL7 defined escape sequence used to announce that character set must be at the beginning of the repetition, and the HL7 defined escape sequence used to start the default character set must be at the end of the repetition. Note also that several character sets may be intermixed within a single repetition as long as the repetition ends with a return to the default character set. 
+<P>An application must specify which character sets it supports in its conformance statement and in the field <I>MSH:18-character-set</I>.  It is assumed that the sending and receiving applications are aware of how to map character set names (i.e., ISO-IR xxx) to escape sequences.
+<P>For example, in many Japanese messages there is a mix of Romaji (i.e., Roman characters),katakana (phonetic representation of foreign words), hirigana (phonetic representation of Japanese words) and Kanji (pictographs).  Such a message would require 4 character sets be specified in the MSH.
+<H4>2.8.28.7 References for internationalization of name</H4>
+<P>1. &quot;Understanding Japanese Information Processing&quot; by Ken Lunde,  O&#146;Reilly Press
+<P>2. &quot;DICOM Supplement 9 : Multi-Byte Character Set Support&quot;, ACR-NEMA
+<P>3. ANSI X3.4:1986 ASCII character set
+<P>4. ISO 646:1990 Information Processing - ISO 7-bit coded character set for information                               interchange
+<P>5. ISO/IEC 2022:1994 Information Technology - Character code structure and extension techniques
+<P>6. ISO 2375:1986 Data Processing - Procedure for the registration of escape sequences
+<P>7. ISO 6429:1990 Information Processing - Control functions for 7-bit and 8-bit coded character sets
+<P>8. ISO 8859 (1-9) Information Processing - 8-bit single-byte coded graphic character sets - parts 1-9
+<P>9. ENV 41 503:1990 Information systems interconnection - European graphic character repertoires and their coding
+<P>10. ENV 41 508:1990 Information systems interconnection - East European graphic character repertoires and their coding
+<P>11. JIS X 0201-1976 Code for Information Exchange
+<P>12. JIS X 0212-1990 Code of the supplementary Japanese Graphic Character set for information interchange
+<P>13. JIS X 0208-1990 Code for the Japanese Graphic Character set for information interchange
+<P>14. RFC 1468 Japanese Character Encoding for Internet Messages
+<P>This approach is in harmony with DICOM. 
+<P>Character Repertoires supported by DICOM are defined in Part 5, section 62E1, of Supplement 9.  It says, &quot;Values that are text or character strings can be composed of Graphic and Control Characters.  The Graphic Character set, independent of its encoding, is referred to as a Character Repertoire.  Depending on the native context in which Application Entities wish to exchange data using the DICOM standard, different character repertoires will be used.  The Character Repertoires supported by DICOM are defined in ISO 8859.&quot;
+<P>In addition, DICOM supports the following Character Repertoires for the Japanese Language :
+<P>JIS X 0201-1976  -  Code for Information Exchange
+<P>JIS X 0208-1990  -  Code for the Japanese Graphic Character set for information interchange
+<P>JIS X 0212-1990  -  Code of the supplementary Japanese Graphic Character set for information interchange
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200047.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200049.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

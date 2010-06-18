@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>4.4.9 Conjunction component  (ST)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400021.htm">
+<LINK REL="Previous" HREF="ch400019.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E224"></A>
+<H3>4.4.9 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Conjunction component  (ST)</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Definition:  This non-null component indicates that a second timing specification is to follow using the repeat delimiter.  This field can take three values: </FONT>
+<P>
+<FONT FACE="Times New Roman">a)  S =  Synchronous </FONT>
+<P>
+<FONT FACE="Times New Roman">Do the next specification after this one (unless otherwise constrained by the following components: <I>ORC-4^4-start date/time</I> and <I>ORC-4^5-end date/time</I>). </FONT>
+<P>
+<FONT FACE="Times New Roman">An &quot;S&quot; specification implies that the second timing sequence follows the first, e.g., when an order is written to measure blood pressure Q15 minutes for the 1st hour, then every 2 hours for the next day. </FONT>
+<P>
+<FONT FACE="Times New Roman">b)  A =  Asynchronous </FONT>
+<P>
+<FONT FACE="Times New Roman">Do the next specification in parallel with this one (unless otherwise constrained by the following components: <I>ORC-4^4-start date/time</I> and <I>ORC-4^5-end date/time</I>).  The conjunction of &quot;A&quot; specifies two parallel instructions, as are sometimes used in medication, e.g., prednisone given at 1 tab on Monday, Wednesday, Friday, and at 1/2 tab on Tuesday, Thursday, Saturday, Sunday. </FONT>
+<P>
+<FONT FACE="Times New Roman">c)  C =  This is an actuation time</FONT>
+<P>
+<FONT FACE="Times New Roman">It will be followed by a completion time for the service.  This code allows one to distinguish between the time and priority at which a service should be actuated (e.g., blood should be drawn) and the time and priority at which a service should be completed (e.g., results should be reported). </FONT>
+<P>
+<FONT FACE="Times New Roman">For continuous or periodic services, the point at which the service is actually stopped is determined by the components <I>ORC-4^5-end date/time</I> and <I>ORC-4^3-duration</I>, whichever indicates an earlier stopping time.  Ordinarily, only one of these components would be present, but if one requested an EKG with the specification </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ^1^QAM^X3^D10 </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">then the EKG would be done for only three days since the number of repeats (3) defined the earlier stopping time. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

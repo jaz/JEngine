@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<TITLE>2.9.6 Formatted text</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200077.htm">
+<LINK REL="Previous" HREF="ch200075.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200075.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200077.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E76"></A>
+<H3><B>2.9.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>Formatted text</B></H3>
+<P>
+<FONT FACE="Times New Roman">If the field is of the formatted text (FT) data type, formatting commands also may be surrounded by the escape character.  Each command begins with the . (period) character.  The following formatting commands are available:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.sp &lt;number&gt;</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">End current output line and skip &lt;number&gt; vertical spaces.  &lt;number&gt; is a positive integer or absent.  If &lt;number&gt; is absent, skip one space.  The horizontal character position remains unchanged. Note that for purposes of compatibility with previous versions of HL7, &quot;^\.sp\&quot; is equivalent to &quot;\.br\.&quot;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.br</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Begin new output line.  Set the horizontal position to the current left margin and increment the vertical position by 1.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.fi</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Begin word wrap or fill mode.  This is the default state.  It can be changed to a no-wrap mode using the .nf command.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.nf</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Begin no-wrap mode.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.in &lt;number&gt;</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Indent &lt;number&gt; of spaces, where &lt;number&gt; is a positive or negative integer. This   command cannot appear after the first printable character of a line.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.ti &lt;number&gt;</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Temporarily indent &lt;number&gt; of spaces where number is a positive or negative integer. This command cannot appear after the first printable character of a line.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.sk &lt; number&gt;</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Skip &lt;number&gt; spaces to the right.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">.ce</FONT>
+</TD><TD WIDTH=481 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">End current output line and center the next line.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The component separator that marks each line defines the extent of the temporary indent command (.ti), and the beginning of each line in the no-wrap mode (.nf).  Examples of formatting instructions that are NOT included in this data type include:  width of display, position on page or screen, and type of output devices.</FONT>
+<P>
+<FONT FACE="Times New Roman">Figure 2-3 is an example of the FT data type from a radiology impression section of a radiology report:</FONT>
+<P ALIGN=indent><A NAME="I5"></A><A NAME="I6"></A>Figure 2-3.  Formatted text as transmitted</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|\.in+4\\.ti-4\ 1.  The cardio mediastinal silhouette is now within normal limits.^\.sp\\.ti-4\ 2.   Lung fields show minimal ground glass appearance.^\.sp\\.ti-4\ 3.  A loop of colon visible in the left upper quadrant is distinctly abnormal with the appearance of mucosal effacement suggesting colitis.\.in-4\|</TD></TR></FONT></TABLE></PRE>
+<P>
+<FONT FACE="Times New Roman">Figure 2-4 shows one way of presenting the data in Figure 2-3.  The receiving system can create many other interpretations by varying the right margin.  </FONT>
+<P ALIGN=indent><A NAME="I7"></A><A NAME="I8"></A>Figure 2-4.  Formatted text in one possible presentation</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>1. The cardio mediastinal silhouette is now within normal limits.
+<P>2. Lung fields show minimal ground glass appearance.
+<P>3. A loop of colon visible in the left upper quadrant is distinctly abnormal with the appearance of mucosal effacement suggesting colitis.</TD></TR></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200075.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200077.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

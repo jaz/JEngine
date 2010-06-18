@@ -1,0 +1,731 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.3 RXR - pharmacy/treatment route segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400038.htm">
+<LINK REL="Previous" HREF="ch400036.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400036.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400038.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E237"></A>
+<H3><B>4.8.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>RXR - pharmacy/treatment route segment</B><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The Pharmacy/Treatment Route segment contains the alternative combination of route, site, administration device, and administration method that are prescribed.  The pharmacy, treatment staff and/or nursing staff has a choice between the routes based on either their professional judgment or administration instructions provided by the physician.</FONT>
+<P ALIGN=indent><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A>Figure 4-14.  RXR attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=238 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0162</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00309</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Route</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0163</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00310</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Site</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0164</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00311</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administration Device</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0165</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00312</FONT>
+</TD><TD WIDTH=238 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administration Method</TD></TR></FONT></TABLE></CENTER><P>4.8.3.0   RXR field definitions
+<H4><B>4.8.3.1</B><B> </B>Route  (CE)   00309<A NAME="I14"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the route of administration.</FONT>
+<P>
+<FONT FACE="Times New Roman">Some current &quot;route codes,&quot; such as some of the NDC-derived codes include the site already.  In such cases, the entire code can be included in this field as a &quot;locally defined code&quot; for the CE data type.  Refer to <I>HL7 table 0162 - Route of administration</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I15"></A><A NAME="I16"></A>Table 0162 - Route of administration</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=66 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=210 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</FONT>
+</TD><TD WIDTH=58 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=158 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">AP</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Apply Externally</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">MM</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mucous Membrane</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Buccal</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NS</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nasal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dental</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NG</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nasogastric</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">EP</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Epidural</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NP</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nasal Prongs*</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">ET</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Endotrachial Tube*</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">NT</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nasotrachial Tube</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">GTT</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Gastrostomy Tube</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">OP</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ophthalmic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">GU</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">GU Irrigant</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">OT</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Otic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IMR</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Immerse (Soak) Body Part</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">OTH</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other/Miscellaneous</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IA</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intra-arterial</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">PF</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Perfusion</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IB</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intrabursal</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">PO</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Oral</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IC</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intracardiac</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">PR</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Rectal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">ICV</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intracervical (uterus)</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">RM</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Rebreather Mask*</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intradermal</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">SD</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Soaked Dressing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IH</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Inhalation</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">SC</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Subcutaneous</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IHA</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intrahepatic Artery</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">SL</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sublingual</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IM</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intramuscular</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TP</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Topical</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IN</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intranasal</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TRA</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Tracheostomy*</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IO</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intraocular</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TD</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Transdermal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IP</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intraperitoneal</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">TL</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Translingual</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intrasynovial</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">UR</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Urethral</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IT</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intrathecal</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">VG</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Vaginal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IU</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intrauterine</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">VM</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ventimask</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">IV</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Intravenous</FONT>
+</TD><TD WIDTH=58 VALIGN=top >
+<P>
+<FONT SIZE="-1">WND</FONT>
+</TD><TD WIDTH=158 VALIGN=top >
+<P>
+<FONT SIZE="-1">Wound</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">MTH</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mouth/Throat</FONT>
+</TD><TD WIDTH=58 VALIGN=top ><BR></TD>
+<TD WIDTH=158 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD COLSPAN=4 WIDTH=493 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">*used primarily for respiratory therapy and anesthesia delivery</FONT>
+</TD></TR></TABLE></CENTER><H4>4.8.3.2 Administrative site  (CE)   00310<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the site of the administration route.  Refer to <I>HL7</I> <I>table 0163 - Administrative </I><I>site</I> for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">As a CE data type, this field may be extended to cover a wide variety of body site codes (e.g., when SNOMED is used as the table source).</FONT>
+<H4>4.8.3.3 Administrative device  (CE)   00311<A NAME="I18"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the mechanical device used to aid in the administration of the drug or other treatment.  Common examples are IV-sets of different types.  Refer to <I>HL7 table 0164 - Administration </I><I>device</I> for valid entries.</FONT>
+<P ALIGN=indent><A NAME="I19"></A><A NAME="I20"></A>Table 0164 - Administration device</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=185 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=185 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AP</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">Applicator</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IVS</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">IV Soluset</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">BT</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">Buretrol</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MI</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">Metered Inhaler</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HL</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">Heparin Lock</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NEB</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nebulizer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IPPB</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">IPPB</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PCA</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">PCA Pump</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IVP</FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT SIZE="-1">IV Pump</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=185 VALIGN=top ><BR></TD></TR></TABLE><H4>4.8.3.4 Administration method  (CE)   00312<A NAME="I21"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  administration method identifies the specific method requested for the administration of the drug or treatment to the patient.  Refer to <I>HL7</I> <I>table 0165 - Administration method</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I22"></A><A NAME="I23"></A>Table 0165 - Administration method</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=166 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=192 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CH</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">Chew</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NB</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nebulized</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DI</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dissolve</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PT</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pain</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DU</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dust</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PF</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Perfuse</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IF</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">Infiltrate</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SH</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Shampoo</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">Insert</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SO</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Soak</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IR</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">Irrigate</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">WA</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Wash</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IVPB</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">IV Piggyback</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">WI</FONT>
+</TD><TD WIDTH=192 VALIGN=top >
+<P>
+<FONT SIZE="-1">Wipe</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IVP</FONT>
+</TD><TD WIDTH=166 VALIGN=top >
+<P>
+<FONT SIZE="-1">IV Push</FONT>
+</TD><TD WIDTH=67 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=192 VALIGN=top ><BR></TD></TR></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch400036.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400038.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

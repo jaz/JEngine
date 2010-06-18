@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>4.7.3 Examples of the use of RQD and RQ1 segments</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400034.htm">
+<LINK REL="Previous" HREF="ch400032.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400032.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400034.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E234"></A>
+<H3><B>4.7.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Examples of the use of RQD and RQ1 segments</B></H3>
+<P>
+<FONT FACE="Times New Roman">a) The first example is a requisition from the ORSUPPLY application to the MMSUPPLY application for two items for patient John J. Smith.  One item is a stock item for an IV Solution and the second item is a nonstock implant manufactured by Detter.  The requisition number used by the ORSUPPLY application is RQ101.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ORSUPPLY|ORSYS|MMSUPPLY|MMSYS|19911105131523||ORM|100|P|2.2||&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||100928782^9^MOD11|3781928|Smith^John^J||19690424|M|||||||||A|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...100928782^4^MOD11||&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|RQ101^ORSUPPLY||||N|||19911105130000|jjones^Jones^Jean|sgomez^Gomez^Susan|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...|MAINOR^2W|X2304&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|1|1234^Solution, 2.25% Saline||S1786^Saline Solution|1|BT^Bottle|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main OR Supply Room|19901123&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|2|23455^Implant, Special Hip||I45323^Implant|1|EA^ Each|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main OR Supply Room|19901123&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQ1|123.45|DET^Detter, Inc.|444456|DST^Local Distributors, Inc.|333-456|N&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">b) The second example is a requisition from the ORSUPPLY application to the MMSUPPLY application for five stock items to replenish a supply closet.  The requisition number used by the ORSUPPLY application is RQ102.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|ORSUPPLY|ORSYS|MMSUPPLY|MMSYS|19911105152034||ORM|100|P|2.3||&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|RQ102^ORSUPPLY||||N|||19911105150100|jjones^Jones^Jean|sgomez^Gomez^Susan|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...|MAINOR^2W|X2304&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|1|1232^Solution, 1% Saline||S1784^Saline Solution|5|BT^Bottle|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main OR Supply Room|19901105&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|2|1231^Solution, 0.2% Saline||S1781^Saline Solution|2|BT^Bottle|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main OR Supply Room|19901105&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|3|2342^Suture, Black Silk||SU123^Suture|2|DZ^Dozen|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main OR Supply Room|19901105&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|4|2344^Suture, Black Silk 3-0||SU124^Suture|1|DZ^Dozen|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main OR Supply Room|19901105&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RQD|5|4565^Bandage Pad, 4x4||B6345^Bandage Pad|3|BX^Box|1234-5678|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...ORSUP^Main </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400032.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400034.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

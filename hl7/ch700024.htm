@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>7.6.2 CSU - unsolicited study data message (events C09-C12)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700025.htm">
+<LINK REL="Previous" HREF="ch700023.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E300"></A>
+<H3><B>7.6.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>CSU - unsolicited study data mess</B><B>age (events C09-C12)</B></H3>
+<P>
+<FONT FACE="Times New Roman">Data are entered in the clinical trials system or may reside in laboratory, pathology, radiology, pharmacy and/or other clinical applications.  Most clinical trials data - clinical observations and study variables - will be communicated in OBR and OBX segments.  The CSR, CSP, and CSS segments will identify the specific association these OBR and OBX have to the clinical trial.  Data can be broadcast or transmitted in batch mode to study sponsors or the data management center for collaborative studies.</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Event</B></FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C09</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Automated time intervals for reporting, like monthly</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C10</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient completes the clinical trial</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C11</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient completes a phase of the clinical trial</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C12</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Update/correction of patient order/result information</TD></TR></FONT></TABLE><PRE>
+<FONT FACE="Courier New"><U>CSU</U><U> </U><U> </U><U> </U><U> </U><U>Unsolicited Study Data Message</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH    Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> PID    Patient Identification       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PD1]   Additional Patient Identification     3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [{NTE}]   Notes and comments        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PV1   Patient Visit         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PV2]   Additional Patient Visit       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ] </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> CSR    Clinical Study Registration      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {[CSP]   Clinical Study Phase        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {[CSS]  Clinical Study Data Schedule      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[[ORC] Common Order          4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          OBR Observation Battery        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          {OBX} Observation Results        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {[ORC] Common Order          4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          {RXA Pharmacy Administration       4 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">           RXR Pharmacy Route         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">           }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">           }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }   </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700023.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700025.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

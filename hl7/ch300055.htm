@@ -1,0 +1,249 @@
+<HTML>
+<HEAD>
+<TITLE>3.3.1 EVN - event type segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300056.htm">
+<LINK REL="Previous" HREF="ch300054.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300054.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300056.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E188"></A>
+<H3><B>3.3.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>EVN </B><B>-</B><B> event type segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The EVN segment<A NAME="I9"></A> is used to communicate necessary trigger event information to receiving applications.  Valid event types for all chapters are contained in <I>HL7 table 0003 - Event type </I>. </FONT>
+<P>Figure 3-1.  EVN attributes<A NAME="I10"></A>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=234 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0003</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00099</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Type Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00100</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Recorded Date/Time </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00101</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time Planned Event</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0062</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00102</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Reason Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0188</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00103</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Operator ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">01278</FONT>
+</TD><TD WIDTH=234 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Occurred</TD></TR></FONT></TABLE></CENTER><P>3.3.1.0 EVN field definitions<A NAME="I11"></A>
+<H4>3.3.1.1 Event type code<A NAME="I12"></A>  (ID)   00099</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: <I> This field has been retained for backward compatibility only.</I>  We recommend using the second component (trigger event) of <I>MSH-9-message type</I> to transmit event type code information.  This field contains the events corresponding to the trigger events described in this section, e.g., admission, transfer, or registration.  Refer to Chapter 2, <I>HL7 table 0003 - Event type</I> for valid values.</FONT>
+<H4>3.3.1.2 Recorded Date/time <A NAME="I13"></A>  (TS)   00100</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Most systems will default to the system date/time when the transaction was entered, but they should also permit an override. </FONT>
+<H4>3.3.1.3 Date/time planned event<A NAME="I14"></A>  (TS)   00101</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time that the event is planned.  We recommend that the<I> </I><I>PV2</I><I>-</I><I>expected admit date</I> and <I>PV2-9-</I><I>expected discharge date</I> be used whenever possible. </FONT>
+<H4>3.3.1.4 Event reason code<A NAME="I15"></A>  (IS)   00102</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the reason for this event (e.g., patient request, physician order, census management, etc.).  Refer to <I>user-defined table 0062 - Event reason</I> for suggested values. </FONT>
+<P>User-defined Table 0062 - Event reason<A NAME="I16"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">01</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient request</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">02</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Physician order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">03</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Census management</TD></TR></FONT></TABLE><H4>3.3.1.5 Operator ID<A NAME="I17"></A>  (XCN)   00103</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type code(ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the individual responsible for triggering the event.  Refer to <I>user-defined</I> <I>table </I><I>0188 - Operator ID</I> for suggested values.</FONT>
+<H4>3.3.1.6 Event occurred<A NAME="I18"></A>  (TS)   01278</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time that the event actually occurred.  For example, on a transfer (A02), this field would contain the date/time the patient was actually transferred.  On a cancellation event, this field should contain the date/time that the event being canceled occurred.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300054.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300056.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

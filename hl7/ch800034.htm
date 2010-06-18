@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+<TITLE>8.8.4 LRL - location relationship segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800035.htm">
+<LINK REL="Previous" HREF="ch800033.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800033.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800035.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E363"></A>
+<H3><B>8.8.4</B><B> </B><A NAME="I2"></A><B>LRL - location relationship segment</B></H3>
+<P>The LRL segment is used identify one location&#146;s relationship to another location, the nearest lab, pharmacy, etc.
+<P>Figure 8-15.  LRL attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>SEQ
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>LEN
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>DT
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>OPT
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>RP/#
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>TBL#
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ITEM#
+</TD><TD WIDTH=216 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ELEMENT NAME</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>1
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>PL
+</TD><TD WIDTH=47 VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>00943
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Primary Key Value - LRL</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>2
+</TD><TD WIDTH=46 VALIGN=top >
+<P>3
+</TD><TD WIDTH=52 VALIGN=top >
+<P>ID
+</TD><TD WIDTH=47 VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>0206
+</TD><TD WIDTH=55 VALIGN=top >
+<P>00763
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Segment Action Code</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>3
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>EI
+</TD><TD WIDTH=47 VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>00764
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Segment Unique Key</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>4
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>CE
+</TD><TD WIDTH=47 VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>0325
+</TD><TD WIDTH=55 VALIGN=top >
+<P>01230
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Relationship ID</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>5
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>XON
+</TD><TD WIDTH=47 VALIGN=top >
+<P>C
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>01231
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Organizational Location Relationship Value</TD>
+</TR>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>6
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>PL
+</TD><TD WIDTH=47 VALIGN=top >
+<P>C
+</TD><TD WIDTH=46 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>01292
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Patient Location Relationship Value</TD></TR></TABLE><P>8.8.4.0 LRL field definitions
+<H4>8.8.4.1 Primary key value - LRL  (PL)   00943</H4>
+<P>Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;
+<P>Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field contains the institution&#146;s identification code for the location.  The identifying key value.   This field has the same components as the patient location fields in the PV1 segment (except that bed status is not included here).  At least the first component of this field is required.  The contents of this field must exactly match the content of its preceding MFE ( <I>MFE-4-primary key value</I>), its preceding LOC (<I>LOC-1-LOC primary key value</I>), and its preceding LDP (<I>LDP-1-LDP primary key value</I>).
+<H4>8.8.4.2 Segment action code (ID)   00763</H4>
+<P>Definition:  This field indicates whether this repetition of the segment is being added, changed or deleted.  This repetition of the repeating segment must be identified using <I>FT1-25-segment unique key</I>.  The action code adds a validation check to indicate, from the point of view of the sending system, whether this repetition of a segment is being added, changed or deleted.  This and the following field are used to implement the &quot;unique key&quot; mode of updating repeating segments.  (See Chapter 2, Section 2.23.4.2, &quot;Action code/unique identifier mode update definition.&quot;)  Refer to <I>HL7 table 0206 - Segment action code</I> for valid values.
+<H4>8.8.4.3 Segment unique key (EI)   00764</H4>
+<P>Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt; 
+<P>Definition:  This field contains a  unique identifier for one of the multiple repetitions of this segment, to be used in conjunction with the preceding field.  Each of the repetitions of the segment will be uniquely identified by this unique key field for the purposes of updates.
+<H4>8.8.4.4 Location relationship ID  (CE)  01230</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>Definition:  This field contains an identifier code to show WHICH relationship is being communicated with this segment.  Refer to <I>user-defined table 0325 - Location relationship ID </I> for suggested values.
+<P>
+<FONT FACE="Times New Roman">User-defined Table 0325 - Location relationship ID</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RX</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Nearest  Pharmacy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">RX2</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Second Pharmacy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LAB</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Nearest  Lab</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">LB2</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Second Lab</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">DTY</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Nearest  Dietary</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ALI</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Location Alias(es)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PAR</FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Parent Location</TD></TR></FONT></TABLE><H4>8.8.4.5 Organizational location relationship value  (XON)  01231</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;organization name (ST)&gt; ^ &lt;organization name type code (IS)&gt; ^ &lt;ID number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field is conditional on the value of<I> LRL-4-location relationship ID</I>.  When<I> LRL-4-location </I><I>relationship ID</I> contains &quot;RX&quot;- Nearest Pharmacy, &quot;RX2&quot;- Other Pharmacy, &quot;LAB&quot;- Nearest Lab, &quot;LB2&quot;- Other Lab, or &quot;DTY&quot;- Dietary, this field holds that organization&#146;s extended name I.e., the value of this field is conditional on the value of<I> LRL-4-location relation ID</I>.  For example, for an inpatient location, this could be an in-house department ID code using only the third component of this data type.  For an outpatient location, this could be the nearest external pharmacy.
+<H4>8.8.4.6 Patient location relationship value (PL) 01292</H4>
+<P>Components:  &lt;nursing unit or department or clinic (ID)&gt; ^ &lt;room (ST)&gt; ^ &lt;bed (ST)&gt; ^ &lt;facility (HD)&gt; ^ &lt;status  (ID)&gt; ^ &lt;person location type (ID)&gt; ^ &lt;building (ID)&gt; ^ &lt;floor (ST)&gt; ^ &lt;location description (ST)&gt;
+<P>Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field is conditional on the value of<I> LRL-4-location relationship ID</I>.  When <I>LRL-4-location </I><I>relationship</I> ID contains &quot;ALI&quot;- Location aliases or &quot;PAR&quot;- Parent location this field holds the value of the associated patient location
+<P>When <I>LRL-4-location relationship ID</I> contains &quot;PAR&quot;- Parent, this field holds the value of the parent location to allow for nested entries. For example, a bed entry can point to its containing room or nurse unit.  The value for the parent location should match the <I> LOC-1-IPL primary key value</I> of the parent entry.  Not intended to be used for multiple designations of the same physical location, but for identifying the larger physical locations (supersets) which include this physical location as a subset. Aliases should be put in <I>LOC-20-location aliases</I>.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800033.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800035.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

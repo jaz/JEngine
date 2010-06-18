@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>2.6 FIELDS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200011.htm">
+<LINK REL="Previous" HREF="ch200009.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200009.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200011.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E15"></A>
+<P>
+<FONT SIZE="+2"><B>2.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>F</B><B>IELDS</B><A NAME="I10"></A></FONT>
+<P>A field is a string of characters.  HL7 does not care how systems actually store data within an application.  When fields are transmitted, they are sent as character strings.  Except where noted, HL7 data fields may take on the null value.  Sending the null value, which is transmitted as two double quote marks (&quot;&quot;), is different from omitting an optional data field.  The difference appears when the contents of a message will be used to update a record in a database rather than create a new one.  If no value is sent, (i.e., it is omitted) the old value should remain unchanged.  If the null value is sent, the old value should be changed to null.  (For further details, see Section <A HREF="ch200078.htm#I14">2.10</A>, &quot;<A HREF="ch200078.htm#I15">Message construction rules</A>&quot; - step 2d.)
+<P>The various chapters of the Standard contain segment attribute tables.  These tables list and describe the data fields in the segment and characteristics of their usage.  A comprehensive data dictionary of all HL7 fields is provided in Appendix A.  In defining a segment, the following information is specified about each field: 
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200009.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200011.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

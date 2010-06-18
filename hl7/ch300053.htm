@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.51 ADT/ACK - change alternate visit ID (event A51)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300054.htm">
+<LINK REL="Previous" HREF="ch300052.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300052.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300054.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E187"></A>
+<H3>3.2.51 <B>ADT/ACK - change alternate visit ID (event A51)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A change has been done at the alternate visit identifier level.  That is, a <I>PV1-50-alternate visit ID</I> has been found to be incorrect and has been changed. </FONT>
+<P>
+<FONT FACE="Times New Roman">An A51 event is used to signal a change of an incorrectly assigned alternate visit ID value.  The &quot;incorrect source alternate visit ID&quot; value is stored in the MRG segment (<I>MRG-6-prior alternate visit ID</I>) and is to be changed to the &quot;correct target alternate visit ID&quot; value stored in the PV1 segment<I> (PV1-50-alternate visit </I><I>ID</I>).  </FONT>
+<P>
+<FONT FACE="Times New Roman">Each superior identifier associated with this alternate visit identifier level should have the same value in both the PID and MRG segments. </FONT>
+<P>
+<FONT FACE="Times New Roman"><I> </I>See Section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of change messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be only the fields pertinent to communicate this event.  When demographic data in other fields change, it is recommended that the A08 (update patient information) event be used in conjunction with this message.  However, all PV1 data associated with the &quot;correct target alternate visit number&quot; are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG      Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300052.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300054.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

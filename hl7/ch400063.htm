@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>4.14.1 VXQ - query for vaccination record</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400064.htm">
+<LINK REL="Previous" HREF="ch400062.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400062.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400064.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E257"></A>
+<H3><B>4.14.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>VXQ - query for vaccination record</B><A NAME="I8"></A></H3>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;||GAVACREC||AZVACREC|199505221605||VXQ^V01|950522GA40|T|2.3|||AL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|199505221605|R|I|950522GA40|||1000^RD|JONES^JOHN^RICHARD|VXI|SIIS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|AZVACREC||||256946789~19900607~CA~CA99999999~88888888~JONES^MARY^SUE~SMITH~</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    898666725~JONES^MATHEW^LEE~822546618&lt;CR&gt; </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">In this query, Georgia Vaccine Records is sending a request to Arizona Vaccine Records for an immunization record.  The request is being sent on May 22, 1995, at  4:05 p.m..  Identifiers other than patient name are defined in the query by giving positional meaning to the repeat delimiters in the <I>QRF-5</I> segment, as specified in 4.11.  The responding system is expected to return all query items in their response.  The QRD segment, at <I>QRD-8-who subject filter</I>, identifies the patient name.  <I>QRD-9-what subject filter</I> reflects the new VXI category of Vaccination Information.  <I>QRD-10-what department data code</I> shows SIIS.  </FONT>
+<P>
+<FONT FACE="Times New Roman">In our example, we are sending a query for the record of John Richard Jones.  The patient&#146;s Social Security number is 256-94-6789; the patient birth date is June 7, 1990; the patient birth state is CA; the patient birth registration number is CA99999999; and the patient Medicaid number is 88888888. The patient&#146;s mother is Mary Sue Jones, whose maiden name is Smith.  Her Social Security number is 898-66-6725.  The patient&#146;s father is Mathew Lee Jones, and the father&#146;s Social Security number is 822-54-6618.  </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400062.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400064.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

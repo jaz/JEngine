@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>2.14.2 UDM/ACK - unsolicited display update message (event Q05) </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200092.htm">
+<LINK REL="Previous" HREF="ch200090.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200090.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200092.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E86"></A>
+<H3><B>2.14.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><B>UDM/ACK - unsolicited display update message (event Q05)</B><B> </B><A NAME="I19"></A><A NAME="I20"></A><A NAME="I21"></A></H3>
+<P>
+<FONT FACE="Times New Roman">There is a simple HL7 message that allows for unsolicited display update messages to be sent in HL7 format from one system to another.</FONT>
+<P>
+<FONT FACE="Times New Roman">Trigger events for the unsolicited update are generally the completion of a particular action (concerning a given patient).  For example, a lab test might be completed, generating a STAT unsolicited display message to be sent to the appropriate location.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>UDM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Unsolicited Display Message</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">URD     Results/Update Definition      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ URS ]    Results/Update Selection Criteria    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         {  DSP  } Display Data         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200090.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200092.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

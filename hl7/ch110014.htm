@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+<TITLE>11.3.1 RQA/RPA - request patient authorization message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110015.htm">
+<LINK REL="Previous" HREF="ch110013.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E488"></A>
+<H3><B>11.3.1</B><B> </B><B>RQA/RPA - request patient authorization message</B></H3>
+<P>All trigger events in this group use the following message definition.
+<PRE>
+<FONT FACE="Courier New"><U>RQA</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Request Patient Authorization </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[RF1]    Referral Information       11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> AUT    Authorization Information      11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [CTD]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[[{GT1}]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     IN1    Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN2]   Insurance, Additional info     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [IN3]     Insurance, Certification      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ACC ]    Accident          6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DG1}]    Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DRG}]    DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{AL1}]    Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PR1    Procedure         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  AUT   Authorization Information      11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [CTD]  Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    OBR    Observation Request       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         OBX   Results          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PV2]    Patient Visit Additional Info     3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RPA</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Return Patient Authorization</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  MSA    Message Acknowledgment      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[RF1]    Referral Information       11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> AUT    Authorization Information      11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [CTD]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PRD    Provider Data        11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{CTD}]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient ID         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NK1}]    Next of Kin         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{GT1}]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     IN1    Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN2]   Insurance, Additional info     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [IN3]   Insurance, Certification      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ACC ]    Accident          6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DG1}]    Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{DRG}]    DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{AL1}]    Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   PR1    Procedure         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> AUT    Authorization Information      11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [CTD]   Contact Data         11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    OBR    Observation Request       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         OBX   Results          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PV2]    Patient Visit Additional Info     3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments       2</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The abstract message definitions for both the RPA and RQA include the patient visit segments (PV1 and PV2).  The PV1 and PV2 segments appear in the RPA and RQA as an optional grouping to specify the visit or encounter that <B>generated</B> the referral authorization request.  The PV1 and PV2 <B>should not</B> be used to provide suggested information for a future encounter or visit generated by the referral authorization request.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The trigger events that use this message definition are described in Sections <A HREF="ch110015.htm#I3">11.3.2</A>, &quot;<A HREF="ch110015.htm#I4">RQA/RPA - request for treatment authorization information  XE "Request for treatment authorization information"   (event I08)</A>,&quot;  through <A HREF="ch110018.htm#I3">11.3.5</A>, &quot;<A HREF="ch110018.htm#I4">RQA/RPA - request for cancellation of an authorization  XE "Request for cancellation of an authorization"   (event I11)</A>.&quot;</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110013.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110015.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

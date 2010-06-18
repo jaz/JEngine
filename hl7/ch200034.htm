@@ -1,0 +1,336 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.14 ED - encapsulated data</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200035.htm">
+<LINK REL="Previous" HREF="ch200033.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200033.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200035.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E35"></A>
+<H3><B>2.8.14</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>ED - encapsulated data</B></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;source application (HD) &gt; ^ &lt;main type of data (ID)&gt; ^ &lt;data subtype (ID))&gt; ^ &lt;encoding (ID)&gt; ^ &lt;data (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">This data type transmits encapsulated data from a source system to a destination system.  It contains the identity of the source system, the type of data, the encoding method of the data, and the data itself.  This data type is similar to the RP (reference pointer) data type of Section <A HREF="ch200054.htm#I4">2.8.34</A>, &quot;<A HREF="ch200054.htm#I4">RP - reference pointer</A>,&quot; except that instead of pointing to the data on another system, it contains the data which is to be sent to that system.</FONT>
+<H4>2.8.14.1 Source application (HD) </H4>
+<P>
+<FONT FACE="Times New Roman">A unique name that identifies the system which was the source of the data.  Identical format and restrictions as in reference pointer (see Section <A HREF="ch200054.htm#I6">2.8.34.2</A>, &quot;<A HREF="ch200054.htm#I6">Application ID (HD)</A>&quot;).</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents: &lt;namespace ID (IS)&gt; &amp; &lt; Universal ID (ST)&gt; &amp; &lt;Universal ID type (ID)&gt;</FONT>
+<H4>2.8.14.2 <A NAME="I5"></A>Main type of data</H4>
+<P>Identical to &quot;type of data&quot; component in the reference pointer (RP) data type.  (See Section 2.8.34.3, &quot;Type of data (CM)&quot;).
+<P>
+<FONT FACE="Times New Roman">Refer to <I>HL7 table 0191 - Main type of referenced data</I> for valid values.</FONT>
+<H4>2.8.14.3 Subtype</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to <I>HL7 table 0291 - Subtype of referenced data</I> for valid values.</FONT>
+<H4>2.8.14.4 <A NAME="I6"></A>Encoding  (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">The type of encoding, if present, used to represent successive octets of binary data as displayable ASCII characters.  Refer to <I>HL7 table 0299 - Encoding</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0299 - Encoding</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">no encoding - data are displayable ASCII characters.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Hex</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">hexadecimal encoding - consecutive pairs of hexadecimal digits represent consecutive single octets.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Base64</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">encoding as defined by MIME (Multipurpose Internet Mail Extensions) standard RFC 1521.  Four consecutive ASCII characters represent three consecutive octets of binary data.  Base64 utilizes a 65-character subset of US-ASCII, consisting of both the upper and lower case alphabetic characters, digits &quot;0&quot; through &quot;9,&quot; &quot;+,&quot; &quot;/,&quot; and &quot;=.&quot;.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Base64 is defined as follows (adapted from MIME  internet standard RFC 1521, which has precedence over this description).  Proceeding from left to right across a 24-bit input group (three octets), each 6-bit group is used as an index into an array of 64 printable characters.  The character referenced by the index is placed in the encoded string.  These characters are shown in <I>HL7 table 0290 - MIME base64 </I><I>encoding characters</I>, and are selected so as to be universally representable.</FONT>
+<P>
+<FONT FACE="Times New Roman">Special processing is performed if fewer than 24 bits are available in an input group at the end of data.  A full encoding quantum is always completed at the end of data.  When fewer than 24 input bits are available in an input group, zero bits are added (on the right) to form an integral number of 6-bit groups.</FONT>
+<P>
+<FONT FACE="Times New Roman">Output character positions which are not required to represent actual input data are set to the character &quot;=&quot;.  Since all canonically encoded output is an integral number of octets, only the following cases can arise: (1) the final quantum of input is an integral multiple of 24 bits; here, the final unit of encoded output will be an integral multiple of 4 characters with no &quot;=&quot; padding, (2) the final quantum of input is exactly 8 bits; here, the final unit of encoded output will be two characters followed by two &quot;=&quot;padding characters, or (3) the final quantum of input is exactly 16 bits; here, the final unit of encoded output will be three characters followed by one &quot;=&quot; padding character.</FONT>
+<P ALIGN=indent><A NAME="I7"></A><A NAME="I8"></A>Table 0290 - MIME base64 encoding characters</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value/Code</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value/Code</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value/Code</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value/Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">0 A </FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17 R</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">34 I</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">51 z</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1 B </FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18 S</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">35 j</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">52 0</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2 C</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19 T</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">36 k</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">53 1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3 D</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20 U</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">37 l</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">54 2</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4 E</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21 V</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">38 m</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">55 3</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5 F</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22 W</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">39 n</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">56 4</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6 G</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23 X</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">40 o</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">57 5</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7 H</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24 Y</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">41 p</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">58 6</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8 I</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25 Z</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">42 q</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">59 7</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9 J</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26 a</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">43 r</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">60 8</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10 K</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27 b</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">44 s</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">61 9</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11 L</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28 c</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">45 t</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">62 +</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12 M</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29 d</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">46 u</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">63 /</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13 N</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30 e</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">47 v</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14 O</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">31 f</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">48 w</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">(pad) =</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15 P</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">32 g</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">49 x</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16 Q</FONT>
+</TD><TD WIDTH=89 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">33 h</FONT>
+</TD><TD WIDTH=91 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">50 y</FONT>
+</TD><TD WIDTH=87 ALIGN=center  VALIGN=top ><BR></TD></TR></TABLE><P>
+<FONT FACE="Times New Roman">The interpretation of the encoded octets by any of the encoding methods, beyond what is either implicit or specified in the represented data type (such as their ordering within 16-bit or 32-bit binary words on the destination application), is determined by the destination application and is beyond the scope of this Standard.</FONT>
+<H4>2.8.14.5 Data (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Displayable ASCII characters which constitute the data to be sent from source application to destination application.  The characters are limited to the legal characters of the ST data type, as defined in Section <A HREF="ch200058.htm#I4">2.8.38</A>, &quot;<A HREF="ch200058.htm#I4">ST - string data</A>&quot; and, if encoded binary, are encoded according to the method of Section <A HREF="ch200034.htm#I5">2.8.14.2</A>, &quot;<A HREF="ch200034.htm#I5">Main type of data</A>.&quot;</FONT>
+<P>If  the encoding component (see Section <A HREF="ch200034.htm#I6">2.8.14.4</A>, &quot;<A HREF="ch200034.htm#I6">Encoding  (ID)</A>&quot;) = &#145;A&#146; (none), then the data component must be scanned before transmission for HL7 delimiter characters, and any found must be escaped by using the HL7 escape sequences defined in Section <A HREF="ch200070.htm#I19">2.9</A>, &quot;<A HREF="ch200070.htm#I20">Use of escape sequences in text fields</A> &quot;  On the receiving application, the data field must be de-escaped after being parsed.
+<P>If the encoding component (see Section <A HREF="ch200034.htm#I6">2.8.14.4</A>, &quot;<A HREF="ch200034.htm#I6">Encoding  (ID)</A>&quot;) does not equal &#145;A&quot;, then, after encoding, the (encoded) data must be scanned for HL7 delimiter characters, and any found must be escaped by using the HL7 escape sequences. Only then can the component be added to the HL7 segment/message. On the receiving application, the data field must be de-escaped after being parsed out of the message before being decoded. This can be expressed as &#145;encode&#146;, &#145;escape&#146;, parse, &#145;de-escape&#146;, &#145;decode&#146;.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200033.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200035.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

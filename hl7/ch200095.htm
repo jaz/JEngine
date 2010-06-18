@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>2.15.2 Message definition</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200096.htm">
+<LINK REL="Previous" HREF="ch200094.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200094.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200096.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E89"></A>
+<H3><B>2.15.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>Message definition</B><A NAME="I15"></A></H3>
+<P>
+<FONT FACE="Times New Roman">This section defines the following message:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; a generalized query, compatible with previous releases of HL7 (henceforth referred to as the original query)</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; An Embedded Query Language query, which supports free-form select statements, based on the query language of choice (e.g., SQL)</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; a virtual table request query which supports queries against server database tables (virtual or actual) based on specific selection criteria</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; a stored procedure request, which enables an application on one system to execute a stored procedure on another system, which is coded to extract specific data</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; a generalized display response message in which the responding system formats the data for direct output to a display device (in both original and enhanced modes)</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; an event replay request message, which is used to request data formatted as an event replay response</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; a tabular response message in which the responding system formats the data in a relational format, as rows and columns</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; an event replay response,  in which the responding system formats the data on the basis of an application-specific-segment-oriented (record-oriented) message</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note :</B> The response paradigm and basic form of the original mode record oriented query are  defined in this chapter, while the detailed forms are defined in the functionally-specific chapters. </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The following represents typical examples of queries supported by the Standard:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) for data regarding a single patient, e.g., send all lab results for patient #123456</FONT>
+<P>
+<FONT FACE="Times New Roman">b) for data regarding multiple patients, e.g., send the list of patients whose attending physician is Dr. #123</FONT>
+<P>
+<FONT FACE="Times New Roman">c) for data that is not patient related, e.g., send the age specific normal values for serum protein</FONT>
+<P>
+<FONT FACE="Times New Roman">The variety of potential queries is almost unlimited.  There was no attempt here to define a Standard that would cover every possible query.  Instead, the Standard embraces the most common queries that are likely to occur in a hospital.  For each common query there is a corresponding unsolicited update.  See Section <A HREF="ch200091.htm#I14">2.14.2</A>, &quot;<A HREF="ch200091.htm#I15">UDM/ACK - unsolicited display update message (event Q05)</A>.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">In particular, there is no implication that a specific system must support generalized queries to comply with the Standard.  Rather, these transactions provide a format, or a set of tools to support queries to the extent desired by the institution.  The resources available and local policies will influence the type of queries that are implemented.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200094.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200096.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

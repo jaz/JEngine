@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>12.1.5 Message construction rules</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch120007.htm">
+<LINK REL="Previous" HREF="ch120005.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch120005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E513"></A>
+<H3><B>12.1.5</B><B> </B><B>Message construction rules</B></H3>
+<P>
+<FONT FACE="Times New Roman">The semantic meaning of a message is contained in the message through the use of the trigger events, the implicit hierarchical linkages of the segments, and the segment action codes.  Each of these has a scope within the message.  The message event as included in the <I>MSH-9-message type</I> has a scope which is global to the message.  The segment hierarchical linkage has a scope which includes both the segment itself and its relationship to its parent.  The segment action code&#146;s scope is to the segment itself.  It may further define link and unlink actions in the hierarchical structure.</FONT>
+<H4>12.1.5.1 Rule 1</H4>
+<P>
+<FONT FACE="Times New Roman">The trigger event defines the action at the first level of the hierarchy, and should not be contradicted by either hierarchical linkages or segment action codes.  Thus, a PC1 (problem add) event should only contain problem, goal, and role segments that have action codes ADD.</FONT>
+<P>
+<FONT FACE="Times New Roman">Figure 12 - 1.  Table of allowable trigger event types and action codes</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Trigger Event Types</FONT>
+</TD><TD WIDTH=389 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Allowable Action Codes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">xxx-Add</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Top level action code must ADD
+<BR>Dependent segment action code must be ADD</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">xxx-Update</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Top level action code must be CORRECT, UPDATE, or UNCHANGED
+<BR>Dependent segment action codes - Any are allowed at the lower hierarchical levels.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">xxx-Delete</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Top level action code must be DELETE
+<BR>Dependent segments&#146; action codes must be DELETE</TD></TR></FONT></TABLE><H4>12.1.5.2 Rule 2</H4>
+<P>
+<FONT FACE="Times New Roman">When using the segment action codes LINK and UNLINK, only those fields which are used to define a unique instance of the object are used.  This action cannot be used to send changes and updates to the other fields of that segment.</FONT>
+<H4>12.1.5.3 Rule 3</H4>
+<P>
+<FONT FACE="Times New Roman">In dependent segments ADD is the action code to use to provide the initial linkage between dependent objects.  The receiving system must be ready to handle multiple adds of the same object.  An example is a Problem List of three (3) problems which is being sent.  Attached to these problems are 3 goals.  Problem A has Goals 1 and 2 attached to it.  Problem B has the same Goal 2 and a new Goal 3 attached to it.  All of these will have the ADD action code in the segment, and when Problem B is transmitted with Goals 2 and 3, Goal 2 will have been previously transmitted with Problem A.  The message construct would look like this:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   PRB  (Problem A)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    GOL  (Goal 1)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    GOL  (Goal 2)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   PRB  (Problem B)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    GOL  (Goal 2)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    GOL  (Goal 3)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   PRB  (Problem C)      (No attached goals) </FONT></PRE>
+<H4>12.1.5.4 Rule 4</H4>
+<P>
+<FONT FACE="Times New Roman">Remember that HL7 only provides for error messages at the message level.  Thus, if the receiving system cannot process one segment, the entire message is going to be treated as an error (See Chapter 2).</FONT>
+<H4>12.1.5.5 Rule 5</H4>
+<P>
+<FONT FACE="Times New Roman">The Problem, Goal, and Pathway messages integrate order segments as a method for establishing causal linkages.  Linkages or relationships between orders, problems, goals, and pathways can therefore be presented in the Patient Care messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">Orders referenced in Patient Care messages are used for linkage purposes only.  Initiation and status changes to orders are accomplished by using dedicated messages defined in the Order Entry Chapter.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch120005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

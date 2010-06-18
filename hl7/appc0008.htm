@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>C.2.4 QRD - query definition segment usage</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="appd.htm">
+<LINK REL="Previous" HREF="appc0007.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="appc0007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appd.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E536"></A>
+<H3><B>C.2.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>QRD - query definition segment</B><B> usage</B></H3>
+<P>C.2.4.0 QRD use notes
+<P>
+<FONT FACE="Times New Roman">This segment is defined in Chapter 2.  It is optional in the NMQ message.  If present, <I>QRD-1-query </I><I>date/time, QRD-2-query format code, QRD-3-query priority,QRD-9-what subject filter,</I> and <I>QRD-12-what</I> <I>department data code</I> should be used.  </FONT>
+<P>
+<FONT FACE="Times New Roman">Suggested values for <I>QRD-9-what subject filter</I> are NCK, NST, or NSC.  If NSC is used, then suggested values for <I>QRD-12-what department data code</I> should be taken from the user-defined table for <I>NSC-1-network change type</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">Since these are network management transactions, <I>QRD-2-query format code</I> should be R (record oriented), <I>QRD-3-query priority</I> should be I (immediate).</FONT>
+<P>
+<FONT FACE="Times New Roman">The other fields in this segment are optional.</FONT>
+<P ALIGN=LEFT>
+<A HREF="appc0007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appd.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

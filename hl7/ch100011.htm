@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>1.6.5 Relationship to other protocols</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100012.htm">
+<LINK REL="Previous" HREF="ch100010.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E5"></A>
+<H3><B>1.6.5</B><B> </B><A NAME="I2"></A><B>Relationship to other protocols</B><A NAME="I3"></A></H3>
+<P>
+<FONT FACE="Times New Roman">A great deal of consideration has been given to the relationship between the HL7 Standard protocol and other protocols.  There are three questions:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) what is the relationship between the HL7 protocol and &quot;lower layer,&quot; service protocols?  In strict accordance with the ISO OSI model, HL7 should not replicate features of these protocols.  This can even be construed to require HL7 to avoid replicating certain ISO layer 7 functionality contained in the Service Elements.</FONT>
+<P>
+<FONT FACE="Times New Roman">However, it is the goal of the HL7 group to support healthcare communications in a wide variety of communications environments, including many that are not as complete as ISO will be one day.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) what is the relationship between the HL7 Standard protocol and other applications protocols?  Protocols of interest include the ASC X12 Standards for Electronic Document Interchange, the ASTM 1238-88 Standards for laboratory data reporting, the ACR/NEMA DICOM Standards for imaging and other aspects of Radiology Information Systems, and the IEEE P1157 Standards for Medical Data Interchange (MEDIX).</FONT>
+<P>
+<FONT FACE="Times New Roman">c) what is the relationship between the HL7 Standard and various proprietary healthcare protocols in use today?</FONT>
+<H4>1.6.5.1 Lower layer protocols</H4>
+<P>
+<FONT FACE="Times New Roman">The HL7 Encoding Rules are substantially different from the ASN.1 Basic Encoding Rules (BER) documented in CCITT X.409 and X.209 and ISO 8825 or those employed in LU6.2 or RPC.  This is because:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) by definition, the HL7 encoding rules will be applied where the environment does not include software to do encoding.  Without such software, the burden on applications programmers to develop messaging software that conforms to those encoding rules is onerous.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) the encoding rules of these protocols depend on the assumption that lower level protocols provide transparency (i.e., all character codes can be transmitted without being changed by and of the lower levels).  This assumption is often not met in the communications environments that must serve HL7 for the interim.  The techniques that might be used to implement transparency in the Lower Level Protocol are difficult to implement in some present-day applications environments.</FONT>
+<P>
+<FONT FACE="Times New Roman">The notation chosen to document the message formats in the HL7 Standard is not the Abstract Syntax Notation1 (ASN.1) Basic Encoding Rules (BER) defined by ISO.</FONT>
+<P>
+<FONT FACE="Times New Roman">Contrary to other high level communications environments, there is no notion of association separate from the sending of the message from client to server and the response.  This seems appropriate to the client-server model.</FONT>
+<P>
+<FONT FACE="Times New Roman">Whenever HL7 is applied in a networking environment, addressing will be an issue.  This is equally true when it is applied on ISO Standards networks or proprietary networks.  Although the Standard does not specify how this addressing will occur, it does provide certain data fields that will be of value in determining addresses.  The fields <I>MSH-5-receiving application</I>, <I>MSH-6-receiving facility</I>, and <I>MSH-11-processing ID</I>, are located in the header of all HL7 messages.  <I>MSH-6-receiving facility</I> is intended for environments where multiple occurrences of the same application are being run on the same computer system or on the same network on behalf of different institutions or other organizational entities. <I>MSH-11-processing ID</I> is used where various versions of essentially the same application may reside on the same computer for different purposes.  See<I> HL7 table 0103 - Processing ID</I> for recommended values.</FONT>
+<P>
+<FONT FACE="Times New Roman">HL7 does not standardize all values for <I>MSH-5- receiving application</I> and<I> MSH-6-receiving facility</I> at this time because there are so many variations in place in existing systems and because different kinds of environments (e.g., different countries) may have different required code sets. However, we strongly encourage the use of the HL7 suggested code sets where they are defined and we recognize that movement toward more standardized codes is essential for seamless communications.</FONT>
+<H4>1.6.5.2 Other applications protocols</H4>
+<P>
+<FONT FACE="Times New Roman">The Working Group has given considerable attention to the relationship of the HL7 protocol and other protocols.  A considerable liaison effort is underway.  This is described below:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) <U>ACR/NEMA DICOM.</U>  The HL7 Working Group maintains an on-going liaison with the ACR/NEMA DICOM working group.  HL7 and ACR/NEMA DICOM are both members of ANSI&#146;s HISB.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) <U>ASC X12 Standards for Electronic Document Interchange.</U>ASC X12 is a family of Standards that provides both general and specific descriptions for data interchange within a number of industries. The HL7 Encoding Rules are modeled on the X12 Standards, although there are differences.  The HL7 Standard needs to accommodate on-line exchange of individual transactions on LANs. This difference, and certain applications issues, are responsible for the variance from X12. X12 has recently decided to follow the UN/EDIFACT encoding rules for all X12 standards produced in 1995 or later.  X12N transactions that facilitate the transfer of healthcare claims and remittance information as well as benefit coordination, enrollment and verification are enjoying dramatically increased use.  HL7 has elected to assume that all new business transactions between institutions regarding the interchange of claims, benefits,  or other financial information are the responsibility of ASC X12N, the insurance subcommittee of X12.</FONT>
+<P>
+<FONT FACE="Times New Roman">In February of 1994, HL7 and X12 signed an agreement to &quot;improve coordination efforts and have identified that technical issues must be harmonized.  Both groups agree to migrate to the appropriate level of resolution of potentially overlapping work by utilizing user and standards communities&#146; and anticipated healthcare reform requirements.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">Since then, HL7 and X12 have created two bodies to address the goals of harmonization: (1) HL7 - X12N Coordinating Ad Hoc Steering Committee to oversee efforts, and (2) HL7 - X12N Joint Coordinating Committee to develop and implement specific plans to achieve harmonization.  Both committees have convened a meeting in 1994 and continued their work through 1996.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) <U>ASTM 1238.94 Laboratory Data Reporting.</U>  An active liaison effort between the ASTM committee and the Working group has resulted in minor changes in the ASTM specification to enhance compatibility, changes in the HL7 control specifications to enhance compatibility, and the development of the entire Ancillary Data Reporting chapter, developed jointly by the committees and built on the ASTM Standards.  This liaison has extended to the point where both groups now have the permission to freely use the contents of each others standards efforts &quot;in whole&quot; within their own published Standards.</FONT>
+<P>
+<FONT FACE="Times New Roman">Some distinctions are more in the terminology chosen than the actual message content.  For example, the ASTM &quot;sub-field delimiter&quot; is generally used to separate repetitions of homogenous values.  It is called a &quot;repetition separator&quot; in HL7.  HL7 and ASTM are both members of ANSI&#146;s HISPB.</FONT>
+<P>
+<FONT FACE="Times New Roman">(d) <U>IEEE P1157 (&quot;MEDIX&quot;).</U>  The MEDIX committee is defining an application level protocol similar in scope to HL7 but built strictly on the ISO protocol stack, up to and including the Remote Operation Service Element (ROSE).  HL7 varies from this approach by the decision not to depend on ROSE nor use the ASN.1 BER syntax notation.  Despite the difference in approaches, the HL7 Working Group has regular liaison with the MEDIX committee.  The Working Group has devised a format for the HL7 Standard that is relatively independent of the encoding rules chosen and easily translated into the ASN.1 notation.  The transactions defined in this manner should be directly transferable to the MEDIX effort, and transaction messages encoded using the HL7 scheme should be translatable to transactions encoded using the BER.  This should facilitate the creation of gateways between the HL7 and future environments.</FONT>
+<P>
+<FONT FACE="Times New Roman">In addition, HL7 and MEDIX have agreed on a course for convergence.  This will occur within the HL7 abstract message definitions.  MEDIX has further agreed to use the HL7 abstract message definitions as defined in version 2.1 as a starting point for the MEDIX message definitions.</FONT>
+<P>
+<FONT FACE="Times New Roman">HL7, IEEE, and X12 are ANSI approved standards developers. Version 2.2 of HL7 has been balloted as an ANSI standard.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

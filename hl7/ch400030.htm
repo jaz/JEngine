@@ -1,0 +1,213 @@
+<HTML>
+<HEAD>
+<TITLE>4.7 SUPPLY ORDERS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400031.htm">
+<LINK REL="Previous" HREF="ch400029.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400029.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400031.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E48"></A>
+<P>
+<FONT SIZE="+2"><B>4.7</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><B>SUPPLY ORDERS</B><A NAME="I12"></A></FONT>
+<P>The Requisition Detail segment (RQD) is used for ordering medical, surgical , and patient care supplies.  It is assumed that these supplies are managed by a materials management application, which contains a Master List of all items the hospital uses.
+<P>There are basically two types of supplies, commonly referred to as stock and nonstock.
+<P>Stock supplies are, as the name suggests, stocked in the hospital in designated areas, such as the warehouse, Central Supply, Nursing floors, or Operating Room.
+<P>When requisitioning stock supplies, the requesting application need only specify the information in the RQD segment.  It is assumed that this is enough information for the application receiving to identify the item.  If the sending application is not aware whether the supply is stock, it may optionally send an RQ1 along with the RQD.  Typically in that case, the item is requested with a free text description.  
+<P>Nonstock supplies are not stocked anywhere in the hospital and must be ordered from an industry distributor or manufacturer.
+<P>When the requesting application knows that it is requisitioning nonstock supplies, it may also send an RQ1 segment with the RQD if at least one field in RQ1 is known to the sending application.  This may be necessary in order for the receiving application to properly determine where to get these supplies.  This depends on the sophistication of the database of the receiving application, which may contain a history of requisitions from the sending application.
+<P>Stock requisition orders use the ORM.  RQD replaces the Order Detail Segment of the ORM message as follows:
+<PRE>
+<FONT FACE="Courier New"><U>ORM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Stock Requisition Order Message</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>   [PD1]</U><U> </U><U> </U><U> </U><U> </U><U>Additional Patient Identification</U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>      [{NTE}]</U><U> </U><U> </U><U>Notes and Comments (for Patient ID)</U><U> </U><U> </U><U> </U><U>2</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [PV1</U><U> </U><U> </U><U> </U><U> </U><U>Patient Visit</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [PV2]]</U><U> </U><U> </U><U> </U><U>Patient Visit Additional Information</U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [{IN1</U><U> </U><U> </U><U> </U><U>Insurance</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U> </U><U>  [IN2]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U>
+<BR><U>    </U><U> </U><U>  [IN3]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [GT1]   Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{AL1}]   Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ORC     Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RQD    Requisition Detail       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for RQD)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      OBX   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes and Comments (for OBX)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [BLG]    Billing segment        4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ORR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Order Acknowledgment Message</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]  Notes and Comments (for Patient ID)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RQD    Requisition Detail       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for RQD)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<P>Nonstock requisitions use the ORM.  RQD followed by RQ1 replaces the Order Detail Segment of the ORM message as follows:
+<PRE>
+<FONT FACE="Courier New"><U>ORM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Nonstock Requisition Order Message</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> <U>[PD1]</U><U> </U><U> </U><U> </U><U> </U><U>Additional Patient Identification</U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [{NTE}]</U><U> </U><U> </U><U> </U><U>Notes and Comments (for Patient ID)</U><U> </U><U> </U><U> </U><U>2</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>  [PV1</U><U> </U><U> </U><U> </U><U> </U><U>Patient Visit</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>  [PV2]]</U><U> </U><U> </U><U> </U><U> </U><U>Patient Visit Additional Information</U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>   [{IN1</U><U> </U><U> </U><U> </U><U> </U><U>Insurance</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U> </U><U> [IN2]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U>
+<BR><U>    </U><U> </U><U> [IN3]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [GT1]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{AL1}]   Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ORC     Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RQD    Requisition Detail       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [RQ1]    Requisition Detail-1       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for RQD)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      OBX   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes and Comments (for OBX)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [BLG]    Billing segment        4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ORR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Order Acknowledgment Message</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Patient ID)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RQD    Requisition Detail       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [RQ1]    Requisition Detail-1       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for RQD)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400029.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400031.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

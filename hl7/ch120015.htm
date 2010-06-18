@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>12.2.8 PPVPGR - patient goal response (event PCA)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch120016.htm">
+<LINK REL="Previous" HREF="ch120014.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch120014.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120016.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E521"></A>
+<H3><B>12.2.8</B><B> </B><B>PPVPGR - patient goal response (event PCA)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The following trigger/message event is served by PPV (a response from the system responsible for maintaining the goal information).</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>PPV</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Goal Query Response</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA      Message Acknowledgment       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD      Query Definition         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   PV2]    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   GOL    Detail Goal         12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes (Goal Comments)       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{VAR}]   Variance (Goal)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{ROL   Role (Goal)         12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{VAR]}  Variance (Role)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{PTH    Detail Pathway        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{VAR}]   Variance (Pathway)       12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{OBX    Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes (Observation/Result Comments)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{PRB    Detail Problem        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes (Problem Comments)      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{VAR}]   Variance (Problem)       12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{ROL   Role (Problem)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{VAR}]  Variance (Role)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{OBX   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{NTE}]  Notes (Observation/Result Comments)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [OBR, etc.  Order Detail Segment, etc.     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{NTE]}  Notes (Order Detail Comments)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{VAR}]  Variance (Order)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{OBX   Observaton/Result        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [{NTE}]  Notes (Observation Comments)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [{VAR]}  Variance (Observation/Result)     12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch120014.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120016.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

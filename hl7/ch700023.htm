@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<TITLE>7.6.1  CRM- clinical study registration message (events C01-C08)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700024.htm">
+<LINK REL="Previous" HREF="ch700022.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700022.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700024.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E299"></A>
+<H3><B>7.6.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B> </B><A NAME="I8"></A><B>CRM- clinical study registration message</B><B> (events C01-C08)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The data are entered in a clinical trials or other patient data system and broadcast to other facility systems such as order entry, pharmacy, accounting, and nursing systems.  They can be transmitted in batch mode or broadcast to outside-facility computer systems, including diagnostic and patient management systems.  It is assumed that proper routing and security mechanisms are in place.</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Event</B></FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B>Description</B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C01</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Register a patient on a clinical trial</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C02</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Cancel a patient registration on clinical trial(for clerical mistakes since an intended registration should not be canceled)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C03</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Correct/update registration information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C04</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient has gone off a clinical trial</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C05</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient enters phase of clinical trial</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C06</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Cancel patient entering a phase (clerical mistake)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C07</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Correct/update phase information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=120 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C08</FONT>
+</TD><TD WIDTH=444 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Patient has gone off phase of clinical trial</TD></TR></FONT></TABLE><PRE>
+<FONT FACE="Courier New"><U>CRM</U><U> </U><U> </U><U> </U><U>Clinical Study Registration Message</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PV1]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  CSR    Clinical Study Registration     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   {[CSP]}   Clinical Study Phase       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700022.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700024.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

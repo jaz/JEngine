@@ -1,0 +1,360 @@
+<HTML>
+<HEAD>
+<TITLE>2.12.1 Original and enhanced processing rules</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200085.htm">
+<LINK REL="Previous" HREF="ch200083.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200083.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200085.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E81"></A>
+<H3><B>2.12.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><A NAME="I21"></A><A NAME="I22"></A><A NAME="I23"></A><A NAME="I24"></A><B>Original and enhanced processing rules</B><A NAME="I25"></A><A NAME="I26"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The processing rules described here apply to all exchanges of messages, whether or not the HL7 encoding rules or Lower Layer Protocols are used.  They represent the primary message processing mode.  Certain variants are documented in Section <A HREF="ch200085.htm#I18">2.12.2</A>, &quot;<A HREF="ch200083.htm#I18">APPLICATION (LEVEL 7) PROCESSING RULES</A>&quot;.  These include:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) the application processing rules for a special processing mode, deferred processing.  This mode remains in the specification only for backward compatibility.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) an optional sequence number protocol</FONT>
+<P>
+<FONT FACE="Times New Roman">c) an optional protocol for continuing a very long message</FONT>
+<P>
+<FONT FACE="Times New Roman">The processing rules were extended in Version 2.2 of the Standard.  The extensions provide a greater degree of flexibility in the way that messages can be acknowledged, as specified by several new fields in the Message Header segment.  To provide backward-compatibility with prior versions,  the absence of these fields implies that the extended processing rules are not used.  In the remainder of this section the extended mode is called the enhanced acknowledgment mode; the prior version is called the original acknowledgment mode. </FONT>
+<P>
+<FONT FACE="Times New Roman">Because the protocol describes an exchange of messages, it is described in terms of two entities, the initiating and responding systems.  Each is both a sender and receiver of messages.  The initiating system sends first and then receives, while the responding system receives and then sends.</FONT>
+<P>
+<FONT FACE="Times New Roman">In overview this exchange proceeds as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">Step 1 the initiating system constructs an HL7 message from application data and sends it to the responding system</FONT>
+<P>
+<FONT FACE="Times New Roman">Step 2 responder receives message and </FONT>
+<P>
+<FONT FACE="Times New Roman">2.1 when the original acknowledgment rules apply:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) validates the message  syntactically and against the detailed rules described in Section <A HREF="ch200084.htm#I27">2.12.1.1</A>, &quot;<A HREF="ch200084.htm#I27">Initiation</A>&quot; if it fails, a reject message is constructed by the protocol software and returned to the initiator; if it does not fail, continue to the next step (2.1,b)</FONT>
+<P>
+<FONT FACE="Times New Roman">b) passes the message  to the application, which:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) creates a response message, or</FONT>
+<P>
+<FONT FACE="Times New Roman">2) creates an error message, or</FONT>
+<P>
+<FONT FACE="Times New Roman">3) creates a reject message</FONT>
+<P>
+<FONT FACE="Times New Roman">c) sends the response, error, or reject message</FONT>
+<P>
+<FONT FACE="Times New Roman">Initiator passes the message to the initiating application.</FONT>
+<P>
+<FONT FACE="Times New Roman">2.2 when enhanced acknowledgment rules apply:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) the responding system receives the message and commits it to safe storage.  This means that the responding system accepts the responsibility for the message in a manner that releases the sending system from any obligation to resend the message.  The responding system now checks the message header record to determine whether or not the initiating system requires an accept acknowledgment message indicating successful receipt and secure storage of the message.  If it does, the accept acknowledgment message is constructed and returned to the initiator.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) at this point, the requirements of the applications involved in the interface determine whether or not more information needs to be exchanged.  This exchange is referred to as an application acknowledgment and includes information ranging from simple validation to a complex application-dependent response.  If the receiving system is expected to return application-dependent information, it initiates another exchange when this information is available.  This time, the roles of initiator and responder are reversed.</FONT>
+<P>
+<FONT FACE="Times New Roman">The details follow.</FONT>
+<H4>2.12.1.1 <A NAME="I27"></A>Initiation</H4>
+<P>
+<FONT FACE="Times New Roman">The initiating application creates a message with data values as defined in the appropriate chapter of this Standard.  The fields shown below should be valued in the MSH segment (as defined under the MSH segment definition of this chapter).  The message is encoded according to the applicable rules and sent to the lower level protocols, which will attempt to deliver it to the responding application.  (For definitions of the MSH fields see Section <A HREF="ch200124.htm#I14">2.24.1</A>, &quot;<A HREF="ch200124.htm#I15">MSH   message header segment</A>.&quot;)</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P><B><U>Field</U></B>
+</TD><TD WIDTH=288 ALIGN=center  VALIGN=top >
+<P><B><U>Notes </U></B></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-3-sending application</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-4-sending facility</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-5-receiving application</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-6-receiving facility</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-7-date/time of message</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">This field is not used in the processing logic of the HL7 protocol.  It is optional.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-9-message type</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-10-message control ID</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Unique identifier used to relate the response to the initial message.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-11-processing ID </I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-12-version ID</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-13-sequence number</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-14-continuation pointer</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Used in implementation of message continuation protocol.  See Sections <A HREF="ch200120.htm#I17">2.23.2</A>, &quot;<A HREF="ch200120.htm#I16">Continuation messages and segments</A>,&quot; <A HREF="ch200092.htm#I14">2.14.3</A>, &quot;<A HREF="ch200092.htm#I15">Continuation of unsolicited display update message</A>,&quot; and <A HREF="ch200097.htm#I15">2.15.4</A>, &quot;<A HREF="ch200097.htm#I14">Interactive continuation or cancellation of response messages: original mode (display and record oriented) and enhanced mode (display, tabular, and event replay)</A>.&quot;</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Certain other fields in the MSH segment are required for the operation of the HL7 encoding rules; they will not be relevant if other encoding rules are employed.</FONT>
+<P>
+<FONT FACE="Times New Roman">The event code in the second component of <I>MSH-9-message type</I> is redundantly shown elsewhere in some messages.  For example, the same information is in the EVN segment of the ADT message.  This is for compatibility with prior versions of the HL7 protocol.  Newly defined messages should only show the event code in <I>MSH-9-message type</I>.</FONT>
+<H4>2.12.1.2 <A NAME="I28"></A>Response</H4>
+<P>
+<FONT FACE="Times New Roman">The protocol software in the responding system does one of the following:</FONT>
+<H5>2.12.1.2.1 <A NAME="I29"></A>When the original acknowledgment rules apply </H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> Both <I>MSH-15-accept acknowledgment type</I> and <I>MSH-16-application acknowledgment type</I> are null or not present.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">a) accepts the message</FONT>
+<P>
+<FONT FACE="Times New Roman">b) validates it against at least the following criteria:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) the value in <I>MSH-9-message type</I> is one that is acceptable to the receiver</FONT>
+<P>
+<FONT FACE="Times New Roman">2) the value in <I>MSH-12-version ID</I> is acceptable to the receiver</FONT>
+<P>
+<FONT FACE="Times New Roman">3) the value in <I>MSH-11-processing ID</I> is appropriate for the application process handling the message</FONT>
+<P>
+<FONT FACE="Times New Roman">If any of these edits fail, the protocol software rejects the message.  That is, it creates an ACK message with AR in <I>MSA-1-acknowledgment code</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) if the message passes the edits, the message is passed to the receiving application, which performs one of these functions:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) process the message successfully, generating the functional response message with a value of AA in <I>MSA-1-acknowledgment code</I>. </FONT>
+<P>
+<FONT FACE="Times New Roman">- OR -</FONT>
+<P>
+<FONT FACE="Times New Roman">2) send an error response, providing error information in functional segments to be included in the response message with a value of AE in <I>MSA-1-acknowledgment code</I>. </FONT>
+<P>
+<FONT FACE="Times New Roman">- OR -</FONT>
+<P>
+<FONT FACE="Times New Roman">3) fail to process (reject) the message for reasons unrelated to its content or format (system down, internal error, etc.).  For most such problems it is likely that the responding system will be able to accept the same message at a later time.  The implementors must decide on an application-specific basis whether the message should be automatically sent again.  The response message contains a value of AR in <I>MSA-1-acknowledgment code</I>.  </FONT>
+<P>
+<FONT FACE="Times New Roman">d) passes the message to the initiating system</FONT>
+<P>
+<FONT FACE="Times New Roman">e) the protocol software in the initiating system passes the response message to the initiating application</FONT>
+<P>
+<FONT FACE="Times New Roman">In all the responses described above the following values are put in the MSA segment. Note that the field definitions for the MSA segment fields are in Section <A HREF="ch200125.htm#I27">2.24.2</A>, &quot;<A HREF="ch200125.htm#I28">MSA   message acknowledgment segment</A>&quot;:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Field</U></B></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Notes </U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-1-acknowledgment code</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">As described above.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-2-message control ID</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-10-message control ID</I> from MSH segment of incoming message.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-3-text message</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Text description of error.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-4-expected sequence </I><I>number</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">As described in Section <A HREF="ch200119.htm#I14">2.23.1</A>, &quot;<A HREF="ch200119.htm#I15">Sequence number protocol</A>,&quot; (if the sequence number protocol is being used).</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-5-delayed </I><I>acknowledgment type</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">For use only as described in Section <A HREF="ch200085.htm#I15">2.12.2</A>, &quot;<A HREF="ch200085.htm#I14">Application (level 7) processing rules, deferred processing xe "Processing rules: application"  xe "Processing rules: deferred"  two phase reply (original acknowledgment mode only)</A>.&quot;</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The MSH segment in the response is constructed anew following the rules used to create the initial message described above.  In particular, <I>MSH-7-date/time of message</I> and <I>MSH-10-message control ID</I> refer to the response message; they are not echoes of the fields in the initial message.  <I>MSH-5-receiving application</I>, <I>MSH-6-receiving facility</I>, and <I>MSH-11-processing ID</I> contain codes that are copied from <I>MSH-3-sending </I><I>applica</I><I>tion</I>, <I>MSH-4-sending facility</I> and <I>MSH-11-processing ID</I> in the initiating message.</FONT>
+<H5>2.12.1.2.2 When enhanced acknowledgment rules apply </H5>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> At least one of <I>MSH-15-accept acknowledgment type</I> or <I>MSH-16-application acknowledgment type</I> is not null.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">a) accepts the message</FONT>
+<P>
+<FONT FACE="Times New Roman">b) makes an initial determination as to whether or not the message can be accepted, based on factors such as:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) the status of the interface</FONT>
+<P>
+<FONT FACE="Times New Roman">2) the availability of safe storage onto which the message can be saved</FONT>
+<P>
+<FONT FACE="Times New Roman">3) the syntactical correctness of the message, if the design of the receiving system includes this type of validation at this phase</FONT>
+<P>
+<FONT FACE="Times New Roman">4) the values of <I>MSH-9-message type</I>, <I>MSH-12-version ID</I>, and <I>MSH-11-processing ID</I>, if the design of the receiving system includes this type of validation at this phase</FONT>
+<P>
+<FONT FACE="Times New Roman">c) examines the Message Header segment (MSH) to determine whether or not the initiating system requires an accept acknowledgment.</FONT>
+<P>
+<FONT FACE="Times New Roman">If it does, the responding system returns a general acknowledgment message (ACK) with:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) a commit accept (CA) in <I>MSA-1-acknowledgment code</I> if the message can be accepted for processing</FONT>
+<P>
+<FONT FACE="Times New Roman">2) a commit reject (CR) in <I>MSA-1-acknowledgment code</I> if the one of the values of <I>MSH-9-message type</I>, <I>MSH-12-version ID</I> or <I>MSH-11-processing ID</I> is not acceptable to the receiving application</FONT>
+<P>
+<FONT FACE="Times New Roman">3) a commit error (CE) in <I>MSA-1-acknowledgment code</I> if the message cannot be accepted for any other reason (e.g., sequence number error)
+<BR>
+<BR>For this response, the following values are put in the MSA segment. Note that the field definitions for the MSA segment fields are in Section <A HREF="ch200125.htm#I29">2.24.2</A>, &quot;<A HREF="ch200125.htm#I32">MSA   message acknowledgment segment</A>&quot;): </FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P><B><U>Field</U></B>
+</TD><TD WIDTH=288 ALIGN=center  VALIGN=top >
+<P><B><U>Notes </U></B></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-2-message control ID</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSH-10-message control ID</I> from the incoming message.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-1-acknowledgment code</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">As described above.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-3-text message</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Text description of error.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-4-expected sequence </I><I>number</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">As described in Section <A HREF="ch200119.htm#I17">2.23.1</A>, &quot;Sequence Number Number Protocol&quot; (if the sequence number protocol is being used).</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The MSH segment in the response is constructed anew following the rules used to create the initial message described above.  In particular, <I>MSH-7-date/time of message</I> and <I>MSH-10-message control ID</I> refer to the response message; they are not echoes of the fields in the initial message.  <I>MSH-5-receiving application</I>, <I>MSH-6-receiving facility</I>, and <I>MSH-11-processing ID</I> contain codes that are copied from <I>MSH-3-sending </I><I>application</I>, <I>MSH-4-sending facility</I> and <I>MSH-11-processing ID</I> in the initiating message.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> <I> </I><I>MSH-15-accept acknowledgment type</I> and <I>MSH-16-application acknowledgment type</I> are not valued (not present or null).  At this point, the accept portion of this message exchange is considered complete.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">d) If the message header segment indicates that the initiating system also requires an application acknowledgment, this will be returned as the initial message of a later exchange. </FONT>
+<P>
+<FONT FACE="Times New Roman">For this response, the following values are put in the MSA segment. Note that the field definitions for the MSA segment fields are in Section <A HREF="ch200125.htm#I30">2.24.2</A>, &quot;<A HREF="ch200125.htm#I33">MSA   message acknowledgment segment</A>): </FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P><B><U>Field</U></B>
+</TD><TD WIDTH=288 ALIGN=center  VALIGN=top >
+<P><B><U>Notes</U></B></TD>
+</TR>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-2-message control ID</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Identifies the initial message from the original initiating system as defined in Section <A HREF="ch200084.htm#I27">2.12.1.1</A>, &quot;<A HREF="ch200084.htm#I27">Initiation</A>.&quot;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-1-acknowledgment code</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Uses the application (processing) acknowledgment codes as described in Section <A HREF="ch200084.htm#I29">2.12.1.2.1</A>, &quot;<A HREF="ch200084.htm#I29">When the original acknowledgment rules apply</A>.&quot;</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><I>MSA-3-text message</I></FONT>
+</TD><TD WIDTH=288 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Text description of error.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">For this message, the receiving system acts as the initiator.  Since the message it sends is application-specific, the layouts of these application-level response messages are defined in the relevant application-specific chapter.  If needed, this application acknowledgment message can itself require (in <I>MSH-15-accept acknowledgment type</I>) an accept acknowledgment message (MSA).  <I>MSH-16-application </I><I>acknowledgment type</I>, however, is always null, since the protocol does not allow the application acknowledgment message to have an application acknowledgment.</FONT>
+<P>
+<FONT FACE="Times New Roman">At this point, the application acknowledgment portion of this message exchange is considered complete. </FONT>
+<P>
+<FONT FACE="Times New Roman">If the processing on the receiving system goes through multiple stages, chapter-defined messages may be used to relay status or informational changes to other systems (including the original initiating system).  Such messages are not part of the acknowledgment scheme for the original message, but are considered to be independent messages triggered by events on the (original) responding system. </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The original acknowledgment protocol is equivalent to the enhanced acknowledgment protocol with <I>MSH-15-accept acknowledgment type</I> = NE and <I>MSH-16-application acknowledgment type</I> = AL, and with the application acknowledgment message defined so that it never requires an accept acknowledgment (<I>MSH-15-accept acknowledgment type</I> = NE).</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200083.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200085.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

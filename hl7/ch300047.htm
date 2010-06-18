@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.45 ADT/ACK - move visit information - visit number (event A4</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300048.htm">
+<LINK REL="Previous" HREF="ch300046.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300046.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300048.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E181"></A>
+<H3><B>3.2.45</B><B> </B><B>ADT/ACK - move visit information - visit number (event A45)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A move has been done at the visit identifier level.  That is, a <I>PV1-19-visit number </I>or <I>PV1-50-alternate visit </I><I>ID</I> associated with one account identifier (<I>PID-18-account number)</I> has been moved to another account identifier.</FONT>
+<P>
+<FONT FACE="Times New Roman">An A45 event is used to signal a move of records identified by the <I>MRG-5-prior visit number</I> or the <I>MRG-6-prior alternate visit ID </I> from the &quot;incorrect source account identifier&quot; identified in the MRG <I>segment </I>(<I>MRG-3-prior patient account number</I>) to the &quot;correct target account identifier&quot; identified in the PID segment (<I>PID-18-patient account number</I>).</FONT>
+<P>
+<FONT FACE="Times New Roman">This event and the message syntax do allow for the specification of &quot;new identifiers&quot; (<I>PV1-19-visit number)</I>, or <I>PV1-50-alternate visit ID</I>), which may be application and/or implementation specific and therefore require site negotiation.  </FONT>
+<P>
+<FONT FACE="Times New Roman">All the identifiers superior to the visit number or alternate visit ID should be valued in both the MRG segment and the PID segment.  In this message, the account number, internal ID and external ID are superior to the visit number and alternate visit ID.</FONT>
+<P>
+<FONT FACE="Times New Roman">See Section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of move messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be only the fields pertinent to communicate this event.  When demographic data in other fields change, it is recommended that the A08 (update patient information) event be used in conjunction with this message.  However, all PID data associated with the &quot;correct target visit ID&quot; are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U>ADT Message</U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH  Message Header  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN Event Type  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   PID Patient Identification  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PD1] Additional Demographics  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  MRG  Merge Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   PV1 Patient Visit  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U>General Acknowledgment</U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH Message Header  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA Message Acknowledgment  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ] Error  2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300046.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300048.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.9 ADT/ACK - patient departing - tracking (event A09)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300012.htm">
+<LINK REL="Previous" HREF="ch300010.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E145"></A>
+<H3><B>3.2.9</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - patient departing - tracking</B><A NAME="I9"></A><B> (event A09)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The A09 and A10 (patient arriving tracking) events are used when there is a change in a patient&#146;s physical location and when this is NOT a change in the official census bed location.  There are three situations that qualify as non-census location changes:  (a) patient tracking, (b) the patient is in transit between locations for some time, (c) a notification of temporary location change.</FONT>
+<P>
+<FONT FACE="Times New Roman">Patient tracking:  This can be used when the nursing application sends a &quot;transfer&quot; before the ADT (or official census) system issues an A02 (transfer a patient) event.  If the patient has left for a non-temporary location and is not in transit, then the <I>PV1</I><I>-</I><I>3-</I><I>a</I><I>ssigned patient location</I> must contain the new patient location, while <I>PV1-6-prior patient location</I> must contain the old patient location.</FONT>
+<P>
+<FONT FACE="Times New Roman">In transit:  The patient&#146;s location during the time between an A09 and an A10 is defined as &quot;in transit.&quot;  The A09 event is sent when a patient departs from one area of the facility for the purpose of arriving at another area, but without leaving the healthcare institution.  This event is used when there is a time span  during which the patient is neither at his/her old location nor at his/her new location.  This process can take some time if a patient is being sent to another area in a multi-campus or multi-facility environment.  The combination of an A09 and an A10 would serve the same purpose as an A02 (transfer a patient) event, except that it accounts for a gap in time required for transport between facilities.  If the patient will be in transit during the time between the A09 (patient departing tracking) event and the A10 (patient arriving tracking) event, then <I>PV1-42-pending location</I> is used for the new location, and <I>PV1-11-temporary location</I> and<I> PV1-43-prior temporary location</I> would not be used.   <I>PV1-6-prior patient location</I> should be used for the old location.</FONT>
+<P>
+<FONT FACE="Times New Roman">Temporary location:  An A09 can also be used when the patient is being sent to a temporary location (such as the O/R, XRAY, LIMBO, or HALLWAY).  The patient may or may not return to the same assigned location after occupying the temporary location.  If the patient is going to a temporary location (such as the O/R, XRAY, LIMBO, or HALLWAY), then <I>PV1-11-temporary location</I> is used to indicate the new temporary location.  If the patient is moving from one temporary location to another, then<I> PV1-43-prior </I><I>temporary location</I> may also be used.  <I>PV1- 6-prior patient location</I> and <I>PV1-11-temporary location</I> should be used when the patient is moving from a permanent location to a temporary location.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When other important fields change it is recommended that the A08 (update patient information) event be used instead.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>The DG1 segment remains in this message for backward compatibility only.</I></FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ DRG ]    DRG Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300010.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300012.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.35 SCV - scheduling class value pair </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200056.htm">
+<LINK REL="Previous" HREF="ch200054.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200054.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200056.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E56"></A>
+<H3><B>2.8.35</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>SCV - scheduling class value pair</B><A NAME="I4"></A><B> </B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;parameter class (IS)&gt; ^ &lt;parameter value (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">For use only with the scheduling chapter. </FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to communicate parameters and preferences to the filler application regarding the selection of an appropriate <I>time slot, resource, location, or filler override criterion</I>  for an appointment.  </FONT>
+<H4>2.8.35.1 Parameter class (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">The first component of this field is a code identifying the parameter or preference being passed to the filler application.  </FONT>
+<H4>2.8.35.2 Parameter value (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">The second component is the actual data value for that parameter. </FONT>
+<P>
+<FONT FACE="Times New Roman">For example, if a filler application allows preference parameters to be passed to specify a preferred start time, a preferred end time, and preferred days of the week for the appointment, it may define the following parameter class codes and valid data sets.</FONT>
+<P>User-defined Table 0294 - Time selection criteria parameter class codes
+
+<TABLE >
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Parameter Class</U></B></FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description:  Valid Values</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PREFSTART</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">The preferred start time for the appointment request, service or resource.   Any legal time specification in the format HHMM, using 24-hour clock notation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PREFEND</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">The preferred end time for the appointment request, service or resource.  Any legal time specification in the format HHMM, using 24-hour clock notation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">MON</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Monday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">TUE</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Tuesday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">WED</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Wednesday is or is not preferred for the day on which the appointment will occur. OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">THU</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Thursday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FRI</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Friday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SAT</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Saturday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SUN</FONT>
+</TD><TD WIDTH=456 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">An indicator that Sunday is or is not preferred for the day on which the appointment will occur.  OK = Preferred appointment day
+<BR>NO = Day is not preferred</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200054.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200056.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

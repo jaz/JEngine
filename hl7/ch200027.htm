@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.7 CN - composite ID number and name</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200028.htm">
+<LINK REL="Previous" HREF="ch200026.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200026.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200028.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E28"></A>
+<H3><B>2.8.7</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CN - composite ID number and name</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">A field identifying a person both as a coded value and with a text name.  For specific fields, individual sites may elect to omit the ID or the name.  Example:  </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|12372^RIGGINS^JOHN^&quot;&quot;^&quot;&quot;^&quot;&quot;^MD^ADT1|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|12372^^^^^^^ADT1|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|^RIGGINS^JOHN^&quot;&quot;^&quot;&quot;^&quot;&quot;^MD|</FONT></PRE>
+<H4>2.8.7.1 ID number (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Coded ID according to a user-defined table, defined by the 8th component.  If the first component is present, either the source table or the assigning authority must be valued.</FONT>
+<H4>2.8.7.2 Family name (ST)</H4>
+<H4>2.8.7.3 Given name (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Defined as in the PN data type (see Section <A HREF="ch200048.htm#I4">2.8.28</A>, &quot;<A HREF="ch200048.htm#I4">PN - person name</A>&quot;).</FONT>
+<H4>2.8.7.4 Middle initial or name (ST)</H4>
+<H4>2.8.7.5 Suffix (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify a name suffix (e.g., Jr. or III).</FONT>
+<H4>2.8.7.6 Prefix (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify a name prefix (e.g., Dr.).</FONT>
+<H4>2.8.7.7 Degree (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify an educational degree (e.g., MD).</FONT>
+<H4>2.8.7.8 Source table (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to <I>user-defined table 0297 - CN ID source</I>  for suggested values.  Used to delineate the first component.</FONT>
+<H4>2.8.7.9 Assigning authority (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">In this version an optional 9th component, the assigning authority (HD), has been added.  It is an HD data type (see Section <A HREF="ch200038.htm#I4">2.8.18</A>, &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>&quot;).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200026.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200028.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

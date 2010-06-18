@@ -1,0 +1,930 @@
+<HTML>
+<HEAD>
+<TITLE>7.5.1 Terminology and concepts </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700022.htm">
+<LINK REL="Previous" HREF="ch700020.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E298"></A>
+<H3><B>7.5.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>Terminology and concepts</B><B> </B></H3>
+<P>7.5.1.1    <B>clinical trial:</B>  a scientifically rigorous study of individual outcomes to some process of healthcare intervention.   Clinical trials usually involve medical treatments so this document will use the term <B><I>treatment</I></B>, rather than the broader term <B><I>intervention</I></B>,  A clinical trial design may randomly assign and compare one treatment approach with another, or generate safety and efficacy data on a single treatment approach.  The clinical trial has a protocol for the patient&#146;s course of treatment and/or evaluation.  There is usually a schedule for collection of data to measure compliance, safety, and outcomes.
+<P><A NAME="I9"></A>7.5.1.2    <B>phase of a clinical trial:</B> a treatment and/or observation interval of a clinical trial.  A phase may represent an interval with a specific treatment regimen assigned randomly or otherwise, with each regimen of a progression of treatments, or with an evaluation component only.  Generally, for each phase, there is an explicit patient management, evaluation, and data collection schedule.  Each of these phases may have associated safety, outcome, and quality-control variables.  A simpler study design need not use the phase structures.
+<P>
+<FONT FACE="Times New Roman">The phase structure serves several purposes in the clinical trials messages.  Other computer systems may need to know that the patient has begun a phase with a particular treatment regimen or diagnostic schedule, such as the pharmacy or order entry systems.  When reporting study data, observations and variables often describe particular phase instances.  For example, each course of treatment may have its own values for the same set of observations or variables.  Phase instances may also have distinct data schedules that need to be linked to submitted data.</FONT>
+<P>
+<FONT FACE="Times New Roman">Several examples follow with each line depicting a phase.</FONT>
+<P>7.5.1.2.1  Example 1
+<P>
+<FONT FACE="Times New Roman">Alternating treatment plus observation intervals:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   __________&gt;  _________&gt;  _________&gt;  _________&gt;   ...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>          Rx A          Rx B        Rx A        Rx B                  </FONT></PRE>
+<P>7.5.1.2.2   Example 2
+<P>
+<FONT FACE="Times New Roman">Random assignment to two courses each of treatment A or B, all responding patients to treatment C, continue with observation and a diagnostic regimen after all treatment phases are completed.  Treatment phases include the evaluation component for that course of treatment: </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>     </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  ___________&gt; __________     </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Rx A Crs 1   Rx A Crs 2                           </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>                         &gt; __________&gt;  __________&gt; _______</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>                         /  Rx C Crs 1   Rx C Crs 2    </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Observe   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  ___________&gt; __________/</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Rx B Crs 1   Rx B Crs 2              </FONT></PRE>
+<P>7.5.1.2.3   Example 3
+<P>
+<FONT FACE="Times New Roman">Random assignment to placebo or treatment A, both taken daily and evaluated monthly.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  ___________&gt; __________&gt; __________&gt; __________&gt;  . . . </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    Month 1      Month 2     Month 3     Month 4</FONT></PRE>
+<P><A NAME="I10"></A>7.5.1.3    <B>data schedule:</B>  the treatment, diagnostic, and procedural requirements, as well as data collection due dates, scheduled on a timeline for most clinical trials.  As data are reported, they may need to reflect the scheduled time point that they satisfy.  Clinical trials quality control requires attention to compliance between the protocol&#146;s schedule and patient data records.
+<P>
+<FONT FACE="Times New Roman">The data schedule will be keyed by time points relative to the study.  Some data may be due prior to and at the conclusion of the study and/or one or more of its phases.  Some are interim within the study or its phases depending on protocol events such as administration of treatment, arbitrary time intervals instated to make and record assessments, or some clinical milestone such as relapse of disease.  Often, multiple data parameters are scheduled at the same time point.  Several examples follow:</FONT>
+<P>7.5.1.3.1   Schedule for a randomized cancer prevention trial
+
+<TABLE >
+<TR>
+<TD COLSPAN=19 WIDTH=572 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Treatment 1st - 3rd Years</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=199 VALIGN=top ><BR></TD>
+<TD WIDTH=32 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reg</FONT>
+</TD><TD WIDTH=32 VALIGN=top >
+<P>
+<FONT SIZE="-1">Rand</FONT>
+</TD><TD COLSPAN=16 WIDTH=307 VALIGN=top >
+<P>
+<FONT SIZE="-1">Months</FONT>
+</TD></TR>
+<TR>
+<TD WIDTH=199 VALIGN=top ><BR></TD>
+<TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">36</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">42</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">54</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">66</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">72</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">78</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">84</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Disease Staging</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1"> </FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">H &amp; P</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Assess Adverse Events and Outcome Variables</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Chest PAL Xray</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">CBC, Diff, Plt</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">SMA 12</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cholesterol and Triglyceride</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Electrolytes</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Plasma Retinoic Acid</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=199 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cotinine Level (nonsmokers)</FONT>
+</TD><TD WIDTH=32 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=32 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=19 ALIGN=center  VALIGN=top ><BR></TD></TR></TABLE><P>7.5.1.3.2   Schedule for a cancer chemotherapy trial
+
+<TABLE >
+<TR>
+<TD WIDTH=129 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Prestudy</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Prior to Each Cycle</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">During Cycle</FONT>
+</TD><TD WIDTH=62 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Every 3 Cycles</FONT>
+</TD><TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">End Study</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Informed Consent</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">H &amp; P Neurologic</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Vital Signs</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X2</FONT>
+</TD><TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Disease Staging</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X3</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">ECG</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X4</FONT>
+</TD><TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Radiology*</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X5</FONT>
+</TD><TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Chest Xray</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Bone Marrow Bx.</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X6</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">HCG</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">Assess Adverse Events</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">CBC, Diff, Plt</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X7</FONT>
+</TD><TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">UA, PT, PTT</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=129 VALIGN=top >
+<P>
+<FONT SIZE="-1">SMA12, Mg, CEA</FONT>
+</TD><TD WIDTH=88 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X1</FONT>
+</TD><TD WIDTH=105 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=82 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=62 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=78 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">1 Within 3 days prior to start of infusion.</FONT>
+<P>
+<FONT FACE="Times New Roman">2 At 0,10,30, and 60 minutes after start of drug administration and one-half hour after test drug infusion ends for cycles 1 and 2.  For subsequent cycles at 0 and 10 minutes after start of drug administration, and at the end of infusion.</FONT>
+<P>
+<FONT FACE="Times New Roman">3 Record tumor measurements at the end of every cycle if assessable clinically by physical examination or with simple X-ray.</FONT>
+<P>
+<FONT FACE="Times New Roman">4 Continuous ECG monitoring during infusion if necessary, due to bradycardia (&lt;50 beats/min) or other significant cardiac findings.</FONT>
+<P>
+<FONT FACE="Times New Roman">5 When measurable disease requires complex radiologic studies such as CT or radionuclide scans.</FONT>
+<P>
+<FONT FACE="Times New Roman">6 To be done at baseline (if clinically indicated) at the option of the investigator and also during study if patient has prolonged myelosuppression (WBC&lt;2000 cells/mm3&gt;14 days).</FONT>
+<P>
+<FONT FACE="Times New Roman">7 Blood counts will be done twice weekly during cycles 1 and 2, then weekly.</FONT>
+<P>
+<FONT FACE="Times New Roman">* Radionuclide scan and X-ray of the bones, CT scans of the chest, pelvis, and brain only when clinically indicated.</FONT>
+<P>7.5.1.3.3   Schedule for a randomized pain medication trial
+
+<TABLE >
+<TR>
+<TD WIDTH=210 VALIGN=top ><BR></TD>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">Day 1</FONT>
+<P>
+<FONT SIZE="-1">Before RX</FONT>
+</TD><TD WIDTH=66 VALIGN=top >
+<P>
+<FONT SIZE="-1">Day 1</FONT>
+<P>
+<FONT SIZE="-1">After RX</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">Daily</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">Day 30</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">H &amp; P</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=60 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Creat, Bili, SGOT</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=60 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=54 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Urinalysis</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=60 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=54 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pain Diagnosis</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=60 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=54 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Opioid Dose Strand</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Non-opiod Analgesic</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Medications for Side Effects</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Phone Report:  Pain and Side Effects</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=66 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Visual Analog Scales</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=210 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pain Evaluation Form</FONT>
+</TD><TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</FONT>
+</TD><TD WIDTH=66 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=60 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">X</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch700020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

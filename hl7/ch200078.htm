@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<TITLE>2.10 MESSAGE CONSTRUCTION RULES</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200079.htm">
+<LINK REL="Previous" HREF="ch200077.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200077.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200079.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E19"></A>
+<P>
+<FONT SIZE="+2"><B>2.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><B>MESSAGE CONSTRUCTION RULES</B><A NAME="I21"></A></FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  These message construction rules define the standard HL7 encoding rules, creating variable length delimited messages.  Although only one set of encoding rules is defined as a standard in HL7 Version 2.3, other encoding rules are possible (but since they are non-standard, they may only be used by a site-specific agreement).</TD></TR></FONT></TABLE><P>Step 1 Construct the segments in the order defined for the message.  Each message is constructed as follows:
+<P>
+<FONT FACE="Times New Roman">a) the first three characters are the segment ID code</FONT>
+<P>
+<FONT FACE="Times New Roman">b) each data field in sequence is inserted in the segment in the following manner:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) a field separator is placed in the segment</FONT>
+<P>
+<FONT FACE="Times New Roman">2) if the value is not present, no further characters are required</FONT>
+<P>
+<FONT FACE="Times New Roman">3) if the value is present, but null, the characters &quot;&quot; (two consecutive double quotation marks) are placed in the field</FONT>
+<P>4)   otherwise, place the characters of the value in the segment.  As many characters can be included as the maximum defined for the data field.  It is not necessary, and is undesirable, to pad fields to fixed lengths.  Padding to fixed lengths is permitted.  Encode the individual data fields as shown in Section <A HREF="ch200020.htm#I23">2.8</A>, &quot;<A HREF="ch200020.htm#I27">Data types</A>.&quot;
+<P>
+<FONT FACE="Times New Roman">5) if the field definition calls for a field to be broken into components, the following rules are used:</FONT>
+<P>
+<FONT FACE="Times New Roman">i) if more than one component is included they are separated by the component separator</FONT>
+<P>
+<FONT FACE="Times New Roman">ii) components that are present but null are represented by the characters &quot;&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">iii) components that are not present are treated by including no characters in the component</FONT>
+<P>
+<FONT FACE="Times New Roman">iv) components that are not present at the end of a field need not be represented by component separators.  For example, the two data fields are equivalent:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|ABC^DEF^^| and |ABC^DEF|.</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">6) if the component definition calls for a component to be broken into subcomponents, the following rules are used:</FONT>
+<P>
+<FONT FACE="Times New Roman">i) if more than one subcomponent is included they are separated by the subcomponent separator</FONT>
+<P>
+<FONT FACE="Times New Roman">II) subcomponents that are present but null are represented by the characters &quot;&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">iii) subcomponents that are not present are treated by including no characters in the subcomponent</FONT>
+<P>
+<FONT FACE="Times New Roman">iv) subcomponents that are not present at the end of a component need not be represented by subcomponent separators.  For example, the two data components are equivalent:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>^XXX&amp;YYY&amp;&amp;^ and ^XXX&amp;YYY^.</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">7) if the field definition permits repetition of a field, the following rules are used, the repetition separator is used only if more than one occurrence is transmitted and is placed between occurrences.  (If three occurrences are transmitted, two repetition separators are used.)  In the example below, two occurrences of telephone number are being sent:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|234-7120~599-1288B1234|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">c) repeat Step 1b while there are any fields present to be sent.  If all the data fields remaining in the segment definition are not present there is no requirement to include any more delimiters.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) end each segment with an ASCII carriage return character</FONT>
+<P>Step 2 Repeat Step 1 until all segments have been generated.
+<P>
+<FONT FACE="Times New Roman">The following rules apply to receiving HL7 messages and converting their contents to data values:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) ignore segments, fields, components, subcomponents, and extra repetitions of a field that are present but were not expected</FONT>
+<P>
+<FONT FACE="Times New Roman">b) treat segments that were expected but are not present as consisting entirely of fields that are not present</FONT>
+<P>
+<FONT FACE="Times New Roman">c) treat fields and components that are expected but were not included in a segment as not present. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200077.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200079.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>7.4.6 Results reporting</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700019.htm">
+<LINK REL="Previous" HREF="ch700017.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700017.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700019.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E296"></A>
+<H3><B>7.4.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Results reporting</B></H3>
+<P>
+<FONT FACE="Times New Roman">Suppose an order has been placed to the EKG system for three EKGs to be performed on successive days.  These results can be reported in various ways.</FONT>
+<P>
+<FONT FACE="Times New Roman">1. The EKG application needs to communicate to anyone the results of the 1st EKG:</FONT>
+<P>
+<FONT FACE="Times New Roman">ORU message:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|||89-551^EKG|93000^EKG REPORT|...         // 1ST child OBR.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST|93000.1^VENTRICULAR RATE (EKG)|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST|93000.2^...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|93000.14^EKG COMMENT|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|...                                        // other observation segments to follow</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">&#149; Notice that this report is without reference to the original order.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; No ORC is required because the identifying Fillers Order Number (and other ORC fields) are carried in the OBR segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">2. The EKG application needs to communicate to anyone the original order information, the details of the child orders, the fact of the child spin off, and the results of all three EKGs:</FONT>
+<P>
+<FONT FACE="Times New Roman">ORU message:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|PA|A226677^OE|89-450^EKG|...           // original order's ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||||93000^EKG REPORT|...         // original order segment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^OE|89-451^EKG&lt;CR&gt;           // 1st child ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||||93000^EKG REPORT|...         // 1st EKG child OBR.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST...                          // 1st EKG report</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^OE|89-452^EKG&lt;CR&gt;           // 2nd child ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||||93000^EKG REPORT|...         // 2nd EKG child OBR.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST...                          // 2nd EKG report</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^OE|89-453^EKG&lt;CR&gt;           // 3rd child ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||||93000^EKG REPORT|...         // 3rd EKG child OBR.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST...                          // 3rd EKG report</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||ST...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    ...                             // Other parts of message might follow.</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">In this case, we are transmitting the information about the fact of child spin off, the original order and the results all at the same time.  Thus, this form of the ORU message reports not only the results of an order, but all of its associated ordering information including the original OBR for three EKGs that was replaced by three separate OBR EKG segments.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700017.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700019.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

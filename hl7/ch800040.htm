@@ -1,0 +1,454 @@
+<HTML>
+<HEAD>
+<TITLE>8.9.2 CDM -  charge description master segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800041.htm">
+<LINK REL="Previous" HREF="ch800039.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800039.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800041.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E368"></A>
+<H3><B>8.9.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CDM -  charge description master segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The CDM segment contains the fields for identifying anything which is charged to patient accounts, including procedures, services, supplies.  It is intended to be used to maintain a list of valid chargeable utilization items.  Its purpose is to keep billing codes synchronized between HIS, Patient Accounting, and other departmental systems.  It is not intended to completely support materials management, inventory, or complex pricing structures for which additional complex fields would be required.  Given an identifying charge code, the associated fields in the charge description master file will provide basic pricing and billing data.  All the additional information necessary for patient accounting systems to do billing and claims is not intended to be included in this segment; those should be part of insurance or billing profile tables.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The CDM segment contains the fields which, for one chargeable item, remain the same across facilities, departments, and patient types.  The following PRC segment contains the fields which, for the same chargeable item, vary depending upon facility or department or patient type.</FONT>
+<P>Figure 8-18.  CDM attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=51 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=231 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0132</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00982</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Key Value - CDM</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00983</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge Code Alias</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00984</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge Description Short</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 250</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00985</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge Description Long</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0268</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00986</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Description Override Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00987</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Exploding Charges</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00988</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0183</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00675</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Active/Inactive Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00990</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Inventory Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00991</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Resource Load</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CK</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00992</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00993</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract Organization</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00994</FONT>
+</TD><TD WIDTH=231 VALIGN=top >
+<P>
+<FONT SIZE="-1">Room Fee Indicator</TD></TR></FONT></TABLE><P>8.9.2.0 CDM field definitions
+<H4>8.9.2.1 Primary key value - CDM  (CE)   00982</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the code assigned by the institution for the purpose of uniquely identifying the thing that can be charged.  The key field of the entry.  For example, this field would be used to uniquely identify a procedure, item, or test for charging purposes.  Probably the same set of values as used in <I>FT1</I><I>-</I><I>7</I><I> </I><I>transaction code</I> in financial messages.  Must match <I>MFE</I><I>-</I><I>4</I>-<I>primary key</I>.  Refer to <I>user-defined table 0132 - </I><I>Transaction code</I>.  See Chapter 7 for discussion of the universal service ID.  </FONT>
+<H4>8.9.2.2 Charge code alias  (CE)   00983</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an alternative charge code.  For example, points to another charge description master entry in cases where one code supersedes or overrides another code.  Repeating field allows for different codes used by different systems which should be handled as if they were the same; for example, the general ledger code may differ from the billing code.  Or, in a multi-facility environment which does facility-specific pricing, there may be more than one of these master file entries for one charge description, each with a different facility.  </FONT>
+<H4>8.9.2.3 Charge description short  (ST)   00984</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the text abbreviations or code that is associated with this CDM entry.</FONT>
+<H4>8.9.2.4 Charge description long  (ST)   00985</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the full text description of this CDM entry.</FONT>
+<H4>8.9.2.5 Description override indicator  (IS)   00986</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether this CDM entry&#146;s description can be overridden.  Refer to <I>user-defined table 0268 - Override</I> for suggested values.</FONT>
+<P>
+<FONT FACE="Times New Roman">User-defined Table  0268 - Override</FONT>
+
+<CENTER><TABLE >
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">X</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Override Not Allowed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Override Allowed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=102 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Override Required</TD></TR></FONT></TABLE></CENTER><H4>8.9.2.6 Exploding charges  (CE)   00987</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the repeating occurrences for a list of other CDM entry charge codes identifying the other charges which should be generated from this CDM entry.  If non-null, posting a charge to this CDM entry should result in posting the charges identified here.   These are sometimes called &quot;linked items.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">In the case of &quot;chained&quot; charges where the &quot;lead&quot; charge must be included in the exploded charges, the &quot;lead&quot; charge should be included in the list of exploding charges.  If the price of this parent charge is included in the message, then it overrides the sum of the exploded charges prices.</FONT>
+<H4>8.9.2.7 Procedure code  (CE)   00988</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the procedure code for procedure, if any, associated with this charge description.  Repeating field allows for different procedure coding systems such as CPT4, ASTM, ICD9.  Coded entry made up of code plus coding schema.</FONT>
+<H4>8.9.2.8 Active/inactive indicator  (ID)   00675</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether this is a usable CDM entry.  Refer <I>to HL7 table 0183 - </I><I>Active/inactive</I> for valid values.</FONT>
+<H4>8.9.2.9 Inventory number  (CE)  00990</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This optional field contains an identifying stock number, if any, which might be used, for example, as a cross reference for materials management.</FONT>
+<H4>8.9.2.10 Resource load  (NM)  00991</H4>
+<P>Definition:  This field contains the Relative Value Unit (RVU) minutes and ATS, a factor related to CPT4 coding and to pricing structure for physical billing.
+<H4>8.9.2.11 Contract number  (CK)   00992</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains any contract number pertaining to this chargeable item.  For example, supplier contract or service contract.</FONT>
+<H4>8.9.2.12 Contract organization  (XON)   00993</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the organization with whom there is a contractual arrangement for providing the service or material used for this chargeable item.  </FONT>
+<H4>8.9.2.13 Room fee indicator  (ID)   00994</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a room fee indicator.  Refer to <I>HL7 Table 01</I><I>36</I><I>-Y</I><I>es/no indicator</I> for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y this is a component of the room fees</FONT>
+<P>
+<FONT FACE="Times New Roman">N this is any other chargeable item other than room fees</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800039.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800041.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

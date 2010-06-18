@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.42 ADT/ACK - merge visit - visit number (event A42)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300045.htm">
+<LINK REL="Previous" HREF="ch300043.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300043.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300045.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E178"></A>
+<H3><B>3.2.42</B><B> </B><B>ADT/ACK - merge visit - visit number (event A42)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A merge has been done at the visit identifier level.  That is, two <I>PV1-19-visit number </I>identifiers have been merged into one.</FONT>
+<P>
+<FONT FACE="Times New Roman">An A42 event is used to signal a merge of records, for a visit that was incorrectly filed under two different visit numbers<I>.</I>  The &quot;incorrect source visit number&quot; identified in the MRG <I>segment (MRG-5-prior visit </I><I>number</I>) is to be merged with the required &quot;correct target visit number&quot; identified in the PV1 segment (<I>PV1-19-visit number</I>). The &quot;incorrect source visit number&quot; would then logically never be referenced in future transactions.  It is noted that some systems may still physically keep this &quot;incorrect identifier&quot; for audit trail purposes or other reasons associated with database index implementation requirements.</FONT>
+<P>
+<FONT FACE="Times New Roman">An A42 (merge visit - visit number) event is intended for merging visit records without merging other identifiers.  Any other identifiers that were previously associated with the &quot;incorrect source visit number&quot; are now associated with the &quot;correct target visit number.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">Each superior identifier associated with this visit identifier level should have the same value in the PID and MRG segments, or the MRG and PV1 segments, as appropriate. </FONT>
+<P>
+<FONT FACE="Times New Roman">See Section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of merge messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">All data associated with the &quot;correct target visit number&quot; are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  PID    Patient Identification       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ PD1]   Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   MRG     Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ PV1]   Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300043.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300045.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

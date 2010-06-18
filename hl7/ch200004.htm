@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>2.2.2 Acknowledgements:  original mode</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200005.htm">
+<LINK REL="Previous" HREF="ch200003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E11"></A>
+<H3><B>2.2.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>Acknowledgements:  original mode</B><A NAME="I15"></A></H3>
+<P>
+<FONT FACE="Times New Roman">When the unsolicited update is sent from one system to another, this acknowledgment mode specifies that it be acknowledged at the application level.  The reasoning is that it is not sufficient to know that the underlying communications system guaranteed delivery of the message.  It is also necessary to know that the receiving application processed the data successfully at a logical application level.</FONT>
+<P>
+<FONT FACE="Times New Roman">The acknowledgment may contain data of interest to the system that initiated the exchange.  For example, if a patient care system has processed the trigger event a lab test is ordered for a patient, it may send an unsolicited update to a lab application identifying the patient, the test ordered, and various other information about the order.  The ancillary will acknowledge the order when it has processed it successfully.  For some pairings of patient care and ancillary department systems the acknowledgment may also include the ancillary identification number that was assigned.  (HL7 does not require Order Entry and Results Reporting applications to interface in this manner, but it supports those that do.)</FONT>
+<P>
+<FONT FACE="Times New Roman">The HL7 Standard makes no assumptions about the ownership of data.  It also makes no requirements of its own on the subsequent action of the recipient of data, nor does it make any assumption about the design or architecture of the receiving application system.  The scope of HL7 is restricted to the specification of messages between application systems, and the events triggering them.  HL7 does not explicitly support, but can be used with, systems that support store and forward and data broadcast facilities (see the HL7 Implementation Guide).</FONT>
+<P>
+<FONT FACE="Times New Roman">The HL7 Standard makes no functional interpretation of the requirement that a system commit the data in a message to its database before acknowledging it.  All that is required is that the receiving system accept responsibility for the data, providing the same integrity test that it would apply to data from any source.  To continue the prior example, the ancillary system may acknowledge the order after placing it in an input queue, expecting to fully process the order into its database at a future time.  The only assumption is that the input queue is maintained at the same level of integrity as the database.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

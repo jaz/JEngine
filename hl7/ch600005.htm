@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>6.3.2 BAR/ACK - purge patient accounts (event P02)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600006.htm">
+<LINK REL="Previous" HREF="ch600004.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E263"></A>
+<H3><B>6.3.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>BAR/ACK - purge patient accounts</B><A NAME="I9"></A><B> (event P02)</B><A NAME="I10"></A><A NAME="I11"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Generally, the elimination of all billing/accounts receivable records will be an internal function controlled, for example,  by the patient accounting or financial system.  However, on occasion, there will be a need to correct an account, or a series of accounts, that may require that a notice of account deletion be sent from another sub-system and processed, for example,  by the patient accounting or financial system.  Although a series of accounts may be purged within this one event, we recommend that only one PID segment be sent per event.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>BAR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Purge</U><U> Billing Account</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I12"></A><A NAME="I13"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Patient Additional Demographics    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ PV1 ]    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [{DB1}]    Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgement</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I14"></A><A NAME="I15"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The error segment indicates the fields that caused a transaction to be rejected.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

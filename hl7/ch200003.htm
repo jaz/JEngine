@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE>2.2.1 Trigger events</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200004.htm">
+<LINK REL="Previous" HREF="ch200002.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E10"></A>
+<H3><B>2.2.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><B>Trigger events</B><A NAME="I17"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The Standard is written from the assumption that an event in the real world of healthcare creates the need for data to flow among systems.  The real-world event is called the trigger event.  For example, the trigger event a patient is admitted may cause the need for data about that patient to be sent to a number of other systems.  The trigger event,  an observation (e.g., a CBC result) for a patient is available, may cause the need for that observation to be sent to a number of other systems..  When the transfer of information is initiated by the application system that deals with the triggering event, the transaction is termed an unsolicited update. </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> No assumption is made about the design or architecture of the application system creating the unsolicited update.  The scope of HL7 is restricted to the specification of messages between application systems, and the events triggering them.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">HL7 allows the use of trigger events at several different levels of data granularity and inter-relationships.  For example, most ADT trigger events concern single objects (such as an admit event, which creates a message that contains data about a single person and/or account).  Other ADT trigger events are concerned with relationships between more than one object (e.g., the merge events, which specify patient or account merges).  Some ADT trigger events pertain to a collection of objects that may have no significant interrelationships (e.g., a record-oriented location-based query, whose response contains data about a collection of inpatients who are related only temporarily by local geography). </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

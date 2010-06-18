@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>8.7.8 OM6 - Observations that are calculated from other observat</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800030.htm">
+<LINK REL="Previous" HREF="ch800028.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800028.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800030.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E359"></A>
+<H3><B>8.7.8</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>OM6 - Observations that are calculated from other observations segment</B><A NAME="I7"></A><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">This segment contains the information about quantities that are derived from one or more other quantities or direct observations by mathematical or logical means.</FONT>
+<P>Figure 8-12.  OM6 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=60 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=237 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 4</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00586</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sequence Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2 </FONT>
+</TD><TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 10K</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">TX</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00657</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Derivation Rule</TD></TR></FONT></TABLE><P>8.7.8..0 OM6 field definitions
+<H4><B>8.7.8.1</B><B> </B>Sequence number  (NM)   00586</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the same value as the sequence number of the associated OM1 segment.</FONT>
+<H4>8.7.8.2 Derivation rule  (TX)   00657</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used when there are patient variables that are derived from one or more other patient variables (e.g., creatinine clearance, ideal weight, maximum daily temperature, average glucose, framingham risk).  This field contains the rules for deriving the value of this variable (i.e., nature code C, as given in <I>OM1-18-nature of test/observation</I>).  These can be described in terms of humanly understandable formulas or descriptions.</FONT>
+<P>
+<FONT FACE="Times New Roman">When possible, however, they should be defined in terms of the Arden Syntax for specifying selection and transcendative functions and algebraic operations, ASTM E1460-92.  Derivation rules that are represented in Arden Syntax should begin and end with an Arden slot delimiter (;;).  Within this syntax, variables should be identified by <I>OM1-3-producer's test/observation ID</I>.  We recommend the use of the Arden Syntax because it permits the unambiguous specification of most such derived values and is a published standard for medical logic modules.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800028.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800030.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

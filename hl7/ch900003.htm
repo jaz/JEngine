@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>9.2 DOCUMENT MANAGEMENT SECTION</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch900004.htm">
+<LINK REL="Previous" HREF="ch900002.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch900002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E11E108"></A>
+<P>
+<FONT SIZE="+2"><B>9.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>DOCUMENT MANAGEMENT SECTION</B></FONT>
+<P>This section defines the Medical Document Management (MDM) transaction set.  It supports transmission of new or updated documents or information about their status(es).  The trigger events and messages may be divided into two broad categories, one which describes the status of documents, and one which both describes the status and contains the document content itself.
+<P>The document management section is concerned primarily with the management of those documents and entries which are created as a result of a transcription process.  These documents are created in two distinct contexts, one of which is related to an order and describes the procedures or activities associated with that order, and another which occurs independent of the order process.  The scope of this section  also includes any document that contains data derived from orders or results but which must be treated as aggregate display data due to system limitations.  This is a transition strategy to support integration of data across the continuum of care.
+<P>The content of a document can be represented with one or more observation segments (OBX).  Where headings or separations naturally exist within the text, it is preferred that each of these blocks be represented as a separate OBX record.  <B>Where systems are able to decompose the text into separate </B><B>medical concepts, the most atomic level of granularity of content should be represented, ideally with each </B><B>medical concept being represented in its own OBX segment</B>.  Many of these concepts can be represented as coded entities.  
+<P ALIGN=LEFT>
+<A HREF="ch900002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

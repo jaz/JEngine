@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<TITLE>4.5.2 Examples of use</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400026.htm">
+<LINK REL="Previous" HREF="ch400024.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400024.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400026.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E228"></A>
+<H3><B>4.5.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Examples of use</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The purpose of this section is to show how certain specific situations would be handled using the order entry protocol.  The ellipses represent uncompleted details.  The symbol // precedes comments for clarification.</FONT>
+<H4><B>4.5.2.1</B><B> </B>An order replaced by three orders</H4>
+<P>
+<FONT FACE="Times New Roman">Suppose that an application called &quot;PC&quot; is sending an order to the EKG application for three EKGs to be done on successive days.</FONT>
+<P>
+<FONT FACE="Times New Roman">The order might be placed as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">ORM message:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|A226677^PC||946281^PC||N|3^QAM||198801121132|P123^AQITANE^ELLINORE^&quot;&quot;^&quot;&quot;^&quot;&quot;^MD|||4EAST&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> // EKG order </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||||8601-7^EKG IMPRESSION^LN||||||||||||P030^SMITH^MARTIN^&quot;&quot;^&quot;&quot;^&quot;&quot;^MD|||||||||||3^QAM&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>BLG|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC||...             // Another order yet others may follow</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">There is a group number first component indicating that an order group is being created.</FONT>
+<P>
+<FONT FACE="Times New Roman">Responses:  Because the EKG application must turn the single order above into three orders for three separate EKGs (services), the results of each will be reported under its own OBR segment.  Several response levels are possible depending on the Response Flag:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) If the Response Flag is N (as it is), then the filler EKG application only responds &quot;I got the order.&quot;</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The only implication of this response is that the order was received. </FONT>
+<P>
+<FONT FACE="Times New Roman">If the Response Flag had been E, then the response would have been the same, but its implication would have been that the EKG application had processed all the orders and they were acceptable.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) If the Response Flag were R, then the filler EKG application must communicate to the PC the fact of the creation of child orders, but with no details:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|PA|A226677^PC|89-458^EKG|946281^PC&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^PC|89-551^EKG|946281...         // 1ST child ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^PC|89-552^EKG|946281...         // 2ND child ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^PC|89-553^EKG|946281...         // 3RD child ORC.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>...                                           // Other parts of response might follow.</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">What has been said here is &quot;Your A226767 has spun out three children named 89-551, 89-552, and 89-553.&quot;  Notice that the placer Numbers are identical in the children&#146;s ORCs.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) If the Response Flag were D, then the filler EKG application must communicate to the PC application the fact of the replacement and also the exact replacement order segments:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|PA|A226677^PC|89-458^EKG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^PC|89-551^EKG|946281^PC|SC|||A226677&amp;PC^89-458&amp;EKG|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  ... ^^^^198901130500^&lt;CR&gt;                         // 1ST child ORC</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|||89-551^EKG|8601-7^EKG IMPRESSION^LN|...                                 // 1ST child OBR</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^PC|89-522^EKG|946281^PC|SC|||A226677&amp;PC^89-458&amp;EKG|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ...  ^^^^198901140500^&lt;CR&gt;                        // 2ND child ORC</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|||89-552^EKG|8601-7^EKG IMPRESSION^LN|...                                 // 2ND child OBR</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|A226677^PC|89-553^EKG|946281^PC|SC|||A226677&amp;PC^89-458&amp;EKG|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    ...^^^^198901150500^&lt;CR&gt;                                              // 3RD child ORC</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|||89-553^EKG|8601-7^EKG IMPRESSION^LN|...                                 // 3RD child OBR</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>                                                           // Other parts might follow</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Here the actual OBR segments have been added.</FONT>
+<P>
+<FONT FACE="Times New Roman">The status of the child orders is being reported as SC (scheduled).</FONT>
+<P>
+<FONT FACE="Times New Roman">ORC-4-quantity/timing shows that the EKGs are requested after 0500 on successive days.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400024.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400026.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

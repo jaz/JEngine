@@ -1,0 +1,160 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.18 HD - hierarchic designator</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200039.htm">
+<LINK REL="Previous" HREF="ch200037.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200037.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200039.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E39"></A>
+<H3><B>2.8.18</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>HD - hierarchic designator</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;namespace ID (IS)&gt; ^ &lt;universal ID  (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">The HD is designed to be a more powerful application identifier.  It is also designed to be used either as a local version of a site defined application identifier or a publically assigned UID.  Syntactically, the HD is a group of two application identifiers: one defined by the first component, and one defined by the second and third components. </FONT>
+<P>
+<FONT FACE="Times New Roman">The HD allows any site to act as an assigning authority (on a local or user-defined basis), even if it technically doesn&#146;t have the right to issue new ids within an identification scheme.  HDs which have defined third components (defined UID types) must be unique within the series of ID&#146;s defined by that component. </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The HD is used in fields that in earlier versions of HL7 used the IS data type.  Thus, a single component HD (only the first component valued) will look like a simple IS data type for older systems expecting a single component in the place of the HD data type.</FONT>
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">  If the first component for the HD data type is present, the second and third components are optional.  <B>I</B>f the third component is present, then the second must also be present (although in this case the first is optional).  The second and third components must either both be valued (both non-null), or both be not valued (both null).</TD></TR></FONT></TABLE><H4>2.8.18.1 <A NAME="I6"></A>Namespace ID (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to <I>user-defined table 0300 - Namespace ID </I>for suggested values.</FONT>
+<H4>2.8.18.2 <A NAME="I7"></A>Universal ID (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The HD&#146;s second component, Universal ID (UID), is a string formatted according to the scheme defined by the third component, Universal ID type (UID type).  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong  to one of the specifically enumerated schemes for constructing UID&#146;s (defined by the UID type).  The UID (second component) must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).</FONT>
+<H4>2.8.18.3 <A NAME="I8"></A>Universal ID type (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">The third component governs the interpretation of the second component of the HD.  If the third component is a known UID refer to <I>HL7 table 0301 - Universal ID type</I> for valid values, then the second component is a universal ID of that type.</FONT>
+<P>Table 0301 - Universal ID type
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DNS</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">An internet dotted name. Either in ASCII or as integers</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GUID</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Same as UUID.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HCD</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">The CEN Healthcare Coding Scheme Designator. (Identifiers used in DICOM follow this assignment scheme.)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HL7</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Reserved for future HL7 registration schemes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">An International Standards Organization Object Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L,M,N</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">These are reserved for locally defined coding schemes.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Random</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Usually a base64 encoded string of random bits.  </FONT>
+<P>
+<FONT SIZE="-1">The uniqueness depends on the length of the bits.  Mail systems often generate ASCII string  &quot;unique names,&quot; from a combination of random bits and system names.  Obviously, such identifiers will not be constrained to the base64 character set.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">UUID</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">The DCE Universal Unique Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">x400</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">An X.400 MHS format identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">x500</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">An X.500 directory name</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Note: X400, X500, and DNS are not technically universally valid for all time.  Names can be de-registered from an existing user and registered to a new user. </FONT>
+<P>
+<FONT FACE="Times New Roman"> Examples:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>1.2.34.4.1.5.1.5.1,1.13143143.131.3131.1^ISO</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>14344.14144321.4122344.14434.654^GUID</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>falcon.iupui.edu^DNS</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>40C983F09183B0295822009258A3290582^RANDOM</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>LAB1     Local use only: an HD that looks like an IS data type.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PathLab^UCF.UC^L   A locally defined HD in which the middle component is itself
+<BR>       structured.  This can be considered the combination of 
+<BR>      'PathLab' with the locally defined UID system &quot;L&quot;.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>LAB1^1.2.3.3.4.6.7^ISO  An HD with an ISO &quot;Object Identifier&quot; as a suffix, and a 
+<BR>      locally defined system name.</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>^1.2.344.24.1.1.3^ISO  An HD consisting only of an ISO UID.</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200037.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200039.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.19 RDT - table row data segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200143.htm">
+<LINK REL="Previous" HREF="ch200141.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200141.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200143.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E127"></A>
+<H3><B>2.24.19</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>RDT - table row data segment</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I17"></A>The RDT segment contains the row data of the tabular data response message (TBR).</FONT>
+<P>Figure 2-26.  RDT attributes
+
+<TABLE BORDER=1 CELLSPACING=2 >
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=61 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=61 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=41 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=41 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=209 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1-n</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">Variable</FONT>
+</TD><TD WIDTH=61 VALIGN=top >
+<P>
+<FONT SIZE="-1">Variable</FONT>
+</TD><TD WIDTH=50 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00703</FONT>
+</TD><TD WIDTH=209 VALIGN=top >
+<P>
+<FONT SIZE="-1">Column Value</TD></TR></FONT></TABLE><P>2.24.19.0   RDT field definitions
+<H4>2.24.19.1 Column value  (Variable)   00703</H4>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I18"></A>Definition:  This field is a requested field.  Fields occur in the position order defined for the query or table, (unless over-ridden by an optional RDF segment on a stored procedure request or virtual table query message), separated by field delimiters.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200141.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200143.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

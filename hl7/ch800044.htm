@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>8.10.1 Clinical trials master file message (MFN/MFK)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800045.htm">
+<LINK REL="Previous" HREF="ch800043.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800043.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800045.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E371"></A>
+<H3><B>8.10.1</B><B> </B><A NAME="I2"></A><B>Clinical trials master file message (MFN/MFK)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The CM0 (Clinical Study Master), CM1 (Clinical Study Phase), and CM2 (Clinical Study Schedule) segments can be used to transmit master files information between systems. The CM0 segment contains the information about the study itself; the CM1 contains the information about one phase of the study identified in the preceding CM0; and the CM2 contains the information about the scheduled time points for the preceding study or phase-related treatment or evaluation events.  When these segments are used in an MFN message, the abstract definition is described below.</FONT>
+<P>
+<FONT FACE="Times New Roman">Case 1: MFN message for Clinical Study with phases and schedules</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>MFI-1-master file identifier code</I> = CMA</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Notification</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> { MFE    Master File Entry        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> CM0    Clinical Study Master       8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{ CM1   Clinical Study Phase       8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{CM2}] }]  Clinical Study Schedule      8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>MFK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Acknowledgment        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { [MFA] }   Master file ACK         8</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Case 2: MFN message for Clinical Study without phases but with schedules</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>MFI-1-master file identifier code</I> = CMB</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Notification</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> { MFE    Master File Entry        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> CM0    Clinical Study Master       8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ {CM2}] Clinical Study Schedule       8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>MFK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Acknowledgment        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { [MFA] }   Master file ACK        8</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">When the Clinical Trials master segments are used in the MFR message, the part of the message represented by:</FONT>
+<PRE>
+<FONT FACE="Courier New">      {MFE</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [Z..] }</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">is replaced by, in case 1 above:</FONT>
+<PRE>
+<FONT FACE="Courier New">{ MFE</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> CM0  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [{ CM1</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ {CM2}]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">In case 2 above, the corresponding segments in the MFR message represented by:</FONT>
+<PRE>
+<FONT FACE="Courier New">      {MFE</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [Z..] } </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">are replaced by</FONT>
+<PRE>
+<FONT FACE="Courier New">{ MFE   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> CM0                 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ {CM2}] }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800043.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800045.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

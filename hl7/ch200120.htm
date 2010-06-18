@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<TITLE>2.23.2 Continuation messages and segments</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200121.htm">
+<LINK REL="Previous" HREF="ch200119.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200119.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200121.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E106"></A>
+<H3><B>2.23.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><A NAME="I21"></A><A NAME="I22"></A><B>Continuation messages and segments</B><A NAME="I23"></A><A NAME="I24"></A></H3>
+<P>
+<FONT FACE="Times New Roman">See Section <A HREF="ch200097.htm#I16">2.15.4</A>, &quot;<A HREF="ch200097.htm#I19">Interactive continuation or cancellation of response messages: original mode (display and record oriented) and enhanced mode (display, tabular, and event replay)</A>,&quot; for a discussion of the continuation pointer segment and the continuation pointer field, and their use in the continuation of responses to queries and in the continuation of unsolicited update messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">Besides the need to continue a message, there are occasional implementation conditions that force the continuation of a segment across messages.  Such continued segments require the use of the ADD segment as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) the segment being continued (call it ANY for this example) is ended at an arbitrary character position and terminated with the Standard segment terminator (carriage return).</FONT>
+<P>
+<FONT FACE="Times New Roman">b) the following segment is the ADD segment.  When it follows a segment being continued, the ADD segment contains no fields.  Whether the message being continued is a response to a query, or an unsolicited update, the receiving system will use the continuation pointer (with the ADD segment) to continue the message.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) when a response (to a query) is continued, the first segment after the QRD and QRF (on a continued query) will be the ADD segment.  All the fields after the ADD segment identifier (fields 1-N) will be the continuation of the ANY segment.  The receiving system will then use the continuation pointer to join the two parts of the ANY segment and continue processing the message.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) for the continuation of an unsolicited update message, the ADD segment will be the first segment after the MSH segment.  The receiving system will use the continuation pointer field in the MSH segment to identify the message being continued, and then use the ADD segment as described in c) to join the two parts of the ANY segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">e) limitations: MSH, MSA, DSC, PID, QRD, QRF, URD and URS segments cannot be continued. </FONT>
+<P>
+<FONT FACE="Times New Roman">f) although the UU example given below is for a display message, there is nothing in the protocol to prevent a record-oriented UU from being continued in this fashion.  In the unsolicited display message, the ADD record on the continuation comes just after the URD/[URS] pair instead of directly after the MSH.</FONT>
+<P>
+<FONT FACE="Times New Roman">g)  transaction flow for a continued query-response pair with an ADD segment:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) first query and response:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[QRF]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[ ERR ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[QRF]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    {  DSP  } (last DSP segment is incomplete)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ADD    (ADD segment contains no fields)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">2) second query and response:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[QRF]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC   (contains the continuation pointer from the DSC segment of prior response</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>    message)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[ ERR ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[QRF]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ADD   (contains the remainder of the last DSP segment of the
+<BR>    previous response)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   {DSP} (remaining DSP segments are complete)</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  This second response could itself be continued with a second DSC and (if needed) a second ADD segment prior to it. This paradigm also applies to both original mode and enhanced mode queries of display and record oriented types. </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">f)  transaction flow for a continued unsolicited message with a continued segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">1) first unsolicited message and acknowledgment:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>URD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[ URS ]   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   {DSP}  (last DSP is incomplete)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ADD    (contains no fields)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC    (Continuation segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH   (General acknowledgment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[ ERR ]</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">2) second unsolicited message and acknowledgment: </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH   (contains continuation pointer from DSC segment 
+<BR>   of prior message)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ADD   (contains remainder of data from continued DSP
+<BR>   segment from prior message)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   {DSP}</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  This second message could itself be continued with a second DSC and (if needed) a second ADD segment prior to it.</TD></TR></FONT></TABLE><PRE>
+<FONT FACE="Courier New" SIZE=3>MSH   (General acknowledgment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[ ERR ] </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200119.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200121.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

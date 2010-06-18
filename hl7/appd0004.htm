@@ -1,0 +1,442 @@
+<HTML>
+<HEAD>
+<TITLE>D.1.3 BNF Message Definitions</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="appe.htm">
+<LINK REL="Previous" HREF="appd0003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="appd0003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appe.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E539"></A>
+<H3><B>D.1.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>BNF Message Definitions</B></H3>
+<P>
+<FONT FACE="Times New Roman"><I>The following is a listing of the BNF message descriptions, using the tokens defined above.  It </I><I>includes the accompanying segment groups used in producing the messages. Comments within </I><I>the file are delimited by &quot;/*&quot; (comment start) and &quot;*/&quot; (comment end).</I></FONT>
+<P>hl7Msgs: ack      /* General acknowledgment     */
+<P>   |     mcf      /* Delayed acknowledgment message.  */
+<P>   |     qry      /* Query message.             */
+<P>   |     dsr      /* Display response message.  */
+<P>   |     udm      /* Unsolicited display message.  */
+<P>   |     adt     /* Admissions, discharge, transfer. */
+<P>   |     orm      /* Order message.             */
+<P>   |     orr      /* Order message response.    */
+<P>   |     rxo      /* Pharmacy order. */
+<P>   |     rde      /* Pharmacy order information.   */
+<P>   |     rds      /* Pharmacy dispense information.   */
+<P>   |     rgv      /* Pharmacy dose information. */
+<P>   |     ras      /* Pharmacy administration information. */
+<P>   |     rre      /* Pharmacy encoded order history report. */
+<P>   |     rrd      /* Pharmacy dispense history report. */
+<P>   |     rrg      /* Pharmacy give history report. */
+<P>   |     rra      /* Pharmacy administration report. */
+<P>   |     orrRxo   /* Pharmacy order message response. */
+<P>   |     orrRde   /* Pharmacy encoded order message response. */
+<P>   |     orrRds   /* Pharmacy dispense message response. */
+<P>   |     orrRgv   /* Pharmacy give message response. */
+<P>   |     orrRas   /* Pharmacy administer message response. */
+<P>   |     bar      /* Add or change billing account. */
+<P>   |     dft      /* Detail financial transaction. */
+<P>   |     oru      /* Observation result - unsolicited. */
+<P>   |     orf      /* Observation result - solicited. */
+<P>   |     mfn      /* Master Files Notification */
+<P>   |     mfk      /* Master Files Acknowledgement */
+<P>   |     mfd      /* Master File Update Delayed Application Acknowledgement */
+<P>   |     mfq      /* Master Files Query  */
+<P>   |     mfr      /* Master Files Query Response */
+<P>   ;
+<P>/* Chapter II - Control Section */
+<P>/* ACK - General synchronous acknowledgement.                           */
+<P>ack:     SOM MSH ST MSA ST ERROpt EOM ;
+<P>/*  Delayed Acknowledgement */
+<P>mcf:  SOM MSHmcf ST MSA ST EOM
+<P>   |  SOM MSHmcf ST MSA ST ERROpt EOM ;
+<P>NoteOptGrp:
+<P>   |  NoteGrp ;
+<P>NoteGrp: NTE ST
+<P>   |    NTE ST NoteGrp ;
+<P>/* Chapter II - Query Section */
+<P>QueryHdr:  QRD ST QRFOpt PIDOpt ;
+<P>qry:      SOM MSH ST QRD ST QRFOpt DSCOpt EOM ;
+<P>dsr:      SOM MSH ST MSA ST ERROpt QRD ST QRFOpt DisplayGrp DSCOpt EOM
+<P>   |      SOM MSH ST QRD ST QRFOpt DisplayGrp DSCOpt EOM ;
+<P>udm:      SOM MSH ST URD ST URSOpt DisplayGrp DSCOpt EOM ;
+<P>DisplayGrp: DSP ST
+<P>   |      DSP ST DisplayGrp ;
+<P>/* Chapter III - ADT Messages: note that the EVNxxx tokens stand for identical segments except for the event type code values. This allows the BNF description for each ADT message to be unique, although the actual segment level definitions are non-unique. Thus the BNF is parallel to that used in the ADT chapter.  */
+<P>adt:     a01   /* Admit a patient.     */
+<P>   |     a02   /* Transfer a patient.  */
+<P>   |     a03   /* Discharge a patient. */
+<P>   |     a04   /* Register a patient.  */
+<P>   |     a05   /* Pre-admit a patient. */
+<P>   |     a06   /* Transfer an outpatient to inpatient.   */
+<P>   |     a07   /* Transfer an inpatient to outpatient.   */
+<P>   |     a08   /* Update patient information.   */
+<P>   |     a09   /* Patient departing.   */
+<P>   |     a10   /* Patient arriving.    */
+<P>   |     a11   /* Cancel admit.        */
+<P>   |     a12   /* Cancel transfer.     */
+<P>   |     a13   /* Cancel discharge.    */
+<P>   |     a14   /* Pending admit.       */
+<P>   |     a15   /* Pending transfer.    */
+<P>   |     a16   /* Pending discharge.   */
+<P>   |     a17   /* Swap a patient.      */
+<P>   |     a18   /* Merge patient information.    */
+<P>   |     a19   /* Patient query.       */
+<P>   |     a20   /* Nursing - census application updates.  */
+<P>   |     a21   /* Leave of absence - out (leaving).      */
+<P>   |     a22   /* Leave of absence - in (returning).     */
+<P>   |     a23   /* Delete a patient record.               */
+<P>   |     a24   /* Link patient information.     */
+<P>   |     a25   /* Cancel pending discharge.     */
+<P>   |     a26   /* Cancel pending transfer.      */
+<P>   |     a27   /* Cancel pending admit.         */
+<P>   |     a28   /* Add person information.       */
+<P>   |     a29   /* Delete person information.    */
+<P>   |     a30   /* Merge person information.     */
+<P>   |     a31   /* Update person information.    */
+<P>   |     a32   /* Cancel patient arriving.      */
+<P>   |     a33   /* Cancel patient departing.     */
+<P>   |     a34   /* Merge patient information (PID only). */
+<P>   |     a35   /* Merge patient information (Account # only). */
+<P>   |     a36   /* Merge patient information (PID &amp; Account #). */
+<P>   |     a37 ; /* Unlink patient information.   */
+<P>a01:   SOM MSH ST EVNA01 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P>       AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>       ACCOpt UB1Opt UB2Opt EOM ;
+<P>a02:   SOM MSH ST EVNA02 ST PidGrp EOM ;
+<P>a03:   SOM MSH ST EVNA03 ST PidGrp EOM ;
+<P>a04:   SOM MSH ST EVNA04 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a05:   SOM MSH ST EVNA05 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a06:   SOM MSH ST EVNA06 ST PID ST MRGOpt NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a07:   SOM MSH ST EVNA07 ST PID ST MRGOpt NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a08:   SOM MSH ST EVNA08 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a09:   SOM MSH ST EVNA09 ST PidGrp DG1OptGrp EOM ;
+<P>a10:   SOM MSH ST EVNA10 ST PidGrp DG1OptGrp EOM ;
+<P>a11:   SOM MSH ST EVNA11 ST PidGrp DG1OptGrp EOM ;
+<P>a12:   SOM MSH ST EVNA12 ST PidGrp DG1OptGrp EOM ;
+<P>a13:   SOM MSH ST EVNA13 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp  
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a14:   SOM MSH ST EVNA14 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp  
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a15:   SOM MSH ST EVNA15 ST PidGrp DG1OptGrp EOM ;
+<P>a16:   SOM MSH ST EVNA16 ST PidGrp DG1OptGrp EOM ;
+<P>a17:   SOM MSH ST EVNA17 ST PidGrp PidGrp EOM ;
+<P>a18:   SOM MSH ST EVNA18 ST PID ST MRG ST PV1Opt EOM ; 
+<P>a19:   SOM MSH ST MSA ST ERROpt QRD ST InfGrp DSCOpt EOM ;
+<P>a20:   SOM MSH ST EVNA20 ST NPU ST EOM  ;
+<P>a21:   SOM MSH ST EVNA21 ST PidGrp EOM ;
+<P>a22:   SOM MSH ST EVNA22 ST PidGrp EOM ;
+<P>a23:   SOM MSH ST EVNA23 ST PidGrp EOM ;
+<P>a24:   SOM MSH ST EVNA24 ST PID ST PV1Opt PID ST EOM  ;
+<P>a25:   SOM MSH ST EVNA25 ST PidGrp EOM ;
+<P>a26:   SOM MSH ST EVNA26 ST PidGrp EOM ;
+<P>a27:   SOM MSH ST EVNA27 ST PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp EOM ;
+<P>a28:   SOM MSH ST EVNA28 ST PID ST NK1OptGrp PV1Opt PV2Opt OBXOptGrp
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a29:   SOM MSH ST EVNA29 ST PID ST PV1Opt PV2Opt OBXOptGrp EOM ;
+<P>a30:   SOM MSH ST EVNA30 ST PID ST MRG ST EOM ; 
+<P>a31:   SOM MSH ST EVNA31 ST PID ST NK1OptGrp PV1Opt PV2Opt OBXOptGrp 
+<P>         AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>         ACCOpt UB1Opt UB2Opt EOM ;
+<P>a32:   SOM MSH ST EVNA32 ST PidGrp EOM ;
+<P>a33:   SOM MSH ST EVNA33 ST PidGrp EOM ;
+<P>a34:   SOM MSH ST EVNA34 ST PID ST MRG ST EOM ; 
+<P>a35:   SOM MSH ST EVNA35 ST PID ST MRG ST EOM ; 
+<P>a36:   SOM MSH ST EVNA36 ST PID ST MRG ST EOM ; 
+<P>a37:   SOM MSH ST EVNA37 ST PID ST PV1Opt PID ST PV1Opt EOM ; 
+<P>/* Insurance group 1 requires an IN1 segment within a repeating insurance */
+<P>/* group while Insurance group 2 allows a repeating IN3 within the group  */
+<P>/* of a single IN1-IN2 pair                                               */
+<P>InsOptGrp1:
+<P>      |  InsGrp1 ;
+<P>InsGrp1: Ins1
+<P>      |  Ins1 InsGrp1 ;
+<P>      
+<P>Ins1:    IN1 ST IN2Opt IN3Opt ;
+<P>InsOptGrp2:
+<P>   |      InsGrp2 ;
+<P>InsGrp2:  Ins2
+<P>   |      Ins2 InsGrp2 ;
+<P>Ins2:     IN1 ST IN2Opt IN3OptGrp ;
+<P>/* Inf is the patient information data that forms each member */
+<P>/*  of a list of patient information segments in response to a query  */
+<P>InfGrp: Inf 
+<P>      | Inf InfGrp ;
+<P>Inf:    EVNA19Opt PID ST NK1OptGrp PV1 ST PV2Opt OBXOptGrp
+<P> AL1OptGrp DG1OptGrp PR1OptGrp GT1OptGrp InsOptGrp1
+<P>        ACCOpt UB1Opt UB2Opt;
+<P>PidGrp:  PID ST PV1 ST PV2Opt OBXOptGrp ;
+<P>/*  Chapter IV - ORDERS */
+<P>/* ORM - Order message.  */
+<P>orm:      SOM MSH ST NoteOptGrp PidOptClause1 ORCGrp EOM ;
+<P>PidOptClause1:
+<P>   |      PID ST NoteOptGrp AL1OptGrp PV1Opt ;
+<P>ORCGrp:   ORC ST DetailOptClause
+<P>   |      ORC ST DetailOptClause ORCGrp ;
+<P>DetailOptClause:
+<P>   |      OrderSeg OBXDOptGrp BLGOpt ;
+<P>OBXDOptGrp:
+<P>   |      OBXDGrp ;
+<P>OBXDGrp:   OBX ST NoteOptGrp
+<P>   |      OBX ST NoteOptGrp OBXDGrp ;
+<P>OrderSeg: OBR ST NoteOptGrp
+<P>   |      Supplies NoteOptGrp
+<P>   |      ODSGrp NoteOptGrp
+<P>   |      ODTGrp NoteOptGrp ;
+<P>Supplies: RQD ST 
+<P>   |   RQD ST RQ1 ST ;
+<P>/* ORR - Response message.  */
+<P>orr: Orr1
+<P>   | Orr2 ;
+<P>Orr1:     SOM MSHorr1 ST MSA ST ERROpt NoteOptGrp PidOptClause2 EOM ;
+<P>Orr2:     SOM MSHorr2 ST MSA ST ERROpt NoteOptGrp RxOptResponse EOM ;
+<P>RxOptResponse: 
+<P>   |     RxResponse ;
+<P>RxResponse: PIDOpt PrescriptionGrp ;
+<P>PrescriptionGrp:  ORC ST PrescriptionOpt
+<P>   |        ORC ST PrescriptionOpt PrescriptionGrp ;
+<P>PrescriptionOpt:
+<P>   |        Prescription;
+<P>Prescription:  RXO ST NoteOptGrp RXRGrp ST  RXCNOptGrp ;
+<P>PidOptClause2:
+<P>   |      PIDOpt ORCGrp1 ;
+<P>ORCGrp1:   ORC ST OrderSegOpt
+<P>   |      ORC ST OrderSegOpt ORCGrp1 ;
+<P>OrderSegOpt:
+<P>   |      OrderSeg ;
+<P>/* Pharmacy.                                                            */
+<P>rxo:     SOM MSH ST NoteOptGrp PidOptClause1 RxOrderGrp EOM ;
+<P>rde:     SOM MSH ST NoteOptGrp PidOptClause1 RxEncOrdGrp EOM ;
+<P>rds:     SOM MSH ST NoteOptGrp PidOptClause1 DispenseGrp EOM ;
+<P>rgv:     SOM MSH ST NoteOptGrp PidOptClause1 RxGiveGrp EOM ;
+<P>ras:     SOM MSH ST NoteOptGrp PidOptClause1 RxAdminGrp EOM ;
+<P>rra:     SOM MSH ST MSA ST ERROpt AdminRptGrp DSCOpt EOM ;
+<P>rrd:     SOM MSH ST MSA ST ERROpt DispenseRptGrp DSCOpt EOM ;
+<P>     
+<P>rre:     SOM MSH ST MSA ST ERROpt RxOrderRptGrp DSCOpt EOM ;
+<P>rrg:     SOM MSH ST MSA ST ERROpt GiveRptGrp DSCOpt EOM ;
+<P>orrRxo:  SOM MSH ST MSA ST ERROpt NoteOptGrp PidOptClause2 PresriptionGrp EOM ;
+<P>orrRde:  SOM MSH ST MSA ST ERROpt NoteOptGrp PidOptClause2 RxOrdGrp2Opt EOM ;
+<P>orrRds:  SOM MSH ST MSA ST ERROpt NoteOptGrp PidOptClause2 RxdGrpOpt EOM ;
+<P>orrRgv:  SOM MSH ST MSA ST ERROpt NoteOptGrp PidOptClause2 RxgGrpOpt EOM ;
+<P>orrRas:  SOM MSH ST MSA ST ERROpt NoteOptGrp PidOptClause2 RxaGrpOpt EOM ;
+<P>RxAdmin:    ORC ST PrescriptionOpt RxEncOrdOpt RXAGrp RXR ST ;
+<P>RxGive:     ORC ST PrescriptionOpt RxEncOrdOpt RXG ST RXRGrp ST RXCOptGrp ;
+<P>RxEncOrd:   ORC ST PrescriptionOpt RXE ST RXRGrp ST RXCOptGrp ;
+<P>Dispense:   ORC ST PrescriptionOpt RxEncOrdOpt RXD ST RXRGrp ST RXCOptGrp ;
+<P>GiveRpt:    QueryHdr RxOrdGrp4 ;
+<P>AdminRpt:   QueryHdr RxOrdGrp1 ;
+<P>DispenseRpt: QueryHdr RxOrdGrp3 ;
+<P>RxOrderRptGrp: RxOrderRpt
+<P>      |     RxOrderRpt RxOrderRptGrp ;
+<P>RxOrderRpt: QueryHdr RxOrdGrp2 ;
+<P>RxOrdGrp1:  RxOrd1
+<P>      |     RxOrd1 RxOrdGrp1 ;
+<P>RxOrd1:     ORC ST RXE ST RXRGrp ST RXCOptGrp RXAGrp RXR ST;
+<P>RxOrdGrp2:  RxOrd2
+<P>      |     RxOrd2 RxOrdGrp2 ;
+<P>RxOrd2:     ORC ST RXE ST RXRGrp ST RXCOptGrp ;
+<P>RxOrdGrp2Opt: 
+<P>     | RxOrdGrp2 RxOrdGrp2Opt ;
+<P>RxOrdGrp3:  RxOrd3
+<P>      |     RxOrd3 RxOrdGrp3 ;
+<P>RxOrd3:     ORC ST RXE ST RXRGrp ST RXCOptGrp RXDGrp RXRGrp ST ;
+<P>RxOrdGrp4:  RxOrd4
+<P>      |     RxOrd4 RxordGrp4 ;
+<P>RxOrd4:     RXE St RXRGrp ST RXCOptGrp RXGGrp RXRGrp ST ;
+<P>RxdGrpOpt:  
+<P>     | OrcRxdGrp RxdGrpOpt ;
+<P>OrcRxdGrp: 
+<P>    | ORC ST RxdDsGrp OrcRxdGrp ;
+<P>RxdDsGrp: 
+<P>   | RXD RXRGrp RXCOptGrp RxdDsGrp ;
+<P>RxgGrpOpt:  
+<P>     | OrcRxgGrp RxgGrpOpt ;
+<P>OrcRxgGrp: 
+<P>    | ORC ST RxgGvGrp OrcRxgGrp ;
+<P>RxgGvGrp: 
+<P>   | RXG RXRGrp RXCOptGrp RxgGvGrp ;
+<P>RxaGrpOpt:  
+<P>     | OrcRxaGrp RxaGrpOpt ;
+<P>OrcRxaGrp: 
+<P>    | ORC ST RxaRaGrp OrcRxaGrp ;
+<P>RxaRaGrp: 
+<P>   | RXA RXR RxaRaGrp ;
+<P>GiveRptGrp:    GiveRpt
+<P>      |    GiveRpt GiveRptGrp ;
+<P>AdminRptGrp:   AdminRpt
+<P>      |     AdminRpt AdminRptGrp ;
+<P>DispenseRptGrp:   DispenseRpt
+<P>      |     DispenseRpt DispenseRptGrp ;
+<P>DispenseGrp:   Dispense
+<P>   |     Dispense DispenseGrp ;
+<P>RxAdminGrp: RxAdmin
+<P>   |     RxAdmin RxAdminGrp ;
+<P>RxOrderGrp: RxOrder
+<P>   |     RxOrder RxOrderGrp ;
+<P>RxOrder:   ORC ST Prescription OBXDOptGrp BLGOpt ;
+<P>RxGiveGrp:  RxGive
+<P>   |     RxGive RxGiveGrp ;
+<P>RxEncOrdGrp: RxEncOrd
+<P>   |     RxEncOrd RxEncOrdGrp ;
+<P>RxEncOrdOpt:
+<P>   |     RxEncOrd ;
+<P>/* Chapter VI - Finance */
+<P>/* Finance: Patient accounting.  The triggering events that follow are  */
+<P>/* served by the DFT, BAR and ACK messages.                             */
+<P>bar:      p01   /* Add and update patient account.        */
+<P>   |      p02 ; /* Purge patient account.        */
+<P>dft:      p03 ; /* Post detail financial transaction.     */
+<P>p01:      SOM MSH ST EVNP01 ST PID ST BillingGrp EOM ; 
+<P>BillingGrp:   Billing
+<P>   |      Billing BillingGrp ;
+<P>Billing:  PV1Opt PV2Opt OBXOptGrp AL1OptGrp DG1OptGrp PR1OptGrp
+<P>            GT1OptGrp NK1OptGrp InsOptGrp2 ACCOpt UB1Opt UB2Opt ;
+<P>p02:      SOM MSH ST EVNP02 ST VisitGrp EOM ; 
+<P>VisitGrp: Visit
+<P>   |      Visit VisitGrp ;
+<P>Visit:    PID ST PV1Opt PV2Opt OBXOptGrp ;
+<P>p03:      SOM MSH ST EVNP03 ST PID ST PV1Opt PV2Opt1 OBXOptGrp FT1Grp EOM ;
+<P>FT1Grp:   FT1 ST
+<P>   |      FT1 ST FT1Grp ;
+<P>/* Chapter VII - Ancillary Reporting */
+<P>/* Ancillary Data Reporting.  */
+<P>oru:      SOM MSH ST  PidOptClause3 ObserveGrp DSCOpt EOM ;
+<P>orf:   SOM MSH ST MSA ST ERROpt QueryHdr ObserveGrp DSCOpt EOM ;
+<P>PidOptClause3:
+<P>   |      PID ST NoteOptGrp PV1Opt ;
+<P>ObserveGrp: Observe
+<P>   |      Observe ObserveGrp ;
+<P>Observe:  ORCOpt OBR ST NoteOptGrp OBXDGRPOpt  ;
+<P>/* Master Files Messages...see note below... the segment level definition for the MFSGrp will vary according to the master file entry being referenced in the MFI segment... hence a BNF form will need to be generated for each master file ...  */
+<P>mfn: SOM MSH ST MFI ST MFEGrp EOM ;
+<P>MFEGrp: MFE ST MFSGrpOpt
+<P>   |      MFE ST MFSGrpOpt MFEGrp ;
+<P>MFSGrpOpt:
+<P>   | MFSGrp ;
+<P>MFSGrp: XXX ST
+<P>   | XXX ST MFSGrp ;
+<P>/* XXX is then one or more HL7 and/or Z-segments carrying the data for the entry identified by the MFI segment. */
+<P>/* Master File Delayed Acknowledgment                                   */
+<P>mfd:   SOM MSH ST MFI ST MFAOptGrp EOM ;
+<P>MFAOptGrp:
+<P>   |  MFAGrp ;
+<P>MFAGrp:  MFA ST
+<P>   |  MFA ST MFAGrp ;
+<P>/* Response to Master Files Query */
+<P>mfr:   SOM MSH ST MSA ST ERROpt QRD ST QRFOpt MFI ST MFEGrp EOM ;
+<P>/* The segment level definition for the MFSGrp will vary according to the master file being referenced by the MFI segment... hence a BNF form will need to be generated for each master file...  */
+<P>/* This is the end of the message definition section  */
+<P>/* The following are sets of segment options and groups needed above.   */
+<P>ACCOpt:
+<P>   |     ACC ST ;
+<P>BLGOpt:
+<P>   |  BLG ST ;
+<P>ERROpt:
+<P>   |  ERR ST ;
+<P>AL1OptGrp:
+<P>   |     AL1 ST
+<P>   |     AL1 ST AL1Grp ;
+<P>AL1Grp:  AL1 ST
+<P>   |     AL1 ST AL1Grp ;
+<P>DSCOpt:
+<P>   |      DSC ST ;
+<P>DG1Grp:  DG1 ST
+<P>   |     DG1 ST DG1Grp ;
+<P>DG1OptGrp:
+<P>   |     DG1 ST
+<P>   |     DG1 ST DG1Grp ;
+<P>EVNOpt:
+<P>   |     EVN ST ;
+<P>EVNA19Opt:
+<P>   |  EVNA19 ST ;
+<P>GT1OptGrp:
+<P>   |     GT1 ST
+<P>   |     GT1 ST GT1Grp ;
+<P>GT1Grp:  GT1 ST
+<P>   |     GT1 ST GT1Grp ;
+<P>IN2Opt:
+<P>   |     IN2 ST ;
+<P>IN3Opt:
+<P>   |     IN3 ST ;
+<P>IN3OptGrp:
+<P>   |     IN3Grp ;
+<P>IN3Grp:  IN3 ST
+<P>   |     IN3 ST IN3Grp ;
+<P>MRGOpt:
+<P>   |     MRG ST ;
+<P>NK1OptGrp:
+<P>   |     NK1 ST
+<P>   |     NK1 ST NK1Grp ;
+<P>NK1Grp:  NK1 ST
+<P>   |     NK1 ST NK1Grp ;
+<P>OBXOptGrp:
+<P>   |     OBXGrp ;
+<P>OBXGrp:  OBX ST
+<P>   |     OBX ST OBXGrp ;
+<P>ODSGrp:  ODS ST
+<P>   |     ODS ST ODSGrp ;
+<P>ODTGrp:  ODT ST
+<P>   |     ODT ST ODTGrp ;
+<P>ORCOpt:
+<P>   |     ORC ST ;
+<P>PIDOpt:
+<P>   |     PID ST NoteOptGrp ;
+<P>PR1OptGrp:
+<P>   |     PR1 ST
+<P>   |     PR1 ST PR1Grp ;
+<P>PR1Grp:  PR1 ST
+<P>   |     PR1 ST PR1Grp ;
+<P>PV1Opt:
+<P>   |     PV1 ST ;
+<P>PV2Opt:
+<P>   |     PV2 ST ;
+<P>UB1Opt:
+<P>   |  UB1 ST ;
+<P>UB2Opt:
+<P>   |  UB2 ST ;
+<P>QRFOpt:  QRF ST
+<P>   |     QRF ST QRFOpt ;
+<P>RXAGrp:  RXA ST
+<P>   |     RXA ST RXAGrp ;
+<P>RXDGrp:  RXD ST
+<P>   |     RXD ST RXDGrp ;
+<P>RXGGrp:  RXG ST
+<P>   |     RXG ST RXGGrp ;
+<P>RXCOpt:
+<P>   |     RXC ST ;
+<P>RXCOptGrp:
+<P>   |     RXCGrp ;
+<P>RXCGrp:  RXC ST 
+<P>   |     RXC ST RXCGrp ;
+<P>RXCNOptGrp:
+<P>   |     RXCNGrp ;
+<P>RXCNGrp:  RXC ST NoteOptGrp
+<P>   |     RXC ST NoteOptGrp RXCNGrp ;
+<P>RXRGrp:  RXR ST
+<P>   |     RXR ST RXRGrp ;
+<P>URSOpt:
+<P>   |     URS ST ;
+<P ALIGN=LEFT>
+<A HREF="appd0003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appe.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

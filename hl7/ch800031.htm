@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>8.8.1 Patient location master file message (MFN/MFK)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800032.htm">
+<LINK REL="Previous" HREF="ch800030.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800030.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800032.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E360"></A>
+<H3><B>8.8.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>Patient location master file message</B><B> (MFN/MFK)</B></H3>
+<P>This section is specifically concerned with describing a master file message that should be used to transmit information which identifies the inventory of healthcare patient locations, such as nursing units, rooms, beds, clinics, exam rooms, etc.  In a network environment, this segment can be used to define patient locations to other applications.  The segment also includes the readiness states and support locations for the patient locations. 
+<P>The LOC, LCH, LRL, LDP, and LCC segments must be preceded by the MFI and MFE segments, as described in Sections <A HREF="ch800032.htm#I5">8.8.2</A>, &quot;<A HREF="ch800032.htm#I7">LOC - location identification segment</A>,&quot; through <A HREF="ch800036.htm#I5">8.8.6</A><A HREF="ch800003.htm#I6">8.3</A>.&quot;  In the following message, the <I>MFI-1-master file identifier</I> field should equal &quot;LOC&quot;
+<P><U>MFN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Notification</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U>
+<P>   MSH   Message Header        2
+<P>   MFI   Master File Identification     8
+<P>  {MFE   Master File Entry        8
+<P>    LOC   Patient Location Master      8
+<P>    [{LCH}]  Location Characteristic      8
+<P>    [{LRL}]  Location Relationship       8
+<P>   { LDP   Location Department       8
+<P>    [{LCH}]  Location Characteristic      8
+<P>     [{LCC}]  Location Charge Code       8
+<P>   }
+<P>  }
+<P>When the LCH segment appears immediately following the LOC segment, it communicates characteristics which are the same across multiple departments that may use the same room.  When the LCH segment appears immediately following the LDP segment, it communicates characteristics which differ for different departments that may use the same room.  
+<P><U>MFK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U>
+<P> MSH    Message Header        2
+<P> MSA    Acknowledgment        2
+<P> MFI    Master File Identification     8
+<P>   [{MFA}]  Master File ACK         8
+<P>Master Files Query Response:  When the LOC segment is used in the MFR message, the part of the message represented by:
+<P> {MFE
+<P>     [Z..]}
+<P>is replaced by:
+<P> {MFE    Master File Entry
+<P>    LOC    Patient Location Master
+<P>    [{LCH}]  Location Characteristic
+<P>    [{LRL}]  Location Relationship
+<P>    {LDP    Location Department
+<P>    [{LCH}]  Location Characteristic
+<P>    [{LCC}]     }} Location Charge Code
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800030.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800032.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

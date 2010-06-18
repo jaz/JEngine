@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>8.9.1 Charge description master file message (MFN/MFK)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800040.htm">
+<LINK REL="Previous" HREF="ch800038.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800038.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800040.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E367"></A>
+<H3><B>8.9.1</B><B> </B><A NAME="I2"></A><B>Charge description master file message (MFN/MFK)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The charge description (CDM) master file segment should be used in conjunction with the general master file segments in Section <A HREF="ch800007.htm#I6">8.4</A>, &quot;General Master File Segments.&quot;  Interfacing systems often need not only to communicate data about a patient&#146;s detailed charges, but also to communicate the charge identification entries by which an application knows how to handle a particular charge code.  The charge description master is a master file.  The CDM segment below is a specially designed master file segment for interfacing charge description masters.  In the following message, the MFI-master file identifier should equal &quot;CDM.&quot;  When the CDM segment is used in an MFN message, the abstract definition is as follows:</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Notification</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> MFI    Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {MFE   Master File Entry        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    CDM   Charge Description Master      8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   { [PRC ] }  Price Segment        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>MFK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File </U><U>Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> MSH    Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> MSA    Acknowledgment        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> MFI    Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   { [MFA] }  Master File ACK segment      8</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Master File Response Message:  When the CDM segment is used in the MFR message, the part of the message represented by:</FONT>
+<PRE>
+<FONT FACE="Courier New"> {MFE</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [Z..] }</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">is replaced by:</FONT>
+<PRE>
+<FONT FACE="Courier New"> {MFE</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  CDM</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { [PRC] }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800038.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800040.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

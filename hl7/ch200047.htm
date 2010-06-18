@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.27 PPN - performing person time stamp</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200048.htm">
+<LINK REL="Previous" HREF="ch200046.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200046.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200048.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E48"></A>
+<H3><B>2.8.27</B><B> </B><A NAME="I2"></A><B>PPN - performing person time stamp</B></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt; ^ &lt; date/time action performed (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">This data type is the equivalent of an XCN data type joined with a TS data type.  However,  since there can because of no sub-subcomponents in Version 2.3, the XCD data type has been flattened.</FONT>
+<H4>2.8.27.1 ID number (ST)</H4>
+<P>Coded ID according to a user-defined table, defined by the 8<SUP>th</SUP> component.  If the first component is present, either the source table of the assigning authority must be valued.
+<H4>2.8.27.2 Family name (ST)</H4>
+<H4>2.8.27.3 Given name (ST)</H4>
+<H4>2.8.27.4 Middle initial or name (ST)</H4>
+<H4>2.8.27.5 Suffix (ST)</H4>
+<P>Used to specify a name suffix (e.g., Jr. Or III).
+<H4>2.8.27.6 Prefix (ST)</H4>
+<P>Used to specify a name prefix (e.g., Dr.).
+<H4>2.8.27.7 Degree (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">Used to specify an educational degree (e.g., MD).</FONT>
+<H4>2.8.27.8 Source table (ID)</H4>
+<P>Refer to <I>user-defined table 0207 - CN ID</I> for suggested values.  Used to delineate the first component.
+<H4>2.8.27.9 Assigning authority (HD)</H4>
+<P>In this version, an optional 9<SUP>th</SUP> component, the assigning authority (HD), has been added.  It is an HD data type (see Section <A HREF="ch200038.htm#I4">2.8.18</A>, &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>.&quot;
+<H4>2.8.27.10 Name type code (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">A code that represents the type of name.  Refer to HL7 table 0200 - Name type for valid values (see Section <A HREF="ch200068.htm#I4">2.8.48</A>, &quot;XPN - extended person name&quot;).</FONT>
+<H4>2.8.27.11 Identifier check digit (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The check digit in this data type is not an add-on produced by the message processor.  It is the check digit that is part of the identifying number used in the sending application.  If the sending application does not include a self-generated check digit in the identifying number, this component should be valued null.</FONT>
+<H4>2.8.27.12 Code identifying the check digit scheme employed (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer <I>to HL7 table 0060 - Check digit scheme</I> for valid values.</FONT>
+<H4>2.8.27.13 Identifier type code (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">A code corresponding to the type of identifier.  In some cases, this code may be used as a qualifier to the &quot;Assigning authority&quot; component.  Refer <I>to user-defined table 0203 - Identifier type</I> for suggested values.</FONT>
+<H4>2.8.27.14 Assigning facility (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">The place or location identifier where the identifier was first assigned to the patient.  This component is not an inherent part of the identifier but rather part of the history of the identifier:  as part of this data type, its existence is a convenience for certain intercommunicating systems.</FONT>
+<H4>2.8.27.15 Date/time action performed (TS)</H4>
+<P>
+<FONT FACE="Times New Roman">This component describes when the  activity was performed. </FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=569 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>: If either component is valued, both must be valued.  Both are required components.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200046.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200048.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

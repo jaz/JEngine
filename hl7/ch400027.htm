@@ -1,0 +1,273 @@
+<HTML>
+<HEAD>
+<TITLE>4.6.1 ODS - dietary orders, supplements, and preferences segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400028.htm">
+<LINK REL="Previous" HREF="ch400026.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400026.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400028.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E229"></A>
+<H3><B>4.6.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>ODS </B><B>-</B><B> dietary orders, supplements, and preferences</B><B> segment</B><A NAME="I8"></A><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The ORC sequence items of interest to ODS are <I>ORC-1-order control,ORC-2-placer order number, </I><I>ORC-3-filler order number, ORC-7-quantity/timing, ORC-9-date/time of transaction, ORC-10-entered by,</I> and <I>ORC-11-verified by</I>.  For <I>ORC-1-order control</I>, the values may be New (NW), Cancel (CA), Discontinue Order Request (DC), Change (XO), Hold Order Request (HD), and Release Previous Hold (RL).  The HD and RL codes could stop service for a specified length of time.  <I>ORC-4-quantity/timing</I> should be used to specify whether an order is continuous or for one service period only.  It is also useful for supplements which are part of a diet but only delivered, say, every day at night.  Example: </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|1^QPM^^19910415|.</FONT></PRE>
+<P ALIGN=indent><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A>Figure 4-9.  ODS attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/ #</FONT>
+</TD><TD WIDTH=53 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL #</FONT>
+</TD><TD WIDTH=56 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=226 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">0159</FONT>
+</TD><TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00269</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Type </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/10</FONT>
+</TD><TD WIDTH=53 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00270</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Service Period</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/20</FONT>
+</TD><TD WIDTH=53 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00271</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diet, Supplement, or Preference Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=53 VALIGN=top ><BR></TD>
+<TD WIDTH=56 VALIGN=top >
+<P>
+<FONT SIZE="-1">00272</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Text Instruction</TD></TR></FONT></TABLE></CENTER><P>4.6.1.0   ODS field definitions
+<H4><B>4.6.1.1</B><B> </B>Type  (ID)   00269<A NAME="I13"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field specifies type of diet.  Refer to <I>HL7 table 0159 - Diet type</I> for valid entries.</FONT>
+<P ALIGN=indent><A NAME="I14"></A><A NAME="I15"></A>Table 0159 - Diet type</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diet</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Supplement</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preference</TD></TR></FONT></TABLE><H4>4.6.1.2 <A NAME="I16"></A>Service period  (CE)   00270<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  When blank, the modifier applies to all service periods.  Diet orders, for example, typically apply to all service periods.  This field usually specifies supplements.  This field allows you to designate a modification for one or more of the service periods during a day by combining service specifications as needed.  The service periods will be local CEs, normally numbers.  Suggested are:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service 1</FONT>
+</TD><TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">is</FONT>
+</TD><TD WIDTH=318 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">breakfast</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service 2</FONT>
+</TD><TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">is</FONT>
+</TD><TD WIDTH=318 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">mid-a.m. snack</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service 3</FONT>
+</TD><TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">is</FONT>
+</TD><TD WIDTH=318 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">lunch</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service 4</FONT>
+</TD><TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">is</FONT>
+</TD><TD WIDTH=318 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">mid-afternoon snack</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service 5</FONT>
+</TD><TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">is</FONT>
+</TD><TD WIDTH=318 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">dinner</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=66 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">service 6</FONT>
+</TD><TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">is</FONT>
+</TD><TD WIDTH=318 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">bedtime snack</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Ex: |1~5| means service 1 and service 5, whatever these are locally defined to be.</FONT>
+<H4>4.6.1.3 Diet, supplement, or preference code  (CE)   00271<A NAME="I18"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the identifier of the ordered item for a patient; it is equivalent to <I>OBR-4-universal </I><I>service ID</I> in function.  Since ODS is a repeating segment, multiple entities get multiple segments. Example:  </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|^REG^L&amp;FD7|, |023^^L&amp;FD6|, |^NOLACT^L&amp;FD5|, |^TUBEFD^L&amp;FD4|, and |011^HIPRO100^L&amp;FD1~123^LOFAT20^L&amp;FD1|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">In the case where this segment requests a diet supplement, i.e., <I>ODS-1-type</I> = S, this attribute specifies a particular item or class of items.  If institutional codes for patient food preferences (P) have been codified, they are also expressed as coded segments; otherwise, the information is passed as a text string in the fourth component of the ODS segment, described below.</FONT>
+<H4>4.6.1.4 Text instruction  (ST)   00272<A NAME="I19"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field defines the specific instructions for dietary.  These instructions may address specific patient needs, such as isolation.  This field provides the ordering provider&#146;s dietary instructions as free text.  It can represent the full dietary instruction or indicate supplemental information.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400026.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400028.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.31 QSC - query selection criteria</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200052.htm">
+<LINK REL="Previous" HREF="ch200050.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200050.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200052.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E52"></A>
+<H3><B>2.8.31</B><B> </B><A NAME="I2"></A><B>QSC - query selection criteria</B></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;name of field (ST)&gt; ^ &lt;relational operator (ID)&gt; ^ &lt;value (ST)&gt; ^ &lt;relational conjunction (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the conditions that qualify the rows to be returned in the query response.  (This field conveys the same information as the &quot;WHERE&quot; clause in the corresponding SQL expression of the query, but is formatted differently.)</FONT>
+<H4>2.8.31.1 Name of field (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The name of the field that is participating as a qualifier (usually the &quot;key&quot;).  Refer to Section <A HREF="ch200050.htm#I2">2.8.30</A>, &quot;<A HREF="ch200050.htm#I2">QIP - query input parameter list</A>&quot;, for field naming conventions.</FONT>
+<H4>2.8.31.2 Relational operator (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to <I>HL7 table 0209 - Relational operator</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0209 - Relational operator</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Relational operator</FONT>
+</TD><TD WIDTH=162 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">EQ</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NE</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Not Equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LT</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Less than</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GT</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Greater than</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">LE</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Less than or equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GE</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Greater than or equal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CT</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contains</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=175 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GN</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT SIZE="-1">Generic</TD></TR></FONT></TABLE></CENTER><H4>2.8.31.3 Value (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The value to which the field will be compared.</FONT>
+<H4>2.8.31.4 Relational conjunction (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to<I> HL7 table 0102 - Relation conjunction</I> for valid values.  The relational conjunction, defined as follows: If more than one comparison is to be made to select qualifying rows, a conjunction relates this repetition of the field to the next.</FONT>
+<P ALIGN=indent>Table 0210 - Relational conjunction</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Relational conjunction</FONT>
+</TD><TD WIDTH=156 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Note</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AND</FONT>
+</TD><TD WIDTH=156 VALIGN=top >
+<P>
+<FONT SIZE="-1">Default</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=163 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OR</FONT>
+</TD><TD WIDTH=156 VALIGN=top ><BR></TD></TR></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">&#149; When applied to strings, the relational operators LT, GT, LE, and GE imply an alphabetic comparison.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; A &quot;generic&quot; comparison selects a record for inclusion in the response when the beginning of the designated field matches the select string.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Where a repeating field is specified as an operand, a match on any instance of that field qualifies the row for inclusion in the response message.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; AND takes precedence over OR.  More sophisticated precedence rules require that the query be expressed as an embedded query language message or a stored procedure query message (see Section <A HREF="ch200105.htm#I2">2.19</A>, &quot;<A HREF="ch200105.htm#I2">ENHANCED MODE QUERY MESSAGES</A>,&quot; and also Sections <A HREF="ch200139.htm#I4">2.24.16</A>, &quot;<A HREF="ch200139.htm#I5">EQL - embedded query language segment</A>,&quot; and <A HREF="ch200143.htm#I17">2.24.20</A>, &quot;<A HREF="ch200143.htm#I18">SPR - stored procedure request definition segment</A>.&quot;</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200050.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200052.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.1 ADT/ACK - admit / visit notification (event A01)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300004.htm">
+<LINK REL="Previous" HREF="ch300002.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E137"></A>
+<H3><B>3.2.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - admit / visit notification</B><A NAME="I9"></A><B> (event A01)</B></H3>
+<P>
+<FONT FACE="Times New Roman">An A01 event is intended to be used for &quot;Admitted&quot; patients only.  An A01 event is sent as a result of a patient undergoing the admission process which assigns the patient to a bed.  It signals the beginning of a patient&#146;s stay in a healthcare facility.  Normally, this information is entered in the primary ADT system and broadcast to the nursing units and ancillary systems.  It includes short stay and John Doe admissions.  For example, an A01 event can be used to notify: the pharmacy system that a patient has been admitted and may be legitimately prescribed drugs; the nursing system that the patient has been admitted and needs a care plan prepared; the finance system of the start of the billing period; the dietary system that a new patient has been installed and requires dietary services; the laboratory, pathology, radiology systems that a patient has been admitted and is entitled to receive services; the clinical repository that an admission has taken place for the EMR (electronic medical record).</FONT>
+<P>
+<FONT FACE="Times New Roman">When an account&#146;s start and end dates span a period greater than any particular visit, the P01 (add account) event should be used to transmit the opening of an account.  The A01 event can notify systems of the creation of an account as well as notify them of a patient&#146;s arrival in the healthcare facility.  In order to create a new account without notifying of patient&#146;s arrival, use the P01 event.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { NK1 } ]   Next of Kin / Associated Parties    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { AL1 } ]   Allergy Information       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  DRG  ]   DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ { PR1   Procedures         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ROL}]  Role           12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { GT1 } ]   Guarantor Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { IN1    Insurance Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN2 ]   Insurance Information - Addit. Info.   6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN3 ]    Insurance Information - Cert.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  } </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ACC ]    Accident Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB1 ]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB2 ]    Universal Bill 92 Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

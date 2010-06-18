@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>8.5.2 MFN message with original acknowledgment mode</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800014.htm">
+<LINK REL="Previous" HREF="ch800012.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E345"></A>
+<H3><B>8.5.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>MFN message with original acknowledgment mode</B></H3>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|HL7REG|UH|HL7LAB|CH|19910918060544||MFN^M01|MSGID002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|0006^RELIGION^HL7|UPD|||AL</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MAD|199109051000|199110010000|U^Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ZL7|U^Buddhist^HL7|3^^Sortkey</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFE|MAD|199109051015|199110010000|Z^Zen Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ZL7|Z^Zen Buddhist^HL7|12^^Sortkey</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">In this case, the primary key contains all the data needed for this simple table, so that the HL7 segment could be constructed with ONLY the single field, &quot;sort-key,&quot; rather than repeating the primary key value as we have done in this example.</FONT>
+<P>
+<FONT FACE="Times New Roman">MFK, master file application acknowledgment, as original mode acknowledgment of the HL7 message according to MFI Response Level Code of &quot;AL&quot;.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|HL7LAB|CH|HL7ADT|UH|19910918060546||MFK|MSGID99002|P|2.2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|MSGID002</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFI|0006^RELIGION^HL7|UPD</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MAD|199109051000|19910918060545|S|U^Buddhist^HL7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MFA|MAD|199109051015|19910918060545|S|Z^Zen Buddhist^HL7</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

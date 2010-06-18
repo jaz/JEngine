@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>2.17.1 QRY/DSR - original mode display query -  immediate respon</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200102.htm">
+<LINK REL="Previous" HREF="ch200100.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200100.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200102.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E93"></A>
+<H3><B>2.17.1</B><B> </B><A NAME="I2"></A><B>QRY/DSR - original mode display query - </B><A NAME="I3"></A><A NAME="I4"></A><B> immediate response (event Q01)</B></H3>
+<PRE>
+<FONT FACE="Courier New"><U>QRY</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Query Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QRF ]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>DSR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Display Response Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QAK ]    Query Acknowledgment       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QRF ]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ DSP }    Display Data         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The QRF and QRD segments from the QRY are echoed back in the response.  The DSC segment contains the continuation pointer, if it is not null (<I>DSC-1-continuation pointer</I>).</FONT>
+<H4>2.17.1.1 <A NAME="I5"></A>Original mode display query variants</H4>
+<P>
+<FONT FACE="Times New Roman">If a display query has more than a single type of response (i.e., a DSR message with a different meaning, requiring different processing on the querying system), the second component of the Message Type field of the MSH segment may be used to indicate the response event type.  For example, an ancillary name search display query may be defined using the query event code of DNM.  The display response to such a query may be either a list of name matches (response event type is DNM) or the ancillary&#146;s display results for an exact match to the name query (response event type is NRS).  See<I> HL7</I> <I>table 0003 - Event type code</I> and field notes for <I>MSH-9-message type</I>.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200100.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200102.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

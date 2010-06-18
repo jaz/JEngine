@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.6 CM - composite</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200027.htm">
+<LINK REL="Previous" HREF="ch200025.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E27"></A>
+<H3><B>2.8.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CM - composite</B></H3>
+<P>
+<FONT FACE="Times New Roman">A field that is a combination of other meaningful data fields.  Each portion is called a component.  The specific components of CM fields are defined within the field descriptions.  Certain other composites have been separately identified and are described below.  <I>The CM data type is maintained strictly for </I><I>backward compatibility and may not be used for the definition of new fields.</I> Wherever a component of an HL7 field is itself an HL7 data type which contains components, its delimiters are demoted by one.  Thus a component designated as a CE data type should be encoded as &lt;identifier &amp; text &amp; name of coding system&gt; (see Section <A HREF="ch200023.htm#I4">2.8.3</A>, &quot;<A HREF="ch200023.htm#I4">CE - coded element</A>&quot;).  Note that since HL7 delimiters are not recursive, an HL7 data type containing components cannot be a sub-component.  When this level of detail is needed, each component of the HL7 data type can be encoded as a separate subcomponent.  For an example of this, see the encoding of the filler order number in the order sequencing component of the Timing/Quantity data type.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>11.1.2 Application roles and data process</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110004.htm">
+<LINK REL="Previous" HREF="ch110002.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E479"></A>
+<H3><B>11.1.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>Application roles and data process</B></H3>
+<H4>11.1.2.1 <A NAME="I7"></A>Application roles<A NAME="I8"></A></H4>
+<P>
+<FONT FACE="Times New Roman">This Standard assumes that there are four roles that an application can take on:  a referring or referred-by provider<A NAME="I9"></A> application role, a referred-to provider<A NAME="I10"></A> application role, a querying application role, and an auxiliary application role.  These application roles define the interactions an application will have with other applications in the messaging environment.  In many environments, any single application may take on more than one application role.</FONT>
+<P>
+<FONT FACE="Times New Roman">This standard&#146;s definition of application roles does not intend to define or limit the functionality of specific products developed by vendors of such applications.  Instead, this information is provided to help define the model used to develop this standard, and to provide an unambiguous way for applications to communicate with each other.</FONT>
+<H4>11.1.2.2 <A NAME="I11"></A>The referring provider application role<A NAME="I12"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A referring provider application requests the services of another healthcare provider (a referred-to provider) application.  There may or may not be any association between the referring provider application and the receiving entity.  Although in most cases a referral environment will be inter-enterprise in nature, it is not limited to that model and applies to intra-enterprise situations also.  Because the referring provider application cannot exert any control over the referred-to provider application, it must send requests to modify the status of the referred-to provider application.  The referring provider application will often assume an auxiliary application role once a patient has been accepted by another application.  Once this happens, the referring provider application may receive unsolicited status updates from the referred-to provider application concerning the care of a patient .</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of a referring provider application in a non-automated environment might be a primary care provider diagnosing a patient with a problem that must in turn be referred to a specialist for a service.  The primary care provider would contact the specialist and refer the patient into his care.  Often, the specialist may not receive the patient into his care, preferring instead to refer the patient to another healthcare provider.  The referring provider will indicate the diagnosis and any requested services, and the specialist to whom the patient is referred will indicate whether the referral will be accepted as specified.  Once a patient referral has been accepted by the specialist, the specialist may send out updates to the primary care provider concerning the status of the patient as regards any tests performed, their outcomes, etc.</FONT>
+<H4>11.1.2.3 The referred-to provider application role<A NAME="I13"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A referred-to provider application, in the referral model, is one that performs one or more services requested by another healthcare provider (referring provider).  In other words, a referred-to provider application exerts control over a certain set of services and defines the availability of those services.  Because of this control, no other application has the ability to accept, reject, or otherwise modify a referral accepted by a particular referred-to provider application.</FONT>
+<P>
+<FONT FACE="Times New Roman">Other applications can, on the other hand, make requests to modify the status of an accepted referral &quot;owned by&quot; the referred-to provider application.  The referred-to provider application either grants or denies requests for information, or otherwise modifies the referrals for the services over which it exerts control.</FONT>
+<P>
+<FONT FACE="Times New Roman">Finally, the referred-to provider application also provides information about the referral encounter to other applications.  The reasons that an application may be interested in receiving such information are varied.  An application may have previously requested the status of the referral encounter, or it may simply be interested in the information for its own clinical reporting or statistical purposes.  There are two methods whereby the referred-to provider applications disseminate this information: by issuing unsolicited information messages to auxiliary applications, or by responding to queries made by querying applications.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of a referred-to provider application in a non-automated environment might be a specialist such as a cardiologist.  A patient does not generally go to a cardiologist for routine health care.  Instead,  a patient generally goes to a primary care provider, who may diagnose the patient with a heart ailment and refer that patient to a cardiologist.  The cardiologist would review the information provided with the referral request and determine whether or not to accept the patient into his care.  Once the cardiologist accepts the patient, anyone needing information on the status of the patient must then make requests to the cardiologist.  In addition, the cardiologist may forward unsolicited information regarding the treatment of the patient back to the primary care provider.  Once the cardiologist accepts the referred patient, he/she may determine that additional information regarding the patient is needed.  It will often take the role of a querying application by sending a query message to the patient&#146;s primary care provider and requesting additional information on demographics, insurance information, laboratory test results, etc.</FONT>
+<H4>11.1.2.4 <A NAME="I14"></A>The querying application role<A NAME="I15"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A querying application neither exerts control over, nor requests changes to a referral.  Rather than accepting unsolicited information about referrals, as does an auxiliary application, the querying application actively solicits this information using a query mechanism.  It will, in general, be driven by an entity seeking information about a referral such as a referring provider application or an entity seeking information about a referred patient such as a referred-to provider application.  The information that the querying application receives is valid only at the exact time that the query results are generated by the provider applications.  Changes made to the referral or the referred patient&#146;s status after the query results have been returned are not communicated to the querying application until it issues another query transaction.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of a querying application in a non-automated environment might be a primary care provider seeking information about a specific patient who has been referred to a specialist.  For example, a patient may have been referred to a specialist in order that  a specific test be performed, following which, the patient would return to the primary care provider.  If the specialist has not forwarded information regarding the testing procedures for the patient to the primary care provider, the primary care provider would then query the specialist for the outcome of those procedures.  Likewise, if a specialist received a referred patient without the preliminary diagnoses of test results, he/she might in turn query the primary care provider for the information leading to the diagnoses and subsequent referral.</FONT>
+<H4>11.1.2.5 <A NAME="I16"></A>The auxiliary application role<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Like querying applications, an auxiliary application neither exerts control over nor requests changes to a referral or a referred patient.  They, too,  are only concerned with gathering information about a particular referral.  An auxiliary application is considered an &quot;interested third-party,&quot; in that it is interested in any changes to a particular referral or referred patient, but has no interest in changing it or controlling it in any way.  An auxiliary application passively collects information by receiving unsolicited updates from a provider application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of an auxiliary application in a non-automated environment might be any person receiving reports containing referral information.  For example, an insurance company may need information about  the activities a patient experiences during specific referral encounters.  Primary care providers may need to forward information regarding all referred patients to a payor organization.</FONT>
+<P>
+<FONT FACE="Times New Roman">In turn, a primary care provider may have the ability to track electronically a patient&#146;s medical record.  She or he would then be very interested in receiving any information regarding the patient (s)he has referred to a specialist.</FONT>
+<H4>11.1.2.6 <A NAME="I18"></A>Application roles in a messaging environment<A NAME="I19"></A></H4>
+<P>
+<FONT FACE="Times New Roman">In a messaging environment, these four application roles communicate using specific kinds of messages and trigger events.  The following figure illustrates the relationships between these application roles in a messaging environment:</FONT>
+<P>Figure 11-1.  Application role messaging relationships
+<P>
+<IMG SRC="images/ch110026.gif" WIDTH = 29 HEIGHT = 16 ALT="Undisplayed Graphic">
+<IMG SRC="images/ch110027.gif" WIDTH = 494 HEIGHT = 399 ALT="Undisplayed Graphic">
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

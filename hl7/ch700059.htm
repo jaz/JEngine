@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>7.16.2 Channel definition data (CHN)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700060.htm">
+<LINK REL="Previous" HREF="ch700058.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700058.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700060.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E325"></A>
+<H3><B>7.16.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Channel definition data (CHN)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The CHN category OBX result segment defines recording channels for digitally sampled time-series waveforms.  Subsequent WAV category result segments carry the actual waveform samples. Each CHN category result segment defines one or more channels; the <I>OBX-5-Observation Value</I> field may repeat to define additional channels.  Each instance or repetition is formatted as a CD data type.</FONT>
+<P>
+<FONT FACE="Times New Roman">Each channel has a number (which generally defines its position in a multichannel display) and an optional name or label (also used in displays).  One or two named waveform sources may also be associated with a channel (providing for the use of differential amplifiers with two inputs).  A channel also has an associated sensitivity, calibration parameters (sensitivity correction factor, baseline, and time skew), sampling frequency, and minimum and maximum values.  The sampling frequency refers to the number of samples per unit time for the data reported in the subsequent WAV category result segments.</FONT>
+<P>
+<FONT FACE="Times New Roman">When multiple channels are defined within a single CHN category result segment, if the channel sensitivity/units (third component), sensitivity correction factor (first subcomponent of component 4), baseline (second subcomponent), time skew (third subcomponent), sampling frequency (fifth component), minimum data value (first subcomponent of component 6), or maximum data value (second subcomponent) is not present in any repetition of the <I>OBX-5-observation value</I> field, the value given in the last repetition in which the item <I>was</I> present may used by the receiver system.  This is referred to as a &quot;sticky default.&quot;  For example, if all channels have the same sensitivity, sensitivity correction factor/baseline/time skew, sampling frequency, and minimum/maximum data values, these may be specified for the first channel but omitted in all subsequent channel definitions in the same CHN category result segment, thus reducing the length of the segment.  If the sensitivity correction factor, baseline, or time skew is not present in the first channel being defined, values of 1, 0, and 0 (respectively) may be used. No other default values are assumed for components which are not present.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700058.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700060.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

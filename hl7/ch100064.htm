@@ -1,0 +1,394 @@
+<HTML>
+<HEAD>
+<TITLE>10.5.6 AIL - appointment information - location resource segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100065.htm">
+<LINK REL="Previous" HREF="ch100063.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100063.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100065.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E469"></A>
+<H3><B>10.5.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>AIL - appointment information - location resource segment</B><A NAME="I4"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The AIL segment contains information about location resources (meeting rooms, operating rooms, examination rooms, or other locations) that can be scheduled.  Resources included in a transaction using this segment are assumed to be controlled by a schedule on a schedule filler application.  Resources not controlled by a schedule are not identified on a schedule request using this segment.  Location resources are identified with this specific segment because of the specific encoding of locations used by the HL7 specification.</FONT>
+<P ALIGN=indent>Figure 10-8.  AIL attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">R/O/C</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=50 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=229 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00902</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - AIL</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0206</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00763</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Segment Action Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00903</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Location Resource ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00904</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Location Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00905</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Location Group</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">01202</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Start Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00891</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Start Date/Time Offset</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00892</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Start Date/Time Offset Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00893</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Duration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00894</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Duration Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0279</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00895</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Allow Substitution Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=50 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0278</FONT>
+</TD><TD WIDTH=50 VALIGN=top >
+<P>
+<FONT SIZE="-1">00889</FONT>
+</TD><TD WIDTH=229 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Status Code</TD></TR></FONT></TABLE><P>10.5.6.0   AIL field definitions
+<H4>10.5.6.1 Set ID - AIL<A NAME="I5"></A>  (SI)   00902</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a number that uniquely identifies the information represented by this segment in this transaction for the purposes of addition, change or deletion.</FONT>
+<H4>10.5.6.2 Segment action code  (ID)   00763</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the action to be taken when updating or modifying information in this segment from previously sent interface transactions.  Refer to<I> HL7 table 0206 - Segment action code</I> in Chapter 2, Section 2.23.4.2, &quot;Action code/unique identifier mode update definition,&quot; for valid values</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required.  It is required for all updating or modifying trigger events.</FONT>
+<H4>10.5.6.3 Location resource ID<A NAME="I6"></A>  (PL)   00903</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a coded identification of the location being requested or scheduled for an appointment.  This field is used to identify a specific location being requested, or a specific location which has been scheduled for an appointment.  If the specific location is not known but the type of location is, <I>AIL-3-location type</I> is used to identify the type of location required or scheduled.  Please see Section 2.8.26, &quot;PL - person location,&quot; in Chapter 2 for a description of each component.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required for this segment.  In new schedule request messages, it is required if the request asks that a specific location be scheduled.  For all other request messages, the specific location should be identified if the information is available (either because a specific location was initially requested, or because the filler application returned the coded identification of the specific location that has been scheduled).</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is required for all unsolicited transactions from the filler application.  It is optional for all query transactions.</FONT>
+<H4>10.5.6.4 Location type<A NAME="I7"></A>  (CE)   00904</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the role of the location requested/scheduled for this appointment.  For requests, if a specific location is not identified in <I>AIL-2-location resource ID</I>, then this field identifies the type of location that should be scheduled by the filler application.  At a minimum, the type identifier component should be valued.</FONT>
+<H4>10.5.6.5 Location group<A NAME="I8"></A>  (CE)   00905</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the requested resource as a member of the indicated group.  If, in a Schedule Request Message (SRM), no specific location is requested, but a location type is requested, <I>AIL-4-location </I><I>group</I> can be used to further qualify the type of resource being requested.</FONT>
+<H4>10.5.6.6 Start date/time<A NAME="I9"></A>  (TS)   01202</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date and time this service needs for the appointment.  This field allows the application to identify that the service is required for the appointment at a different time than the appointment&#146;s start date/time</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required.  If a value for <I>AIL-6-start date/time offset</I> is not provided, then a value is required for this field.  To specify that there is no difference between the appointment&#146;s start date/time and the resource&#146;s start date/time either replicate the appointment&#146;s start date/time into this field, or specify an offset of zero (0) in <I>AIL-6-start date/time offset</I> and any valid time unit code in <I>AIL-7-start date/time offset </I><I>units</I>.</FONT>
+<H4>10.5.6.7 Start date/time offset<A NAME="I10"></A>  (NM)   00891</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the offset this resource needs for the appointment, expressed in units of time relative to the scheduled start date/time.  This field indicates to the application that the resource is required for the appointment at a different time than the appointment&#146;s start date/time.  The first component contains the offset amount.  An offset of zero (0), or an unvalued field, indicates that the resource is required at the start date/time of the appointment.</FONT>
+<P>
+<FONT FACE="Times New Roman">A positive offset (an unsigned or positive number) indicates that the resource is required after the appointment&#146;s start date/time.  Specifying a negative offset indicates that the resource is required prior to the specified start date/time of the appointment.  Negative offsets are allowed, and sites should clearly define the effect of a negative offset on the appointment&#146;s start date/time.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required.  If a value for <I>AIL-5-start date/time </I>is not provided, then a value is required for this field.  To specify that there is no difference between the appointment&#146;s start date/time and the resource&#146;s start date/time either replicate the appointment&#146;s start date/time into this field, or specify an offset of zero (0) in <I>AIL-6-start date/time offset</I> and any valid time unit code in <I>AIL-7-start date/time </I><I>offset units</I>.</FONT>
+<H4>10.5.6.8 Start date/time offset units<A NAME="I11"></A>  (CE)   00892</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code describing the units of time used for expressing the Start Date/Time Offset field.  This field should be valued according to the recommendations made in Chapters 2 and 7.  If this field is not valued, the ISO base unit of seconds (code &quot;s&quot;) will be assumed.  Refer to Chapter 7, <I>Figures 7-10</I> through<I> 7-13,</I> for a list of ISO and ANSI+ unit codes.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required.  If a value for <I>AIL-6-start date/time offset</I> is provided, then a value is required for this field.</FONT>
+<H4>10.5.6.9 Duration<A NAME="I12"></A>  (NM)   00893</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the duration for which the resource is requested/scheduled for this appointment, if it is different than the overall duration of the requested/scheduled appointment.  This field indicates to the application that a resource is required for a different amount of time than the appointment&#146;s overall duration.  An unvalued duration indicates that the resource is required from its start date/time offset (specified in the previous two fields) until the end of the appointment.  If no start date/time offset is specified, then the resource is required for the full duration of the appointment.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field must be a positive, non-zero number.  A negative number or zero (0) is nonsensical in the context of a duration.</FONT>
+<H4>10.5.6.10 Duration units<A NAME="I13"></A>  (CE)   00894</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code describing the units of time used associated with <I>AIL-7-duration.</I>  This field should be valued according to the recommendations made in Chapters 2 and 7.  If this field is not valued, the ISO base unit of seconds (code &quot;s&quot;) will be assumed.  Refer to Chapter 7, <I>Figures 7-10</I> through<I> </I><I>7-13,</I> for a list of ISO and ANSI+ unit codes.</FONT>
+<H4>10.5.6.11 Allow substitutions code<A NAME="I14"></A>  (IS)   00895</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code indicating whether the identified location can be replace with an equivalent substitute location by the filler application.  Refer to <I>user-defined table 0279 - Allow </I><I>substitution codes</I> for suggested codes.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field is conditionally required.  It is required for all request messages.  It is optional for all unsolicited transactions, and for all query messages.</FONT>
+<H4>10.5.6.12 Filler status code<A NAME="I15"></A>  (CE)   00889</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code that describes the requested/scheduled status of the location, from the point of view of the filler application.  Refer to <I>user-defined table 0278 - Filler status codes</I> for suggested codes.</FONT>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A>This is a conditionally required field.  Because the information contained in this field is only appropriate in transactions originating from a filler application, it is required for those messages.  This includes all unsolicited transactions originating from a filler application, as well as all response messages originating from a filler application.  This field is optional for all transactions originating from placer, querying and auxiliary applications.  It is recommended that this field be left unvalued in transactions originating from applications other than the filler application.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100063.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100065.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

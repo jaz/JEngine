@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.15 EI - entity identifier</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200036.htm">
+<LINK REL="Previous" HREF="ch200034.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200034.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200036.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E36"></A>
+<H3><B>2.8.15</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>EI - entity identifier</B><A NAME="I4"></A><A NAME="I5"></A></H3>
+<P>
+<FONT FACE="Courier New">Components: &lt;ntity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt; universal ID type (ID)&gt; </FONT>
+<P>
+<FONT FACE="Times New Roman">The entity identifier defines a given entity within a specified series of identifiers.</FONT>
+<P>
+<FONT FACE="Times New Roman">The specified series,  the <I>assigning authority</I>, is defined by components 2 through 4.  The assigning authority is of the hierarchic designator data type, but it is defined as three separate components in the EI data type, rather than as a single component as would normally be the case.  This is in order to maintain backward compatibility with the EI&#146;s use as a component in several existing data fields. Otherwise, the components  2 through 4 are as defined in Section <A HREF="ch200038.htm#I4">2.8.18</A>, &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>&quot; Hierarchic designators are unique across a given HL7 implementation.</FONT>
+<H4>2.8.15.1 Entity identifier (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">The first component, <I>entity identifier, </I> is usually defined to be unique within the series of identifiers created by the <I>assigning authority, </I> defined by a hierarchic designator, represented by components 2 through 4.  (See Section <A HREF="ch200038.htm#I4">2.8.18</A>, &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>&quot;.)</FONT>
+<H4>2.8.15.2 Namespace ID (IS)</H4>
+<P>
+<FONT FACE="Times New Roman">Refer to user-defined table 0300 - Namespace ID for suggested values.</FONT>
+<H4>2.8.15.3 Universal ID (ST)  </H4>
+<P>
+<FONT FACE="Times New Roman">The HD&#146;s second component, Universal ID (UID), is a string formatted according to the scheme defined by the third component, Universal ID type (UID type).  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UID&#146;s (defined by the UID type).  The UID (second component) must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).</FONT>
+<H4>2.8.15.4 Universal ID type (ID)  </H4>
+<P>
+<FONT FACE="Times New Roman">Refer to <I>HL7 table 0301 - Universal ID type</I> for valid values.  See Section <A HREF="ch200038.htm#I4">2.8.18</A> &quot;<A HREF="ch200038.htm#I4">HD - hierarchic designator</A>&quot; for definition.  </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200034.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200036.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

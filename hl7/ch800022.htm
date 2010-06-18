@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>8.7.1 General approach of test/observation master files</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800023.htm">
+<LINK REL="Previous" HREF="ch800021.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800021.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800023.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E352"></A>
+<H3><B>8.7.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>General approach</B><B> of test/observation master files</B></H3>
+<P>
+<FONT FACE="Times New Roman">These segments define the format for the general information about the observations that a clinical or diagnostic service produces and sends to its &quot;clients.&quot;  This format can be used to send the producer&#146;s entire test/observation definition or a few of the producer&#146;s observations, such as those with procedure, technique, or interpretation changes.</FONT>
+<P>
+<FONT FACE="Times New Roman">In anticipation of an object-oriented organization of segments in future releases of this Standard, the attributes of observations/batteries have been grouped into six different segments: </FONT>
+<P>
+<FONT FACE="Times New Roman">OM1  contains the  attributes that apply to all observations</FONT>
+<P>
+<FONT FACE="Times New Roman">OM2  applies to numerically-valued observations</FONT>
+<P>
+<FONT FACE="Times New Roman">OM3  applies to text or code-valued observations</FONT>
+<P>
+<FONT FACE="Times New Roman">OM4  applies to observations or batteries that require specimens</FONT>
+<P>
+<FONT FACE="Times New Roman">OM5  contains the  attributes of batteries, or sets of observations or other batteries</FONT>
+<P>
+<FONT FACE="Times New Roman">OM6  contains the  quantities (observations in a most general sense) that are calculated from one or more other observations</FONT>
+<P>
+<FONT FACE="Times New Roman">Thus, the full definition of a numerically-valued laboratory observation would require the transmission of OM1, OM2, and OM4.</FONT>
+<P>
+<FONT FACE="Times New Roman">In the following discussion, we use OMx to refer to any of the six observation-defining segments.  Each instance of an OMx segment contains the information about one observation or observation battery.  These OMx segments are designed to be &quot;inclusive&quot; and accommodate the attributes of many kinds of observations.  Thus, the fact that a field is listed in a particular segment should not be construed as meaning that a producer must include information about that item in its definition transmission.  Many fields will apply to some terms; others will not.  One observation producer may choose to populate one set of fields; another may choose to populate a different set of fields, according to the requirements of that producer&#146;s &quot;client.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">Most of the fields of data type TX in those segments are intended to include information typically contained in a diagnostic service&#146;s user manual.  Such fields should describe how the data is to be interpreted or used, and are not intended for computer interpretation.</FONT>
+<P>
+<FONT FACE="Times New Roman">Remember that the magnitude of a treatment can also be regarded as an observation and, as such, can be represented as an observation within these segments.  Many examples exist.  When a blood gas is transmitted, the requesting service usually transmits the amount of inspired O2 (a treatment) on requisition.  (In an electronic transmission, the service would send this as an OBX segment, along with the electronic order for the test.)  When blood levels are drawn, the amount and time of the last dose are routinely included as observations on the request for service.  A pharmacy system could routinely send to a medical record system the average daily dose of each outpatient medication it dispenses.  In such cases, the treatment amounts would be observations to the receiving system and would be transmitted as OBX segments.  When received, they would be treated like any other observation.  A medical record system could then create, for example, a flowchart of lab results, or lab results mixed with relevant treatments.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800021.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800023.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

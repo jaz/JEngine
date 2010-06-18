@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.18 RDF - table row definition segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200142.htm">
+<LINK REL="Previous" HREF="ch200140.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200140.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200142.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E126"></A>
+<H3><B>2.24.18</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><B>RDF - table row definition segment</B><A NAME="I17"></A><A NAME="I18"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I19"></A>The RDF segment defines the content of the row data segments (RDT) in the Tabular Data Response Message (TBR).  It is used in two ways:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; As an optional segment in the SPQ message (Stored Procedure Request) or the VQQ (Virtual Table Query) message, this segment can be used to limit the number of columns returned and to specify what column positions the fields occupy (where supported, these features can be used to override the defaults for the particular query).  If omitted, all fields defined for the query are returned in their default column order.</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; As a required segment on the tabular data response message (TBR), this segment defines the contents of the table row data (RDT) segments that follow.</FONT>
+<P ALIGN=indent><A NAME="I20"></A><A NAME="I21"></A>Figure 2-25.  RDF attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=51 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=241 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00701</FONT>
+</TD><TD WIDTH=241 VALIGN=top >
+<P>
+<FONT SIZE="-1">Number of Columns per Row</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">RCD </FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00702</FONT>
+</TD><TD WIDTH=241 VALIGN=top >
+<P>
+<FONT SIZE="-1">Column Description</TD></TR></FONT></TABLE><P>2.24.18.0   RDF field definitions
+<H4><B>2.24.18.1</B><B> </B>Number of columns per row  (NM)   00701</H4>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I22"></A>Definition: This field specifies the number of data columns (and therefore the number of fields) contained within each row of returned data.</FONT>
+<H4>2.24.18.2 Column description  (RCD)   00702</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;HL7 item number (ST)&gt; ^ &lt;HL7 data type (ST)&gt; ^ &lt;maximum column width (NM)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I23"></A>Definition: Each repetition of this field consists of three components:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; The HL7 item number, which identifies the field occupying the column.  (Refer to Section <A HREF="ch200139.htm#I11">2.24.16.2</A>, &quot;<A HREF="ch200139.htm#I11">Query/response format code  (ID)   00697</A> for item numbering conventions).</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; The 2 or 3 character HL7 data type, as defined in Section <A HREF="ch200020.htm#I19">2.8</A>, &quot;<A HREF="ch200020.htm#I20">Data types</A>.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; The maximum width of the column, as dictated by the responding system.  (This may vary from the HL7-defined maximum field length.)</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200140.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200142.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

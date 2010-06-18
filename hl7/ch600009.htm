@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>6.3.6 BAR/ACK - end account (event P06) </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600010.htm">
+<LINK REL="Previous" HREF="ch600008.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E267"></A>
+<H3><B>6.3.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>BAR/ACK - end account</B><A NAME="I9"></A><B> (event P06</B><A NAME="I10"></A><A NAME="I11"></A><B>)</B><B> </B></H3>
+<P>
+<FONT FACE="Times New Roman">The P06 event is a notification that the account is no longer open, that is, no new charges can accrue to this account.  This notification is not related to whether or not the account is paid in full. <I> EVN</I><I>-</I><I>2-</I><I>d</I><I>ate/time of </I><I>event</I> must contain the account end date.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>BAR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>End</U><U> Billing Account</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I12"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV1 ]    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgement</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I13"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The error segment indicates the fields that caused a transaction to be rejected.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

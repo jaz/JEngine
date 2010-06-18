@@ -1,0 +1,634 @@
+<HTML>
+<HEAD>
+<TITLE>7.11.1 PES - product experience sender segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700045.htm">
+<LINK REL="Previous" HREF="ch700043.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700043.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700045.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E315"></A>
+<H3><B>7.11.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>PES - product experience sender segment</B></H3>
+<P>Figure 7-20.  PES attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=41 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">RP/ #</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">TBL #</FONT>
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=172 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01059</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Organization Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01060</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Individual Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01062</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">44</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01063</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Telephone</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">75</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">EI</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01064</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Event Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01065</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Sequence Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01066</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Event Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01067</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Comment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01068</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sender Aware Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01069</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Report Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0234</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01070</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Report Timing/Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0235</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01071</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Report Source</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=41 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">0236</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01072</FONT>
+</TD><TD WIDTH=172 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Reported To</TD></TR></FONT></TABLE></CENTER><P>7.11.1.0   PES - field definitions
+<H4>7.11.1.1 Sender organization name  (XON)   01059</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt;^ &lt;organization name type code (IS)&gt; ^&lt;ID Number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority  (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt; </FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; * &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility: &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; * &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the organization sending the message.  Coded lists of manufacturers such as that from the World Health Organization database might be used in the component of the coded name to identify the source code type.  If sent from an individual, this field may not be sent.</FONT>
+<H4>7.11.1.2 Sender individual name  (XCN)   01060</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (ST)&gt; ^&lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^&lt;assigning authority (HD)&gt; ^&lt;name type (ID)&gt;  ^&lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility ID:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;univerwsal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the name of the contact individual.  If sent by an organization, the individuals in the organization who serve as primary contact points correspondence regarding this event.</FONT>
+<H4>7.11.1.3 Sender address  (XAD)   01062</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the postal address of the message sender to which correspondence regarding the experience being reported should be directed.</FONT>
+<H4>7.11.1.4 Sender telephone  (XTN)   01063</H4>
+<P>
+<FONT FACE="Courier New">Components:  [NNN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the telephone number of the message sender to which telephone communications regarding the experience being reported should be directed.  An electronic mail address can be specified in this field.</FONT>
+<H4>7.11.1.5 Sender event identifier  (EI)   01064</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The first component of this field contains the product manufacturer&#146;s unique alphanumeric identifier for this specific event.  This identifier will be used on all subsequent communications regarding this event.  For events reported to the FDA, the identifier is: the FDA assigned manufacturer or distributor number; a hyphen; the 4-digit year; a hyphen; and a consecutive 5-digit sequence number for each report filled by the sender that year.  For example, the event identifier for the third event reported in 1996 by a manufacturer whose FDA-assigned registration number is 1234567 would be 1234567-1993-3.  Organizations without an FDA-assigned registration number should use 0000000 until assigned a number.  Reports from other facilities should use the 10-digit HCFA number left padded with zeros in place of the FDA-assigned registration number.  The second through fourth components are defined in exactly the same way as the three components of the hierarchic designator (HD) data type (Section 2.8.18, &quot;HD - hierarchic designator&quot;).</FONT>
+<H4>7.11.1.6 Sender sequence number  (NM)   01065</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains sequentially assigned integer values which distinguish messages which share the same sender event identification element.  0 for initial report, 1 for second, and so on.</FONT>
+<H4>7.11.1.7 Sender event description  (FT)   01066</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the summary narrative text description of the event that occurred written by the sender, which may include a description of the nature of the event, how the product was involved, any environmental conditions that may have influenced the event, and patient follow-up or required treatment.  Note that laboratory results can be encoded as OBX segments rather then including them in the narrative.  By representing clinical information in OBX segments rather than in the narrative, these data become much more useful and flexible.</FONT>
+<H4>7.11.1.8 Sender comment  (FT)   01067</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the text commentary regarding the report being made, such as disclaimers, which is not necessarily part of the report.</FONT>
+<H4>7.11.1.9 Sender aware date/time  (TS)</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field identifies the date the sender became aware of the event.</FONT>
+<H4>7.11.1.10 Event report date  (TS)   01069</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the date the message was originally sent to the regulatory agency.</FONT>
+<H4>7.11.1.11 Event report timing type  (ID)   01070</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the timing type of report as required by regulatory agency.  Refer to<I> HL7 table </I><I>0234 - Report timing</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0234 - Report timing</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=290 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CO</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">Correction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AD</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">Additional information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RQ</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">Requested information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DE</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">Device evaluation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PD</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">Periodic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3D</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">3 day report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7D</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">7 day report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10D</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">10 day report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15D</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">15 day report</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30D</FONT>
+</TD><TD WIDTH=290 VALIGN=top >
+<P>
+<FONT SIZE="-1">30 day report</TD></TR></FONT></TABLE><H4>7.11.1.12 Event report source  (ID)   01071</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the source from which the sender learned about the event.  Multiple sources may be reported by repeating the element.</FONT>
+<P>
+<FONT FACE="Times New Roman">If the source of the report is a clinical trial, the CSR and CSP segments can be included to define the study.  Refer to <I>HL7 table 0235 - Report source</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0235 - Report source</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=296 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Clinical trial</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Literature</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">H</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Health professional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Regulatory agency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Database/registry/poison control center</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Non-healthcare professional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">M</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Manufacturer/marketing authority holder</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">E</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Distributor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other</TD></TR></FONT></TABLE><H4>7.11.1.13 Event reported to  (ID)   01072</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates all the entities to whom the entity submitting the report has reported the event.  Repeat the element if the report was submitted to more than one entity.  Refer to <I>HL7 table 0236 - Event </I><I>reported to</I> for valid values.</FONT>
+<P>Table 0236 - Event reported to
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=296 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">M</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Manufacturer</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Local facility/user facility</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Regulatory agency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=135 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=296 VALIGN=top >
+<P>
+<FONT SIZE="-1">Distributor</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch700043.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700045.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

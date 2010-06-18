@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+<TITLE>2.24.22 QAK- query acknowledgment segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200146.htm">
+<LINK REL="Previous" HREF="ch200144.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200144.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200146.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E130"></A>
+<H3><B>2.24.22</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>QAK- query acknowledgment segment</B><A NAME="I15"></A><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The QAK segment contains information sent with responses to a query.</FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Figure 2-29.  QAK attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=40 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=248 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00696</FONT>
+</TD><TD WIDTH=248 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query Tag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0208</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00708</FONT>
+</TD><TD WIDTH=248 VALIGN=top >
+<P>
+<FONT SIZE="-1">Query Response Status</TD></TR></FONT></TABLE><P>2.24.22.0   QAK field definitions
+<H4>2.24.22.1 Query tag  (ST)   00696</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may be valued by the initiating system to identify the query, and may be used to match response messages to the originating query.  If it is valued, the responding system is required to echo it back as the first field in the query acknowledgment segment (QAK).  This field differs from<I> MSA-2-message </I><I>control ID</I> in that its value remains constant for each message (i.e., all continuation messages) associated with the query, whereas <I>MSA-2-message control ID</I> may vary with each continuation message, since it is associated with each individual message, not the query as a whole.</FONT>
+<H4>2.24.22.2 Query response status  (ID)   00708</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field allows the responding system to return a precise response status.  It is especially useful in the case where no data is found that matches the query parameters, but where there is also no error.  It is defined with <I>HL7 table 0208 - Query response status</I>. </FONT>
+<P ALIGN=indent><A NAME="I19"></A><A NAME="I20"></A>Table 0208 - Query response status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=186 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=389 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=186 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OK</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT SIZE="-1">Data found, no errors (this is the default)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=186 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NF</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT SIZE="-1">No data found, no errors</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=186 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AE</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT SIZE="-1">Applications error</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=186 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AR</FONT>
+</TD><TD WIDTH=389 VALIGN=top >
+<P>
+<FONT SIZE="-1">Application reject</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200144.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200146.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

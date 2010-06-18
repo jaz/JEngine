@@ -1,0 +1,1739 @@
+<HTML>
+<HEAD>
+<TITLE>6.4.5 GT1 - guarantor segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600016.htm">
+<LINK REL="Previous" HREF="ch600014.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600014.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600016.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E272"></A>
+<H3><B>6.4.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>GT1</B><A NAME="I7"></A><A NAME="I8"></A><B> </B><B>-</B><B> guarantor</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The GT1 segment contains guarantor (e.g., the person or the organization with financial responsibility for payment of a patient account) data for patient and insurance billing applications. </FONT>
+<P>Figure 6-5.  GT1 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=38 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=53 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=236 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00405</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - GT1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">59</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00406</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00407</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00408</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Spouse Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00409</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00410</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Ph Num-Home</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00411</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Ph Num-Business</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00412</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Date/Time Of Birth</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0001</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00413</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Sex</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0068</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00414</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0063</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00415</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Relationship</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00416</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor SSN</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00417</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Date - Begin</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00418</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Date - End</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00419</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Priority</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">130</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00420</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employer Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00421</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employer Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00422</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employer Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00423</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employee ID Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0066</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00424</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employment Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">130</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00425</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Organization Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00773</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Billing Hold Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00774</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Credit Rating Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00775</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Death Date And Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00776</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Death Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0218</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00777</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Charge Adjustment Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP  </FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00778</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Household Annual Income</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00779</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Household Size</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00780</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employer ID Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0002</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00781</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Marital Status Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">31</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00782</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Hire Effective Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">32</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00783</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Employment Stop Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">33</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0223</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00755</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Living Dependency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">34</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0009</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00145</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ambulatory Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">35</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0171</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00129</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Citizenship</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">36</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0296</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00118</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Language</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">37</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0220</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00742</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Living Arrangement</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">38</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0215</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00743</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Publicity Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">39</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00744</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Protection Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0231</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00745</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Student Indicator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">41</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0006</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00120</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Religion</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">42</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00746</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mother&#146;s Maiden Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">43</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0212</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00739</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Nationality</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">44</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0189</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00125</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ethnic Group</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">45</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00748</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Person Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">46</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00749</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Person&#146;s Telephone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">47</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">80</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0222</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00747</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">48</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0063</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00784</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Relationship</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">49</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00785</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job Title</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">50</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">JCC</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00786</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job Code/Class</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">51</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">130</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XON</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">01232</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Employer's Organization Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">52</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0310</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00753</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Handicap </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">53</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0311</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">00752</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">54</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">50</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">FC</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0064</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">01231</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Financial Class</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">55</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0005</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">01292</FONT>
+</TD><TD WIDTH=236 VALIGN=top >
+<P>
+<FONT SIZE="-1">Guarantor Race</TD></TR></FONT></TABLE><P>6.4.5.0 GT1 field definitions
+<H4>6.4.5.1 Set ID - GT1  (SI)   00405</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>GT1-1-set ID</I> contains a number that identifies this transaction.  For the first occurrence of the segment the sequence shall be 1, for the second occurrence it shall be 2, etc.</FONT>
+<H4>6.4.5.2 Guarantor number  (CX)   00406</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Definition:  This field contains the primary identifier, or other identifiers,  assigned to the guarantor.</FONT>
+<H4>6.4.5.3 Guarantor name  (XPN)   00407</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;<B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the guarantor  Multiple names for the same guarantor may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<P>Beginning with Version 2.3, if the guarantor is an organization , send a null value (&quot;&quot;) in <I>GT1-3-guarantor  </I><I>person name </I>and put the organization name in <I>GT1-21-guarantor organization name</I>.  Either guarantor person name or guarantor organization name is required.
+<H4>6.4.5.4  Guarantor spouse name  (XPN)   00408</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;<B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the guarantor&#146;s spouse  Multiple names for the same guarantor spouse may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.5 Guarantor address  (XAD)   00409</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s address. Multiple addresses for the same person may be sent in this field.  The mailing address is assumed to be in the first repetition. When the mailing address is not sent, a repeat delimiter must be sent first for the first repetition.</FONT>
+<H4>6.4.5.6 Guarantor ph num - home  (XTN)   00410 C</H4>
+<P>
+<FONT FACE="Courier New">components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s home phone number.  All personal phone numbers for the guarantor may be sent in this field.  The primary telephone number is assumed to be in the first repetition.  When the primary telephone number is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.7 Guarantor ph num - business  (XTN)   00411</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s business phone number.  All business phone numbers for the guarantor may be sent in this field.  The primary telephone number is assumed to be in the first repetition.  When the primary telephone number is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.8 Guarantor date and time of birth  (TS)   00412</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s date of birth. </FONT>
+<H4>6.4.5.9 Guarantor sex  (IS)   00413</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s gender.  Refer to <I>user-defined table 0001 - Sex</I> for valid values. </FONT>
+<H4>6.4.5.10 Guarantor type  (IS)   00414</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the type of guarantor, e.g., individual, institution, etc.  Refer to <I>user-defined </I><I>table 0068 - Guarantor type</I> for suggested values.</FONT>
+<H4>6.4.5.11 Guarantor relationship  (IS)   00415</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the relationship of the guarantor with the patient, e.g., parent, child, etc.  Refer to <I>user-defined table 0063 - Relationship</I> for suggested values.</FONT>
+<H4>6.4.5.12 Guarantor SSN  (ST)   00416</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s social security number.</FONT>
+<H4>6.4.5.13 Guarantor date - begin  (DT)   00417</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the guarantor becomes responsible for the patient&#146;s account. </FONT>
+<H4>6.4.5.14 Guarantor date - end  (DT)   00418</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the guarantor stops being responsible for the patient&#146;s account. </FONT>
+<H4>6.4.5.15 Guarantor priority  (NM)   00419</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to determine the order in which the guarantors are responsible for the patient&#146;s account.  &quot;1&quot; = primary guarantor, &quot;2&quot; = secondary guarantor, etc.</FONT>
+<H4>6.4.5.16 Guarantor employer name  (XPN)   00420</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;<B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the guarantor&#146;s employer, if the employer is a person.  When the guarantor&#146;s employer is an organization, use <I>GT1-51-guarantor employer&#146;s organization name</I>  Multiple names for the same person may be sent in this field, not multiple employers.  The legal name must be sent first in the repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.17 Guarantor employer address  (XAD)   00421</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s employer&#146;s address.  Multiple addresses for the same employer may be sent in this field.  The mailing address must be sent first in the repetition.  When the mailing address is not sent, a repeat delimiter must be sent first for the first repetition.</FONT>
+<H4>6.4.5.18 Guarantor employer phone number  (XTN)   00422</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s employer&#146;s phone number.  Multiple phone numbers for the same employer.  The primary telephone number must be sent first in the sequence.  When the primary telephone number is not sent, a repeat delimiter must be sent first for the first repetition. The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.19 Guarantor employee ID number  (CX)   00423</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s employee number. </FONT>
+<H4>6.4.5.20 Guarantor employment status  (IS)   00424</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the code that indicates the guarantor&#146;s employment status, e.g., full time, part time, self-employed, etc.  Refer to <I>user-defined</I> <I>table 0066 - Employment status</I> for suggested values.</FONT>
+<H4>6.4.5.21 Guarantor organization name  (XON)   00425</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the guarantor when the guarantor is an organization.  Multiple names for the same guarantor may be sent in this field, not multiple guarantors.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<P>
+<FONT FACE="Times New Roman">Beginning with Version 2.3, if the guarantor is a person, send a null value (&quot;&quot;) <I>in GT1-21-guarantor </I><I>organization name</I> and put the person name in <I>GT1-3-guarantor person name</I>.  Either guarantor person name or guarantor organization name is required.</FONT>
+<H4>6.4.5.22 Guarantor billing hold flag  (ID)   00773</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Refer to <I>HL7</I> <I>table 0136 - </I><I>Y</I><I>es/no indicator </I>for valid values.  This field indicates whether or not a system should suppress printing of the guarantor&#146;s bills.  </FONT>
+<P>
+<FONT FACE="Times New Roman">Y a system should suppress printing of guarantor&#146;s bills</FONT>
+<P>
+<FONT FACE="Times New Roman">N a system should not suppress printing of guarantor&#146;s bills</FONT>
+<H4>6.4.5.23 Guarantor credit rating code  (CE)   00774</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s credit rating.</FONT>
+<H4>6.4.5.24 Guarantor death date and time  (TS)   00775</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is used to indicate the date and time on which the guarantor&#146;s death occurred.</FONT>
+<H4>6.4.5.25 Guarantor death flag  (ID)   00776</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether or not the guarantor is deceased.  Refer to <I>HL7 table 0136 - </I><I>Y</I><I>es/no </I><I>indicator </I>for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y the guarantor is deceased</FONT>
+<P>
+<FONT FACE="Times New Roman">N the guarantor is living</FONT>
+<H4>6.4.5.26 Guarantor charge adjustment code  (CE)   00777</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains user-defined code that indicates which adjustments should be made to this guarantor&#146;s charges.  For example, when the hospital agrees to adjust this guarantor&#146;s charges to a sliding scale.  Refer to <I>user-defined table 0218 - Charge adjustment </I>for suggested values<I>.</I></FONT>
+<P>
+<FONT FACE="Times New Roman">Example:  This field would contain the value used for sliding-fee scale processing.</FONT>
+<H4>6.4.5.27 Guarantor household annual income  (CP)   00778</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the combined annual income of all members of the guarantor&#146;s household.</FONT>
+<H4>6.4.5.28 Guarantor household size  (NM)   00779</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field specifies the number of people living at the guarantor&#146;s primary residence.</FONT>
+<H4>6.4.5.29 Guarantor employer identification number  (CX)   00780</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This is a code that uniquely identifies the guarantor&#146;s employer when the employer is a person.  It may be a user-defined code or a code defined by a government agency (Federal Tax ID#).  </FONT>
+<P>
+<FONT FACE="Times New Roman">When further breakdowns of employer information are needed, such as a division or plant, it is recommended that the coding scheme incorporate the relationships (e.g., define separate codes for each division).</FONT>
+<H4>6.4.5.30 Guarantor marital status code  (IS)   00781</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the marital status of the guarantor.  Refer to<I> </I><I>u</I><I>ser-</I><I>d</I><I>efined </I><I>t</I><I>able 0002 - </I><I>M</I><I>arital </I><I>s</I><I>tatus</I> for suggested values.</FONT>
+<H4>6.4.5.31 Guarantor hire effective date  (DT)   00782</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date that the guarantor&#146;s employment began.</FONT>
+<H4>6.4.5.32 Guarantor employment stop date  (DT)   00783</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the date on which the guarantor&#146;s employment with a particular employer ended.</FONT>
+<H4>6.4.5.33 Living dependency  (IS)   00755</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Identifies the specific living conditions of the guarantor.  Refer <I>to user-defined table 0223 - Living </I><I>dependency </I>for suggested values.</FONT>
+<P>User-defined Table 0223 - Living dependency 
+
+<TABLE >
+<TR>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value </U></B></FONT>
+</TD><TD WIDTH=257 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U> Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D </FONT>
+</TD><TD WIDTH=257 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Spouse dependent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M </FONT>
+</TD><TD WIDTH=257 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Medical Supervision Required</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S </FONT>
+</TD><TD WIDTH=257 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Small children</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">WU </FONT>
+</TD><TD WIDTH=257 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Walk up</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=60 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CB </FONT>
+</TD><TD WIDTH=257 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Common Bath</TD></TR></FONT></TABLE><H4>6.4.5.34 Ambulatory status code  (IS)   00145</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Identifies the transient state of mobility for the guarantor.  Refer <I>to user-defined table 0009 - </I><I>Ambulatory status</I> for suggested values.</FONT>
+<H4>6.4.5.35 Citizenship  (IS)   00129</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the code to identify the guarantor&#146;s citizenship.  HL7 recommends using ISO table 3166 as the suggested values in <I>user-defined table 0171 -Citizenship.</I></FONT>
+<H4>6.4.5.36 Primary language  (CE)   00118</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the guarantor&#146;s primary speaking language.  HL7 recommends using ISO table 639 as the suggested values in <I>user-defined table 0296 - Language</I>.</FONT>
+<H4>6.4.5.37 Living arrangement  (IS)   00742</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the situation in which the person lives at his residential address.  Refer to <I>the </I><I>user-defined table 0220- Living arrangement </I>for suggested values.</FONT>
+<P ALIGN=indent>User-defined Table 0220 - Living arrangement</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value </U></B></FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U> Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">A </FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Alone</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">F </FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Family</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">I </FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Institution</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R </FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Relative</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">U </FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Unknown</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=84 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">S </FONT>
+</TD><TD WIDTH=185 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Spouse Only</TD></TR></FONT></TABLE><H4>6.4.5.38 Publicity indicator  (CE)   00743</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a user-defined code indicating what level of publicity is allowed (e.g., No Publicity, Family Only) for a guarantor.  Refer to <I>user-defined table 0215 - Publicity indicator</I> for suggested values.</FONT>
+<H4>6.4.5.39 Protection indicator  (ID)   00744</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the guarantor&#146;s protection, which determines whether or not access to information about this enrollee should be restricted from users who do not have adequate authority.  Refer to <I>HL7 table 0136 - </I><I>Y</I><I>es/no indicator </I>for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y restrict access</FONT>
+<P>
+<FONT FACE="Times New Roman">N do not restrict access</FONT>
+<H4>6.4.5.40 Student indicator  (IS)   00745</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the guarantor is currently a student or not, and whether the patient is a full-time or part-time student.  This field does not indicate the degree level (high school, college) of the student, or his/her field of study (accounting, engineering, etc.).  Refer<I> </I>to<I> user-defined table 0231- Student </I><I>status</I> for suggested values.</FONT>
+<P ALIGN=indent>User-defined Table 0231 - Student status</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Values </U></B></FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U> Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">F </FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Full-time student</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">P </FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Part-time student</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">N </FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Not a student</TD></TR></FONT></TABLE><H4>6.4.5.41 Religion  (IS)   00120</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the type of religion practiced by the guarantor.  Refer to <I>user-defined table </I><I>0</I><I>006</I><I> - Religion</I> for suggested values.</FONT>
+<H4>6.4.5.42 Mother&#146;s maiden name  (XPN)   00746</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;<B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the guarantor&#146;s mother&#146;s maiden name.</FONT>
+<H4>6.4.5.43 Nationality  (CE)   00739</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code that identifies the nation or national grouping to which the person belongs.  This may be different from a person&#146;s citizenship in countries in which multiple nationalities are recognized (for example, Spain: Basque, Catalan, etc.).  HL7 recommends using ISO table 3166 as suggested values in <I>user-defined table 0212 - Nationality</I>.</FONT>
+<H4>6.4.5.44 Ethnic group  (IS)   00125</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s ethnic or race group.  ERISA has a published list of ethnic classifications that may be used by local agreement at a site.  Refer to <I>u</I><I>ser-</I><I>d</I><I>efined </I><I>t</I><I>able 0189 - </I><I>E</I><I>thnic </I><I>g</I><I>roup </I>for suggested values.</FONT>
+<H4>6.4.5.45 Contact person name  (XPN)   00748</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt;<B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the person who should be contacted regarding the guarantor bills, etc.  This may be someone other than the guarantor.  (Contact guarantor&#146;s wife regarding all bills - guarantor lives out of country).  The components for this data type are described in Chapter 2.</FONT>
+<P>
+<FONT FACE="Times New Roman">This is a repeating field that allows for multiple names for the same person.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.</FONT>
+<H4>6.4.5.46 Contact person phone number  (XTN)   00749</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^&lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the telephone number of the guarantor (person) to contact regarding guarantor bills, etc.  Multiple phone numbers for that person may be sent in this sequence.  The primary telephone number is assumed to be in the first repetition.  When the primary telephone number is not sent, a repeat delimiter must be sent first for the first repetition.  The components for this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.47 Contact reason  (CE)   00747</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a user-defined code that identifies the reason for contacting the guarantor, for example, to phone the guarantor if payments are late.  Refer to <I>user-defined table 0222 - Contact reason</I> for suggested values.</FONT>
+<H4>6.4.5.48 Contact relationship code  (IS)   00784</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Identifies the guarantor relationship to  the  contact person specified above.   Some examples of the relationship between the guarantor and the guarantor contact person might include wife, attorney, power of attorney, self, and organization.  Refer to <I>u</I><I>ser-</I><I>d</I><I>efined </I><I>t</I><I>able 0063 - </I><I>R</I><I>elationship</I> for suggested values.</FONT>
+<H4>6.4.5.49 Job title  (ST)   00785</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a descriptive name of the guarantor&#146;s occupation (e.g., Sr. Systems Analyst, Sr. Accountant).</FONT>
+<H4>6.4.5.50 Job code/class  (JCC)   00786</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;job code (IS)&gt; ^ &lt;job class (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the guarantor&#146;s job code and employee classification.  Refer to <I>user-defined </I><I>tables 0327 - Job code</I> and <I>0328 - Job class</I> for suggested values.</FONT>
+<H4>6.4.5.51 Guarantor employer's organization name  (XON)   01232</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the guarantor&#146;s employer when the guarantor&#146;s employer is an organization.  When the guarantor's employer is a person, use<I> GT1-16 guarantor employer name</I>.  Multiple names for the same guarantor may be sent in this field.  The legal name is assumed to be in the first repetition.  When the legal name is not sent, a repeat delimiter must be sent first for the first repetition.  The components of this data type are described in Chapter 2.</FONT>
+<H4>6.4.5.52 Handicap    (IS)   00753</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code to describe the guarantor's disability.  Refer to <I>user-defined table </I><I>0310 - Handicap</I> for suggested values.</FONT>
+<H4>6.4.5.53 Job status  (IS)   00752</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code that identifies the guarantor's current job status, for example, part time/workers comp, full time/leave of absence, full time/suspended.  Refer to <I>user-defined table 0311 - Job </I><I>status</I> for suggested values.</FONT>
+<H4>6.4.5.54 Guarantor financial class  (FC)   01231</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;financial class (IS)&gt; ^ &lt;effective date (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains <A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A>the financial class (FC) assigned to the guarantor for the purpose of identifying sources of reimbursement.  It can be different than that of the patient.  When the FC of the guarantor is different than the FC of the patient, and the guarantor&#146;s coverage for that patient has been exhausted, the source of reimbursement falls back onto the FC of the patient.  Refer <I>to user-defined table 0064 - Financial </I><I>class</I> for suggested values.</FONT>
+<H4>6.4.5.55 Guarantor race (IS)   01292</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field refers to the guarantor&#146;s race.  Refer to user-defined table 0005 - Race for suggested values.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600014.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600016.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

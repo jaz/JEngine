@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>2.9.1 Formatting codes</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200072.htm">
+<LINK REL="Previous" HREF="ch200070.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200070.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200072.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E71"></A>
+<H3><B>2.9.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>Formatting codes</B></H3>
+<P>
+<FONT FACE="Times New Roman">When a field of type TX, FT, or CF is being encoded, the escape character may be used to signal certain special characteristics of portions of the text field.  The escape character is whatever display ASCII character is specified in the Escape Character component of <I>MSH-2-encoding characters</I>.  For purposes of this section, the character \ will be used to represent the character so designated in a message.  An escape sequence consists of the escape character followed by an escape code ID of one character, 0 or more data characters, and another occurrence of the escape character.  The following escape sequences are defined:</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\H\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">start highlighting</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\N\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">normal text (end highlighting)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\F\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">field separator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\S\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">component separator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\T\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">subcomponent separator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\R\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">repetition separator</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\E\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">escape character</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\Xdddd...\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">hexadecimal data</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=78 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">\Zdddd...\</FONT>
+</TD><TD WIDTH=306 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">locally defined escape sequence</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The escape sequences for field separator, component separator, subcomponent separator, repetition separator, and escape character are also valid within an ST data field.</FONT>
+<P>
+<FONT FACE="Times New Roman">No escape sequence may contain a nested escape sequence. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200070.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200072.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

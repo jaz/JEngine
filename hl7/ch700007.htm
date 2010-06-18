@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>7.2.1 ORU/ACK - unsolicited transmission of an observation messa</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700008.htm">
+<LINK REL="Previous" HREF="ch700006.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E287"></A>
+<H3><B>7.2.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>ORU/ACK - unsolicited transmission of an observatio</B><B>n message (event R01)</B><A NAME="I10"></A><A NAME="I11"></A></H3>
+<P>
+<FONT FACE="Times New Roman">With the type (OBX) defined in this chapter, and the OBR defined in Chapter 4, one can construct almost any clinical report as a three-level hierarchy, with the PID segment defined in Chapter 3 at the upper level, an order record (OBR) at the next level and one or more observation records (OBX) at the bottom.</FONT>
+<P>
+<FONT FACE="Times New Roman">One result segment (OBX) is transmitted for each component of a  diagnostic report, such as an EKG or obstetrical ultrasound or electrolyte battery. </FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ORU</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Observational Results (Unsolicited)</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PD1]   Additional Patient Identification    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{NTE}]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [PV2]]   Additional Patient Visit      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [ORC]   Order common         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      OBR   Observations Report ID      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[NTE]}  Notes and comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [OBX]  Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          {[NTE]}  Notes and comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        }   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {[CTI]}   Clinical Trial Identifier      7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer        2</FONT></PRE>
+<P> 
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Acknowledgement</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message acknowledgement      2</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=557 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The ORC is permitted but not required in this message.  Any information that could be included in either the ORC or the OBR must be included in the OBR on reporting.  Notice also that the ORU (and the QRY) messages accommodate reports about many patients.  </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Many report headers (OBR) may be sent beneath each patient segment, with many separate observation segments (OBX) beneath each OBR.  Note segments (NTE) may be inserted after any of the above segments.  The note segment applies to the entity that immediately precedes it, i.e., the patient if it follows the PID segment, the observation if it follows the OBR segment, and the individual result if it follows the OBX segment. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

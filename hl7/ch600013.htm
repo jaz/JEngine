@@ -1,0 +1,386 @@
+<HTML>
+<HEAD>
+<TITLE>6.4.3 DRG - diagnosis related group segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600014.htm">
+<LINK REL="Previous" HREF="ch600012.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E270"></A>
+<H3><B>6.4.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>DRG</B><A NAME="I9"></A><A NAME="I10"></A><B> - diagnosis related group</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The DRG segment contains diagnoses-related grouping information of various types.  The DRG segment is used to send the DRG information, for example, for billing and medical records encoding.  </FONT>
+<P>Figure 6-3.  DRG attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=57 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=235 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0055</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00382</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diagnostic Related Group </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00769</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">DRG Assigned Date/Time </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00383</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">DRG Approval Indicator </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0056</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00384</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">DRG Grouper Review Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0083</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00385</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">Outlier Type </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00386</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">Outlier Days </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00387</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">Outlier Cost</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0229</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00770</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">DRG Payor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00771</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">Outlier Reimbursement</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=52 VALIGN=top >
+<P>
+<FONT SIZE="-1">00767</FONT>
+</TD><TD WIDTH=235 VALIGN=top >
+<P>
+<FONT SIZE="-1">Confidential Indicator</TD></TR></FONT></TABLE><P>6.4.3.0 DRG field definitions
+<H4>6.4.3.1 Diagnostic related group  (CE)   00382</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the DRG for the transaction.  Interim DRG&#146;s could be determined for an encounter.  For the identifier component, refer to<I> user-defined table 0055- DRG code</I> for suggested values.  For the name of coding system component, send the grouper version and type.</FONT>
+<H4>6.4.3.2 DRG assign date/time (TS)   00769</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the time stamp to indicate the date and time that the DRG was assigned.</FONT>
+<H4>6.4.3.3 DRG approval indicator  (ID)   00383</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates if the DRG has been approved by a reviewing entity.  Refer to<I> HL7 table </I><I>0136 - Yes/no indicator</I> for valid values.</FONT>
+<H4>6.4.3.4 DRG grouper review code  (IS)   00384</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Refer to<I> user-defined table 0056 - DRG grouper review code</I> for suggested values.  This code indicates that the grouper results have been reviewed and approved.</FONT>
+<H4>6.4.3.5    Outlier type  (CE)   00385</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Refer to <I>user-defined table 0083 - Outlier type</I> for suggested values.  Refers to the type of outlier that has been paid.</FONT>
+<P ALIGN=indent>User-defined Table 0083 - Outlier type</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Values </U></B></FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U> Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">outlier days</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=162 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">outlier cost</TD></TR></FONT></TABLE><H4>6.4.3.6 Outlier days  (NM)   00386</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of days that have been approved as an outlier payment.</FONT>
+<H4>6.4.3.7 Outlier cost  (CP)   00387</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount of money that has been approved for an outlier payment.</FONT>
+<H4>6.4.3.8 DRG payor (IS)   00770</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates the associated DRG Payor.  Refer to <I>user-defined table 0229 - DRG payor </I>for suggested values.</FONT>
+<P ALIGN=indent>User-defined Table 0229 - DRG Payor</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=83 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value </U></B></FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U> Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=83 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">M </FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Medicare</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=83 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C </FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"> Champus</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=83 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">G</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Managed Care Organization</TD></TR></FONT></TABLE><H4>6.4.3.9 Outlier reimbursement (CP)   00771</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Where applicable, the outlier reimbursement amount indicates the part of the total reimbursement designated for reimbursement of outlier conditions (day or cost).</FONT>
+<H4>6.4.3.10 Confidential indicator (ID)   00767</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates if the DRG contains a confidential diagnosis.  Refer to <I>HL7 table 0136 - </I><I>Yes/no indicator</I> for valid values.</FONT>
+<P>
+<FONT FACE="Times New Roman">Y the DRG contains a confidential diagnosis</FONT>
+<P>
+<FONT FACE="Times New Roman">N the DRG does not contain a confidential diagnosis</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600012.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600014.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

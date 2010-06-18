@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>1.6.3 Evolutionary changes to the standards</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100010.htm">
+<LINK REL="Previous" HREF="ch100008.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E3"></A>
+<H3><B>1.6.3</B><B> </B><A NAME="I2"></A><B>Evolutionary changes to the standards</B></H3>
+<P>
+<FONT FACE="Times New Roman">All standards must evolve as the applications they support change and as a result of experience using them.  In recognition of this, the Standard includes a protocol version ID in all messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">New transactions or data elements will be added to operational HL7 environments as a result of changes in the Standard or due to changes in the local implementation as permitted within the Standard.  It is important that these changes be implementable at a site without requiring all communicating applications to upgrade simultaneously.  The special provisions in the Encoding Rules for dealing with fields that are not present or unexpected are very important here.  Because of them, new fields can be added first to the sending or source system; the receiving system will ignore the new fields until it has been updated to use them.  Often, these rules also facilitate changing the receiving system first.  Until the sending system is changed, the receiving system will find the new data field &#145;not present&#146; and deal with this according to its rules for data not present.</FONT>
+<P>
+<FONT FACE="Times New Roman">Similarly, the HL7 Encoding Rules support changes in data field sizes.  Fields are found within the message by examining separators, rather than by an offset.  Changing the size of a field does not change the procedure used to detect subsequent fields.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

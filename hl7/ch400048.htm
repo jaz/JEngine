@@ -1,0 +1,749 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.14 RXA - pharmacy/treatment administration segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400049.htm">
+<LINK REL="Previous" HREF="ch400047.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400047.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400049.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E248"></A>
+<H3><B>4.8.14</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>RXA - pharmacy/treatment administration segment</B><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The ORC must have the filler order number and the order control code RE.  As a site-specific variant, the RXO and associated RXCs and/or the RXE (and associated RXCs) may be present if the receiving application needs any of their data.  The RXA carries the administration data.</FONT>
+<P ALIGN=indent><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A>Figure 4-19.  RXA attributes</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=53 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=60 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=224 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00342</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Give Sub-ID Counter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00344</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administration Sub-ID Counter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00345</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time Start of Administration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00346</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time End of Administration</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">100</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0292</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00347</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00348</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Amount</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00349</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00350</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Dosage Form</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1"> O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00351</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administration Notes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00352</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administering Provider</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00353</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered-at Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00354</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Per (Time Unit)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01134</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Strength</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01135</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Administered Strength Units</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01129</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substance Lot Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01130</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substance Expiration Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0227</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01131</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substance Manufacturer Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01136</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Substance Refusal Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01123</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Indication</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0322</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01223</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Completion Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0323</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01224</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">Action Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">01225</FONT>
+</TD><TD WIDTH=224 VALIGN=top >
+<P>
+<FONT SIZE="-1">System Entry Date/Time</TD></TR></FONT></TABLE></CENTER><P>4.8.14.0   RXA field definitions
+<H4><B>4.8.14.1</B><B> </B>Give sub-ID counter  (NM)   00342<A NAME="I14"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Use this field if matching this RXA segment to its corresponding RXG segment.  If the two applications are not matching RXG and RXA segments, this field&#146;s value is zero.</FONT>
+<H4>4.8.14.2 Administration sub-ID counter  (NM)   00344<A NAME="I15"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field starts with 1 the first time that medication is administered for this order.  Increments by one with each additional administration of medication.  </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=557 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> More than one RXA segment can be &quot;matched&quot; to a single RXG segment, as is the case when recording a change of the rate of administration of an IV solution.</TD></TR></FONT></TABLE><H4>4.8.14.3 Date/time start of administration  (TS)   00345<A NAME="I16"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  If the order is for a continuous administration (such as an IV), and the rate is changed at a certain time after the start, an RAS message can be issued to record the change.  For such an RAS message, this field records the time the rate was changed to the new value recorded in <I>the </I><I>RXA-12-administered per (time unit)</I> of the same message.  </FONT>
+<H4>4.8.14.4 Date/time end of administration (if applies)  (TS)   00346<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  If null, the date/time of <I>RXA-3-date/time start of administration</I> is assumed.</FONT>
+<H4>4.8.14.5 Administered code  (CE)   00347<A NAME="I18"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the identifier of the medical substance administered.  It is equivalent to <I>OBR-4-universal service ID code</I> in function. If the substance administered is a vaccine, CVX codes may be used to code this field (see <I>HL7 table 0292 - Vaccines administered</I>).</FONT>
+<H4>4.8.14.6 Administered amount  (NM)   00348<A NAME="I19"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the amount administered.</FONT>
+<H4>4.8.14.7 Administered units  (CE)   00349<A NAME="I20"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is conditional because it is required if the administered amount code does not imply units.  This field must be in simple units that reflect the actual quantity of the substance administered.  It does not include compound units.</FONT>
+<H4>4.8.14.8 Administered dosage form  (CE)   00350<A NAME="I21"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The dosage form indicates the manner in which the medication is aggregated for dispensing, e.g., tablets, capsules, suppositories.  In some cases, this information is implied by the dispense/give code in <I>RXA-5</I><I>-administered code</I>.  Use this field when the administered code does not specify the dosage form.</FONT>
+<H4>4.8.14.9 Administration notes  (CE)   00351<A NAME="I22"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains  notes from the provider administering the medication.    If coded, requires a user defined table.  If free text (describing a custom IV, mixture, or salve, for example) place a null in the first component and the text in the second, e.g., |^this is a free text administration note|.</FONT>
+<H4>4.8.14.10 Administering provider  (XCN)   00352<A NAME="I23"></A></H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the provider ID of the person administering the pharmaceutical.</FONT>
+<H4>4.8.14.11 Administered at location  (CM)   00353<A NAME="I24"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; &amp; &lt;room (IS) ^ &lt;bed (IS)&gt; &amp; &lt;facility (HD) &amp; &lt;location status (IS) &amp; &lt;patient location type (IS)&gt; &amp; &lt;building (IS)&gt; &amp; &lt;floor (IS)&gt; ^ &lt; street address (ST)&gt; &amp; &lt;other designation (ST)&gt; &amp; &lt;city (ST)&gt; &amp; &lt;state or province (ST)&gt; &amp; &lt;zip or postal code (ST)&gt; &amp; &lt;country (ID)&gt; &amp; &lt;address type (ID)&gt; &amp; &lt;other geographic designation (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The first component contains the inpatient or outpatient location at which the drug or treatment was administered (if applicable).  The default (null) value is the current census location for the patient.  Site specific table.  This first component has the same form as <I>PV1-3-assigned patient location</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second component can be used to specify an address.  This could be used to fill mail orders to a patient or provider, or to account for home health care.</FONT>
+<H4>4.8.14.12 Administered per (time unit)  (ST)   00354<A NAME="I25"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the rate at which this medication was administered as calculated by using <I>RXA-6-administered amount</I> and <I>RXA-7-administered units</I>.  This field is conditional because it is required when a treatment is administered continuously at a prescribed rate, e.g., certain IV solutions.</FONT>
+<H4>4.8.14.13 Administered strength  (NM)   01134<A NAME="I26"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Use when <I>RXA-5-administered code</I> does not specify the strength.  This is the numeric part of the strength, used in combination with <I>RXA-14-administered strength unit</I>.</FONT>
+<H4>4.8.14.14 Administered strength unit  (CE)   01135<A NAME="I27"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  Use when <I>RXA-5-administered code</I> does not specify the strength.  This is the unit of the strength, used in combination with <I>RXA-13-administered strength</I>.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note</B>: These units can be a &quot;compound quantity&quot;; i.e., the units may express a quantity per unit of time.  For example, micrograms per hour (ug/h) is an acceptable value.  These compound units are contained in the ISO+ table. See Chapter 7 for full definition of ISO+ units.</TD></TR></FONT></TABLE><H4>4.8.14.15 Substance lot number  (ST)   01129<A NAME="I28"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the lot number of the medical substance administered.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  The lot number is the number printed on the label attached to the container holding the substance and on the packaging which houses the container.  If the substance is a vaccine, for example, and a diluent is required, a lot number may appear on the vial containing the diluent; however, any such identifier associated with a diluent is not the identifier of interest. The substance lot number should be reported, not that of the diluent.</TD></TR></FONT></TABLE><H4>4.8.14.16 Substance expiration date  (TS)   01130<A NAME="I29"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the expiration date of the medical substance administered.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> Vaccine expiration date does not always have a &quot;day&quot; component; therefore, such a date may be transmitted as YYYYMM.</TD></TR></FONT></TABLE><H4>4.8.14.17 Substance manufacturer  (CE)   01131<A NAME="I30"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field contains the manufacturer of the medical substance administered.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> For vaccines, code system MVX may be used to code this field (see Section <A HREF="ch400052.htm#I2">4.10</A>, &quot;<A HREF="ch400052.htm#I2">VACCINE ADMINISTRATION DATA</A>&quot;). This field may be used if the manufacturer of the substance is not identified by the code used in RXA-5 Administered Code.</TD></TR></FONT></TABLE><H4>4.8.14.18 Substance refusal reason  (CE)   01136<A NAME="I31"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the reason the patient refused the medical substance.  Any entry in the field indicates that the patient did not take the substance.</FONT>
+<H4>4.8.14.19 Indication  (CE)   01123<A NAME="I32"></A></H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the identifier of the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant.</FONT>
+<H4>4.8.14.20 Completion status  (ID)   01223</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Status of treatment administration event.  Refer to <I>HL7 table 0322 - Completion status</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0322 - Completion status</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Complete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RE</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Refused</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Not Administered</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PA</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Partially Administered</TD></TR></FONT></TABLE><H4>4.8.14.21 Action code  (ID)   01224</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Status of record. The information in this field enables the use of the RXA in the vaccine messages (see Section <A HREF="ch400059.htm#I2">4.13</A>, &quot;<A HREF="ch400059.htm#I2">RXA SEGMENT USAGE IN VACCINE MESSAGES</A>&quot;), where a method of correcting vaccination information transmitted with incorrect patient identifying information is needed.  Refer to <I>HL7 table 0323 - Action code</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0323 - Action code</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Add</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Delete</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">U</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Update</TD></TR></FONT></TABLE><H4>4.8.14.22 System entry date/time  (TS)   01225.</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: Date/time the administration information was entered into the source system.  This field is used to detect instances where treatment administration information is inadvertently entered multiple times by providing a unique identification field.  Under usual circumstances, this field would be provided automatically by the computer system rather than being entered by a person. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400047.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400049.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.43 ADT/ACK - move patient information - internal ID (event A</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300046.htm">
+<LINK REL="Previous" HREF="ch300044.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E179"></A>
+<H3><B>3.2.43</B><B> </B><B>ADT/ACK - move patient information - internal ID (event A43)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A move has been done at the internal identifier level.  That is, a <I>PID-3-patient ID (internal ID)</I> associated with one external identifier (<I>PID-2-patient ID (external ID)) </I>has been moved to another external identifier. </FONT>
+<P>
+<FONT FACE="Times New Roman">An A43 event is used to signal a move of records identified by the <I>MRG-1-prior patient ID - Internal</I> from the &quot;incorrect source external identifier&quot; identified in the MRG segment (<I>MRG-4-prior patient ID-external</I>) to the &quot;correct target external identifier&quot; identified in the PID segment (<I>PID-2-patient ID (external ID</I>).</FONT>
+<P>
+<FONT FACE="Times New Roman">The internal ID involved in identifying the patient to be moved (<I>MRG-1-prior patient ID-internal</I>) may or may not have accounts, which may or may not have visits.  In any case, all subordinate data sets associated with the internal ID <I>in MRG-1-prior patient ID-internal</I> are moved along with the internal ID, from the &quot;incorrect source external ID&quot; (MRG-4) to the &quot;correct target external ID&quot; (<I>PID-2-patient ID (external ID</I>).</FONT>
+<P>
+<FONT FACE="Times New Roman">No identifiers subordinate to the internal ID (account number, visit number, alternate visit ID) are valued in this message.  Specification of these other subordinate identifiers is not required.</FONT>
+<P>
+<FONT FACE="Times New Roman">This event and the message syntax do, however, allow for the specification of a &quot;new  identifier&quot; (<I>PID-3-patient ID (internal ID</I>), which may be application and/or implementation specific and therefore require site negotiation.  </FONT>
+<P>
+<FONT FACE="Times New Roman">All the identifiers superior to the internal ID should be valued in both the MRG segment and the PID segment.  In this message, the external ID is superior to the internal id.</FONT>
+<P>
+<FONT FACE="Times New Roman">See Section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of move messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When demographic data in other fields change, it is recommended that the A08 (update patient information) event be used in conjunction with this message.  However, all PID data associated with the &quot;correct target internal ID&quot; (<I>PID-3-patient ID (internal ID)</I>) are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New">ADT     ADT Message        Chapter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH      Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   MRG     Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

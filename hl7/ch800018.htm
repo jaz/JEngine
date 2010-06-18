@@ -1,0 +1,848 @@
+<HTML>
+<HEAD>
+<TITLE>8.6.2 STF - staff identification segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800019.htm">
+<LINK REL="Previous" HREF="ch800017.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800017.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800019.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E349"></A>
+<H3><B>8.6.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>STF - staff identification segment</B><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The STF segment can identify any personnel referenced by information systems.  These can be providers, staff, system users, and referring agents.  In a network environment, this segment can be used to define personnel to other applications; for example, order entry clerks, insurance verification clerks, admission clerks, as well as provider demographics. <I>MFE-4-primary key value</I> is used to link all the segments pertaining to the same master file entry.  Therefore, in the MFE segment, <I>MFE-4-primary key value</I> must be filled in.  Other segments may follow the STF segment to provide data for a particular type of staff member. The PRA segment (practitioner) is one such.  It may optionally follow the STF segment in order to add practitioner-specific data.   Other segments may be defined as needed.</FONT>
+<P>Figure 8-5.  STF attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=226 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00671</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Key Value - STF</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CX</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00672</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Staff ID Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 48</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00673</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Staff Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0182</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00674</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Staff Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0001</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00111</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sex</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00110</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time Of Birth</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0183</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00675</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Active/Inactive</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0184</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00676</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Department</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0069</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00677</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Service</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00678</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Phone</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 106</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00679</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Office/Home Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00680</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Activation Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00681</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Inactivation Date - STF</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00682</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Backup Person ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00683</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">E-Mail Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0185</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00684</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preferred Method Of Contact</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0002</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00119</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Marital Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00785</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job Title</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 20</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">JCC</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00786</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Job Code/Class</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 2</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0066</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01276</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Employment Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01275</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Additional Insured on  Auto</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 25</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DLN</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">00123</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Driver's License Number - Staff</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01229</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Copy  Auto Ins</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01232</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Auto Ins. Expires</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01233</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date Last DMV Review</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=49 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01234</FONT>
+</TD><TD WIDTH=226 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date Next DMV Review</TD></TR></FONT></TABLE></CENTER><P>8.6.2.0   STF field definitions
+<H4>8.6.2.1 Primary key value - STF  (CE)   00671</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field must match <I>MFE-4-primary key value</I> to identify which entry is being referenced.</FONT>
+<H4>8.6.2.2 Staff ID code  (CX)   00672</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID (ST)&gt; ^ &lt;check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespece ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universl ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a personnel identification code or institution user number, used by  institution to identify this person.  Repeating field allows multiple ID codes per person, with the type of ID code indicated in the third component of the coded entry data type. </FONT>
+<H4>8.6.2.3 Staff name  (XPN)   00673</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; <B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the staff person&#146;s name.</FONT>
+<H4>8.6.2.4 Staff type  (IS)   00674</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a code identifying what type of staff.  Refer to <I>user-defined</I> <I>table 0182 - Staff </I><I>type </I>for suggested values.  Values may include codes for staff, practitioner (physician, nurse, therapist, etc.), referral agent or agency, etc.</FONT>
+<H4>8.6.2.5 Sex  (IS)   00111</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the staff person&#146;s sex.  Refer to <I>user-defined table 0001 - Sex </I>for suggested values.</FONT>
+<H4>8.6.2.6 Date/Time of birth  (TS)   00110</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a staff member&#146;s date and time of birth.</FONT>
+<H4>8.6.2.7 Active/inactive  (ID)   00675</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether person is currently a valid staff member.  Refer <I>to HL7 table 0183 - </I><I>Active/inactive</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0183 - Active/inactive</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Active Staff</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Inactive Staff</TD></TR></FONT></TABLE><H4>8.6.2.8 Department  (CE)   00676</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the institution department to which this person reports or belongs.  Refer to <I>user-defined</I> <I>table 0184 - Department </I>for suggested values.</FONT>
+<H4>8.6.2.9 Service  (CE)   00677</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the hospital or ancillary service with which this staff person is associated.  Refer to <I>user-defined table 0069 - Hospital service</I> for suggested values.</FONT>
+<H4>8.6.2.10 Phone  (XTN)   00678</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;county code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM) ^ &lt;extension (NM)&gt; ^ &lt;any text (st)&gt; </FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the staff person&#146;s phone number.  This is a repeating field with a component for indicating which phone number is which. It is recommended that the last part of the XTN, [C any text], start with a code from the table associated below with <I>STF-16-preferred method of contact</I>, in order to indicate the type of each phone number in this repeating field.</FONT>
+<H4>8.6.2.11 Office/home address  (XAD)   00679</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code (ST)&gt; ^ &lt;country (ID)&gt; ^ &lt;address type (ID)&gt; ^ &lt;other geographic designation (ST)&gt; ^ &lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the office address and home address of the staff person.  This is a repeating field.</FONT>
+<H4>8.6.2.12 Activation date  (CM)   00680</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;date (TS)&gt; ^ &lt;institution name (CE)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date when staff became active for an institution.  Repeats.</FONT>
+<H4>8.6.2.13 Inactivation date - STF  (CM)   00681</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;date (TS)&gt; ^ &lt;institution name (CE)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date when staff became active for an institution.  Repeats.</FONT>
+<H4>8.6.2.14 Backup person ID  (CE)   00682</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the  <I>MFE-4-primary key value</I> of the master file entry which corresponds to the designated backup person for this staff person.</FONT>
+<H4>8.6.2.15 E-mail address  (ST)   00683</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  <I>This field has been retained for backward compatibility.</I>  (It is now present in the 4<SUP>th</SUP> component of <I>STF-10-phone</I>).</FONT>
+<H4>8.6.2.16 Preferred method of contact ( ID)   00684</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a one letter code that indicates which of multiple phone numbers is the preferred method of contact for this person.  Note that all values of this code refer to this segment&#146;s phone field, except for the value &quot;E,&quot; which refers to the E-mail address field.  If more than one phone number of the preferred type exists in <I>STF-10-phone</I>, this field refers to the first such instance.  Refer <I>to </I><I>HL7 table 0185 - Preferred method of contact</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0185 - Preferred method of contact</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">H</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Home Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Office Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">FAX Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cellular Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Beeper Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">E</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">E-Mail Address (for backward compatibility)</TD></TR></FONT></TABLE><H4>8.6.2.17 <A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A>Marital status (IS)   00119</H4>
+<P>Definition:  This field contains  the staff member's marital status.  Refer <I>to </I><I>u</I><I>ser-</I><I>d</I><I>efined </I><I>t</I><I>able 0002 - </I><I>M</I><I>arital </I><I>s</I><I>tatus</I> for suggested values.  Same values as those for <I>PID</I><I>-16-</I><I>m</I><I>arital </I><I>s</I><I>tatus</I>.
+<H4>8.6.2.18 Job title (ST)   00785</H4>
+<P>Definition:  This field contains a descriptive name of the staff member&#146;s  occupation (e.g., Sr. Systems Analyst, Sr. Accountant).
+<H4>8.6.2.19 Job code/class  (JCC)   00786</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;job code (IS)&gt; ^ &lt;job class (IS)&gt;</FONT>
+<P>Definition: This field contains the staff member&#146;s  job code and employee classification.    Refer to <I>user-defined table 0327 - job code</I> and <I>user-defined table</I> <I>0329 - job class</I>.
+<H4>8.6.2.20 Employment status (IS)   01276</H4>
+<P>Definition:  This field contains the code that indicates the staff member&#146;s employment status, e.g., full time, part time, self-employed, etc.  Refer to <I>user-defined</I> <I>table 0066 - Employment status</I> for suggested values.
+<H4>8.6.2.21 Additional insured on auto (ID)   01275</H4>
+<P>Definition:  This field contains an indicator for whether the present institution is named as an additional insured on the staff member's auto insurance, especially for use when staff is a driver for the institution.   Refer to <I>HL7 table 0136 - Yes/no indicator</I> for valid values.
+<P> Y indicates that the institution is named as an additional insured
+<P> N indicates that the institution is not named as an additional insured
+<H4>8.6.2.22 Driver's license number - Staff (DLN)   00123</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;license number (ST)&gt; ^ &lt;issuing state, province, country (IS)&gt; ^ &lt;expiration date (DT)</FONT>
+<P>Definition:  This field contains the driver's license information of staff, especially for use when staff is a driver for the institution.  For state or province refer to official postal codes for that country; for country refer to ISO 3166 for codes.
+<H4>8.6.2.23 Copy  auto ins (ID)   01229</H4>
+<P>Definition:  This field contains an indicator for whether the institution has on file a copy of the staff member's auto insurance, especially for use when staff is a driver for the institution.   Refer to <I>HL7 table </I><I>0136 - Yes/no indicator</I> for valid values.
+<P> Y indicates that the institution has a copy on file
+<P> N indicates that the institution does not have a copy on file
+<H4>8.6.2.24 Auto ins. expires (DT)   01232</H4>
+<P>Definition:  This field contains the date on which the staff member's driver's license expires, especially for use when staff is a driver for the institution.
+<H4>8.6.2.25 Date last DMV review (DT)   01233</H4>
+<P>Definition:  This field contains the date of the staff member's most recent Department of Motor Vehicles review, especially for use when staff is a driver for the institution.
+<H4>8.6.2.26 Date next DMV review (DT)   01234</H4>
+<P>Definition:  This field contains the date of the staff member's next Department of Motor Vehicles review, especially for use when staff is a driver for the institution.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800017.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800019.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

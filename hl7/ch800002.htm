@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>8.2 TRIGGER EVENTS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800003.htm">
+<LINK REL="Previous" HREF="ch800001.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E86"></A>
+<P>
+<FONT SIZE="+2"><B>8.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>TRIGGER EVENTS</B></FONT>
+<P>The Master Files Change Notification message can be used for the following message-level trigger events:
+<P>Mnn: A message containing notifications of changes to a single master file.
+<P>nn defines a particular HL7 master file.  Currently defined values are (see <I>HL7 table 0003 - Event </I><I>type</I> ): M01 - master file not otherwise specified (<B><I>for backward compatibility only</I></B>); M02 - staff/practitioner master file; M03 - test/observation master file; M04 - charge description master file; M05 - location master file; M06 - clinical study master file; M12 - M99 - reserved for future HL7-defined master files.  Site-specific master files should use a code of the form Znn. (See also Section <A HREF="ch800008.htm#I9">8.4.1.1</A>, &quot;<A HREF="ch800008.htm#I9">Master file identifier  (CE)   00658</A>,&quot; HL7 <I>table 0175 - Master file identifier codes</I>.)
+<P>An MFN message may contain the following &quot;file-level&quot; events, as specified in the MFI segment:
+<P>REP: Replace current version of this master file with the version contained in this message.
+<P>UPD: Change file records as defined in the record-level event codes for each record that follows.
+<P>These are the only file-level events currently defined.  REP means that every MFE segment that follows will use the MAD event code. 
+<P>The replace option allows the sending system to replace a file without sending delete record-level events for each record in that file.  UPD means that the events are defined according to the record-level event code contained in each MFE segment in that message.
+<P>An MFN message may contain the following &quot;record-level&quot; events, as specified in the MFE segments.
+<P>MAD: Add record to master file.
+<P>MDL: Delete record from master file.
+<P>MUP: Update record for master file.
+<P>MDC: Deactivate: discontinue using record in master file, but do not delete from database.
+<P>MAC: Reactivate deactivated record.
+<P>The MFD transaction is used for the following trigger event:
+<P>MFA: Master Files Delayed Application Acknowledgment. 
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

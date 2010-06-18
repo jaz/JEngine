@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<TITLE>4.6 DIET ORDERS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400027.htm">
+<LINK REL="Previous" HREF="ch400025.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E47"></A>
+<P>
+<FONT SIZE="+2"><B>4.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><B>DIET ORDERS</B><A NAME="I12"></A></FONT>
+<P>A diet office needs to receive specific information, the most important being the diet order itself.  Diet restrictions (often called diet codes) are the basic building blocks of a diet order.  
+<PRE>
+<FONT FACE="Courier New"><U>ORM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Dietary Order</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U> [PD1]</U><U> </U><U> </U><U> </U><U> </U><U>Additional Patient Identification</U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [{NTE}[</U><U> </U><U> </U><U> </U><U>Notes and Comments (for Patient ID)</U><U> </U><U> </U><U> </U><U>2</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>  [PV1</U><U> </U><U> </U><U> </U><U> </U><U>Patient Visit</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>  [PV2]]</U><U> </U><U> </U><U> </U><U> </U><U>Patient Visit Additional Information</U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>  [{IN1</U><U> </U><U> </U><U> </U><U> </U><U>Insurance</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U> </U><U>[IN2]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U>
+<BR><U>    </U><U> </U><U>[IN3]</U><U> </U><U> </U><U> </U><U>Insurance Additional Info</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>6</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [GT1]    Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{AL1}]    Allergy         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ORC     Common Order Segment       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {ODS}   Dietary Orders, Suppl., Prefer.    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for ODS)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   {OBX    Results          7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]}   Notes and Comments (for OBX)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ORC    Common Order Segment       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {ODT}   Diet Tray Instructions      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for ODT)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">} </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ORR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Order Acknowledgment Message</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for MSA)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]  Notes and Comments (for Patient ID)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [{ODS}]    Dietary orders, supplements, and preferences 4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for ODS)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{ODT}]   Diet tray instructions      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for ODT)      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<P>The ODS segment is intended to cover the basic diet definition of one diet code.  A diet can be ordered as a combination of one or more diet specifications, followed by any number of supplements and/or preferences.  Many diets are common to all institutions, such as an ADA 1500 calorie diet, and may exist in a table.  Each diet code is limited to a six-character abbreviation.
+<P>A dietary message never specifies more than one diet.  However, a single diet order may be used to discontinue one diet and specify its replacement.  In this instance, the dietary message will contain two ORCs.  The first ORC will not contain an ODT.  A tray specification order may follow the second ORC.
+<P>Often a complete diet order consists of a single diet code.  The diet code defines which foods a patient may receive.  In cases where a patient cannot make food selections, a diet code often causes service of a predefined set of foods.  A patient must have at least one diet code to receive food.
+<P>Supplements provide a mechanism for giving any additional desired foods to a patient.  Supplements are foods given to a patient regardless of their diet codes.  These foods are part of the patient&#146;s diet without being restricted by any other part of the order.  Therefore, supplement assignment needs to be a controlled and supervised process to ensure that a patient does not receive improper or potentially harmful foods.
+<P>Preferences consist of likes, dislikes, substitutions, and complementary foods.  Preferences are diet orders, effectively from the patient, but transmitted from the ward.  They are subject to change.  A mechanism is included for defining patient preferences with this proposal.  Preferences are independent of the diet order and do not change when the order changes.  However, if a preference violates the conditions of the diet order, then that preference is not allowed.
+<P>There is additional information that the dietary service requires for proper operation, including tray delivery times, extra trays, and messages regarding tray delivery and handling.
+<P>A patient can have only one effective diet order at a time.  A diet order consists of the diet codes, supplements, and preferences effective at a given time.  These three specifications govern which foods a patient will receive.  Diets generally do not have a stated ending time to ensure that the patient always receives food (unless an NPO order is received).  
+<P>Diet codes govern foods in two ways.  First, there are foods which are simply not allowed on a specified diet.  Second, some diets imply a nutrient exchange pattern which controls the amounts of certain foods that a patient can receive.  Some diet codes can combine to make a single diet order.  An ADA 1500 and a 2 gram sodium (NA2GM) diet can coexist since they do not address the same exchanges.  The patterns for these diets can combine without conflicting or overlapping.  Certain kinds of diet codes cannot be combined, such as ADA 1500 and ADA 2000.  It is impossible to feed a patient at two different calorie levels.  These constraints are not defined in the table, but rather are implied by the semantics of the codes.
+<P>An order specifies the complete foods a patient can or should receive at a given meal.  (Depending on the institution and diet order, a patient may or may not have a choice of foods.  For example, a clear liquid diet often gives no choices since there are few clear liquid foods.)  A modification to a diet, by adding a diet code or supplement, may have a drastic effect on foods the patient may eat.  Due to this, any modification to the diet codes or supplements will be a new order.  Therefore, one must send any information for diet codes or supplements from the previous order which is still applicable for the next order.  For example, a patient has an ADA 1500 calorie diet and an evening snack of Skim Milk.  If you wanted to add a 2 gram sodium restriction, you need to send both the ADA 1500 calorie and the 2 gram sodium diet codes along with the Skim Milk supplement.  If you do not do this, the dietary application must presume the new order is merely for 2 grams of sodium.  This method allows for a comprehensive audit trail of orders and prevents ambiguities in interpretation.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

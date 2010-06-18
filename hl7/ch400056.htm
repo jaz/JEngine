@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<TITLE>4.12.2 VXX - response to vaccination query returning multiple PI</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400057.htm">
+<LINK REL="Previous" HREF="ch400055.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E252"></A>
+<H3><B>4.12.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>VXX - response to vaccination query returning multiple PID matches (event </B><B>V02)</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Definition:  In response to a query for the definitive patient vaccination record, the system holding the record will return it to the system originating the query.  </FONT>
+<P>
+<FONT FACE="Times New Roman">If the query results in multiple &quot;matches,&quot; i.e., more than one patient record matches the identifiers in the query so that there is no unique identification, the response to the query (with a V02 event) will follow this format.  Within the definitions for QRD and QRF, certain components are defined according to position in the field, as detailed in Section <A HREF="ch400053.htm#I2">4.11</A>, &quot;<A HREF="ch400053.htm#I2">QUERIES FOR iMMUNIZATION RECORDS (QRF SEGMENTS)</A>.&quot;  The three-letter code in the leftmost column indicates the segment that is included; the column on the right specifies the chapter in which that segment is fully defined.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>VXX</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Returning Multiple PID Matches</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRF]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{  PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{NK1}]   Next of Kin         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

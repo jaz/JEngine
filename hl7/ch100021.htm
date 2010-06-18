@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>10.1.2 Application roles</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100022.htm">
+<LINK REL="Previous" HREF="ch100020.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E430"></A>
+<H3><B>10.1.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>Application roles</B><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">In this specification, there are four roles that an application can assume: a filler application role, a placer application role, a querying application role, and an auxiliary application role.  These application roles define the interaction that an application will have with other applications in the messaging environment.  In many environments, any one application may take on more than one application role.</FONT>
+<P>
+<FONT FACE="Times New Roman">In this specification, the definition of application roles is not intended to define or limit the functionality of specific products developed by vendors of such applications.  Instead, this information is provided to help define the model used to develop this specification, and to provide an unambiguous way for applications to communicate with each other.</FONT>
+<H4>10.1.2.1 The filler application role<A NAME="I10"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The filler application role in the scheduling model is very similar to the filler application concept presented in Chapter 4, Order Entry.  A filler application, in the scheduling model, is one that &quot;owns&quot; one or more schedules for one or more services or resources.  In other words, a filler application exerts control over a certain set of services or resources and the schedules that define the availability of those services or resources.  Because of this control, no other application has the ability to reserve, or to otherwise modify the schedules controlled by a particular filler application.</FONT>
+<P>
+<FONT FACE="Times New Roman">Other applications can, on the other hand, make requests to modify the schedules owned by the filler application.  The filler application either fulfills or denies requests to book slots, or to otherwise modify the schedules for the services and resources over which it exerts control.</FONT>
+<P>
+<FONT FACE="Times New Roman">Finally, the filler application also provides information about scheduled activities to other applications.  The reasons that an application may be interested in receiving such information are varied.  An application may have previously requested bookings or modifications on the schedule, or may simply be interested in the information for its own reporting or statistical purposes.  There are two methods whereby filler applications disseminate this information:  by issuing unsolicited information messages, or by responding to queries.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of a filler application in a non-automated environment might be an appointment book and the person in charge of maintaining that book.  The appointment book describes when the resources are available and when they are booked.  This appointment book is the only official record of this information, and controls the availability of the resources to any user.  The person in charge of this appointment book takes requests to book the resources, and decides whether to accept or reject the requests based on the information recorded in the appointment book.  Anyone needing information from the appointment book either consults the book directly, or contacts the person in charge of the book.</FONT>
+<H4>10.1.2.2 The placer application role<A NAME="I11"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The placer application role in the scheduling model is also very similar to its counterpart in the Order Entry chapter.  A placer application requests the booking, modification, cancellation, etc., of a scheduled activity for a service or resource.  Because it cannot exert any control over the schedule for that resource, it must send its requests to modify the schedule to the filler application.  In requesting that these appointments be booked or modified in some way, the placer application is asking the filler application to exert its control over the schedule on the placer application&#146;s behalf.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of a placer application in a non-automated environment might be any person needing a particular resource or appointment for a service.  A person needing to book an appointment would contact the person in charge of the appointment book for that resource or service, and request a reservation.  Often, there is negotiation between the person requesting the reservation or appointment and the person who maintains the appointment book.  The requesting person will indicate requirements and preferences, and the person controlling the appointment book will indicate whether the request can be fulfilled as specified.</FONT>
+<H4>10.1.2.3 The querying application role<A NAME="I12"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A querying application neither exerts control over, nor requests changes to a schedule.  Rather than accepting unsolicited information about schedules, as does an auxiliary application, the querying application actively solicits this information using a query mechanism.  It will, in general, be driven by a person wanting information about schedules, and may be part of an application filling the placer application role as defined in this chapter.  The information that the querying application receives is valid only at the exact time that the query results are generated by the filler application.  Changes made to the schedule after the query results have been returned are not communicated to the querying application until it issues another query transaction.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of a querying application in a non-automated environment might be any person needing information about a specific portion of a schedule.  For example, a facilities manager may need to know whether a specific room has been scheduled during a specific period of time.  This person might ask the person controlling the appointment book about the specific room and period of time in question.</FONT>
+<P>
+<FONT FACE="Times New Roman">Often, a placer application will also act as a querying application.  The ability to send queries and receive lists of open slots are built in to some implementations of placer applications.  These placer applications use this information to select open slots for subsequent booking requests.  The current specification does not imply that placer applications should or should not also be able to fulfill the role of a querying application.  Instead, the model defines these roles separately.  Applications that support this functionality may take advantage of this application role in the model.  Applications that do not support the querying application role are not limited in their support of the placer application role.</FONT>
+<H4>10.1.2.4 The auxiliary application role<A NAME="I13"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Like querying applications, an auxiliary application neither exerts control over, nor requests changes to a schedule.  It, too,  is only concerned with gathering information about a particular schedule.  It is considered an &quot;interested third-party,&quot; in that it is interested in any changes to a particular schedule, but has no interest in changing it or controlling it in any way.  An auxiliary application passively collects information by receiving unsolicited updates from a filler application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The analog of an auxiliary application in a non-automated environment might be any person receiving reports containing schedule information.  For example, a facilities manager may need to know what rooms are booked for activity during specific periods of time.  This person might ask the person controlling the appointment book for a periodic listing of activity, which may be something as simple as copies of pages from the appointment book.</FONT>
+<P>
+<FONT FACE="Times New Roman">Often, a placer application will also act as an auxiliary application.  A placer application may have the capacity to store information about the scheduled activity that it requested.  In such cases, the placer application is also an &quot;interested&quot; application in that it wishes to receive any messages describing changes to the content or status of the scheduled activity it initiated.</FONT>
+<H4>10.1.2.5 Application roles<A NAME="I14"></A> in a messaging environment</H4>
+<P>
+<FONT FACE="Times New Roman">In a messaging environment, these four application roles communicate using specific types of messages and trigger events.  The following figure illustrates the relationships between these application roles in a messaging environment:</FONT>
+<P>Figure 10-2.  Application role messaging relationships<A NAME="I15"></A>
+<P>
+<IMG SRC="images/ch100024.gif" WIDTH = 625 HEIGHT = 220 ALT="Undisplayed Graphic">
+<P>
+<FONT FACE="Times New Roman">The relationship between placer and filler applications revolves around request messages and response messages to those requests.  Placer applications trigger request messages to filler applications, which respond to those requests with request response messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The relationship between querying and filler applications focuses on query messages and responses.  Querying applications trigger query messages to filler applications, which respond with query response messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The relationship between auxiliary and filler applications centers on unsolicited informational messages.  Filler applications trigger unsolicited informational messages to auxiliary applications whenever changes in the schedule occur.  Auxiliary applications do not respond with any messages other than general acknowledgments.  Filler applications triggering unsolicited informational messages do not expect further information from auxiliary applications.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

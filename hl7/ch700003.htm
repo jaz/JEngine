@@ -1,0 +1,371 @@
+<HTML>
+<HEAD>
+<TITLE>7.1.2 Narrative reports as batteries with many OBX </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700004.htm">
+<LINK REL="Previous" HREF="ch700002.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E284"></A>
+<H3><B>7.1.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Narrative reports as batteries with many OBX</B><B> </B><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Narrative reports from services such as Radiology usually consist of a number of subcomponents (e.g., a chest xray report may consist of a description, an impression, and a recommendation).  Other studies, such as echocardiograms, contain analogous components, as well as numeric observations (e.g., left ventricular and diastolic diameter).  Surgical pathology reports may contain information about multiple specimens and reports: the anatomic source, the gross description, the microscopic description, and a diagnostic impression for each specimen. </FONT>
+<P>
+<FONT FACE="Times New Roman">The current standard treats each component of a narrative report as a separate &quot;test&quot; or observation.  Just as a CHEM12 is transmitted as an order segment (OBR) plus 12 OBX segments, a chest xray would be transmitted as an order (OBR) segment plus three OBX segments, one for the description, one for the impression, and one for the recommendations.  Similarly, an EKG report would be transmitted as an order segment (OBR), two OBX segments for the impression and recommendation, and additional OBX segments for each EKG measurement, e.g. the PR interval, QR interval, QRS axis, and so on.</FONT>
+<P>
+<FONT FACE="Times New Roman">We have defined code suffixes for constructing observation IDs for the common components of narrative reports (see <I>Figure 7-1</I>).  The observation identifier for each such component is obtained by concatenating the observation battery ID (the ID in <I>OBR-4-universal service ID</I> of the preceding OBR from any coding system) with the appropriate suffix.  The observation ID for a chest X-ray impression, for example, would be the chest X-ray observation ID (if CPT4, it would be 71020), a subcomponent delimiter, and the suffix, IMP, i.e., 71020&amp;IMP.  </FONT>
+<P>
+<FONT FACE="Times New Roman">This same combining rule applies to other coding systems including local and universal procedural codes (see Chapter 4).  For example, if a local code for EKG was E793, and the locally agreed upon designation for that local code was EKG, the impression would be identified as E793&amp;IMP^^99EKG.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=557 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> The &quot;99EKG&quot; in the 3rd component is included to indicate a local code.  The EKG's description, in this case, would be E793&amp;GDT^^99EKG.</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Although it is strongly discouraged, the sender and receiver may agree to allow the omission of the observation ID component of a result segment when it is the same as the observation ID of the preceding OBR.  In this case, only the ampersand and the suffix would have to be sent, e.g., &amp;IMP or &amp;REC, in <I>OBX-3-observation identifier</I> of a result segment.  The full code would be assumed as the test identifier (recorded in the order segment) plus the category identifier recorded in the observation segment.</FONT>
+<P>Figure 7-1.  Observation ID suffices
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=245 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Coded Results</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Suffix</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diagnostic Impression</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IMP</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Recommendation</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">REC</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Confirming Procedures</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CNP</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Procedure Medication</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MED</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Anatomic Site</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ANT</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Device/Instrument</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DEV</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Serial # Device/Instrument</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SER</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top ><BR></TD>
+<TD WIDTH=74 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=85 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1"><B>Bulk Text Reports</B></FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=85 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=245 VALIGN=top ><BR></TD>
+<TD WIDTH=74 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=85 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Gross Or General Description Of The Study</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GDT</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX or FT</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Microscopic Or Secondary Description</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MDT</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX or FT</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Technician's Comment</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TCM</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX or FT</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Addendum Note</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ADT</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TX or FT</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top ><BR></TD>
+<TD WIDTH=74 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=85 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1"><B>Other</B></FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=85 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=245 VALIGN=top ><BR></TD>
+<TD WIDTH=74 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=85 ALIGN=center  VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diagnosis Onset Date/Time</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ITM</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Diagnosis Resolution Date/Time</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RTM</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Comparison Study</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CMS</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Comparison Date/Time</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CMT</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Comparison Results</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CMR</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Comparison Change</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CMC</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Predicted Value</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PRD</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Percent Predicted</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PPR</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">After Drug Observed</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">AFD</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Predicted Value After Drug</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ADP</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Percent Predicted After Drug</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">APP</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Timing Information</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TIM</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Channel Definition Data</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CHN</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CD</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Waveform Digital Data</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">WAS</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA or MA</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=245 VALIGN=top >
+<P>
+<FONT SIZE="-1">Waveform Annotation</FONT>
+</TD><TD WIDTH=74 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ANO</FONT>
+</TD><TD WIDTH=85 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</TD></TR></FONT></TABLE></CENTER><P>
+<P ALIGN=LEFT>
+<A HREF="ch700002.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700004.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

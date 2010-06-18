@@ -1,0 +1,224 @@
+<HTML>
+<HEAD>
+<TITLE>10.1.1 Schedules, appointments, and services and resources</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100021.htm">
+<LINK REL="Previous" HREF="ch100019.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E429"></A>
+<H3><B>10.1.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>Schedules, appointments, and services and resources</B></H3>
+<P>
+<FONT FACE="Times New Roman">The goal of this specification is to facilitate the communication of scheduling requests and information between applications.  Such communication involves three main subjects:  <I>schedules</I>, <I>appointments</I>, and <I>services and resources</I>.  Schedules control the occurrence of certain services and the use of particular resources.  They consist of a set of open, booked and blocked slots for one particular service or resource.  <I>Open slots</I> are periods of time on a schedule during which a service may occur, and/or a resource is available for use.  <I>Booked slots</I> are periods of time on a schedule that have already been reserved.  <I>Appointments</I> occupy sets of one or more booked slots on a schedule.  They describe the nature of the service and/or the use of the resource, the person or persons responsible for the appointment&#146;s booking, and other information relevant to the booking and execution of an appointment.  <I>Blocked slots</I> on a schedule are periods of time during which a service or resource is unavailable for reasons other than booked appointments (for example, a piece of equipment might be unavailable for  maintenance reasons).</FONT>
+<P>
+<FONT FACE="Times New Roman">In the context of this chapter, services and resources are those things that are controlled by schedules.  <I>Services</I> are real-world events, such as clinic appointments, the performance of which is controlled by a schedule.  Often, these kinds of activities relate to the care of a patient.  In other words, appointments for services often schedule a service for one or more patients.  <I>Resources</I> are tangible items whose use is controlled by a schedule.  These &quot;items&quot; are often people, locations, or things low in supply but high in demand.</FONT>
+<H4>10.1.1.1 Schedules<A NAME="I9"></A></H4>
+<P>
+<FONT FACE="Times New Roman">A <I>schedule</I> controls the dates and times available for the performance of a service and/or the use of a resource.  One schedule applies to one service or resource, since each service or resource can be reserved independently of the others.  (If two or more services, people, locations, or things cannot be reserved independently of one another, they are considered to be one activity or resource.)  A schedule consists of slots of time during which the controlled service or resource is potentially available for performance or use.  Slots are categorized as open, booked, or blocked.  An open slot on a schedule indicates that the service or resource is available for performance or use during that period of time.  A booked slot indicates that the service or resource is not available during the time period, because an appointment has been scheduled.  A blocked slot indicates that a service or resource is unavailable for reasons other than a scheduled appointment.</FONT>
+<P>
+<FONT FACE="Times New Roman">The real-world, non-automated analog of the schedule described above is a standard appointment book.  These books are generally organized with rows of time slots, during which a service or resource is available.  The following figure illustrates an excerpt from such an appointment book.</FONT>
+<P>Figure 10-1.  An example excerpt from an appointment book<A NAME="I10"></A>
+
+<TABLE >
+<TR>
+<TD WIDTH=116 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P><B>Date:</B>
+</TD><TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>May 17, 1994
+</TD><TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top ><BR></TD>
+<TD COLSPAN=2 WIDTH=116 VALIGN=top >
+<P><B>Room A</B>
+</TD><TD COLSPAN=2 WIDTH=116 VALIGN=top >
+<P><B>Room B</B>
+</TD><TD COLSPAN=2 WIDTH=116 VALIGN=top >
+<P><B>Room C</B>
+</TD><TD COLSPAN=2 WIDTH=116 VALIGN=top >
+<P><B>Room D</B>
+</TD></TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>8:00 am</B>
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Pat: B Smith
+</TD><TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>:15</B><B> </B><B> </B><B> </B>
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Dr.: Peters
+</TD><TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Closed for
+</TD><TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>:30</B><B> </B><B> </B><B> </B>
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Physical
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Pat: N Drew
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>remodeling
+</TD><TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>:45</B><B> </B><B> </B><B> </B>
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Exam
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Dr.: Collins
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>9:00 am</B>
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Pat: J Adams
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Allergy
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Pat: A Jones</TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>:15</B><B> </B><B> </B><B> </B>
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Dr.: Anders
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Scratch Test
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Dr.: Peters</TD>
+</TR>
+<TR>
+<TD WIDTH=116 VALIGN=top >
+<P><B>:30</B>   
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top >
+<P>Follow-up
+</TD><TD WIDTH=20 VALIGN=top  BGCOLOR=#CCCCCC ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top  BGCOLOR=#7F7F7F ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=20 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD></TR></TABLE><P>
+<FONT FACE="Times New Roman">Each cell in the figure above represents a slot on a schedule.  Different shading patterns represent booked and blocked slots.  Information identifying the appointments scheduled in booked slots is written in the appointment book.  Similarly, explanations are written into the book when resources are blocked.  Those cells with no shading and comments represent open slots.</FONT>
+<P>
+<FONT FACE="Times New Roman">As in the figure above, appointment books commonly contain more than one column.  This format allows the scheduling of more than one resource or activity within the same book.  This chapter defines a schedule as an entity controlling the availability of only one resource or service for a given period of time.  Given that definition, each column in the above excerpt from the appointment book represents a separate schedule for a separate resource.</FONT>
+<H4>10.1.1.2 Services<A NAME="I11"></A> and resources<A NAME="I12"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Services and resources are the &quot;what&quot; in any communication of scheduling transactions, that is, they are things&#151;either tangible or intangible&#151;that the transaction is attempting to affect or describe.  The services and resources that are controlled by schedules are typically in high demand.  In any case, their use or performance is managed through the process of reserving blocks of time.</FONT>
+<P>
+<FONT FACE="Times New Roman">Services are typically activities that occur in a certain location, where specific people and equipment exist to carry out the activity.  The activity must be scheduled prior to its occurrence.  The schedule that controls the activity may not be the same schedule that controls the location, people, and equipment.  For example, patient visits to a clinic are typically controlled through scheduling.  Patients receive an appointment at the clinic, and at the appointed time are seen by a member of the clinic staff.  From the point of view of the person or application requesting the appointment for the patient, the &quot;thing&quot; being scheduled is a service (e.g., a doctor&#146;s consult, an X-ray, etc.).  The assignment of an exam room and (in this example) a physician, nurse practitioner, or other staff member is incidental to the actual appointment.</FONT>
+<P>
+<FONT FACE="Times New Roman">Resources are tangible things that must be reserved prior to their use.  Examples might include MRI equipment, portable X-ray machines, or rooms.  People are also tangible resources that are often scheduled.  Typically these people controlled by schedules have special roles, perform special activities, and are in high demand.</FONT>
+<P>
+<FONT FACE="Times New Roman">The following are the primary attributes that describe a resource:</FONT>
+<P>&#149; A unique identification code
+<P>The unique identification code for a service or resource describes a specific instance of that service or resource.  For tangible resources, this may be a serial number, a location, an employee number, or another unique designation.  For services, the identification of a slot on the schedule is usually sufficient for unique identification.
+<P>&#149; A code describing the type of class of service or resource
+<P>This code describes a type or class of service, or resource groups like services or resources together.  For services, this is typically a universal service identifier similar to the field used in the OBR segment defined in the Order Entry chapter (Chapter 4).  This universal service identifier uniquely identifies clinical services performed in a healthcare provider organization.
+<P>For tangible resources, this code may be a model number, a staff classification (such as physician, nurse, physical therapist, etc.), or a kind of room.  This kind of information can be used to request a resource from a pool, where a specific instance of the resource scheduled is unknown and unimportant (as long as it is of the specified type or class).
+<P>&#149; A name or text description of the resource
+<P>The name or text description of the resource provides a human-readable identification of the service or resource.
+<P>
+<FONT FACE="Times New Roman">When a resource is associated with an appointment, or is requested for an appointment, the following attributes describe the relationship (or requested relationship):</FONT>
+<P>&#149; The start date and time the service or resource is required for the appointment
+<P>The start date and time the service or resource is required for the appointment describes  the point at which the service or resource should be made available to the activity.  In this specification, this is represented as a positive or negative time offset from the start date and time of the appointment.
+<P>&#149; The duration for which the service or resource is needed for the appointment
+<P>The duration for which the service or resource is required for the appointment describes how long the service or resource is needed to complete the appointment.  By adding the duration to the start date and time, the end date and time can be calculated for the required resource or service within the activity.
+<P>
+<FONT FACE="Times New Roman">Other attributes further describe services and resources.  These attributes are communicated, as necessary, in transactions between applications.</FONT>
+<H4>10.1.1.3 Appointments<A NAME="I13"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Appointments are instances of the performance of a service or the use of a resource.  They describe the &quot;why,&quot; the &quot;who,&quot; and the &quot;when&quot; in any communication of scheduling transactions.  These appointments occupy one or more slots on a service or resource schedule, causing those slots to become unavailable or &quot;booked.&quot;  Appointments can describe scheduled activities related to patients in a healthcare setting, or they can describe scheduled activities wholly unrelated to patients.</FONT>
+<P>
+<FONT FACE="Times New Roman">In its simplest form, an appointment consists of one service or resource reserved for a period of time, for a specific reason.  More complex activities involve multiple services or resources, or parent-child relationships to other appointments.</FONT>
+<P>
+<FONT FACE="Times New Roman">The primary attributes for the appointment which describes a scheduled activity include the following:</FONT>
+<P>&#149; a unique placer appointment identification code
+<P>The placer appointment identification code uniquely describes an instance of an appointment.  It is used in communications between placer and filler applications to identify a particular appointment (or a request for an appointment booking) on the placer application.  Except in special circumstances, the code is assigned by the placer application upon making an initial scheduling request.  This concept is similar in practice to the placer order number found in Chapter 4, Order Entry.
+<P>&#149; a unique filler appointment identification code
+<P>The filler appointment identification code uniquely describes an instance of an appointment.  It is the filler application&#146;s counter-part to the placer appointment identification code.  It is used in communications between placer and filler applications to identify a particular appointment (or request for an appointment booking) on the filler application.  Except under special circumstances, it is assigned by the filler application when an appointment (or a request for an appointment booking) is created by the filler application.  This concept is similar in practice to the filler order number found in Chapter 4, Order Entry.
+<P>&#149; an appointment start date and time
+<P>The appointment start date and time describe the beginning of the appointment.  In request transactions, the appointment start date and time are expressed as a preference or list of preferences.  The filler application uses this expression of preference to book the appointment.  Once an appointment has been booked, the start date and time are expressed in the actual scheduled start date and time.
+<P>&#149; an appointment duration
+<P>The appointment duration describes how long the appointment will last, and consequently, the end date and time of the appointment.
+<P>
+<FONT FACE="Times New Roman">Supporting information about service and resource activities includes the following:</FONT>
+<P>&#149; reason codes to describe the reason that the service is occurring or the resource is being used;
+<P>&#149; patient information to describe for whom the appointment is taking place, whether the appointment or scheduled activity is for, or related to, a patient;
+<P>&#149; requestor information to describe the person responsible for initiating and executing the appointment;
+<P>&#149; location information to describe where the appointment is scheduled to occur.
+<P>
+<FONT FACE="Times New Roman">Other attributes further describe appointments.  These attributes are communicated as necessary in transactions between applications.</FONT>
+<H4>10.1.1.4 Parent and child appointments<A NAME="I14"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Parent appointments are those appointments that embody one or more child appointments.  For example, a request for a repeating appointment results in a logical parent (the original scheduled appointment request), and one or more children (each individual occurrence of the appointment).  This specification provides no information about how individual applications store or handle parent and child appointments, but it does provide a mechanism for identifying individual occurrences (children) within transactions.</FONT>
+<P>
+<FONT FACE="Times New Roman">Either the placing application or the filling application can specify child appointments--and in one of two ways.  If each individual child appointment is assigned a separate and unique Placer Appointment ID and/or Filler Appointment ID, then that unique identifier may be used in transactions to specify an individual child.  If, however, neither the placer nor filler application assigns a unique identifier separately, an occurrence number can be used.  Both the ARQ and SCH segments allow for an occurrence number, which is a unique serial number assigned to each child within a parent appointment.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100019.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100021.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

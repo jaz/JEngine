@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.8 Usage notes for pharmacy/treatment messages</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400043.htm">
+<LINK REL="Previous" HREF="ch400041.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400041.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400043.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E242"></A>
+<H3><B>4.8.8</B><B> </B><A NAME="I2"></A><B>Usage notes for pharmacy/treatment messages</B><A NAME="I3"></A></H3>
+<P>
+<FONT FACE="Times New Roman">For the RDS (pharmacy/treatment dispense), RGV (pharmacy/treatment give) and RAS (pharmacy/treatment administration) messages, the placer and filler numbers are those of the parent RDE (pharmacy/treatment encoded order) message. In these messages, the filler number does not provide a unique identification of the instance of the pharmacy/treatment action (dispense, give or administer).  To correct this problem, each of the defining segments (RXD, RXG, and RXA) has an appropriately named sub-ID field (dispense sub-ID counter, give sub-ID counter, and administration sub-ID counter).  The combination of the filler number (including its application ID component) and the appropriate sub-ID counter uniquely identifies the instance of the pharmacy/treatment action(s) present in these messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">Although the default order control code for the RDE, RDS, RGV and RAS messages is &quot;RE,&quot; there are cases in which the pharmacy or treatment system and the receiving system must communicate changes in state (see appendix A of this chapter).  Depending on whether the pharmacy or treatment supplier&#146;s relationship to the receiving system is that of placer or filler, the appropriate order control code may be substituted for the default value of RE. The receiving system can also use an appropriate order control code to report status back to the pharmacy or treatment system.</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, suppose that a pharmacy or treatment system is sending RGV messages to a nursing system which will administer the medication and that the pharmacy or treatment system needs to request that several instances of a give order be discontinued. To implement this request, the RGV message may be sent with a &quot;DC&quot; order control code (discontinue request), and the appropriate RXG segments whose give sub-ID fields identify the instances to be discontinued. If a notification back to the pharmacy or treatment supplier is needed, the nursing system can initiate an RGV message with a &quot;DR&quot; order control code (discontinue as requested), and containing RXG segments whose give sub-ID fields identify the discontinued instances.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400041.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400043.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

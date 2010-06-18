@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.10 ADT/ACK - patient arriving - tracking (event A10)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300013.htm">
+<LINK REL="Previous" HREF="ch300011.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300011.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300013.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E146"></A>
+<H3><B>3.2.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - patient arriving - tracking</B><A NAME="I9"></A><A NAME="I10"></A><B> (event A10)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The A10 event is sent when a patient arrives at a new location in the healthcare facility.  The A09 (patient departing tracking) and A10 events are used when there is a change in a patient&#146;s physical location and when this is NOT a change in the official census bed location.  There are three varieties of these non-census location changes involving three different kinds of notification:  (a) an unofficial notification of location change prior to the official notification of patient tracking, (b) the patient is in transit between locations for some time, (c)  a notification of a temporary location change.</FONT>
+<P>
+<FONT FACE="Times New Roman">Patient tracking:  If the patient is now at a non-temporary location and is not in transit, then <I>PV1-3-assigned </I><I>patient location</I> must contain the new patient location and <I>PV1-6-prior patient location</I> can contain the old patient location. </FONT>
+<P>
+<FONT FACE="Times New Roman">In transit:  This is used when there is some period of time between when the patient leaves his/her old location and when he/she arrives at the new assigned location.  If the patient was in transit during the time between the A09 (patient departing tracking) event and the A10 (patient arriving tracking) event, then<I> </I><I>PV1-3-assigned patient location</I> is used for the new location and <I>PV1-6-prior patient location</I> should be used for the old location.  <I>PV1-11-temporary location</I> and<I> PV1-43-prior temporary location</I> are not used. </FONT>
+<P>
+<FONT FACE="Times New Roman">Temporary location:  An A10 event can also be used when the patient is being transferred from a temporary location (XRAY, O/R, LIMBO, HALLWAY) to the new assigned location.  If the patient is arriving at a temporary location (such as the O/R, XRAY, LIMBO, the  HALLWAY), then <I>PV1-11-temporary location</I> would be used to indicate the new temporary location.  If the patient is moving from one temporary location to another, then <I>PV1-43-prior temporary location</I> may also be used.  If the patient is arriving at a permanent location from a temporary location, <I>PV1-3-assigned patient location</I> should be used for the new location, and <I>PV1-43-prior temporary location</I> should be used for the old location.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When other important fields change it is recommended that the A08 (update patient information) event be used instead.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<P> 
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300011.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300013.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<TITLE>2.12.2 Application (level 7) processing rules, deferred processi</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200086.htm">
+<LINK REL="Previous" HREF="ch200084.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200084.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200086.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E82"></A>
+<H3><B>2.12.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><A NAME="I18"></A><A NAME="I19"></A><A NAME="I20"></A><A NAME="I21"></A><B>Application (level 7) processing rules, deferred processing</B><A NAME="I22"></A><A NAME="I23"></A><B> two phase reply </B><B>(original acknowledgment mode only)</B></H3>
+<P>
+<FONT FACE="Times New Roman"><I>(This s</I><I>ection</I><I> remains in the specification only for reasons of providing backward compatibility: it is to be used </I><I>only with the original acknowledgment protocol.  For the original acknowledgment protocol, it creates a </I><I>generic form of an asynchronous application level acknowledgment, the MCF message).</I></FONT>
+<P>
+<FONT FACE="Times New Roman">The application processing rules for deferred processing are described here.  In this mode the responding system sends an acknowledgment to the initiating system that means the message has been placed in some type of secure environment (e.g., disk storage), and the receiving system commits to processing it within a reasonable amount of time, if a) the message contains the necessary information, and b) nothing causes the message&#146;s request for action to be canceled before the responding system processes the request.  </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=560 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B>  Neither of these two conditions is completely checked at the time of the first acknowledgment.  They are both checked at the time of processing.  </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The receipt of the first delayed acknowledgment by the initiating system means that the responding system has taken responsibility for the subsequent processing of the message.  This also implies that the initiating system no longer needs to keep the particular message in its current form to send out later.  For example, if the sending system were maintaining a queue of outgoing messages, the particular message could be deleted from the output queue at this point.</FONT>
+<P>
+<FONT FACE="Times New Roman">The receipt of the second delayed acknowledgment message informs the initiating application of either:  a) the application&#146;s successful processing of the initial message, or b) an error that prevented its processing.  If the receiving application needs to return detailed change of status information, an application-specific message will be used.  An example of the latter is the General Order message (ORM) described in Chapter 4.</FONT>
+<P>
+<FONT FACE="Times New Roman">The general delayed acknowledgment protocol is implemented on a site-specific and application-specific basis as needed.  At a particular site, for a given transaction type the choices are:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) do not allow deferred acknowledgements</FONT>
+<P>
+<FONT FACE="Times New Roman">b) all messages will have a deferred acknowledgment</FONT>
+<P>
+<FONT FACE="Times New Roman">c) only exceptional cases (errors) will receive the deferred acknowledgment</FONT>
+<P>
+<FONT FACE="Times New Roman">In overview the processing for options b) and c) proceeds as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">Initiator receives message from sending application and sends it to the responding system.</FONT>
+<P>
+<FONT FACE="Times New Roman">The responding system receives the message from the initiating system and</FONT>
+<P>
+<FONT FACE="Times New Roman">a) partially validates it syntactically and against the detailed rules described in Section <A HREF="ch200084.htm#I14">2.12.1</A>, &quot;<A HREF="ch200084.htm#I15">Original and enhanced processing rules</A>&quot;.  This validation need not be complete but should be sufficient to determine the application that will ultimately respond to the message.  If this validation fails, a reject message is constructed by the protocol software and returned to the initiator.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) (if the message passes this validation) stores it and constructs a response message that simply acknowledges receipt.  <I>MSA-5-delayed acknowledgment type</I> then has a value of D.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) subsequently passes the message to the application, which:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) creates a response message, or</FONT>
+<P>
+<FONT FACE="Times New Roman">2) creates an error message, or</FONT>
+<P>
+<FONT FACE="Times New Roman">3) creates a reject message</FONT>
+<P>
+<FONT FACE="Times New Roman">d) The protocol software sends the response, error, or reject message to the initiating system as an unsolicited update with no value present in <I>MSA-5-delayed acknowledgment type</I>.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The protocol software of the initiating system responds to the response, error, or reject message with simple acknowledgment and passes it to the initiating application.</FONT>
+<P>
+<FONT FACE="Times New Roman">The details follow.</FONT>
+<H4>2.12.2.1 Initiation</H4>
+<P>
+<FONT FACE="Times New Roman">The rules for creating the initial message are exactly as defined in Section <A HREF="ch200084.htm#I17">2.12.1</A>, &quot;<A HREF="ch200084.htm#I16">Original and enhanced processing rules</A>,&quot; for the original acknowledgment rules.</FONT>
+<H4>2.12.2.2 Response</H4>
+<P>
+<FONT FACE="Times New Roman">The processing in the responding system follows this pattern:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) the protocol software accepts the message and validates it against at least the following criteria:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) the value in <I>MSH-9-message type</I> is one that is acceptable to the receiver</FONT>
+<P>
+<FONT FACE="Times New Roman">2) the value in <I>MSH-12-version ID</I> is acceptable to the receiver</FONT>
+<P>
+<FONT FACE="Times New Roman">3) the value in <I>MSH-11-processing ID</I> is appropriate for the application process handling the message</FONT>
+<P>
+<FONT FACE="Times New Roman">If any of these edits fail, the protocol software rejects the message.  That is, it creates an ACK message with AR in <I>MSA-1-acknowledgment code</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) If the message passes the edits, the protocol software stores it and a generates a response message of type ACK with a value of AA in <I>MSA-1-acknowledgment code</I> and D in <I>MSA-5-delayed acknowledgment type</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) Subsequently the protocol software passes the message to the application, which performs one of these functions:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) processes the message successfully, generating the functional response message (message type MCF) with a value of AA in <I>MSA-1-acknowledgment code</I>.  </FONT>
+<P>
+<FONT FACE="Times New Roman">- OR -</FONT>
+<P>
+<FONT FACE="Times New Roman">2) creates an error response, providing error information in functional segments to be included in the response message, which has a value of AE in <I>MSA-1-acknowledgment code</I>. </FONT>
+<P>
+<FONT FACE="Times New Roman">- OR -</FONT>
+<P>
+<FONT FACE="Times New Roman">3) fails to process (rejects) the message for reasons unrelated to its content or format (system down, internal error, etc.)  For most such problems it is likely that the responding system will be able to accept the same message at a later time.  The implementors must decide on an application-specific basis whether the message should be automatically sent again.  The MSA segment of the response message contains a value of AR in <I>MSA-1-acknowledgment </I><I>code</I>.  </FONT>
+<P>
+<FONT FACE="Times New Roman">d) the application passes the message to the protocol software, which constructs a message of type MCF with F in <I>MSA-5-delayed acknowledgment type</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">e) the protocol software passes the message to the initiating system as an unsolicited update</FONT>
+<P>
+<FONT FACE="Times New Roman">f) the protocol software in the initiating system passes the response message to the initiating application and generates a simple ACK message.  No value is present in <I>MSA-5-delayed </I><I>acknowledgment type</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">All other values are put in the MSA segment as described in Section <A HREF="ch200084.htm#I18">2.12.1</A>, &quot;<A HREF="ch200084.htm#I19">Original and enhanced processing rules</A>.&quot;</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200084.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200086.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

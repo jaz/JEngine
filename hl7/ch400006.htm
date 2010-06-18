@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>4.2.2 ORR - general order response message (response to any ORM)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400007.htm">
+<LINK REL="Previous" HREF="ch400005.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E212"></A>
+<H3><B>4.2.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>ORR </B><B>-</B><B> general order response message (response to any ORM)</B><B> </B><A NAME="I8"></A><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The function of this message is to respond to an ORM message.  An ORR message is the application acknowledgment<A NAME="I10"></A> to an ORM message.  See Chapter 2 for a description of the acknowledgment paradigm. </FONT>
+<P>
+<FONT FACE="Times New Roman">In ORR the PID and ORC segments are optional, particularly in case of an error response.  However, ORC segments are always required in  ORR when an order detail segment is present.  For example, a response ORR might include only the MSH and MSA, but if an RQ1 is present, it must be preceded by an ORC.</FONT>
+<P>
+<FONT FACE="Times New Roman">The function (e.g., cancel, new order) of both ORM and ORR messages is determined by the value in <I>ORC-1-order control</I>.  (See the table of order control values for a complete list.)</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ORR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Order Acknowledgment Message</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]  Notes and Comments (for Patient ID)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [Order Detail Segment] OBR, etc.        4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Detail)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{CTI}]   Clinical Trial Identification     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=533 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> ORRs for supply, pharmacy, and dietary orders all have slightly different message syntax; refer to the appropriate sections as detailed in Section <A HREF="ch400005.htm#I11">4.2.1.1</A>, &quot;<A HREF="ch400005.htm#I11">ORM use notes</A>,&quot;  for exact details.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch400005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

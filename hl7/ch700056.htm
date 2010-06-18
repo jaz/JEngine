@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>7.15.3 CD - channel definition</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700057.htm">
+<LINK REL="Previous" HREF="ch700055.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E323"></A>
+<H3><B>7.15.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>CD - channel definition</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;channel identifier&gt; ^ &lt;waveform source&gt; ^ &lt;channel sensitivity/units&gt; ^ &lt;calibration parameters&gt; ^ &lt;sampling frequency&gt; ^ &lt;minimum/maximum data values&gt; </FONT>
+<P>
+<FONT FACE="Times New Roman">This data type is used for labeling of digital waveform data.  It defines a recording channel which is associated with one of the values in each time sample of waveform data.  Each channel has a number (which generally defines its position in a multichannel display) and an optional name or label (also used in displays).  One or two named waveform sources may also be associated with a channel (providing for the use of differential amplifiers with two inputs).  The other components of the channel definition data type are optional.  The individual components are defined as follows:</FONT>
+<H4>7.15.3.1 Channel identifier </H4>
+<P>
+<FONT FACE="Times New Roman">Two subcomponents separated by subcomponent delimiters (&amp;) which identify the channel, consisting of a channel number (required, maximum 4 characters, data type NM)and a channel name (optional, maximum 17 characters, data type ST).  The channel name is a text string used as a label in waveform data displays.  If this name is not present, the channel label displayed is &lt;source1&gt;-&lt;source2&gt;, where &lt;source1&gt; and &lt;source2&gt; are the names of the two waveform sources connected to this channel, or, if only one waveform sources &lt;source1&gt; is specified, the channel label displayed when the channel name is not given is &lt;source1&gt;.</FONT>
+<H4>7.15.3.2 Waveform source</H4>
+<P>
+<FONT FACE="Times New Roman">Identifies the source of the waveform connected to the channel.  Two names (each maximum of 8 characters, data type ST)separated by a subcomponent delimiter (&amp;) may be specified if it is necessary to individually identify the two inputs for a waveform.  Only one name need be specified if the channel is connected to a single input. For example, in EKG recordings typically only one name is used (such as I or II); in electroencephalography, two names are typically used, one for each input of the differential amplifier (such as F3 and C3)..<I>(NOTE:  Although the committee voted in Denver to make waveform </I><I>source a coded entry, this is not syntactically possible.  We do not have a sub-sub-component delimiter </I><I>available to separate the sub-fields of the proposed coded entry.  Therefore, waveform source remains a </I><I>string data type.).</I></FONT>
+<H4>7.15.3.3 Channel sensitivity and units (CM)</H4>
+<P>
+<FONT FACE="Times New Roman">This CM data type defines the channel sensitivity (gain) and the units in which it is measured.  This component consists of up to seven subcomponents, separated from each other by subcomponent delimiters (&amp;).  The first subcomponent specifies the sensitivity, while the remaining six subcomponents are used to specify the units of the sensitivity, using a format similar to the components of the coded entry (CE) data type.  The subcomponents of the channel sensitivity and units are as follows:</FONT>
+<H5>7.15.3.3.1 Sensitivity (NM)</H5>
+<P>
+<FONT FACE="Times New Roman">Defines the nominal value (maximum 20 characters, data type NM) that corresponds to one unit in the waveform data, that is, the effective resolution of the least significant bit of the ADC, and the polarity of the channel.  The sensitivity incorporates both the amplifier gain and the actual ADC resolution.  It does not, however, relate to the vertical scaling of a waveform display (it is, for example, a measure of voltage, not voltage per unit distance).  For channels recording potential differences between two electrodes using a differential amplifier, a positive sensitivity indicates that a number in the waveform data which is greater than the channel baseline represents a potential at the first electrode which is more positive than that at the second electrode.  A negative sensitivity indicates that a number in the waveform data which is greater than the channel baseline corresponds to a potential at the first electrode which is more negative than that at the second electrode.</FONT>
+<H5>7.15.3.3.2 Units </H5>
+<P>A units designation (for example, uv = microvolt, mv = millivolt, v = volt, pal = pascal, or mm(hg) = millimeters of mercury) from a designated system of units, such as the ISO+ extension of the standard SI single case unit abbreviations presented as Figure 7-13 in Section  <A HREF="ch700011.htm#I14">7.3.2.6.1</A>, &quot;<A HREF="ch700011.htm#I14">Identifying reporting units</A>,&quot; or the ANSI+ U.S. customary unit abbreviations, a superset of the ANSI standard which appears in Figure 7-10. Other unit systems can be used as well. 
+<P>
+<FONT FACE="Times New Roman">the CE data type with up to six subcomponents.</FONT>
+<H4>7.15.3.4 Channel calibration parameters (NM)</H4>
+<P>
+<FONT FACE="Times New Roman">This component consists of three optional subcomponents (each a maximum of 20 characters, data type NM), separated from each other by subcomponent delimiters (&amp;), which define corrections to channel sensitivity, baseline, and channel time skew which may be derived from a calibration procedure.  The three subcomponents are as follows:</FONT>
+<H5>7.15.3.4.1 Sensitivity correction factor</H5>
+<P>
+<FONT FACE="Times New Roman">Defines a correction factor for channel sensitivity which may be derived from the last calibration procedure performed.  The actual channel sensitivity is the nominal channel sensitivity given in the previous component multiplied by the unitless correction factor.</FONT>
+<H5>7.15.3.4.2 Baseline</H5>
+<P>
+<FONT FACE="Times New Roman">Defines the actual channel baseline (the data value which corresponds to a nominal input signal of zero).  The actual baseline may differ from the ideal because of a dc offset in the amplifier connected to the ADC.  The actual baseline values for all channels (which need not be integers) may be determined at the time of calibration as the average digitized values obtained when a zero input signal is connected to each channel.</FONT>
+<H5>7.15.3.4.3 Time skew </H5>
+<P>
+<FONT FACE="Times New Roman">Defines the time difference between the nominal sampling (digitization) time (which would be the same for all channels) and the actual sampling time of the channel, in seconds (or fractions thereof).  This value will differ from zero when all channels in the montage are not sampled simultaneously, as occurs in systems which sample successive channels at regular time intervals.  This value may be determined from a calibration procedure in which an identical time-varying signal is applied to all channels and interchannel time differences are estimated, or more commonly it may be taken from the manufacturer&#146;s specifications for the digitizing system used.  For example, for a system which samples successive channels at regular time intervals <I>t</I>, the time skew of channel number <I>n</I> would be <I>(n</I><I>-</I><I>1)t</I>.  The actual time of sampling (digitization) of sample number <I>m</I> of channel number <I>n</I> in such a system would be <I>R + (m-1)/f + </I><I>(n-1)t</I>, where <I>R</I> is the reference time at the start of the epoch and <I>f</I> is the channel sampling frequency (<I>t &lt; </I><I>1/f</I>).</FONT>
+<H4>7.15.3.5 Channel sampling frequency </H4>
+<P>
+<FONT FACE="Times New Roman">Defines the sampling frequency in hertz of the channel, that is, the reciprocal of the time in seconds between successive samples (maximum 20 characters, data type NM).  Note that this is the frequency of transmitted data, which may or may not be the actual frequency at which the data was acquired by an analog-to-digital converter or other digital data source (i.e. the data transmitted may be subsampled, or interpolated, from the originally acquired data.)</FONT>
+<H4>7.15.3.6 Minimum and maximum data values (NM)</H4>
+<P>
+<FONT FACE="Times New Roman">Defines the minimum and maximum data values which can occur in this channel in the digital waveform data, that is, the range of the ADC (each maximum of 20 characters, data type NM), and also specifies whether or not nonintegral data values may occur in this channel in the waveform data.  If the minimum and maximum values are both integers (or not present), only integral data values may be used in this channel.  If either the minimum or the maximum value contains a decimal point, then nonintegral as well as integral data values may be used in this channel.  The minimum and maximum data values are separated by a component delimiter (&amp;).  For an <I>n</I>-bit signed ADC, the nominal baseline <I>B</I> = 0, and the minimum (<I>L</I>) and maximum (<I>H</I>) values may be calculated as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>L</I> = -2<I><SUP>n</SUP></I><SUP>-1</SUP></FONT>
+<P>
+<FONT FACE="Times New Roman"><I>H</I> = 2<I><SUP>n</SUP></I><SUP>-1</SUP> - 1</FONT>
+<P>
+<FONT FACE="Times New Roman">For an unsigned <I>n</I>-bit ADC, the minimum value <I>L</I> = 0, and the nominal baseline value (<I>B</I>) and maximum value (<I>H</I>) may be calculated from the formulas,</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>B</I> = 2<I><SUP>n</SUP></I><SUP>-1</SUP></FONT>
+<P>
+<FONT FACE="Times New Roman"><I>H</I> = 2<I><SUP>n</SUP></I> - 1</FONT>
+<P>
+<FONT FACE="Times New Roman">The actual signal amplitude <I>A</I> (for differentially amplified potential measurements, the potential at electrode number one minus that at electrode number two) may be calculated from the value <I>D</I> (range <I>L</I> to <I>H</I>) in the waveform data using the actual baseline value <I>B</I> and the nominal sensitivity <I>S</I> and actual sensitivity correction factor <I>C</I> by the formula,</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>A = SC(D-B)</I></FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

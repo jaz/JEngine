@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>4.10 VACCINE ADMINISTRATION DATA</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400053.htm">
+<LINK REL="Previous" HREF="ch400051.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400051.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400053.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E51"></A>
+<P>
+<FONT SIZE="+2"><B>4.10</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>VACCINE ADMINISTRATION DATA</B></FONT>
+<P>State systems that maintain vaccination records need to be able to transmit patient-specific records of vaccines administered to other state systems in order to allow providers to have access to the record at the time healthcare is given and to allow states to track progress in reaching age-appropriate immunization coverage.  The transmissions will occur as the result of four activities:  (1) a query from one system for a patient&#146;s vaccination record that is held in another system, (2) a response to a query containing multiple patient matches to the query, (3) a response to a query containing the vaccination record, and (4) an unsolicited update to a vaccination database.  
+<P>These messages permit the transmission of immunization records from care providers to state and other immunization databases, queries of these databases for immunization records, and the return of these immunization records to care providers. Messages containing patient immunization information carry patient identifying information in the PID segment.  They may also carry parent or guardian information in the NK1 segments.  Parent information is often important for proper identification of a child. The RXA segment is used to report the details of the immunization itself: the nature of the immunization (e.g., DPT, polio, MMR), the date administered, the sequence (1st, 2nd, etc.), the amount (e.g., 0.5 ml), and location and provider of the immunization.  In addition, the RXA provides a place to record the lot number, manufacturer and date of expiration of the immunization.  The RXA can also be used to report the fact that a specified immunization was refused.  This section includes two tables (0292 and 0227) maintained by the U.S. Centers for Disease Control and Prevention (CDC).  These tables are recommended in the U.S. for identifying the immunization in field <I>RXA-5</I><I>-administered code</I> and the vaccine manufacturer in field <I>RXA-17</I><I>-substance manufacturer name</I>.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400051.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400053.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

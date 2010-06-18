@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<TITLE>10.2 PLACER APPLICATION REQUESTS AND TRIGGER EVENTS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100027.htm">
+<LINK REL="Previous" HREF="ch100025.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E115"></A>
+<P>
+<FONT SIZE="+2"><B>10.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>P</B><B>LACER APPLICATION REQUESTS AND TRIGGER EVENTS</B></FONT>
+<P>Placer request and filler response transactions are the messages and trigger events used between placer applications and filler applications.  The placer application initiates transactions using the <B>SRM </B>message, requesting that the filler application modify its schedule(s) with the given trigger event and information.  The filler application responds to these requests, using the <B>SRR</B> message, to either grant or deny the requests from the placer application.
+<P>When initiating a request, the placer application will generate and send an <B>SRM</B> message containing all of the information necessary to communicate the desired action to the filler application.  All required segments and fields (both explicitly required and conditionally required) should be provided to the filler application, as defined in this chapter.  When the filler application receives the transaction, it acknowledges it with the appropriate accept acknowledgment using an <B>ACK</B> message (assuming that the enhanced acknowledgment mode is in use).  After processing the request at the application level, the filler acknowledges the transaction with the appropriate application acknowledgment in an <B>SRM</B> message (again assuming that an application acknowledgment was requested under the enhanced acknowledgment mode, or that the original acknowledgment mode is in use).  Applying the explanations of the various application acknowledgment codes in the context of this chapter, an application accept from the filler means that the request was processed and accepted by the filler.  An application error from the filler means that the request was processed and denied.  An application reject from the filler means that the request was not, and could not, be processed due to one or more reasons unrelated to its content (for example: it fails the basic application protocol validation, the filler system is down, or there was an internal error).  When appropriate, an <B>SRM</B> message with an application accept acknowledgment will contain further information on the request that was processed.
+<P>There are no unsolicited messages initiated from a filler application defined in this set of trigger events.  Those messages and trigger events are defined below, in Section <A HREF="ch100038.htm#I2">10.3</A>, &quot;<A HREF="ch100038.htm#I2">FILLER APPLICATION MESSAGES AND TRIGGER EVENTS UNSOLICITED</A>.&quot;
+<P>All of the trigger events associated with placer request and filler response transactions use a common message definition, that follows:
+<PRE>
+<FONT FACE="Courier New"><U>SRM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Schedule Request Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I7"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">ARQ     Appointment Request Information    10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ APR ]    Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { NTE } ]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ PV1 ]   Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ PV2 ]   Patient Visit-Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { OBX } ]  Observation Segment       4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { DG1 } ]  Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ RGS    Resource Group Segment      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIS   Appointment Information - Service    10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIG   Appointment Information - General Resource  10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIL   Appointment Information - Location Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { AIP   Appointment Information - Personnel Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>SRR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Scheduled Request Response</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I8"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error Information        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ SCH    Schedule Activity Information     10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ { PID   Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ PV1 ]  Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ PV2 ]  Patient Visit-Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { DG1 } ]  Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { RGS    Resource Group Segment      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIS   Appointment Information - Service    10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ { NTE } ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIG   Appointment Information - General Resource  10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ { NTE } ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIL   Appointment Information - Location Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ { NTE } ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIP   Appointment Information - Personnel Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ { NTE } ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Note that in the abstract message definitions for both the SRM and SRR, the patient information segments (segments PID through DG1) are both optional as a group, and repeating as a group.  The optionality allows for transactions that relate to a patient, and for those that do not.  The ability to repeat the patient information allows for those transactions in which one activity must be scheduled for multiple patients (e.g., for family or group therapy).</FONT>
+<P>
+<FONT FACE="Times New Roman">In contrast, a transaction may specify no more than (and no less than) one activity.  Note that neither the ARQ segment (in the SRM message) nor the SCH segment (in the SRR message) are allowed to repeat, and that they are required.  Neither the optionality nor the ability to repeat patient information allows a transaction to specify more than one activity.</FONT>
+<P>
+<FONT FACE="Times New Roman">The trigger events that use this message definition are listed below.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100025.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100027.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

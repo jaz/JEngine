@@ -1,0 +1,809 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.16 Examples of use</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400051.htm">
+<LINK REL="Previous" HREF="ch400049.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400049.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400051.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E250"></A>
+<H3>4.8.16 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Examples of use</B><A NAME="I8"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The purpose of this section is to show how certain specific situations would be handled using the pharmacy/treatment protocol.  The ellipses represent uncompleted details.  The symbol // precedes comments for clarification.</FONT>
+<H4><B>4.8.16.1</B><B> </B>Example of various levels of coding in an order<A NAME="I9"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The order <I>give 500 mg Ampicillin P.O. Q6H for 10 days for a total of 40 tablets</I> is sent to the RX application from the OE application.  This order can be coded with various levels of precision by an ordering application:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) E-mail only version (uses only free text, <I>RXO-6-provider&#146;s pharmacy/treatment instructions</I> or <I>RXO-7-provider's administration instructions</I> only); fully encoded version must be re-entered or verified manually by the pharmacy or treatment application.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) With <I>RXO-2-requested give amount-minimum</I>, <I>RXO-4-requested give units</I>, and <I>ORC-7-quantity/timing</I> coded, and <I>RXO-1-requested give code</I> as free text.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) With <I>RXO-1-requested give code</I>, <I>RXO-2-requested give amount-minimum</I>, <I>RXO-4-requested give </I><I>units</I>, and <I>ORC-7-quantity/timing</I> coded, but where <I>RXO-1-requested give code</I> does not include units.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) With <I>RXO-1-requested give code</I>, <I>RXO-2-requested give amount-minimum, RXO-4-requested give </I><I>units</I>, and <I>ORC-7-quantity/timing coded</I>, and where <I>RXO-1-requested give code</I> does include units.</FONT>
+<P>
+<FONT FACE="Times New Roman">In this case, the units are optional.  The rule for this case (on orders, dispense results, give results, and administration results) is as follows: if units are coded, they over-ride or supersede the units value implied by the give code. </FONT>
+<P>
+<FONT FACE="Times New Roman">a) The E-mail only version of the order: no coded fields exist in the RXO.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|1000^OE||||E||||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO||||||500 mg Polycillin Q6H for 10 days, dispense 40 Tablets||</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">b) A partially coded version of the order.  This version has the <I>RXO-2-requested give amount-minimum</I>, <I>RXO-4-requested give units</I>, and <I>ORC-7-quantity/timing</I> coded, but the <I>RXO-1-requested give code</I> as free text.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|1000^OE||||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|^Polycillin 500 mg TAB^|500||MG|||||Y||40|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">c) A more completely coded version of the order, with the<I> RXO-1-requested give code</I>, <I>RXO-2-requested give amount-minimum</I>, <I>RXO-4-requested give units</I>, and <I>ORC-7-quantity/timing</I> coded, but where <I>RXO-1-requested give code</I> does not imply units.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|1000^OE||||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|RX1001^Polycillin^L|500||MG|||||Y||40|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">d) A completely encoded version, with the <I>RXO-1-requested give code</I>, <I>RXO-2-requested give </I><I>amount-minimum</I>, <I>RXO-4-requested give units</I>, and <I>ORC-7-quantity/timing</I> coded, and where <I>RXO-1-requested give code</I> does imply units.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|1000^OE||||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|RX1001^Polycillin 500 mg TAB^L|500||MG|||||G||40|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">e) Pharmacy or treatment supplier&#146;s encoded version (RDE message) sent to nursing application (a generic substitution).</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|1000^OE|9999999^RX|||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^^^199012100600^^R|0047-0402-30^Ampicillin 250 MG  TAB^NDC|2||TAB|||||G|80||||123456|rx#1001|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">f) Pharmacy or treatment supplier&#146;s dispense results (RDS message).</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|1000^OE|9999999^RX|||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXD|1|0047-0402-30^Ampicillin 250 MG TAB^NDC|199012100400|8|TAB||RX#1001|||123456|G|8</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">g) Pharmacy or treatment supplier&#146;s give results (RGV message).</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|1000^OE|9999999^RX|||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|1|1|^^199012100600^^R|0047-0402-30^Ampicillin 250 MG TAB^NDC|500||MG|||G|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">h) Nursing application Medications Administration results to pharmacy, treatment, or Order Entry application.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|1000^OE|9999999^RX|||E|^Q6H^D10^^^R|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|1|1|199012100615||0047-0402-30^Ampicillin 250 MG TAB^NDC|2|TAB||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO|</FONT></PRE>
+<H4>4.8.16.2 <A NAME="I10"></A>Custom IV example<A NAME="I11"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The RXC segments are used when the RXO-level code does not fully describe the ordered entity, and the description requires more than a single code.  Such &quot;customized&quot; orderable entities may use a &quot;generic&quot; code at the RXO level; e.g., &lt;generic code&gt; means  &quot;custom IV solution, see RXC segments for details.&quot;  In general, a given pharmacy or treatment application will have CE-type RXO-level codes equivalent to:</FONT>
+<P>
+<FONT FACE="Times New Roman">RXCUSIV^Custom IV^Local   (for nonstandard IVs)</FONT>
+<P>
+<FONT FACE="Times New Roman">RXCUSMIX^Custom Mixture^Local (for dermatology and other specialties)</FONT>
+<P>
+<FONT FACE="Times New Roman">RXCUSSLV^Custom Salve^Local  (for dermatology and other specialties)</FONT>
+<P>
+<FONT FACE="Times New Roman">An order is sent from an Order Entry application to a pharmacy or treatment application as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; IV D5W &lt; 1/2 NS 100 cc/hr with an additive of 20 meq KCl in every third liter, starting with the first bottle</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Continuous for 2 days (December 10, 1993 8am to December 12, 1993 at 8am)</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; With a timing critical factor of 30 minutes</FONT>
+<P>
+<FONT FACE="Times New Roman">a) The ORC/RXO for the custom IV mixture and the two liters of NSD5W as entered on the Order Entry application</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|2045^OE||||E|^C^199312100800^199312120800^^TM30^^^^|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|||3|L|IV|D5W WITH 1/2 NS WITH 20 MEQ KCL EVERY THIRD BOTTLE STARTING WITH</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> FIRST||W8&amp;825&amp;A^|N||||||||H30</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|LA|IV-SET01^^L|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">b) Pharmacy/treatment&#146;s encoded version sent to Nursing Unit West 8 Room 825 Bed A</FONT>
+<P>
+<FONT FACE="Times New Roman">The pharmacy or treatment supplier sends the order as a parent/child set.  This spawns, from the free text order 2045, two child orders with two precisely defined service requests.  <I>ORC-4-quantity/timing</I> represents the timing request of the time of the order creation; i.e., <I>ORC-4-quantity/timing</I> represents the requested time.  <I>RXE-1-quantity/timing</I> represents the pharmacy or treatment supplier&#146;s interpretation of the order.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|PA|2045^OE|123^PH||||E|^C^199312100800^199312120800^^TM30^^^^</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The first fully encoded child order is the order for the custom IV.  This is a continuous, repeating order, the first of a cyclic group with a maximum number of two repetitions.  The first repeat starts at the start date/time of 199312100800.  This order can itself be a parent order and spawn individual give orders and/or it can be sent to an administering system (as in this example) which will be responsible for handling the &quot;give&quot; parts of the transactions.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|2045^OE|124^PH|||E||2045&amp;OE^123&amp;PH|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^C^H10^199312100800^199312120800^TM30^^^^S&amp;&amp;&amp;125&amp;PH&amp;*ES+0M&amp;2|RXCUSIV^Custom</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> IV^L||1|L|IV||W8&amp;825&amp;A|N|||||||RX#1256|||||||H10|100|CC/HR</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|LA|IV-SET01^^L|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|IVDEX05^D5W WITH 1/2 NS^L|1|L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|CHEM_KCL^KCL^L|20|MEQ</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second fully encoded child order is for the plain D5W solution.  It is the second part of a cyclic order group, and starts as soon as the first repetition of order with filler order number 124^PH is done (end-to-start with no intervening time increment).  It has a maximum number of two repetitions.  This order can itself be a parent order and spawn individual give orders and/or it can be sent to an administering system (as in this example) which will be responsible for handling the &quot;give&quot; parts of the transactions.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|2045^OE|125^PH|||E||2045&amp;OE^123&amp;PH|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^C^H20^199312101800^199312120800^TM30^^^^S&amp;&amp;&amp;124&amp;PH&amp;ES+0M&amp;2|IVDEX05^D5W WITH 1/2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NS^L||2|L|IV||W8&amp;825&amp;A|N||||||RX#1256||||||||H20|100|CC/HR</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|LA|IV-SET01^^L|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">c) Pharmacy/treatment&#146;s give instructions (for the custom IV order only) </FONT>
+<P>
+<FONT FACE="Times New Roman">If the nursing system does not decode the RDE messages, but instead required the individual give messages, the following message can be used.  It carries the instructions to the Nursing unit for administering the (first child) IV.  It is also the pharmacy or treatment supplier&#146;s (dispense audit) record.  The optional RXC segments are used to give a full description of the custom IV solution.  In this example, <I>RXG-3-quantity/timing</I> represents the actual time the pharmacy or treatment supplier is requesting that the drug or treatment be given.  The order sequencing component of quantity/timing is not needed in this message.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|2045^OE|124^PH|||E|^C^199312100800^199312120800^^TM30^^^^|2045&amp;OE^123&amp;PH|||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|1||^C^H10^199312100800^199312101800^^TM30|RXCUSIV^Custom IV^L|1||L|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> IV|||W8&amp;825&amp;A|||H10|100|CC/HR</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|LA|IV-SET01^^L|</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|IVDEX05^D5W WITH 1/2 NS^L|1|L</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|CHEM_KCL^KCL^L|20|MEQ</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">d) Nursing application Medication Administration results to the pharmacy or treatment supplier or Order Entry application</FONT>
+<P>A message is sent from Nursing when the first bottle of Custom Mixture has been administered.  A second message would be sent from Nursing when the NS is administered.
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|2045^OE|124^PH|||E|^C^199312100800^199312120800^^TM30^^^^||||||||</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|1|1|199312100800|199312101800|RXCUSIV^Custom IV^L|1|L|IV|||W8&amp;825&amp;A|H10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|LA|IV-SET01^^L|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">This completes the first series of messages for this drug/treatment administration.</FONT>
+<H4>4.8.16.3 <A NAME="I12"></A>Alternating IV Order Messages</H4>
+<P>
+<FONT FACE="Times New Roman">HL7 Delimiters:  &lt;cr&gt; = segment terminator;  | = field separator;  ^ = component separator;  &amp; = subcomponent separator;  ~ = repetition indicator;  \ = escape character</FONT>
+<P>
+<FONT FACE="Times New Roman">Encoding Note:  For readability, these examples do not show encoding of the  subcomponents of the Give Codes (CE data type) in the RXC and RXO segments.  In practice, the subcomponents should be encoded as described in the HL7 specification.</FONT>
+<P>
+<FONT FACE="Times New Roman">a) Example #1  </FONT>
+<P>
+<FONT FACE="Times New Roman">D5/0.45NaCl 1000mL with 20mEq KCl in every 3rd bottle.  Start the KCl in the 3rd bottle of this order.  Run in at a rate of 100mL/hr.</FONT>
+<P>
+<FONT FACE="Times New Roman"> (Other message data:  placer order #123, placer application ID=SMS, interval=continuous, start date/time=11/28/94 0900, no stop date/time, priority=Routine, order sequencing= Cyclical)</FONT>
+<P>
+<FONT FACE="Times New Roman">This order may be expressed using a parent/child relationship.  The parent order consists of an ORC (and  an RXO, although I did not  completely elaborate one in this example) that contains order level information.  The repeating bottle cycle of D5/0.45NaCl 1000mL followed by D5/0.45NaCl 1000mL followed by D5/0.45NaCl + 20mEq KCL 1000mL is represented by three child segments.  The Placer&#146;s system may be treating this as a single order with two bottles, A (D5/0.45NaCl 1000mL @ 100mL/hr) and B (D5/0.45NaCl + 20mEq KCL 1000mL @ 100mL/hr), repeating in the cycle of A-A-B.</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>The parent:</U></FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|123^SMS|||||1^C^^199411280900^^R^^^^C|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|Cyclic IV|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The first child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|123A1^SMS|||||1^C^^^^^^^^C&amp;123B&amp;SMS&amp;&amp;&amp;*ES+0M|123|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|123A2^SMS|||||1^C^^^^^^^^C&amp;123A1&amp;SMS&amp;&amp;&amp;ES+0M|123|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The third child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|123B^SMS|||||1^C^^^^^^^^C&amp;123A2&amp;SMS&amp;&amp;&amp;#ES+0M|123|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|KCL|20|MEQ|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Discussion points:</FONT>
+<P>
+<FONT FACE="Times New Roman">Placer Order Number - Three alternatives must be discussed for placer order number.  </FONT>
+<P>
+<FONT FACE="Times New Roman">Each child could have its own placer order number. </FONT>
+<P>
+<FONT FACE="Times New Roman">Each child could have the order number of the parent plus some appended identifier (for examples, 123A or 123.A or 123.1 etc.) that labels each child or each unique combination of ingredients.  (It is noteworthy that this alternative obviates the need for the previously proposed subcomponent ORC-7-Quantity/Timing-8-Placer Sequence ID.)</FONT>
+<P>
+<FONT FACE="Times New Roman">In addition to the appended identifier discussed in &#145;B&#146; above, a further suffix could be attached to uniquely identify each repetition of a particular member of the sequence.  The example (a cycle of bottles &#145;A&#146; and &#145;B&#146; in the sequence A-A-B) identified the order numbers of the children as 123A1, 123A2, and 123B, thereby enabling the quantity/timing to be completely unambiguous.  This could be expressed many other ways, such as 123A.1 or 123.A.1 or 123.A#1 etc.  HL7 does not specify a format for the expression of order number suffixes, nor does it specify a delimiter to use for such a purpose.</FONT>
+<P>
+<FONT FACE="Times New Roman">Sequence Condition Value - In this example, the first child contains an asterisk (*) as the first character of the Sequence Condition Value and the third (last) child contains a pound sign (#).  </FONT>
+<P>
+<FONT FACE="Times New Roman">The asterisk and pound sign are important for designating the first and last bottles especially when children are sent in separate messages, although this example is not constructed that way.</FONT>
+<P>
+<FONT FACE="Times New Roman">Note that computing the duration of the bottle is dependent upon the presence of <U>all</U> of the following fields: </FONT>
+<P>
+<FONT FACE="Times New Roman"><I>&#149;</I> <I>RXO-2</I><I>-requested give amount-minimum</I></FONT>
+<P>
+<FONT FACE="Times New Roman"><I>&#149;</I> <I>RXO-4</I><I>-requested give units</I></FONT>
+<P>
+<FONT FACE="Times New Roman"><I>&#149;</I> <I>RXC-3-</I><I>component amount</I></FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; <I>RXC-4</I><I>-component units</I></FONT>
+<P>
+<FONT FACE="Times New Roman">For cyclic IV orders, these fields are all required in order to determine how long each occurrence of a child will last.</FONT>
+<P>
+<FONT FACE="Times New Roman">While HL7 allows either sending the parent and children in one message or sending the parent and children in separate messages, it appears simpler and therefore recommended to have the parent and all children included in a single message.   The example is constructed that way. </FONT>
+<P>
+<FONT FACE="Times New Roman">b) Example #2  </FONT>
+<P>
+<FONT FACE="Times New Roman">D5W + 40mEq KCl 1000mL alternating with D5/LR + 20mEq KCl 1000mL at 125mL/hr</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>(Other message data:  placer order #124, placer application ID=SMS, interval=continuous, start </I><I>date/time=11/28/94 0900, no stop date/time, priority=Routine, order sequencing= Cyclical)</I></FONT>
+<P>
+<FONT FACE="Times New Roman">This example is a variation on the first example where two different base solutions are used.  In this example, the Placer&#146;s system deals with this as one order with two alternating bottles, A (D5W + 40mEq KCl 1000mL @ 125mL/hr) and B (D5/LR + 20mEq KCl 1000mL @ 125mL/hr) in the cycle A-B.  The principles discussed in Example #1 apply equally to this example.</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>The parent:</U></FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|124^SMS|||||1^C^^199411280900^^R^^^^C|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|Cyclic IV|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The first child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|124A^SMS|||||1^C^^^^^^^^C&amp;124B&amp;SMS&amp;&amp;&amp;*ES+0M|124|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|125||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5W|1000|ML|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|KCL|40|MEQ|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|124B^SMS|||||1^C^^^^^^^^C&amp;124A&amp;SMS&amp;&amp;&amp;#ES+0M|124|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|125||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/LR|1000|ML|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|KCL|20|MEQ|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">c) Example #3 </FONT>
+<P>
+<FONT FACE="Times New Roman">D5/0.45NaCl 1000mL with 20mEq KCl in every 3rd bottle.  Start the KCl in the 3rd bottle of this order.  Add 10mL of Multivitamins to the one bag daily.  Run in at a rate of 100mL/hr.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>(Other message data:  placer order #134, placer application ID=SMS, interval=continuous, start </I><I>date/time=11/28/94 0900, no stop date/time, priority=Routine, order sequencing= Cyclical.  Note that the </I><I>encoding of the Multivitamins statement in the above order, adding Multivitamins to one IV bag each day, </I><I>may vary by institution to put it into the first or last bottle of the day.)</I></FONT>
+<P>
+<FONT FACE="Times New Roman">This order may be expressed using a parent/child relationship.  The parent order consists of an ORC (and  an RXO, although I did not  completely elaborate one in this example) that contains order level information.  The repeating bottle cycle of D5/0.45NaCl 1000mL followed by D5/0.45NaCl 1000mL followed by D5/0.45NaCl + 20mEq KCL 1000mL is represented by three child segments.  This order is complicated by the request to add one component into any one of the three repeating bottles, depending upon which of the bottles will occur first on any particular day. Further complicating this order is a rate of infusion (10 hours for a 1000mL bottle) which results in a fractional number of daily administrations.  Most legacy systems have a great deal of trouble accommodating orders like this within their existing database structures, however there a few vendors who now are able to handle the situation.  The Placer&#146;s system may be treating this as a single order with two bottles, A (D5/0.45NaCl 1000mL @ 100mL/hr) and B (D5/0.45NaCl + 20mEq KCL 1000mL @ 100mL/hr), repeating in the cycle of A-A-B with a cyclical component (Multivitamins).</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>The parent:</U></FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|134^SMS|||||1^C^^199411280900^^R^^^^C|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|Cyclic IV|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The first child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|134A1^SMS|||||1^C^^^^^^^^C&amp;134B&amp;SMS&amp;&amp;&amp;*ES+0M|134|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|134A2^SMS|||||1^C^^^^^^^^C&amp;134A1&amp;SMS&amp;&amp;&amp;ES+0M|134|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The third child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|134B^SMS|||||1^C^^^^^^^^C&amp;134A2&amp;SMS&amp;&amp;&amp;#ES+0M|134|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|KCL|20|MEQ|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The fourth child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|134X^SMS|||||1^Q1D^^^^^^^^|134|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|MULTIVITAMINS|10||ML|INJECTABLE|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Discussion points:</FONT>
+<P>
+<FONT FACE="Times New Roman">This method for accommodating the Multivitamins Daily scenario does not pretend to be the best or only way to express the message, but simply demonstrates adapting the current specification to a highly complex order without adding new components.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The Multivitamins component may be sent as a fourth child.  </FONT>
+<P>
+<FONT FACE="Times New Roman">In this example, its <I>ORC-7-</I><I>quantity/timing</I> includes an interval of &quot;Q1D&quot; (every 1 days).  </FONT>
+<P>
+<FONT FACE="Times New Roman">Its order number consists of the placer&#146;s parent order number plus an appended identifier (&#145;X&#146; in the above example) that labels this child as a special case.  This convention would need to be agreed upon by sending and receiving applications.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) Example #4</FONT>
+<P>
+<FONT FACE="Times New Roman">D5W + 40mEq KCl 1000mL alternating with D5/LR + 20mEq KCl 1000mL alternating with D5/0.45NaCl 1000mL.  Infuse the D5W and D5/0.45 at 125mL/hr, and the D5/LR at 100mL/hr.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>(Other message data:  placer order #177, placer application ID=SMS, interval=continuous, start </I><I>date/time=11/28/94 0900, no stop date/time, priority=Routine, order sequencing= Cyclical)</I></FONT>
+<P>
+<FONT FACE="Times New Roman">This example is another variation of Example 1 where the rate for each bottle is different, and this can be expressed within the RX segments of the children using current components.  In this example, the Placer&#146;s system deals with this as one order with three alternating bottles, A (D5W + 40mEq KCl 1000mL @ 125mL/hr) , B (D5/LR + 20mEq KCl 1000mL @ 100mL/hr) , and C (D5/0.45NaCl 1000mL @ 125mL/hr) in the cycle A-B-C.  The principles discussed in Example #1 apply equally to this example.</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>The parent:</U></FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|NW|177^SMS|||||1^C^^199411280900^^R^^^^C|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO|Cyclic IV|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The first child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|177A^SMS|||||1^C^^^^^^^^C&amp;177C&amp;SMS&amp;&amp;&amp;*ES+0M|177|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|125||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5W|1000|ML|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|KCL|40|MEQ|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The second child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|177B^SMS|||||1^C^^^^^^^^C&amp;177A&amp;SMS&amp;&amp;&amp;ES+0M|177|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|100||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/LR|1000|ML|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|A|KCL|20|MEQ|&lt;cr&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The third child:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CH|177C^SMS|||||1^C^^^^^^^^C&amp;177B&amp;SMS&amp;&amp;&amp;#ES+0M|177|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXO Segment, Requested Give Amount-Minimum: ...|125||ML|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  Requested Give Per (Time Unit):  ...|H1|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|IV|&lt;cr&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXC|B|D5/0.45NACL|1000|ML|&lt;cr&gt;</FONT></PRE>
+<H4>4.8.16.4 Other examples - responses to queries<A NAME="I13"></A></H4>
+<PRE>
+<FONT FACE="Courier New"><U>R0R</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Pharmacy /Treatment Order Response</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  QRD    Query Definition</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [QRF]    Query Filter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PID    Patient Identification</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {[NTE]}]  Notes and Comments (for PID)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ORC    Common Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RXO    Pharmacy/treatment Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[RXC]}  Pharmacy/treatment Component</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer<A NAME="I14"></A><A NAME="I15"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RAR</U><U> </U><U> </U><U>Pharmacy/treatment Administration Information</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  QRD    Query Definition</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [QRF]    Query Filter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [PID    Patient Identification</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {[NTE]}]  Notes and Comments (for PID)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ORC    Common Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RXE    Pharmacy/treatment Encoded Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[RXC]}  Pharmacy/treatment Component</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {RXA}    Pharmacy/treatment Administration</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        RXR   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer<A NAME="I16"></A><A NAME="I17"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RDR</U><U> </U><U> </U><U> </U><U>Pharmacy/treatment Dispense Information</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    QRD    Query Definition</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [QRF]    Query Filter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PID    Patient Identification</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[NTE]}]  Notes and Comments (for PID)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ORC    Common Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     RXE    Pharmacy/treatment Encoded Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[RXC]}  Pharmacy/treatment Component</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {RXD}   Pharmacy/treatment Dispense</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer<A NAME="I18"></A><A NAME="I19"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RER</U><U> </U><U> </U><U> </U><U>Pharmacy/treatment Encoded Order Information</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   QRD    Query Definition</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [QRF]    Query Filter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[NTE]}]  Notes and Comments (for PID)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ORC    Common Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    RXE    Pharmacy<SUB>/treatment</SUB> Encoded Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    RXR    Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {[RXC]}   Pharmacy/treatment Component</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer<A NAME="I20"></A><A NAME="I21"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>RGR</U><U> </U><U> </U><U> </U><U>Pharmacy/treatment Dose Information</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    QRD    Query Definition</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [QRF]    Query Filter</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PID    Patient Identification</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[NTE]}]  Notes and Comments (for PID)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ORC    Common Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     RXE    Pharmacy/treatment Encoded Order</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      {[RXC]}  Pharmacy/treatment Component</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {RXG}   Pharmacy/treatment Give</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/treatment Route</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[DSC]    Continuation Pointer</FONT></PRE>
+<P>The lab application requests pharmacy/treatment administration information for patient 12345, from 8/12/92 through 8/13/92.
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|19920814165645|R|D|9200231|||30^RD|12345|RAS&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|PHM|19920812000000|19920813235959&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE||R23&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^BID^D5^199208120800^199208162000|10986^AMPICILLIN|250||MG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|1|1|199208120800|||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|2|2|199208122000|||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|3|3|199208130800|||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|4|4|199208132000|||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE||R76&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^TID^D7^199208120600^199208182200|12796^ASPIRIN|325||MG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|1|1|199208120600|||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|2|2|199208121400|||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|3|3|199208122200|||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|4|4|199208130600|||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|5|5|199208131400|||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|6|6|199208132200|||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC&lt;CR&gt;</FONT></PRE>
+<P>The nursing sytem requests pharmacy/treatment dose information for patient 12345, from 8/12/92 through 8/13/92.
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|19920814172309|R|D|9200543|||100^RD|12345|RXG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|PHM|19920812000000|19920813235959&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE||R23&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^BID^D5^199208120800^199208162000|10986^AMPICILLIN|250||MG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|1||199208120701||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|2||199208121923||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|3||199208130702||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXA|4||199208131912||250&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE||R76&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^TID^D7^199208120600^199208182200|12796^ASPIRIN|325||MG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|1||199208120459||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|2||199208121328||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|3||199208122101||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|4||199208130503||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|5||199208131311||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXG|6||199208132145||325&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC&lt;CR&gt;</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The order entry application requests pharmacy/treatment order information for patient 12345, from 8/12/92 through 8/13/92.</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|19920814181254|R|D|9200785|||45^RD|12345|RDE&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|PHM|19920812000000|19920813235959&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|...&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|3346|R23&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^BID^D5^199208120800^199208162000|10986^AMPICILLIN|250||MG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|3987|R76&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXE|^TID^D7^199208120600^199208182200|12796^ASPIRIN|325||MG&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RXR|PO&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DSC&lt;CR&gt;</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400049.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400051.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

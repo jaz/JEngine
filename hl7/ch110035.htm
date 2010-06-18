@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>11.6.5 REF message using an I11 event with a deferred response</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110036.htm">
+<LINK REL="Previous" HREF="ch110034.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110034.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110036.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E506"></A>
+<H3><B>11.6.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>REF message using an I11 event with a deferred response</B><A NAME="I7"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I8"></A>The following example demonstrates the ability of the referral provider to return a series of responses.  For most referrals, multiple responses will be returned because referrals may contain multiple requested procedures that may be performed over a period of time.  The referral provider determines the completion of this chain of messages and indicates that designation in the following example by setting the &quot;Processed&quot; flag in the MSA segment.  This procedure will probably vary from network to network. </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|BLAKEMD|EWHIN|JIME|EWHIN|19940111113142||REF^I11|BLAKEM7899|P|2.3|||AL|AL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RF1||R|MED|RP|O|REF4502|19940111|19940510|19940111&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RP|BLAKE^BEVERLY^^^DR^MD|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021| ^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>CTD|PR|JONES^BUCK|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RT|JIMENEZ^JOSE^^^DR||^^^JIME&amp;EWHIN^^^^^JIMENEZ AND SMITH||||531886&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||1234567891^1^M10||BROWN^CARY^JOE||19600309|M||C|N. 12345 SOME STREET^^MEAD^WA ^99021^USA|SPO|(509)466-6801|(509)466-0396|ENGL|M|M||402941703|BROWN*CJ4298^WA&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NK1|1|BROWN^KATHARINA^LOU|2|N. 12345 SOME STREET^^MEAD^WA^99021^USA|(509)466-6801&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>GT1|1||BROWN^CARY^JOE||N. 12345 SOME STREET^^MEAD^WA^99021^USA|(509)466-6801 |(509)466-0396|19600309|M||1|402941703||||WISMER*MARTIN|||456789|01&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>IN1|1|PPO|WA02|WSIC (WA State Code)|11223 FOURTH STREET^^MEAD^WA^99021^USA|ANN MILLER|(509)333-1234|987654321||||19901101||||BROWN^CARY^JOE|1|19600309|N. 12345 SOME STREET^^MEAD^WA^99021^USA|||||||||||||||||402941703||||||01|M&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ACC|19940105125700|WR|WISMER*MARTIN&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DG1|1|I9|569.0|RECTAL POLYP|19940106103500|0&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PR1|1|C4|45378|Colonoscopy|19940110105309|00&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>AUT|PPO|WA02|WSIC (WA State Code)|19940110|19940510|123456789|175|1&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|JIME|EWHIN|BLAKEMD|EWHIN|19940111154812||MCF|JIME1123|P|2.3|||ER|ER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|JIME|EWHIN|BLAKEMD|EWHIN|19940112152401||RRI^I11|JIME1124|P|2.3|||ER|ER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>RF1|A|R|MED|RP|O|REF4502|19940111|19940510|19940111&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RP|BLAKE^BEVERLY^^^DR^MD|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>CTD|PR|JONES^BUCK|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RT|JIMENEZ^JOSE^^^DR||^^^JIME&amp;EWHIN^^^^^JIMENEZ AND SMITH||||531886&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||1234567891^1^M10||BROWN^CARY^JOE||19600309|M||C|N. 12345 SOME STREET^^MEAD^WA^ 99021^USA|SPO|(509)466-6801|(509)466-0396|ENGL|M|M||402941703|BROWN*CJ4298^WA&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>DG1|1|I9|569.0|RECTAL POLYP|19940106103500|0&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PR1|1|C4|45378|Colonoscopy|19940111141509|00&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NTE|||Patient is doing well.~Full recovery expected.&lt;CR&gt;</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110034.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110036.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>7.1.3 Suffixes for defining observation IDs for common component</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700005.htm">
+<LINK REL="Previous" HREF="ch700003.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E285"></A>
+<H3>7.1.3 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Suffixes for defining observation IDs for common components of narrative </B><B>reports</B></H3>
+<P>
+<FONT FACE="Times New Roman">The following subsections define each of the suffices except for the specialized waveform suffices, which are defined in Section <A HREF="ch700057.htm#I8">7.16</A>, &quot;<A HREF="ch700057.htm#I9">WAVEFORM SPECIFIC OBSERVATION ID SUFFIXES</A>.&quot;</FONT>
+<H4>7.1.3.1 Diagnostic impressions (IMP)</H4>
+<P>
+<FONT FACE="Times New Roman">When the suffix is IMP (<I>OBX-3-observation identifier</I>), the result is a diagnosis or finding, stored as a CE data type.  Multiple result segments with an IMP suffix can be used if there are multiple parts to the study and each have an associated diagnosis (for example, the awake and sleep portion of an EEG).  Each of these would have a different observation sub-ID.  Multiple result segments with an IMP suffix can also be used if there are separate diagnoses corresponding to separate anatomic sites; in this case, the site for each diagnosis (each result segment with an IMP suffix) must be specified by an immediately preceding result segment with a suffix of ANT (see Section <A HREF="ch700004.htm#I10">7.1.3.5</A>, &quot;<A HREF="ch700004.htm#I10">Anatomic site (ANT)</A>&quot;), which also has the same observation sub-ID.  When multiple distinct diagnostic impressions are being reported, for example, mitral valve prolapse and aortic stenosis, each distinct impression should be sent in a separate OBX segment.  More than one code may be included within one coded result segment, but only when such codes are modifiers of the principal impression, e.g. to report additional detail about the finding, not to report an entirely different finding.  In this case, the <I>OBX-5-observation value</I> field may repeat, with each instance or repetition specifying one of the related coded impressions.</FONT>
+<P>
+<FONT FACE="Times New Roman">The coded data type for impressions does not mean that a reporting service must actually code all such impressions.  The diagnostic impression can be sent as dictated text, but the text should be sent in the second component of the CE data type without a code to distinguish it from code, i.e. it should be preceded by a component delimiter, e.g., ^congestive heart failure.  </FONT>
+<P>
+<FONT FACE="Times New Roman">When multiple separate text impressions are being reported, they should be reported in separate OBX segments to indicate that they are distinct impressions.</FONT>
+<H4>7.1.3.2 Recommendations (REC)</H4>
+<P>
+<FONT FACE="Times New Roman">When the suffix is REC (<I>OBX-3-observation identifier</I>), the value is a CE result, representing the reading physician&#146;s recommendations about repeat testing, follow up or therapy.  For example, when an ambiguous lesion result is seen on a mammogram, the reading physician might recommend a repeat mammogram in six months, or a needle biopsy immediately.  The recommended procedures are recorded as codes and/or text descriptions in the coded identifier structure.  </FONT>
+<P>
+<FONT FACE="Times New Roman">If more than one follow up study is recommended, each such recommendation is sent in a separate REC.</FONT>
+<H4>7.1.3.3 Confirming procedure (CNP)</H4>
+<P>
+<FONT FACE="Times New Roman">The confirming procedure OBX suffix identifies additional studies used to confirm the diagnosis reported in the IMP OBX.  If, for example, electron microscopy was done to confirm a surgical pathology diagnosis, the identifier for electron microscopy <I>OBX-3-observation identifier</I> would be stored as the value field of an observation ID with a confirming procedure suffix.  Confirming procedures are most important in surgical pathology reports.  But they might also be used by services such as endoscopy, to record the fact that a biopsy, culture, etc., was taken during the procedure. If more than one confirming procedure was used, each is sent in a separate result segment with observation ID suffix CNP.</FONT>
+<H4>7.1.3.4 Procedure medication (MED)</H4>
+<P>
+<FONT FACE="Times New Roman">A coded result segment with a suffix of MED (<I>OBX-3-observation identifier</I>) indicates that the segment contained information about medication given as part of the procedure -- contrast medication, medication intended to invoke a physiologic response (e.g., to be used in stress testing) or premedication.  When patients receive more than one procedure medication, each medication should be reported in a separate OBX medication segment.  If the transmitting system has codes available for medications, they would be recorded as the first component of <I>OBX-3-observation identifier</I>.  The name and/or the dosages could be included in the second component of <I>OBX-5-observation value</I>. </FONT>
+<P>
+<FONT FACE="Times New Roman">A coded result segment with a suffix of MED (procedure medication) may also be used to define a medication administered during recording of digital waveform data or other extended diagnostic procedure, e.g., exercise test .  These may be displayed by the receiving system overlaid with the other events reported.  The procedure medication is assumed to pertain to and be associated with the data recorded at the time specified in <I>OBX-14-date/time of the observation</I>, of the OBX segment labeled with MED, when present.</FONT>
+<H4>7.1.3.5 <A NAME="I10"></A>Anatomic site (ANT)</H4>
+<P>
+<FONT FACE="Times New Roman">Some diagnostic studies include observations about more than one anatomic site within one report.  If, for example, a patient had an appendectomy incidental to gallbladder surgery, the pathologist&#146;s assessment of both specimens would usually be included under a single specimen number in one report.  Each distinct anatomic site would be reported as a separate OBX segment with a suffix of ANT (<I>OBX-3-observation </I><I>identifier</I>).  More than one coded anatomic location may be included within a single OBX segment only when such additional codes are used to construct an identity for a single site.  In this case only, the <I>OBX-5-observation value</I> field may repeat, with each instance or repetition specifying one of the related locations.  Each OBX segment with an ANT suffix could be followed by one or more OBX segments with an IMP or other suffix to transmit the diagnostic impression(s) associated with the anatomic site. These impressions or recommendations would be associated with a single anatomic site via a common observation ID.</FONT>
+<H4>7.1.3.6 Devices (DEV)</H4>
+<P>
+<FONT FACE="Times New Roman">When required, the instrument or device which generated an observation can be transmitted as an additional result of the study.  In this case, the suffix of <I>OBX-3-observation identifier</I> is DEV.  Examples include: an automated instrument in the laboratory; an imaging device and model number in radiology; or an automatic blood pressure machine on the ward.  The device is specified as a coded entry in anticipation that these identifiers could be specified as codes.  Initially, we expect that most of the information about devices will be transmitted as text in the second component of the CE identifier.</FONT>
+<H4>7.1.3.7 Gross or general description (GDT)</H4>
+<P>
+<FONT FACE="Times New Roman">The general description suffix identifies the description component of a diagnostic studies.  In the case of anatomic pathology, it applies to the macroscopic (gross) description of the specimen.  If the description consists of multiple paragraphs, the paragraphs should be separated by repeat delimiters so that the receiving computer can display them as paragraphs.  It will not be necessary to include a description segment for a report when the impression segment says it all, e.g., for normal studies or studies such as EKG, whose reports are traditionally terse. </FONT>
+<H4>7.1.3.8 Secondary or microscopic description (MDT)</H4>
+<P>
+<FONT FACE="Times New Roman">For most studies, a secondary description will not be needed.  In the case of surgical pathology, however, the microscopic description is a separate part of the report.  It describes the histology as seen through the microscope.  The microscopic description will be sent in a segment with the suffix MDT in <I>OBX-3-observation identifier</I>.  If the microscopic description consists of multiple paragraphs, the paragraphs should be separated by repeat delimiters so that the receiving computer can display them as paragraphs.</FONT>
+<H4>7.1.3.9 Technician comment (TCM)</H4>
+<P>
+<FONT FACE="Times New Roman">This is free text stored in a result segment whose <I>OBX-3-observation identifier</I> has a suffix of TCM for technician comment.  It is used to record information about technical performance of the procedure, usually recorded by the technician.</FONT>
+<H4>7.1.3.10 Addendum note (ADT) </H4>
+<P>
+<FONT FACE="Times New Roman">Use to report information that is added as an addendum after the original dictation and sent as a separate labeled section of the report.</FONT>
+<H4>7.1.3.11 Diagnosis (problem) onset date-time (ITM) </H4>
+<P>
+<FONT FACE="Times New Roman">Use to record the date-time that a problem was first perceived to exist. </FONT>
+<H4>7.1.3.12 Diagnosis (problem) resolution date-time (RTM) </H4>
+<P>
+<FONT FACE="Times New Roman">Use to record the date-time that a problem became inactive, i.e., the problem was cured or remitted. </FONT>
+<H4>7.1.3.13 Comparison study (CMS) </H4>
+<P>
+<FONT FACE="Times New Roman">When the reader of a diagnostic report compares the results for the current study with those of a previous study, this suffix allows them to report the nature of the comparison study as a separate result, i.e., an OBX segment with a segment whose observation ID has a suffix of CMS. Ordinarily, this would not be required because the observation ID in the other comparison OBX&#146;s would identify the test, if any of the other comparison values were transmitted.</FONT>
+<H4>7.1.3.14 Comparison date-time (CMT) </H4>
+<P>
+<FONT FACE="Times New Roman">When the reader of a diagnostic procedure compares the current results with a previous study, this suffix allows them to report the date-time of the previous study (time optional) as a separate result within the current report.  </FONT>
+<H4>7.1.3.15 Comparison results (CMR) </H4>
+<P>
+<FONT FACE="Times New Roman">When the reader of a diagnostic procedure compares the current results with those of a previous study on the same patient, this suffix allows them to report the results (impression) of the previous study as a discrete result within the current report.  </FONT>
+<H4>7.1.3.16 Comparison change (CMC) </H4>
+<P>
+<FONT FACE="Times New Roman">When a diagnostic service reports a comparison between the current and a previous study, this suffix is used to report the degree of change (e.g., much worse, worse, minimal worsening, no change, slightly better, better, much better, returned to normal) as a separate result within the report. </FONT>
+<P>
+<FONT FACE="Times New Roman">In current dictation, information about comparison is usually contained in the descriptions of the study.  The provision of the comparison suffixes listed above do not imply a <I>requirement</I> to send this information as separate components.  The comparison variables are only meant to be enabling.  When a system would like to transmit them as discrete report components, these suffixes give them the option.</FONT>
+<H4>7.1.3.17 Predicted (PRD) </H4>
+<P>
+<FONT FACE="Times New Roman">When an observation has a predicted value as is the case for many spirometry tests, this suffix identifies the predicted observation as distinguished from the actual observation.  The AS4 code for forced vital capacity is 94010.1 (see the HL7 implementation guide).  The predicted forced vital capacity would be 94010.1&amp;PRD.</FONT>
+<H4>7.1.3.18 Percent of predicted (PPR) </H4>
+<P>
+<FONT FACE="Times New Roman">This is a computed observation = (actual observation)/(predicted observation).  For forced vital capacity the percent predicted would be identified as 94010.1&amp;PPR.</FONT>
+<H4>7.1.3.19 After drug observed (AFD) </H4>
+<P>
+<FONT FACE="Times New Roman">An observation might be taken before and after a drug is given. This occurs especially in Spirometry.  The predose observation is identified by the base ID.  The post drug measure is identified by the AFD suffix.  Using the AS4 base code for the forced vital capacity the post drug result would be identified by 94010.1&amp;AFD. </FONT>
+<H4>7.1.3.20 Predicted value after drug (ADP) </H4>
+<P>
+<FONT FACE="Times New Roman">The post drug predicted value is identified by the suffix, ADP.  Following the pattern of the above example, it would be 94010.1&amp;ADP. </FONT>
+<H4>7.1.3.21 Percent predicted after drug (APP) </H4>
+<P>
+<FONT FACE="Times New Roman">The percent predicted after drug is identified by applying the suffix, APP to the base code -- 94010.1&amp;APP if using the AS4 code for forced vital capacity.</FONT>
+<H4>7.1.3.22 Clinical observation codes</H4>
+<P>
+<FONT FACE="Times New Roman"> In previous version of HL7, AS4 codes [    .<SUP> </SUP> These AS4 codes are taken directly from ASTM 1238-91, and are printed/adopted with their permission.</FONT>]  have been recommended for identifying clinical observations.  The recently introduced LOINC codes (See Figure 7-2 for full information) may be more useful to many users.  Code system information, including LOINC, has been moved from Appendix 7A to the Implementation Guide.  
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700003.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700005.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

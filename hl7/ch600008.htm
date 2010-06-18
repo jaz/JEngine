@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<TITLE>6.3.5 BAR/ACK - update account (event P05) </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600009.htm">
+<LINK REL="Previous" HREF="ch600007.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E266"></A>
+<H3><B>6.3.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><B>BAR/ACK - update account</B><A NAME="I12"></A><B> (event P05</B><A NAME="I13"></A><A NAME="I14"></A><B>)</B><B> </B></H3>
+<P>
+<FONT FACE="Times New Roman">The P05<A NAME="I15"></A> event is sent when an existing account is being updated.  From Standard Version 2.3 onward, the P01<A NAME="I16"></A> (add account) event should no longer be used for updating an existing account, but only for creating a new account.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>BAR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Update</U><U> Billing Account</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I17"></A><A NAME="I18"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Patient Additional Demographics    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ PV1 ]   Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ PV2 ]   Patient Visit - Additional Info    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{DB1}]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [{ OBX }]   Observation/Result        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ AL1 }]   Allergy Information       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ DG1 }]   Patient Diagnosis        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [  DRG  ]   Diagnosis Related Group      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ PR1    Procedures         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{ ROL }]  Role           12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ GT1 }]   Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ NK1 }]   Next of Kin         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   { </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     IN1    Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ IN2 ]   Insurance - Additional Info.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [ IN3 ]   Insurance - Add'l Info. - Cert.    6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]   </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ACC]    Accident Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [UB1]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [UB2]    Universal Bill 92 Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgement</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I19"></A><A NAME="I20"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The error segment indicates the fields that caused a transaction to be rejected.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

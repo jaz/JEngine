@@ -1,0 +1,582 @@
+<HTML>
+<HEAD>
+<TITLE>8.9.3 PRC -  pricing segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800042.htm">
+<LINK REL="Previous" HREF="ch800040.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E369"></A>
+<H3><B>8.9.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>PRC -  pricing segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The PRC segment contains the  pricing information for the preceding CDM segment's chargeable item.  It contains the fields which, for the same chargeable item, might vary depending upon facility or department or patient type.  The preceding CDM segment contains the fields which, for one chargeable item, remain the same across facilities, departments, and patient types.  </FONT>
+<P>Figure 8-19.  PRC attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=39 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=44 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=55 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=237 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0132</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00982</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Key Value - CDM</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00995</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Facility ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 30</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00996</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Department</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0004</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00997</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Valid Patient Classes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CP</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00998</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Price</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  200</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00999</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Formula</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 4</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01000</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Minimum Quantity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 4</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01001</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Maximum Quantity</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">MO</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01002</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Minimum Price</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">MO</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01003</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Maximum Price</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01004</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective Start Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01005</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Effective End Date</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0268</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01006</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Price Override Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0293</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01007</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Billing Category</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01008</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Chargeable Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0183</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00675</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Active/Inactive Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">MO</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top ><BR></TD>
+<TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">00989</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cost</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=39 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=44 VALIGN=top >
+<P>
+<FONT SIZE="-1">0269</FONT>
+</TD><TD WIDTH=55 VALIGN=top >
+<P>
+<FONT SIZE="-1">01009</FONT>
+</TD><TD WIDTH=237 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge On Indicator</TD></TR></FONT></TABLE><P>8.9.3.0  PRC fields definitions
+<H4>8.9.3.1 Primary key value - CDM  (CE)   00982</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the code assigned by the institution for the purpose of uniquely identifying the thing that can be charged.  The key field of the entry.  For example, this field would be used to uniquely identify a procedure, item, or test for charging purposes.  Probably the same set of values as used in <I>FT1-7</I><I> </I><I>transaction code</I> in financial messages.  Must match <I>MFE</I><I>-4</I><I>-MFE primary key</I> and<I> CDM</I><I>-</I><I>1-CDM primary </I><I>key</I>.  Refer to <I>user-defined table 0132 - Transaction code</I>.  See Chapter 7 for discussion of the universal service ID.  </FONT>
+<H4>8.9.3.2 Facility ID  (CE)   00995</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the facility of the institution for which this price (for the preceding CDM entry) is valid.  For use when needing multi-facility pricing.  If null, assume all facilities.  In a multi-facility environment, the facility associated with this chargeable item may not be the same as the sending or receiving facility identified in the MSH segment.  Use only when the price is not the same for all facilities, that is, a null value indicates that this pricing is valid for all facilities.</FONT>
+<P>
+<FONT FACE="Times New Roman">When two PRC segments are sent with the same key values but different facility identifiers, the second is sent in addition to the first, not to replace the first.  The effective unique identifier is the charge code<I> </I><I>(PRC</I><I>-</I><I>1-PRC primary key)</I> plus the facility ID <I>(PRC</I><I>-</I><I>2-facility ID).</I>  Multiple facility identifiers can be sent in the same segment to indicate that those facilities use the same pricing.</FONT>
+<H4>8.9.3.3 Department  (CE)   00996</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the department of the facility which accrues revenue/cost for this type of charge.  When pricing is different for different departments within the same facility, this will indicate for which department the following pricing information is valid.  Use only when the price is not the same for all departments, that is, a null value indicates that this pricing is valid for all departments.</FONT>
+<P>
+<FONT FACE="Times New Roman">When two PRC segments are sent the same key values but with different departments, the second is sent in addition to the first, not to replace the first.  The effective unique identifier is the charge <I>code (PRC</I><I>-</I><I>1-PRC </I><I>primary key)</I> plus the facility ID<I> (PRC</I><I>-</I><I>2-facility ID)</I> plus the department<I> (PRC</I><I>-</I><I>3-</I><I>d</I><I>epartment).</I>  Multiple departments can be sent in the same segment to indicate that those departments use the same pricing.</FONT>
+<H4>8.9.3.4 Valid patient classes  (IS)   00997</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the patient types for which this charge description is valid.  For example, Inpatient, Outpatient, Series, Clinic, ER, Ambulatory, Observation, etc.  These values should be the same set of values as those used for <I>PV1</I><I>-</I><I>3-patient class</I>, which is site defined.   Use only when the price is not valid for all patient types, that is, a null value indicates that this pricing is valid for all patient classes.  Refer to <I>user-defined table 0004 - Patient class</I> for suggested values.</FONT>
+<P>
+<FONT FACE="Times New Roman">When two PRC segments are sent the same key values but with different valid patient classes, the second is sent in addition to the first, not to replace the first.  The effective unique identifier is the charge <I>code </I><I>(PRC</I><I>-</I><I>1-PRC primary key)</I> plus the facility ID <I>(PRC</I><I>-</I><I>2-facility ID)</I> plus the department <I>(PRC</I><I>-</I><I>3-department)</I> plus the patient class <I>(PRC</I><I>-</I><I>4-</I><I>v</I><I>alid patient classes).</I>  Multiple patient classes can be sent in the same segment to indicate that those patient classes use the same pricing.</FONT>
+<H4>8.9.3.5 Price  (CP)   00998</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;price (MO)&gt; ^ &lt;price type (ID)&gt; ^ &lt;from value (NM)&gt; ^ &lt;to value (NM)&gt; ^ &lt;range units (CE)&gt; ^ &lt;range type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the price to be charged for service, item, or procedure.  If CDM price will always be overridden when charges are posted, then this field is optional.  Otherwise, price would be a required field.  The formula or calculation that is to be used to get total price from these price components is left to implementation negotiations agreed upon by the participating institutions.  See Chapter 2, Section 2.8.8, &quot;CP - composite price,&quot; for a description of the use of the composite price (CP) data type.</FONT>
+<H4>8.9.3.6 Formula  (ST)   00999</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the mathematical formula to apply to <I>PRC-5-price</I><I> in order to compute total </I><I>price</I>.  The syntax of this formula must conform to Arden Syntax rules.</FONT>
+<H4>8.9.3.7 Minimum quantity  (NM)   01000</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the minimum number of identical charges allowed on one patient account for this CDM entry.</FONT>
+<H4>8.9.3.8 Maximum quantity  (NM)   01001</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the maximum number of identical charges allowed on one patient account for this CDM entry.</FONT>
+<H4>8.9.3.9 Minimum price  (MO)   01002</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;quantity (NM)&gt; ^ &lt;denomination (ID)&gt; </FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the minimum total price (after computation of components of price) that can be charged for this item.</FONT>
+<H4>8.9.3.10 Maximum price  (MO)   01003</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;quantity (NM)&gt; ^ &lt;denomination (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the maximum total price (after computation of components of price) that can be charged for this item.</FONT>
+<H4>8.9.3.11 Effective start date  (TS)   01004</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time when this CDM entry becomes effective.</FONT>
+<H4>8.9.3.12 Effective end date  (TS)   01005</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time when this CDM entry is no longer effective.</FONT>
+<H4>8.9.3.13 Price override flag  (IS)   01006</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether this CDM entry&#146;s price can be overridden.  Refer to <I>user-defined </I><I>table 0268 - Override</I> for suggested values.</FONT>
+<H4>8.9.3.14 Billing category  (CE)   01007</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the billing category codes for any classification systems needed, for example, general ledger codes and UB92 categories.  Repeating field with coded entry made up of category code plus category system.  Refer to <I>user-defined table 0293 - Billing category</I> for suggested values.</FONT>
+<H4>8.9.3.15 Chargeable flag  (ID)   01008</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a chargeable indicator. Refer to<I> HL7 table 0136 - Yes/no Indicator</I> for valid values. </FONT>
+<P>
+<FONT FACE="Times New Roman">N charge is not billable, that is, do not create charges for this CDM entry; this is  zero price item</FONT>
+<P>
+<FONT FACE="Times New Roman">Y item is billable (this is also the default when NULL)</FONT>
+<H4>8.9.3.16 Active/inactive flag  (ID)   00675</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the Indicates whether this is a usable CDM entry.  See the following table for allowable values.  Refer to <I>HL7 table 0183</I><I> -</I><I> Active/inactive</I> for valid values.</FONT>
+<H4>8.9.3.17 Cost  (MO)   00989</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;quantity (NM)&gt; ^ &lt;denomination (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the institution's calculation of how much it costs to provide this item, that is, what the institution had to pay for the material plus any specified payment expenditure, effort or loss due to performing or providing the chargeable item.</FONT>
+<H4>8.9.3.18 Charge on indicator  (IS)   01009</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the user defined table of values which indicates when a charge for services or procedures should be accrued.  Refer to <I>user-defined table </I><I>0269</I><I> - Charge on indicator</I> for suggested values.</FONT>
+<P>
+<FONT FACE="Times New Roman">User-defined Table  0269 - Charge on indicator</FONT>
+
+<CENTER><TABLE >
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=233 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=233 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Charge on Order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=108 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=233 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Charge on Result</TD></TR></FONT></TABLE></CENTER><P>
+<P ALIGN=LEFT>
+<A HREF="ch800040.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800042.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

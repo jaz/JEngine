@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE>3.2 TRIGGER EVENTS AND MESSAGE DEFINITIONS</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300003.htm">
+<LINK REL="Previous" HREF="ch300001.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E37"></A>
+<P>
+<FONT SIZE="+2"><B>3.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>TRIGGER EVENTS AND MESSAGE DEFINITIONS</B></FONT>
+<P>Each trigger event is listed below, along with the applicable form of the message exchange.  The notation used to describe the sequence, optionality, and repetition of segments is described in Chapter 2, Format for Defining Abstract Messages.
+<P>The trigger events that follow are all served by the ADT unsolicited update and the ACK response.  
+<P>In the following trigger event descriptions, the term &quot;admitted&quot; patient<A NAME="I9"></A> will be used instead of &quot;inpatient&quot; to indicate any patient classes that are assigned to a patient bed for at least a few hours.  &quot;Non-admitted&quot; patients<A NAME="I10"></A> will be used instead of &quot;outpatients&quot; to indicate any patient classes that are not assigned to a bed, but rather to an exam room or another type of encounter room or clinic waiting room.  
+<P>We recognize that different hospital systems use different definitions of the terms &quot;inpatient,&quot; &quot;outpatient,&quot; &quot;emergency room,&quot; and &quot;recurring patient classes,&quot; or handle these patients differently.  Therefore, the trigger events are not defined as specific to any patient class.  The patient class for any visit related information<A NAME="I11"></A> must be specified in <I>PV1-2-patient class</I> in order to enable each system to handle the transaction properly.  This means that both the event and the patient class must be checked in order to determine how to handle the transaction.  If a certain patient class can sometimes be assigned to a bed and sometimes not, for example, &quot;observation patients,&quot; then <I>PV1-3-assigned patient location</I> must also be checked.
+<P>In order to accommodate non-admitted patient events without using the same trigger events as those for admitted patients, we would need an entirely new set of non-admitted patient events.  If we do that, disparate systems would still have a hard time agreeing about whether certain patient classes should use the admitted patient events or the non-admitted patient events, because of the differences between how admitted and non-admitted patients are defined and handled.
+<P>Both admitted and non-admitted patient events are transmitted using most of the same events.  The meaning or interpretation of those events will depend upon the patient class.
+<P>The information that is included in any of these trigger event transactions can be more than the minimum necessary  to communicate the event.  Any of the fields can be used that are in the segments listed for the message.  As many or as few fields can be used as are agreed upon during implementation.  However, please note that when the contents of a field change for a field that is not necessarily related to the trigger event, it is a matter for implementation negotiation as to whether the receiving systems can capture this changed data.  
+<P>In order to alleviate this ambiguity, we recommend (but do not require) that the A08 (update patient information) transaction be used to update fields that are not necessarily related to any of the other trigger events.  For example, if an ADT system allows the transfer function of the patient&#146;s medical service and attending doctor to be changed, the ADT system should send two HL7 messages.  It should send an A02 (transfer a patient) event to reflect the location change, followed by an A08 (update patient information) event to reflect the change in the medical service and the attending doctor.  
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

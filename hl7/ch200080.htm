@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>2.10.2 Version compatibility definition</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200081.htm">
+<LINK REL="Previous" HREF="ch200079.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200079.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200081.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E79"></A>
+<H3><B>2.10.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>Version compatibility definition</B></H3>
+<P>
+<FONT FACE="Times New Roman">The above rules for receiving HL7 messages and converting their contents to data values allow the following definition of a backward compatibility requirement between the 2.x versions of HL7:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) New messages may be introduced.</FONT>
+<P>
+<FONT FACE="Times New Roman">b)  New segments may be introduced to an existing message.  In general these will be introduced at the end of a message, but they may be introduced elsewhere within the message if the segment hierarchy makes this necessary.</FONT>
+<P>
+<FONT FACE="Times New Roman">c)   New fields may be added at the end of a segment, new components may be added at the end of a field, new subcomponents may be added at the end of a component, and a non-repeating field may be made repeating.</FONT>
+<P>
+<FONT FACE="Times New Roman">If a non-repeating field is made repeating, the first instance of that repeating field must have the same meaning as the non-repeating field had in the prior version of HL7.</FONT>
+<P>
+<FONT FACE="Times New Roman"> For existing fields in existing segments, data types may be changed by the above rule (Section <A HREF="ch200080.htm#I2">2.10.2</A>,c) if the leftmost (prior version) part of the field has the same meaning as it had in the prior version of HL7. In other words, if the new parts of the field (those that are part of the new data type) are ignored, what remains is the old field (defined by the old data type), which has the same meaning as it had in the prior version of HL7.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200079.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200081.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,219 @@
+<HTML>
+<HEAD>
+<TITLE>10.4.3 SQM/SQR - schedule query message and response (event S25)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100057.htm">
+<LINK REL="Previous" HREF="ch100055.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E462"></A>
+<H3><B>10.4.3</B><B> </B><B>SQM/SQR - schedule query message and response (event S25)</B></H3>
+<P>
+<FONT FACE="Times New Roman">Original Mode record-oriented query transactions are initiated from the querying application using the Schedule Query (SQM) to request information about a filler application&#146;s schedule(s).  The filler application responds to these requests, using the Schedule Query Response (SQR) message to either return the requested information, or to signal that an interfacing error of some kind has occurred.  The definitions for the SQM message and the SQR response are listed below.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>SQM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Schedule Query </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I2"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QRF ]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ARQ    Appointment Request       10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ APR ]   Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ PID ]   Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { RGS    Resource Group Segment      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIS   Appointment Information - Service    10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIG   Appointment Information - General Resource  10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIP   Appointment Information - Personnel Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { AIL   Appointment Information - Location Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [ APR ]  Appointment Preferences      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>SQR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Schedule Query Response</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U><A NAME="I3"></A></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QAK     Query Acknowledgment       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { SCH    Schedule Activity Information     10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ { NTE } ]  Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [ PID   Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ PV1 ]  Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ PV2 ]  Patient Visit-Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ DG1 ]  Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    { RGS   Resource Group Segment      10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { AIS  Appointment Information - Service    10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          [ {NTE} ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { AIG  Appointment Information - General Resource  10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          [ {NTE} ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { AIP  Appointment Information - Personnel Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          [ {NTE} ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [ { AIL  Appointment Information - Location Resource 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">          [ {NTE} ] Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">If the deferred response mode (as defined in Chapter 2, Section 2.18, &quot;Original Mode Deferred Access&quot;) is required, then modify the above message definition as follows:</FONT>
+<P>&#149; A code of <B>D</B> for &quot;deferred&quot; appears in the third field of the QRD segment, &quot;Query Priority.&quot;
+<P>&#149; The acknowledgment of the initial SQM message is a general acknowledgment (ACK).
+<P>&#149; The SQR message is sent as if it were an unsolicited message.  The original querying application responds with a general acknowledgment message (ACK).
+<P>
+<a name="I4">
+<FONT FACE="Times New Roman">There is only one trigger event defined for schedule information queries.  This trigger event is used for all original mode record-oriented schedule information queries.  The specification of information to return in the query response is defined by the values provided in certain fields of the QRD and QRF segments.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>QRD-2-query format code</I> is assumed to hold the value R, indicating that the response should be in a record-oriented format.  A value of D is invalid in <I>QRD-2-query format</I>, in conjunction with this trigger event, and should generate an error.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>QRD-9-what subject filter </I>defines the kind of information that the query is requesting.  The following codes are suggested as possible candidates for this field, defining the different kinds of scheduling information requests that might be required by querying applications.  Refer to <I>HL7 table 0048 - What subject filter</I> for valid values.</FONT>
+<P>Scheduling additions to HL7 Table 0048 - What subject filter
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=480 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SAL</FONT>
+</TD><TD WIDTH=480 VALIGN=top >
+<P>
+<FONT SIZE="-1">All schedule related information, including open slots, booked slots, blocked slots</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SOP</FONT>
+</TD><TD WIDTH=480 VALIGN=top >
+<P>
+<FONT SIZE="-1">Open slots on the identified schedule</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SBK</FONT>
+</TD><TD WIDTH=480 VALIGN=top >
+<P>
+<FONT SIZE="-1">Booked slots on the identified schedule</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SBL</FONT>
+</TD><TD WIDTH=480 VALIGN=top >
+<P>
+<FONT SIZE="-1">Blocked slots on the identified schedule</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SSA</FONT>
+</TD><TD WIDTH=480 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time slots available for a single appointment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SSR</FONT>
+</TD><TD WIDTH=480 VALIGN=top >
+<P>
+<FONT SIZE="-1">Time slots available for a recurring appointment</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman"><I>QRF-1-where subject filter</I> allows the query to specify the department, the system, or the subsystem.</FONT>
+<P>
+<FONT FACE="Times New Roman">Any remaining definition and filtering of the query should be achieved by supplying information in the chapter-specific segments that fall between the QRF segment and DSC segment in the message definition.  </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100055.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100057.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

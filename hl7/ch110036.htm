@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<TITLE>11.6.6 RQC inquiry message using an I05 event with an immediate </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110037.htm">
+<LINK REL="Previous" HREF="ch110035.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110035.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110037.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E507"></A>
+<H3><B>11.6.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>RQC inquiry message using an I05 event with an immediate response</B><A NAME="I7"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I8"></A>In this example, Dr. Blake is querying a reference laboratory for the results of all lab work performed on Cary Joe Brown between the dates of 03/20/94 and 03/22/94 and requests that the data be returned in a record or data elemented format.  The message request contains all of the patient identification, as well as the provider identification necessary for the responding facility to qualify the request.  </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|BLAKEMD|EWHIN|EHS_LAB|EWHIN|19940410113142||RQC^I05|BLAKEM7899|P|2.3|||NE|AL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|19940504144501|R|I|BLAKEM7899|||5^RD|PATIENT|RES|ALL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|EHS_LAB^EWHIN|19940320000000|19940322235959&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RP|BLAKE^BEVERLY^^^DR^MD|N.12828NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>CTD|PR|JONES^BUCK|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RT|EMPLAB^EMPIRE LAB||^^^EHS_LAB&amp;EWHIN^^^^^EIMPIRE LABORATORIES&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||1234567891^1^M10||BROWN^CARY^JOE||19600309|M||C|N.12345SOME STREET^^MEAD^WA^ 99021^USA|SPO|(509)466-6801|(509)466-0396|ENGL|M|M||402941703|BROWN*CJ4298^WA&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|^~\&amp;|EHS_LAB|EWHIN|BLAKEMD|EWHIN|19940411152401||RPI^I05|EHSLAB4250|P|2.3|||ER|ER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSA|AA|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRD|19940504144501|R|I|BLAKEM7899|||5^RD|PATIENT|RES|ALL&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>QRF|EHS_LAB^EWHIN|19940320000000|19940322235959&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RP|BLAKE^BEVERLY^^^DR^MD|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER|BLAKEM7899&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>CTD|PR|JONES^BUCK|N. 12828 NEWPORT HIGHWAY^^MEAD^WA^99021|^^^BLAKEMD&amp;EWHIN^^^^^BLAKE MEDICAL CENTER&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PRD|RT|EMPLAB^EMPIRE LAB||^^^EHS_LAB&amp;EWHIN^^^^^EIMPIRE LABORATORIES&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|||1234567891^1^M10||BROWN^CARY^JOE||19600309|M||C|N. 12345 SOME STREET^^MEAD^WA^ 99021^USA|SPO|(509)466-6801|(509)466-0396|ENGL|M|M||402941703|BROWN*CJ4298^WA&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|1||1045813^LAB|L1505.003^COMPLETE BLOOD COUNT (D)|||19940320104700|&quot;&quot;|1^EA|||| |19940320112400||CARMI||||||19940320104955|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|ST|L1550.000^HEMOGLOBIN, AUTO HEME||11.6|g/dl|12.0-16.0|L|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|ST|L1551.003^HEMATOCRIT (D)||36.4|%|36-45||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|ST|L1552.000^RBC, AUTO HEME||3.94|mil/ul|4.1-5.1|L|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|ST|L1553.000^MCV, AUTO HEME||92.3|fl|80-100||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|ST|L1554.000^MCH, AUTO HEME||29.3|pg|26-34||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|ST|L1555.000^MCHC, AUTO HEME||31.8|g/dl|31-37||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|ST|L1557.000^RBC DISTRIBUTION WIDTH||15.3|%|0-14.8|H|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|ST|L1558.003^PLATELET COUNT (D)||279|th/ul|140-440||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|9|ST|L1559.000^WBC, AUTO HEME||7.9|th/ul|4.5-11.0||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|10|ST|L1561.100^NEUTROPHILS, % AUTO||73.8|%|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|11|ST|L1561.510^LYMPHOCYTES, % AUTO||16.6|%|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|12|ST|L1562.010^MONOCYTES, % AUTO||7.3|%|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|13|ST|L1563.010^EOSINOPHILS, % AUTO||1.7|%|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|14|ST|L1564.010^BASOPHILS, % AUTO||0.7|%|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|15|ST|L1565.010^NEUTROPHILS, ABS AUTO||5.8|th/ul|1.8-7.7||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|16|ST|L1566.010^LYMPHOCYTES, ABS AUTO||1.3|th/ul|1.0-4.8||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|17|ST|L1567.010^MONOYCYTES, ABS AUTO||0.6|th/ul|0.1-0.8||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|18|ST|L1568.010^EOSINOPHILS, ABS AUTO||0.1|th/ul|0-0.7||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|19|ST|L1569.000^BASOPHILS, ABS AUTO||0.1|th/ul|0-0.2||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|20|ST|L2110.003^PROTHROMBIN TIME (D)||30.7|sec|11.1-14.0|HH|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NTE|1|L|COAGULATION CRITICAL VALUES CALLED TO VICKIE QUASCHNICK~AT 1130 BY VON~Therapeutic Ranges(oral anticoagulant):~Most clinical situations:  16.1 - 21.1 sec -~  (1.3 - 1.7 times the mean of the normal range)~Mech heart valve, recurrent embolism:  18.6 - 23.6 sec -~  (1.5 - 1.9 times the mean of the normal range)&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|21|ST|L2110.500^INR||5.95||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NTE|1|L|Therapeutic Range (oral anticoagulant):~  Most clinical situations:  2.0 - 3.0~  Mech heart valve, recurrent embolism:  3.0 - 4.0&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|22|ST|L3110.003^SODIUM (D)||141|mmol/l|135-146||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|23|ST|L3111.003^POTASSIUM (D)||3.8|mmol/l|3.5-5.1||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|24|ST|L3112.003^CHLORIDE (D)||111|mmol/l|98-108|H|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|25|ST|L3113.003^CO2 (TOTAL) (D)||23.7|mmol/l|23-30||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|26|ST|L3114.000^ANION GAP||6||7-17|L|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|27|ST|L3120.003^CREATININE (D)||1.4|mg/dl|0.5-1.2|H|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|28|ST|L3121.003^UREA NITROGEN (D)||24|mg/dl|7-25||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|29|ST|L3123.003^GLUCOSE (D)||123|mg/dl|65-115|H|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|30|ST|L3126.003^CALCIUM (D)||8.7|mg/dl|8.4-10.2||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|2||1045825^LAB|L2560.000^BLOOD GAS, ARTERIAL (R)|||19940320105800|&quot;&quot;| 1^EA|||||19940320105800||CARMI||||||19940320105844|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|ST|L2565.000^PH, ARTERIAL BLD GAS (R)||7.46||7.35-7.45|H|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|ST|L2566.000^PCO2, ARTERIAL BLOOD GAS||28|mm/Hg|35-45|LL|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>NTE|1|L|BLOOD GAS ANALYSIS CRITICAL VALUE(S) CALLED TO~DR. CARLSON.&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|ST|L2567.000^PO2, ARTERIAL BLOOD GAS||83|mm/Hg|80-100||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|ST|L2568.000^O2 SAT, ART BLD GAS (R)||96|%|95-99||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|ST|L2569.000^BASE EX, ARTERIAL BLD GAS||-2.1|mEq/l|-2.0-2.0|L|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|ST|L2570.000^HCO3, ARTERIAL BLD GAS||19.4|mEq/l|22-26|L|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|ST|L2571.000^PATIENT TEMP, ABG||96.2|deg F|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|ST|L2572.000^MODE, ABG||ROOM AIR||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR|3||1045812^LAB|L2310.003^URINALYSISD)|||19940320121800|&quot;&quot;|1^EA|||||19940320121800||CARMI||||||19940320104953|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|1|ST|L2320.303^SPECIFIC GRAVITY, UR (D)||1.015||1.002-1.030||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|2|ST|L2320.403^PH, UR (D)||7.0||5.0-7.5||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|3|ST|L2320.503^PROTEIN, QUAL, UR (D)||NEG|mg/dl|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|4|ST|L2320.703^GLUCOSE, QUAL, UR (D)||0|mg/dl|0-30||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|5|ST|L2320.803^KETONES, UR (D)||NEG|mg/dl|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|6|ST|L2320.903^OCCULT BLOOD, UR (D)||SMALL|||A|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|7|ST|L2321.003^BILIRUBIN, UR (D)||NEG||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|8|ST|L2321.100^LEUKOCYTES, UR||MOD|||A|||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|9|ST|L2321.200^NITRITES, UR||NEG||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|10|ST|L2321.300^UROBILINOGEN, UR||NEG||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|11|ST|L2342.000^MICRO SPUN VOLUME, UR||8|ml|8-8||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|12|ST|L2350.003^RBC, UR (D)||5-10|/hpf|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|13|ST|L2350.100^WBC, UR||&gt;100|/hpf|||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|14|ST|L2350.200^EPITHELIAL CELLS, UR||2+||||||F&lt;CR&gt;</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX|15|ST|L2350.300^BACTERIA, UR||2+|||A|||F&lt;CR&gt;</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110035.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110037.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

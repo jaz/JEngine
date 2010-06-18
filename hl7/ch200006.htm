@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>2.2.4 Queries</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200007.htm">
+<LINK REL="Previous" HREF="ch200005.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E13"></A>
+<H3><B>2.2.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><B>Queries</B><A NAME="I16"></A></H3>
+<P>
+<FONT FACE="Times New Roman">A different data exchange occurs when one system sends a query to another.  For example, in a cardiac catheterization application, there may be a trigger event a procedure is scheduled for a patient who is not already registered in the cardiac catheterization application&#146;s database.  The application may send a request message containing the patient&#146;s ID number to the ADT system and receive a response containing the necessary data to permit processing of the order.  This requesting transaction is a query, as distinguished from the unsolicited update discussed above.  The information that flows between the systems is contained in the response.  The response itself is not acknowledged with a third message.</FONT>
+<P>
+<FONT FACE="Times New Roman">In all cases, the HL7 Standard consists of a simple exchange of messages between a pair of applications: the unsolicited update and its acknowledgment or the query and its response.  The underlying operational model is that of a client and a server.  An application interfaces with another application using an event code that identifies the transaction.  The other application responds with a message that includes data or an error indication.  The initiating application may receive a reject status from the other application or from lower level software indicating that its message was not received correctly.</FONT>
+<P>
+<FONT FACE="Times New Roman">HL7 queries can be formulated using one of several methods:</FONT>
+<P>
+<FONT FACE="Times New Roman">1. HL7 &quot;query filters,&quot; defined via the QRD and QRF segments.  These are supported as in previous releases of HL7, and are referred to as &quot;original mode&quot; queries.</FONT>
+<P>
+<FONT FACE="Times New Roman">2. Embedded Query Language <A NAME="I17"></A>select statements, which enable the querying system to format the request as a free-form [ <SUP> </SUP>Although referred to as "free-form," the functional chapters of this specification define this field for commonly used queries.</FONT>] <SUP> </SUP>query statement, using the query language of choice (e.g., SQL).
+<P>
+<FONT FACE="Times New Roman">3. Virtual Table Request,<A NAME="I18"></A> which is similar in function to the Embedded Query Language message, but more rigorously formatted with delimiters.</FONT>
+<P>
+<FONT FACE="Times New Roman">4. Stored Procedure Requests,<A NAME="I19"></A> which invoke units of program code on the responding system that are built to satisfy a specific query (e.g., predefined queries, SQL stored procedures).</FONT>
+<P>
+<FONT FACE="Times New Roman">Since the  predefined queries supported by HL7 are limited in number and precisely-defined, each has a corresponding stored procedure name and parameter list associated with it.  Refer to the functional chapters for the lists of supported queries.</FONT>
+<P>
+<FONT FACE="Times New Roman">5. Event Replay Queries,<A NAME="I20"></A> which are requests for data formatted as event messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">HL7 includes SQL select statements as an alternate means of encoding query selection criteria.  This alternative is offered as a convenience to implementors, and in no way implies that server systems must support generic SQL or be based on relational database technology.</FONT>
+<P>
+<FONT FACE="Times New Roman">These queries are defined in the appropriate chapters of this specification.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.48 ADT/ACK - change alternate patient ID (event A48)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300051.htm">
+<LINK REL="Previous" HREF="ch300049.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300049.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300051.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E184"></A>
+<H3><B>3.2.48</B><B> </B><B>ADT/ACK - change alternate patient ID (event A48)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A change has been done at the alternate patient identifier level.  That is, a <I>PID-4-alternate patient ID </I>has been found to be incorrect and has been changed. </FONT>
+<P>
+<FONT FACE="Times New Roman">An A48 event is used to signal a change of an incorrectly assigned alternate patient identifier value.  The &quot;incorrect source alternate patient ID&quot; value is stored in the MRG segment (<I>MRG-2-prior alternate </I><I>patient ID</I>) and is to be changed to the &quot;correct target alternate patient ID&quot; value stored in the PID segment (<I>PID-4-alternate patient ID-PID</I>).  </FONT>
+<P>
+<FONT FACE="Times New Roman">The alternate patient ID involved in identifying the patient may or may not have accounts, which may or may not have visits.  An A48 (change alternate patient ID) event is intended for changing the value of the alternate patient identifier without affecting other subordinate identifiers.  Any other subordinate identifiers that were previously associated with the &quot;incorrect source alternate patient ID&quot; are now associated with the &quot;correct target alternate patient ID.&quot;  Specification of these other subordinate identifiers is not required.</FONT>
+<P>
+<FONT FACE="Times New Roman">This event and the message syntax do, however, allow for the specification of &quot;new subordinate identifiers&quot; (in addition to the <I>PID-4-alternate patient ID </I>identifier).  For those environments that may require changes to these other subordinate identifiers because of this A48 (change alternate patient ID) event, it is required that the old and new identifiers be a &quot;tightly coupled&quot; pair.</FONT>
+<P>
+<FONT FACE="Times New Roman">Each superior identifier associated with this alternate patient identifier level should have the same value in both the PID and MRG segments. </FONT>
+<P>
+<FONT FACE="Times New Roman">See Section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of change messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be only the fields pertinent to communicate this event.  When demographic data in other fields change, it is recommended that the A08 (update patient information) event be used in conjunction with this message.  However, all PID data associated with the &quot;correct target alternate ID&quot; are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U>ADT Message</U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH  Message Header  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN Event Type  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID Patient Identification  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1] Additional Demographics  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG  Merge Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U>General Acknowledgment</U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH Message Header  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA Message Acknowledgment  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ] Error  2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300049.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300051.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

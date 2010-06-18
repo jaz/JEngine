@@ -1,0 +1,525 @@
+<HTML>
+<HEAD>
+<TITLE>8.8.5 LDP - location department segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800036.htm">
+<LINK REL="Previous" HREF="ch800034.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800034.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800036.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E364"></A>
+<H3><B>8.8.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>LDP - location department segment</B></H3>
+<P>The LDP segment identifies how a patient location room is being used by a certain department.  Multiple departments can use the same patient location, so there can be multiple LDP segments following an LOC segment.  There must be at least one LDP segment for each LOC segment.  This is not intended to include any current occupant information.  
+<P>Figure 8-16.  LDP attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>SEQ
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>LEN
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>DT
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>OPT
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>RP/#
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>TBL#
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ITEM#
+</TD><TD WIDTH=216 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ELEMENT NAME</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>1
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>PL
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00963
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Primary Key Value - LDP</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>2
+</TD><TD WIDTH=46 VALIGN=top >
+<P>10
+</TD><TD WIDTH=52 VALIGN=top >
+<P>IS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>0264
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00964
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Department</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>3
+</TD><TD WIDTH=46 VALIGN=top >
+<P>3
+</TD><TD WIDTH=52 VALIGN=top >
+<P>IS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top >
+<P>0069
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00965
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Service</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>4
+</TD><TD WIDTH=46 VALIGN=top >
+<P>60
+</TD><TD WIDTH=52 VALIGN=top >
+<P>CE
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top >
+<P>0265
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00966
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Specialty Type</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>5
+</TD><TD WIDTH=46 VALIGN=top >
+<P>1
+</TD><TD WIDTH=52 VALIGN=top >
+<P>IS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top >
+<P>0004
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00967
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Valid Patient Classes</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>6
+</TD><TD WIDTH=46 VALIGN=top >
+<P>1
+</TD><TD WIDTH=52 VALIGN=top >
+<P>ID
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>0183
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00675
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Active/Inactive Flag</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>7
+</TD><TD WIDTH=46 VALIGN=top >
+<P>26
+</TD><TD WIDTH=52 VALIGN=top >
+<P>TS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00969
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Activation Date</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>8
+</TD><TD WIDTH=46 VALIGN=top >
+<P>26
+</TD><TD WIDTH=52 VALIGN=top >
+<P>TS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00970
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Inactivation Date - LDP</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>9
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>ST
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00971
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Inactivated Reason</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>10
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>VH
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top >
+<P>0267
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00976
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Visiting Hours</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>11
+</TD><TD WIDTH=46 VALIGN=top >
+<P>40
+</TD><TD WIDTH=52 VALIGN=top >
+<P>XTN
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00978
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Contact Phone</TD></TR></TABLE><P>8.8.5.0 LDP field definitions
+<H4><B>8.8.5.1</B><B> </B>Primary key value - LDP  (PL)   00963</H4>
+<P>Components:  &lt;point of care (ID)&gt; ^ &lt;room (ST)&gt; ^ &lt;bed (ST)&gt; ^ &lt;facility (HD)&gt; ^ &lt;status  (ID)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (ID)&gt; ^ &lt;floor (ST)&gt; ^ &lt;location description (ST)&gt;
+<P>Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field contains the institution&#146;s identification code for the location.  The identifying key value.   This field has the same components as the patient location fields in the PV1 segment (except that bed status is not included here).  At least the first component of this field is required.  The contents of this field must exactly match the content of its preceding MFE (<I>MFE-4-primary key value)</I> and its preceding LOC (<I>LOC-1-LOC primary key value)</I>.
+<H4>8.8.5.2 Location department  (IS)   00964</H4>
+<P>Definition:  This field contains the institution&#146;s department to which this location belongs, or its cost center.  Refer to <I>user-defined table 0264 - Location department</I> for suggested values.
+<H4>8.8.5.3 Location Service  (IS)   00965</H4>
+<P>Definition:  This field contains the hospital or ancillary service with which this location is associated.  Depends on institution use.  Repeats for rooms that can be used, for example, by different services on different days.  These values should match the values used for <I>PV1-10-hospital service</I>, which is site defined.  Refer to <I>user-defined table 0069 - Hospital service</I> for suggested values.
+<H4>8.8.5.4 Specialty type  (CE)   00966</H4>
+<P>Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;
+<P>Definition:  This field contains the specialty type (if any) of the department or clinic. This may also be considered a bed type.  Specialty type is a physical accommodation type, whereas &#145;accommodation type&#146; (<I>LOC-20-accommodation type</I>) is a financial accommodation type.  Refer to <I>user-defined table 0265 - </I><I>Specialty type</I> for suggested values.  See also <I>LOC-33-privacy level</I> and <I>LOC-34-level of care</I>.
+<P>User-defined Table 0265 - Specialty type
+
+<TABLE >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=210 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">AMB</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ambulatory</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PSY</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Psychiatric</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PPS</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pediatric Psychiatric</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">REH</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Rehabilitation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PRE</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pediatric Rehabilitation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ISO</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Isolation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OBG</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Obstetrics, Gynecology</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PIN</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pediatric/Neonatal Intensive Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">INT</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Intensive Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SUR</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Surgery</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PSI</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Psychiatric Intensive Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EDI</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Education</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CAR</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Coronary/Cardiac Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">NBI</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Newborn, Nursery, Infants</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CCR</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Critical Care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PED</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pediatrics</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EMR</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Emergency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OBS</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Observation</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">WIC</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Walk-In Clinic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">PHY</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">General/Family Practice</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">ALC</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Allergy </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">FPC</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Family Planning </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CHI</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Chiropractic </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">CAN</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Cancer </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">NAT</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Naturopathic </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OTH</FONT>
+</TD><TD WIDTH=210 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Other Specialty</TD></TR></FONT></TABLE><H4>8.8.5.5 Valid patient classes  (IS)   00967</H4>
+<P>Definition:  This field contains the patient types that are allowed to be assigned to this bed.  For example, Inpatient, Outpatient, Series, Clinic, ER, Ambulatory, Observation, etc.  These values should be the same set of values as those used for <I>PV1-2-patient class</I>.  Refer to <I>user-defined table 0004 - Patient class</I> for suggested values.  
+<H4>8.8.5.6 Active/inactive flag  (ID)   00675</H4>
+<P>Definition:  This field indicates whether the entry for this location is currently an active, that is, valid, usable entry (disregarding whether it&#146;s waiting to be maintained by housekeeping).  Refer to<I> HL7 table 0183 - </I><I>Active/inactive</I> for valid values.  
+<H4>8.8.5.7 Activation date  (TS)   00969</H4>
+<P>Definition:  This field contains the date and time when the location became active or &quot;in service&quot; for a department (disregarding whether it is waiting to be maintained by housekeeping).   
+<H4>8.8.5.8 Inactivation date - LDP  (TS)   00970</H4>
+<P>Definition:  This field contains the date when the location became inactive or &quot;out of service&quot; for this department (disregarding whether it is waiting to be maintained by housekeeping).  
+<H4>8.8.5.9 Inactivated reason  (ST)   00971</H4>
+<P>Definition:  This field contains the reason the location was put out of service.  It is used when<I> </I><I>LDP-8-inactivation date - LDP</I> is sent.
+<H4>8.8.5.10 Visiting hours  (VH)   00976</H4>
+<P>Components:  &lt;start day range (ID)&gt; ^ &lt;end day range (ID)&gt; ^ &lt;start hour range (TM)&gt; ^ &lt;end hour range (TM)&gt;
+<P>Definition:  This field contains the hours when this location is open for visiting.  Refer to<I> HL7 table 0267 - </I><I>Days of the week</I> for valid values for the first two components.
+<P>Table  0267 - Days of the Week
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P><B>Value</B>
+</TD><TD WIDTH=151 VALIGN=top >
+<P><B>Description</B></TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>SAT
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Saturday</TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>SUN
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Sunday</TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>MON
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Monday</TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>TUE
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Tuesday</TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>WED
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Wednesday</TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>THU
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Thursday</TD>
+</TR>
+<TR>
+<TD WIDTH=112 ALIGN=center  VALIGN=top >
+<P>FRI
+</TD><TD WIDTH=151 VALIGN=top >
+<P>Friday</TD></TR></TABLE></CENTER><H4>8.8.5.11 Contact phone  (XTN)   00978</H4>
+<P>
+<FONT FACE="Courier New">Components: [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;county code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM) ^ &lt;extension (NM)&gt; ^ &lt;any text (st)&gt; </FONT>
+<P>Definition:  This field contains the phone number to use to contact facility personnel about the patient location, in case of inquiries about the location.  This phone is not necessarily within the named patient location.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800034.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800036.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

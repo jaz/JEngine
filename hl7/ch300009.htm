@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.7 ADT/ACK - change an inpatient to an outpatient (event A07)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300010.htm">
+<LINK REL="Previous" HREF="ch300008.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E143"></A>
+<H3><B>3.2.7</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ADT/ACK - change an inpatient to an outpatient</B><A NAME="I9"></A><B> (event A07)</B></H3>
+<P>
+<FONT FACE="Times New Roman">An A07 event is sent when a patient who was admitted changes his/her status to &quot;no longer admitted&quot; but is still being seen for this episode of care.  This event changes a patient from an &quot;admitted&quot; to a &quot;non-admitted&quot; status.  The new patient location should appear in <I>PV1-3-assigned patient location</I>, while the old patient location (if different) should appear in <I>PV1-6-prior patient location</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">We leave it to implementation negotiation to determine whether disparate systems merely change the patient class, or close and open a new account.  The current active account number should appear in field <I>PID-18-patient account number</I>; the prior account number can be included optionally in <I>MRG-3-prior </I><I>patient account number</I>.  This arrangement is not intended to be a type of merge.  The MRG segment is only used here for <I>MRG-3-prior patient account number</I>.  <I>PV1-19-visit number</I> can also be changed during this event.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When other important fields change it is recommended that the A08 (update patient information) event be used instead.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>ADT Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1]    Additional Demographics      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ MRG ]    Merge Information        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { NK1 } ]   Next of Kin / Associated Parties    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ PV2 ]    Patient Visit - Additional Info.    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DB1 } ]   Disability Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  DRG  ]   DRG Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { OBX } ]   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { AL1 } ]   Allergy Information       3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { DG1 } ]   Diagnosis Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DRG ]    DRG Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [ { PR1    Procedures        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{ROL]}  Role           12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ { GT1 } ]   Guarantor Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  { IN1    Insurance Information       6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN2 ]   Insurance Information - Addit. Info.   6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [ IN3 ]    Insurance Information - Cert.     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  } </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ACC ]    Accident Information        6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB1 ]    Universal Bill Information     6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ UB2 ]    Universal Bill 92 Information     6
+<BR></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error           2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

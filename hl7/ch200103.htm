@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>2.18.1 QRY/QCK - deferred query (event Q02)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200104.htm">
+<LINK REL="Previous" HREF="ch200102.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200102.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200104.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E94"></A>
+<H3><B>2.18.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>QRY/QCK - deferred query (event Q02)</B><A NAME="I5"></A><A NAME="I6"></A></H3>
+<P>
+<FONT FACE="Times New Roman">For clarity, A is the system initiating the query and B is the system sending the responses.  Multiple queries and responses are permitted within single messages.  The responses to a given query may be broken into several separate DSR messages.  A single DSR message may contain responses to more than one QRY.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>QRY (A to B)</U><U> </U><U> </U><U> </U><U>Query Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">QRD     Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QRF ]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ DSC ]    Continuation Pointer       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>QCK (B to A)</U><U> </U><U> </U><U> </U><U>Query General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ QAK ]    Query Acknowledgment       2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200102.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200104.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

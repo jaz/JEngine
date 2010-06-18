@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>9.4.3 Document status change notification (event T03)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch900009.htm">
+<LINK REL="Previous" HREF="ch900007.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch900007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E417"></A>
+<H3><B>9.4.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>Document status change notification (event T03)</B></H3>
+<P>
+<FONT FACE="Times New Roman">This is a notification of a change in a status of a document without the accompanying content. </FONT>
+<P>
+<FONT FACE="Times New Roman">Scenario: A document is authenticated.  Notification is sent to the chart tracking system and is used to update the document status from pre-authenticated  to authenticated or legally authenticated.</FONT>
+<P>
+<FONT FACE="Times New Roman">A change in any of the following independent status characteristics would cause a message to be sent:</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Completion Status</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Confidentiality Status</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Availability Status</FONT>
+<P>
+<FONT FACE="Times New Roman">&#149; Storage Status</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MDM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Document Status Change Notification</U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN     Event Type         3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">TXA     Document Notification       9</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error Information        2</FONT></PRE>
+<P ALIGN=LEFT>
+<A HREF="ch900007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch900009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

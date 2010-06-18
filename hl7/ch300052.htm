@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>3.2.50 ADT/ACK - change visit number (event A50)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch300053.htm">
+<LINK REL="Previous" HREF="ch300051.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch300051.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300053.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E186"></A>
+<H3><B>3.2.50</B><B> </B><B>ADT/ACK - change visit number (event A50)</B></H3>
+<P>
+<FONT FACE="Times New Roman">A change has been done at the visit identifier level.  That is, a <I>PV1-19-visit number</I> has been found to be incorrect and has been changed. </FONT>
+<P>
+<FONT FACE="Times New Roman">An A50 event is used to signal a change of an incorrectly assigned visit number value.  The &quot;incorrect source visit number&quot; value is stored in the MRG <I>segment (MRG-5-prior visit number</I>) and is to be changed to the &quot;correct target visit number&quot; value stored in the PV1 segment <I>(PV1-19-visit number</I>).  </FONT>
+<P>
+<FONT FACE="Times New Roman">Each superior identifier associated with this visit number identifier level should have the same value in both the PID and MRG segments. </FONT>
+<P>
+<FONT FACE="Times New Roman">See Section <A HREF="ch300076.htm#I13">3.5.2</A>, &quot;<A HREF="ch300076.htm#I13">Merging patient/person information</A>,&quot; for a discussion of issues related to the implementation of change messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">The fields included when this message is sent should be the fields pertinent to communicate this event.  When demographic data in other fields change, it is recommended that the A08 (update patient information) event be used in conjunction with this message.  However, all PV1 data associated with the &quot;Visit Number&quot; are treated as updated information.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ADT</U><U> </U><U>ADT Message</U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH  Message Header  2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">EVN Event Type  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID Patient Identification  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PD1] Additional Demographics  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MRG  Merge Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PV1 Patient Visit  3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ] Error          2</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch300051.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch300053.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

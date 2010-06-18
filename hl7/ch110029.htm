@@ -1,0 +1,257 @@
+<HTML>
+<HEAD>
+<TITLE>11.5.4 CTD - contact data segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch110030.htm">
+<LINK REL="Previous" HREF="ch110028.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch110028.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110030.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E501"></A>
+<H3><B>11.5.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>CTD - contact data segment</B><A NAME="I7"></A></H3>
+<P>
+<FONT FACE="Times New Roman"><A NAME="I8"></A>The CTD segment may identify any contact personnel  associated with a patient referral message and its related transactions.  The CTD segment will be paired with a PRD segment.  The PRD segment contains data specifically focused on provider information in a referral.  While it is important in an inter-enterprise transaction to transmit specific information regarding the providers involved (referring and referred-to), it may also be important to identify the contact personnel associated with the given provider.  For example, a provider receiving a referral may need to know the office manager or the billing person at the institution of the provider who sent the referral.  This segment allows for multiple contact personnel to be associated with a single provider.</FONT>
+<P ALIGN=indent>Figure 11-5.  CTD attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=43 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=67 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=240 VALIGN=top  BGCOLOR=#CCCCCC >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0131</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01155</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Role</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 106</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01165</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  60</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01166</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  60</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PL</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01167</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1">  100</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01168</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Communication Information</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0185</FONT>
+</TD><TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01170</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Preferred Method of Contact</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=43 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 100</FONT>
+</TD><TD WIDTH=55 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=44 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=67 VALIGN=top >
+<P>
+<FONT SIZE="-1">01171</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contact Identifiers</TD></TR></FONT></TABLE><P>11.5.4.0 CTD field definitions<A NAME="I9"></A>
+<H4>11.5.4.1 <A NAME="I10"></A>Role<A NAME="I11"></A>  (CE)   01155</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the contact role that defines the relationship of the person described in this segment to the patient being referred.  When a referral  is inter-enterprise in nature, there are some important relationships that must be identified.  For example, it may be necessary to identify the contact representative at the clinic that sent the referral.  Refer to <I>user-defined table 0131 - Contact role</I> for suggested values. </FONT>
+<H4>11.5.4.2 <A NAME="I12"></A>Contact name<A NAME="I13"></A>  (XPN)   01165</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^<B> </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the name of the contact person identified in this segment.  Generally, this field will describe a person or provider associated with the referral.  If this contact name is a physician, you may refer to the <I>CTD-7-contact identifiers</I> (Section <A HREF="ch110029.htm#I23">11.5.4.7</A>) for the physician identifier. </FONT>
+<H4>11.5.4.3 <A NAME="I14"></A>Contact address<A NAME="I15"></A>  (XAD)   01166</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> </B>^ &lt;other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the mailing address of the contact person identified in this segment. One of the key components for completing the &quot;circle of care&quot; and provider/institution bonding is the issuance of follow-up correspondence to the referring provider.</FONT>
+<H4>11.5.4.4 <A NAME="I16"></A>Contact location<A NAME="I17"></A>  (PL)   01167</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS) &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the location of the contact, which is required when a contact that may be external to a given enterprise must be referenced.  For example, if this contact represents the office manager of the referred-to physician, then the contact location should identify the clinic of the physician or provider to whom this referral has been sent.  The identification of the contact&#146;s location is specified by an application and facility identifier carried in the facility field.  The application identifier and the facility identifier would be used in the same manner as their corresponding fields in the MSH segment (<I>MSH-3-sending application, MSH-5-receiving application, MSH-4-sending facility, MSH-6-receiving </I><I>facility</I>).  That is, the facility field will contain an application identifier and facility identifier which describes the location of this contact.  However, it should be noted that they may describe a different location because the contact location being referenced in this field <I>may not be</I> the location from which the message originated, which is being described by the MSH.</FONT>
+<H4>11.5.4.5 <A NAME="I18"></A>Contact communication information<A NAME="I19"></A>  (XTN)   01168</H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt;^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the information, such as the phone number or electronic mail address, used to communicate with the contact person or organization.</FONT>
+<H4>11.5.4.6 <A NAME="I20"></A>Preferred method of contact<A NAME="I21"></A>  (CE)   01170</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the preferred method to use when communicating with the contact person.  Refer to <I>user-defined table 0185 - Preferred method of contact</I> for suggested values. </FONT>
+<H4>11.5.4.7 <A NAME="I22"></A><A NAME="I23"></A>Contact identifiers<A NAME="I24"></A>  (CM)   01171</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;type of ID number (IS)&gt; ^ &lt;other qualifying info (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This repeating field contains the contact&#146;s unique identifiers such as UPIN, Medicare and Medicaid numbers.  Refer to Chapter 8 (Section 8.6.3.6, &quot;Practitioner ID numbers&quot;) for suggested values.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch110028.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch110030.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

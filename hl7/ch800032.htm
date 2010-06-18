@@ -1,0 +1,353 @@
+<HTML>
+<HEAD>
+<TITLE>8.8.2 LOC - location identification segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800033.htm">
+<LINK REL="Previous" HREF="ch800031.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800031.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800033.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E361"></A>
+<H3><B>8.8.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>LOC - location identification segment</B></H3>
+<P>The LOC segment can identify any patient location referenced by information systems.  This segment gives physical set up information about the location.  This is not intended to include any current occupant or current use information.  There should be one LOC segment for each patient location.  If desired, there can also be one LOC segment for each nursing unit and room.
+<P>Figure 8-13.  LOC attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>SEQ
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>LEN
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>DT
+</TD><TD WIDTH=47 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>OPT
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>RP/#
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>TBL#
+</TD><TD WIDTH=52 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ITEM#
+</TD><TD WIDTH=216 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>ELEMENT NAME</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>1
+</TD><TD WIDTH=46 VALIGN=top >
+<P>80
+</TD><TD WIDTH=52 VALIGN=top >
+<P>PL
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00943
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Primary Key Value - LOC</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>2
+</TD><TD WIDTH=46 VALIGN=top >
+<P>48
+</TD><TD WIDTH=52 VALIGN=top >
+<P>ST
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00944
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Description</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>3
+</TD><TD WIDTH=46 VALIGN=top >
+<P>2
+</TD><TD WIDTH=52 VALIGN=top >
+<P>IS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>R
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top >
+<P>0260
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00945
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Type</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>4
+</TD><TD WIDTH=46 VALIGN=top >
+<P>90
+</TD><TD WIDTH=52 VALIGN=top >
+<P>XON
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00947
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Organization Name</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>5
+</TD><TD WIDTH=46 VALIGN=top >
+<P>106
+</TD><TD WIDTH=52 VALIGN=top >
+<P>XAD
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00948
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Address</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>6
+</TD><TD WIDTH=46 VALIGN=top >
+<P>40
+</TD><TD WIDTH=52 VALIGN=top >
+<P>XTN
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00949
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Phone</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>7
+</TD><TD WIDTH=46 VALIGN=top >
+<P>60
+</TD><TD WIDTH=52 VALIGN=top >
+<P>CE
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top ><BR></TD>
+<TD WIDTH=52 VALIGN=top >
+<P>00951
+</TD><TD WIDTH=216 VALIGN=top >
+<P>License Number</TD>
+</TR>
+<TR>
+<TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>8
+</TD><TD WIDTH=46 VALIGN=top >
+<P>3
+</TD><TD WIDTH=52 VALIGN=top >
+<P>IS
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top >
+<P>O
+</TD><TD WIDTH=46 ALIGN=center  VALIGN=top >
+<P>Y
+</TD><TD WIDTH=52 VALIGN=top >
+<P>0261
+</TD><TD WIDTH=52 VALIGN=top >
+<P>00953
+</TD><TD WIDTH=216 VALIGN=top >
+<P>Location Equipment</TD></TR></TABLE><P>8.8.2.0   LOC field definitions
+<H4>8.8.2.1 Primary key value - LOC  (PL)   00943</H4>
+<P>Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;
+<P>Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field contains the institution&#146;s identification code for the location.  The identifying key value.   Must match <I>MFE-4-primary key value</I>.  This field has the same components as the patient location fields in the PV1 segment (except that bed status is not included here).  
+<P>At least the first component of this field is required.  The first component can be an identifying code for the nursing station for inpatient locations, or clinic, department or home for patient locations other than inpatient ones. 
+<H4>8.8.2.2 Location description  (ST)   00944</H4>
+<P>Definition:  This field contains the optional free text description of the location, to elaborate upon LOC primary key value.
+<H4>8.8.2.3 Location type  (IS)   00945</H4>
+<P>Definition:  This field contains the code identifying what type of location this is.  Refer to<I> user-defined table </I><I>0260 - Patient location type</I> for suggested values.
+<P>User-defined Table 0260 - Patient location type
+
+<TABLE >
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">N </FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Nursing Unit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">R</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Room</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">B</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Bed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">E</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Exam Room</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">O</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Operating Room</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">C</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Clinic</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">D</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Department</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=123 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">L</FONT>
+</TD><TD WIDTH=140 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Other Location</TD></TR></FONT></TABLE><H4>8.8.2.4 Organization name  (XON)   00947</H4>
+<P>Components:  &lt;organization name (ST)&gt; ^ &lt;organization name type code (ID)&gt; ^ &lt;ID number (ID)&gt; ^ &lt;check digit (NM)&gt; ^ &lt; check digit scheme (ID)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;identifier type code (ID)&gt; ^ &lt;assigning facility ID (HD)&gt;
+<P>Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)&gt;
+<P>Definition:  This field contains the organization of which this location is a part.  For inpatient locations, this can be the hospital or institution name.  For outpatient locations, this can be the clinic or office name.
+<H4>8.8.2.5 Location address  (XAD)   00948</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code (ST)&gt; ^ &lt;country (ID)&gt; ^ &lt;address type (ID)&gt; ^ &lt;other geographic designation (ST)&gt; ^ &lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>Definition:  This field contains the address of the patient location, especially for use for outpatient clinic or office locations.
+<H4>8.8.2.6 Location phone  (XTN)   00949</H4>
+<P>
+<FONT FACE="Courier New">Components: [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;county code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM) ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt; </FONT>
+<P>Definition:  This field contains the phone number within the patient location, if any.  For example, the room or bed phone for use by the patient.
+<H4>8.8.2.7 License number  (CE)   00951</H4>
+<P>Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;
+<P>Definition:  This field contains the multiple license numbers for the facility.
+<H4>8.8.2.8 Location equipment  (IS)   00953</H4>
+<P>Definition:  This repeating field indicates what types of equipment are built in.  Applies only to room or bed locations.  If <I>LOC-3-location type</I> indicates that this is a room, this will be the equipment in the room which can be used by more than one bed.  If <I>LOC-3-location type</I> indicates this is a bed, this will be the bedside devices available to this bed.  Refer to<I> user-defined table 0261 - Location equipment</I> for suggested values.
+<P>User-defined Table 0261 - Location equipment
+
+<TABLE >
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Value</U></B></FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><B><U>Description</U></B></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">OXY</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Oxygen</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SUC</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Suction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">VIT</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Vital signs monitor</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">INF</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Infusion pump</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">IVP</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">IV pump</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EEG</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Electro-Encephalogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">EKG</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Electro-Cardiogram</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=132 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">VEN</FONT>
+</TD><TD WIDTH=186 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Ventilator</TD></TR></FONT></TABLE><P>   
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch800031.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800033.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

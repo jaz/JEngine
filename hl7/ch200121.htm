@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>2.23.3 HL7 batch protocol</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200122.htm">
+<LINK REL="Previous" HREF="ch200120.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200120.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200122.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E107"></A>
+<H3><B>2.23.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><A NAME="I15"></A><A NAME="I16"></A><A NAME="I17"></A><B>HL7 batch protocol</B><A NAME="I18"></A><A NAME="I19"></A></H3>
+<P>
+<FONT FACE="Times New Roman">There are instances when it is convenient to transfer a batch of HL7 messages.  Common examples would be a batch of financial posting detail transactions (DFT&#146;s) sent from an ancillary to a financial system.  Such a batch could be sent online using a common file transfer protocol, or offline via tape or diskette.</FONT>
+<H4>2.23.3.1 HL7 batch file structure <A NAME="I20"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The structure of an HL7 batch file is given by the following (using the HL7 abstract message syntax)</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[FHS]               (file header segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>{ [BHS]             (batch header segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> { [MSH             (zero or more HL7 messages)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ....</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ....</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> ....</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>] }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>  [BTS]              (batch trailer segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[FTS]                (file trailer segment)</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Notes:</FONT>
+<P>
+<FONT FACE="Times New Roman">The sequence numbering protocol has a natural application in batch transfers.  See the discussion of batch acknowledgements that follows.</FONT>
+<P>
+<FONT FACE="Times New Roman">Although a batch will usually consist of a single type of message, there is nothing in the definition that restricts a batch to only one message type.</FONT>
+<P>
+<FONT FACE="Times New Roman">The HL7 file and batch header and trailer segments are defined in exactly the same manner as the HL7 message segments.  Hence the HL7 message construction rules of Section <A HREF="ch200078.htm#I16">2.10</A> can be used to encode and decode HL7 batch files.</FONT>
+<P>
+<FONT FACE="Times New Roman">There are only two cases in which an HL7 batch file may contain zero HL7 messages:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) a batch containing zero HL7 messages may be sent to meet a requirement for periodic submission of batches when there are no messages to send.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) a batch containing zero negative acknowledgment messages may be sent to indicate that all the HL7 messages contained in the batch being acknowledged are implicitly acknowledged.  See Section <A HREF="ch200121.htm#I23">2.23.3.3</A>, &quot;<A HREF="ch200121.htm#I21">Related segments and data usage</A>.&quot;</FONT>
+<H4>2.23.3.2 <A NAME="I21"></A>Related segments and data usage<A NAME="I22"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The following segments defined in Section <A HREF="ch200123.htm#I14">2.24</A> , &quot;<A HREF="ch200123.htm#I16">MESSAGE CONTROL SEGMENTS</A>,&quot; relate to the HL7 Batch Protocol:</FONT>
+<P>
+<FONT FACE="Times New Roman">BHS Batch Header</FONT>
+<P>
+<FONT FACE="Times New Roman">BTS Batch Trailer</FONT>
+<P>
+<FONT FACE="Times New Roman">FHS File Header</FONT>
+<P>
+<FONT FACE="Times New Roman">FTS File Trailer</FONT>
+<P>
+<FONT FACE="Times New Roman">The BTS segment contains a field, <I>BTS-3-batch totals</I>, which may have one or more totals drawn from fields within the individual messages.  The method for computing such totals will be determined on a site or application basis unless explicitly stated in a functional chapter.</FONT>
+<H4>2.23.3.3 <A NAME="I23"></A>Acknowledging batches<A NAME="I24"></A></H4>
+<P>
+<FONT FACE="Times New Roman">In general, the utility of sending batches of data is that the data is accepted all-at-once, with errors processed on an exception basis.  However, it is a permissible application of HL7 to acknowledge all messages.  Several options for acknowledgment are given and will be chosen on an application basis.  In these cases, the sequence numbering protocol can be useful to the applications processing the batch.</FONT>
+<P>
+<FONT FACE="Times New Roman">The options are:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) all messages are acknowledged in the response batch.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) the receiving system prints some form of batch control report, which is then dealt with manually by personnel at the sending system.  No acknowledgements are performed by the protocol software.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) an automated acknowledgment batch is created containing acknowledgment messages only for those messages containing errors.  In this mode an empty acknowledgment batch may be created (i.e., an HL7 batch file without any HL7 acknowledgment messages).  </FONT>
+<P>
+<FONT FACE="Times New Roman">In each case where there is a response batch, its format is a batch of individual messages.  Each individual message is in the format defined for an on-line response in the chapters.  Consider, for example, a batch that might be constructed to respond to a batch of Detailed Financial Transactions (Chapter 6).  The messages in the response batch would consist entirely of ACK messages, since ACK is the response shown in Chapter 6.</FONT>
+<P>
+<FONT FACE="Times New Roman">When batches are retransmitted after the correction of errors, <I>BHS-12-reference batch control ID</I> should contain the batch control ID of the original batch.</FONT>
+<H4>2.23.3.4 Batch message as a query response<A NAME="I25"></A></H4>
+<P>
+<FONT FACE="Times New Roman">The HL7 query also can be used to query for a batch in the following manner:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) use the value BB or BL of <I>QRD-5-deferred response type</I> to specify a batch response.  The query will be acknowledged with a general acknowledgment as in the Deferred Access example above (see Section <A HREF="ch200104.htm#I2">2.18.2</A>, &quot;<A HREF="ch200103.htm#I4">QRY/QCK - deferred query (event Q02)</A>&quot;).</FONT>
+<P>
+<FONT FACE="Times New Roman">b) in addition, insert into the batch file the QRD and QRF segments as follows:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[FHS]                  (file header segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3> { [BHS]               (batch header segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   [QRD]               (the QRD and QRF define the</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   [QRF]                query that this batch is a response to)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>{ MSH               (one or more HL7 messages)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   ....</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   ....</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   ....</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   [BTS]              (batch trailer segment)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>[FTS]                 (file trailer segment)</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">c) the acknowledgment of a batch is described in this chapter (see Section <A HREF="ch200121.htm#I23">2.23.3.3</A>, &quot;<A HREF="ch200121.htm#I16">HL7 batch protocol</A>&quot;).</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200120.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200122.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

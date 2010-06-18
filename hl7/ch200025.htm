@@ -1,0 +1,182 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.5 CK - composite ID with check digit</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200026.htm">
+<LINK REL="Previous" HREF="ch200024.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200024.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200026.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E26"></A>
+<H3><B>2.8.5</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>CK - composite ID with check digit</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority  (HD)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Example:  </FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|128952^6^M11^ADT01|</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">This data type is used for certain fields that commonly contain check digits, e.g., <I>PID-3-patient ID (internal)</I>.  If a site is not using check-digits for a particular CK field, the second and third components are not valued.</FONT>
+<H4>2.8.5.1 ID number (NM)</H4>
+<H4>2.8.5.2 Check digit (NM)</H4>
+<P>
+<FONT FACE="Times New Roman">The check digit in this data type is <U>not</U> an add-on produced by the message processor.  It is the check digit that is part of the identifying number used in the sending application.  If the sending application does not include a self-generated check digit in the indentifying number, this component should be valued null.</FONT>
+<H4>2.8.5.3 Code identifying the check digit scheme employed (ID)</H4>
+<P>
+<FONT FACE="Times New Roman">The check digit scheme codes are defined in <I>HL7</I> <I>table 0061 - Check digit scheme</I>.</FONT>
+<P ALIGN=indent><A NAME="I6"></A><A NAME="I7"></A>Table 0061 - Check digit scheme</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=384 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">M10</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mod 10 algorithm</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=192 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">M11</FONT>
+</TD><TD WIDTH=384 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mod 11 algorithm</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The algorithm for calculating a Mod10 check digit is as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">Assume you have an identifier = 12345.  Take the odd digit positions, counting from the right, i.e.,  531, multiply this number by 2 to get 1062.  Take the even digit positions, starting from the right (i.e., 42),  prepend these to the 1062 to get 421062.  Add all of these six digits together to get 15.  Subtract this number from the next highest multiple of 10, i.e., 20 - 15 to get 5.  The Mod10 check digit is 5.  The Mod10 check digit for 401 is 0; for 9999, it&#146;s 4; for 99999999, it&#146;s 8.</FONT>
+<P>
+<FONT FACE="Times New Roman">The algorithm for calculating a Mod11 check digit is as follows:</FONT>
+<P>
+<FONT FACE="Times New Roman">Terms</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">d</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=514 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">digit of number starting from units digit, followed by 10&#146;s position, followed by 100&#146;s position, etc.</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">w</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=514 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">weight of digit position starting with the units position, followed by 10&#146;s position, followed by 100&#146;s position etc.  Values for w = 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7, etc. (repeats for each group of 6 digits)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=30 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">c</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=514 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">check digit </TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Calculation</FONT>
+
+<TABLE >
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">(Step 1) m</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=430 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">sum of (d * w) for positions 1, 2, etc. starting with units digit</FONT>
+<P>
+<FONT FACE="Times New Roman">for d = digit value starting with units position to highest order</FONT>
+<P>
+<FONT FACE="Times New Roman">for w = weight value from 2 to 7 for every six positions starting with units digit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">(Step 2) c1</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=430 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">m mod 11</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">(Step 3) if c1</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=430 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">0 then reset c1 = 1</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">(Step 4)</FONT>
+</TD><TD WIDTH=31 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">=</FONT>
+</TD><TD WIDTH=430 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">(11 - c1) mod 10</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Example:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>if the number is 1234567, then the mod 11 check digit = 4 </FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">The calculations are:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>M  = (7*2)+(6*3)+(5*4)+(4*5)+(3*6)+(2*7)+(1*2)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   = 14 + 18 + 20 + 20 + 18 + 14 + 2 </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   = 106</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>c1 = 106 mod 11</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   = 7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>c  = (11-c1) mod 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   =  4 mod 10</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>   =  4</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">Other variants of these check digit algorithms exist and may be used by local bilateral site agreement.</FONT>
+<H4>2.8.5.4 Assigning authority (HD)</H4>
+<P>
+<FONT FACE="Times New Roman">The assigning authority is a unique name of the system that creates the data.  It is an HD data type.  It is equivalent to the application ID of the placer or filler order number (see Chapter 4).  Assigning authorities are unique across a given HL7 implementation.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200024.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200026.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

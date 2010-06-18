@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>C.1.1 NMQ - Network management query message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="appc0003.htm">
+<LINK REL="Previous" HREF="appc0001.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="appc0001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E531"></A>
+<H3><B>C.1.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>NMQ - Network management query message</B><A NAME="I5"></A><A NAME="I6"></A></H3>
+<P>
+<FONT FACE="Times New Roman">One system needs network information from another system:</FONT>
+<P>
+<FONT FACE="Times New Roman">The NMQ (Network Management Query) message is used by one system to make system-level requests for information or action to another system.  It has three segments, the NCK segment (network clock), the NST segment (network statistics), and the NSC segment (network status change). An example of the last type, NSC (network status change) would be an application or system startup/shut down request. At least one of these three segments must be present in the NMQ message. If a segment is present in the NMQ message, the corresponding segment needs to be present in the NMR message to return the requested data or status.</FONT>
+<P>
+<FONT FACE="Times New Roman">a) The purpose of the NCK segment is to allow the various systems on the network to synchronize their system clocks (system date and time). </FONT>
+<P>
+<FONT FACE="Times New Roman">b) The purpose of the NST segment is to allow network statistical information to be passed between the various systems on the network.  Although some of the fields in this segment refer to portions of lower level protocols, they contain information that can be used be network management applications monitoring the state of various network links.  All the data fields in the NST (network statistics) are optional, and the fields maintained by any system are to be negotiated at a particular site.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) The NSC segment can be used to request the start-up,  shut-down, and/or migration (to a different CPU or file-server/file-system) of a particular application.  It can also be used in an unsolicited update from one system to another to announce the start-up, shut-down, or migration of an application.</FONT>
+<PRE>
+<FONT FACE="Courier New">               Chapter/</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>NMQ</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Network Management Query</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Appendix</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRD     Query Definition         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [QRF]]    Query Filter         2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{[NCK]    Network System Clock       C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [NST]    Network Statistics       C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [NSC]}    Network Status Change       C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">               Chapter/</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>NMR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Network Management Response</U><U> </U><U> </U><U> </U><U> </U><U>Appendix</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgement      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[QRD]    Query Definition        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{[NCK]    System Clock         C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [NST]    Statistics         C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [NSC]    Network Status Change       C</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}] }  Notes and Comments       2</FONT></PRE>
+<P ALIGN=LEFT>
+<A HREF="appc0001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

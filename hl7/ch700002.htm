@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>7.1.1 Glossary</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700003.htm">
+<LINK REL="Previous" HREF="ch700001.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E283"></A>
+<H3><B>7.1.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><B>Glossary</B></H3>
+<P>7.1.1.1   <B>placer:</B>  person or service that requests (places order for) an observation battery, e.g., the physician, the practice, clinic, or ward service, that orders a lab test, X-ray, vital signs, etc.  The meaning is synonymous with, and used interchangeably with, requestor.  See <I>ORC-2-placer order number</I>, Section 4.3.1.2, &quot;Placer order number.&quot;
+<P>7.1.1.2   <B>filler:</B>  person, or service, who produces the observations (fills the order) requested by the requestor.  The word is synonymous with &quot;producer&quot; and includes diagnostic services and clinical services and care providers who report observations about their patients.  The clinical laboratory is a producer of lab test results (filler of a lab order), the nursing service is the producer of vital signs observations (the filler of orders to measure vital signs), and so on.  See <I>ORC-3-filler order number</I>, Section 4.3.1.3, &quot;Filler order number.&quot;
+<P>7.1.1.3   <B>battery:</B>  a set of one or more observations identified as by a single name and code number, and treated as a shorthand unit for ordering or retrieving results of the constituent observations. In keeping with the mathematical conventions about set, a battery can be a single observation.  Vital signs, electrolytes, routine admission tests, and obstetrical ultrasound are all examples. Vital signs (conventionally) consist of diastolic and systolic blood pressure, pulse, and respiratory rate.  Electrolytes usually consist of Na+, K+, Cl-, and HCO3-.  Routine admission tests might contain CBC, Electrolytes, SMA12, and Urinalysis.  (Note that the elements of a battery for our purposes may also be batteries).  Obstetrical ultrasound is a battery made up of traditional component measurements and the impression, all of which would be returned as separate results when returned to the requestor. A test involving waveform recording (such as an EKG) can be represented as a battery made up of results of many categories, including digital waveform data, labels and annotations to the data, measurements, and the impression.
+<P>
+<FONT FACE="Times New Roman">The word battery is used in this specification synonymously with the word profile or panel.  The individual observation elements within a battery may be characteristic of a physiologic system (e.g., liver function tests), or many different physiologic systems.  </FONT>
+<P>7.1.1.4   <B>observation:</B>  a measurement of a single variable or a single value derived logically and/or algebraically from other measured or derived values.  A test result, a diastolic blood pressure, and a single chest xray impression are examples of observations.  In certain circumstances, tracings and images may be treated by HL7 as individual observations and sent as a single OBX. These include waveform data described in Section <A HREF="ch700052.htm#I7">7.14</A>, &quot;<A HREF="ch700052.htm#I10">WAVEFORM SUMMARY</A>,&quot; and encapsulated data aggregates using the ED data type described in Section 2.8.14, &quot;ED - encapsulated data,&quot;  (which can represent actual images, audio data, etc.).
+<P>7.1.1.5    <B>segment (record):</B>  a typed aggregate of fields (fields) describing one complete aspect of a message.  For example, the information about one order is sent as type of segment (OBR), the information related to an observation is sent as another segment (OBX).
+<P>
+<FONT FACE="Times New Roman">The segment in a message is analogous to a record in a database, and in previous versions of the standard we used record in place of the word segment.  We have changed the nomenclature to be consistent with HL7 and other standards organizations in this version. </FONT>
+<P>7.1.1.6   <B>field:</B>  one specific attribute of a segment, for example, patient diagnosis, which may contain aggregates of fields further refining the basic attribute. 
+<P>7.1.1.7    <B>repeated value:</B>  some fields may contain many repeat fields.  For example, the diagnoses field may contain many different diagnoses.
+<P>7.1.1.8   <B>field components:</B>  a field entry may also have discernible parts or components.  For example, the patient&#146;s name is recorded as last name, first name, and middle initial, each of which is a distinct entity separated by a component delimiter (sub-subfield in ASTM E1238-94).
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700001.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700003.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

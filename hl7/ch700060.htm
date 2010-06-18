@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>7.16.3 Waveform digital data (WAV)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700061.htm">
+<LINK REL="Previous" HREF="ch700059.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700059.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700061.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E326"></A>
+<H3><B>7.16.3</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>Waveform digital data (WAV)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The WAV category OBX result segment is used to transmit the actual waveform data (the time-series digitized values from an analog-to-digital converter (ADC) or other source of sampled digital data).   WAV category result segments are associated with their corresponding channel definitions (CHN category OBX result segment) via the Observation Sub-ID.  The number of channels defined in the CHN category result segment specifies the number of channels of multiplexed data contained in the WAV category result segments associated with it.  For example, if a CHN category result segment contains only a single channel definition, then each WAV category result segment with the same Observation Sub-ID contains only one channel of data.  However, if a CHN category result segment contains three channel definitions then each WAV category result segment with the same Observation Sub-ID must contain three channels of data.  A given set of waveform data for all channels and at multiple successive times may be transmitted in a single WAV category result segment (provided that the length of the observation value field does not exceed the maximum defined field length for OBX segments, 65536), or in multiple successive WAV category result segments, possibly with interspersed result segments of other types (for example, containing annotations, or comments).</FONT>
+<P>
+<FONT FACE="Times New Roman">The data type of the WAV category result segment can be NA (Numeric Array) or MA (Multiplexed Array).  Using the NA data type, the data values are formatted in  &quot;channel-block&quot;, or &quot;unmultiplexed&quot; format.  The digital samples for each channel are separated using component delimiters, and successive channels are separated using the repeat delimiter.  Using the MA data type, the data values are formatted in &quot;channel multiplexed&quot; format, i.e., the values for the first time sample (all channels) are transmitted first, then the values for the second time sample (all channels) are transmitted, and so on until all samples have been transmitted.  The digital samples for each channel are separated by the component delimiter, and successive samples are separated by the repeat delimiter.  Channel multiplexed format can only be used if all of the multiplexed channels have the same effective sampling frequency. </FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch700059.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700061.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

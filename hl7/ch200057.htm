@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>2.8.37 SN - structured numeric</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200058.htm">
+<LINK REL="Previous" HREF="ch200056.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200056.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200058.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E58"></A>
+<H3><B>2.8.37</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><B>SN - structured numeric</B></H3>
+<P>
+<FONT FACE="Courier New">Components:  &lt;comparator (ST)&gt; ^ &lt;num1 (NM)&gt; ^ &lt;separator/suffix (ST)&gt; ^ &lt;num2 (NM)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">The structured numeric data type is used to unambiguously express numeric clinical results along with qualifications.  This enables receiving systems to store the components separately, and facilitates the use of numeric database queries.  The corresponding sets of values indicated with the &lt;comparator&gt; and &lt;separator/suffix&gt; components are intended to be the authoritative and complete set of values.  If additional values are needed for the  &lt;comparator&gt; and &lt;separator/suffix&gt; components, they should be submitted to HL7 for inclusion in the Standard. </FONT>
+<P>
+<FONT FACE="Times New Roman">If &lt;num1&gt; and &lt;num2&gt; are both non-null, then the separator/suffix must be non-null.  If the separator is &quot;-&quot;, the data range is inclusive; e.g., &lt;num1&gt; - &lt;num2&gt; defines a range of numbers <I>x</I>, such that:  &lt;num1&gt; &lt;=<I>x</I>&lt;= &lt;num2&gt;.</FONT>
+<H4>2.8.37.1 &lt;comparator&gt;  =  &quot;&gt;&quot; or &quot;&lt;&quot; or &quot;&gt;=&quot; or &quot;&lt;=&quot; or &quot;=&quot; or &quot;&lt;&gt;&quot;</H4>
+<P>
+<FONT FACE="Times New Roman">Defined as greater than, less than, greater than or equal, less than or equal, equal, and not equal, respectively.  If this component is not valued, it defaults to equal (&quot;=&quot;).</FONT>
+<H4>2.8.37.2 &lt;num1&gt;  (NM)</H4>
+<P>
+<FONT FACE="Times New Roman">A number. </FONT>
+<H4>2.8.37.3 &lt;num2&gt; (NM)</H4>
+<P>
+<FONT FACE="Times New Roman">A number or null depending on the measurement.</FONT>
+<H4>2.8.37.4 &lt;separator/suffix&gt;  (ST)</H4>
+<P>
+<FONT FACE="Times New Roman">&quot;-&quot; or &quot;+&quot; or &quot;/&quot; or &quot;.&quot; or &quot;:&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">Examples:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|&gt;^100|    (greater than 100)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|^100^-^200|  (equal to range of 100 through 200)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|^1^:^228|           (ratio of 1 to 128, e.g., the results of a serological test)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>|^2^+|                (categorical response, e.g., occult blood positivity)</FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200056.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200058.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

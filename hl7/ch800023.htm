@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>8.7.2 MFN/MFR - test/observation master file</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch800024.htm">
+<LINK REL="Previous" HREF="ch800022.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch800022.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800024.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E353"></A>
+<H3>8.7.2 <A NAME="I2"></A><B>MFN/MFR - test/observation master file</B></H3>
+<P>
+<FONT FACE="Times New Roman">The usage of the OMx segments in the Master Files MFN and MFR messages is described in Sections <A HREF="ch800004.htm#I6">8.3.1</A>, &quot;<A HREF="ch800004.htm#I8">MFN/MFK - master files notification</A>,&quot;  and <A HREF="ch800006.htm#I6">8.3.3</A>, &quot;<A HREF="ch800006.htm#I8">MFQ/MFR - master files query</A>,&quot; above.  Basically the segment groupings described below follow the MFI and MFE segments in those messages (replacing the [Z...] section as follows: </FONT>
+<PRE>
+<FONT FACE="Courier New"><U>MFN</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Master File Notification</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MFI     Master File Identification     8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {MFE    Master File Entry        8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><B>   </B>OM1    General Segment (Fields That Apply    8</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      to Most Observations)</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[other segments(s)]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">where <I>other segments</I> can be any of the following combinations:</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>MFI-1-master file identifier code</I> = OMA, for numeric observations</FONT>
+<PRE>
+<FONT FACE="Courier New">  [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [OM2]  Numeric Observation Segment </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [OM3]  Categorical Test/Observation Segment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [OM4]  Observations that Require Specimens</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">or</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>MFI-1-master file identifier code</I> = OMB, for categorical observations</FONT>
+<PRE>
+<FONT FACE="Courier New">  [OM3  Categorical Test/Observation Segment</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{OM4}] Observations that Require Specimens</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">or</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>MFI-1-master file identifier code</I> = OMC, for observation batteries</FONT>
+<PRE>
+<FONT FACE="Courier New">  [OM5  Observation Batteries</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{OM4}] Observations that Require Specimens</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">or</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>MFI-1-master file identifier code</I> = OMD, calculated observations</FONT>
+<PRE>
+<FONT FACE="Courier New">  [OM6  Observations Calculated from Other Observations</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   OM2]  Numeric Observation Segment</FONT></PRE>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=575 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> A test/observation definition may have both an OM2 (numeric) and OM3 (categorical) segment included in case the value may be either numeric and/or categorical.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch800022.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch800024.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

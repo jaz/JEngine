@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>2.9.2 Escape sequences supporting multiple character sets for PN</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200073.htm">
+<LINK REL="Previous" HREF="ch200071.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200071.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200073.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E72"></A>
+<H3><B>2.9.2</B><B> </B><A NAME="I2"></A><B>Escape sequences supporting multiple character sets for PN and XPN data </B><B>types</B></H3>
+<P>The following HL7 escape sequences are defined to support multiple character sets for fields of the  PN and XPN data type. They allow HL7 parsers to use escape codes (defined in the standards used below), without breaking, and without being non-conformant, to the HL7 escape paradigm defined in this section.
+<P>\Cxxyy\ single-byte character set escape sequence with two hexadecimal values, xx and yy, that indicate the escape sequence defined for one of the character repertoires supported for the current message (i.e., ISO-IR xxx).
+<P>\Mxxyyzz\ multi-byte character set escape sequence with three hexadecimal values, xx, yy and zz.  zz is optional.
+<P>Common character set escape sequences include the following which are defined in the standards mentioned:
+<P>Single-byte character sets:
+
+<CENTER><TABLE >
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2842\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 6 G0 (ISO 646 : ASCII)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D41\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 100 (ISO 8859 : Latin Alphabet 1)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D42\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 101 (ISO 8859 : Latin Alphabet 2)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D43\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 109 (ISO 8859 : Latin Alphabet 3)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D44\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 110 (ISO 8859 : Latin Alphabet 4)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D4C\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 144 (ISO 8859 : Cyrillic)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D47\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 127 (ISO 8859 : Arabic)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D46\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 126 (ISO 8859 : Greek)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D48\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 138 (ISO 8859 : Hebrew)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2D4D\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 148 (ISO 8859 : Latin Alphabet 5)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C284A\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 14 (JIS X 0201 -1976: Romaji)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=145 VALIGN=top >
+<P>
+<FONT SIZE="-1">\C2949\</FONT>
+</TD><TD WIDTH=312 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 13 (JIS X 0201 : Katakana)</TD></TR></FONT></TABLE></CENTER><P>Multi-byte codes :
+
+<CENTER><TABLE >
+<TR>
+<TD WIDTH=140 VALIGN=top >
+<P>
+<FONT SIZE="-1">\M2442\</FONT>
+</TD><TD WIDTH=326 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 87 (JIS X 0208 : Kanji, hirigana and katakana)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=140 VALIGN=top >
+<P>
+<FONT SIZE="-1">\M242844\</FONT>
+</TD><TD WIDTH=326 VALIGN=top >
+<P>
+<FONT SIZE="-1">ISO-IR 159 (JIS X 0212 : Supplementary Kanji) </TD></TR></FONT></TABLE></CENTER><P>
+<P ALIGN=LEFT>
+<A HREF="ch200071.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200073.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

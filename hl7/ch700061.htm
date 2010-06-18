@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<TITLE>7.16.4 Waveform annotation (ANO)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700062.htm">
+<LINK REL="Previous" HREF="ch700060.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700060.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700062.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E327"></A>
+<H3><B>7.16.4</B><B> </B><A NAME="I2"></A><B>Waveform annotation (ANO)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The ANO category OBX segment is used to transmit waveform annotations (coded entry associated with a given point in time during the waveform recording).  The ANO category result segments are referenced to their corresponding channel definitions (CHN category OBX result segment ) via the Observation Sub-ID.  The number of channels defined in the CHN category result segment specifies the number of channels of annotation contained in any ANO category result segments associated with it.  For example, if a CHN category result segment contains only a single channel definition, then any ANO category result segments with the same Observation Sub-ID will contain only one annotation coded entry.  However, if a CHN category result segment contains three channel definitions then any ANO category result segments with the same Observation Sub-ID must contain three separate annotation coded entries.</FONT>
+<P>
+<FONT FACE="Times New Roman">The data type of the ANO category result segment is CE.<I>  </I>The annotation coded entries for successive channels are separated using the repeat delimiter.  Adjacent repeat delimiters are used when there is no annotation coded entry for a channel in a multichannel result segment.  Refer to<I> user defined table 0317 - </I><I>Annotations</I> for suggested values.</FONT>
+<P ALIGN=indent>User-defined table 0317 - Annotations</P>
+
+<TABLE >
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><U>Value</U></FONT>
+</TD><TD WIDTH=421 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman"><U>Description</U></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">9900</FONT>
+</TD><TD WIDTH=421 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Pace spike</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">9901</FONT>
+</TD><TD WIDTH=421 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">SAS marker</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">9902</FONT>
+</TD><TD WIDTH=421 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Sense marker</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">9903</FONT>
+</TD><TD WIDTH=421 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">Beat marker</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=162 ALIGN=center  VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">9904</FONT>
+</TD><TD WIDTH=421 VALIGN=top >
+<P>
+<FONT FACE="Times New Roman">etc.</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch700060.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700062.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

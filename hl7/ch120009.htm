@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>12.2.2 PPR/ACK - patient problem message (events PC1, PC2, PC3)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch120010.htm">
+<LINK REL="Previous" HREF="ch120008.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch120008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E515"></A>
+<H3><B>12.2.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>PPR/ACK - patient problem message</B><B> (events PC1, PC2, PC3)</B></H3>
+<P>
+<FONT FACE="Times New Roman">The patient problem message  message is used to send problems from one application to another (e.g., a point of care system to a clinical repository).  Many of the segments associated with this event are optional.  This optionality allows systems in need of this information to set up transactions that fulfill their requirements.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>PPR</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Patient Problem Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">PID     Patient ID Information      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[PV1     Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PV2]]    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PRB    Detail Problem        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{NTE}]   Notes (Problem Comments)      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{VAR}]   Variance (Problem)       12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{ROL    Role (Problem)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{VAR]}   Variance (Role)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{PTH    Detail Pathway        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{VAR}]   Variance (Pathway)       12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{OBX    Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes (Observation/Result Comments)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{GOL    Detail Goal         12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes (Goal Comments)       2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{VAR}]   Variance (Goal)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{ROL   Role (Goal)         12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{VAR}]  Variance (Role)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{OBX   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{NTE}]  Notes (Observation/Result Comments)   2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [{ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [OBR, etc  Order Detail Segment, etc.     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{NTE]}  Notes (Order Detail Comments)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{VAR}]  Variance (Order)        12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{OBX   Observaton/Result        7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{NTE}]  Notes (Observation Comments)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         [{VAR}]  Variance (Observation/Result)     12</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>ACK</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Acknowledgment</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ ERR ]    Error          2</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">This error segment  indicates the fields that caused a transaction to be rejected.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch120008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

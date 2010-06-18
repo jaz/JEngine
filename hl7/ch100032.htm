@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>10.2.6 Request appointment deletion (event S06)</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100033.htm">
+<LINK REL="Previous" HREF="ch100031.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100031.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100033.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E440"></A>
+<H3><B>10.2.6</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><B>Request appointment deletion (event S06)</B><A NAME="I4"></A></H3>
+<P>
+<FONT FACE="Times New Roman">A request appointment deletion is sent by the placer application to the filler application to request that an appointment that had been entered in error be removed from the system.  A delete trigger event should only be used when an appointment has been erroneously requested, and must be removed from the schedule so that it does not affect any statistical processing.  A delete trigger event differs from a cancel trigger event in that a delete acts to remove an error, whereas a cancel acts to prevent a valid request from occurring.  This trigger event should not be used for any appointment that has already begun, or has already been completed.  Likewise, it should not be used on any parent appointment if any child appointments have either begun or been completed.  If it is successful, an application acknowledgment is returned, optionally containing an SCH segment and related detail segments describing the deleted appointment.</FONT>
+<P>
+<FONT FACE="Times New Roman">The delete trigger event should be implemented with careful forethought, as it typically has different effects and repercussions in various applications.  In some applications, a delete event cannot be undone.  This means that if a delete transaction was sent erroneously, recovery will be difficult or impossible.  In other applications, a delete transaction will not result in the physical deletion of the record(s), but will set a status or a flag.  In these cases, the filler and/or placer appointment identifiers (the numbers or codes that uniquely identify the scheduled appointment or request to the placer and filler applications) probably cannot be reused.  Since these applications maintain a record of deleted appointments, the reuse of an identifier will likely cause a conflict in the applications&#146; processing of transactions.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100031.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100033.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

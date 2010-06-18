@@ -1,0 +1,2363 @@
+<HTML>
+<HEAD>
+<TITLE>4.3.1 ORC - common order segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400010.htm">
+<LINK REL="Previous" HREF="ch400008.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E214"></A>
+<H3>4.3.1 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>ORC </B><B>-</B><B> common order segment</B><A NAME="I9"></A><A NAME="I10"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The Common Order segment (ORC) is used to transmit fields that are common to all orders (all types of services that are requested).  The ORC segment is required in  the Order (ORM) message.  ORC is mandatory in Order Acknowledgment (ORR) messages if an order detail segment is present, but is not required otherwise.. </FONT>
+<P>
+<FONT FACE="Times New Roman">If details are needed for a particular type of order segment (e.g., Pharmacy, Dietary), the ORC must precede any order detail segment (e.g., RXO, ODS).  In some cases, the ORC may be as simple as the string ORC|OK|&lt;placer order number&gt;|&lt;filler order number&gt;|&lt;CR&gt;.</FONT>
+<P>
+<FONT FACE="Times New Roman">If details are not needed for the order, the order detail segment may be omitted.  For example, to place an order on hold, one would transmit an ORC with the following fields completed: <I>ORC-1-order control</I> with a value of HD, <I>ORC-2-placer order number</I>, and <I>ORC-3-filler order number</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">There is some overlap between fields of the ORC and those in the order detail segments.  These are described in the succeeding sections.</FONT>
+<P ALIGN=indent><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A>Figure 4-1.  ORC attributes </P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=57 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=205 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 2</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0119</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00215</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order Control</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 2 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  22</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  EI</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00216</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 3 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  22</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  EI</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00217</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Filler Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 4 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  22</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  EI</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00218</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Placer Group Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 5 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 2</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0038</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00219</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order Status</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 6 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 1</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> ID</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">0121</FONT>
+</TD><TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00220</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Response Flag</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 7 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> TQ</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00221</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Quantity/Timing</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 8 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> CM</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00222</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 9 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00223</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Date/Time of Transaction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 10 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 120</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00224</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entered By</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 11 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 120</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00225</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Verified By</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 12 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 120</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00226</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Ordering Provider</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 13 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 80</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">  PL</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00227</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Enterer's Location</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 14 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> XTN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00228</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Call Back Phone Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 15 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 26</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> TS</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00229</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order Effective Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 16 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 200</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00230</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order Control Code Reason</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 17 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00231</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entering Organization</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 18 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 60</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> CE</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00232</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Entering Device</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 19 </FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> 120</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1"> XCN</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=48 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top ><BR></TD>
+<TD WIDTH=57 VALIGN=top >
+<P>
+<FONT SIZE="-1">00233</FONT>
+</TD><TD WIDTH=205 VALIGN=top >
+<P>
+<FONT SIZE="-1">Action By</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">ORC use notes</FONT>
+<P>
+<FONT FACE="Times New Roman">a) placer order groups<A NAME="I14"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">The Standard supports a mechanism to collect several orders together in a group.  Most often this is used to represent an &quot;ordering session&quot; for a single patient.</FONT>
+<P>
+<FONT FACE="Times New Roman">An order group is a list of orders (ORCs) associated with a <I>ORC-4-placer group number</I>.  A group is established when the placer supplies a placer group number with the original order.  The order group consists of all the ORCs and order detail segments that have the same placer group number.  Orders can be removed from the group using cancel, or added using the replacement or parent-child mechanisms.  New orders cannot otherwise be added to the group.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) duplicate fields<A NAME="I15"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">The ORC is intended to uniformly define the fields that are common to all orders (i.e., requested services).  Some ORC fields are duplicated in some order detail segments (e.g., OBR, RXO).  For example, <I>ORC-2-placer order number</I> has the same meaning and purpose as <I>OBR-2-placer order </I><I>number</I> field.  This promotes upward compatibility with past versions and ASTM.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The rule for using these fields is that the value must appear in the order detail segment if it does not appear in the ORC.  However, it is recommended to transmit the field value in both places to avoid confusion.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) parent/child - cancel, hold, discontinue<A NAME="I16"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">During transmission of a request to cancel, hold, or discontinue a parent order, the request is intended to apply recursively to the parent order and all associated child orders.  </FONT>
+<P>
+<FONT FACE="Times New Roman">For example:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) An EKG application receives an order for three EKGs on successive mornings.</FONT>
+<P>
+<FONT FACE="Times New Roman">2) The EKG application creates three child orders, one for each requested EKG.</FONT>
+<P>
+<FONT FACE="Times New Roman">3) The first daily EKG  has already been performed when a request is received to cancel the original parent order.  (The parent is beyond the point of cancellation.)   </FONT>
+<P>
+<FONT FACE="Times New Roman">4) The remaining, unperformed, children are canceled as a result of the request.</FONT>
+<P>4.3.1.0.   ORC field definitions
+<H4>4.3.1.1 Order control  (ID)   00215<A NAME="I17"></A></H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  determines the function of the order segment.  Refer to <I>HL7 table 0119 - Order control</I> for valid entries.  Very detailed explanatory notes are given at the end of this section.</FONT>
+<P>
+<FONT FACE="Times New Roman">This field may be considered the &quot;trigger event&quot; identifier for orders.   The codes fall roughly into the following three categories:</FONT>
+<P>
+<FONT FACE="Times New Roman">a) event request<A NAME="I18"></A> </FONT>
+<P>
+<FONT FACE="Times New Roman">Codes like &quot;NW&quot; (new order) and &quot;CA&quot; (cancel order request) are used to initiate an event.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) event acknowledgment <A NAME="I19"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">Codes like &quot;OK&quot; (order accepted) and &quot;CR&quot; (canceled as requested) are used to reply to the event request.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) event notification<A NAME="I20"></A>  </FONT>
+<P>
+<FONT FACE="Times New Roman">Codes like &quot;OC&quot; (order canceled) and &quot;OD&quot; (order discontinued) are used to notify other applications that an event has occurred.  No application reply is necessary.</FONT>
+<P>
+<FONT FACE="Times New Roman">Event request codes are intended to initiate an event.  Event acknowledgment codes are intended to reply to an application that requested an event.  Event notification codes are intended to notify another application that, e.g., the filler has performed some action on an order that the other application, e.g., the placer needs to know.</FONT>
+<P>
+<FONT FACE="Times New Roman">Fillers, placers, and other applications can use event requests, event acknowledgments, and event - notification-type trigger events interchangeably.  However, certain order control codes can originate only from the filler (e.g., CR) and others can only originate from the placer (e.g., CA).</FONT>
+<P ALIGN=indent><A NAME="I21"></A><A NAME="I22"></A>Table 0119 - Order control codes and their meaning</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=72 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value<SUP>1</SUP> </FONT>
+</TD><TD WIDTH=216 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</FONT>
+</TD><TD WIDTH=96 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Originator<SUP>2</SUP></FONT>
+</TD><TD WIDTH=96 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Field Note<SUP>3</SUP></TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">NW</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">New order</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">I</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OK</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order accepted &amp; OK</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">I</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UA</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to Accept Order</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">n</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">CA</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cancel order request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">a</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OC</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order canceled</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">CR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Canceled as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UC</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to cancel</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">b</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">DC</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Discontinue order request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">c</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OD</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order discontinued</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">DR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Discontinued as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UD</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to discontinue</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">HD</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Hold order request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OH</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order held</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UH</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to put on hold</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">HR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">On hold as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RL</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Release previous hold</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OE</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order released</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Released as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to release</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RP</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order replace request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">e,d,h</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RU</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Replaced unsolicited</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">f,d,h</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Replacement order</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P,F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">g,d,h,l</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RQ</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Replaced as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">d,e,g,h</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UM</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to replace</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">PA</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Parent order</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">I</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">CH</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Child order</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F,P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">i</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">XO</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Change order request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">XX</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order changed, unsol.</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UX</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to change</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">XR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Changed as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">DE</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Data errors</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P,F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RE</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observations to follow</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P,F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">j</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Request received</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P,F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">k</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">SR</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Response to send order status request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">SS</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Send order status request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">SC</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Status changed</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F,P</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">SN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Send order number</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">l</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Number assigned</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">l</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">CN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Combined result</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">m</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top ><BR></TD>
+<TD WIDTH=216 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">RF</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Refill order request</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F, P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">o</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">AF</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order refill request approval</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">p</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">DF</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order refill request denied</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">q</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">FU</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order refilled, unsolicited</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">r</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">OF</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order refilled as requested</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">s</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UF</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unable to refill</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">t</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">LI</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Link order to patient care message</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">u</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=72 VALIGN=top >
+<P>
+<FONT SIZE="-1">UN</FONT>
+</TD><TD WIDTH=216 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unlink order from patient care message</FONT>
+</TD><TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">u</FONT>
+</TD><TD WIDTH=96 VALIGN=top ><BR></TD></TR></TABLE></CENTER><P>
+<FONT FACE="Arial Narrow" SIZE="-1">Notes:</FONT>
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">1 The order control value field</FONT>
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">2 &quot;F&quot;: Values originate from the filler and are not restricted to be sent only to the placer.  P&quot;: Values originate from the placer or other application with placer privileges (as agreed in interface negotiation.</FONT>
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1">3 See table notes below for explanation of codes.</FONT>
+<H5>4.3.1.1.1 <A NAME="I23"></A>Table notes for order control codes of ORC</H5>
+<P>
+<FONT FACE="Times New Roman">a) CA<A NAME="I24"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">A cancellation is a request not to do a previously ordered service.  Confirmation of the cancellation request is provided by the filler, e.g., a message with an <I>ORC-1-order control</I> value of CR.</FONT>
+<P>
+<FONT FACE="Times New Roman">b) UC<A NAME="I25"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">An unable-to-cancel code is used when the ordered service is at a point that it cannot be canceled by the filler or when local rules prevent cancellation by the filler.  The use of this code is dependent on the value of <I>ORC-6-response flag</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) DC<A NAME="I26"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">A discontinue request code is used to stop an ongoing ordered service.  It is not the same as a cancellation request, which is used in an attempt to prevent an order from happening.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) RP, RQ, RU, RO<A NAME="I27"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">A replacement is the substitution of one or more orders for one or more previously ordered services.</FONT>
+<P>
+<FONT FACE="Times New Roman">The replaced orders are treated as though they were canceled.  If and when an ordered service can be replaced are local site-specific determinations.</FONT>
+<P>
+<FONT FACE="Times New Roman">Use the parent/child order control codes if the site specifies that the original order must remain intact.  Do not use the replacement codes under this circumstance.  </FONT>
+<P>
+<FONT FACE="Times New Roman">For each order to be replaced, use an <I>ORC-1-order control</I> value of RP (request for a replacement going to a filler) or RU (an unsolicited replacement created by the filler) used by the filler to notify the placer and/or other systems).  By local agreement, the ORC segment (with RP or RU) may be followed by its original order detail segment.  The ORC segments (with RP or RU) must be followed by an ORC segment with an <I>ORC-1-order control</I> value of RO (indicating the replacement order).  By local agreement, the ORC with the RO value may be followed by an order detail segment. </FONT>
+<P>
+<FONT FACE="Times New Roman">For example, suppose that an ancillary application were replacing two OBR orders with three different orders.  The sequence of segments would be as follows:</FONT>
+<P ALIGN=indent><A NAME="I28"></A><A NAME="I29"></A><A NAME="I30"></A>Figure 4-2.  RU and RO usage (example)</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Segment</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Order Control</FONT>
+</TD><TD WIDTH=240 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Comment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RU</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replaced ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replaced order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RU</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replaced ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replaced order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replacement ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replacement order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replacement ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replacement order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">3rd replacement ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">3rd replacement order's detail segment</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Whether the OBR segments must be present is determined by the value of <I>ORC-6-response flag</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">The described replacement method will handle all possible cases of replacement:  one-into-one, many-into-one, one-into-many, and many-into-many.  If the placer sent this request to the filler with two RPs, and this was a response back from the filler to the placer, the two RUs (replaced unsolicited) would be two RQs (replaced as requested).</FONT>
+<P ALIGN=indent><A NAME="I31"></A><A NAME="I32"></A><A NAME="I33"></A>Figure 4-3.  RQ and RO usage (example)</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Segment</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Order Control</FONT>
+</TD><TD WIDTH=240 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Comment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RQ</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replaced ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replaced order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RQ</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replaced ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replaced order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replacement ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st replacement order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replacement ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd replacement order's detail segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RO</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">3rd replacement ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">3rd replacement order's detail segment</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">e) RP, RQ<A NAME="I34"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">The order replace request code permits the order filler to replace one or more new orders with one or more new orders, at the request of the placer application.</FONT>
+<P>
+<FONT FACE="Times New Roman">f) RU<A NAME="I35"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">The unsolicited replacement code permits the filler application to notify another application without being requested from the placer application.</FONT>
+<P>
+<FONT FACE="Times New Roman">g)  RO, RQ</FONT>
+<P>
+<FONT FACE="Times New Roman">The replacement order code is sent by the filler application to another application indicating the exact replacement ordered service.  It is used with the RP and RU order control codes as described above.  </FONT>
+<P>
+<FONT FACE="Times New Roman">h) RP, RQ, RU, RO</FONT>
+<P>
+<FONT FACE="Times New Roman">The rules for the order numbers in ORC segments with an order control value of RO are determined by the replacement type (RP or RU).</FONT>
+<P>
+<FONT FACE="Times New Roman">In the case of the RU type (i.e., unsolicited replacement by the filler), the filler order number is generated as usual by the filler application.  The placer order number is identical to the placer order number of the first transmitted ORC with an order control value of RU.</FONT>
+<P>
+<FONT FACE="Times New Roman">In the case of the RP type (i.e., a replacement request from another application to the filler), the placer order number is generated by the placer application using the procedure for new orders.  The filler order number is generated by the filler application using the procedure identical for new orders.</FONT>
+<P>
+<FONT FACE="Times New Roman">If a replacement sequence is used in an ORU message (i.e., during results reporting), the following are the recommended segments to be used for the replacement orders:</FONT>
+<P>
+<FONT FACE="Times New Roman">1) ORC with an order control value of RO</FONT>
+<P>
+<FONT FACE="Times New Roman">2) Any OBR segments (can be replaced by any order detail segments)</FONT>
+<P>
+<FONT FACE="Times New Roman">3) Optionally followed by observation result segments (OBX)</FONT>
+<P>
+<FONT FACE="Times New Roman">4) NTE segments can appear after the OBR (or any order detail segment) or after an OBX segment as in a regular ORU message</FONT>
+<P>
+<FONT FACE="Times New Roman">i) PA, CH</FONT>
+<P>
+<FONT FACE="Times New Roman">The parent (PA) and child (CH) order control codes allow the spawning of &quot;child&quot; orders from a &quot;parent&quot; order without changing the parent (original order).  One or more ORC segments with an <I>ORC-1-order control</I> value of PA are followed by one or more ORC segments with an <I>ORC-1-order </I><I>control</I> value of CH.  Whether OBR segments must be present is determined by the value of <I>ORC-6-response flag</I>. </FONT>
+<P>
+<FONT FACE="Times New Roman">For example, suppose that a microbiology culture produced two organisms and corresponding susceptibility reports.  Then the sequence of segments would be as follows:</FONT>
+<P ALIGN=indent><A NAME="I36"></A><A NAME="I37"></A><A NAME="I38"></A>Figure 4-4.  Example of two child orders</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Segment</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Order Control</FONT>
+</TD><TD WIDTH=240 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Comment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PA</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st parent ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CH</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st child ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">1st child order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CH</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd child ORC</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OBR</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd child order</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">The assignment of placer numbers in the parent-child paradigm depends on whether the placer  or filler creates the child order and in the latter case, on whether the placer supports the SN/NA transaction. If the placer creates the child orders it will assign their placer numbers according to its usual procedures. If the filler creates the child orders there are two possibilities: each child will inherit the placer number of its parent, or the filler will use the SN/NA transaction to request that the placer assign a placer number. In either case, the filler application creates the filler numbers of the children according to its usual procedures.</FONT>
+<P>
+<FONT FACE="Times New Roman">Whenever a child order is transmitted in a message the ORC segment&#146;s <I>ORC-8-parent</I> is valued with the parent&#146;s filler number (if originating from the filler) and with the parent&#146;s placer number (if originating from the filler or if originating from the placer). </FONT>
+<P>
+<FONT FACE="Times New Roman">The parent-child mechanism can be used to &quot;expand&quot; a parent order (e.g., an order for three EKGs on successive mornings).</FONT>
+<P>
+<FONT FACE="Times New Roman">j) RE<A NAME="I39"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">The observations-to-follow code is used to transmit patient-specific information with an order.  An order detail segment (e.g., OBR) can be followed by one or more observation segments (OBX).  Any observation that can be transmitted in an ORU message can be transmitted with this mechanism.  When results are transmitted with an order, the results should immediately follow the order or orders that they  support.</FONT>
+<P>
+<FONT FACE="Times New Roman">The following example shows the sequence of segments for three Pharmacy orders.  It illustrates the use of the RE code:</FONT>
+<P ALIGN=indent><A NAME="I40"></A><A NAME="I41"></A><A NAME="I42"></A>Figure 4-5.  RE usage (example)</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Segment</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Order Control</FONT>
+</TD><TD WIDTH=240 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Comment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">MSH</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PID</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NW</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">First new order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RXO</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">First order segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NW</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd new order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RXO</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">2nd order segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">[ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RE</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient-specific observation, optional in V 2.2</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1"> OBR]</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Observation OBR, optional in V 2.2</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OBX</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">An observation segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OBX</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Another observation segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OBX</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Another observation segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">OBX</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">Another observation segment</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top ><BR></TD>
+</TR>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ORC</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NW</FONT>
+</TD><TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">3rd order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=96 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RXO</FONT>
+</TD><TD WIDTH=144 ALIGN=center  VALIGN=top ><BR></TD>
+<TD WIDTH=240 VALIGN=top >
+<P>
+<FONT SIZE="-1">3rd order segment</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">In this version of HL7, results can be transmitted with an order as one or more OBX segments without the necessity of including the ORC and OBR segments.</FONT>
+<P>
+<FONT FACE="Times New Roman">Observations can be transmitted in an ORU message without using an ORC.  There are times when it is necessary to transmit information not included in the OBR segments of the ORU message.  In this case, it is recommended that the ORC be included in the ORU message.</FONT>
+<P>
+<FONT FACE="Times New Roman">The order control value of RE is required only in ORM messages to indicate that an order is followed by observation results (OBX).  The RE code is not necessary in the ORU message because it is expected that the OBR segments can be followed by observation results (OBX).</FONT>
+<P>
+<FONT FACE="Times New Roman">k) RR</FONT>
+<P>
+<FONT FACE="Times New Roman">Left in for backwards compatibility.  In the current version it is equivalent to an accept acknowledgment.  The request-received code indicates that an order message has been received and will be processed later.  The order has not yet undergone the processing that would permit a more exact response.</FONT>
+<P>
+<FONT FACE="Times New Roman">l) SN, NA, NW</FONT>
+<P>
+<FONT FACE="Times New Roman">There are three circumstances that involve requesting an order number (<I>ORC-2-placer</I> <I>order number</I> or <I>ORC-3-filler order number</I>):</FONT>
+<P>
+<FONT FACE="Times New Roman">1) When the filler application needs to request an <I>ORC-3-filler order number</I> from a centralized application (e.g., HIS)</FONT>
+<P>
+<FONT FACE="Times New Roman">2) When the filler application needs to request an <I>ORC-2-placer order number</I> from some other application (e.g., Order Entry)</FONT>
+<P>
+<FONT FACE="Times New Roman">3) When an application (not the filler application) wants to assign an <I>ORC-3-filler order number</I> for a new order</FONT>
+<P>
+<FONT FACE="Times New Roman">1) The filler application needs a centralized filler order number</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>SN</U> The send order number code provides a mechanism for the filler to request an <I>ORC-3-filler order </I><I>number</I> from some centralized application (called &quot;other&quot; in the table below), such as a central HIS, by sending an ORM message containing an <I>ORC-1-order control</I> value of SN.  This ORC has a null <I>ORC-3-filler order number</I> and an <I>ORC-2-placer order number</I> created by the filler application when the filler originates the order.</FONT>
+<P>
+<FONT FACE="Times New Roman">The ORM (SN type) message can be acknowledged by two methods:</FONT>
+<P>
+<FONT FACE="Times New Roman">i) By an ORR message containing an <I>ORC-1-order control</I> value of OK.  An unsolicited ORM message can be sent at a future time, containing an ORC with <I>ORC-1-order control</I> value of NA.</FONT>
+<P>
+<FONT FACE="Times New Roman">ii) By an ORR message containing an <I>ORC-1-order control</I> value of NA as described below.</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>NA</U> The number assigned code allows the &quot;other&quot; application to notify the filler application of the newly assigned filler order number.  <I>ORC-1-order control</I> contains value of NA, <I>ORC-2-placer </I><I>order number</I> (from the ORC with the SN value), and the newly assigned filler order number.  </FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=509 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> Both the placer order number and the filler order number have the filler's application ID.</TD></TR></FONT></TABLE>
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Code</FONT>
+</TD><TD WIDTH=124 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">From</FONT>
+</TD><TD WIDTH=230 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ORC-2-Placer Order Number</FONT>
+</TD><TD WIDTH=220 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ORC-3-Filler Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">SN</FONT>
+</TD><TD WIDTH=124 VALIGN=top >
+<P>
+<FONT SIZE="-1">filler application</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">placer order number^filler application ID</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT SIZE="-1">null</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=124 VALIGN=top >
+<P>
+<FONT SIZE="-1">other application</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">placer order number^filler application ID</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT SIZE="-1">filler order number^filler application ID</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">2) The filler application needs a placer order number</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>SN</U> The send order number code provides a mechanism for the filler application to request an <I>ORC-2-placer order number</I> from another application (called &quot;other&quot; in the table below) by sending an ORM message containing an <I>ORC-1-order control</I> value of SN.  This ORC has a null <I>ORC-2-placer order number</I> and an <I>ORC-3-filler order number</I> created by the filler application when the filler originates the order.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The ORM (SN type) message can be acknowledged by two methods:</FONT>
+<P>
+<FONT FACE="Times New Roman">i) By an ORR message containing an <I>ORC-1-order control</I> value of OK.  An unsolicited ORM message can be sent at a future time, containing an <I>ORC-1-order control</I> value of NA. </FONT>
+<P>
+<FONT FACE="Times New Roman">ii) By an ORR message containing an <I>ORC-1-order control</I> value of NA as described below.</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>NA</U> The number assigned code allows the &quot;other&quot; application to notify the filler application of the newly assigned <I>ORC-2-placer order number</I>.  The ORC contains an <I>ORC-1-order control</I> value of NA, the newly assigned <I>ORC-2-placer order number</I>, and the <I>ORC-3-filler order number</I> (from the ORC with the SN value).</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=509 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> The new <I>ORC-2-placer order number</I> has the placer's application ID.</TD></TR></FONT></TABLE>
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Code</FONT>
+</TD><TD WIDTH=124 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">From</FONT>
+</TD><TD WIDTH=230 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ORC-2-Placer Order Number</FONT>
+</TD><TD WIDTH=220 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ORC-3-Filler Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">SN</FONT>
+</TD><TD WIDTH=124 VALIGN=top >
+<P>
+<FONT SIZE="-1">filler application</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">null</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT SIZE="-1">filler order number^filler application ID</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=124 VALIGN=top >
+<P>
+<FONT SIZE="-1">other application</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">placer order number^placer application ID</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT SIZE="-1">filler order number^filler application ID</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">3) An application wants to assign a filler order number</FONT>
+<P>
+<FONT FACE="Times New Roman"><U>NW</U> When the application creating an order (not the filler application) wants to assign a filler order number for a new order</FONT>
+<P>
+<FONT FACE="Times New Roman">or </FONT>
+<P>
+<FONT FACE="Times New Roman"><U>RO</U> (RO following an RP).  In this case, the &quot;other&quot; application completes <I>ORC-3-filler order number</I>, using the filler application ID as the second component of the filler order number.</FONT>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=2 >
+<TR>
+<TD WIDTH=48 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Code</FONT>
+</TD><TD WIDTH=124 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">From</FONT>
+</TD><TD WIDTH=230 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ORC-2-Placer Order Number</FONT>
+</TD><TD WIDTH=220 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ORC-3-Filler Order Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">NW or RO</FONT>
+</TD><TD WIDTH=124 VALIGN=top >
+<P>
+<FONT SIZE="-1">other application to the filler</FONT>
+</TD><TD WIDTH=230 VALIGN=top >
+<P>
+<FONT SIZE="-1">placer order number^placer application ID</FONT>
+</TD><TD WIDTH=220 VALIGN=top >
+<P>
+<FONT SIZE="-1">filler order number^filler application ID</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">m) CN</FONT>
+<P>
+<FONT FACE="Times New Roman">The combined result code provides a mechanism to transmit results that are associated with two or more orders.  This situation occurs commonly in radiology reports when the radiologist dictates a single report for two or more exams represented as two or more orders.  For example, knee and hand films for a rheumatoid arthritis patient might generate a single dictation on the part of the radiologist.</FONT>
+<P>
+<FONT FACE="Times New Roman">When such results are reported the CN code replaces the RE code in all but the last ORC, and the results follow the last ORC and its OBR.  An example follows of a single report following three ORCs:</FONT>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>MSH|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>PID|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CN|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A4461XA^HIS|81641^RAD|73666^Bilateral Feet|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|CN|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A4461XB^HIS|81642^RAD|73642^Bilateral Hand PA|... </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>ORC|RE|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBR||A4461XC^HIS|81643^RAD|73916^Bilateral Knees|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|73916&amp;IMP||Radiologist's Impression|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||CE|73642&amp;IMP||Radiologist's Impression|...</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New" SIZE=3>OBX||FT|73642&amp;GDT||Description|...</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">n)  UA</FONT>
+<P>
+<FONT FACE="Times New Roman">An unable-to-accept code is used when a new order cannot be accepted by the filler.  Possible reasons include requesting a prescription for a drug which the patient is allergic to or for an order which requires certain equipment resources which are not available such that the order cannot be filled.  Note that this is different from the communication level acceptance as defined within the MSA segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">o) RF</FONT>
+<P>
+<FONT FACE="Times New Roman">RF accommodates requests by both the filler or the placer. The filler may be requesting refill authorization from the placer. A placer system may be requesting a refill to be done by the filler system.</FONT>
+<P>
+<FONT FACE="Times New Roman">p) AF</FONT>
+<P>
+<FONT FACE="Times New Roman">AF is a response back from the placer authorizing a refill or quantity of refills.</FONT>
+<P>
+<FONT FACE="Times New Roman">q) DF</FONT>
+<P>
+<FONT FACE="Times New Roman">DF indicates that the placer will not authorize refills for the order. The order control code reason may be used to indicate the reason for the request denial. Some suggested values include:</FONT>
+
+<CENTER><TABLE >
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AA</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient unknown to the provider</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AB</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient never under provider care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AC</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient no longer under provider care</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AD</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient has requested refill too soon</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AE</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Medication never prescribed for the patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AF</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient should contact provider first</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">AG</FONT>
+</TD><TD WIDTH=215 VALIGN=top >
+<P>
+<FONT SIZE="-1">Refill not appropriate</TD></TR></FONT></TABLE></CENTER><P>
+<FONT FACE="Times New Roman">Note that these values originate from the NCPDP SCRIPT Response Segment Code List Qualifiers.</FONT>
+<P>
+<FONT FACE="Times New Roman">r) FU</FONT>
+<P>
+<FONT FACE="Times New Roman">FU notifies the placer that the filler issued a refill for the order at the patient&#146;s request.</FONT>
+<P>
+<FONT FACE="Times New Roman">s) OF</FONT>
+<P>
+<FONT FACE="Times New Roman">OF directly responds to the placer system&#146;s request for a refill</FONT>
+<P>
+<FONT FACE="Times New Roman">t)  UF </FONT>
+<P>
+<FONT FACE="Times New Roman">UF indicates an application level denial by the filler system to an authorized refill request.</FONT>
+<P>
+<FONT FACE="Times New Roman">u) LI, UN</FONT>
+<P>
+<FONT FACE="Times New Roman">Use only with patient care messages, Chapter 12.</FONT>
+<H4>4.3.1.2 <A NAME="I43"></A>Placer order number  ( EI)   00216</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the placer application's order number.</FONT>
+<P>
+<FONT FACE="Times New Roman">This  field is a case of the Entity Identifier data type (2.8.13).  The first component is a string that identifies an individual order (e.g., OBR).  A limit of fifteen (15) characters is suggested but not required.  It is assigned by the placer (ordering application).  It identifies an order uniquely among all orders from a particular ordering application.  The second through fourth components contain the application ID of the placing application in the same form as the HD data type (Section 2.8.18, &quot;HD - Hierarchic designator&quot;).  The second components, namespace ID, is a user-defined coded value   that will be uniquely associated with an application.  A limit of six (6) characters is suggested but not required.  A given institution or group of intercommunicating institutions should establish a unique list of applications that may be potential placers and fillers and assign unique application IDs.  The two components are separated by a component delimiter.</FONT>
+<P>
+<FONT FACE="Times New Roman">There are three situations in which the true placer is somewhat arbitrary (and thus not unique): </FONT>
+<P>
+<FONT FACE="Times New Roman">a)  in <I>ORC-1-order control</I> value of RO, following an RU replacement;</FONT>
+<P>
+<FONT FACE="Times New Roman">b)  in <I>ORC-1-order control</I> value of CH (child orders); and</FONT>
+<P>
+<FONT FACE="Times New Roman">c)  in <I>ORC-1-order control</I> value of SN (send number).</FONT>
+<P>
+<FONT FACE="Times New Roman">See the Table Notes under <I>ORC-1-order control</I> for the details of how the <I>ORC-2-placer order number</I> is assigned in these cases.</FONT>
+<P>
+<FONT FACE="Times New Roman">A given institution or group of intercommunicating institutions should establish a list of applications that may be potential placers and fillers of orders and assign each a unique application ID.  The application ID list becomes one of the institution&#146;s master dictionary lists that is documented in Chapter 8.  Since third-party applications (those other than the placer and filler of an order) can send and receive ORM and ORR messages, the placer application ID in this field may not be the same as any sending and receiving application on the network (as identified in the MSH segment).</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-2-placer order number</I> is the same as <I>OBR-2-placer order number</I>.  If the placer order number is not present in the ORC, it must be present in the associated OBR and vice versa.  If both fields, <I>ORC-2-placer </I><I>order number</I> and <I>OBR-2-placer order number</I> are valued, they must contain the same value.  When results are transmitted in an ORU message, an ORC is not required, and the identifying placer order number <U>must</U> be present in the OBR segments.</FONT>
+<P>
+<FONT FACE="Times New Roman">These rules apply to the few other fields that are present in both ORC and OBR for upward compatibility (e.g., quantity/timing, parent numbers, ordering provider, and ordering call back numbers). </FONT>
+<H4>4.3.1.3 <A NAME="I44"></A>Filler order number  ( EI)   00217</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace ID (IS)&gt; ^ &lt;universal ID )ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the order number associated with the filling application.  It is a case of the Entity Identifier data type (2.8.13). Its first component is a string that identifies an order detail segment (e.g., OBR).  A limit of fifteen (15) characters is suggested but not required.  It is assigned by the order filler (receiving) application.  This string must uniquely identify the order (as specified in the order detail segment) from other orders in a particular filling application (e.g., clinical laboratory).  This uniqueness must persist over time.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the filler application ID, in the form of the HD data type (see Section 2.8.18, &quot;HD - hierarchic designator&quot;). The second component is a user-defined coded value  that uniquely defines the application from other applications on the network.  A limit of six (6) characters is suggested but not required.  The second component of the filler order number always identifies the actual filler of an order.</FONT>
+<P>
+<FONT FACE="Times New Roman">A given institution or group of intercommunicating institutions should establish a list of applications that may be potential placers and fillers of orders and assign each a unique application ID.  The application ID list becomes one of the institution's master dictionary lists that is documented in Chapter 8.  Since third- party applications (those other than the placer and filler of an order) can send and receive ORM and ORR messages, the filler application ID in this field may not be the same as any sending and receiving application on the network (as identified in the MSH segment).</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-3-filler order number</I> is the same as <I>OBR-3-filler order number</I>.  If the filler order number is not present in the ORC, it must be present in the associated OBR.  (This rule is the same for other identical fields in the ORC and OBR and promotes upward and ASTM compatibility.)  This is particularly important when results are transmitted in an ORU message.  In this case, the ORC is not required and the identifying filler order number must be present in the OBR segments. </FONT>
+<P>
+<FONT FACE="Times New Roman">The <I>filler order number (OBR-3 or ORC-3)</I> also uniquely identifies an order and its associated observations.  For example, suppose that an institution collects observations from several ancillary applications into a common database and this common database is queried by yet another application for observations.  In this case, the filler order number and placer order number transmitted by the common database application would be that of the original filler and placer, respectively, rather than a new one assigned by the common database application.  </FONT>
+<P>
+<FONT FACE="Times New Roman">Similarly, if a third-party application, not the filler or placer, of an order were authorized to modify the status of an order (say, cancel it), the third-party application would send the filler an ORM message containing an ORC segment with <I>ORC-1-order control</I> equal to &quot;CA&quot; and containing the original placer order number and filler order number, rather than assign either itself.</FONT>
+<H4>4.3.1.4 <A NAME="I45"></A>Placer group number (EI)   00218</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;entity identifier (ST)&gt; ^ &lt;namespace (D (IS)&gt; ^ &lt;universal ID (ST)&gt; ^ &lt;universal ID type (ID)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field allows an order placing application to group sets of orders together and subsequently identify them. It is a case of an Entity Identifier data type (2.8.13).</FONT>
+<P>
+<FONT FACE="Times New Roman">The first component is a string that uniquely identifies all order groups from the given placer application.  A limit of fifteen (15) characters is suggested but not required.  It is assigned by the placer application and may come from the same series as the placer order number of the ORC, but this is not required. </FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components  constitute a placer application ID identical to the analogous components of <I>ORC-2-placer order number</I>.  Order groups and how to use them are described in detail in Section <A HREF="ch400009.htm#I7">4.3.1</A>, &quot;PRC - common order segment.&quot;</FONT>
+<H4>4.3.1.5 <A NAME="I46"></A>Order status  (ID)   00219</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the status of an order.  Refer to <I>HL7</I> <I>table 0038 - Order status</I> for valid entries.  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field.</FONT>
+<P>
+<FONT FACE="Times New Roman">Although <I>HL7 table 0038 - Order status</I> contains many of the same values contained in <I>HL7 table 0119 - </I><I>Order control</I>, the purpose is different.  Order status may typically be used in a message with an <I>ORC-1-order control</I> value of SR or SC to report the status of the order on request or to any interested party at any time.</FONT>
+<P ALIGN=indent><A NAME="I47"></A><A NAME="I48"></A>Table 0038 - Order status</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value </FONT>
+</TD><TD WIDTH=336 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Some, but not all, results available</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CA</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order was canceled</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order is completed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DC</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order was discontinued</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">ER</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Error, order not found</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">HD</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order is on hold</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">IP</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">In process, unspecified</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RP</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Order has been replaced</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">SC</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">In process, scheduled</TD></TR></FONT></TABLE></CENTER><H4>4.3.1.6 <A NAME="I49"></A>Response flag  (ID)   00220</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field allows the placer (sending) application to determine the amount of information to be returned from the filler.  Sometimes the requested level of response may not be possible immediately, but when it is possible, the filler (receiving) application must send the information.  When the field is null, D is the default value of the field.  Refer to <I>HL7</I> <I>table 0121 - Response flag</I> for valid entries.</FONT>
+<P ALIGN=indent><A NAME="I50"></A><A NAME="I51"></A>Table 0121 - Response flag</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=336 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">E</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Report exceptions only</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Same as E, also Replacement and Parent-Child</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Same as R, also other associated segments</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Same as D, plus confirmations explicitly</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Only the MSA segment is returned</TD></TR></FONT></TABLE></CENTER><H4>4.3.1.7 <A NAME="I52"></A>Quantity/timing (TQ)   00221</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;quantity (CQ)&gt; ^ &lt;interval (CM)&gt; ^ &lt;duration&gt; ^ &lt;start date/time (TS)&gt; ^ &lt;end date/time (TS)&gt; ^ &lt;priority (ID)&gt; ^ &lt;condition (ST)&gt; ^ &lt;text (TX)&gt; ^ &lt;conjunction (ID)&gt; ^ &lt;order sequencing&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field determines the priority, quantity, frequency, and timing of an atomic service.  Order segments should be thought of as describing an atomic service.  It is a composite field that is defined in detail in Section <A HREF="ch400011.htm#I8">4.4</A>, &quot;Quantity/Timing (TQ) Definition.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">For example, if an OBR segment describes a unit of blood, this field might request that 3 such units be given on successive mornings.  In this case <I>ORC-7-quantity/timing</I> would be &quot;1^XQAM^X3&quot;.  <I>ORC-7-quantity/timing</I> is the same as <I>OBR-27-quantity/timing</I>.</FONT>
+<H4>4.3.1.8 <A NAME="I53"></A>Parent  (CM)   00222</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;parent's placer order number (EI)&gt; ^ &lt;parent's filler order number (EI)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subomponents of parent&#146;s placer order number:  &lt;entity identifier (ST)&gt; &amp; &lt;namespace ID (IS) &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (IS)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subomponents of parent&#146;s filler order number:  &lt;entity identifier (ST)&gt; &amp; &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field relates a child to its parent when a parent-child relationship exists.  The parent-child mechanism is described under <I>ORC-1-order control</I> notes.  The first component contains the placer order number of the parent order.  It is required when the order is a child.</FONT>
+<P>
+<FONT FACE="Times New Roman">The second through fourth components contain the filler order number of the parent order.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The components of the placer order number and the filler order number are transmitted in sub-components of the two components of this field.  <I>ORC-8-parent</I> is the same as <I>OBR-29-parent</I>.</FONT>
+<H4>4.3.1.9 <A NAME="I54"></A>Date/time of transaction  (TS)   00223</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the date and time the current transaction enters the ordering application.  For messages creating new orders, this is the date and time the order was entered.  </FONT>
+<P>
+<FONT FACE="Times New Roman">For other messages, this is the date and time the current transaction (e.g., cancellation) enters the sending application.  This date and time is for the current transaction and is not a &quot;replacement&quot; time for a correction to the original order.  Similarly, <I>ORC-10-entered by</I>, <I>ORC-11-verified by</I>, and <I>ORC-13-enterer</I><I>s location</I> of this segment relate to the current transaction, not the original order.</FONT>
+<H4>4.3.1.10 <A NAME="I55"></A>Entered by  (XCN)   00224</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the identity of the person who actually keyed the request into the application.  It provides an audit trail in case the request is entered incorrectly and the ancillary department needs to clarify the request.  By local agreement, either the ID number or name component may be omitted.</FONT>
+<H4>4.3.1.11 <A NAME="I56"></A>Verified by  (XCN)   00225</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the identity of the person who verified the accuracy of the entered request. It is used in cases where the request is entered by a technician and needs to be verified by a higher authority (e.g., a nurse).  By local agreement, either the ID number or name component may be omitted.</FONT>
+<H4>4.3.1.12 <A NAME="I57"></A>Ordering provider  (XCN)   00226</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the identity of the person who is responsible for creating the request (i.e., ordering physician).  <I>ORC-12-ordering provider</I> is the same as <I>OBR-16-ordering provider</I>.</FONT>
+<H4>4.3.1.13 <A NAME="I58"></A>Enterer's location  (PL)   00227 </H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;point of care (IS)&gt; ^ &lt;room (IS)&gt; ^ &lt;bed (IS)&gt; ^ &lt;facility (HD)&gt; ^ &lt;location status  (IS)&gt; ^ &lt;person location type (IS)&gt; ^ &lt;building (IS)&gt; ^ &lt;floor (IS)&gt; ^ &lt;location description (ST)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the location (e.g., nurse station, ancillary service location, clinic, floor) where the person who entered the request was physically located when the order was entered.  Only those subcomponents relevant to enterer&#146;s location should be valued (commonly nursing unit; facility; building; floor). The person who entered the request is defined in <I>ORC-10-entered by</I>.</FONT>
+<H4>4.3.1.14 <A NAME="I59"></A>Call back phone number  (XTN)   00228 </H4>
+<P>
+<FONT FACE="Courier New">Components:  [<B>N</B>NN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ &lt;phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the telephone number to call for clarification of a request or other information regarding the order.  <I>ORC-14-call back phone number</I> is the same as <I>OBR-17-order call back phone </I><I>number</I>.</FONT>
+<H4>4.3.1.15 <A NAME="I60"></A>Order effective date/time  (TS)   00229</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the date/time that the changes to the request took effect or are supposed to take effect.</FONT>
+<P>
+<FONT FACE="Times New Roman">If <I>ORC-9-transaction date/time</I> is after or equal to <I>ORC-16-order effective date/time</I>, the data values in the ORC and its subordinate segments took effect on the order effective date/time.</FONT>
+<P>
+<FONT FACE="Times New Roman">If <I>ORC-9-transaction date/time</I> is before the time specified in <I>ORC-15-order effective date/time</I>, the data values in ORC and its subordinate segments are planned to take effect on the order effective date/time.</FONT>
+<P>
+<FONT FACE="Times New Roman">If <I>ORC-15-order effective date/time</I> is left blank, its value is assumed to be equal to that specified in <I>ORC-9-transaction date/time</I> or <I>MSH-7-message date/time</I> if the transaction date/time is blank.</FONT>
+<P>
+<FONT FACE="Times New Roman">In the case where the time specified in <I>ORC-15-effective date/time</I> (for the order control code event in the same ORC segment) is different from the corresponding date/time in <I>ORC-7-quantity/timing</I>, the time specified in <I>ORC-15-order effective date/time</I> takes precedence.  Thus if the ORC event is a discontinue request to the filler for a continuing order, and the order-effective date/time is prior to the end date/time of <I>ORC-7-quantity/timing</I>, the order effective date/time should take precedence.  If the order identified in the ORC has children, the children which have not started should be canceled; if there is a child in process, it should be discontinued; if a child has progressed beyond the point where it can be discontinued, its status is unaffected.</FONT>
+<H4>4.3.1.16 <A NAME="I61"></A>Order control code reason  (CE)   00230</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the explanation (either in coded or text form) of the reason for the order event described by the order control code (<I>HL7</I> <I>table 0119</I>).  Whereas an NTE after the order specific segment (e.g., RXO, ORO, OBR) would provide a comment for that specific segment, the purpose of the order control code reason is only to expand on the reason for the order event.</FONT>
+<P>
+<FONT FACE="Times New Roman"><I>ORC-16-order control code reason</I> is typically not valued when <I>ORC-1-order control</I> is NW, although it could be.  In the case of a canceled order, for example, this field is commonly used to explain the cancellation.  A Pharmacy system that canceled a drug order from a physician because of a well documented allergy would likely report the fact of the allergy in this field.  </FONT>
+<P>
+<FONT FACE="Times New Roman">If it canceled the order because of a drug interaction this field might contain at least the names (and codes, if needed) of the interacting substances, the text describing the interaction, and the level of severity of the interaction.</FONT>
+<H4>4.3.1.17 <A NAME="I62"></A>Entering organization  (CE)   00231</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the organization that the enterer belonged to at the time he/she enters/maintains the order, such as medical group or department.  The person who entered the request is defined in <I>ORC-10 </I><I>-entered by</I>.</FONT>
+<H4>4.3.1.18 <A NAME="I63"></A>Entering device  (CE)   00232</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field is the identifier of the physical device (terminal, PC) used to enter the order.</FONT>
+<H4>4.3.1.19 <A NAME="I64"></A>Action by  (XCN)   00233</H4>
+<P>
+<FONT FACE="Courier New">Components: &lt;ID number (ST)&gt; ^ &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; ^ &lt;source table (IS)&gt; ^ &lt;assigning authority (HD)&gt; ^ &lt;name type code(ID)&gt;  ^ &lt;identifier check digit (ST)&gt; ^ &lt;code identifying the check digit scheme employed (ID )&gt; ^ &lt;identifier type code (IS)&gt; ^ &lt;assigning facility (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning facility:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field is the identity of the person who initiated the event represented by the corresponding order control code.  For example, if the order control code is CA (cancel order request), this field represents the person who requested the order cancellation.  This person is typically a care provider but may not always be the same as <I>ORC-12 ordering provider</I>.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400008.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400010.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

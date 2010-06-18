@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>12.1.4 Use of action codes </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch120006.htm">
+<LINK REL="Previous" HREF="ch120004.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch120004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E512"></A>
+<H3><B>12.1.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>Use of action codes</B><A NAME="I9"></A><B> </B></H3>
+<P>
+<FONT FACE="Times New Roman">Prior to version 2.3 of the standard, all repeating segments had to be sent in an update message, because there was no way to indicate which ones changed and which ones did not.  In this snapshot mode, all repeating segments must be sent with every subsequent message in the series of messages.</FONT>
+<P>
+<FONT FACE="Times New Roman">To reduce the number of repeating segments, action codes may be employed.  Action codes (e.g., order control codes and result status codes) may be embedded within repeating segments and used by sophisticated application parsers to reduce the number of repetitions required for a complete record.</FONT>
+<P>
+<FONT FACE="Times New Roman">In either event, for systems implementing version 2.3 or higher, if a particular repeating segment can be updated by either of these two modes, the parties concerned determine by agreement on a site-specific basis whether an interface uses the snapshot mode or the action code/unique identifier mode.</FONT>
+<P>
+<FONT FACE="Times New Roman">A description of valid action codes used in message segments originating in this chapter are given immediately below:</FONT>
+<P>
+<FONT FACE="Times New Roman">a. AD (ADD) - The object defined within the segment should be added to the set of objects that are linked to the previous object in the hierarchical structure of the message. (I.e.: a goal under a problem is implicity linked to the problem.  If the goals already exists, the segment placement indicates the addition of a new linkage between the goal and that problem.)</FONT>
+<P>
+<FONT FACE="Times New Roman">b. CO (CORRECT) - The object attributes contained within the segment have been corrected.  This is not updated information, but information originally sent and later found to be in error.  The previous attributes should be replaced.</FONT>
+<P>
+<FONT FACE="Times New Roman">c. UP (UPDATE) - The object attributes contained within the segment are an update of previously sent information.  The previous information was correct for the period of time in which it was sent.</FONT>
+<P>
+<FONT FACE="Times New Roman">d. DE (DELETE) - This object should be deleted from the set of objects which are linked to the previous object in the message hierarchy.  An example might be a role deleted from the set of roles contained by the Goal object.  Delete presume the original linkage was in error.</FONT>
+<P>
+<FONT FACE="Times New Roman">e. LI (LINK) - This actiona code denotes that the object contained in the segment should be linked in a dependency relationship to the previous object in the hierarchy.  It is used to denote relationships and should not contain additional information other than those attributes necessary for specific identification.</FONT>
+<P>
+<FONT FACE="Times New Roman">f. UN (UNLINK) - This is a request that the object be removed from the set of linked objects.  An example might be the dissolution of a relationship between a problem and a goal.  Unlink presumes the original linkage was correct, but due to life cycle changes the active linkage is no longer appropriate.  </FONT>
+<P>
+<FONT FACE="Times New Roman">g. UC (UNCHANGED) - This code signifies that the segment is being included for the purposes of hierarchical set identification.  It does not contain any changed or additional data.  Its purpose is to allow the identification of the collection set to which subsequent segments belong in the message structure.  An example might be the modification of role information requiring the previous goal segment to be appropriately identified.</FONT>
+<H4>12.1.4.1 Examples of  action code usage</H4>
+<P>
+<FONT FACE="Times New Roman">A problem list and associated goals<A NAME="I10"></A> are generated in a Point of Care system<A NAME="I11"></A>.  This transaction is broadcast through an interface engine that determines which systems in the organization require the event information and then forwards the messages appropriately.  Each segment included in the original message contains the  Action Code for ADD to signify an original message instance.</FONT>
+<P>
+<FONT FACE="Times New Roman">a. Upon subsequent review, it is determined that a role segment designates the wrong person as the transcribing clerk for a problem.  After the information is changed in the originating system, a new message is sent to provide synchronization.  The message includes the original PRB segment with the <I>PRB-1-action code</I> for UNCHANGED (to identify the problem for which the role is being changed).  This code signifies that the segment is included for the purposes of hierarchical linkage identification and that none of the information contained in it has been changed.  The accompanying role segment sent would include the role transcriber in <I>ROL-3-role</I>, the correct person in <I>ROL-4-role person</I>, and the  value for CORRECT in <I>ROL-2-action code</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">b. It is later decided that an additional goal must be added to a specific problem, and that an already existing goal that is currently supporting another problem should also be linked with this specific problem.  The message would be constructed with the problem (PRB) segment for identification (the value for <I>PRB-1-action code</I> is UNCHANGED).  The goal segment (GOL) for the additional goal would include <I>GOL-1-action code</I> for ADD.  The goals already included with the problem list that need to be linked to this problem would have to be included on additional GOL segments with the <I>GOL-1-action code</I> for LINK.</FONT>
+<P>
+<FONT FACE="Times New Roman">Once data regarding a Diagnosis/Problem or a Goal has been communicated to other systems, there are occasions on which the data may have to be amended..</FONT>
+<P>
+<FONT FACE="Times New Roman">c. New diagnoses/problems<A NAME="I12"></A> must be added to an individual&#146;s list.  The Problem message is sent with the appropriate Problem Instance ID.  All PRB segment(s) included in the message that contain the value for ADD in <I>PRB-1-action code</I> are processed as additions to the individual&#146;s problem list.</FONT>
+<P>
+<FONT FACE="Times New Roman">d. New goals<A NAME="I13"></A> are added to the individual&#146;s record.  The Goal message is sent with the GOL segments indicating the value for ADD as <I>GOL-1-action code</I> in each segment occurrence.</FONT>
+<P>
+<FONT FACE="Times New Roman">e. Changes are made to the attributes of a goal.  Examples include a change in the expected resolution date, a change in the life cycle status to reflect its successful conclusion, etc.  The Goal message is sent with the appropriate <I>GOL-4-goal instance ID</I>.  The GOL segments of the Goal message would include the value for UPDATE in <I>GOL-1-action code</I>.</FONT>
+<P>
+<FONT FACE="Times New Roman">f. A new goal is attached to a problem already in the repository (e.g., the goal of &quot;education on diabetes&quot; for an individual diagnosed with &quot;insulin-dependent diabetes&quot;).  A problem message would be sent with the PRB segment including the <I>PRB-4-problem instance ID</I> for the the diabetes problem, and with the value UNCHANGED in <I>PRB-1-action code</I>.  The attached GOL segment for the education goal would accompany the message and contain the value ADD in its <I>GOL-1-action code</I> field.</FONT>
+<P>
+<FONT FACE="Times New Roman">g. A new diagnosis/problem is attached to a goal  (e.g., a Goal is to &quot;discharge an individual with intact skin.&quot;  While the initial problem was &quot;skin breakdown related to immobility,&quot; a new problem is &quot;potential for skin breakdown related to draining wounds.&quot;)  A Goal message would be sent with the GOL segment , including the <I>GOL-4-goal instance ID</I> for the discharge goal, and contain the value UNCHANGED in <I>GOL-1-action code</I>.  The attached PRB segment identifying the new problem, &quot;potential for skin breakdown related to draining wounds,&quot; would accompany this message and contain the value for ADD in <I>PRB-1-action code</I>.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=616 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B><B> </B>If there is a requirement to modify information contained on a segment and unlink that same problem/goal, two segments must be transmitted (one for the modification and one for the unlink request).</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch120004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch120006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE>2.4 HL7 MESSAGES </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200009.htm">
+<LINK REL="Previous" HREF="ch200007.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E13"></A>
+<P>
+<FONT SIZE="+2"><B>2.4</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>HL7 MESSAGES</B><B> </B><A NAME="I15"></A></FONT>
+<P>This section and sections 2.5 through 2.9 define the components of messages and provide the methodology for defining abstract messages that are used in later chapters.   A <B>message</B> is the atomic unit of data transferred between systems.  It is comprised of a group of segments in a defined sequence.  Each message has a <B>message </B><B>type</B> that defines its purpose.  For example the ADT Message type is used to transmit portions of a patient&#146;s ADT data from one system to another.  A three character code contained within each message identifies its type.  These are listed in the Message Type list, Appendix A.
+<P>The real-world event that initiates an exchange of messages is called a trigger event.  (See Section <A HREF="ch200003.htm#I14">2.2.1</A>, &quot;<A HREF="ch200003.htm#I15">Trigger events</A>&quot; for a more detailed description of trigger events.)  Appendix A contains the codes that represent all defined trigger events.  These codes represent values such as <B>A patient is admitted</B> or <B>An order event occurred</B>.  There is a one-to-many relationship between message types and trigger event codes.  The same trigger event code may not be associated with more than one message type; however a message type may be associated with more than one trigger event.
+<P>All message types and trigger event codes beginning with the letter &quot;Z&quot; are reserved for locally defined messages.  No such codes will be defined within the HL7 Standard.
+<P>This section defines the components of messages and provides the methodology for defining abstract messages that is used in later chapters.
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch200007.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200009.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

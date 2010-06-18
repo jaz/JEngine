@@ -1,0 +1,509 @@
+<HTML>
+<HEAD>
+<TITLE>6.4.11 UB2 - UB92 data segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch600022.htm">
+<LINK REL="Previous" HREF="ch600020.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch600020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E278"></A>
+<H3><B>6.4.11</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><B>UB2</B><A NAME="I9"></A><A NAME="I10"></A><B> </B><B>-</B><B> UB92 data</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">The UB2 segment contains data necessary to complete UB92 bills.  <U>Only UB92 fields that do not exist in </U><U>other HL7 defined segments appear in this segment.</U>  Just as with the UB82 billing, Patient Name and Date of Birth are required; they are included in the PID segment and therefore do not appear here.  When the field locators are different on the UB92, as compared to the UB82, the element is listed with its new location in parentheses  (  ). </FONT>
+<P>Figure 6-11.  UB2 attributes
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=42 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=46 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=60 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=266 VALIGN=top  BGCOLOR=#BFBFBF >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">SI</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00553</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Set ID - UB2</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00554</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Co-Insurance Days (9)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">IS</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/7</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">0043</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00555</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Condition Code (24-30)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00556</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Covered Days (7)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00557</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Non-Covered Days (8)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/12</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">0153</FONT>
+</TD><TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00558</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Value Amount &amp; Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/8</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00559</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occurrence Code &amp; Date (32-35)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">28</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00560</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Occurrence Span Code/Dates (36)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">29</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00561</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 2 (State)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00562</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 11 (State)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00563</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 31 (National)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/3</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00564</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Document Control Number</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/23</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00565</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 49 (National)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/5</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00566</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 56 (State)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">27</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00567</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 57 (National)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y/2</FONT>
+</TD><TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00568</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">UB92 Locator 78 (State)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=43 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=42 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=46 VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top ><BR></TD>
+<TD WIDTH=60 VALIGN=top >
+<P>
+<FONT SIZE="-1">00815</FONT>
+</TD><TD WIDTH=266 VALIGN=top >
+<P>
+<FONT SIZE="-1">Special Visit Count</TD></TR></FONT></TABLE><P>6.4.11.0  UB2 field definitions
+<H4>6.4.11.1  Set ID - UB2  (SI)   00553</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number that identifies this transaction.  For the first occurrence of the segment the sequence number shall be 1, for the second occurrence it shall be 2, etc. </FONT>
+<H4>6.4.11.2 Co-insurance days  (ST)   00554</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB92 field 9.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.3 Condition code  (IS)   00555</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  The code in this field can repeat up to seven times.  UB92 fields 24-30.  Refer to <I>user-defined</I> <I>table 0043 - Condition code</I> for suggested values.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.4 Covered days  (ST)   00556</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB92 field 7.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.5 Non-covered days  (ST)   00557</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains UB92 field 8. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.6 Value amount and code  (CM)   00558</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;value code (IS)&gt; ^ &lt;value amount (NM)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The pair in this field can repeat up to twelve times.  UB92 fields 39a, 39b, 39c, 39d, 40a, 40b, 40c, 40d, 41a, 41b, 41c, and 41d.  Refer to <I>user-defined table 0153 - Value code</I> for suggested values. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.7 Occurrence code &amp; date  (CM)   00559</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST) &amp; text (ST) &amp; name of coding system (ST) &amp; alternate identifier (ST) &amp; alternate text (ST) &amp; name of alternate coding system (ST)&gt; ^ &lt;occurrence date (DT)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  The set of values in this field can repeat up to eight times.  UB92 fields 32a, 32b, 33a, 33b, 34a, 34b, 35a, and 35b.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.8 Occurrence span code and dates  (CM)   00560</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST) &amp; text (ST) &amp; name of coding system (ST) &amp; alternate identifier (ST) &amp; alternate text (ST) &amp; name of alternate coding system (ST)&gt; ^ &lt;occurrence span start date (DT)&gt; ^ &lt;occurrence span stop date (DT)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field can repeat up to two times.  UB92 field 36a, 36b.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.9 UB92 field 2, designated for state use  (ST)   00561</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  The value in this field may repeat up to two times. This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.10 UB92 field 11, designated for state use  (ST)   00562</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  The value in this field may repeat up to two times.</FONT>
+<H4>6.4.11.11 UB92 field 31, designated for national use  (ST)   00563</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.12 Document control number  (ST)   00564</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number assigned by payor that is used for rebilling/adjustment purposes.  It may repeat up to three times.  UB92 field 37</FONT>
+<H4>6.4.11.13 UB92 field 49, designated for national use  (ST)   00565</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may repeat up to twenty-three times.  This field is defined by HCFA or other regulatory agencies.</FONT>
+<H4>6.4.11.14 UB92 field 56, designated for state use  (ST)   00566</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may repeat up to five times.</FONT>
+<H4>6.4.11.15 UB92 field 57, designated for national use  (ST)   00567</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  Defined by UB-92 HCFA specification.</FONT>
+<H4>6.4.11.16 UB92 field 78, designated for state use  (ST)   00568</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may repeat up to two times. </FONT>
+<H4>6.4.11.17 <A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A>Special visit count  (NM)   00815</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the total number of special therapy visits.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch600020.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch600022.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

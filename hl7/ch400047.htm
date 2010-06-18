@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+<TITLE>4.8.13 RAS/RRA - pharmacy/treatment administration message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400048.htm">
+<LINK REL="Previous" HREF="ch400046.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400046.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400048.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E247"></A>
+<H3><B>4.8.13</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>RAS/RRA - pharmacy</B><B>/</B><B>treatment administration message</B><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The RAS message may be created by the administering application (e.g., nursing application) for each instance of administration for an existing order.  If the administering application wants to report several administrations of medication for a given order with a single RAS message, each instance is reported by a separate (repeating) RXA segment.  In addition, the administration records for a group of orders may be sent in a single message by creating repeating groups of segments at the ORC level. </FONT>
+<P>
+<FONT FACE="Times New Roman">In the most common case, the RAS messages would be sent from a nursing application to the pharmacy or treatment application (or to the ordering application or another clinical application), which could use the data to generate the medication administration reports.  Multiple RXA segments, each corresponding to a separate administration instance for a given order, may be sent with a single ORC.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RAS</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Pharmacy/Treatment Administration</U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[{NTE}]    Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [PD1]   Additional Patient Identification    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{NTE}]   Notes and Comments (for PID)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [{AL1}]   Allergy          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [PV2]]   Patient Visit Additional Information   3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{ </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  RXO    Pharmacy /Treatment Order      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {NTE}   Notes and Comments (for RXO)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         {RXC}  Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">             [{NTE}] Notes and Comments (for RXC)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  RXE    Pharmacy/Treatment Encoded Order     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     {RXR}   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{RXC}]   Pharmacy/Treatment Component     4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {RXA}    Pharmacy/Treatment Administration    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   RXR    Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{[OBX    Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   {[NTE]}   Notes and Comments (for OBX)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]}</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">{[CTI]}    Clinical Trial Identification     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">}</FONT></PRE>
+<P>
+<FONT FACE="Times New Roman">(acknowledged by)</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>RRA</U><U> </U><U>Pharmacy/Treatment Administration Acknowledgment Message</U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSA     Message Acknowledgment      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[ERR]    Error          2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]   Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[  </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">     [{NTE}]]  Notes and Comments (for PID)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    {RXA}   Pharmacy/Treatment Administration    4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      RXR   Pharmacy/Treatment Route      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]  </FONT></PRE>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400046.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400048.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

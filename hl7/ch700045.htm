@@ -1,0 +1,1120 @@
+<HTML>
+<HEAD>
+<TITLE>7.11.2 PEO - product experience observation segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch700046.htm">
+<LINK REL="Previous" HREF="ch700044.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch700044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E316"></A>
+<H3>7.11.2 <A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><B>PEO - product experience observation</B><B> segment</B></H3>
+<P>
+<FONT FACE="Times New Roman">Details related to a particular clinical experience or event are embodied  in the PEO segment.  This segment can be used to characterize an event which might be attributed to a product to which the patient was exposed.   Products with a possible causal relationship to the observed experience are described in the following PCR (possible causal relationship) segments.  The message format was designed to be robust and includes many optional elements which may not be required for a particular regulatory purpose but allow a complete representation of the drug experience if needed.</FONT>
+<P>
+<FONT FACE="Times New Roman">A PEX message can contain multiple PEO segments if the patient experienced more than one event but must contain at least one PEO segment.</FONT>
+<P ALIGN=indent>Figure 7-21.  PEO attributes</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=38 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=37 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">OPTC</FONT>
+</TD><TD WIDTH=41 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">RP/ #</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">TBL #</FONT>
+</TD><TD WIDTH=48 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">ITEM #</FONT>
+</TD><TD WIDTH=249 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01073</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Identifiers Used</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01074</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Symptom/Diagnosis Code</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01075</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Onset Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01076</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Exacerbation Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01077</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Improved Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01078</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Ended Data/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01079</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Location Occurred Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0237</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01080</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Qualification</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0238</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01081</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Serious</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0239</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01082</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Expected</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0240</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01083</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Outcome</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0241</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01084</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Patient Outcome</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01085</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Description From Others</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01086</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event From Original Reporter</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01087</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Description From Patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">16</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01088</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Description From Practitioner</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">17</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">600</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">FT</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01089</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Event Description From Autopsy</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">18</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">60</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">CE</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01090</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Cause Of Death</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">19</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">46</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">XPN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01091</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Observer Name</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">20</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">106</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">XAD</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01092</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Observer Address</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">21</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">40</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">XTN</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01093</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Observer Telephone</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">22</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0242</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01094</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Observer&#146;s Qualification</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">23</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0242</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01095</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Confirmation Provided By</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">24</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01096</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Observer Aware Date/Time</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=39 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">25</FONT>
+</TD><TD WIDTH=38 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=37 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=45 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=41 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0243</FONT>
+</TD><TD WIDTH=48 VALIGN=top >
+<P>
+<FONT SIZE="-1">01097</FONT>
+</TD><TD WIDTH=249 VALIGN=top >
+<P>
+<FONT SIZE="-1">Primary Observer&#146;s identity May Be Divulged</TD></TR></FONT></TABLE><P>7.11.2.0   PEO  field definitions
+<H4>7.11.2.1 Event identifiers used  (CE)   01073</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field may be used to transmit the event identifier used by other entities for this event.   The entry would typically contain a unique alphanumeric identifier assigned by an entity with the text component null or repeating the unique alphanumeric identifier followed by the organization&#146;s identifier.  An event identifier might be GB1234^GB1234^PharmaGiant for example.</FONT>
+<H4>7.11.2.2 Event symptom/diagnosis code  (CE)   01074</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition: This field is the coded diagnosis or problem description which  best describes the event.  A text representation of the coded item should routinely be included.  MEDDRA and WHO-ART are examples of appropriate coding schemes, as are the patient and device codes included in the FDA Center for Devices and Radiologic Health&#146;s coding manual for Form 3500A.</FONT>
+<H4>7.11.2.3 Event onset date/time  (TS)   01075</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a report or best estimate of the date/time of onset of the event  The date/time can be recorded to any level of precision it is known (hour, day, month, year).</FONT>
+<H4>7.11.2.4 Event exacerbation date/time  (TS)   01076</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the best estimate of the date/time the event was exacerbated.</FONT>
+<H4>7.11.2.5 Event improved date/time  (TS)   01077</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the best estimate of the date/time the event improved.</FONT>
+<H4>7.11.2.6 Event ended data/time  (TS)   01078</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the best estimate of the date/time the event resolved.</FONT>
+<H4>7.11.2.7 Event location occurred address  (XAD)   01079</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt;^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the location at which the event started. Often this will specify only the country in which the event started.</FONT>
+<H4>7.11.2.8 Event qualification  (ID)   01080</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field is contains a classification of the type of product experience this event is considered to represent.  Refer to <I>HL7 table 0237 - Event qualification</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0237 - Event qualification</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=283 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Interaction</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Overdose</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Abuse</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">M</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Misuse</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Dependency</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Lack of expect therapeutic effect</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">W</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Drug withdrawal</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">B</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unexpected beneficial effect</TD></TR></FONT></TABLE><P>
+<FONT FACE="Times New Roman">Unexpected beneficial effects would not often be reported but are required by certain countries.</FONT>
+<H4>7.11.2.9 Event serious  (ID)   01081</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the event was judged as serious.  If the event did not meet the criteria for seriousness but the sender judges the event significant on other grounds, the event can be identified as significant [<I>but not serious</I>].  Refer to <I>HL7 table 0238 - Event seriousness</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0238 - Event seriousness</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=283 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Yes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Significant</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">No</TD></TR></FONT></TABLE><H4>7.11.2.10 Event expected  (ID)   01082</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field indicates whether the observed event was expected or unexpected as judged.  Refer to <I>HL7 table 0239 - Event expected</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0239 - Event expected</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=283 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Yes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">No</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">U</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unknown</TD></TR></FONT></TABLE><H4>7.11.2.11 Event outcome  (ID)   01083</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: This field identifies the consequence of the <U>event</U> on the patient.  If the consequence of the event is not understood or not available, the patient outcome element may be used although neither is required.  May be repeated if more than one is appropriate.  Refer to <I>HL7 table 0240 - Event consequences</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0240 - Event consequence</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=283 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Death</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Life threatening</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">H</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Caused hospitalized </TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Prolonged hospitalization</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Congenital anomaly/birth defect</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Incapacity which is significant, persistent or permanent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">J</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Disability which is significant, persistent or permanent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Required intervention to prevent permanent impairment/damage</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=283 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other</TD></TR></FONT></TABLE><H4>7.11.2.12 Patient outcome  (ID)   01084</H4>
+<P>
+<FONT FACE="Times New Roman">When an event specific outcome is not available, the patient outcome element may be used to represent the patient&#146;s overall outcome if that information is known.  Refer to <I>HL7 table 0241 - Patient outcome</I> for valid values.</FONT>
+<P>Table 0241 - Patient outcome
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=282 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Died</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Recovering</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Not recovering/unchanged</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">W</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Worsening</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Sequelae</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">F</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Fully recovered</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=138 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">U</FONT>
+</TD><TD WIDTH=282 VALIGN=top >
+<P>
+<FONT SIZE="-1">Unknown</TD></TR></FONT></TABLE><H4>7.11.2.13 Event description from others  (FT)   01085</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a summary narrative text description of the event that occurred written by the sender.  Note that laboratory results can be encoded as OBX segments rather then including them in the narrative.  By representing clinical information in OBX segments rather than in the narrative, these data become much more useful and flexible.</FONT>
+<H4>7.11.2.14 Event description from original reporter  (FT)   01086</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a summary narrative text description of the event provided by the original reporter.  Note that laboratory results can be encoded as OBX segments rather then including them in the narrative.</FONT>
+<H4>7.11.2.15 Event description from patient  (FT)   01087</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a summary narrative text description of the event obtained directly from the patient.  Note that laboratory results can be encoded as OBX segments rather then including them in the narrative, which will allow the data to be more readily represented and manipulated..</FONT>
+<H4>7.11.2.16 Event description from practitioner  (FT)   01088</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a summary narrative text description of the event provided by the practitioner most familiar with the event.  Note that laboratory results can be encoded as OBX segments rather then including them in the narrative.</FONT>
+<H4>7.11.2.17 Event description from autopsy  (FT)   01089</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains a summary narrative text description of the autopsy results.  Note that laboratory results can be encoded as OBX segments rather then including them in the narrative.</FONT>
+<H4>7.11.2.18 Cause of death  (CE)   01090</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;identifier (ST)&gt; ^ &lt;text (ST)&gt; ^ &lt;name of coding system (ST)&gt; ^ &lt;alternate identifier (ST)&gt; ^ &lt;alternate text (ST)&gt; ^ &lt;name of alternate coding system (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the coded cause of death.  May be repeated as necessary to list multiple contributing causes.  A text description can be included by including text but no code or coding system.  For example, if the cause of death is to be determined at autopsy but results are not yet available, the cause of death element could be ^Pending autopsy^.  The date/time of death can be sent in the PID and the autopsy results sent in the event description from autopsy element of the PEO segment.  </FONT>
+<H4>7.11.2.19 Primary observer name  (XPN)   01091</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;family name (ST)&gt; ^ &lt;given name (ST)&gt; ^ &lt;middle initial or name (ST)&gt; ^ &lt;suffix (e.g., JR or III) (ST)&gt; ^ &lt;prefix (e.g., DR) (ST)&gt; ^ &lt;degree (e.g., MD) (ST)&gt; <B>^ </B>&lt;name type code (ID) &gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the name of the person who initially described the event.  </FONT>
+<H4>7.11.2.20 Primary observer address  (XAD)   01092</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;street address (ST)&gt; ^ &lt;other designation (ST)&gt; ^ &lt;city (ST)&gt; ^ &lt;state or province (ST)&gt; ^ &lt;zip or postal code(ST)&gt; ^ &lt;country (ID)&gt; ^ &lt; address type (ID)&gt;<B> ^ &lt;</B>other geographic designation (ST)&gt; ^<B> </B>&lt;county/parish code (IS)&gt; ^ &lt;census tract (IS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the address of the person who initially described the event.</FONT>
+<H4>7.11.2.21 Primary observer telephone  (XTN)   01093</H4>
+<P>
+<FONT FACE="Courier New">Components:  [NNN] [(999)]999-9999 [X99999] [B99999] [C any text] ^ &lt;telecommunication use code (ID)&gt; ^ &lt;telecommunication equipment type (ID)&gt; ^ &lt;email address (ST)&gt; ^ &lt;country code (NM)&gt; ^ &lt;area/city code (NM)&gt; ^ phone number (NM)&gt; ^ &lt;extension (NM)&gt; ^ &lt;any text (ST)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the telephone number of the person who initially described the event.</FONT>
+<H4>7.11.2.22 Primary observer&#146;s qualification  (ID)   01094</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the qualification of the primary observer which may assist in assessing the validity of the observations.  Refer to<I> HL7 table 0242 - Primary observer&#146;s qualification</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0242 - Primary observer&#146;s qualification</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=300 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">P</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Physician (osteopath, homeopath)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Pharmacist</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">M</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Mid-level professional (nurse, nurse practitioner, physician's assistant)</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">H</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other health professional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">C</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Health care consumer/patient</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">L</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Lawyer/attorney</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=300 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other non-health professional</TD></TR></FONT></TABLE><H4>7.11.2.23 Confirmation provided by  (ID)   01095</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the qualification of the health professional who confirmed the observation if the primary observer was not a health professional.  Refer to <I>HL7 table 0242 - Primary observer&#146;s</I> <I>qualification</I> for valid values.  </FONT>
+<H4>7.11.2.24 Primary observer aware date/time  (TS)   01096</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the date/time the primary observer became aware of event.</FONT>
+<H4>7.11.2.25 Primary observer's identity may be divulged  (ID)   01097</H4>
+<P>
+<FONT FACE="Times New Roman">Definition: Indicates whether or not the primary observer, if known to the sender, grants permission to disclose his or her identity to the product manufacturer for the purpose of further investigating the event.  If the element is absent, the assumption should be made that permission is not granted.  Refer to<I> HL7 table </I><I>0243 - Identity may be divulged</I> for valid values.</FONT>
+<P ALIGN=indent>Table 0243 - Identity may be divulged</P>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=289 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">Y</FONT>
+</TD><TD WIDTH=289 VALIGN=top >
+<P>
+<FONT SIZE="-1">Yes</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">N</FONT>
+</TD><TD WIDTH=289 VALIGN=top >
+<P>
+<FONT SIZE="-1">No</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=136 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NA</FONT>
+</TD><TD WIDTH=289 VALIGN=top >
+<P>
+<FONT SIZE="-1">Not applicable</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch700044.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch700046.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

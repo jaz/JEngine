@@ -1,0 +1,261 @@
+<HTML>
+<HEAD>
+<TITLE>4.3.2 BLG - billing segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400011.htm">
+<LINK REL="Previous" HREF="ch400009.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400009.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400011.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E215"></A>
+<H3><B>4.3.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>BLG - billing segment</B><A NAME="I8"></A><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The BLG segment is used to provide billing information, on the ordered service, to the filling application.</FONT>
+<P ALIGN=indent><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A>Figure 4-6.  BLG attributes</P>
+
+<TABLE ALIGN=RIGHT BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=51 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=53 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">OPT</FONT>
+</TD><TD WIDTH=47 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=43 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=51 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=232 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 40</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CM</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0100</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00234</FONT>
+</TD><TD WIDTH=232 VALIGN=top >
+<P>
+<FONT SIZE="-1">When to Charge</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 50</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top >
+<P>
+<FONT SIZE="-1">0122</FONT>
+</TD><TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00235</FONT>
+</TD><TD WIDTH=232 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=51 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=51 ALIGN=right  VALIGN=top >
+<P>
+<FONT SIZE="-1"> 100</FONT>
+</TD><TD WIDTH=53 VALIGN=top >
+<P>
+<FONT SIZE="-1">CK</FONT>
+</TD><TD WIDTH=54 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=47 VALIGN=top ><BR></TD>
+<TD WIDTH=43 VALIGN=top ><BR></TD>
+<TD WIDTH=51 VALIGN=top >
+<P>
+<FONT SIZE="-1">00236</FONT>
+</TD><TD WIDTH=232 VALIGN=top >
+<P>
+<FONT SIZE="-1">Account ID</TD></TR></FONT></TABLE><P>4.3.2.0   BLG field definitions
+<H4><B>4.3.2.1</B><B> </B><A NAME="I13"></A>When to charge  (CM)   00234</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;when to charge code (ID)&gt; ^ &lt;date/time (TS)&gt;</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field determines when to charge for the ordered service.  The first component contains a value defined in <I>HL7</I> <I>table 0100 - When to charge</I>.  The second component is used to express the exact time to charge for the ordered service; it is used only when the<I> when to charge</I> value is T.  When used, it is expressed as a TS data type.</FONT>
+<P ALIGN=indent><A NAME="I14"></A><A NAME="I15"></A>Table 0100 - When to charge</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=336 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">D</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">On discharge</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">O</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">On receipt of order</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">At time service is completed</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">S</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">At time service is started</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">T</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">At a designated date/time</TD></TR></FONT></TABLE></CENTER><H4>4.3.2.2 <A NAME="I16"></A>Charge type  (ID)   00235</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies someone or something other than the patient to be billed for this service.  It is used in conjunction with <I>BLG-3-account ID</I>.  Refer to <I>HL7 table 0122 - Charge type</I> for valid values.</FONT>
+<P ALIGN=indent><A NAME="I17"></A><A NAME="I18"></A>Table 0122 - Charge type</P>
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=336 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CH</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Charge</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CO</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Contract</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">CR</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Credit</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">DP</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Department</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">GR</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Grant</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">NC</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">No Charge</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">PC</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Professional</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=144 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">RS</FONT>
+</TD><TD WIDTH=336 VALIGN=top >
+<P>
+<FONT SIZE="-1">Research</TD></TR></FONT></TABLE></CENTER><H4>4.3.2.3 <A NAME="I19"></A>Account ID  (CK)   00236</H4>
+<P>
+<FONT FACE="Courier New">Components:  &lt;ID number (NM)&gt; ^ &lt;check digit (NM)&gt; ^ &lt;code identifying the check digit scheme employed (ID)&gt; ^ &lt; assigning authority  (HD)&gt;</FONT>
+<P>
+<FONT FACE="Courier New">Subcomponents of assigning authority:  &lt;namespace ID (IS)&gt; &amp; &lt;universal ID (ST)&gt; &amp; &lt;universal ID type (ID)</FONT>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies the account to be billed.  It is used in conjunction with <I>BLG-2-charge type</I>.  Refer to <I>HL7</I> <I>table 0061 - Check digit scheme</I> in Chapter 2.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400009.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400011.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,432 @@
+<HTML>
+<HEAD>
+<TITLE>C.2.2 NST - statistics segment</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="appc0007.htm">
+<LINK REL="Previous" HREF="appc0005.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="appc0005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+
+<A NAME="E12E534"></A>
+<H3><B>C.2.2</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><B>NST </B><B>-</B><B> statistics segment</B><A NAME="I5"></A><A NAME="I6"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The NST segment allows network statistical information to be passed between the various systems on the network.  Some fields in this segment refer to portions of lower level protocols; they contain information that can be used by network management applications monitoring the state of various network links. </FONT>
+<P>Figure C-2.  NST attributes
+
+<CENTER><TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">SEQ</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">LEN</FONT>
+</TD><TD WIDTH=36 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">DT</FONT>
+</TD><TD WIDTH=40 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">R/O</FONT>
+</TD><TD WIDTH=49 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">RP/#</FONT>
+</TD><TD WIDTH=45 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">TBL#</FONT>
+</TD><TD WIDTH=54 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ITEM#</FONT>
+</TD><TD WIDTH=244 VALIGN=top  BGCOLOR=#E5E5E5 >
+<P>
+<FONT SIZE="-1">ELEMENT NAME</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">1</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=40 VALIGN=top >
+<P>
+<FONT SIZE="-1">R</FONT>
+</TD><TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top >
+<P>
+<FONT SIZE="-1">0136</FONT>
+</TD><TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01173 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Statistics Available</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">2</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">30</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ST</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01174 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Source Identifier</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">3</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">ID</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01175 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Source Type</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">4</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01176 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Statistics Start</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">5</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">26</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">TS</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01177 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Statistics End</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">6</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01178 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Receive Character Count</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">7</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01179 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Send Character Count</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">8</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01180 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Messages Received</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">9</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01181 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Messages Sent</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01182 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Checksum Errors Received</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">11</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01183 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Length Errors Received</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">12</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01184 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Other Errors Received</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">13</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01185 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Connect Timeouts</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">14</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01186 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Receive Timeouts</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=49 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">15</FONT>
+</TD><TD WIDTH=49 VALIGN=top >
+<P>
+<FONT SIZE="-1">10</FONT>
+</TD><TD WIDTH=36 VALIGN=top >
+<P>
+<FONT SIZE="-1">NM</FONT>
+</TD><TD WIDTH=40 VALIGN=top ><BR></TD>
+<TD WIDTH=49 VALIGN=top ><BR></TD>
+<TD WIDTH=45 VALIGN=top ><BR></TD>
+<TD WIDTH=54 VALIGN=top >
+<P>
+<FONT SIZE="-1">01187 </FONT>
+</TD><TD WIDTH=244 VALIGN=top >
+<P>
+<FONT SIZE="-1">Network Errors</TD></TR></FONT></TABLE></CENTER><P>C.2.2.0 NST field definitions
+<H4>C.2.2.1 Statistics available  (ID)   01173  </H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains an indicator if statistics are available.  Refer to <I>HL7 table 0136 - </I><I>Yes/no indicator</I> for valid values.  </FONT>
+<P>
+<FONT FACE="Times New Roman">N -  the responding system does not keep any statisticsIf the value &quot;N&quot; is specified, the response message is used to signify to the initiating application that the particular link is operational (and fields 2-15 are empty in the response message).  </FONT>
+<P>
+<FONT FACE="Times New Roman">Y -  the responding system does keep statistics&quot;, fields 4 and 5 are required, (and the response message contains one or more non-null fields in the range 2-3, 6-15). </FONT>
+<H4>C.2.2.2 Source identifier  (ST)   01174</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies a particular lower level link (e.g., a port number). </FONT>
+<H4>C.2.2.3 Source type  (ID)   01175</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field identifies (in certain systems) whether a lower level source identifier is an initiate or accept type.   Refer to HL7 table 0332 - Network source type for valid values.</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Value</FONT>
+</TD><TD WIDTH=457 VALIGN=top  BGCOLOR=#F2F2F2 >
+<P>
+<FONT SIZE="-1">Description</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">I</FONT>
+</TD><TD WIDTH=457 VALIGN=top >
+<P>
+<FONT SIZE="-1">Initiate</TD>
+</TR></FONT>
+<TR>
+<TD WIDTH=126 ALIGN=center  VALIGN=top >
+<P>
+<FONT SIZE="-1">A</FONT>
+</TD><TD WIDTH=457 VALIGN=top >
+<P>
+<FONT SIZE="-1">Accept</TD></TR></FONT></TABLE><H4>C.2.2.4 Statistics start  (TS)   01176</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time stamp of the start of the collection of the statistics reported in fields 6-15 of this segment.  It is strongly recommended that this value include seconds. </FONT>
+<H4>C.2.2.5 Statistics end  (TS)   01177</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the date/time stamp of the end of the statistics collection period reported in fields 6-15 of this segment.  It is strongly recommended that this value include seconds. </FONT>
+<H4>C.2.2.6 Receive character count  (NM)   01178</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of characters received. </FONT>
+<H4>C.2.2.7 Send character count  (NM)   01179</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of characters sent. </FONT>
+<H4>C.2.2.8 Messages received  (NM)   01180</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of messages received. </FONT>
+<H4>C.2.2.9 Messages sent  (NM)   01181</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of messages sent. </FONT>
+<H4>C.2.2.10 Checksum errors received  (NM)   01182</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of messages received with checksum errors. </FONT>
+<H4>C.2.2.11 Length errors received  (NM)   01183</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of messages received with length errors. </FONT>
+<H4>C.2.2.12 Other errors received  (NM)   01184</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of &quot;other&quot; invalid messages received (excluding length and checksum errors). </FONT>
+<H4>C.2.2.13 Connect timeouts  (NM)   01185</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of connect timeout errors. </FONT>
+<H4>C.2.2.14 Receive timeouts  (NM)   01186</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of timeouts while waiting for a response to an initiated message. </FONT>
+<H4>C.2.2.15 Network errors  (NM)   01187</H4>
+<P>
+<FONT FACE="Times New Roman">Definition:  This field contains the number of network errors in response to an initiated message. </FONT>
+<H4>C.2.2.16 NST use notes</H4>
+<P>
+<FONT FACE="Times New Roman">Fields 2-15.  These are all marked optional since the statistics kept on a particular link and negotiated between the two systems in question will vary.  Not all values will apply to each system.  Some values are concerned with the type of port, and some values pertain to the lower level protocol.</FONT>
+<P ALIGN=LEFT>
+<A HREF="appc0005.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="appc0007.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>2.22 QUERY ERROR RESPONSE</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch200118.htm">
+<LINK REL="Previous" HREF="ch200116.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch200116.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200118.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E11E31"></A>
+<P>
+<FONT SIZE="+2"><B>2.22</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><A NAME="I8"></A><A NAME="I9"></A><A NAME="I10"></A><A NAME="I11"></A><A NAME="I12"></A><A NAME="I13"></A><A NAME="I14"></A><B>QUERY ERROR RESPONSE</B><A NAME="I15"></A></FONT>
+<P>
+<FONT FACE="Times New Roman">If an application detects an error while processing a query, it responds by returning an Application Error (AE) or Application Reject (AR) condition in the MSA segment of the applicable query response message (DSR, TBR or ERP).  The responding application values <I>MSA-6 error condition</I> with the appropriate error code and message.  The continuation (DSC) segment is not sent or, if it is, its continuation pointer field (<I>DSC-1</I>-<I>continuation pointer</I> )is null.  If the QAK segment is being used, the field <I>QAK-2-query response </I><I>status</I> is valued appropriately with either AE (application error) or AR (application reject).</FONT>
+
+<TABLE BORDER=1 CELLSPACING=1 >
+<TR>
+<TD WIDTH=568 VALIGN=top >
+<P>
+<FONT FACE="Arial Narrow" SIZE="-1"><B>Note:</B> If the responding application successfully processes the query, but is unable to find any qualifying data, this is not an error condition.  The responding application returns an Application Accept (AA) in the MSA segment of the query response message, but does not return any data segments (DSP, RDT, or event replay segments).  The continuation (DSC) segment is not sent or, if it is, its continuation pointer field (<I>DSC-1-</I> <I>continuation pointer)</I> is null.  If the QAK segment is being used, the field <I>QAK-2-query response status</I> is valued with NF (no data found, no errors).</TD></TR></FONT></TABLE><P>
+<P ALIGN=LEFT>
+<A HREF="ch200116.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch200118.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

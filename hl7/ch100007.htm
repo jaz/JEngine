@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>1.6.1 HL7 encoding rules </TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch100008.htm">
+<LINK REL="Previous" HREF="ch100006.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch100006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E1"></A>
+<H3><B>1.6.1</B><B> </B><A NAME="I2"></A><B>HL7 encoding rules</B><B> </B><A NAME="I3"></A></H3>
+<P>
+<FONT FACE="Times New Roman">Message formats prescribed in the HL7 encoding rules consist of data fields that are of variable length and separated by a field separator character.  Rules describe how the various data types are encoded within a field and when an individual field may be repeated.  The data fields are combined into logical groupings called segments.  Segments are separated by segment separator characters.  Each segment begins with a three-character literal value that identifies it within a message.  Segments may be defined as required or optional and may be permitted to repeat.  Individual data fields are found in the message by their position within their associated segments.</FONT>
+<P>
+<FONT FACE="Times New Roman">All data is represented as displayable characters from a selected character set. The ASCII displayable character set (hexadecimal values between 20 and 7E, inclusive) is the default character set unless modified in the MSH header segment.  The field separator is required to be chosen from the ASCII displayable character set.  All the other special separators and other special characters are also displayable characters, except that the segment separator is the ASCII Carriage Return character.</FONT>
+<P>
+<FONT FACE="Times New Roman">(1)  There is nothing intrinsic to HL7 version 2.3 or ASTM 1238 that restricts the legal data set to the printable ASCII characters.  The former restriction was imposed to accommodate the limitations of many  existing communication systems.  Some existing systems would misinterpret some eight-bit characters as flow control characters instead of data.  Others would strip off the eighth bit.</FONT>
+<P>
+<FONT FACE="Times New Roman">(2)  The European community (EC) has a need for printable characters (for example, the German oe, the French accent grave) that are not within the above defined restricted data set.  The personal computer  market accommodates these alphabetic characters by assigning them to codes between 128 and 256, but it does this in many different ways.   ISO 8859 is a 256-character set that does include all of the needed  European letters and is a candidate for the European standards group.  Where the Europeans define an eight-bit character set specification,  HL7 will accept this data set in environments that require it, and can use it without complications.</FONT>
+<P>
+<FONT FACE="Times New Roman">(3)   Multi-character Codes:</FONT>
+<P>
+<FONT FACE="Times New Roman">(a)  UNICODE - When communicants use UNICODE, and all characters are represented by the same number of bytes, all delimiters will be single characters of the specified bytes length, and the Standard applies just as it does for single-byte length, except that the  length of the characters may be greater than one byte.</FONT>
+<P>
+<FONT FACE="Times New Roman">(b)  JIS X 0202 - ISO 2022 provides an escape sequence for switching among different character sets and among single-byte and multi-byte character representations.  Japan has adopted ISO 2022 and its escape sequences as JIS X 0202 in order to mix Kanji and ASCII characters in the same message.  Both the single- and multiple-byte characters use only the low order 7 bits in JIS Kanji code with JIS X 0202 in order to ensure transparency over all standard communication systems.  When HL7 messages are sent as JIS X 0202, all HL7 delimiters must be sent as single-byte ASCII characters,  and the escape sequence from ASCII to Kanji and back again must occur within delimiters.  In most cases the use of Kanji will be restricted to text fields. </FONT>
+<P>
+<FONT FACE="Times New Roman">There are other parts of the JIS X series that support Katakana (JIS X 0201/ISO IR 13), Romaji (JIS X 0201/ISO IR 14) and Kanji (JIS X 0208/ISO IR 87) and JIS X 0212/ISO IR 159) that can be used in HL7 messages in the same manner as JIS X 0202.</FONT>
+<P>
+<FONT FACE="Times New Roman">(c)  In the case that a single country uses conflicting rules for representing multi-byte characters, it is up to the communicants to ensure that they are using the same set of rules.  </FONT>
+<P>
+<FONT FACE="Times New Roman">The encoding rules distinguish between data fields that have the null value and those that are not present. The former are represented by two adjacent quotation marks, the latter by no data at all (i.e., two consecutive separator characters.)  The distinction between null values and those that are not present is important when a record is being updated.  In the former case the field in the database should be set to null; in the latter case it should retain its prior value.  The encoding rules specify that if a receiving application cannot deal with a data field not being present, it should treat the data field as present but null.</FONT>
+<P>
+<FONT FACE="Times New Roman">The encoding rules specify that a receiving application should ignore fields that are present in the message but were not expected rather than treat such a circumstance as an error.  For more information on fields and encoding rules, see Section 2.6 and 2.10.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch100006.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch100008.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>

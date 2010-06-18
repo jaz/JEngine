@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<TITLE>4.2.1 ORM - general order message</TITLE>
+<LINK REL="ToC" HREF="httoc.htm">
+<LINK REL="Index" HREF="htindex.htm">
+<LINK REL="Next" HREF="ch400006.htm">
+<LINK REL="Previous" HREF="ch400004.htm"></HEAD>
+<BODY BACKGROUND="images/grenszig.gif">
+<P ALIGN=LEFT>
+<A HREF="ch400004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+<P>
+
+<A NAME="E12E211"></A>
+<H3><B>4.2.1</B><B> </B><A NAME="I2"></A><A NAME="I3"></A><A NAME="I4"></A><A NAME="I5"></A><A NAME="I6"></A><A NAME="I7"></A><B>ORM </B><B>-</B><B> general order message</B><A NAME="I8"></A><A NAME="I9"></A></H3>
+<P>
+<FONT FACE="Times New Roman">The function of this message is to initiate the transmission of information about an order.  This includes placing new orders, cancellation of existing orders, discontinuation, holding, etc.  ORM messages can originate also with a placer, filler, or an interested third party.</FONT>
+<P>
+<FONT FACE="Times New Roman">The trigger event<A NAME="I10"></A> for this message is any change to an order.  Such changes include submission of new orders, cancellations, updates, patient and nonpatient specific orders, etc.</FONT>
+<PRE>
+<FONT FACE="Courier New"><U>ORM</U><U> </U><U> </U><U> </U><U> </U><U> </U><U>General Order Message</U><U> </U><U> </U><U> </U><U> </U><U> </U><U> </U><U>Chapter</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">MSH     Message Header        2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [{NTE}]    Notes and Comments (for Header)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">[</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   PID    Patient Identification      3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PD1]    Additional Patient Identification    3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [{NTE}]  Notes and Comments (for Patient ID)    2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [PV1    Patient Visit        3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"><U>    [PV2</U><U>|</U><U>]</U><U> </U><U> </U><U> </U><U>Patient Visit Additional Information</U><U> </U><U> </U><U> </U><U>3</U></FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{IN1   Insurance         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">      [IN2]   Insurance Additional Info      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   [IN3]   Insurance Additional Info      6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    }]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [GT1]   Guarantor         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">    [{AL1}]   Allergy          3</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]    </FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   ORC    Common Order         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">   Order Detail Segment OBR, etc.         4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{NTE}]  Notes and Comments (for Detail)      2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [{DG1}]  Diagnosis         6</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       [</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">        {</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         OBX   Observation/Result       7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">              [{NTE}] Notes and Comments (for Results)     2</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">         }</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">       ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  ]</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New">  {[CTI]}   Clinical Trial Identification     7</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> [BLG]    Billing segment                      4</FONT></PRE>
+<PRE>
+<FONT FACE="Courier New"> }</FONT></PRE>
+<H4><B>4.2.1.1</B><B> </B><A NAME="I11"></A>ORM use notes</H4>
+<P>
+<FONT FACE="Times New Roman">a) The abstract message syntax for some order segments vary slightly.  Please refer to the appropriate sections for specific examples: for supply orders (RQ), see Section <A HREF="ch400030.htm#I8">4.7</A>, &quot;<A HREF="ch400030.htm#I11">SUPPLY ORDERS</A>&quot;; for pharmacy, see Section 4.8, &quot;<A HREF="ch400034.htm#I11">PHARMACY/TREATMENT ORDERS</A>&quot;; and for dietary orders, see Section <A HREF="ch400026.htm#I8">4.6</A>, &quot;<A HREF="ch400026.htm#I11">DIET ORDERS</A>.&quot;</FONT>
+<P>
+<FONT FACE="Times New Roman">b) The segment named &quot;Order Detail Segment&quot; represents whichever of these order detail segment(s) is appropriate to the message, currently OBR, RQD, RQ1, RXO, ODS, ODT.</FONT>
+<P>
+<FONT FACE="Times New Roman">c) The NTE segment(s) can be included in the ORM message in four places; in each place the NTE refers to the segment which it follows.  In particular, the NTEs following the MSH refer only to the message header, the NTEs following the order detail segment apply to the service defined by that ORC and order detail segment.</FONT>
+<P>
+<FONT FACE="Times New Roman">d) The PID segment is required if and only if new orders are being entered and they are related to a particular patient.  For nonpatient-related orders the PID segment is never included.</FONT>
+<P>
+<FONT FACE="Times New Roman">e) The optional PV1 segment is present mainly to permit transmission of patient visit information such as current location with an order.</FONT>
+<P>
+<FONT FACE="Times New Roman">f) The order detail segments are not required when a simple control message is being sent.  For example, a hold message (<I>ORC-1-order control</I> = HD) does not require that an order segment follow it.</FONT>
+<P>
+<FONT FACE="Times New Roman">g)<I> </I><I>ORC-1-order control</I> is critical to the operation of both ORM and ORR messages.  For example, to request cancellation of an order, one would transmit a CA in <I>ORC-1-order control</I> of the appropriate ORC.  (See the definition of <I>ORC-1-order control</I>.)</FONT>
+<P>
+<FONT FACE="Times New Roman">h) A method to inquire for order status in the display format is provided in Chapter 2, and uses the record format provided in Chapter 7.</FONT>
+<P>
+<FONT FACE="Times New Roman">i) Each order message that defines any type of new order (<I>ORC-1-order control</I> = NW, CH, RO or SN) requires an ORC/OBR pair to define each order to the receiving application.  This also applies to any other types of orders, with the OBR being replaced by the appropriate order detail segment, as defined below.  Thus two consecutive ORCs could occur if a cancel order request (needing only the order numbers) were followed by a second cancel order request.  Many other examples are possible.  </FONT>
+<P>
+<FONT FACE="Times New Roman">j) The insurance segments (IN1, IN2, and GT1) are typically used for external fillers, e.g., reference labs, where formal ADT transactions are overly complex or not needed.</FONT>
+<P>
+<P ALIGN=LEFT>
+<A HREF="ch400004.htm" TARGET="_self"><IMG SRC="images/blrprev.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Previous Page"></A>
+<A HREF="httoc.htm" TARGET="_self"><IMG SRC="images/blrtoc.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="TOC"></A>
+<A HREF="htindex.htm" TARGET="_self"><IMG SRC="images/blrindex.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Index"></A>
+<A HREF="ch400006.htm" TARGET="_self"><IMG SRC="images/blrnext.gif" WIDTH = 32 HEIGHT = 32 BORDER = 0 ALT="Next Page"></A>
+</BODY></HTML>
