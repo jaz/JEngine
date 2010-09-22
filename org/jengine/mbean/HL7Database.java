@@ -223,23 +223,22 @@ public class HL7Database implements Runnable, MessageListener {
 			sender.send(outMsg);
                         numberMessagesFailed++; 
                         log.debug("message sent to outQ, ack on inQ");
-                    }
-                    else {
+                    } else {
                         numberMessages++;
                         timeStampLastMsg = getCurrentTime();    //set timestamp here
                         log.debug("message NULL, **DELETED**, ack on inQ");
                     }
                     if (qAcknowledge(inMsg) == true) {
        	        	session.commit();
+			inMsg = null;
 			log.debug("Transaction commit'd");
-                    }
-                    else
-                    {
-                       //what happens if rollback fails??
-                       //will next commit that works commit
-                       //the previously unwanted sent message (outQ) ???
-                       session.rollback();
-                       log.debug("Transaction rollback'd");
+                    } else {
+			//what happens if rollback fails??
+			//will next commit that works commit
+			//the previously unwanted sent message (outQ) ???
+			session.rollback();
+			inMsg = null;
+			log.debug("Transaction rollback'd");
                     }
 		}
                 catch (JMSException je)
